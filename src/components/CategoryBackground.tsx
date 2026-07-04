@@ -33,10 +33,10 @@ export function CategoryBackground({
         src={imageSrc}
         alt=""
         aria-hidden="true"
-        className={`absolute inset-0 h-full w-full object-cover blur-[12px] saturate-150 contrast-110 transition-all duration-700 ${
+        className={`absolute inset-0 h-full w-full object-cover blur-[8px] saturate-150 contrast-125 brightness-125 transition-all duration-700 ${
           isSelected
-            ? "opacity-45 scale-[1.18]"
-            : "opacity-35 scale-[1.12] group-hover:opacity-45 group-hover:scale-[1.18]"
+            ? "opacity-75 scale-[1.16]"
+            : "opacity-60 scale-[1.10] group-hover:opacity-75 group-hover:scale-[1.16]"
         }`}
       />
 
@@ -45,33 +45,33 @@ export function CategoryBackground({
         src={imageSrc}
         alt=""
         aria-hidden="true"
-        className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ${
+        className={`absolute inset-0 h-full w-full object-cover saturate-125 contrast-110 brightness-110 transition-all duration-700 ${
           isSelected
-            ? "opacity-70 scale-[1.03]"
-            : "opacity-55 scale-100 group-hover:opacity-70 group-hover:scale-[1.03]"
+            ? "opacity-85 scale-[1.02]"
+            : "opacity-72 scale-100 group-hover:opacity-85 group-hover:scale-[1.02]"
         }`}
         style={{
           WebkitMaskImage:
-            "linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,.86) 42%, rgba(0,0,0,.32) 72%, rgba(0,0,0,0) 100%)",
+            "linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,.95) 50%, rgba(0,0,0,.65) 74%, rgba(0,0,0,.18) 100%)",
           maskImage:
-            "linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,.86) 42%, rgba(0,0,0,.32) 72%, rgba(0,0,0,0) 100%)",
+            "linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,.95) 50%, rgba(0,0,0,.65) 74%, rgba(0,0,0,.18) 100%)",
         }}
       />
 
       {/* Category color glow */}
       <div
         className={`absolute inset-0 transition-opacity duration-700 ${
-          isSelected ? "opacity-35" : "opacity-20 group-hover:opacity-30"
+          isSelected ? "opacity-45" : "opacity-28 group-hover:opacity-40"
         }`}
         style={{
-          background: `radial-gradient(circle at 78% 38%, ${color}55 0%, transparent 48%)`,
+          background: `radial-gradient(circle at 78% 38%, ${color}66 0%, transparent 52%)`,
         }}
       />
 
-      {/* Readability overlays */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/75 to-black/20" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
-      <div className="absolute inset-0 bg-black/10" />
+      {/* Readability overlays: lighter than before so the art actually shows */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/46 to-black/8" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/18 to-transparent" />
+      <div className="absolute inset-0 bg-black/2" />
     </div>
   );
 }
