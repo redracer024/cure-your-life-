@@ -175,12 +175,18 @@ html, body {
     inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
 }
 
-/* Cinematic backing art for the symptom result boxes.
-   Uses :has() to choose the category art from the category badge color, with a safe fallback. */
+/* Cinematic backing art for the symptom result boxes. */
 .glass-panel-interactive,
 .glass-panel-heavy {
   position: relative;
   isolation: isolate;
+  --symptom-card-image: url('/all.png');
+}
+
+.glass-panel-interactive > *,
+.glass-panel-heavy > * {
+  position: relative;
+  z-index: 2;
 }
 
 .glass-panel-interactive::before,
@@ -188,14 +194,14 @@ html, body {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: -2;
+  z-index: 0;
   pointer-events: none;
-  background-image: var(--symptom-card-image, url('/all.png'));
+  background-image: var(--symptom-card-image);
   background-size: cover;
   background-position: center;
-  opacity: 0.28;
-  filter: blur(9px) saturate(1.35) contrast(1.15) brightness(1.08);
-  transform: scale(1.08);
+  opacity: 0.52;
+  filter: blur(8px) saturate(1.45) contrast(1.2) brightness(1.15);
+  transform: scale(1.1);
   transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
 }
 
@@ -204,31 +210,52 @@ html, body {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 1;
   pointer-events: none;
   background:
-    radial-gradient(circle at 50% 46%, rgba(255,255,255,0.05), transparent 38%),
-    linear-gradient(90deg, rgba(3,5,10,0.92), rgba(3,5,10,0.65) 48%, rgba(3,5,10,0.82));
+    radial-gradient(circle at 52% 46%, rgba(255,255,255,0.04), transparent 36%),
+    linear-gradient(90deg, rgba(3,5,10,0.88), rgba(3,5,10,0.58) 48%, rgba(3,5,10,0.74));
 }
 
 .glass-panel-interactive:hover::before,
 .glass-panel-heavy:hover::before {
-  opacity: 0.38;
-  transform: scale(1.12);
-  filter: blur(7px) saturate(1.5) contrast(1.2) brightness(1.16);
+  opacity: 0.68;
+  transform: scale(1.14);
+  filter: blur(6px) saturate(1.6) contrast(1.25) brightness(1.22);
 }
 
-.glass-panel-interactive:has(span[style*="255, 107, 44"]) { --symptom-card-image: url('/back-shoulders.png'); }
+/* Match either hex style strings or browser-normalized RGB strings. Yes, it is dumb. CSS remains a haunted appliance. */
+.glass-panel-interactive:has(span[style*="#FF6B2C"]),
+.glass-panel-heavy:has(span[style*="#FF6B2C"]),
+.glass-panel-interactive:has(span[style*="255, 107, 44"]),
 .glass-panel-heavy:has(span[style*="255, 107, 44"]) { --symptom-card-image: url('/back-shoulders.png'); }
-.glass-panel-interactive:has(span[style*="255, 77, 77"]) { --symptom-card-image: url('/chest-breathing.png'); }
+
+.glass-panel-interactive:has(span[style*="#FF4D4D"]),
+.glass-panel-heavy:has(span[style*="#FF4D4D"]),
+.glass-panel-interactive:has(span[style*="255, 77, 77"]),
 .glass-panel-heavy:has(span[style*="255, 77, 77"]) { --symptom-card-image: url('/chest-breathing.png'); }
-.glass-panel-interactive:has(span[style*="255, 208, 0"]) { --symptom-card-image: url('/limbs-joints.png'); }
+
+.glass-panel-interactive:has(span[style*="#FFD000"]),
+.glass-panel-heavy:has(span[style*="#FFD000"]),
+.glass-panel-interactive:has(span[style*="255, 208, 0"]),
 .glass-panel-heavy:has(span[style*="255, 208, 0"]) { --symptom-card-image: url('/limbs-joints.png'); }
-.glass-panel-interactive:has(span[style*="177, 92, 255"]) { --symptom-card-image: url('/head-neck.png'); }
+
+.glass-panel-interactive:has(span[style*="#B15CFF"]),
+.glass-panel-heavy:has(span[style*="#B15CFF"]),
+.glass-panel-interactive:has(span[style*="177, 92, 255"]),
 .glass-panel-heavy:has(span[style*="177, 92, 255"]) { --symptom-card-image: url('/head-neck.png'); }
-.glass-panel-interactive:has(span[style*="255, 138, 0"]) { --symptom-card-image: url('/metabolic-endocrine.png'); }
+
+.glass-panel-interactive:has(span[style*="#FF8A00"]),
+.glass-panel-heavy:has(span[style*="#FF8A00"]),
+.glass-panel-interactive:has(span[style*="255, 138, 0"]),
 .glass-panel-heavy:has(span[style*="255, 138, 0"]) { --symptom-card-image: url('/metabolic-endocrine.png'); }
-.glass-panel-interactive:has(span[style*="0, 230, 118"]) { --symptom-card-image: url('/stomach-gut.png'); }
+
+.glass-panel-interactive:has(span[style*="#00E676"]),
+.glass-panel-heavy:has(span[style*="#00E676"]),
+.glass-panel-interactive:has(span[style*="0, 230, 118"]),
 .glass-panel-heavy:has(span[style*="0, 230, 118"]) { --symptom-card-image: url('/stomach-gut.png'); }
-.glass-panel-interactive:has(span[style*="255, 92, 214"]) { --symptom-card-image: url('/skin-sleep.png'); }
+
+.glass-panel-interactive:has(span[style*="#FF5CD6"]),
+.glass-panel-heavy:has(span[style*="#FF5CD6"]),
+.glass-panel-interactive:has(span[style*="255, 92, 214"]),
 .glass-panel-heavy:has(span[style*="255, 92, 214"]) { --symptom-card-image: url('/skin-sleep.png'); }
