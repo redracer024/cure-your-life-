@@ -1,0 +1,3 @@
+Static app assets live here.
+
+Move category PNGs into this folder so Vite serves them from /filename.png.
