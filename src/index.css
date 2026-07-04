@@ -75,6 +75,18 @@ html, body {
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Visual alphabetical ordering for the category grid.
+   Current data order is preserved; the cards render as: All, Back, Chest, General, Head, Limbs, Metabolic, Skin, Stomach. */
+.category-card:nth-child(1) { order: 1; } /* All */
+.category-card:nth-child(8) { order: 2; } /* Back & Shoulders */
+.category-card:nth-child(6) { order: 3; } /* Chest & Breathing */
+.category-card:nth-child(4) { order: 4; } /* General & Energy */
+.category-card:nth-child(3) { order: 5; } /* Head & Neck */
+.category-card:nth-child(9) { order: 6; } /* Limbs & Joints */
+.category-card:nth-child(2) { order: 7; } /* Metabolic & Endocrine */
+.category-card:nth-child(7) { order: 8; } /* Skin & Sleep */
+.category-card:nth-child(5) { order: 9; } /* Stomach & Gut */
+
 .category-card:hover {
   transform: translateY(-6px) scale(1.015);
   border-color: var(--system-color);
@@ -162,3 +174,61 @@ html, body {
     0 0 30px 0 rgba(99, 102, 241, 0.15),
     inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
 }
+
+/* Cinematic backing art for the symptom result boxes.
+   Uses :has() to choose the category art from the category badge color, with a safe fallback. */
+.glass-panel-interactive,
+.glass-panel-heavy {
+  position: relative;
+  isolation: isolate;
+}
+
+.glass-panel-interactive::before,
+.glass-panel-heavy::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image: var(--symptom-card-image, url('/all.png'));
+  background-size: cover;
+  background-position: center;
+  opacity: 0.28;
+  filter: blur(9px) saturate(1.35) contrast(1.15) brightness(1.08);
+  transform: scale(1.08);
+  transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
+}
+
+.glass-panel-interactive::after,
+.glass-panel-heavy::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 46%, rgba(255,255,255,0.05), transparent 38%),
+    linear-gradient(90deg, rgba(3,5,10,0.92), rgba(3,5,10,0.65) 48%, rgba(3,5,10,0.82));
+}
+
+.glass-panel-interactive:hover::before,
+.glass-panel-heavy:hover::before {
+  opacity: 0.38;
+  transform: scale(1.12);
+  filter: blur(7px) saturate(1.5) contrast(1.2) brightness(1.16);
+}
+
+.glass-panel-interactive:has(span[style*="255, 107, 44"]) { --symptom-card-image: url('/back-shoulders.png'); }
+.glass-panel-heavy:has(span[style*="255, 107, 44"]) { --symptom-card-image: url('/back-shoulders.png'); }
+.glass-panel-interactive:has(span[style*="255, 77, 77"]) { --symptom-card-image: url('/chest-breathing.png'); }
+.glass-panel-heavy:has(span[style*="255, 77, 77"]) { --symptom-card-image: url('/chest-breathing.png'); }
+.glass-panel-interactive:has(span[style*="255, 208, 0"]) { --symptom-card-image: url('/limbs-joints.png'); }
+.glass-panel-heavy:has(span[style*="255, 208, 0"]) { --symptom-card-image: url('/limbs-joints.png'); }
+.glass-panel-interactive:has(span[style*="177, 92, 255"]) { --symptom-card-image: url('/head-neck.png'); }
+.glass-panel-heavy:has(span[style*="177, 92, 255"]) { --symptom-card-image: url('/head-neck.png'); }
+.glass-panel-interactive:has(span[style*="255, 138, 0"]) { --symptom-card-image: url('/metabolic-endocrine.png'); }
+.glass-panel-heavy:has(span[style*="255, 138, 0"]) { --symptom-card-image: url('/metabolic-endocrine.png'); }
+.glass-panel-interactive:has(span[style*="0, 230, 118"]) { --symptom-card-image: url('/stomach-gut.png'); }
+.glass-panel-heavy:has(span[style*="0, 230, 118"]) { --symptom-card-image: url('/stomach-gut.png'); }
+.glass-panel-interactive:has(span[style*="255, 92, 214"]) { --symptom-card-image: url('/skin-sleep.png'); }
+.glass-panel-heavy:has(span[style*="255, 92, 214"]) { --symptom-card-image: url('/skin-sleep.png'); }
