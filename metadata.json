@@ -1,0 +1,6 @@
+{
+  "name": "Cure Your Life+",
+  "description": "A beautifully crafted full-stack psychosomatic dictionary connecting emotional origins with physical ailments, complete with scientific physiological breakdowns, daily mindfulness exercises, and a sarcastic AI assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

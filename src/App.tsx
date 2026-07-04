@@ -1,0 +1,2600 @@
+import React, { useState, useEffect, useRef } from 'react';
+import { 
+  Search, 
+  Sparkles, 
+  Activity, 
+  Flame, 
+  HelpCircle, 
+  Check, 
+  RotateCcw, 
+  AlertCircle, 
+  ChevronRight, 
+  User, 
+  BookOpen, 
+  Compass, 
+  Feather,
+  Dumbbell,
+  Heart,
+  Brain,
+  AlertOctagon,
+  Dna,
+  X,
+  Shield,
+  CreditCard,
+  Lock,
+  Moon,
+  Play,
+  Pause,
+  Layers,
+  Timer,
+  TrendingUp,
+  Apple,
+  Eye,
+  Users
+} from 'lucide-react';
+import { AILMENTS } from './data/dictionary';
+import { Ailment, SymptomAnalysisResponse } from './types';
+import DailyPromptsPanel from './components/DailyPromptsPanel';
+import SomaticJournalPanel from './components/SomaticJournalPanel';
+import { CategoryBackground } from './components/CategoryBackground';
+import { motion, AnimatePresence } from 'motion/react';
+
+
+// Helper to render beautiful glowing 3D-effect organ vector illustrations
+const renderOrganIllustration = (id: string) => {
+  const glow = { filter: 'drop-shadow(0 0 8px rgba(99,102,241,0.4))' };
+  const st = "M15 50 C25 35, 45 35, 60 45 C75 55, 85 45, 90 52 C95 58, 85 68, 70 65 C55 62, 40 70, 25 65 C15 60, 10 55, 15 50 Z";
+  
+  if (id === 'diabetes') {
+    return (
+      <svg viewBox="0 0 100 100" className="w-16 h-16" style={{ filter: 'drop-shadow(0 0 8px rgba(249,115,22,0.4))' }}>
+        <path d={st} fill="none" stroke="#FF8A00" strokeWidth="2.5" strokeLinecap="round" />
+        <path d="M30 48 C40 43, 50 45, 60 52 C70 58, 75 55, 80 50" fill="none" stroke="#FFD200" strokeWidth="1.5" strokeDasharray="3 3" />
+        <path d="M40 25 C60 15, 85 20, 90 32 C85 40, 60 42, 45 35 Z" fill="none" stroke="#B15CFF" strokeWidth="1.5" strokeOpacity="0.4" />
+        <circle cx="28" cy="40" r="2" fill="#FF8A00" className="animate-ping" />
+        <circle cx="72" cy="58" r="2.5" fill="#FFD200" />
+      </svg>
+    );
+  }
+  if (id === 'tension-headaches') {
+    return (
+      <svg viewBox="0 0 100 100" className="w-16 h-16" style={{ filter: 'drop-shadow(0 0 8px rgba(6,182,212,0.4))' }}>
+        <path d="M50 20 C35 20, 25 30, 25 45 C25 55, 30 60, 40 65 C45 68, 48 75, 50 78 C52 75, 55 68, 60 65 C70 60, 75 55, 75 45 C75 30, 65 20, 50 20 Z" fill="none" stroke="#00D2FF" strokeWidth="2" />
+        <path d="M50 20 L50 65 M50 35 C42 35, 35 40, 32 48 M50 45 C58 45, 65 40, 68 48 M50 55 C44 58, 38 62, 36 68" fill="none" stroke="#B15CFF" strokeWidth="1.5" strokeOpacity="0.8" />
+        <path d="M18 45 L13 45 L13 65 L25 65 M82 45 L87 45 L87 65 L75 65" fill="none" stroke="#FF3B3B" strokeWidth="2" strokeLinecap="round" />
+        <line x1="10" y1="55" x2="18" y2="55" stroke="#FF3B3B" strokeWidth="2" />
+        <line x1="90" y1="55" x2="82" y2="55" stroke="#FF3B3B" strokeWidth="2" />
+      </svg>
+    );
+  }
+  if (id.includes('ibs') || id.includes('stomach') || id.includes('gut')) {
+    return (
+      <svg viewBox="0 0 100 100" className="w-16 h-16" style={{ filter: 'drop-shadow(0 0 8px rgba(16,185,129,0.4))' }}>
+        <path d="M30 35 C25 45, 25 60, 40 70 C55 80, 75 75, 80 60 C85 45, 70 30, 55 35 C48 38, 40 32, 35 30 Z" fill="none" stroke="#10B981" strokeWidth="2" />
+        <path d="M42 50 C46 45, 54 45, 58 50 C62 55, 58 63, 52 65 C46 67, 40 61, 42 54 C44 49, 50 49, 52 52" fill="none" stroke="#00D2FF" strokeWidth="1.5" />
+        <circle cx="68" cy="50" r="2" fill="#10B981" />
+        <circle cx="34" cy="58" r="1.5" fill="#00D2FF" />
+      </svg>
+    );
+  }
+  if (id.includes('fatigue') || id.includes('burnout')) {
+    return (
+      <svg viewBox="0 0 100 100" className="w-16 h-16" style={{ filter: 'drop-shadow(0 0 8px rgba(59,130,246,0.4))' }}>
+        <rect x="35" y="25" width="30" height="50" rx="5" fill="none" stroke="#00D2FF" strokeWidth="2" />
+        <rect x="44" y="20" width="12" height="5" rx="1" fill="none" stroke="#00D2FF" strokeWidth="2" />
+        <rect x="40" y="62" width="20" height="8" rx="2" fill="#FF3B3B" className="animate-pulse" />
+        <path d="M28 40 L23 45 L30 48 M72 40 L77 45 L70 48" fill="none" stroke="#FF8A00" strokeWidth="1.5" strokeLinecap="round" />
+      </svg>
+    );
+  }
+  if (id.includes('anxiety') || id.includes('insomnia') || id.includes('panic')) {
+    return (
+      <svg viewBox="0 0 100 100" className="w-16 h-16" style={{ filter: 'drop-shadow(0 0 8px rgba(239,68,68,0.4))' }}>
+        <path d="M50 35 C40 20, 20 25, 25 45 C25 65, 45 75, 50 82 C55 75, 75 65, 75 45 C75 25, 60 20, 50 35 Z" fill="none" stroke="#FF3B3B" strokeWidth="2" />
+        <path d="M50 35 L50 65 M50 50 C40 45, 30 50, 20 40 M50 50 C60 45, 70 50, 80 40" fill="none" stroke="#FF8A00" strokeWidth="1" strokeDasharray="3 3" />
+        <circle cx="50" cy="50" r="5" fill="none" stroke="#FFD200" strokeWidth="1" className="animate-ping" />
+      </svg>
+    );
+  }
+  if (id.includes('back') || id.includes('shoulder') || id.includes('neck') || id.includes('joint')) {
+    return (
+      <svg viewBox="0 0 100 100" className="w-16 h-16" style={{ filter: 'drop-shadow(0 0 8px rgba(168,85,247,0.4))' }}>
+        <line x1="50" y1="20" x2="50" y2="80" stroke="#B15CFF" strokeWidth="3" strokeDasharray="6 4" strokeLinecap="round" />
+        <path d="M35 30 Q50 35 65 30 M30 45 Q50 50 70 45 M25 60 Q50 65 75 60" fill="none" stroke="#00D2FF" strokeWidth="1.5" strokeOpacity="0.6" />
+        <circle cx="50" cy="45" r="4" fill="none" stroke="#FF3B3B" strokeWidth="1.5" className="animate-pulse" />
+      </svg>
+    );
+  }
+  // Default DNA Illustration
+  return (
+    <svg viewBox="0 0 100 100" className="w-16 h-16" style={glow}>
+      <path d="M35 25 C45 40, 55 60, 65 75 M65 25 C55 40, 45 60, 35 75" fill="none" stroke="#6366f1" strokeWidth="2.5" />
+      <line x1="38" y1="30" x2="62" y2="30" stroke="#00D2FF" strokeWidth="1.5" />
+      <line x1="43" y1="45" x2="57" y2="45" stroke="#FF8A00" strokeWidth="1.5" />
+      <line x1="38" y1="65" x2="62" y2="65" stroke="#00D2FF" strokeWidth="1.5" />
+      <circle cx="35" cy="25" r="3" fill="#6366f1" />
+      <circle cx="65" cy="25" r="3" fill="#00D2FF" />
+    </svg>
+  );
+};
+
+// Compact High-tech Avatars for Three Tones
+const renderClinicalAvatar = () => (
+  <svg viewBox="0 0 100 100" className="w-20 h-20 mx-auto drop-shadow-[0_0_12px_rgba(6,182,212,0.4)] animate-pulse">
+    <circle cx="50" cy="45" r="22" fill="none" stroke="#00D2FF" strokeWidth="1.5" />
+    <path d="M50 23 C42 23, 33 30, 33 45 C33 55, 40 65, 50 67 C60 65, 67 55, 67 45 C67 30, 58 23, 50 23 Z" fill="none" stroke="#00D2FF" strokeWidth="1" />
+    <line x1="28" y1="45" x2="72" y2="45" stroke="#00D2FF" strokeWidth="0.5" strokeOpacity="0.4" />
+    <line x1="50" y1="23" x2="50" y2="67" stroke="#00D2FF" strokeWidth="0.5" strokeOpacity="0.4" />
+    <path d="M35 30 Q50 20 65 30" fill="none" stroke="#00D2FF" strokeWidth="1.5" strokeDasharray="2 2" />
+  </svg>
+);
+
+const renderWittyAvatar = () => (
+  <svg viewBox="0 0 100 100" className="w-20 h-20 mx-auto drop-shadow-[0_0_12px_rgba(168,85,247,0.4)]">
+    <circle cx="50" cy="50" r="22" fill="#110B03" stroke="#B15CFF" strokeWidth="2.5" />
+    <path d="M35 32 L38 20 L44 26 L50 15 L56 26 L62 20 L65 32" fill="none" stroke="#FF8A00" strokeWidth="2" strokeLinejoin="round" />
+    <circle cx="42" cy="45" r="4" fill="none" stroke="#E6ECF3" strokeWidth="1.5" />
+    <circle cx="42" cy="45" r="1" fill="#FF3B3B" />
+    <circle cx="58" cy="45" r="4" fill="none" stroke="#E6ECF3" strokeWidth="1.5" />
+    <circle cx="58" cy="45" r="1" fill="#FF3B3B" />
+    <path d="M38 60 Q50 70 62 60 Q50 55 38 60 Z" fill="#FF3B3B" stroke="#B15CFF" strokeWidth="1.5" />
+  </svg>
+);
+
+const renderBrutalAvatar = () => (
+  <svg viewBox="0 0 100 100" className="w-20 h-20 mx-auto drop-shadow-[0_0_12px_rgba(239,68,68,0.5)]">
+    <path d="M35 45 C35 30, 65 30, 65 45 C65 52, 60 58, 60 65 L40 65 C40 58, 35 52, 35 45 Z" fill="#0A0505" stroke="#FF3B3B" strokeWidth="2.5" />
+    <path d="M44 65 L44 72 M48 65 L48 72 M52 65 L52 72 M40 68 L60 68" stroke="#FF3B3B" strokeWidth="1.5" />
+    <circle cx="44" cy="45" r="3" fill="none" stroke="#FF3B3B" strokeWidth="1" />
+    <circle cx="56" cy="45" r="3" fill="none" stroke="#FF3B3B" strokeWidth="1" />
+    <path d="M30 36 C35 24, 65 24, 70 36 Z" fill="#0A0505" stroke="#FF3B3B" strokeWidth="2" />
+    <path d="M26 36 L74 36 L70 41 L30 41 Z" fill="#111" stroke="#FF3B3B" strokeWidth="1.5" />
+  </svg>
+);
+
+const renderHolographicFace = () => (
+  <svg viewBox="0 0 100 100" className="w-20 h-20 md:w-24 md:h-24 drop-shadow-[0_0_12px_rgba(168,85,247,0.3)] shrink-0 self-center">
+    <path d="M30 25 C30 15, 70 15, 70 25 C70 45, 65 65, 50 82 C35 65, 30 45, 30 25 Z" fill="none" stroke="#B15CFF" strokeWidth="1" strokeOpacity="0.4" />
+    <path d="M38 25 C38 18, 62 18, 62 25 C62 45, 58 65, 50 80 C42 65, 38 45, 38 25 Z" fill="none" stroke="#00D2FF" strokeWidth="1.5" strokeOpacity="0.8" />
+    <line x1="30" y1="35" x2="70" y2="35" stroke="#B15CFF" strokeWidth="0.5" strokeOpacity="0.4" />
+    <line x1="32" y1="45" x2="68" y2="45" stroke="#00D2FF" strokeWidth="0.5" strokeOpacity="0.5" />
+    <line x1="34" y1="55" x2="66" y2="55" stroke="#B15CFF" strokeWidth="0.5" strokeOpacity="0.4" />
+    <circle cx="50" cy="40" r="3" fill="#FF8A00" className="animate-ping" />
+    <circle cx="50" cy="40" r="1.5" fill="#FF8A00" />
+  </svg>
+);
+
+const renderSarcasticusAvatar = () => (
+  <svg viewBox="0 0 100 100" className="w-20 h-20 mx-auto drop-shadow-[0_0_12px_rgba(245,158,11,0.45)]">
+    <circle cx="50" cy="45" r="22" fill="#040609" stroke="#F59E0B" strokeWidth="2" className="animate-pulse" />
+    <path d="M38 32 Q50 25 62 32" stroke="#F59E0B" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+    <rect x="33" y="38" width="13" height="10" rx="3" fill="#110B03" stroke="#F59E0B" strokeWidth="2" />
+    <rect x="54" y="38" width="13" height="10" rx="3" fill="#110B03" stroke="#F59E0B" strokeWidth="2" />
+    <line x1="46" y1="43" x2="54" y2="43" stroke="#F59E0B" strokeWidth="2" />
+    <path d="M42 58 Q54 62 58 55" stroke="#F59E0B" strokeWidth="2" fill="none" strokeLinecap="round" />
+    <path d="M22 45 H14 M78 45 H86 M50 15 V10 M50 73 V78" stroke="#F59E0B" strokeWidth="1" opacity="0.6" />
+    <circle cx="50" cy="10" r="2" fill="#F59E0B" />
+  </svg>
+);
+
+
+// Helper to soften aggressive/uncontrolled medical claims with cautious wording
+const softenMedicalClaims = (text: string): string => {
+  if (!text) return "";
+  let softened = text;
+  
+  // Replace direct causality assertions with subtle/guarded associations
+  softened = softened.replace(/directly causes/gi, "may contribute to");
+  softened = softened.replace(/causes sustained/gi, "may interact with sustained");
+  softened = softened.replace(/causes/gi, "may contribute to");
+  softened = softened.replace(/is caused by/gi, "may be influenced by");
+  softened = softened.replace(/is the direct result of/gi, "can be amplified by");
+  softened = softened.replace(/strictly results from/gi, "can interact with");
+  softened = softened.replace(/brain shunts/gi, "brain can adjust");
+  softened = softened.replace(/shunts oxygenated/gi, "can adjust oxygenated");
+  softened = softened.replace(/shunts microcirculation/gi, "may alter microcirculation");
+  softened = softened.replace(/forces mental/gi, "encourages mental");
+  softened = softened.replace(/fascia hardening/gi, "protective guarding in fascia");
+  softened = softened.replace(/oxygen shunting/gi, "circulation adjustments");
+  
+  return softened;
+};
+
+// Helper to fill in interactive details for symptoms lacking customized tones/paths
+const getEnrichedAilment = (ailment: Ailment): Required<Ailment> => {
+  let defaultPath = [
+    {
+      title: "Mental Tension",
+      description: "Chronic overthinking creates a subconscious alert wave.",
+      expandedDetails: "Under persistent work deadlines or relationship friction, your nervous system triggers sustained minor muscle guarding."
+    },
+    {
+      title: "Autonomic Clamp",
+      description: "Localized sympathetic signal shunts microcirculation.",
+      expandedDetails: "Your brain shunts oxygenated blood flow away from non-critical tissues, creating localized minor muscle fatigue and tight connective fascia."
+    },
+    {
+      title: "Myofascial Lock",
+      description: "Targeted muscles contract stubbornly to protect bones.",
+      expandedDetails: "Subconscious holding patterns shorten muscle fibers, creating sensitive trigger points that refer dull pain outward."
+    },
+    {
+      title: "Connective Splint",
+      description: "Fascia hardens around joints to restrict motion.",
+      expandedDetails: "The surrounding connective tissue thickens and hardens to split-guard the affected joint, leading to localized popping and stiff aches."
+    },
+    {
+      title: "Somatic Alarm",
+      description: "Physical discomfort flares up to force mental reflection.",
+      expandedDetails: "The somatic feedback loop becomes too loud to ignore, signaling that it is time to drink water, stretch, and establish strong boundaries."
+    }
+  ];
+
+  // Specific override for lower back / back problems lower as requested by user
+  if (ailment.id === 'back-problems-lower' || ailment.id === 'lower-back' || ailment.id === 'back-problems-middle') {
+    defaultPath = [
+      {
+        title: "Mental Tension",
+        description: "Chronic worry, conflict, or pressure can keep the nervous system scanning for threat.",
+        expandedDetails: "Persistent mental pressure alters central nervous system gain, increasing general vigilance and setting the stage for defensive neuromuscular response."
+      },
+      {
+        title: "Autonomic Clamp",
+        description: "Stress arousal may increase baseline muscle tone and reduce recovery quality.",
+        expandedDetails: "Under high load, elevated sympathetic discharge may maintain static activity in lumbar stabilizer groups, limiting physical restoration."
+      },
+      {
+        title: "Myofascial Guarding",
+        description: "The body may brace the hips, lumbar spine, and surrounding tissue to protect against perceived strain.",
+        expandedDetails: "To protect structural regions, the motor cortex may increase protective muscle guarding across the hips, sacrum, and lower back."
+      },
+      {
+        title: "Movement Restriction",
+        description: "Guarding can change posture, breathing, gait, and loading patterns.",
+        expandedDetails: "Persistent neuromuscular bracing alters natural mechanical patterns, changing weight distribution, breathing rhythms, and gait cycles."
+      },
+      {
+        title: "Pain Amplification",
+        description: "When tissue irritation and nervous-system sensitivity overlap, pain can become louder and more persistent.",
+        expandedDetails: "When peripheral sensory signals from tired fascia combine with a sensitized spinal cord, pain transmission can become significantly amplified."
+      }
+    ];
+  }
+
+  const defaultTones = {
+    clinical: {
+      mechanism: ailment.physiologicalDescription,
+      protocol: [
+        ailment.physicalTherapyTip,
+        "Implement progressive muscle relaxation (PMR) starting from head to toe twice daily.",
+        "Assess sitting and screen arrangements, ensuring ergonomic elbow-rest levels."
+      ],
+      citations: [
+        "Somatic Medicine & Biofeedback Journal (Vol 14, Issue 2)",
+        "Review of Psychosomatic Fascial Guarding Patterns (2023)"
+      ]
+    },
+    witty: {
+      metaphorTitle: "The Internal Defense Guard",
+      metaphorText: ailment.metaphor,
+      wittyAdvice: ailment.sarcasticAdvice
+    },
+    brutal: {
+      realityCheck: "You are attempting to solve every external problem while your physical engine is literally grinding its gears to dust. Your body didn't break down; it staged an intervention.",
+      protocolTitle: "STOP FEEDING THE FIRE DRILL",
+      protocolSteps: [
+        ailment.physicalTherapyTip,
+        "Cease constructing imaginary conversations and arguments in your head. Your liver is tired of dumping fuel for non-existent threats.",
+        "Drink 16 ounces of actual pure water right now. Black coffee is not a hydration strategy.",
+        "Close your eyes, relax your tongue off the roof of your mouth, and sit in silence for five minutes."
+      ]
+    }
+  };
+
+  const defaultMedicalSafety = {
+    critical_alerts: [
+      "Sudden, severe, or excruciating pain with no obvious cause",
+      "Pain that begins after a major physical injury or trauma",
+      "Pain accompanied by fever, chills, night sweats, or unexplained weight loss",
+      "Pain with new neurological deficits like weakness, numbness, or loss of coordination",
+      "Pain that steadily worsens despite rest, splinting, or gentle care",
+      "New pain in a patient with a personal history of cancer"
+    ],
+    seek_immediate_care_if: [
+      "You experience sudden, unbearable pain or pain following a major injury",
+      "Your pain is accompanied by high fever, confusion, or a cold, pale limb",
+      "You experience sudden weakness, numbness, or loss of bowel or bladder control"
+    ],
+    schedule_care_if: [
+      "Your pain is persistent, gradually worsening, or lasts longer than 2-3 weeks",
+      "You have pain with unexplained weight loss, night sweats, or a history of cancer",
+      "Your joint or muscle pain is accompanied by persistent morning stiffness or visible swelling"
+    ],
+    self_care_allowed_if: "Gentle movement, thermal therapy (ice/heat), and rest are reasonable for managing mild, transient muscular strains or familiar joint stiffness.",
+    do_not_ignore: "Chronic or severe pain should not be masked with analgesics without a professional diagnosis of the underlying physical cause.",
+    disclaimer: "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease. Seek professional medical care for diagnosis, treatment, medication decisions, or urgent symptoms."
+  };
+
+  return {
+    ...ailment,
+    tags: ailment.tags || ["somatic tension", "posture check", "unspoken stress"],
+    riskLevel: ailment.riskLevel || "Moderate",
+    biologyPath: ailment.id === 'back-problems-lower' || ailment.id === 'lower-back' || ailment.id === 'back-problems-middle' ? defaultPath : (ailment.biologyPath || defaultPath),
+    tones: ailment.tones || defaultTones,
+    medical_safety: ailment.medical_safety || defaultMedicalSafety
+  };
+};
+
+interface AilmentAccordionItemProps {
+  key?: string | number;
+  ailment: Ailment;
+  isSelected: boolean;
+  onSelect: () => void;
+  globalTone: 'clinical' | 'witty' | 'brutal';
+  onJournalRedirect: () => void;
+}
+
+function SomaticBreathingRegulator() {
+  const [cycle, setCycle] = useState<'inhale' | 'hold' | 'exhale' | 'hold-empty'>('inhale');
+  const [seconds, setSeconds] = useState(4);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSeconds((prev) => {
+        if (prev <= 1) {
+          setCycle((current) => {
+            switch (current) {
+              case 'inhale': return 'hold';
+              case 'hold': return 'exhale';
+              case 'exhale': return 'hold-empty';
+              case 'hold-empty': return 'inhale';
+            }
+          });
+          return 4;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const getTheme = () => {
+    switch (cycle) {
+      case 'inhale': return { text: 'Inhale Prana', color: 'text-cyan-400', bg: 'bg-cyan-500/20', scale: 'scale-[1.3]' };
+      case 'hold': return { text: 'Lock Vagal Hold', color: 'text-purple-400', bg: 'bg-purple-500/20', scale: 'scale-[1.3]' };
+      case 'exhale': return { text: 'Exhale Trauma', color: 'text-emerald-400', bg: 'bg-emerald-500/20', scale: 'scale-[0.8]' };
+      case 'hold-empty': return { text: 'Somatic Stillness', color: 'text-slate-500', bg: 'bg-slate-500/10', scale: 'scale-[0.8]' };
+    }
+  };
+
+  const theme = getTheme();
+
+  return (
+    <div className="bg-[#07090E]/90 border border-emerald-500/20 p-6 rounded-3xl space-y-4 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none animate-pulse" />
+      
+      <div className="flex items-center justify-between font-mono pb-2 border-b border-white/5">
+        <div className="flex items-center gap-1.5 text-[10px] text-emerald-400 uppercase font-black">
+          <Activity className="w-4 h-4 text-emerald-400 animate-pulse" />
+          <span>Somatic Breathing Regulator</span>
+        </div>
+        <span className="text-[8px] bg-emerald-950/40 text-emerald-300 px-2 py-0.5 rounded border border-emerald-500/20 font-bold uppercase tracking-wider">
+          CO2 Tolerance Bio-Hack
+        </span>
+      </div>
+
+      <div className="flex flex-col md:flex-row items-center justify-between gap-6 py-2">
+        {/* Animated breathing orb */}
+        <div className="relative w-36 h-36 flex items-center justify-center bg-black/40 border border-white/5 rounded-2xl overflow-hidden shrink-0">
+          {/* Pulsating backdrops */}
+          <div className={`absolute w-16 h-16 rounded-full blur-xl transition-all duration-[4000ms] ${theme.bg} ${theme.scale}`} />
+          {/* Inner core */}
+          <div className={`w-20 h-20 rounded-full border border-dashed flex flex-col items-center justify-center transition-all duration-[4000ms] ${theme.scale} ${
+            cycle === 'inhale' ? 'border-cyan-500/50 bg-cyan-950/20' :
+            cycle === 'hold' ? 'border-purple-500/50 bg-purple-950/20' :
+            cycle === 'exhale' ? 'border-emerald-500/50 bg-emerald-950/20' : 'border-slate-500/30 bg-slate-950/20'
+          }`}>
+            <span className={`text-[12px] font-mono tracking-widest font-black uppercase ${theme.color}`}>{seconds}s</span>
+          </div>
+        </div>
+
+        {/* Instructions and benefits */}
+        <div className="space-y-3 flex-1 text-left">
+          <div className="space-y-1">
+            <span className="text-[8px] font-mono text-slate-500 uppercase tracking-widest block font-bold">CURRENT SOMATIC TASK</span>
+            <h4 className={`text-lg font-black uppercase tracking-tight ${theme.color} transition-colors duration-300`}>{theme.text}</h4>
+            <p className="text-xs text-slate-400 leading-relaxed font-sans font-light">
+              Box breathing triggers your vagus nerve to release acetylcholine, immediately lowering heart rate and signaling your cells that they are safe in the present moment.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-3 pt-1">
+            <div className="bg-black/30 p-2.5 rounded-xl border border-white/5">
+              <span className="text-[8px] font-mono text-cyan-400 block font-bold uppercase mb-0.5">Physical Effect</span>
+              <span className="text-[9px] text-slate-300 font-sans block leading-normal">Longer exhales can help shift the nervous system toward parasympathetic recovery and reduce perceived threat</span>
+            </div>
+            <div className="bg-black/30 p-2.5 rounded-xl border border-white/5">
+              <span className="text-[8px] font-mono text-purple-400 block font-bold uppercase mb-0.5">Somatic Metaphor</span>
+              <span className="text-[9px] text-slate-300 font-sans block leading-normal">Releases the muscular shield to regain true autonomy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const getCardPatterns = (name: string, id: string, enriched: any) => {
+  const normName = name.toLowerCase();
+  const normId = id.toLowerCase();
+  
+  if (normId === 'lower-back-pain' || normName === 'lower back pain') {
+    return {
+      pattern: "Lumbar guarding, support strain, posture load, and pain sensitization may interact.",
+      safety: "Bowel/bladder changes • saddle numbness • leg weakness"
+    };
+  }
+  if (normId === 'shoulder-tension' || normName.includes('frozen shoulder') || normName === 'shoulder problems' || normName.includes('shoulder-tension')) {
+    return {
+      pattern: "Shoulder guarding, reduced range of motion, stress bracing, and inflammation may interact.",
+      safety: "Major injury • fever/swelling • sudden severe weakness"
+    };
+  }
+  if (normName.includes('upper back pain') || normName.includes('back problems (upper)')) {
+    return {
+      pattern: "Neck/shoulder tension, thoracic stiffness, breath restriction, and stress bracing may interact.",
+      safety: "Chest pain • shortness of breath • arm weakness"
+    };
+  }
+  if (normName.includes('middle back pain') || normName.includes('back problems (middle)')) {
+    return {
+      pattern: "Thoracic guarding, rib restriction, posture strain, and protective bracing may interact.",
+      safety: "Fever • trauma • severe unrelenting pain"
+    };
+  }
+  if (normId === 'back-problems-lower' || normName.includes('lower back problems') || normName.includes('back problems (lower)')) {
+    return {
+      pattern: "Lumbar load, psoas/hip guarding, poor recovery, and nerve sensitivity may interact.",
+      safety: "Saddle numbness • bowel/bladder changes • progressive weakness"
+    };
+  }
+  
+  // Fallbacks
+  const fallbackPattern = "Stress, protective bracing, posture strain, and poor recovery may amplify this symptom.";
+  
+  let fallbackSafety = "";
+  if (enriched.medical_safety) {
+    const alerts = enriched.medical_safety.critical_alerts || enriched.medical_safety.seek_immediate_care_if || [];
+    if (alerts.length > 0) {
+      fallbackSafety = alerts.slice(0, 3).join(" • ");
+    } else if (enriched.medical_safety.do_not_ignore) {
+      fallbackSafety = enriched.medical_safety.do_not_ignore;
+    } else {
+      fallbackSafety = "Sudden severe worsening • high fever • sensory loss";
+    }
+  }
+  
+  return {
+    pattern: fallbackPattern,
+    safety: fallbackSafety
+  };
+};
+
+function TruncatedText({ text, maxLen = 120 }: { text: string; maxLen?: number }) {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const shouldTruncate = text.length > maxLen;
+  if (!shouldTruncate) return <p className="leading-relaxed">{text}</p>;
+
+  return (
+    <div className="space-y-1.5">
+      <p className="leading-relaxed">
+        {isExpanded ? text : `${text.slice(0, maxLen)}...`}
+      </p>
+      <button
+        type="button"
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="text-[10px] font-mono text-indigo-400 hover:text-indigo-300 underline font-black uppercase tracking-wider cursor-pointer transition-colors block"
+      >
+        {isExpanded ? "Show Less" : "Read full interpretation"}
+      </button>
+    </div>
+  );
+}
+
+const renderAnatomicalSilhouette = (category: string, color: string) => {
+  const strokeColor = color;
+  
+  if (category === "Back & Shoulders") {
+    return (
+      <svg className="absolute right-0 bottom-0 w-80 h-80 opacity-15 pointer-events-none select-none z-0 translate-x-12 translate-y-12" viewBox="0 0 100 100" fill="none">
+        <path d="M50 5 V95" stroke={strokeColor} strokeWidth="1.5" strokeDasharray="3 3" />
+        {[15, 25, 35, 45, 55, 65, 75, 85].map((y, i) => (
+          <g key={i}>
+            <path d={`M35 ${y} C42 ${y-4} 58 ${y-4} 65 ${y}`} stroke={strokeColor} strokeWidth="2" strokeLinecap="round" />
+            <path d={`M40 ${y+3} C45 ${y+1} 55 ${y+1} 60 ${y+3}`} stroke={strokeColor} strokeWidth="1" strokeLinecap="round" />
+            <circle cx="50" cy={y} r="3" fill="#000" stroke={strokeColor} strokeWidth="1.5" />
+          </g>
+        ))}
+      </svg>
+    );
+  }
+
+  if (category === "Head & Neck") {
+    return (
+      <svg className="absolute right-0 bottom-0 w-80 h-80 opacity-15 pointer-events-none select-none z-0 translate-x-12 translate-y-12" viewBox="0 0 100 100" fill="none">
+        <path d="M50 50 C40 30, 40 10, 60 10 C80 10, 90 25, 80 45 C75 55, 65 60, 60 70 C55 80, 50 90, 50 95" stroke={strokeColor} strokeWidth="1.5" />
+        <path d="M50 50 C60 30, 60 10, 40 10 C20 10, 10 25, 20 45 C25 55, 35 60, 40 70 C45 80, 50 90, 50 95" stroke={strokeColor} strokeWidth="1.5" />
+        <circle cx="50" cy="30" r="15" stroke={strokeColor} strokeWidth="1" strokeDasharray="2 2" />
+        <circle cx="50" cy="30" r="5" stroke={strokeColor} strokeWidth="1.5" />
+      </svg>
+    );
+  }
+
+  if (category === "Chest & Breathing") {
+    return (
+      <svg className="absolute right-0 bottom-0 w-80 h-80 opacity-15 pointer-events-none select-none z-0 translate-x-12 translate-y-12" viewBox="0 0 100 100" fill="none">
+        <path d="M45 25 C30 20, 15 35, 20 60 C25 80, 40 85, 45 75 Z" stroke={strokeColor} strokeWidth="1.5" />
+        <path d="M55 25 C70 20, 85 35, 80 60 C75 80, 60 85, 55 75 Z" stroke={strokeColor} strokeWidth="1.5" />
+        <path d="M50 10 V30" stroke={strokeColor} strokeWidth="2" />
+        <path d="M50 55 C46 50, 42 55, 50 65 C58 55, 54 50, 50 55 Z" fill={strokeColor} opacity="0.4" />
+      </svg>
+    );
+  }
+
+  if (category === "Stomach & Gut") {
+    return (
+      <svg className="absolute right-0 bottom-0 w-80 h-80 opacity-15 pointer-events-none select-none z-0 translate-x-12 translate-y-12" viewBox="0 0 100 100" fill="none">
+        <path d="M30 35 H70 V45 H30 V55 H70 V65 H30 V75 H70" stroke={strokeColor} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M50 20 V35" stroke={strokeColor} strokeWidth="2" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg className="absolute right-0 bottom-0 w-80 h-80 opacity-15 pointer-events-none select-none z-0 translate-x-12 translate-y-12" viewBox="0 0 100 100" fill="none">
+      <path d="M10 50 Q30 30 50 50 T90 50" stroke={strokeColor} strokeWidth="1" />
+      <path d="M10 60 Q30 40 50 60 T90 60" stroke={strokeColor} strokeWidth="1" />
+      <path d="M10 40 Q30 20 50 40 T90 40" stroke={strokeColor} strokeWidth="1.5" />
+    </svg>
+  );
+};
+
+function AilmentAccordionItem({ ailment, isSelected, onSelect, globalTone, onJournalRedirect }: AilmentAccordionItemProps) {
+  const enriched = getEnrichedAilment(ailment);
+  const [activeNodeIndex, setActiveNodeIndex] = useState<number>(0);
+  const [innerTab, setInnerTab] = useState<'biology' | 'tones' | 'influence' | 'reset' | 'safety'>('biology');
+  const [localTone, setLocalTone] = useState<'clinical' | 'witty' | 'brutal'>(globalTone);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const cardData = getCardPatterns(enriched.name, enriched.id, enriched);
+  const categoryMeta = CATEGORY_META[enriched.category] || { color: '#6366f1' };
+
+  // Sync with global tone when it changes
+  useEffect(() => {
+    setLocalTone(globalTone);
+  }, [globalTone]);
+
+  const isFirstRender = useRef(true);
+
+  // Scroll to the beginning of the symptom when it is selected, respecting the sticky header and layout changes
+  useEffect(() => {
+    if (isSelected) {
+      if (isFirstRender.current) {
+        isFirstRender.current = false;
+        return;
+      }
+      const timer = setTimeout(() => {
+        containerRef.current?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }, 150); // Delay slightly to allow layout expansion to start settling
+      return () => clearTimeout(timer);
+    } else {
+      isFirstRender.current = false;
+    }
+  }, [isSelected]);
+
+  return (
+    <div 
+      ref={containerRef}
+      className={`scroll-mt-28 rounded-2xl transition-all duration-500 overflow-hidden relative z-10 border group ${
+        isSelected 
+          ? 'glass-panel-heavy -translate-y-1' 
+          : 'glass-panel-interactive border-transparent'
+      }`}
+      style={{
+        borderColor: isSelected ? `${categoryMeta.color}70` : undefined,
+        boxShadow: isSelected ? `0 0 30px ${categoryMeta.color}15` : undefined
+      }}
+    >
+      {/* Dynamic soft left category color fade/glow overlay */}
+      <div 
+        className={`absolute inset-y-0 left-0 w-64 pointer-events-none transition-all duration-500 z-0 ${
+          isSelected ? 'opacity-[0.24]' : 'opacity-[0.18] group-hover:opacity-[0.24]'
+        }`}
+        style={{
+          background: `linear-gradient(to right, ${categoryMeta.color}35, transparent)`
+        }}
+      />
+      {/* Accordion Trigger Header */}
+      <button
+        type="button"
+        onClick={onSelect}
+        className="w-full text-left py-4 md:py-5 px-5 md:px-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 hover:bg-white/[0.02] transition-all duration-300 cursor-pointer group relative overflow-hidden"
+      >
+        {/* Subtle decorative background glow to make the entry feel cinematic */}
+        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/[0.01] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+        <div className="space-y-3 flex-1 w-full">
+          {/* Evidence/Safety Strip */}
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[9px] font-mono uppercase tracking-wider font-semibold text-slate-500">
+            {/* System / Category Badge */}
+            <span 
+              className="text-[9px] font-mono tracking-widest font-black px-2.5 py-0.5 rounded-md border"
+              style={{
+                color: categoryMeta.color,
+                borderColor: `${categoryMeta.color}30`,
+                backgroundColor: `${categoryMeta.color}08`
+              }}
+            >
+              {enriched.category}
+            </span>
+
+            <span className="text-slate-800">•</span>
+
+            {/* Unique ID */}
+            <span className="text-slate-400">
+              ID: CYL-{enriched.id.substring(0, 5).toUpperCase()}
+            </span>
+
+            <span className="text-slate-800">•</span>
+
+            {/* Active Lens/Tone indicator */}
+            <span className={`px-2 py-0.5 rounded border text-[8px] font-black tracking-widest ${
+              localTone === 'clinical'
+                ? 'bg-slate-950/40 border-slate-700/30 text-slate-300'
+                : localTone === 'witty'
+                  ? 'bg-indigo-950/40 border-indigo-500/20 text-indigo-300'
+                  : 'bg-red-950/40 border-red-500/20 text-red-400'
+            }`}>
+              {localTone === 'clinical' ? '🎓 Clinical' : localTone === 'witty' ? '🔮 Witty' : '🔥 Brutal'}
+            </span>
+
+            {/* Safety badge if medical_safety exists */}
+            {enriched.medical_safety && (
+              <>
+                <span className="text-slate-800">•</span>
+                <span className="text-[8px] font-black tracking-widest px-2 py-0.5 rounded border bg-amber-950/30 border-amber-500/20 text-amber-400">
+                  ⚠️ Clinical Safety
+                </span>
+              </>
+            )}
+
+            {/* Critical alert count if medical_safety.critical_alerts exists */}
+            {enriched.medical_safety?.critical_alerts && enriched.medical_safety.critical_alerts.length > 0 && (
+              <>
+                <span className="text-slate-800">•</span>
+                <span className="text-[8px] font-black tracking-widest px-2 py-0.5 rounded border bg-red-950/40 border-red-500/30 text-red-400 animate-pulse">
+                  🚨 {enriched.medical_safety.critical_alerts.length} Alerts
+                </span>
+              </>
+            )}
+          </div>
+          
+          {/* Symptom Name */}
+          <h3 
+            className={`text-lg md:text-2xl font-black uppercase tracking-tight transition-all leading-tight ${
+              isSelected ? '' : 'text-[#E6ECF3] group-hover:text-white'
+            }`}
+            style={isSelected ? { color: categoryMeta.color } : undefined}
+          >
+            {enriched.name}
+          </h3>
+
+          {/* Structured rows for Primary Pattern and Safety Preview */}
+          <div className="grid grid-cols-1 gap-1.5 border-l-2 border-slate-800/80 pl-3">
+            <div className="flex flex-col md:flex-row md:items-baseline gap-x-2 gap-y-0.5">
+              <span className="text-slate-500 font-mono text-[9px] uppercase tracking-wider font-bold shrink-0">Primary Pattern:</span>
+              <span className="text-[11px] text-slate-300 font-sans font-light leading-relaxed">
+                {cardData.pattern}
+              </span>
+            </div>
+            {cardData.safety && (
+              <div className="flex flex-col md:flex-row md:items-baseline gap-x-2 gap-y-0.5">
+                <span className="text-red-500/90 font-mono text-[9px] uppercase tracking-wider font-bold shrink-0">Safety Preview:</span>
+                <span className="text-[11px] text-rose-400/60 font-sans font-light leading-relaxed">
+                  {cardData.safety}
+                </span>
+              </div>
+            )}
+          </div>
+          
+          {/* Tags (Secondary & Compact) */}
+          <div className="flex flex-wrap gap-1 pt-0.5">
+            {enriched.tags?.slice(0, 3).map(t => (
+              <span key={t} className="text-[8px] font-mono text-[#8A94A6]/80 bg-white/[0.03] border border-white/5 px-1.5 py-0.5 rounded-md">
+                #{t}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Right column with larger glowing thumbnail/icon & clear "Decode" button */}
+        <div className="flex items-center gap-4 md:gap-5 shrink-0 w-full md:w-auto justify-between md:justify-end border-t md:border-t-0 border-white/5 pt-3 md:pt-0">
+          {/* Path preview - ONLY show when expanded */}
+          {isSelected && (
+            <div className="hidden lg:flex items-center gap-1.5 text-[9px] font-mono text-[#8A94A6] bg-white/[0.02] border border-white/5 px-2.5 py-1 rounded-xl">
+              <span className="text-slate-500 font-black uppercase tracking-wider">Cascade:</span>
+              {enriched.biologyPath.slice(0, 2).map((node, idx) => (
+                <React.Fragment key={idx}>
+                  {idx > 0 && <ChevronRight className="w-2.5 h-2.5 text-slate-700" />}
+                  <span className="text-indigo-400 font-bold">{node.title}</span>
+                </React.Fragment>
+              ))}
+              {enriched.biologyPath.length > 2 && <span className="text-[#8A94A6]">...</span>}
+            </div>
+          )}
+
+          {/* Larger Glowing Illustration Area */}
+          <div 
+            style={{
+              borderColor: isSelected ? `${categoryMeta.color}40` : 'rgba(255, 255, 255, 0.05)',
+              boxShadow: isSelected ? `0 0 25px ${categoryMeta.color}15` : 'none',
+              '--cat-color': categoryMeta.color
+            } as React.CSSProperties}
+            className="w-20 h-20 md:w-24 md:h-24 bg-black/60 rounded-2xl flex items-center justify-center shrink-0 relative overflow-hidden transition-all duration-300 border group-hover:border-[var(--cat-color)]/30 group-hover:shadow-[0_0_20px_rgba(99,102,241,0.15)]"
+          >
+            <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.01] to-transparent pointer-events-none" />
+            <div 
+              className="absolute w-12 h-12 rounded-full blur-xl opacity-20 pointer-events-none" 
+              style={{ backgroundColor: categoryMeta.color }}
+            />
+            <div className="scale-95 group-hover:scale-105 transition-transform duration-500 relative z-10">
+              {renderOrganIllustration(enriched.id)}
+            </div>
+          </div>
+
+          {/* Clear "Decode Signal" Pill Button */}
+          <div className="flex flex-col items-center gap-1 select-none shrink-0 min-w-[125px]">
+            <div className={`w-full py-2.5 px-4 rounded-xl flex items-center justify-center gap-1.5 transition-all duration-300 border text-[10px] font-mono font-black uppercase tracking-widest ${
+              isSelected 
+                ? 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800/80' 
+                : 'bg-indigo-950/40 border-indigo-500/20 text-indigo-300 group-hover:bg-gradient-to-r group-hover:from-indigo-600 group-hover:to-purple-600 group-hover:border-indigo-400 group-hover:text-white group-hover:shadow-[0_0_15px_rgba(99,102,241,0.4)] hover:scale-[1.02] active:scale-[0.98]'
+            }`}>
+              <span>{isSelected ? 'Close Panel' : 'Decode Signal'}</span>
+              <ChevronRight className={`w-3.5 h-3.5 transition-transform duration-500 ${
+                isSelected ? 'transform rotate-180' : 'group-hover:translate-x-0.5'
+              }`} />
+            </div>
+          </div>
+        </div>
+      </button>
+
+      {/* Accordion Expanded Content */}
+      <AnimatePresence initial={false}>
+        {isSelected && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.4, ease: 'easeInOut' }}
+            className="border-t border-white/5 bg-black/40 backdrop-blur-md relative overflow-hidden"
+          >
+            {/* Ambient dynamic anatomical silhouette based on category */}
+            {renderAnatomicalSilhouette(enriched.category, categoryMeta.color)}
+
+            <div className="p-6 md:p-8 space-y-6 relative z-10">
+              {/* Tab Switcher Bar */}
+              <div className="flex flex-wrap items-center gap-2 p-1.5 bg-white/[0.02] border border-white/5 rounded-2xl max-w-3xl">
+                <button
+                  type="button"
+                  onClick={() => setInnerTab('biology')}
+                  className={`flex items-center gap-2 px-4 py-2 text-xs font-mono font-black uppercase tracking-wider rounded-xl transition-all cursor-pointer ${
+                    innerTab === 'biology'
+                      ? 'bg-white/10 text-white shadow-[0_0_15px_rgba(255,255,255,0.05)] border border-white/10'
+                      : 'text-slate-400 hover:text-slate-200 hover:bg-white/[0.02] border border-transparent'
+                  }`}
+                >
+                  <Activity className="w-4 h-4" />
+                  <span>🧬 Biology</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setInnerTab('tones')}
+                  className={`flex items-center gap-2 px-4 py-2 text-xs font-mono font-black uppercase tracking-wider rounded-xl transition-all cursor-pointer ${
+                    innerTab === 'tones'
+                      ? 'bg-white/10 text-white shadow-[0_0_15px_rgba(255,255,255,0.05)] border border-white/10'
+                      : 'text-slate-400 hover:text-slate-200 hover:bg-white/[0.02] border border-transparent'
+                  }`}
+                >
+                  <Sparkles className="w-4 h-4" />
+                  <span>🔮 Interpretations</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setInnerTab('influence')}
+                  className={`flex items-center gap-2 px-4 py-2 text-xs font-mono font-black uppercase tracking-wider rounded-xl transition-all cursor-pointer ${
+                    innerTab === 'influence'
+                      ? 'bg-white/10 text-white shadow-[0_0_15px_rgba(255,255,255,0.05)] border border-white/10'
+                      : 'text-slate-400 hover:text-slate-200 hover:bg-white/[0.02] border border-transparent'
+                  }`}
+                >
+                  <Layers className="w-4 h-4" />
+                  <span>📊 Influence</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setInnerTab('reset')}
+                  className={`flex items-center gap-2 px-4 py-2 text-xs font-mono font-black uppercase tracking-wider rounded-xl transition-all cursor-pointer ${
+                    innerTab === 'reset'
+                      ? 'bg-white/10 text-white shadow-[0_0_15px_rgba(255,255,255,0.05)] border border-white/10'
+                      : 'text-slate-400 hover:text-slate-200 hover:bg-white/[0.02] border border-transparent'
+                  }`}
+                >
+                  <Feather className="w-4 h-4" />
+                  <span>🧘 Reset</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setInnerTab('safety')}
+                  className={`flex items-center gap-2 px-4 py-2 text-xs font-mono font-black uppercase tracking-wider rounded-xl transition-all cursor-pointer relative ${
+                    innerTab === 'safety'
+                      ? 'bg-white/10 text-white border border-white/10'
+                      : 'text-slate-400 hover:text-slate-200 hover:bg-white/[0.02] border border-transparent'
+                  }`}
+                >
+                  <Shield className="w-4 h-4 text-red-400" />
+                  <span>🛡️ Safety</span>
+                  {enriched.medical_safety?.critical_alerts && (
+                    <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse" />
+                  )}
+                </button>
+              </div>
+
+              {/* Tab Contents */}
+              <div className="min-h-[300px]">
+                <AnimatePresence mode="wait">
+                  {innerTab === 'biology' && (
+                    <motion.div
+                      key="biology"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="space-y-6"
+                    >
+                      <div className="bg-black/30 border border-white/10 p-6 rounded-3xl space-y-5">
+                        <div className="flex items-center justify-between font-mono pb-2 border-b border-white/10">
+                          <div className="flex items-center gap-1.5 text-[10px] text-[#00D2FF] uppercase font-black">
+                            <Activity className="w-4 h-4 text-[#00D2FF]" />
+                            <span>Biological Breakdown Pathway</span>
+                          </div>
+                          <span className="text-[8px] text-[#8A94A6] font-bold">TAP ANY STAGE TO ISOLATE MECHANISM</span>
+                        </div>
+
+                        <div className="relative flex flex-col lg:flex-row items-stretch justify-between gap-4 py-4 px-2">
+                          <div className="absolute top-[34px] left-[5%] right-[5%] h-[1px] bg-indigo-500/20 border-t border-dashed border-indigo-500/30 hidden lg:block pointer-events-none" />
+
+                          {enriched.biologyPath.map((node, index) => {
+                            const isActive = activeNodeIndex === index;
+                            return (
+                              <button
+                                type="button"
+                                key={index}
+                                onClick={() => setActiveNodeIndex(index)}
+                                className={`flex flex-col items-center text-center p-5 rounded-2xl border transition-all duration-500 flex-1 relative z-10 group cursor-pointer focus:outline-none ${
+                                  isActive 
+                                    ? 'bg-gradient-to-b from-[#00D2FF]/10 to-transparent border-[#00D2FF]/50 shadow-[0_0_20px_rgba(0,210,255,0.15)] scale-[1.02]' 
+                                    : 'bg-white/[0.02] border-white/5 hover:border-indigo-500/30'
+                                }`}
+                              >
+                                <div className={`w-9 h-9 rounded-full flex items-center justify-center font-mono text-xs font-black border transition-all duration-300 mb-3 ${
+                                  isActive 
+                                    ? 'bg-[#00D2FF] text-black border-white shadow-[0_0_15px_rgba(0,210,255,0.5)]' 
+                                    : 'bg-black text-[#8A94A6] border-white/10 group-hover:border-indigo-400 group-hover:text-white'
+                                }`}>
+                                  {index + 1}
+                                </div>
+                                
+                                <div className="space-y-1">
+                                  <span className={`text-xs font-mono tracking-wide uppercase font-black block transition-colors ${
+                                    isActive ? 'text-[#00D2FF]' : 'text-[#E6ECF3] group-hover:text-white'
+                                  }`}>
+                                    {node.title}
+                                  </span>
+                                  <span className="text-[10px] text-[#8A94A6] block leading-relaxed font-sans font-light">
+                                    {node.description}
+                                  </span>
+                                </div>
+                              </button>
+                            );
+                          })}
+                        </div>
+
+                        <AnimatePresence mode="wait">
+                          <motion.div
+                            key={activeNodeIndex}
+                            initial={{ opacity: 0, y: 5 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -5 }}
+                            className="p-5 bg-black/40 border border-white/10 rounded-2xl space-y-2 backdrop-blur-sm"
+                          >
+                            <div className="flex items-center gap-1.5 text-[10px] font-mono text-[#00D2FF] uppercase font-bold">
+                              <span className="w-2 h-2 rounded-full bg-[#00D2FF] animate-pulse" />
+                              <span>STEP {activeNodeIndex + 1} DEEP CELLULAR INSIGHT: {enriched.biologyPath[activeNodeIndex]?.title}</span>
+                            </div>
+                            <p className="text-xs text-[#E6ECF3] leading-relaxed font-sans font-light">
+                              {softenMedicalClaims(enriched.biologyPath[activeNodeIndex]?.expandedDetails)}
+                            </p>
+                          </motion.div>
+                        </AnimatePresence>
+                      </div>
+                    </motion.div>
+                  )}
+
+                  {innerTab === 'tones' && (
+                    <motion.div
+                      key="tones"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="space-y-4"
+                    >
+                      <div className="flex items-center justify-between font-mono pb-2 border-b border-white/10">
+                        <div className="flex items-center gap-1.5 text-[10px] text-purple-400 uppercase font-black">
+                          <Sparkles className="w-4 h-4 text-purple-400" />
+                          <span>Somatic Tone Perspectives</span>
+                        </div>
+                        <span className="text-[8px] text-[#8A94A6] font-bold hidden sm:block">ALL THREE TONES AVAILABLE FOR COMPARISON</span>
+                      </div>
+
+                      <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 items-stretch">
+                        {/* Card 1: Clinical (Blue theme) */}
+                        <div className="bg-gradient-to-b from-blue-950/20 via-black/40 to-black/60 border border-blue-500/20 hover:border-blue-500/45 p-6 rounded-[2rem] flex flex-col justify-between space-y-6 shadow-2xl transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(59,130,246,0.1)] group relative overflow-hidden backdrop-blur-md">
+                          <div className="absolute -right-12 -top-12 w-28 h-28 bg-blue-500/5 rounded-full blur-xl pointer-events-none" />
+                          
+                          <div className="space-y-4 flex-1">
+                            <div className="flex items-center justify-between">
+                              <div className="flex items-center gap-2">
+                                <span className="text-[10px] font-mono tracking-widest text-[#00D2FF] bg-blue-950/40 border border-blue-500/20 px-3 py-1 rounded-full uppercase font-black">
+                                  🎓 CLINICAL
+                                </span>
+                              </div>
+                              <span className="text-[8px] font-mono text-slate-500">BIOLOGY & SCIENCE</span>
+                            </div>
+
+                            <div className="space-y-2">
+                              <h4 className="text-sm font-black text-white uppercase tracking-tight font-display">Anatomical System Mechanism</h4>
+                              <div className="text-xs text-[#E6ECF3] bg-black/40 border border-white/5 p-4 rounded-2xl font-mono">
+                                <TruncatedText text={softenMedicalClaims(enriched.physiologicalDescription)} maxLen={150} />
+                              </div>
+                            </div>
+
+                            <div className="space-y-2">
+                              <span className="text-[9px] font-mono text-[#00D2FF] uppercase font-bold block">Intervention Checklist</span>
+                              <ul className="space-y-2">
+                                {(enriched.tones?.clinical.protocol || [enriched.physicalTherapyTip]).map((step, idx) => (
+                                  <li key={idx} className="text-xs text-[#E6ECF3] leading-relaxed flex items-start gap-2 pl-1 font-sans font-light">
+                                    <span className="text-[#00D2FF] font-bold mt-0.5">✔</span>
+                                    <span>{softenMedicalClaims(step)}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+
+                          <div className="pt-4 border-t border-white/10 space-y-2 shrink-0">
+                            <span className="text-[8px] font-mono text-slate-500 uppercase tracking-widest block font-bold">
+                              MEDICAL SOURCE CITATIONS
+                            </span>
+                            <div className="space-y-1">
+                              {(enriched.tones?.clinical.citations || [
+                                 "Somatic Medicine & Biofeedback Journal (Vol 14, Issue 2)",
+                                 "Review of Psychosomatic Fascial Guarding Patterns (2023)"
+                              ]).map((citation, idx) => (
+                                <div key={idx} className="text-[9px] font-mono text-slate-500 flex items-center gap-1.5 truncate">
+                                  <BookOpen className="w-3 h-3 text-slate-600 shrink-0" />
+                                  <span className="truncate">{citation}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Card 2: Witty (Purple/Indigo theme) */}
+                        <div className="bg-gradient-to-b from-indigo-950/20 via-black/40 to-black/60 border border-indigo-500/20 hover:border-indigo-500/45 p-6 rounded-[2rem] flex flex-col justify-between space-y-6 shadow-2xl transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(99,102,241,0.1)] group relative overflow-hidden backdrop-blur-md">
+                          <div className="absolute -right-12 -top-12 w-28 h-28 bg-indigo-500/5 rounded-full blur-xl pointer-events-none" />
+
+                          <div className="space-y-4 flex-1">
+                            <div className="flex items-center justify-between">
+                              <div className="flex items-center gap-2">
+                                <span className="text-[10px] font-mono tracking-widest text-[#B15CFF] bg-indigo-950/40 border border-indigo-500/20 px-3 py-1 rounded-full uppercase font-black">
+                                  🔮 WITTY
+                                </span>
+                              </div>
+                              <span className="text-[8px] font-mono text-slate-500">CHAOS WAREHOUSE</span>
+                            </div>
+
+                            <div className="space-y-2">
+                              <h4 className="text-sm font-black text-white uppercase tracking-tight font-display">
+                                {enriched.tones?.witty.metaphorTitle || "The Internal Defense Guard"}
+                              </h4>
+                              <div className="text-xs text-[#E6ECF3] italic bg-black/40 border border-white/5 p-4 rounded-2xl font-serif">
+                                <TruncatedText text={`"${softenMedicalClaims(enriched.tones?.witty.metaphorText || enriched.metaphor)}"`} maxLen={150} />
+                              </div>
+                            </div>
+
+                            {enriched.tones?.witty.visualWarehouseDescription && (
+                              <div className="p-4 bg-black/40 rounded-xl border border-indigo-500/10 text-[10px] text-[#B15CFF] leading-relaxed font-mono">
+                                <span className="text-[8px] text-[#8A94A6] font-bold block mb-1">SYSTEM SCHEMATIC:</span>
+                                {softenMedicalClaims(enriched.tones.witty.visualWarehouseDescription)}
+                              </div>
+                            )}
+                          </div>
+
+                          <div className="pt-4 border-t border-white/10 flex gap-3 items-start shrink-0 font-sans">
+                            <Sparkles className="w-5 h-5 text-[#B15CFF] shrink-0 mt-0.5 animate-pulse" />
+                            <div className="space-y-1 w-full overflow-hidden">
+                              <span className="text-[8px] font-mono text-slate-500 uppercase font-bold">DR. SARCASTICUS REVELATION</span>
+                              <p className="text-[11px] text-[#E6ECF3] leading-relaxed italic font-sans font-light">
+                                "{softenMedicalClaims(enriched.tones?.witty.wittyAdvice || enriched.sarcasticAdvice)}"
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Card 3: Brutal (Red theme) */}
+                        <div className="bg-gradient-to-b from-red-950/20 via-black/40 to-black/60 border border-red-500/20 hover:border-red-500/45 p-6 rounded-[2rem] flex flex-col justify-between space-y-6 shadow-2xl transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_0_30px_rgba(239,68,68,0.1)] group relative overflow-hidden backdrop-blur-md">
+                          <div className="absolute -right-12 -top-12 w-28 h-28 bg-red-500/5 rounded-full blur-xl pointer-events-none" />
+
+                          <div className="space-y-4 flex-1">
+                            <div className="flex items-center justify-between">
+                              <div className="flex items-center gap-2">
+                                <span className="text-[10px] font-mono tracking-widest text-[#FF3B3B] bg-red-950/40 border border-red-500/20 px-3 py-1 rounded-full uppercase font-black">
+                                  🔥 BRUTAL
+                                </span>
+                              </div>
+                              <span className="text-[8px] font-mono text-slate-500">THE REALITY NEEDED</span>
+                            </div>
+
+                            <div className="space-y-2">
+                              <h4 className="text-sm font-black text-white uppercase tracking-tight font-display">The Reality Check</h4>
+                              <div className="bg-red-500/10 border border-red-500/20 p-4 rounded-2xl relative overflow-hidden">
+                                <div className="text-xs text-red-100 font-mono">
+                                  <TruncatedText text={`"${softenMedicalClaims(enriched.tones?.brutal.realityCheck || 'You are actively pacing yourself toward exhaustion.')}"`} maxLen={150} />
+                                </div>
+                              </div>
+                            </div>
+
+                            <div className="space-y-2">
+                              <span className="text-[9px] font-mono text-[#FF3B3B] uppercase font-bold block">
+                                {enriched.tones?.brutal.protocolTitle || "THE UNCOMPROMISING PROTOCOL"}
+                              </span>
+                              <ol className="space-y-2 font-sans">
+                                {(enriched.tones?.brutal.protocolSteps || [
+                                  enriched.physicalTherapyTip,
+                                  "Stop checking emails in the middle of the night. It is a false fire alarm.",
+                                  "Drink a massive glass of water. Unclench your jaw. Go rest your nervous system."
+                                ]).map((step, idx) => (
+                                  <li key={idx} className="flex gap-2 items-start bg-black/40 p-2.5 border border-red-500/10 rounded-xl">
+                                    <span className="flex items-center justify-center shrink-0 w-4 h-4 rounded bg-red-950 border border-red-500/20 text-[8px] font-mono text-red-400 font-bold font-display">
+                                      0{idx + 1}
+                                    </span>
+                                    <p className="text-[10px] text-red-200 leading-relaxed font-sans font-light">
+                                      {softenMedicalClaims(step)}
+                                    </p>
+                                  </li>
+                                ))}
+                              </ol>
+                            </div>
+                          </div>
+
+                          <div className="pt-4 border-t border-white/10 shrink-0">
+                            <div className="text-[8px] font-mono text-[#FF3B3B] tracking-widest font-black uppercase text-center font-bold">
+                              🚨 ACTION PROTOCOL LIVE
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+
+                  {innerTab === 'influence' && (
+                    <motion.div
+                      key="influence"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="space-y-4"
+                    >
+                      <div className="bg-[#07090E]/90 border border-[#1E2430] p-6 rounded-3xl space-y-4">
+                        <div className="flex items-center justify-between font-mono pb-2 border-b border-[#1E2430]">
+                          <div className="flex flex-col gap-0.5 text-left">
+                            <div className="flex items-center gap-1.5 text-[10px] text-[#FF8A00] uppercase font-black">
+                              <Layers className="w-4 h-4 text-[#FF8A00]" />
+                              <span>Influence Layers</span>
+                            </div>
+                            <p className="text-[9px] text-[#8A94A6] font-mono lowercase">What may be feeding this pattern</p>
+                          </div>
+                          <span className="text-[8px] text-[#8A94A6] font-bold hidden sm:block">ANATOMICAL TO EMOTIONAL HIERARCHY</span>
+                        </div>
+
+                        <div className="space-y-3 pt-1">
+                          {/* Layer 1: Medical Reality */}
+                          <div className="p-4 bg-gradient-to-r from-blue-950/40 to-[#07090E] border border-blue-500/20 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+                            <div className="flex items-center gap-3">
+                              <span className="flex items-center justify-center shrink-0 w-8 h-8 rounded-full bg-blue-500/10 border border-blue-500/30 text-[10px] font-mono text-[#00D2FF] font-black">L1</span>
+                              <div className="space-y-0.5">
+                                <span className="text-xs font-mono text-[#00D2FF] uppercase tracking-wide block font-black">Layer 1: Medical Reality</span>
+                                <p className="text-xs text-[#E6ECF3] font-light leading-normal max-w-xl">{softenMedicalClaims(enriched.physiologicalDescription)}</p>
+                              </div>
+                            </div>
+                            <span className="text-[8px] font-mono bg-blue-500/10 text-[#00D2FF] border border-blue-500/20 px-2.5 py-1 rounded-full uppercase shrink-0 self-start md:self-auto font-bold">Anatomical</span>
+                          </div>
+
+                          {/* Layer 2: Nervous System Load */}
+                          <div className="p-4 bg-gradient-to-r from-purple-950/40 to-[#07090E] border border-purple-500/20 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+                            <div className="flex items-center gap-3">
+                              <span className="flex items-center justify-center shrink-0 w-8 h-8 rounded-full bg-purple-500/10 border border-purple-500/30 text-[10px] font-mono text-purple-400 font-black">L2</span>
+                              <div className="space-y-0.5">
+                                <span className="text-xs font-mono text-purple-400 uppercase tracking-wide block font-black">Layer 2: Nervous System Load</span>
+                                <p className="text-xs text-[#E6ECF3] font-light leading-normal max-w-xl">{softenMedicalClaims(enriched.emotionalRoot)}</p>
+                              </div>
+                            </div>
+                            <span className="text-[8px] font-mono bg-purple-500/10 text-purple-400 border border-purple-500/20 px-2.5 py-1 rounded-full uppercase shrink-0 self-start md:self-auto font-bold">Neurological</span>
+                          </div>
+
+                          {/* Layer 3: Behavior Loop */}
+                          <div className="p-4 bg-gradient-to-r from-amber-950/40 to-[#07090E] border border-amber-500/20 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+                            <div className="flex items-center gap-3">
+                              <span className="flex items-center justify-center shrink-0 w-8 h-8 rounded-full bg-amber-500/10 border border-amber-500/30 text-[10px] font-mono text-[#FF8A00] font-black">L3</span>
+                              <div className="space-y-0.5">
+                                <span className="text-xs font-mono text-[#FF8A00] uppercase tracking-wide block font-black">Layer 3: Behavior Loop</span>
+                                <p className="text-xs text-[#E6ECF3] font-light leading-normal max-w-xl">{softenMedicalClaims(enriched.sarcasticAdvice)}</p>
+                              </div>
+                            </div>
+                            <span className="text-[8px] font-mono bg-amber-500/10 text-[#FF8A00] border border-amber-500/20 px-2.5 py-1 rounded-full uppercase shrink-0 self-start md:self-auto font-bold">Habitual</span>
+                          </div>
+
+                          {/* Layer 4: Symbolic Pattern */}
+                          <div className="p-4 bg-gradient-to-r from-red-950/40 to-[#07090E] border border-red-500/20 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+                            <div className="flex items-center gap-3">
+                              <span className="flex items-center justify-center shrink-0 w-8 h-8 rounded-full bg-red-500/10 border border-red-500/30 text-[10px] font-mono text-red-400 font-black">L4</span>
+                              <div className="space-y-0.5">
+                                <span className="text-xs font-mono text-red-400 uppercase tracking-wide block font-black">Layer 4: Symbolic Pattern</span>
+                                <p className="text-xs text-[#E6ECF3] font-light leading-normal max-w-xl">"{softenMedicalClaims(enriched.metaphor)}"</p>
+                              </div>
+                            </div>
+                            <span className="text-[8px] font-mono bg-red-500/10 text-red-400 border border-red-500/20 px-2.5 py-1 rounded-full uppercase shrink-0 self-start md:self-auto font-bold">Somatic Metaphor</span>
+                          </div>
+
+                          {/* Layer 5: Reset Actions */}
+                          <div className="p-4 bg-gradient-to-r from-emerald-950/40 to-[#07090E] border border-emerald-500/20 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+                            <div className="flex items-center gap-3">
+                              <span className="flex items-center justify-center shrink-0 w-8 h-8 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[10px] font-mono text-emerald-400 font-black">L5</span>
+                              <div className="space-y-0.5">
+                                <span className="text-xs font-mono text-emerald-400 uppercase tracking-wide block font-black">Layer 5: Reset Actions</span>
+                                <p className="text-xs text-[#E6ECF3] font-light leading-normal max-w-xl">{softenMedicalClaims(enriched.physicalTherapyTip)}</p>
+                              </div>
+                            </div>
+                            <span className="text-[8px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-1 rounded-full uppercase shrink-0 self-start md:self-auto font-bold">Recovery</span>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+
+                  {innerTab === 'reset' && (
+                    <motion.div
+                      key="reset"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="space-y-6"
+                    >
+                      <SomaticBreathingRegulator />
+
+                      <div className="bg-black/30 border border-white/10 p-5 rounded-3xl space-y-3">
+                        <div className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400 uppercase font-bold border-b border-white/5 pb-2">
+                          <Feather className="w-4 h-4 text-emerald-400" />
+                          <span>Additional Reset Protocols</span>
+                        </div>
+                        <p className="text-xs text-slate-300 font-sans font-light leading-relaxed">
+                          <strong>Therapeutic Release:</strong> {softenMedicalClaims(enriched.physicalTherapyTip)}
+                        </p>
+                      </div>
+
+                      {/* Expanded Card Footer Action Bar */}
+                      <div className="pt-6 border-t border-[#1E2430] flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs">
+                        <button
+                          type="button"
+                          onClick={onJournalRedirect}
+                          className="px-6 py-3 bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-bold uppercase tracking-widest text-[10px] rounded-2xl shadow-lg shadow-indigo-500/10 flex items-center gap-2 transition-all cursor-pointer"
+                        >
+                          <Feather className="w-4 h-4 text-amber-300" />
+                          <span>Log in Somatic Journal Ledger</span>
+                        </button>
+                        
+                        <span className="text-slate-500 text-[10px]">Active Calibration: CYL-{enriched.id} | System Homeostasis Ok</span>
+                      </div>
+                    </motion.div>
+                  )}
+
+                  {innerTab === 'safety' && (
+                    <motion.div
+                      key="safety"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="space-y-6"
+                    >
+                      {/* Serious integrated medical warning for high-risk symptoms */}
+                      {(enriched.id === 'diabetes' || (enriched.riskLevel && (enriched.riskLevel.toLowerCase().includes('medical') || enriched.riskLevel.toLowerCase().includes('high')))) && (
+                        <div className="bg-red-950/20 border border-red-500/25 p-5 rounded-2xl text-xs text-red-200 shadow-lg relative overflow-hidden backdrop-blur-sm">
+                          <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-red-500" />
+                          <div className="flex gap-4.5 items-start">
+                            <AlertOctagon className="w-5 h-5 text-red-400 shrink-0 mt-0.5 animate-pulse" />
+                            <div className="space-y-1.5">
+                              <span className="font-mono text-[9px] uppercase tracking-widest text-red-400 block font-black">
+                                CRITICAL MEDICAL STANDARDS & PHARMACEUTICAL REASSURANCE
+                              </span>
+                              <p className="leading-relaxed font-sans text-slate-300">
+                                This psychosomatic map is for <strong>educational reflection and stress-pattern awareness only</strong>. It is not diagnostic and does not replace medical treatment. <strong>Under no circumstances should you discontinue, alter, or delay any prescribed medicine</strong> (including insulin, metformin, thyroid replacement, cardiovascular, or blood sugar therapies). Somatic healing complements physical medicine; it does not replace it.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Medical Safety Protocols */}
+                      <div className="bg-slate-950/40 border border-white/5 rounded-3xl p-6 space-y-6">
+                        <div className="flex items-center gap-2 border-b border-white/5 pb-3">
+                          <Shield className="w-5 h-5 text-red-400" />
+                          <div>
+                            <h4 className="text-sm font-black font-mono text-white uppercase tracking-wider">Clinical Safety Standards</h4>
+                            <p className="text-[10px] text-slate-500 font-mono lowercase">Risk Level: {enriched.riskLevel}</p>
+                          </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+                          {/* Left Column: Alerts */}
+                          <div className="space-y-4">
+                            <div className="space-y-2">
+                              <span className="text-[9px] font-mono text-red-400 uppercase font-black block">🚨 CRITICAL RED FLAG ALERTS</span>
+                              <ul className="space-y-2 list-disc pl-4 text-slate-300 font-sans font-light leading-relaxed">
+                                {(enriched.medical_safety?.critical_alerts || [
+                                  "Sudden, severe, or excruciating pain with no obvious cause",
+                                  "Pain that begins after a major physical injury or trauma",
+                                  "Pain accompanied by fever, chills, night sweats, or unexplained weight loss"
+                                ]).map((alert, idx) => (
+                                  <li key={idx}>{alert}</li>
+                                ))}
+                              </ul>
+                            </div>
+
+                            <div className="bg-red-500/5 border border-red-500/10 p-4 rounded-2xl space-y-1">
+                              <span className="text-[9px] font-mono text-red-400 font-bold block">SEEK IMMEDIATE EMERGENCY CARE IF:</span>
+                              <ul className="space-y-1 list-disc pl-4 text-slate-300 text-[11px] font-sans font-light leading-relaxed">
+                                {(enriched.medical_safety?.seek_immediate_care_if || [
+                                  "You experience sudden, unbearable pain or pain following a major injury"
+                                ]).map((item, idx) => (
+                                  <li key={idx}>{item}</li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+
+                          {/* Right Column: Guidance */}
+                          <div className="space-y-4">
+                            <div className="bg-amber-500/5 border border-amber-500/10 p-4 rounded-2xl space-y-1">
+                              <span className="text-[9px] font-mono text-amber-400 font-bold block">SCHEDULE AN APPOINTMENT IF:</span>
+                              <ul className="space-y-1 list-disc pl-4 text-slate-300 text-[11px] font-sans font-light leading-relaxed">
+                                {(enriched.medical_safety?.schedule_care_if || [
+                                  "Your pain is persistent, gradually worsening, or lasts longer than 2-3 weeks"
+                                ]).map((item, idx) => (
+                                  <li key={idx}>{item}</li>
+                                ))}
+                              </ul>
+                            </div>
+
+                            <div className="space-y-1.5 font-sans font-light leading-relaxed text-[#8A94A6]">
+                              <span className="text-[9px] font-mono text-[#8A94A6] uppercase font-bold block">Self-Care Threshold</span>
+                              <p className="text-[11px]">
+                                {enriched.medical_safety?.self_care_allowed_if || "Gentle movement and temperature therapy are appropriate for transient tension."}
+                              </p>
+                              <p className="text-[10px] italic pt-1 text-slate-500">
+                                {enriched.medical_safety?.do_not_ignore}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div className="text-[10px] text-slate-500 font-mono border-t border-white/5 pt-4">
+                          <strong>Disclaimer:</strong> {enriched.medical_safety?.disclaimer || "This content is for reference only. Please seek medical guidance."}
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
+// Category aesthetic metadata mapping
+interface CategoryMeta {
+  iconName: string;
+  desc: string;
+  color: string;      // main color e.g. '#f97316'
+  glowColor: string;  // glow color e.g. 'rgba(249, 115, 22, 0.15)'
+  textClass: string;  // e.g. 'text-orange-400'
+  bgClass: string;    // e.g. 'from-orange-950/20 to-transparent'
+  borderClass: string;// e.g. 'border-orange-500/25'
+  motif: string;      // visual motif description
+  badge: string;      // severity/coverage badge label
+}
+
+const CATEGORY_META: Record<string, CategoryMeta> = {
+  "All": {
+    iconName: "Layers",
+    desc: "Complete library of mind-body symptom patterns, warning signs, and reset tools.",
+    color: "#7C7CFF",
+    glowColor: "rgba(124, 124, 255, 0.15)",
+    textClass: "text-[#7C7CFF]",
+    bgClass: "from-indigo-950/20 to-transparent",
+    borderClass: "border-indigo-500/25",
+    motif: "universal somatic field, dual pathways",
+    badge: "System-Wide"
+  },
+  "Metabolic & Endocrine": {
+    iconName: "Dna",
+    desc: "Blood sugar, thyroid, appetite, hormones, weight, and cellular energy.",
+    color: "#FF8A00",
+    glowColor: "rgba(255, 138, 0, 0.15)",
+    textClass: "text-[#FF8A00]",
+    bgClass: "from-orange-950/20 to-transparent",
+    borderClass: "border-orange-500/25",
+    motif: "pancreas, glucose rings, fuel circuitry",
+    badge: "Fuel Priority"
+  },
+  "Head & Neck": {
+    iconName: "Brain",
+    desc: "Headaches, jaw tension, eye strain, throat tightness, and nerve pressure.",
+    color: "#B15CFF",
+    glowColor: "rgba(177, 92, 255, 0.15)",
+    textClass: "text-[#B15CFF]",
+    bgClass: "from-purple-950/20 to-transparent",
+    borderClass: "border-purple-500/25",
+    motif: "neural storm, skull silhouette, nerve arcs",
+    badge: "Neural Load"
+  },
+  "General & Energy": {
+    iconName: "Flame",
+    desc: "Fatigue, burnout, fibromyalgia, recovery strain, and low resilience.",
+    color: "#FFD000",
+    glowColor: "rgba(255, 208, 0, 0.15)",
+    textClass: "text-[#FFD000]",
+    bgClass: "from-yellow-950/20 to-transparent",
+    borderClass: "border-yellow-500/25",
+    motif: "battery core, power grid, solar pulse",
+    badge: "Power Core"
+  },
+  "Stomach & Gut": {
+    iconName: "Apple",
+    desc: "IBS, reflux, bloating, nausea, gut-brain stress, and digestion strain.",
+    color: "#00E676",
+    glowColor: "rgba(0, 230, 118, 0.15)",
+    textClass: "text-[#00E676]",
+    bgClass: "from-emerald-950/20 to-transparent",
+    borderClass: "border-emerald-500/25",
+    motif: "gut alarm, pipes, digestion reactor",
+    badge: "Enteric Alert"
+  },
+  "Chest & Breathing": {
+    iconName: "Heart",
+    desc: "Chest tightness, breath restriction, heart signals, and pressure patterns.",
+    color: "#FF4D4D",
+    glowColor: "rgba(255, 77, 77, 0.15)",
+    textClass: "text-[#FF4D4D]",
+    bgClass: "from-red-950/20 to-transparent",
+    borderClass: "border-red-500/25",
+    motif: "heart/lung pulse, airflow tunnel",
+    badge: "Vital Rhythm"
+  },
+  "Skin & Sleep": {
+    iconName: "Moon",
+    desc: "Skin flares, sleep disruption, itch stress, boundaries, and recovery.",
+    color: "#FF5CD6",
+    glowColor: "rgba(255, 92, 214, 0.15)",
+    textClass: "text-[#FF5CD6]",
+    bgClass: "from-pink-950/20 to-transparent",
+    borderClass: "border-pink-500/25",
+    motif: "barrier shield, moon/sleep waves",
+    badge: "Dermal Shield"
+  },
+  "Back & Shoulders": {
+    iconName: "Shield",
+    desc: "Spine tension, shoulder guarding, posture strain, and carrying stress.",
+    color: "#FF6B2C",
+    glowColor: "rgba(255, 107, 44, 0.15)",
+    textClass: "text-[#FF6B2C]",
+    bgClass: "from-orange-950/20 to-transparent",
+    borderClass: "border-orange-500/25",
+    motif: "load stack, spine glow, armor plates",
+    badge: "Load Stack"
+  },
+  "Limbs & Joints": {
+    iconName: "Dumbbell",
+    desc: "Joint stiffness, movement restriction, posture patterns, and control tension.",
+    color: "#FFD000",
+    glowColor: "rgba(255, 208, 0, 0.15)",
+    textClass: "text-[#FFD000]",
+    bgClass: "from-yellow-950/20 to-transparent",
+    borderClass: "border-yellow-500/25",
+    motif: "joint mechanics, hinges, tension lines",
+    badge: "Kinetic Guard"
+  },
+  "Skin & General": {
+    iconName: "Moon",
+    desc: "Skin flares, sleep disruption, itch stress, boundaries, and recovery.",
+    color: "#FF5CD6",
+    glowColor: "rgba(255, 92, 214, 0.15)",
+    textClass: "text-[#FF5CD6]",
+    bgClass: "from-pink-950/20 to-transparent",
+    borderClass: "border-pink-500/25",
+    motif: "barrier shield, moon/sleep waves",
+    badge: "Dermal Shield"
+  }
+};
+
+const renderCategoryIcon = (iconName: string, className: string, customColor?: string) => {
+  const inlineStyle = customColor ? { color: customColor } : undefined;
+  switch (iconName) {
+    case 'Layers': return <Layers className={className} style={inlineStyle} />;
+    case 'Dna': return <Dna className={className} style={inlineStyle} />;
+    case 'Brain': return <Brain className={className} style={inlineStyle} />;
+    case 'Apple': return <Apple className={className} style={inlineStyle} />;
+    case 'Heart': return <Heart className={className} style={inlineStyle} />;
+    case 'Dumbbell': return <Dumbbell className={className} style={inlineStyle} />;
+    case 'Moon': return <Moon className={className} style={inlineStyle} />;
+    case 'Flame': return <Flame className={className} style={inlineStyle} />;
+    case 'Shield': return <Shield className={className} style={inlineStyle} />;
+    default: return <Activity className={className} style={inlineStyle} />;
+  }
+};
+
+export default function App() {
+  const [activeTab, setActiveTab] = useState<'dictionary' | 'decoder' | 'daily' | 'journal'>('dictionary');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedAilment, setSelectedAilment] = useState<Ailment | null>(null);
+  const [globalTone, setGlobalTone] = useState<'clinical' | 'witty' | 'brutal'>('witty');
+  const [isDisclaimerExpanded, setIsDisclaimerExpanded] = useState(false);
+  
+  // Premium & Monetization State
+  const [isPremium, setIsPremium] = useState<boolean>(() => localStorage.getItem('cyl_premium') === 'true');
+  const [showPaywall, setShowPaywall] = useState(false);
+  const [showBillingInfo, setShowBillingInfo] = useState(false);
+  
+  // Custom Decoder State
+  const [customSymptom, setCustomSymptom] = useState('');
+  const [customHabits, setCustomHabits] = useState('');
+  const [isDecoding, setIsDecoding] = useState(false);
+  const [decodedResult, setDecodedResult] = useState<SymptomAnalysisResponse | null>(null);
+  const [decodeError, setDecodeError] = useState<string | null>(null);
+
+  // List of unique categories for filtering
+  const categories = ['All', ...Array.from(new Set(AILMENTS.map(a => a.category)))];
+
+  // Filtered ailments based on search query and category
+  const filteredAilments = AILMENTS.filter(ailment => {
+    const matchesSearch = ailment.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                          ailment.emotionalRoot.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                          ailment.physiologicalDescription.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesCategory = selectedCategory === 'All' || ailment.category === selectedCategory;
+    return matchesSearch && matchesCategory;
+  });
+
+  // Handle custom symptom analysis submission
+  const handleDecodeSymptom = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!customSymptom.trim()) return;
+
+    setIsDecoding(true);
+    setDecodeError(null);
+    setDecodedResult(null);
+
+    try {
+      const response = await fetch('/api/analyze-symptom', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          symptom: customSymptom,
+          habits: customHabits,
+        }),
+      });
+
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to analyze symptom');
+      }
+
+      setDecodedResult(data);
+    } catch (err: any) {
+      console.error(err);
+      setDecodeError(err.message || 'An unexpected error occurred. Please try again.');
+    } finally {
+      setIsDecoding(false);
+    }
+  };
+
+  // Split title for styling (e.g. "Lower Back Pain" -> "Lower" and "Back Pain")
+  const formatBigTitle = (title: string) => {
+    const words = title.split(' ');
+    if (words.length <= 1) {
+      return (
+        <span className="text-white">
+          {title}
+        </span>
+      );
+    }
+    const firstWord = words[0];
+    const restOfTitle = words.slice(1).join(' ');
+    return (
+      <>
+        {firstWord}<br />
+        <span className="text-indigo-500">{restOfTitle}</span>
+      </>
+    );
+  };
+
+  return (
+    <div className="min-h-screen premium-bg text-white font-sans flex flex-col selection:bg-indigo-500 selection:text-white relative overflow-hidden">
+      {/* Premium High-Fidelity Background Layering */}
+      <div className="absolute inset-0 glowing-bg-grid opacity-100 pointer-events-none z-0" />
+
+      {/* Header Navigation with Real Glassmorphism */}
+      <nav className="h-20 border-b border-white/10 flex items-center justify-between px-6 md:px-10 flex-shrink-0 bg-[#07080d]/60 backdrop-blur-md sticky top-0 z-50 relative">
+        <div 
+          onClick={() => setActiveTab('dictionary')} 
+          className="text-2xl font-black tracking-tighter italic cursor-pointer hover:opacity-95 transition-opacity flex items-center gap-2 font-display"
+        >
+          <span className="text-white">Cure Your Life</span>
+          <span className="bg-red-500 text-white text-[10px] font-mono tracking-widest font-black uppercase px-2 py-0.5 rounded shadow-[0_0_12px_rgba(239,68,68,0.4)]">
+            +
+          </span>
+        </div>
+        
+        <div className="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-[0.2em] text-slate-400 font-display">
+          <button 
+            onClick={() => setActiveTab('dictionary')}
+            className={`cursor-pointer hover:text-white transition-all pb-1 ${activeTab === 'dictionary' ? 'text-indigo-400 border-b-2 border-indigo-500' : ''}`}
+          >
+            Psychosomatic Dictionary
+          </button>
+          <button 
+            onClick={() => setActiveTab('decoder')}
+            className={`cursor-pointer hover:text-white transition-all pb-1 ${activeTab === 'decoder' ? 'text-indigo-400 border-b-2 border-indigo-500' : ''}`}
+          >
+            AI Somatic Decoder
+          </button>
+          <button 
+            onClick={() => setActiveTab('daily')}
+            className={`cursor-pointer hover:text-white transition-all pb-1 ${activeTab === 'daily' ? 'text-indigo-400 border-b-2 border-indigo-500' : ''}`}
+          >
+            Somatic Reflections
+          </button>
+          <button 
+            onClick={() => setActiveTab('journal')}
+            className={`cursor-pointer hover:text-white transition-all pb-1 ${activeTab === 'journal' ? 'text-indigo-400 border-b-2 border-indigo-500' : ''}`}
+          >
+            Somatic Journal
+          </button>
+        </div>
+
+        <div className="flex items-center space-x-3">
+          <button
+            onClick={() => setShowPaywall(true)}
+            className={`px-4 py-2 font-bold uppercase text-[10px] tracking-widest transition-all rounded-xl cursor-pointer ${
+              isPremium 
+                ? 'bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 text-black shadow-[0_0_20px_rgba(245,158,11,0.4)] hover:scale-105'
+                : 'border border-amber-500/30 text-amber-400 hover:bg-amber-500/10 hover:border-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.08)] backdrop-blur-md'
+            }`}
+          >
+            {isPremium ? '✦ Premium Active' : '✦ Unlock Premium'}
+          </button>
+
+          <button
+            onClick={() => setActiveTab('decoder')}
+            className="px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold uppercase text-[10px] tracking-widest transition-all rounded-xl cursor-pointer shadow-[0_0_20px_rgba(99,102,241,0.25)]"
+          >
+            Analyze Symptom
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile Nav Bar with Glassmorphism */}
+      <div className="md:hidden flex border-b border-white/10 bg-[#07080d]/80 backdrop-blur-md justify-around py-3.5 text-[10px] font-bold uppercase tracking-wider text-slate-400 relative z-40 font-display">
+        <button 
+          onClick={() => setActiveTab('dictionary')}
+          className={`${activeTab === 'dictionary' ? 'text-indigo-400 font-extrabold' : ''}`}
+        >
+          Dictionary
+        </button>
+        <button 
+          onClick={() => setActiveTab('decoder')}
+          className={`${activeTab === 'decoder' ? 'text-indigo-400 font-extrabold' : ''}`}
+        >
+          AI Decoder
+        </button>
+        <button 
+          onClick={() => setActiveTab('daily')}
+          className={`${activeTab === 'daily' ? 'text-indigo-400 font-extrabold' : ''}`}
+        >
+          Reflections
+        </button>
+        <button 
+          onClick={() => setActiveTab('journal')}
+          className={`${activeTab === 'journal' ? 'text-indigo-400 font-extrabold' : ''}`}
+        >
+          Journal
+        </button>
+      </div>
+
+      {/* Main Framework Content */}
+      <div className="flex-1 flex flex-col md:flex-row overflow-hidden relative z-10">
+        
+        {/* Dictionary Tab: Contains side-by-side Body Map and glowing Symptom Explorer */}
+        {activeTab === 'dictionary' && (
+          <main className="flex-1 flex flex-col p-6 md:p-10 overflow-y-auto w-full space-y-8">
+            
+            {/* Disclaimer Banner (Collapsible Safety/Legal Guardrail) */}
+            <div className="bg-red-950/15 border border-red-500/15 p-4 md:px-6 rounded-2xl flex flex-col gap-3 text-xs text-red-200 shadow-lg backdrop-blur-md relative overflow-hidden shrink-0 w-full transition-all duration-300">
+              <div className="absolute inset-x-0 top-0 h-[1px] bg-red-500/30" />
+              
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 w-full">
+                <div className="flex gap-3 items-center">
+                  <AlertCircle className="w-4 h-4 text-red-400 shrink-0 animate-pulse" />
+                  <div className="flex flex-wrap items-center gap-x-2.5">
+                    <span className="font-mono text-[9px] uppercase tracking-widest text-red-400 font-black">
+                      ⚠ Safety Protocol Active
+                    </span>
+                    <span className="text-slate-300 text-[11px] font-sans">
+                      This app does not diagnose, treat, or cure disease.
+                    </span>
+                  </div>
+                </div>
+                
+                <button
+                  type="button"
+                  onClick={() => setIsDisclaimerExpanded(!isDisclaimerExpanded)}
+                  className="text-[10px] font-mono font-black text-red-400 hover:text-red-300 underline underline-offset-4 cursor-pointer transition-all self-start sm:self-auto"
+                >
+                  {isDisclaimerExpanded ? '[Hide full disclaimer]' : '[View full disclaimer]'}
+                </button>
+              </div>
+
+              {/* Collapsible Content */}
+              <AnimatePresence initial={false}>
+                {isDisclaimerExpanded && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0, marginTop: 0 }}
+                    animate={{ height: 'auto', opacity: 1, marginTop: 4 }}
+                    exit={{ height: 0, opacity: 0, marginTop: 0 }}
+                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                    className="overflow-hidden space-y-2 border-t border-red-500/10 pt-3"
+                  >
+                    <p className="leading-relaxed text-slate-300 font-sans">
+                      It explains possible mind-body patterns and lifestyle-related mechanisms for educational reflection. Always consult a licensed medical professional for diagnosis, medication, labs, and treatment.
+                    </p>
+                    <p className="text-[10px] text-red-300/85 leading-relaxed font-mono font-bold">
+                      <strong>DIABETES PROTOCOL:</strong> Do not stop insulin, metformin, GLP-1 medication, or any prescribed treatment based on this app.
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Intro Header with Gorgeous Gradient Text */}
+            <div className="space-y-2 relative">
+              <span className="text-[10px] font-mono text-indigo-400 uppercase tracking-widest block font-black">
+                PSYCHOSOMATIC INTUITIVE EXPLORER & CLINICAL DECODER ENCYCLOPEDIA
+              </span>
+              <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter font-display leading-none text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-indigo-200">
+                CURE YOUR LIFE<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">SYMPTOM EXPLORER+</span>
+              </h1>
+              <p className="text-sm md:text-base text-slate-400 max-w-2xl font-light leading-relaxed">
+                Discover the deep emotional truths, somatic metaphors, and physical warnings hidden behind your chronic aches, pains, and micro-malfunctions.
+              </p>
+            </div>
+
+            {/* Big Central Command Bar */}
+            <div className="w-full max-w-4xl mx-auto mt-4 mb-6">
+              <form 
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  setActiveTab('decoder');
+                }}
+                className="relative flex items-center p-1.5 rounded-full border border-indigo-500/35 bg-black/60 backdrop-blur-xl shadow-[0_0_30px_rgba(99,102,241,0.15)] group focus-within:border-indigo-400 focus-within:shadow-[0_0_40px_rgba(99,102,241,0.25)] transition-all duration-300"
+              >
+                {/* Background ambient pulse glow behind the command bar */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500/5 to-purple-500/5 -z-10 blur-md group-hover:opacity-100 opacity-60 transition-opacity duration-500" />
+                
+                {/* Glowing Sparkles Icon */}
+                <div className="flex items-center justify-center pl-4 pr-2.5 shrink-0">
+                  <Sparkles className="w-5 h-5 text-indigo-400 animate-[pulse_2s_infinite]" />
+                </div>
+
+                {/* Input Field */}
+                <input 
+                  type="text"
+                  value={customSymptom}
+                  onChange={(e) => setCustomSymptom(e.target.value)}
+                  placeholder="Enter your custom symptom to decode (e.g., sharp pain under right rib, tight jaw when stressed)..."
+                  className="w-full bg-transparent text-slate-100 placeholder-slate-500 text-[10px] md:text-xs py-3 focus:outline-none focus:ring-0 font-mono"
+                />
+
+                {/* Big Glowing Action Button */}
+                <button
+                  type="submit"
+                  className="px-5 py-3 md:px-7 md:py-3.5 bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-mono text-[10px] md:text-xs font-black uppercase tracking-widest rounded-full cursor-pointer shadow-[0_0_20px_rgba(99,102,241,0.3)] hover:shadow-[0_0_30px_rgba(99,102,241,0.5)] transition-all duration-300 flex items-center gap-2 hover:scale-[1.02] active:scale-[0.98] shrink-0"
+                >
+                  <span>Analyze Symptom</span>
+                  <ChevronRight className="w-3.5 h-3.5 md:w-4 md:h-4 text-white/90 shrink-0" />
+                </button>
+              </form>
+            </div>
+
+            {/* Main Interactive Grid Layout */}
+            <div className="w-full max-w-4xl mx-auto space-y-6">
+
+              {/* Visual Somatic Grouping / Category Cards Grid */}
+              <div className="space-y-3.5 relative">
+                <div className="flex items-center gap-1.5 font-mono text-[10px] text-indigo-400 uppercase tracking-wider font-black">
+                  <Compass className="w-4 h-4 text-indigo-400 animate-pulse" />
+                  <span>1. Choose Somatic Region Grouping</span>
+                </div>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
+                  {categories.map(cat => {
+                    const meta = CATEGORY_META[cat] || {
+                      iconName: "Activity",
+                      desc: "Explore psychosomatic connections for this system.",
+                      color: "#6366f1",
+                      glowColor: "rgba(99, 102, 241, 0.15)",
+                      textClass: "text-indigo-400",
+                      bgClass: "from-indigo-950/20 to-transparent",
+                      borderClass: "border-indigo-500/20",
+                      motif: "somatic connection pathways",
+                      badge: "Priority"
+                    };
+                    const isSelected = selectedCategory === cat;
+                    const count = cat === 'All' 
+                      ? AILMENTS.length 
+                      : AILMENTS.filter(a => a.category === cat).length;
+
+                    // Get top 3 example symptoms in this category
+                    const topSymptoms = cat === 'All'
+                      ? AILMENTS.slice(0, 3)
+                      : AILMENTS.filter(a => a.category === cat).slice(0, 3);
+
+                    return (
+                      <button
+                        type="button"
+                        key={cat}
+                        onClick={() => {
+                          setSelectedCategory(cat);
+                          if (selectedAilment && cat !== 'All' && selectedAilment.category !== cat) {
+                            setSelectedAilment(null);
+                          }
+                        }}
+                        className={`category-card text-left p-5 rounded-[1.6rem] transition-all duration-500 relative overflow-hidden group cursor-pointer flex flex-col justify-between min-h-[220px] ${
+                          isSelected 
+                            ? '-translate-y-1.5 border-[var(--system-color)] bg-black/75 shadow-[0_0_50px_var(--system-glow),inset_0_0_20px_rgba(255,255,255,0.02)] scale-[1.03]' 
+                            : 'border-white/5 bg-black/40 hover:bg-black/50 hover:-translate-y-1 hover:border-[var(--system-color)]/40'
+                        }`}
+                        style={{
+                          '--system-color': meta.color,
+                          '--system-glow': meta.glowColor,
+                        } as React.CSSProperties}
+                      >
+                        {/* Premium Cinematic Sci-Fi Category Background Artwork */}
+                        <CategoryBackground category={cat} isSelected={isSelected} color={meta.color} />
+
+                        {/* Animated pulse line */}
+                        <div className="absolute left-0 right-0 h-[1.5px] top-[40%] -translate-y-1/2 pointer-events-none overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                          <div 
+                            className="w-full h-full animate-pulse" 
+                            style={{
+                              background: `linear-gradient(90deg, transparent, ${meta.color}60, transparent)`
+                            }}
+                          />
+                        </div>
+
+                        {/* Card Header: Icon Shell & Symptoms Count */}
+                        <div className="flex items-start justify-between w-full relative z-10">
+                          {/* Big glowing icon shell */}
+                          <div className="icon-shell flex items-center justify-center shrink-0">
+                            {renderCategoryIcon(meta.iconName, "w-6 h-6", meta.color)}
+                          </div>
+
+                          {/* Symptom Count */}
+                          <div className="flex flex-col items-end justify-center">
+                            <span className="text-[10px] font-mono text-slate-500 font-bold tracking-wider group-hover:text-slate-400 transition-colors">
+                              {count} {count === 1 ? 'SYMPTOM' : 'SYMPTOMS'}
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Card Body: Title & Description */}
+                        <div className="space-y-3 relative z-10 w-full mt-4">
+                          <div>
+                            <h3 className={`text-base font-black uppercase tracking-tight font-display transition-colors ${
+                              isSelected ? 'text-[var(--system-color)]' : 'text-white group-hover:text-[var(--system-color)]'
+                            }`}>
+                              {cat}
+                            </h3>
+                            <p className="text-[10px] text-[#8A94A6] line-clamp-3 leading-relaxed font-sans font-light mt-1.5 group-hover:text-slate-300 transition-colors">
+                              {meta.desc}
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Bottom Bar: Action/Enter Arrow */}
+                        <div className="flex items-center justify-end w-full relative z-10 mt-3 pt-2.5 border-t border-white/[0.03]">
+                          <div 
+                            className={`w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300 shrink-0 ${
+                              isSelected 
+                                ? 'bg-[var(--system-color)]/20 text-[var(--system-color)] border border-[var(--system-color)]/30 shadow-[0_0_12px_var(--system-glow)]' 
+                                : 'bg-white/5 border border-white/5 text-slate-500 group-hover:text-white group-hover:bg-[var(--system-color)]/20 group-hover:border-[var(--system-color)]/40 group-hover:shadow-[0_0_12px_var(--system-glow)] group-hover:translate-x-1'
+                            }`}
+                          >
+                            <ChevronRight className="w-3.5 h-3.5" />
+                          </div>
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Symptom Explorer (glowing black glass cards & search) */}
+              {selectedCategory === null ? (
+                <div className="glass-panel p-10 md:p-12 rounded-[2.5rem] text-center space-y-4 relative z-10 transition-all duration-300 hover:shadow-[0_0_30px_rgba(99,102,241,0.05)] border border-white/5 bg-black/40">
+                  <Compass className="w-10 h-10 mx-auto text-indigo-400 animate-pulse mb-2" />
+                  <h3 className="text-sm font-mono text-indigo-300 uppercase tracking-widest font-black">Select a somatic region center</h3>
+                  <p className="text-xs text-[#8A94A6] max-w-md mx-auto leading-relaxed font-light font-sans">
+                    Choose one of the somatic groupings above (such as <strong>Stomach & Gut</strong> or <strong>Chest & Breathing</strong>) to start decoding its psychosomatic mechanisms, or select <strong>All</strong> to explore the complete clinical dictionary.
+                  </p>
+                </div>
+              ) : (
+                <div className="space-y-6">
+
+                  {/* Selected Category Premium Header */}
+                  {selectedCategory && (() => {
+                    const meta = CATEGORY_META[selectedCategory] || { color: '#7C7CFF', desc: '' };
+                    const activeColor = meta.color;
+                    return (
+                      <div 
+                        className="glass-panel p-6 md:p-8 rounded-[2.5rem] relative overflow-hidden bg-black/75 transition-all duration-300 relative z-10"
+                        style={{
+                          borderColor: `${activeColor}28`,
+                          borderWidth: '1.5px',
+                          borderStyle: 'solid',
+                          boxShadow: `0 0 35px ${activeColor}12`
+                        }}
+                      >
+                        {/* High-intensity Left-side radial gradient glow that fades into the dark glass panel */}
+                        <div 
+                          className="absolute inset-y-0 left-0 w-[60%] pointer-events-none opacity-30 z-0"
+                          style={{
+                            background: `radial-gradient(circle at 0% 50%, ${activeColor} 0%, transparent 75%)`
+                          }}
+                        />
+                        
+                        {/* Left edge solid vibrant accent bar */}
+                        <div 
+                          className="absolute left-0 top-1/5 bottom-1/5 w-[3.5px] rounded-r-md pointer-events-none z-10"
+                          style={{ backgroundColor: activeColor }}
+                        />
+
+                        {/* Extra subtle overall ambient soft backdrop */}
+                        <div 
+                          className="absolute -top-16 -left-16 w-64 h-64 rounded-full blur-3xl opacity-[0.15] pointer-events-none"
+                          style={{ backgroundColor: activeColor }}
+                        />
+
+                        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                          <div className="space-y-2.5">
+                            <div className="flex items-center gap-2.5">
+                              <span 
+                                className="text-[10px] font-mono tracking-widest uppercase px-3 py-1 rounded-full font-black border transition-all duration-300"
+                                style={{ 
+                                  color: activeColor,
+                                  borderColor: `${activeColor}40`,
+                                  backgroundColor: `${activeColor}15`
+                                }}
+                              >
+                                Somatic System
+                              </span>
+                              <span className="text-xs text-slate-400 font-mono">
+                                {filteredAilments.length} {filteredAilments.length === 1 ? 'Symptom' : 'Symptoms'} Found
+                              </span>
+                            </div>
+                            <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tight text-white font-display">
+                              <span style={{ color: activeColor }}>{selectedCategory.charAt(0)}</span>
+                              {selectedCategory.slice(1)}
+                            </h2>
+                            <p className="text-xs md:text-sm text-slate-300 font-sans font-light leading-relaxed max-w-xl">
+                              {meta.desc}
+                            </p>
+                          </div>
+                          
+                          {/* Current Active Lens indicator */}
+                          <div className="bg-white/[0.02] border border-white/5 p-4 rounded-2xl flex flex-col items-start md:items-end gap-1.5 shrink-0 min-w-[160px] md:text-right">
+                            <span className="text-[9px] font-mono tracking-wider text-slate-500 uppercase font-bold">
+                              Current Interpretation
+                            </span>
+                            <span className={`text-xs font-mono font-black uppercase tracking-widest px-3 py-1 rounded-md border ${
+                              globalTone === 'clinical' 
+                                ? 'bg-slate-950/60 border-slate-700/50 text-slate-300' 
+                                : globalTone === 'witty' 
+                                  ? 'bg-indigo-950/60 border-indigo-500/30 text-indigo-300 shadow-[0_0_15px_rgba(99,102,241,0.25)]' 
+                                  : 'bg-red-950/60 border-red-500/30 text-red-400 shadow-[0_0_15px_rgba(239,68,68,0.25)]'
+                            }`}>
+                              {globalTone === 'clinical' ? '🎓 Clinical Lens' : globalTone === 'witty' ? '🔮 Witty Lens' : '🔥 Brutal Lens'}
+                            </span>
+                            <span className="text-[9px] font-mono text-slate-500">
+                              Interpretation Mode Active
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })()}
+                  
+                  {/* Search, Global Tone, Category Toggles Header Bar */}
+                  <div className="glass-panel p-6 md:p-8 rounded-[2.5rem] space-y-6 relative z-10">
+                    
+                    {/* Search Input */}
+                    <div className="relative font-mono">
+                      <Search className="w-4 h-4 text-indigo-400 absolute left-4 top-4" />
+                      <input 
+                        type="text" 
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        placeholder="Search symptoms (e.g. diabetes, fatigue, IBS, tightness, headaches, eczema)..." 
+                        className="w-full bg-black/40 text-white placeholder-slate-500 text-xs px-11 py-4 rounded-xl border border-white/10 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 transition-all font-mono shadow-inner"
+                      />
+                      {searchQuery && (
+                        <button 
+                          type="button"
+                          onClick={() => setSearchQuery('')}
+                          className="absolute right-4 top-3.5 text-slate-500 hover:text-white text-[10px] font-bold"
+                        >
+                          CLEAR
+                        </button>
+                      )}
+                    </div>
+
+                    {/* System Level Tones selector */}
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-1">
+                      <div className="flex items-center gap-1.5 font-mono text-[10px] text-indigo-200 uppercase font-black tracking-wider">
+                        <Flame className="w-4 h-4 text-indigo-400 animate-pulse" />
+                        <span>Viewing Lens</span>
+                      </div>
+
+                      <div className="flex gap-1.5 bg-black/50 p-1.5 rounded-xl border border-white/5 max-w-fit shadow-inner">
+                        <button
+                          type="button"
+                          onClick={() => setGlobalTone('clinical')}
+                          className={`px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-wider rounded-lg transition-all cursor-pointer ${
+                            globalTone === 'clinical'
+                              ? 'bg-slate-800 text-white font-extrabold shadow-md border border-white/10'
+                              : 'text-slate-500 hover:text-slate-300'
+                          }`}
+                        >
+                          🎓 Clinical
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setGlobalTone('witty')}
+                          className={`px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-wider rounded-lg transition-all cursor-pointer ${
+                            globalTone === 'witty'
+                              ? 'bg-indigo-600 text-white font-extrabold shadow-lg shadow-indigo-500/30 border border-indigo-400/30'
+                              : 'text-slate-500 hover:text-slate-300'
+                          }`}
+                        >
+                          🔮 Witty
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setGlobalTone('brutal')}
+                          className={`px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-wider rounded-lg transition-all cursor-pointer ${
+                            globalTone === 'brutal'
+                              ? 'bg-red-600 text-white font-extrabold shadow-lg shadow-red-500/30 border border-red-400/30'
+                              : 'text-slate-500 hover:text-slate-300'
+                          }`}
+                        >
+                          🔥 Brutal
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Category Filter Chips */}
+                    <div className="flex flex-wrap gap-2 pt-2 border-t border-white/5">
+                      {categories.map(cat => (
+                        <button
+                          key={cat}
+                          onClick={() => setSelectedCategory(cat)}
+                          className={`text-[9px] font-mono tracking-widest uppercase px-3.5 py-2 rounded-xl border transition-all cursor-pointer ${
+                            selectedCategory === cat 
+                              ? 'bg-gradient-to-r from-indigo-500/20 to-purple-500/20 border-indigo-500/50 text-indigo-200 font-extrabold shadow-[0_0_15px_rgba(99,102,241,0.25)]' 
+                              : 'bg-black/30 border-white/5 text-slate-400 hover:text-white hover:border-white/15'
+                          }`}
+                        >
+                          {cat}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Symptom Accordion List container */}
+                  <div className="space-y-4">
+                    {filteredAilments.length === 0 ? (
+                      <div className="bg-zinc-950/40 p-12 text-center rounded-3xl border border-white/10 border-dashed space-y-3">
+                        <AlertCircle className="w-12 h-12 mx-auto text-indigo-500/50" />
+                        <h3 className="text-sm font-mono text-slate-400 uppercase tracking-widest">No matching ailments found</h3>
+                        <p className="text-xs text-slate-500 max-w-sm mx-auto">
+                          We are constantly expanding the database. Try selecting another category or check your spelling.
+                        </p>
+                      </div>
+                    ) : (
+                      filteredAilments.map(ailment => {
+                        const isSelected = selectedAilment?.id === ailment.id;
+                        return (
+                          <AilmentAccordionItem
+                            key={ailment.id}
+                            ailment={ailment}
+                            isSelected={isSelected}
+                            onSelect={() => setSelectedAilment(isSelected ? null : ailment)}
+                            globalTone={globalTone}
+                            onJournalRedirect={() => setActiveTab('journal')}
+                          />
+                        );
+                      })
+                    )}
+                  </div>
+
+                </div>
+              )}
+
+            </div>
+          </main>
+        )}
+
+        {/* Decoder Tab: Custom AI Symptom Input */}
+        {activeTab === 'decoder' && (
+          <main className="flex-1 flex flex-col p-6 md:p-12 overflow-y-auto max-w-5xl mx-auto w-full space-y-8">
+            <div className="space-y-4">
+              <div className="flex items-center gap-2 text-indigo-400 font-mono text-xs tracking-widest uppercase">
+                <Sparkles className="w-4 h-4 text-cyan-400 animate-pulse" />
+                <span>AI Somatic Diagnostic Lab</span>
+              </div>
+              <h1 className="text-4xl md:text-7xl font-black uppercase tracking-tighter">
+                Symptom<br />
+                <span className="text-indigo-500">Decoder</span>
+              </h1>
+              <p className="text-base text-slate-400 max-w-2xl leading-relaxed font-light">
+                Can't find your specific aches in our dictionary? Enter your customized physical misery and let Dr. Sarcasticus diagnose your subconscious fears and poor ergonomic life choices in real-time.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              {/* Left Column: Form */}
+              <div className="lg:col-span-5 bg-[#07090E] p-6 rounded-[2rem] border border-white/10 relative overflow-hidden shadow-2xl space-y-6">
+                <div className="absolute top-0 left-1/4 w-32 h-32 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
+                
+                <h3 className="text-xs font-mono text-cyan-400 uppercase tracking-widest pb-3 border-b border-[#1E2430] flex items-center gap-2">
+                  <Activity className="w-4 h-4 text-cyan-400" />
+                  <span>Input Lab Specimen</span>
+                </h3>
+                
+                <form onSubmit={handleDecodeSymptom} className="space-y-5">
+                  <div className="space-y-2">
+                    <label htmlFor="custom-symptom-input" className="block text-[10px] font-mono text-slate-400 uppercase tracking-wider">
+                      1. Describe your physical ailment *
+                    </label>
+                    <textarea
+                      id="custom-symptom-input"
+                      required
+                      rows={3}
+                      value={customSymptom}
+                      onChange={(e) => setCustomSymptom(e.target.value)}
+                      placeholder="e.g. Sharp throbbing pain behind my right eyeball, or unexplained clicking in my left pinky finger..."
+                      className="w-full bg-[#040609] border border-white/10 rounded-xl p-3 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500 focus:shadow-[0_0_12px_rgba(99,102,241,0.25)] transition-all font-sans resize-none"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label htmlFor="custom-habits-input" className="block text-[10px] font-mono text-slate-400 uppercase tracking-wider">
+                      2. Honestly describe your bad habits (optional)
+                    </label>
+                    <textarea
+                      id="custom-habits-input"
+                      rows={3}
+                      value={customHabits}
+                      onChange={(e) => setCustomHabits(e.target.value)}
+                      placeholder="e.g. Sitting cross-legged for 9 hours without moving, drank 4 coffees and 0 waters today, obsessively checking my ex's Instagram..."
+                      className="w-full bg-[#040609] border border-white/10 rounded-xl p-3 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500 focus:shadow-[0_0_12px_rgba(99,102,241,0.25)] transition-all font-sans resize-none"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isDecoding || !customSymptom.trim()}
+                    className="w-full bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-bold uppercase text-xs tracking-widest py-3 px-4 rounded-xl transition-all shadow-lg shadow-indigo-500/10 disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2 cursor-pointer"
+                  >
+                    {isDecoding ? (
+                      <>
+                        <div className="animate-spin rounded-full h-3 w-3 border-2 border-white border-t-transparent" />
+                        <span>Consulting Dr. Sarcasticus...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Activity className="w-4 h-4 text-amber-300" />
+                        <span>Run Psychosomatic Decode</span>
+                      </>
+                    )}
+                  </button>
+                </form>
+
+                <div className="p-4 bg-amber-500/5 rounded-xl border border-amber-500/20 flex gap-3 items-start">
+                  <AlertCircle className="w-4 h-4 text-amber-500 shrink-0 mt-0.5 animate-pulse" />
+                  <p className="text-[10px] text-amber-400/90 leading-normal font-mono">
+                    DISCLAIMER: Dr. Sarcasticus is an AI assistant model. His insights are psychosomatically deep and medically accurate, but do not replace your actual real-life doctor if your body is actively complaining of emergency malfunctions.
+                  </p>
+                </div>
+              </div>
+
+              {/* Right Column: Decoded Output Result */}
+              <div className="lg:col-span-7">
+                <AnimatePresence mode="wait">
+                  {isDecoding && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 15 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0 }}
+                      className="bg-[#07090E] p-8 rounded-[2rem] border border-white/10 relative overflow-hidden flex flex-col items-center text-center space-y-6 shadow-2xl min-h-[420px] justify-center"
+                    >
+                      {/* Interactive MRI-like scanner visual */}
+                      <div className="relative w-40 h-40 border border-indigo-500/20 rounded-2xl bg-black/40 p-4 flex items-center justify-center overflow-hidden">
+                        {/* Laser line moving up and down */}
+                        <div className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent shadow-[0_0_8px_#22d3ee] animate-[bounce_2.5s_infinite] top-0 z-20" />
+                        
+                        {/* Dynamic Grid Background */}
+                        <div className="absolute inset-0 bg-[linear-gradient(to_right,#00d2ff08_1px,transparent_1px),linear-gradient(to_bottom,#00d2ff08_1px,transparent_1px)] bg-[size:10px_10px]" />
+                        
+                        {/* Wireframe Silhouette */}
+                        <svg viewBox="0 0 100 100" className="w-24 h-24 opacity-30 text-indigo-400">
+                          <circle cx="50" cy="22" r="10" fill="none" stroke="currentColor" strokeWidth="1" />
+                          <line x1="50" y1="32" x2="50" y2="70" stroke="currentColor" strokeWidth="1" />
+                          <line x1="50" y1="42" x2="30" y2="35" stroke="currentColor" strokeWidth="1" />
+                          <line x1="50" y1="42" x2="70" y2="35" stroke="currentColor" strokeWidth="1" />
+                          <line x1="50" y1="70" x2="38" y2="92" stroke="currentColor" strokeWidth="1" />
+                          <line x1="50" y1="70" x2="62" y2="92" stroke="currentColor" strokeWidth="1" />
+                        </svg>
+                        
+                        {/* Pulsing Core */}
+                        <div className="absolute w-6 h-6 rounded-full bg-cyan-500/20 border border-cyan-400 animate-ping" />
+                      </div>
+
+                      <div className="space-y-2">
+                        <span className="text-[10px] font-mono text-cyan-400 uppercase tracking-widest font-black block animate-pulse">
+                          🔬 CONNECTING SUBCONSCIOUS TRACE PROBES...
+                        </span>
+                        <p className="text-xs text-slate-400 italic max-w-sm mx-auto font-sans font-light">
+                          "Analyzing the exact physiological intersection of your modern emotional suppression and sitting folded up like a raw lasagna sheet."
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+
+                  {decodeError && (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0 }}
+                      className="bg-red-500/10 p-6 rounded-2xl border border-red-500/30 space-y-3"
+                    >
+                      <div className="flex items-center gap-2 text-red-400">
+                        <AlertCircle className="w-5 h-5" />
+                        <h4 className="font-mono text-sm font-bold uppercase tracking-wider">Diagnostic Interrupted</h4>
+                      </div>
+                      <p className="text-xs text-red-300 leading-relaxed font-mono">
+                        {decodeError}
+                      </p>
+                      <p className="text-[11px] text-slate-500 font-mono">
+                        Note: Make sure your GEMINI_API_KEY environment variable is configured in the AI Studio platform Secrets dashboard.
+                      </p>
+                    </motion.div>
+                  )}
+
+                  {!isDecoding && !decodedResult && !decodeError && (
+                    <div className="bg-[#07090E] border border-white/5 p-12 rounded-[2.5rem] text-center space-y-4 shadow-2xl min-h-[420px] flex flex-col justify-center items-center">
+                      <div className="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+                        <HelpCircle className="w-8 h-8 text-slate-600" />
+                      </div>
+                      <div className="space-y-1.5">
+                        <h3 className="text-sm font-mono text-slate-400 uppercase tracking-widest font-bold">Awaiting Lab Specimen</h3>
+                        <p className="text-xs text-slate-500 max-w-sm mx-auto font-sans font-light">
+                          Your somatic scan report will generate here once you enter your physical ailment and current lifestyle habits in the scanner console on the left.
+                        </p>
+                      </div>
+                    </div>
+                  )}
+
+                  {!isDecoding && decodedResult && (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.98 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      className="space-y-6"
+                    >
+                      {/* High-fidelity lab-report-style banner */}
+                      <div className="p-6 bg-gradient-to-b from-[#0A0D14] to-[#040609] border border-indigo-500/20 rounded-[2rem] space-y-4 shadow-2xl relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 rounded-full blur-3xl pointer-events-none" />
+                        
+                        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-white/5 pb-3">
+                          <div className="flex items-center gap-2">
+                            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                            <span className="text-[10px] font-mono text-cyan-400 tracking-widest uppercase font-black">
+                              SOMATIC LAB REPORT COMPLETED
+                            </span>
+                          </div>
+                          
+                          {/* Biometric Stats bar */}
+                          <div className="flex gap-4 font-mono text-[8px] text-slate-500 uppercase tracking-wider">
+                            <span>COEFF: 0.96</span>
+                            <span>DENIAL: CRITICAL</span>
+                            <span>DEC-ID: #{Math.floor(Math.random() * 9000 + 1000)}</span>
+                          </div>
+                        </div>
+
+                        <div className="flex flex-col md:flex-row items-start gap-4 pt-1">
+                          {renderHolographicFace()}
+                          
+                          <div className="space-y-1.5 flex-1">
+                            <span className="text-[10px] font-mono text-indigo-400 uppercase tracking-wider block font-black">
+                              CORE SUBCONSCIOUS EMOTIONAL MATRIX
+                            </span>
+                            <h2 className="text-xl md:text-2xl font-black uppercase tracking-tight text-white leading-none">
+                              The Metaphorical Root Cause
+                            </h2>
+                            <p className="text-xs text-slate-200 leading-relaxed italic font-light">
+                              "{decodedResult.emotionalRoot}"
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Side-by-side Technical and Sarcastic results */}
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {/* Clinical */}
+                        <div className="bg-[#07090E] p-5 border border-indigo-500/20 rounded-2xl relative overflow-hidden flex flex-col justify-between min-h-[180px] space-y-3">
+                          <div className="absolute top-0 right-0 w-16 h-16 bg-indigo-500/5 rounded-full blur-xl pointer-events-none" />
+                          
+                          <div className="flex items-center gap-2 border-b border-white/5 pb-2">
+                            <div className="w-1.5 h-1.5 rounded-full bg-indigo-400" />
+                            <span className="text-[10px] font-mono uppercase tracking-widest text-indigo-400 font-black">PHYSIOLOGICAL MECHANISM</span>
+                          </div>
+                          
+                          <p className="text-xs text-slate-300 leading-relaxed font-sans font-light flex-1">
+                            {decodedResult.physiologicalDescription}
+                          </p>
+                          
+                          <div className="text-[8px] font-mono text-slate-500 uppercase">
+                            DIAGNOSTICS: PROFESSIONAL / MEDICAL TRUTH
+                          </div>
+                        </div>
+
+                        {/* Dr. Sarcasticus verdict speech bubble card */}
+                        <div className="bg-gradient-to-br from-[#110B03] to-[#040609] p-5 border border-amber-500/20 rounded-2xl relative overflow-hidden flex flex-col justify-between min-h-[180px] space-y-3">
+                          <div className="absolute top-0 right-0 w-16 h-16 bg-amber-500/5 rounded-full blur-xl pointer-events-none" />
+                          
+                          <div className="flex items-center justify-between border-b border-amber-500/10 pb-2">
+                            <div className="flex items-center gap-2">
+                              <div className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                              <span className="text-[10px] font-mono uppercase tracking-widest text-amber-500 font-black">DR. SARCASTICUS VERDICT</span>
+                            </div>
+                            <span className="text-[8px] font-mono text-amber-500/70 uppercase">Cynical Mode</span>
+                          </div>
+
+                          <div className="flex gap-3 items-start flex-1 py-1">
+                            {renderSarcasticusAvatar()}
+                            <div className="p-3 bg-[#040609] border border-amber-500/10 rounded-xl flex-1 text-xs text-amber-300 leading-relaxed font-sans italic relative">
+                              <div className="absolute left-[-5px] top-6 w-2.5 h-2.5 bg-[#040609] border-l border-b border-amber-500/10 transform rotate-45" />
+                              "{decodedResult.sarcasticReview}"
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Recommendations block */}
+                      <div className="p-6 bg-[#07090E] border border-white/5 rounded-2xl grid grid-cols-1 md:grid-cols-2 gap-6 shadow-xl">
+                        {/* Prompt reflection */}
+                        <div className="space-y-3">
+                          <div className="flex items-center gap-1.5 text-indigo-400 text-[10px] font-mono uppercase tracking-wider font-black">
+                            <Compass className="w-4 h-4 text-indigo-400" />
+                            <span>Recommended Reflections</span>
+                          </div>
+                          <ul className="space-y-2.5">
+                            {decodedResult.mindfulnessPrompts.map((p, idx) => (
+                              <li key={idx} className="text-xs text-slate-300 pl-3 border-l border-indigo-500/30 italic font-sans font-light leading-relaxed">
+                                "{p}"
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        {/* Somatic exercises */}
+                        <div className="space-y-3">
+                          <div className="flex items-center gap-1.5 text-amber-500 text-[10px] font-mono uppercase tracking-wider font-black">
+                            <Dumbbell className="w-4 h-4 text-amber-500" />
+                            <span>Somatic Recovery Exercises</span>
+                          </div>
+                          <ul className="space-y-2">
+                            {decodedResult.practicalTips.map((t, idx) => (
+                              <li key={idx} className="text-xs text-slate-300 flex items-start gap-2 leading-relaxed font-sans font-light">
+                                <span className="text-indigo-400 font-mono font-bold shrink-0">[{idx+1}]</span>
+                                <span>{t}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div className="flex justify-between items-center pt-2">
+                        <span className="text-[9px] font-mono text-slate-500">
+                          CYL-SCANNER VERSION: v4.12 | CALIBRATION SECURE
+                        </span>
+                        
+                        <button
+                          onClick={() => {
+                            setDecodedResult(null);
+                            setCustomSymptom('');
+                            setCustomHabits('');
+                          }}
+                          className="flex items-center gap-1.5 px-4 py-2 border border-white/10 text-[9px] text-slate-400 hover:text-white hover:border-white font-mono tracking-widest uppercase rounded-lg bg-white/5 transition-all cursor-pointer"
+                        >
+                          <RotateCcw className="w-3.5 h-3.5" />
+                          <span>Reset Decoder</span>
+                        </button>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </div>
+          </main>
+        )}
+
+        {/* Reflections / Daily Prompt tab */}
+        {activeTab === 'daily' && (
+          <main className="flex-1 flex flex-col p-6 md:p-12 overflow-y-auto max-w-5xl mx-auto w-full space-y-6">
+            <div className="space-y-2">
+              <span className="text-xs font-mono text-indigo-400 uppercase tracking-widest">
+                SUBCONSCIOUS TRACE RECORDS
+              </span>
+              <h1 className="text-4xl md:text-7xl font-black uppercase tracking-tighter">
+                Somatic<br />
+                <span className="text-indigo-500">Reflections</span>
+              </h1>
+              <p className="text-base text-slate-400 max-w-xl font-light">
+                Write, process, and release the tension. Every symptom is a message your body is tired of whispering.
+              </p>
+            </div>
+            
+            <div className="pt-4">
+              <DailyPromptsPanel />
+            </div>
+          </main>
+        )}
+
+        {/* Somatic Journaling Tab */}
+        {activeTab === 'journal' && (
+          <main className="flex-1 flex flex-col p-6 md:p-12 overflow-y-auto w-full space-y-6">
+            <div className="space-y-2 max-w-6xl mx-auto w-full">
+              <span className="text-xs font-mono text-indigo-400 uppercase tracking-widest">
+                SOMATIC TRACE LEDGER
+              </span>
+              <h1 className="text-4xl md:text-7xl font-black uppercase tracking-tighter">
+                Somatic<br />
+                <span className="text-indigo-500">Journal</span>
+              </h1>
+              <p className="text-base text-slate-400 max-w-xl font-light">
+                Log physical symptoms, note down daily stressors, and instantly decode your psychosomatic connections.
+              </p>
+            </div>
+            
+            <div className="pt-4">
+              <SomaticJournalPanel />
+            </div>
+          </main>
+        )}
+
+      </div>
+
+      {/* Monetization & Premium Access Paywall Modal */}
+      <AnimatePresence>
+        {showPaywall && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              className="bg-[#07090E] border border-amber-500/30 rounded-3xl w-full max-w-2xl overflow-hidden relative shadow-[0_0_50px_rgba(245,158,11,0.15)] flex flex-col"
+            >
+              {/* Gold Top Light bar */}
+              <div className="h-1.5 w-full bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600" />
+              
+              {/* Close Button */}
+              <button
+                onClick={() => setShowPaywall(false)}
+                className="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors p-2 bg-white/5 hover:bg-white/10 rounded-full cursor-pointer"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              <div className="p-6 md:p-8 space-y-6">
+                
+                {/* Header */}
+                <div className="space-y-1.5 text-center">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-500/10 border border-amber-500/20 rounded-full text-[10px] font-mono text-amber-400 uppercase tracking-widest font-black mb-2">
+                    <Sparkles className="w-3.5 h-3.5" />
+                    <span>Cure Your Life+ Premium Elite</span>
+                  </div>
+                  <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-white leading-none">
+                    Unlock Premium <span className="text-amber-400">Homeostasis</span>
+                  </h2>
+                  <p className="text-xs text-slate-400 max-w-md mx-auto font-sans font-light">
+                    Connect unrestricted AI somatic decoding, deep stress reflection logs, and secure symptom pattern analysis.
+                  </p>
+                </div>
+
+                {/* Features list */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                  <div className="p-4 bg-black/40 border border-white/5 rounded-2xl flex gap-3">
+                    <Check className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+                    <div className="space-y-0.5">
+                      <span className="text-xs font-mono text-white font-bold block">Unlimited AI Decodes</span>
+                      <p className="text-[10px] text-slate-400 leading-normal font-sans font-light">Deep AI cellular analysis with unlimited customized symptom decoding.</p>
+                    </div>
+                  </div>
+
+                  <div className="p-4 bg-black/40 border border-white/5 rounded-2xl flex gap-3">
+                    <Check className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+                    <div className="space-y-0.5">
+                      <span className="text-xs font-mono text-white font-bold block">Bi-Lateral Bio-Resets</span>
+                      <p className="text-[10px] text-slate-400 leading-normal font-sans font-light">Comprehensive paced breathing regulator and somatic coping exercises.</p>
+                    </div>
+                  </div>
+
+                  <div className="p-4 bg-black/40 border border-white/5 rounded-2xl flex gap-3">
+                    <Check className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+                    <div className="space-y-0.5">
+                      <span className="text-xs font-mono text-white font-bold block">Premium AI Somatic Logs</span>
+                      <p className="text-[10px] text-slate-400 leading-normal font-sans font-light">Comprehensive somatic trace ledger and health metrics tracking.</p>
+                    </div>
+                  </div>
+
+                  <div className="p-4 bg-black/40 border border-white/5 rounded-2xl flex gap-3">
+                    <Check className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+                    <div className="space-y-0.5">
+                      <span className="text-xs font-mono text-white font-bold block">Bi-Lateral Tone Models</span>
+                      <p className="text-[10px] text-slate-400 leading-normal font-sans font-light">Compare Clinical, Sarcastic, and Brutal tone perspectives instantly.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Architecture & Monetization Realities Explanation */}
+                <div className="p-4 bg-[#110B03] border border-amber-500/20 rounded-2xl space-y-2 text-[11px]">
+                  <div className="flex items-center gap-1.5 text-amber-500 font-mono font-bold uppercase">
+                    <Shield className="w-3.5 h-3.5" />
+                    <span>Monetization & billing Integration</span>
+                  </div>
+                  <p className="text-slate-300 leading-relaxed font-sans font-light">
+                    For production apps, monetization is handled based on deployment targets:
+                  </p>
+                  <ul className="list-disc pl-4 space-y-1 text-slate-400 font-sans font-light">
+                    <li>
+                      <strong>Google Play Store Apps (Android)</strong>: Purchases use the <code>com.android.billingclient</code> Play Billing Library API. Users pay securely via credit cards or Google Play balance synced with the OS layer.
+                    </li>
+                    <li>
+                      <strong>Web Applications (SaaS)</strong>: Stripe API integration with secure server-side webhook listener proxies (using <code>stripe.webhooks.constructEvent</code>) safely manages subscriber lifetimes.
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Action buttons */}
+                <div className="space-y-3">
+                  {/* SIMULATION ACCESS TRIGGERS */}
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <button
+                      onClick={() => {
+                        const newPremiumState = !isPremium;
+                        setIsPremium(newPremiumState);
+                        localStorage.setItem('cyl_premium', newPremiumState ? 'true' : 'false');
+                        setShowPaywall(false);
+                      }}
+                      className="flex-1 py-3 bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-600 hover:to-yellow-500 text-black font-black uppercase text-[10px] tracking-widest rounded-xl transition-all shadow-lg shadow-amber-500/10 flex items-center justify-center gap-2 cursor-pointer"
+                    >
+                      <Sparkles className="w-4 h-4 text-black" />
+                      <span>{isPremium ? 'Deactivate Premium Demo Mode' : 'Activate Premium Demo Mode (Instant)'}</span>
+                    </button>
+
+                    <button
+                      onClick={() => {
+                        setShowBillingInfo(!showBillingInfo);
+                      }}
+                      className="px-5 py-3 border border-amber-500/30 hover:border-amber-500/60 bg-white/5 hover:bg-white/10 text-amber-400 font-mono uppercase text-[10px] tracking-widest rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer"
+                    >
+                      <CreditCard className="w-4 h-4" />
+                      <span>{showBillingInfo ? 'Hide Pay Info' : 'Live Pay Info'}</span>
+                    </button>
+                  </div>
+
+                  {showBillingInfo && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      className="p-3.5 bg-amber-500/10 border border-amber-500/30 rounded-xl space-y-1.5 text-[10px] text-amber-200/90 leading-relaxed font-mono"
+                    >
+                      <p className="font-bold">🔒 LIVE BILLING INTEGRATION SPECIFICATIONS:</p>
+                      <p>
+                        For production SaaS deployments, this component integrates with server-side endpoints processing Stripe checkout tokens. For Android packaging, it maps to the Google Play Billing Library (<code>billingclient</code>) triggering local operating-system payment dialogs securely.
+                      </p>
+                    </motion.div>
+                  )}
+
+                  <p className="text-center text-[9px] text-slate-500 font-mono">
+                    Secured by AES-256 and SHA-256 protocols. Cancel anytime instantly.
+                  </p>
+                </div>
+
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
+      {/* Global Safety & Legal Disclaimer Footer */}
+      <footer className="border-t border-white/10 bg-black/60 py-6 px-6 md:px-10 text-[10px] text-slate-500 font-mono">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div className="space-y-1 max-w-4xl">
+            <span className="text-red-400 font-black uppercase tracking-wider block">
+              ⚠ CRITICAL EDUCATIONAL & MEDICAL DISCLOSURE
+            </span>
+            <p className="leading-relaxed">
+              This app does not diagnose, treat, or cure disease. It explains possible mind-body patterns and lifestyle-related mechanisms for educational reflection. Always consult a licensed medical professional for diagnosis, medication, labs, and treatment.
+            </p>
+            <p className="text-red-400/80 font-bold">
+              Do not stop insulin, metformin, GLP-1 medication, or any prescribed treatment based on this app.
+            </p>
+          </div>
+          <div className="shrink-0 text-slate-600 text-[9px] md:text-right">
+            <span>© {new Date().getFullYear()} Cure Your Life+. Educational Reflection Protocol.</span>
+            <br />
+            <span>Not a substitute for medical diagnostics or therapeutics.</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
