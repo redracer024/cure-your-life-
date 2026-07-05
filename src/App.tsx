@@ -37,6 +37,7 @@ import { Ailment, SymptomAnalysisResponse } from './types';
 import DailyPromptsPanel from './components/DailyPromptsPanel';
 import SomaticJournalPanel from './components/SomaticJournalPanel';
 import { CategoryBackground } from './components/CategoryBackground';
+import { authFetch, isSupabaseConfigured, supabase } from './lib/supabaseClient';
 import { motion, AnimatePresence } from 'motion/react';
 
 
@@ -604,8 +605,9 @@ function AilmentAccordionItem({ ailment, isSelected, onSelect, globalTone, onJou
       }`}
       style={{
         borderColor: isSelected ? `${categoryMeta.color}70` : undefined,
-        boxShadow: isSelected ? `0 0 30px ${categoryMeta.color}15` : undefined
-      }}
+        boxShadow: isSelected ? `0 0 30px ${categoryMeta.color}15` : undefined,
+        '--symptom-card-image': `url(${getCategoryImage(enriched.category)})`,
+      } as React.CSSProperties}
     >
       {/* Dynamic soft left category color fade/glow overlay */}
       <div 
@@ -622,10 +624,32 @@ function AilmentAccordionItem({ ailment, isSelected, onSelect, globalTone, onJou
         onClick={onSelect}
         className="w-full text-left py-4 md:py-5 px-5 md:px-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 hover:bg-white/[0.02] transition-all duration-300 cursor-pointer group relative overflow-hidden"
       >
-        {/* Subtle decorative background glow to make the entry feel cinematic */}
-        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/[0.01] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+        {/* Real category image layers for symptom result cards */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+          <img
+            src={getCategoryImage(enriched.category)}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover opacity-90 blur-[6px] scale-[1.12] saturate-150 contrast-125 brightness-125 transition-all duration-700 group-hover:opacity-100 group-hover:scale-[1.16]"
+          />
+          <img
+            src={getCategoryImage(enriched.category)}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover opacity-70 saturate-125 contrast-110 brightness-110 transition-all duration-700 group-hover:opacity-90"
+            style={{
+              WebkitMaskImage: "radial-gradient(circle at 58% 48%, rgba(0,0,0,1) 0%, rgba(0,0,0,.75) 34%, rgba(0,0,0,.22) 68%, rgba(0,0,0,0) 100%)",
+              maskImage: "radial-gradient(circle at 58% 48%, rgba(0,0,0,1) 0%, rgba(0,0,0,.75) 34%, rgba(0,0,0,.22) 68%, rgba(0,0,0,0) 100%)",
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#05070b]/72 via-[#05070b]/24 to-[#05070b]/32" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/24 via-transparent to-black/5" />
+        </div>
 
-        <div className="space-y-3 flex-1 w-full">
+        {/* Subtle decorative background glow to make the entry feel cinematic */}
+        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/[0.01] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0" />
+
+        <div className="space-y-3 flex-1 w-full relative z-10">
           {/* Evidence/Safety Strip */}
           <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[9px] font-mono uppercase tracking-wider font-semibold text-slate-500">
             {/* System / Category Badge */}
@@ -720,7 +744,7 @@ function AilmentAccordionItem({ ailment, isSelected, onSelect, globalTone, onJou
         </div>
 
         {/* Right column with larger glowing thumbnail/icon & clear "Decode" button */}
-        <div className="flex items-center gap-4 md:gap-5 shrink-0 w-full md:w-auto justify-between md:justify-end border-t md:border-t-0 border-white/5 pt-3 md:pt-0">
+        <div className="flex items-center gap-4 md:gap-5 shrink-0 w-full md:w-auto justify-between md:justify-end border-t md:border-t-0 border-white/5 pt-3 md:pt-0 relative z-10">
           {/* Path preview - ONLY show when expanded */}
           {isSelected && (
             <div className="hidden lg:flex items-center gap-1.5 text-[9px] font-mono text-[#8A94A6] bg-white/[0.02] border border-white/5 px-2.5 py-1 rounded-xl">
@@ -749,6 +773,19 @@ function AilmentAccordionItem({ ailment, isSelected, onSelect, globalTone, onJou
               className="absolute w-12 h-12 rounded-full blur-xl opacity-20 pointer-events-none" 
               style={{ backgroundColor: categoryMeta.color }}
             />
+            <img
+              src={getCategoryImage(enriched.category)}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 h-full w-full object-cover opacity-55 blur-[3px] scale-110 saturate-150 contrast-125 brightness-125"
+            />
+            <img
+              src={getCategoryImage(enriched.category)}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-1 h-[calc(100%-0.5rem)] w-[calc(100%-0.5rem)] object-cover rounded-xl opacity-80 saturate-125 contrast-110"
+            />
+            <div className="absolute inset-0 bg-black/30" />
             <div className="scale-95 group-hover:scale-105 transition-transform duration-500 relative z-10">
               {renderOrganIllustration(enriched.id)}
             </div>
@@ -1467,6 +1504,24 @@ const renderCategoryIcon = (iconName: string, className: string, customColor?: s
   }
 };
 
+
+const SYMPTOM_CARD_IMAGES: Record<string, string> = {
+  "All": "/all.png",
+  "Metabolic & Endocrine": "/metabolic-endocrine.png",
+  "Head & Neck": "/head-neck.png",
+  "General & Energy": "/general-energy.png",
+  "Stomach & Gut": "/stomach-gut.png",
+  "Chest & Breathing": "/chest-breathing.png",
+  "Skin & Sleep": "/skin-sleep.png",
+  "Skin & General": "/skin-sleep.png",
+  "Back & Shoulders": "/back-shoulders.png",
+  "Limbs & Joints": "/limbs-joints.png",
+};
+
+const getCategoryImage = (category: string) => {
+  return SYMPTOM_CARD_IMAGES[category] || SYMPTOM_CARD_IMAGES["All"];
+};
+
 export default function App() {
   const [activeTab, setActiveTab] = useState<'dictionary' | 'decoder' | 'daily' | 'journal'>('dictionary');
   const [searchQuery, setSearchQuery] = useState('');
@@ -1476,9 +1531,20 @@ export default function App() {
   const [isDisclaimerExpanded, setIsDisclaimerExpanded] = useState(false);
   
   // Premium & Monetization State
-  const [isPremium, setIsPremium] = useState<boolean>(() => localStorage.getItem('cyl_premium') === 'true');
+  // Server is the source of truth. localStorage is not trusted for premium access.
+  const [isPremium, setIsPremium] = useState(false);
+  const [premiumStatus, setPremiumStatus] = useState<any>(null);
+  const [isPremiumLoading, setIsPremiumLoading] = useState(true);
+  const [billingMessage, setBillingMessage] = useState<string | null>(null);
   const [showPaywall, setShowPaywall] = useState(false);
   const [showBillingInfo, setShowBillingInfo] = useState(false);
+
+  // Supabase Auth State
+  const [authEmail, setAuthEmail] = useState('');
+  const [authPassword, setAuthPassword] = useState('');
+  const [authUser, setAuthUser] = useState<any>(null);
+  const [authMessage, setAuthMessage] = useState<string | null>(null);
+  const [authLoading, setAuthLoading] = useState(false);
   
   // Custom Decoder State
   const [customSymptom, setCustomSymptom] = useState('');
@@ -1487,29 +1553,79 @@ export default function App() {
   const [decodedResult, setDecodedResult] = useState<SymptomAnalysisResponse | null>(null);
   const [decodeError, setDecodeError] = useState<string | null>(null);
 
+  // Fetch server-side premium status. Backend is the source of truth.
+  const refreshPremiumStatus = async () => {
+    setIsPremiumLoading(true);
+    try {
+      const response = await authFetch('/api/me/premium');
+      const data = await response.json();
+      setPremiumStatus(data);
+      setIsPremium(Boolean(data.isPremium));
+    } catch (error) {
+      console.error('Failed to load premium status:', error);
+      setPremiumStatus(null);
+      setIsPremium(false);
+    } finally {
+      setIsPremiumLoading(false);
+    }
+  };
+
+  // Supabase login/session watcher.
+  useEffect(() => {
+    if (!supabase) {
+      setAuthMessage('Supabase frontend env is missing. Check VITE_SUPABASE_URL and VITE_SUPABASE_PUBLISHABLE_KEY.');
+      refreshPremiumStatus();
+      return;
+    }
+
+    let alive = true;
+
+    supabase.auth.getSession().then(({ data }) => {
+      if (!alive) return;
+      setAuthUser(data.session?.user ?? null);
+      refreshPremiumStatus();
+    });
+
+    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+      setAuthUser(session?.user ?? null);
+      setTimeout(() => refreshPremiumStatus(), 0);
+    });
+
+    return () => {
+      alive = false;
+      listener.subscription.unsubscribe();
+    };
+  }, []);
+
   // List of unique categories for filtering
   const categories = ['All', ...Array.from(new Set(AILMENTS.map(a => a.category)))];
 
-  // Filtered ailments based on search query and category
+  // Filtered ailments based on search query and category, alphabetized by symptom name
   const filteredAilments = AILMENTS.filter(ailment => {
     const matchesSearch = ailment.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                           ailment.emotionalRoot.toLowerCase().includes(searchQuery.toLowerCase()) ||
                           ailment.physiologicalDescription.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCategory = selectedCategory === 'All' || ailment.category === selectedCategory;
     return matchesSearch && matchesCategory;
-  });
+  }).sort((a, b) => a.name.localeCompare(b.name));
 
   // Handle custom symptom analysis submission
   const handleDecodeSymptom = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!customSymptom.trim()) return;
 
+    if (!isPremium) {
+      setShowPaywall(true);
+      setDecodeError('AI Somatic Decoder is a premium feature. Backend says no. Rude, but financially coherent.');
+      return;
+    }
+
     setIsDecoding(true);
     setDecodeError(null);
     setDecodedResult(null);
 
     try {
-      const response = await fetch('/api/analyze-symptom', {
+      const response = await authFetch('/api/analyze-symptom', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -1522,6 +1638,9 @@ export default function App() {
 
       const data = await response.json();
       if (!response.ok) {
+        if (response.status === 402 || data.requiresPremium) {
+          setShowPaywall(true);
+        }
         throw new Error(data.error || 'Failed to analyze symptom');
       }
 
@@ -1531,6 +1650,95 @@ export default function App() {
       setDecodeError(err.message || 'An unexpected error occurred. Please try again.');
     } finally {
       setIsDecoding(false);
+    }
+  };
+
+  const openDecoder = () => {
+    if (!isPremium) {
+      setShowPaywall(true);
+      setBillingMessage('AI Somatic Decoder is Premium. The free version keeps the dictionary, symptom cards, safety info, reflections, and basic journal open.');
+      return;
+    }
+
+    setActiveTab('decoder');
+  };
+
+  const handleAuthSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!supabase) {
+      setAuthMessage('Supabase is not configured on the frontend.');
+      return;
+    }
+
+    if (!authEmail.trim() || !authPassword.trim()) {
+      setAuthMessage('Enter an email and password first. Revolutionary, I know.');
+      return;
+    }
+
+    setAuthLoading(true);
+    setAuthMessage(null);
+
+    try {
+      const email = authEmail.trim();
+
+      // Try login first.
+      const login = await supabase.auth.signInWithPassword({
+        email,
+        password: authPassword,
+      });
+
+      if (!login.error) {
+        setAuthUser(login.data.user);
+        setAuthMessage('Signed in.');
+        await refreshPremiumStatus();
+        return;
+      }
+
+      // If no account exists yet, create one.
+      const signup = await supabase.auth.signUp({
+        email,
+        password: authPassword,
+        options: {
+          data: {
+            display_name: email.split('@')[0],
+          },
+        },
+      });
+
+      if (signup.error) {
+        throw signup.error;
+      }
+
+      setAuthUser(signup.data.user);
+      setAuthMessage(
+        signup.data.session
+          ? 'Account created and signed in.'
+          : 'Account created. Check email confirmation settings in Supabase if it does not sign in immediately.'
+      );
+      await refreshPremiumStatus();
+    } catch (error: any) {
+      setAuthMessage(error.message || 'Supabase auth failed.');
+    } finally {
+      setAuthLoading(false);
+    }
+  };
+
+  const handleLogout = async () => {
+    if (!supabase) return;
+    setAuthLoading(true);
+    setAuthMessage(null);
+
+    try {
+      await supabase.auth.signOut();
+      setAuthUser(null);
+      setIsPremium(false);
+      await refreshPremiumStatus();
+      setAuthMessage('Signed out.');
+    } catch (error: any) {
+      setAuthMessage(error.message || 'Logout failed.');
+    } finally {
+      setAuthLoading(false);
     }
   };
 
@@ -1579,7 +1787,7 @@ export default function App() {
             Psychosomatic Dictionary
           </button>
           <button 
-            onClick={() => setActiveTab('decoder')}
+            onClick={openDecoder}
             className={`cursor-pointer hover:text-white transition-all pb-1 ${activeTab === 'decoder' ? 'text-indigo-400 border-b-2 border-indigo-500' : ''}`}
           >
             AI Somatic Decoder
@@ -1611,13 +1819,83 @@ export default function App() {
           </button>
 
           <button
-            onClick={() => setActiveTab('decoder')}
+            onClick={openDecoder}
             className="px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold uppercase text-[10px] tracking-widest transition-all rounded-xl cursor-pointer shadow-[0_0_20px_rgba(99,102,241,0.25)]"
           >
             Analyze Symptom
           </button>
         </div>
       </nav>
+
+      {/* Supabase Auth Strip */}
+      <div className="border-b border-white/10 bg-black/45 backdrop-blur-md px-6 md:px-10 py-3 relative z-40">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-3 lg:items-center justify-between">
+          <div className="flex flex-col gap-1">
+            <span className="text-[9px] font-mono uppercase tracking-[0.22em] text-cyan-400 font-black">
+              Supabase Account Link
+            </span>
+            <span className="text-[11px] text-slate-400 font-mono">
+              {isSupabaseConfigured
+                ? authUser
+                  ? `Signed in as ${authUser.email || 'Supabase user'}`
+                  : 'Not signed in. Premium can still run in DEV_PREMIUM mode.'
+                : 'Frontend Supabase env missing.'}
+            </span>
+            {premiumStatus?.message && (
+              <span className="text-[10px] text-slate-500 font-mono">
+                Premium: {premiumStatus.source || 'unknown'} • {premiumStatus.isPremium ? 'active' : 'locked'}
+              </span>
+            )}
+          </div>
+
+          {authUser ? (
+            <div className="flex flex-col sm:flex-row gap-2 sm:items-center">
+              <div className="px-3 py-2 rounded-xl border border-cyan-500/20 bg-cyan-500/10 text-cyan-200 text-[10px] font-mono">
+                <User className="inline w-3.5 h-3.5 mr-1" />
+                {authUser.email}
+              </div>
+              <button
+                type="button"
+                onClick={handleLogout}
+                disabled={authLoading}
+                className="px-4 py-2 rounded-xl border border-white/10 text-slate-300 hover:text-white hover:bg-white/10 text-[10px] uppercase tracking-widest font-black font-mono disabled:opacity-50"
+              >
+                Logout
+              </button>
+            </div>
+          ) : (
+            <form onSubmit={handleAuthSubmit} className="flex flex-col sm:flex-row gap-2 w-full lg:w-auto">
+              <input
+                type="email"
+                value={authEmail}
+                onChange={(e) => setAuthEmail(e.target.value)}
+                placeholder="email"
+                className="bg-black/50 border border-white/10 rounded-xl px-3 py-2 text-xs text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500/50 min-w-[190px]"
+              />
+              <input
+                type="password"
+                value={authPassword}
+                onChange={(e) => setAuthPassword(e.target.value)}
+                placeholder="password"
+                className="bg-black/50 border border-white/10 rounded-xl px-3 py-2 text-xs text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500/50 min-w-[160px]"
+              />
+              <button
+                type="submit"
+                disabled={authLoading || !isSupabaseConfigured}
+                className="px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black text-[10px] uppercase tracking-widest font-black font-mono disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {authLoading ? 'Working...' : 'Login / Create'}
+              </button>
+            </form>
+          )}
+        </div>
+
+        {authMessage && (
+          <div className="max-w-7xl mx-auto mt-2 text-[10px] font-mono text-amber-300 bg-amber-500/10 border border-amber-500/20 rounded-xl px-3 py-2">
+            {authMessage}
+          </div>
+        )}
+      </div>
 
       {/* Mobile Nav Bar with Glassmorphism */}
       <div className="md:hidden flex border-b border-white/10 bg-[#07080d]/80 backdrop-blur-md justify-around py-3.5 text-[10px] font-bold uppercase tracking-wider text-slate-400 relative z-40 font-display">
@@ -1628,7 +1906,7 @@ export default function App() {
           Dictionary
         </button>
         <button 
-          onClick={() => setActiveTab('decoder')}
+          onClick={openDecoder}
           className={`${activeTab === 'decoder' ? 'text-indigo-400 font-extrabold' : ''}`}
         >
           AI Decoder
@@ -2527,21 +2805,36 @@ export default function App() {
                   {/* SIMULATION ACCESS TRIGGERS */}
                   <div className="flex flex-col sm:flex-row gap-3">
                     <button
-                      onClick={() => {
-                        const newPremiumState = !isPremium;
-                        setIsPremium(newPremiumState);
-                        localStorage.setItem('cyl_premium', newPremiumState ? 'true' : 'false');
-                        setShowPaywall(false);
+                      onClick={async () => {
+                        setBillingMessage(null);
+                        try {
+                          const response = await authFetch('/api/billing/create-checkout-session', { method: 'POST' });
+                          const data = await response.json();
+                          setBillingMessage(data.message || data.error || 'Checkout endpoint responded.');
+                          if (data.checkoutUrl && response.ok) {
+                            window.location.href = data.checkoutUrl;
+                          }
+                        } catch (error: any) {
+                          setBillingMessage(error.message || 'Checkout request failed.');
+                        }
                       }}
                       className="flex-1 py-3 bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-600 hover:to-yellow-500 text-black font-black uppercase text-[10px] tracking-widest rounded-xl transition-all shadow-lg shadow-amber-500/10 flex items-center justify-center gap-2 cursor-pointer"
                     >
                       <Sparkles className="w-4 h-4 text-black" />
-                      <span>{isPremium ? 'Deactivate Premium Demo Mode' : 'Activate Premium Demo Mode (Instant)'}</span>
+                      <span>{isPremium ? 'Open Checkout / Manage Premium' : 'Start Checkout'}</span>
                     </button>
 
                     <button
-                      onClick={() => {
+                      onClick={async () => {
                         setShowBillingInfo(!showBillingInfo);
+                        setBillingMessage(null);
+                        try {
+                          const response = await authFetch('/api/billing/create-portal-session', { method: 'POST' });
+                          const data = await response.json();
+                          setBillingMessage(data.message || data.error || 'Billing portal endpoint responded.');
+                        } catch (error: any) {
+                          setBillingMessage(error.message || 'Billing portal request failed.');
+                        }
                       }}
                       className="px-5 py-3 border border-amber-500/30 hover:border-amber-500/60 bg-white/5 hover:bg-white/10 text-amber-400 font-mono uppercase text-[10px] tracking-widest rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer"
                     >
@@ -2549,6 +2842,12 @@ export default function App() {
                       <span>{showBillingInfo ? 'Hide Pay Info' : 'Live Pay Info'}</span>
                     </button>
                   </div>
+
+                  {billingMessage && (
+                    <div className="p-3.5 bg-cyan-500/10 border border-cyan-500/30 rounded-xl text-[10px] text-cyan-200/90 leading-relaxed font-mono">
+                      {billingMessage}
+                    </div>
+                  )}
 
                   {showBillingInfo && (
                     <motion.div
