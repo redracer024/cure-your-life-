@@ -3,12 +3,63 @@ import path from "path";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI, Type } from "@google/genai";
 import { createClient } from "@supabase/supabase-js";
+import Stripe from "stripe";
 import dotenv from "dotenv";
 
 dotenv.config();
 
 const app = express();
 const PORT = Number(process.env.PORT || 3000);
+
+// Stripe webhooks need raw body. This must be registered before express.json().
+app.post("/api/billing/webhook", express.raw({ type: "application/json" }), async (req: express.Request, res: express.Response) => {
+  if (!stripe || !STRIPE_WEBHOOK_SECRET || !supabaseAdmin) {
+    return res.status(501).json({
+      error: "Stripe webhook is not configured.",
+      requiredEnv: ["STRIPE_SECRET_KEY", "STRIPE_WEBHOOK_SECRET", "SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY"]
+    });
+  }
+
+  const signature = req.headers["stripe-signature"];
+
+  if (!signature) {
+    return res.status(400).json({ error: "Missing Stripe signature." });
+  }
+
+  let event: Stripe.Event;
+
+  try {
+    event = stripe.webhooks.constructEvent(req.body, signature, STRIPE_WEBHOOK_SECRET);
+  } catch (error: any) {
+    console.error("Stripe webhook signature verification failed:", error.message);
+    return res.status(400).json({ error: `Webhook Error: ${error.message}` });
+  }
+
+  try {
+    if (event.type === "checkout.session.completed") {
+      const session = event.data.object as Stripe.Checkout.Session;
+      await syncStripeCheckoutSession(session);
+    }
+
+    if (
+      event.type === "customer.subscription.created" ||
+      event.type === "customer.subscription.updated" ||
+      event.type === "customer.subscription.deleted"
+    ) {
+      const subscription = event.data.object as Stripe.Subscription;
+      await syncStripeSubscription(subscription);
+    }
+
+    return res.json({ received: true });
+  } catch (error: any) {
+    console.error("Stripe webhook processing failed:", error);
+    return res.status(500).json({
+      error: "Webhook processing failed.",
+      message: error.message || "Unknown webhook error"
+    });
+  }
+});
+
 
 app.use(express.json());
 
@@ -39,9 +90,12 @@ const DEV_PREMIUM = parseBooleanEnv(
 const PREMIUM_ACCESS_TOKEN = process.env.PREMIUM_ACCESS_TOKEN || "";
 const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY || "";
 const STRIPE_PRICE_ID = process.env.STRIPE_PRICE_ID || "";
+const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET || "";
 const APP_URL = process.env.APP_URL || `http://localhost:${PORT}`;
 const SUPABASE_URL = process.env.SUPABASE_URL || "";
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
+
+const stripe = STRIPE_SECRET_KEY ? new Stripe(STRIPE_SECRET_KEY) : null;
 
 const supabaseAdmin = SUPABASE_URL && SUPABASE_SERVICE_ROLE_KEY
   ? createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, {
@@ -86,12 +140,110 @@ const isSubscriptionActive = (subscription: any) => {
   return false;
 };
 
+
+const getSubscriptionPeriodEnd = (subscription: Stripe.Subscription) => {
+  const periodEnd = (subscription as any).current_period_end;
+  return typeof periodEnd === "number"
+    ? new Date(periodEnd * 1000).toISOString()
+    : null;
+};
+
+const upsertStripeSubscription = async (params: {
+  userId: string;
+  status: string;
+  stripeCustomerId?: string | null;
+  stripeSubscriptionId?: string | null;
+  currentPeriodEnd?: string | null;
+}) => {
+  if (!supabaseAdmin) {
+    throw new Error("Supabase admin client is not configured.");
+  }
+
+  const { error } = await supabaseAdmin
+    .from("subscriptions")
+    .upsert(
+      {
+        user_id: params.userId,
+        status: params.status,
+        source: "stripe",
+        stripe_customer_id: params.stripeCustomerId || null,
+        stripe_subscription_id: params.stripeSubscriptionId || null,
+        current_period_end: params.currentPeriodEnd || null,
+        updated_at: new Date().toISOString()
+      },
+      {
+        onConflict: "user_id"
+      }
+    );
+
+  if (error) {
+    throw new Error(`Failed to upsert Stripe subscription: ${error.message}`);
+  }
+};
+
+const syncStripeCheckoutSession = async (session: Stripe.Checkout.Session) => {
+  const userId =
+    session.metadata?.supabase_user_id ||
+    session.client_reference_id ||
+    "";
+
+  if (!userId) {
+    throw new Error("Checkout session is missing supabase_user_id.");
+  }
+
+  const subscriptionId =
+    typeof session.subscription === "string"
+      ? session.subscription
+      : session.subscription?.id;
+
+  let status = "active";
+  let currentPeriodEnd: string | null = null;
+
+  if (subscriptionId && stripe) {
+    const subscription = await stripe.subscriptions.retrieve(subscriptionId);
+    status = subscription.status;
+    currentPeriodEnd = getSubscriptionPeriodEnd(subscription);
+  }
+
+  await upsertStripeSubscription({
+    userId,
+    status,
+    stripeCustomerId:
+      typeof session.customer === "string"
+        ? session.customer
+        : session.customer?.id || null,
+    stripeSubscriptionId: subscriptionId || null,
+    currentPeriodEnd
+  });
+};
+
+const syncStripeSubscription = async (subscription: Stripe.Subscription) => {
+  const userId = subscription.metadata?.supabase_user_id || "";
+
+  if (!userId) {
+    console.warn("Stripe subscription missing supabase_user_id metadata:", subscription.id);
+    return;
+  }
+
+  await upsertStripeSubscription({
+    userId,
+    status: subscription.status,
+    stripeCustomerId:
+      typeof subscription.customer === "string"
+        ? subscription.customer
+        : subscription.customer?.id || null,
+    stripeSubscriptionId: subscription.id,
+    currentPeriodEnd: getSubscriptionPeriodEnd(subscription)
+  });
+};
+
+
 const getLatestSubscriptionForUser = async (userId: string) => {
   if (!supabaseAdmin) return null;
 
   const { data, error } = await supabaseAdmin
     .from("subscriptions")
-    .select("id,user_id,status,source,current_period_end,created_at,updated_at")
+    .select("id,user_id,status,source,stripe_customer_id,stripe_subscription_id,current_period_end,created_at,updated_at")
     .eq("user_id", userId)
     .order("updated_at", { ascending: false })
     .limit(1)
@@ -175,32 +327,56 @@ app.get("/api/me/premium", async (req: express.Request, res: express.Response) =
 app.post("/api/billing/create-checkout-session", async (req: express.Request, res: express.Response) => {
   const premium = await getPremiumStatus(req);
 
-  if (!premium.userId && !DEV_PREMIUM) {
+  if (!premium.userId || premium.userId === "demo-user") {
     return res.status(401).json({
-      error: "Sign in before starting checkout.",
+      error: "Sign in with Supabase before starting checkout.",
       requiresAuth: true,
       premium
     });
   }
 
-  if (!STRIPE_SECRET_KEY || !STRIPE_PRICE_ID) {
+  if (!stripe || !STRIPE_PRICE_ID) {
     return res.status(501).json({
       error: "Stripe checkout is not configured yet.",
-      mode: "placeholder",
-      userId: premium.userId,
       requiredEnv: ["STRIPE_SECRET_KEY", "STRIPE_PRICE_ID", "APP_URL"],
-      checkoutUrl: `${APP_URL}/?billing=checkout-placeholder`,
-      message: "Backend route exists and knows the user. Add Stripe SDK/session creation here when ready. Humanity demands tribute before premium features, apparently."
+      message: "Add Stripe secret key and price ID on the server. The checkout button exists, but the cash register is still a cardboard box."
     });
   }
 
-  return res.status(501).json({
-    error: "Stripe SDK is not wired yet.",
-    mode: "stripe-env-present-but-sdk-not-installed",
-    userId: premium.userId,
-    checkoutUrl: `${APP_URL}/?billing=checkout-placeholder`,
-    message: "Environment variables are present, but live Stripe creation has intentionally not been enabled in this groundwork pass."
-  });
+  try {
+    const session = await stripe.checkout.sessions.create({
+      mode: "subscription",
+      payment_method_types: ["card"],
+      customer_email: premium.email || undefined,
+      client_reference_id: premium.userId,
+      line_items: [
+        {
+          price: STRIPE_PRICE_ID,
+          quantity: 1
+        }
+      ],
+      metadata: {
+        supabase_user_id: premium.userId
+      },
+      subscription_data: {
+        metadata: {
+          supabase_user_id: premium.userId
+        }
+      },
+      success_url: `${APP_URL}/?billing=success`,
+      cancel_url: `${APP_URL}/?billing=cancelled`
+    });
+
+    return res.json({
+      checkoutUrl: session.url
+    });
+  } catch (error: any) {
+    console.error("Stripe checkout creation failed:", error);
+    return res.status(500).json({
+      error: "Stripe checkout creation failed.",
+      message: error.message || "Unknown Stripe error"
+    });
+  }
 });
 
 // Placeholder customer portal endpoint. Later this should create a Stripe billing portal session
@@ -225,15 +401,6 @@ app.post("/api/billing/create-portal-session", async (req: express.Request, res:
   });
 });
 
-// Future webhook placeholder. Do not accept live Stripe webhooks here until raw-body
-// verification with stripe.webhooks.constructEvent is added. Normal express.json()
-// parsing is not enough for secure Stripe signature verification.
-app.post("/api/billing/webhook", (_req: express.Request, res: express.Response) => {
-  return res.status(501).json({
-    error: "Stripe webhook verification is not implemented yet.",
-    nextStep: "Use express.raw({ type: 'application/json' }) on this route before express.json(), then verify Stripe-Signature with stripe.webhooks.constructEvent."
-  });
-});
 
 // Initialize Gemini Client
 const apiKey = process.env.GEMINI_API_KEY;
