@@ -4385,7 +4385,7 @@ export const AILMENTS: Ailment[] = [
     }
   },
   {
-    "id": "boils",
+    "id": "boils-furuncles",
     "name": "Boils (Furuncles)",
     "category": "Skin & Sleep",
     "emotionalRoot": "Boiling over with anger and fury. Deep-seated, localized resentment that has been kept hot and hidden under the surface for a long time, finally erupting as a painful, inflamed, localized battleground.",
