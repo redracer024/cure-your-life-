@@ -8,6 +8,88 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Last-resort readability pass for long generated symptom copy.
+      // The app was dumping asthma explanations as one giant paragraph, because apparently lungs were not enough suffering.
+      (() => {
+        const MIN_TEXT_LENGTH = 180;
+        const MAX_SENTENCES_PER_PARAGRAPH = 2;
+        const BLOCK_TAGS = new Set(['P', 'DIV', 'SPAN', 'LI']);
+        const SKIP_TAGS = new Set(['SCRIPT', 'STYLE', 'TEXTAREA', 'INPUT', 'BUTTON', 'SELECT', 'OPTION']);
+
+        const isLongHumanText = (text) => {
+          const clean = text.replace(/\s+/g, ' ').trim();
+          if (clean.length < MIN_TEXT_LENGTH) return false;
+          if (!/[.!?]\s+[A-Z0-9"']/.test(clean)) return false;
+          if (/^(http|www\.|[{}[\]<>])/.test(clean)) return false;
+          return true;
+        };
+
+        const paragraphize = (text) => {
+          const clean = text.replace(/\s+/g, ' ').trim();
+          const sentences = clean.match(/[^.!?]+[.!?]+(?:["']|\))?/g) || [clean];
+          const tail = clean.replace(sentences.join('').trim(), '').trim();
+          if (tail) sentences.push(tail);
+
+          const paragraphs = [];
+          for (let i = 0; i < sentences.length; i += MAX_SENTENCES_PER_PARAGRAPH) {
+            paragraphs.push(sentences.slice(i, i + MAX_SENTENCES_PER_PARAGRAPH).join(' ').trim());
+          }
+          return paragraphs.filter(Boolean);
+        };
+
+        const formatNode = (node) => {
+          const parent = node.parentElement;
+          if (!parent || !BLOCK_TAGS.has(parent.tagName) || SKIP_TAGS.has(parent.tagName)) return;
+          if (parent.dataset.cylParagraphized === 'true') return;
+          if (!isLongHumanText(node.nodeValue || '')) return;
+
+          const paragraphs = paragraphize(node.nodeValue || '');
+          if (paragraphs.length < 2) return;
+
+          const wrapper = document.createElement('span');
+          wrapper.dataset.cylParagraphized = 'true';
+          wrapper.style.display = 'block';
+          wrapper.style.whiteSpace = 'normal';
+          wrapper.style.lineHeight = '1.75';
+
+          paragraphs.forEach((paragraph, index) => {
+            const p = document.createElement('span');
+            p.textContent = paragraph;
+            p.style.display = 'block';
+            p.style.marginBottom = index === paragraphs.length - 1 ? '0' : '0.85rem';
+            wrapper.appendChild(p);
+          });
+
+          parent.replaceChild(wrapper, node);
+          parent.dataset.cylParagraphized = 'true';
+        };
+
+        const run = () => {
+          const root = document.getElementById('root');
+          if (!root) return;
+
+          const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+            acceptNode(node) {
+              const parent = node.parentElement;
+              if (!parent || SKIP_TAGS.has(parent.tagName)) return NodeFilter.FILTER_REJECT;
+              if (parent.closest('[data-cyl-paragraphized="true"]')) return NodeFilter.FILTER_REJECT;
+              return isLongHumanText(node.nodeValue || '') ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
+            }
+          });
+
+          const nodes = [];
+          while (walker.nextNode()) nodes.push(walker.currentNode);
+          nodes.forEach(formatNode);
+        };
+
+        const scheduleRun = () => window.requestAnimationFrame(run);
+        window.addEventListener('load', scheduleRun);
+        document.addEventListener('click', () => setTimeout(scheduleRun, 80), true);
+
+        const observer = new MutationObserver(() => scheduleRun());
+        observer.observe(document.documentElement, { childList: true, subtree: true });
+      })();
+    </script>
   </body>
 </html>
-
