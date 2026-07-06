@@ -259,3 +259,18 @@ html, body {
 .glass-panel-heavy:has(span[style*="#FF5CD6"]),
 .glass-panel-interactive:has(span[style*="255, 92, 214"]),
 .glass-panel-heavy:has(span[style*="255, 92, 214"]) { --symptom-card-image: url('/skin-sleep.png'); }
+
+/* Make long generated symptom explanations readable instead of one giant brick of text.
+   Browser typography: somehow still our collective punishment. */
+.glass-panel-heavy p,
+.glass-panel-heavy li,
+.glass-panel-heavy .font-mono,
+.glass-panel-heavy .font-sans,
+.glass-panel-heavy .font-serif {
+  white-space: pre-line;
+}
+
+.glass-panel-heavy p,
+.glass-panel-heavy li {
+  overflow-wrap: anywhere;
+}
