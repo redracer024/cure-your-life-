@@ -9,3 +9,6 @@ coverage/
 
 .agents/
 skills-lock.json
+
+.env
+.env.local

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 320">
+<defs><radialGradient id="g" cx="50%" cy="45%" r="72%"><stop offset="0%" stop-color="#ffb020"/><stop offset="45%" stop-color="#4b2505"/><stop offset="100%" stop-color="#05070b"/></radialGradient><filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect width="512" height="320" rx="34" fill="url(#g)"/><circle cx="256" cy="160" r="90" fill="#080704" stroke="#ffc35a" stroke-width="5" filter="url(#glow)"/>
+<path d="M256 70c35 40 35 140 0 180M256 70c-35 40-35 140 0 180" fill="none" stroke="#ffe0a1" stroke-width="5"/>
+<path d="M166 160h180M256 70v180" stroke="#ff8a00" stroke-width="4" opacity=".75"/><circle cx="256" cy="160" r="22" fill="#ff8a00"/><circle cx="256" cy="160" r="8" fill="#fff2cc"/>
+<text x="256" y="292" text-anchor="middle" fill="#ffe0a1" font-family="monospace" font-size="20" font-weight="900" letter-spacing="5">EASTERN MAP</text></svg>

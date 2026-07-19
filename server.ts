@@ -384,21 +384,47 @@ app.post("/api/billing/create-checkout-session", async (req: express.Request, re
 app.post("/api/billing/create-portal-session", async (req: express.Request, res: express.Response) => {
   const premium = await getPremiumStatus(req);
 
-  if (!premium.isPremium) {
-    return res.status(402).json({
-      error: "Premium is required before opening a billing portal.",
-      requiresPremium: true,
+  if (!premium.userId || premium.userId === "demo-user") {
+    return res.status(401).json({
+      error: "Sign in before opening the billing portal.",
+      requiresAuth: true,
       premium
     });
   }
 
-  return res.status(501).json({
-    error: "Stripe billing portal is not configured yet.",
-    mode: "placeholder",
-    requiredEnv: ["STRIPE_SECRET_KEY", "APP_URL"],
-    portalUrl: `${APP_URL}/?billing=portal-placeholder`,
-    message: "Backend route exists and premium is verified. Add Stripe customer lookup and billing portal session creation here later."
-  });
+  if (!stripe) {
+    return res.status(501).json({
+      error: "Stripe is not configured.",
+      requiredEnv: ["STRIPE_SECRET_KEY", "APP_URL"]
+    });
+  }
+
+  const stripeCustomerId = premium.subscription?.stripe_customer_id;
+
+  if (!stripeCustomerId) {
+    return res.status(404).json({
+      error: "No Stripe customer found for this account.",
+      message: "This user does not have a Stripe subscription row yet. The billing portal needs a customer id, because apparently it refuses to manage imaginary wallets.",
+      premium
+    });
+  }
+
+  try {
+    const session = await stripe.billingPortal.sessions.create({
+      customer: stripeCustomerId,
+      return_url: `${APP_URL}/?billing=portal-return`
+    });
+
+    return res.json({
+      portalUrl: session.url
+    });
+  } catch (error: any) {
+    console.error("Stripe billing portal creation failed:", error);
+    return res.status(500).json({
+      error: "Stripe billing portal creation failed.",
+      message: error.message || "Unknown Stripe error"
+    });
+  }
 });
 
 

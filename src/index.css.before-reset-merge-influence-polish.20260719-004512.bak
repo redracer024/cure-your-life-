@@ -276,39 +276,3 @@ html, body {
 .breathing-lungs {
   animation: breathe 5.5s ease-in-out infinite;
 }
-
-/* Premium 3D glass hover for safety / influence / reset cards */
-.premium-3d-card {
-  transform-style: preserve-3d;
-  transition:
-    transform 260ms ease,
-    box-shadow 260ms ease,
-    border-color 260ms ease,
-    background 260ms ease,
-    filter 260ms ease;
-}
-
-.premium-3d-card:hover {
-  transform: translateY(-4px) scale(1.012);
-  filter: brightness(1.08) saturate(1.08);
-  box-shadow:
-    inset 0 0 28px rgba(255,255,255,0.035),
-    0 18px 55px rgba(0,0,0,0.42),
-    0 0 38px rgba(45,212,191,0.10);
-}
-
-.premium-3d-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0;
-  background:
-    radial-gradient(circle at 22% 12%, rgba(255,255,255,0.12), transparent 24%),
-    linear-gradient(135deg, rgba(255,255,255,0.07), transparent 36%);
-  transition: opacity 260ms ease;
-}
-
-.premium-3d-card:hover::before {
-  opacity: 1;
-}

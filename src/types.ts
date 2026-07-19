@@ -14,6 +14,7 @@ export interface MedicalSafety {
 }
 
 export interface Ailment {
+  structuredContent?: any;
   id: string;
   name: string;
   category: string;
