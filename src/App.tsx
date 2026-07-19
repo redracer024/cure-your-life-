@@ -876,6 +876,7 @@ function AilmentAccordionItem({ ailment, isSelected, onSelect, globalTone, onJou
   const [activeNodeIndex, setActiveNodeIndex] = useState<number>(0);
   const [innerTab, setInnerTab] = useState<'biology' | 'tones' | 'influence' | 'reset' | 'safety'>('safety');
   const [localTone, setLocalTone] = useState<'clinical' | 'witty' | 'brutal'>(globalTone);
+  const [isDisclaimerExpanded, setIsDisclaimerExpanded] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const cardData = getCardPatterns(enriched.name, enriched.id, enriched);
   const categoryMeta = CATEGORY_META[enriched.category] || { color: '#6366f1' };
@@ -935,7 +936,7 @@ function AilmentAccordionItem({ ailment, isSelected, onSelect, globalTone, onJou
           behavior: 'smooth',
           block: 'start'
         });
-      }, 150); // Delay slightly to allow layout expansion to start settling
+      }, 450); // Delay slightly to allow layout expansion to finish settling
       return () => clearTimeout(timer);
     } else {
       isFirstRender.current = false;
@@ -945,7 +946,7 @@ function AilmentAccordionItem({ ailment, isSelected, onSelect, globalTone, onJou
   return (
     <div 
       ref={containerRef}
-      className={`scroll-mt-28 rounded-2xl transition-all duration-500 overflow-hidden relative z-10 border group ${
+      className={`scroll-mt-36 rounded-2xl transition-all duration-500 overflow-hidden relative z-10 border group ${
         isSelected 
           ? 'glass-panel-heavy -translate-y-1' 
           : 'glass-panel-interactive border-transparent'
@@ -996,89 +997,20 @@ function AilmentAccordionItem({ ailment, isSelected, onSelect, globalTone, onJou
         {/* Subtle decorative background glow to make the entry feel cinematic */}
         <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/[0.01] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-0" />
 
-        <div className="space-y-3 flex-1 w-full relative z-10">
-          {/* Evidence/Safety Strip */}
-          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[10px] font-mono uppercase tracking-wider font-semibold text-slate-500">
-            {/* System / Category Badge */}
-            <span 
-              className="text-[10px] font-mono tracking-widest font-black px-2.5 py-0.5 rounded-md border"
-              style={{
-                color: categoryMeta.color,
-                borderColor: `${categoryMeta.color}30`,
-                backgroundColor: `${categoryMeta.color}08`
-              }}
-            >
-              {enriched.category}
-            </span>
-
-            <span className="text-slate-800">•</span>
-
-            {/* Unique ID */}
-            <span className="text-slate-400">
-              
-            </span>
-
-            <span className="text-slate-800">•</span>
-
-            {/* Active Lens/Tone indicator */}
-            <span className={`px-2 py-0.5 rounded border text-[8px] font-black tracking-widest ${
-              localTone === 'clinical'
-                ? 'bg-slate-950/40 border-slate-700/30 text-slate-300'
-                : localTone === 'witty'
-                  ? 'bg-indigo-950/40 border-indigo-500/20 text-indigo-300'
-                  : 'bg-red-950/40 border-red-500/20 text-red-400'
-            }`}>
-              {localTone === 'clinical' ? '🎓 Clinical' : localTone === 'witty' ? '🔮 Witty' : '🔥 Brutal'}
-            </span>
-
-            {/* Safety badge if medical_safety exists */}
-            {enriched.medical_safety && (
-              <>
-                <span className="text-slate-800">•</span>
-                <span className="text-[8px] font-black tracking-widest px-2 py-0.5 rounded border bg-amber-950/30 border-amber-500/20 text-amber-400">
-                  ⚠️ 
-                </span>
-              </>
-            )}
-
-            {/* Critical alert count if medical_safety.critical_alerts exists */}
-            {enriched.medical_safety?.critical_alerts && enriched.medical_safety.critical_alerts.length > 0 && (
-              <>
-                <span className="text-slate-800">•</span>
-                <span className="inline-flex items-center gap-1.5 text-[8px] font-black tracking-widest px-2 py-0.5 rounded border bg-red-950/40 border-red-500/30 text-red-300 animate-pulse"><span className="w-1.5 h-1.5 rounded-full bg-red-400" />Emergency signs</span>
-              </>
-            )}
-          </div>
-          
+        <div className="space-y-1 flex-1 w-full relative z-10">
           {/* Symptom Name */}
           <h3 
-            className={`text-lg md:text-2xl font-black uppercase tracking-tight transition-all leading-tight ${
-              isSelected ? '' : 'text-[#E6ECF3] group-hover:text-white'
+            className={`text-2xl md:text-4xl font-black uppercase tracking-tight transition-all leading-tight bg-clip-text text-transparent ${
+              isSelected ? '' : 'group-hover:opacity-100 opacity-90'
             }`}
-            style={isSelected ? { color: categoryMeta.color } : undefined}
+            style={{ 
+              backgroundImage: `linear-gradient(90deg, ${categoryMeta.color} 0%, transparent 120%)` 
+            }}
           >
             {enriched.name}
           </h3>
 
-          {/* Structured rows for Primary Pattern and Safety Preview */}
-          <div className="hidden">
-            <div className="flex flex-col sm:flex-row sm:items-start gap-x-3 gap-y-1 w-full">
-              <span className="text-slate-500 font-mono text-[10px] uppercase tracking-wider font-bold shrink-0 sm:w-32"></span>
-              <span className="text-xs text-slate-300 font-sans font-light leading-6 flex-1 min-w-0 max-w-4xl">
-                {cardData.pattern}
-              </span>
-            </div>
-            {cardData.safety && (
-              <div className="flex flex-col sm:flex-row sm:items-start gap-x-3 gap-y-1 w-full">
-                <span className="text-red-500/90 font-mono text-[10px] uppercase tracking-wider font-bold shrink-0 sm:w-32"></span>
-                <span className="text-xs text-rose-300/80 font-sans font-light leading-6 flex-1 min-w-0 max-w-4xl">
-                  {cardData.safety}
-                </span>
-              </div>
-            )}
-          </div>
-          
-          {/* Tags (Secondary & Compact) */}
+          {/* Tags */}
           <div className="flex flex-wrap gap-1 pt-0.5">
             {enriched.tags?.slice(0, 3).map(t => (
               <span key={t} className="text-[8px] font-mono text-[#8A94A6]/80 bg-white/[0.03] border border-white/5 px-1.5 py-0.5 rounded-md">
@@ -1088,60 +1020,15 @@ function AilmentAccordionItem({ ailment, isSelected, onSelect, globalTone, onJou
           </div>
         </div>
 
-        {/* Right column with larger glowing thumbnail/icon & clear "Decode" button */}
+        {/* Right column with clear "Decode" button */}
         <div className="flex items-center gap-4 md:gap-5 shrink-0 w-full md:w-auto justify-between md:justify-end border-t md:border-t-0 border-white/5 pt-3 md:pt-0 relative z-10">
-          {/* Path preview - ONLY show when expanded */}
-          {isSelected && (
-            <div className="hidden lg:flex items-center gap-1.5 text-[10px] font-mono text-[#8A94A6] bg-white/[0.02] border border-white/5 px-2.5 py-1 rounded-xl">
-              <span className="text-slate-500 font-black uppercase tracking-wider"></span>
-              {enriched.biologyPath.slice(0, 2).map((node, idx) => (
-                <React.Fragment key={idx}>
-                  {idx > 0 && <ChevronRight className="w-2.5 h-2.5 text-slate-700" />}
-                  <span className="text-indigo-400 font-bold">{node.title}</span>
-                </React.Fragment>
-              ))}
-              {enriched.biologyPath.length > 2 && <span className="text-[#8A94A6]">...</span>}
-            </div>
-          )}
-
-          {/* Larger Glowing Illustration Area */}
-          <div 
-            style={{
-              borderColor: isSelected ? `${categoryMeta.color}40` : 'rgba(255, 255, 255, 0.05)',
-              boxShadow: isSelected ? `0 0 25px ${categoryMeta.color}15` : 'none',
-              '--cat-color': categoryMeta.color
-            } as React.CSSProperties}
-            className="w-20 h-20 md:w-24 md:h-24 bg-black/60 rounded-2xl flex items-center justify-center shrink-0 relative overflow-hidden transition-all duration-300 border group-hover:border-[var(--cat-color)]/30 group-hover:shadow-[0_0_20px_rgba(99,102,241,0.15)]"
-          >
-            <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.01] to-transparent pointer-events-none" />
-            <div 
-              className="absolute w-12 h-12 rounded-full blur-xl opacity-20 pointer-events-none" 
-              style={{ backgroundColor: categoryMeta.color }}
-            />
-            <img
-              src={getCategoryImage(enriched.category)}
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 h-full w-full object-cover opacity-55 blur-[3px] scale-110 saturate-150 contrast-125 brightness-125"
-            />
-            <img
-              src={getCategoryImage(enriched.category)}
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-1 h-[calc(100%-0.5rem)] w-[calc(100%-0.5rem)] object-cover rounded-xl opacity-80 saturate-125 contrast-110"
-            />
-            <div className="absolute inset-0 bg-black/30" />
-            <div className="scale-95 group-hover:scale-105 transition-transform duration-500 relative z-10">
-              {renderOrganIllustration(enriched.id)}
-            </div>
-          </div>
 
           {/* Clear "Decode Signal" Pill Button */}
           <div className="flex flex-col items-center gap-1 select-none shrink-0 min-w-[125px]">
             <div className={`w-full py-2.5 px-4 rounded-xl flex items-center justify-center gap-1.5 transition-all duration-300 border text-[11px] font-mono font-black uppercase tracking-widest ${
               isSelected 
-                ? 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800/80' 
-                : 'bg-indigo-950/40 border-indigo-500/20 text-indigo-300 group-hover:bg-gradient-to-r group-hover:from-indigo-600 group-hover:to-purple-600 group-hover:border-indigo-400 group-hover:text-white group-hover:shadow-[0_0_15px_rgba(99,102,241,0.4)] hover:scale-[1.02] active:scale-[0.98]'
+                ? 'bg-gradient-to-r from-slate-950 to-black border-white/20 text-white shadow-[0_0_20px_rgba(255,255,255,0.05)] hover:shadow-[0_0_25px_rgba(255,255,255,0.15)] hover:bg-white/10' 
+                : 'bg-black/40 border-white/10 text-slate-400 group-hover:border-white/25 group-hover:text-white group-hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:scale-[1.02] active:scale-[0.98]'
             }`}>
               <span>{isSelected ? 'Close Panel' : 'Decode Signal'}</span>
               <ChevronRight className={`w-3.5 h-3.5 transition-transform duration-500 ${
@@ -1504,78 +1391,87 @@ function AilmentAccordionItem({ ailment, isSelected, onSelect, globalTone, onJou
                       exit={{ opacity: 0, y: -10 }}
                       className="space-y-4"
                     >
-                      <div className="bg-gradient-to-br from-[#080B12]/95 via-black/85 to-[#05070B]/95 border border-white/10 p-6 md:p-7 rounded-[2rem] space-y-5 shadow-[0_0_40px_rgba(0,0,0,0.45)] backdrop-blur-xl relative overflow-hidden">
-                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(255,255,255,0.06),transparent_32%)] pointer-events-none" />
-                        <div className="relative z-10 flex items-center justify-between font-mono pb-2 border-b border-white/10">
-                          <div className="flex flex-col gap-0.5 text-left">
-                            <div className="flex items-center gap-1.5 text-[11px] text-[#FF8A00] uppercase font-black">
-                              <Layers className="w-4 h-4 text-[#FF8A00]" />
-                              <span>Influence Layers</span>
+                      <div className="flex items-center justify-between font-mono pb-2 border-b border-white/10">
+                        <div className="flex items-center gap-1.5 text-[11px] text-[#FF8A00] uppercase font-black">
+                          <Layers className="w-4 h-4 text-[#FF8A00]" />
+                          <span>Influence Layers</span>
+                        </div>
+                        <span className="text-[8px] text-[#8A94A6] font-bold hidden sm:block">TCM BREATH / QI HIERARCHY</span>
+                      </div>
+
+                      <div className="grid grid-cols-1 gap-6 items-stretch">
+                        {/* Layer 1 */}
+                        <div className="bg-gradient-to-br from-blue-950/35 via-black/80 to-[#05070B] border border-blue-400/25 hover:border-blue-300/45 p-6 md:p-8 rounded-[2.2rem] flex flex-col justify-between space-y-5 shadow-[0_0_45px_rgba(59,130,246,0.13)] transition-all duration-300 premium-3d-card hover:scale-[1.018] hover:shadow-[0_0_55px_rgba(59,130,246,0.18)] group relative overflow-hidden backdrop-blur-xl">
+                          <div className="absolute -right-12 -top-12 w-28 h-28 bg-blue-500/5 rounded-full blur-xl pointer-events-none" />
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                              <span className="flex items-center justify-center shrink-0 w-9 h-9 rounded-full bg-blue-500/10 border border-blue-500/30 text-[11px] font-mono text-[#00D2FF] font-black">L1</span>
+                              <span className="text-xs font-mono text-[#00D2FF] uppercase tracking-wide font-black">{enriched.structuredContent?.influenceLayers?.[0]?.title || 'Layer 1'}</span>
                             </div>
-                            <p className="text-[10px] text-[#8A94A6] font-mono lowercase">Eastern energetic layers behind this pattern</p>
+                            <span className="text-[8px] font-mono bg-blue-500/10 text-[#00D2FF] border border-blue-500/20 px-2.5 py-1 rounded-full uppercase shrink-0 font-bold">{enriched.structuredContent?.influenceLayers?.[0]?.tag || 'Metal Element'}</span>
                           </div>
-                          <span className="text-[8px] text-[#8A94A6] font-bold hidden sm:block">TCM BREATH / QI HIERARCHY</span>
+                          <div className="text-sm text-[#E6ECF3] bg-white/[0.035] border border-white/10 p-5 rounded-[1.35rem] font-sans font-light leading-7 shadow-[inset_0_0_22px_rgba(255,255,255,0.025)] backdrop-blur-sm">
+                            <TruncatedText text={softenMedicalClaims(getStructuredInfluenceText(enriched, 1, enriched.physiologicalDescription))} maxLen={1200} />
+                          </div>
                         </div>
 
-                        <div className="space-y-3 pt-1">
-                          {/* Layer 1: Lung Qi & Wei Qi Boundary */}
-                          <div className="p-4 bg-gradient-to-r from-blue-950/40 to-[#07090E] border border-blue-500/20 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        {/* Layer 2 */}
+                        <div className="bg-gradient-to-br from-purple-950/35 via-black/80 to-[#05070B] border border-purple-400/25 hover:border-purple-300/45 p-6 md:p-8 rounded-[2.2rem] flex flex-col justify-between space-y-5 shadow-[0_0_45px_rgba(168,85,247,0.13)] transition-all duration-300 premium-3d-card hover:scale-[1.018] hover:shadow-[0_0_55px_rgba(168,85,247,0.18)] group relative overflow-hidden backdrop-blur-xl">
+                          <div className="absolute -right-12 -top-12 w-28 h-28 bg-purple-500/5 rounded-full blur-xl pointer-events-none" />
+                          <div className="flex items-center justify-between">
                             <div className="flex items-center gap-3">
-                              <span className="flex items-center justify-center shrink-0 w-8 h-8 rounded-full bg-blue-500/10 border border-blue-500/30 text-[11px] font-mono text-[#00D2FF] font-black">L1</span>
-                              <div className="space-y-0.5">
-                                <span className="text-xs font-mono text-[#00D2FF] uppercase tracking-wide block font-black">Layer 1: Lung Qi & Wei Qi Boundary</span>
-                                <div className="text-sm text-[#E6ECF3] font-light leading-7 max-w-xl"><TruncatedText text={softenMedicalClaims(getStructuredInfluenceText(enriched, 1, enriched.physiologicalDescription))} maxLen={900} /></div>
-                              </div>
+                              <span className="flex items-center justify-center shrink-0 w-9 h-9 rounded-full bg-purple-500/10 border border-purple-500/30 text-[11px] font-mono text-purple-400 font-black">L2</span>
+                              <span className="text-xs font-mono text-purple-400 uppercase tracking-wide font-black">{enriched.structuredContent?.influenceLayers?.[1]?.title || 'Layer 2'}</span>
                             </div>
-                            <span className="text-[8px] font-mono bg-blue-500/10 text-[#00D2FF] border border-blue-500/20 px-2.5 py-1 rounded-full uppercase shrink-0 self-start md:self-auto font-bold">Metal Element</span>
+                            <span className="text-[8px] font-mono bg-purple-500/10 text-purple-400 border border-purple-500/20 px-2.5 py-1 rounded-full uppercase shrink-0 font-bold">{enriched.structuredContent?.influenceLayers?.[1]?.tag || 'Qi Descent'}</span>
                           </div>
-
-                          {/* Layer 2: Lung Descending Function */}
-                          <div className="p-4 bg-gradient-to-r from-purple-950/40 to-[#07090E] border border-purple-500/20 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-4">
-                            <div className="flex items-center gap-3">
-                              <span className="flex items-center justify-center shrink-0 w-8 h-8 rounded-full bg-purple-500/10 border border-purple-500/30 text-[11px] font-mono text-purple-400 font-black">L2</span>
-                              <div className="space-y-0.5">
-                                <span className="text-xs font-mono text-purple-400 uppercase tracking-wide block font-black">Layer 2: Lung Descending Function</span>
-                                <div className="text-sm text-[#E6ECF3] font-light leading-7 max-w-xl"><TruncatedText text={softenMedicalClaims(getStructuredInfluenceText(enriched, 2, enriched.emotionalRoot))} maxLen={900} /></div>
-                              </div>
-                            </div>
-                            <span className="text-[8px] font-mono bg-purple-500/10 text-purple-400 border border-purple-500/20 px-2.5 py-1 rounded-full uppercase shrink-0 self-start md:self-auto font-bold">Qi Descent</span>
+                          <div className="text-sm text-[#E6ECF3] bg-white/[0.035] border border-white/10 p-5 rounded-[1.35rem] font-sans font-light leading-7 shadow-[inset_0_0_22px_rgba(255,255,255,0.025)] backdrop-blur-sm">
+                            <TruncatedText text={softenMedicalClaims(getStructuredInfluenceText(enriched, 2, enriched.emotionalRoot))} maxLen={1200} />
                           </div>
+                        </div>
 
-                          {/* Layer 3: Kidney Grasping Qi */}
-                          <div className="p-4 bg-gradient-to-r from-amber-950/40 to-[#07090E] border border-amber-500/20 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        {/* Layer 3 */}
+                        <div className="bg-gradient-to-br from-amber-950/35 via-black/80 to-[#05070B] border border-amber-400/25 hover:border-amber-300/45 p-6 md:p-8 rounded-[2.2rem] flex flex-col justify-between space-y-5 shadow-[0_0_45px_rgba(245,158,11,0.13)] transition-all duration-300 premium-3d-card hover:scale-[1.018] hover:shadow-[0_0_55px_rgba(245,158,11,0.18)] group relative overflow-hidden backdrop-blur-xl">
+                          <div className="absolute -right-12 -top-12 w-28 h-28 bg-amber-500/5 rounded-full blur-xl pointer-events-none" />
+                          <div className="flex items-center justify-between">
                             <div className="flex items-center gap-3">
-                              <span className="flex items-center justify-center shrink-0 w-8 h-8 rounded-full bg-amber-500/10 border border-amber-500/30 text-[11px] font-mono text-[#FF8A00] font-black">L3</span>
-                              <div className="space-y-0.5">
-                                <span className="text-xs font-mono text-[#FF8A00] uppercase tracking-wide block font-black">Layer 3: Kidney Grasping Qi</span>
-                                <div className="text-sm text-[#E6ECF3] font-light leading-7 max-w-xl"><TruncatedText text={softenMedicalClaims(getStructuredInfluenceText(enriched, 3, enriched.sarcasticAdvice))} maxLen={900} /></div>
-                              </div>
+                              <span className="flex items-center justify-center shrink-0 w-9 h-9 rounded-full bg-amber-500/10 border border-amber-500/30 text-[11px] font-mono text-[#FF8A00] font-black">L3</span>
+                              <span className="text-xs font-mono text-[#FF8A00] uppercase tracking-wide font-black">{enriched.structuredContent?.influenceLayers?.[2]?.title || 'Layer 3'}</span>
                             </div>
-                            <span className="text-[8px] font-mono bg-amber-500/10 text-[#FF8A00] border border-amber-500/20 px-2.5 py-1 rounded-full uppercase shrink-0 self-start md:self-auto font-bold">Root Breath</span>
+                            <span className="text-[8px] font-mono bg-amber-500/10 text-[#FF8A00] border border-amber-500/20 px-2.5 py-1 rounded-full uppercase shrink-0 font-bold">{enriched.structuredContent?.influenceLayers?.[2]?.tag || 'Root Breath'}</span>
                           </div>
-
-                          {/* Layer 4: Grief, Po Spirit & Smothered Voice */}
-                          <div className="p-4 bg-gradient-to-r from-red-950/40 to-[#07090E] border border-red-500/20 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-4">
-                            <div className="flex items-center gap-3">
-                              <span className="flex items-center justify-center shrink-0 w-8 h-8 rounded-full bg-red-500/10 border border-red-500/30 text-[11px] font-mono text-red-400 font-black">L4</span>
-                              <div className="space-y-0.5">
-                                <span className="text-xs font-mono text-red-400 uppercase tracking-wide block font-black">Layer 4: Grief, Po Spirit & Smothered Voice</span>
-                                <div className="text-sm text-[#E6ECF3] font-light leading-7 max-w-xl"><TruncatedText text={softenMedicalClaims(getStructuredInfluenceText(enriched, 4, enriched.metaphor))} maxLen={900} /></div>
-                              </div>
-                            </div>
-                            <span className="text-[8px] font-mono bg-red-500/10 text-red-400 border border-red-500/20 px-2.5 py-1 rounded-full uppercase shrink-0 self-start md:self-auto font-bold">Lung Emotion</span>
+                          <div className="text-sm text-[#E6ECF3] bg-white/[0.035] border border-white/10 p-5 rounded-[1.35rem] font-sans font-light leading-7 shadow-[inset_0_0_22px_rgba(255,255,255,0.025)] backdrop-blur-sm">
+                            <TruncatedText text={softenMedicalClaims(getStructuredInfluenceText(enriched, 3, enriched.sarcasticAdvice))} maxLen={1200} />
                           </div>
+                        </div>
 
-                          {/* Layer 5: Harmonizing the Breath Field */}
-                          <div className="p-4 bg-gradient-to-r from-emerald-950/40 to-[#07090E] border border-emerald-500/20 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        {/* Layer 4 */}
+                        <div className="bg-gradient-to-br from-red-950/35 via-black/80 to-[#05070B] border border-red-400/25 hover:border-red-300/45 p-6 md:p-8 rounded-[2.2rem] flex flex-col justify-between space-y-5 shadow-[0_0_45px_rgba(239,68,68,0.13)] transition-all duration-300 premium-3d-card hover:scale-[1.018] hover:shadow-[0_0_55px_rgba(239,68,68,0.18)] group relative overflow-hidden backdrop-blur-xl">
+                          <div className="absolute -right-12 -top-12 w-28 h-28 bg-red-500/5 rounded-full blur-xl pointer-events-none" />
+                          <div className="flex items-center justify-between">
                             <div className="flex items-center gap-3">
-                              <span className="flex items-center justify-center shrink-0 w-8 h-8 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[11px] font-mono text-emerald-400 font-black">L5</span>
-                              <div className="space-y-0.5">
-                                <span className="text-xs font-mono text-emerald-400 uppercase tracking-wide block font-black">Layer 5: Harmonizing the Breath Field</span>
-                                <div className="text-sm text-[#E6ECF3] font-light leading-7 max-w-xl"><TruncatedText text={softenMedicalClaims(getStructuredInfluenceText(enriched, 5, getStructuredResetText(enriched)))} maxLen={900} /></div>
-                              </div>
+                              <span className="flex items-center justify-center shrink-0 w-9 h-9 rounded-full bg-red-500/10 border border-red-500/30 text-[11px] font-mono text-red-400 font-black">L4</span>
+                              <span className="text-xs font-mono text-red-400 uppercase tracking-wide font-black">{enriched.structuredContent?.influenceLayers?.[3]?.title || 'Layer 4'}</span>
                             </div>
-                            <span className="text-[8px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-1 rounded-full uppercase shrink-0 self-start md:self-auto font-bold">Reset Practice</span>
+                            <span className="text-[8px] font-mono bg-red-500/10 text-red-400 border border-red-500/20 px-2.5 py-1 rounded-full uppercase shrink-0 font-bold">{enriched.structuredContent?.influenceLayers?.[3]?.tag || 'Lung Emotion'}</span>
+                          </div>
+                          <div className="text-sm text-[#E6ECF3] bg-white/[0.035] border border-white/10 p-5 rounded-[1.35rem] font-sans font-light leading-7 shadow-[inset_0_0_22px_rgba(255,255,255,0.025)] backdrop-blur-sm">
+                            <TruncatedText text={softenMedicalClaims(getStructuredInfluenceText(enriched, 4, enriched.metaphor))} maxLen={1200} />
+                          </div>
+                        </div>
+
+                        {/* Layer 5 */}
+                        <div className="bg-gradient-to-br from-emerald-950/35 via-black/80 to-[#05070B] border border-emerald-400/25 hover:border-emerald-300/45 p-6 md:p-8 rounded-[2.2rem] flex flex-col justify-between space-y-5 shadow-[0_0_45px_rgba(16,185,129,0.13)] transition-all duration-300 premium-3d-card hover:scale-[1.018] hover:shadow-[0_0_55px_rgba(16,185,129,0.18)] group relative overflow-hidden backdrop-blur-xl">
+                          <div className="absolute -right-12 -top-12 w-28 h-28 bg-emerald-500/5 rounded-full blur-xl pointer-events-none" />
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                              <span className="flex items-center justify-center shrink-0 w-9 h-9 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-[11px] font-mono text-emerald-400 font-black">L5</span>
+                              <span className="text-xs font-mono text-emerald-400 uppercase tracking-wide font-black">{enriched.structuredContent?.influenceLayers?.[4]?.title || 'Layer 5'}</span>
+                            </div>
+                            <span className="text-[8px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-1 rounded-full uppercase shrink-0 font-bold">{enriched.structuredContent?.influenceLayers?.[4]?.tag || 'Reset Practice'}</span>
+                          </div>
+                          <div className="text-sm text-[#E6ECF3] bg-white/[0.035] border border-white/10 p-5 rounded-[1.35rem] font-sans font-light leading-7 shadow-[inset_0_0_22px_rgba(255,255,255,0.025)] backdrop-blur-sm">
+                            <TruncatedText text={softenMedicalClaims(getStructuredInfluenceText(enriched, 5, getStructuredResetText(enriched)))} maxLen={1200} />
                           </div>
                         </div>
                       </div>
@@ -1593,12 +1489,13 @@ function AilmentAccordionItem({ ailment, isSelected, onSelect, globalTone, onJou
 
                       <SomaticBreathingRegulator />
 
-                      <div className="bg-black/30 border border-white/10 p-5 rounded-3xl space-y-3">
-                        <div className="flex items-center gap-1.5 text-[11px] font-mono text-emerald-400 uppercase font-bold border-b border-white/5 pb-2">
+                      <div className="bg-gradient-to-br from-emerald-950/35 via-black/80 to-[#05070B] border border-emerald-400/25 hover:border-emerald-300/45 p-6 md:p-8 rounded-[2.2rem] flex flex-col justify-between space-y-4 shadow-[0_0_45px_rgba(16,185,129,0.13)] transition-all duration-300 premium-3d-card hover:scale-[1.018] hover:shadow-[0_0_55px_rgba(16,185,129,0.18)] group relative overflow-hidden backdrop-blur-xl">
+                        <div className="absolute -right-12 -top-12 w-28 h-28 bg-emerald-500/5 rounded-full blur-xl pointer-events-none" />
+                        <div className="flex items-center gap-1.5 text-[11px] font-mono text-emerald-400 uppercase font-bold border-b border-emerald-500/10 pb-3 relative z-10">
                           <Feather className="w-4 h-4 text-emerald-400" />
                           <span>Additional Reset Protocols</span>
                         </div>
-                        <div className="text-xs text-slate-300 font-sans font-light leading-7">
+                        <div className="text-xs text-slate-300 font-sans font-light leading-7 relative z-10">
                           <strong>Therapeutic Release:</strong>
                           <TruncatedText text={softenMedicalClaims(getStructuredResetText(enriched))} maxLen={1200} />
                         </div>
@@ -1630,25 +1527,57 @@ function AilmentAccordionItem({ ailment, isSelected, onSelect, globalTone, onJou
                     >
                       {/* Serious integrated medical warning for high-risk symptoms */}
                       {(enriched.id === 'diabetes' || (enriched.riskLevel && (enriched.riskLevel.toLowerCase().includes('medical') || enriched.riskLevel.toLowerCase().includes('high')))) && (
-                        <div className="bg-red-950/20 border border-red-500/25 p-5 rounded-2xl text-xs text-red-200 shadow-lg relative overflow-hidden backdrop-">
-                          <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-red-500" />
-                          <div className="flex gap-4.5 items-start">
-                            <AlertOctagon className="w-5 h-5 text-red-400 shrink-0 mt-0.5 animate-pulse" />
-                            <div className="space-y-1.5">
-                              <span className="font-mono text-[10px] uppercase tracking-widest text-red-400 block font-black">
-                                CRITICAL MEDICAL STANDARDS & PHARMACEUTICAL REASSURANCE
-                              </span>
-                              <p className="leading-7 font-sans text-slate-300">
-                                This psychosomatic map is for <strong>educational reflection and stress-pattern awareness only</strong>. It is not diagnostic and does not replace medical treatment. <strong>Under no circumstances should you discontinue, alter, or delay any prescribed medicine</strong> (including insulin, metformin, thyroid replacement, cardiovascular, or blood sugar therapies). Somatic healing complements physical medicine; it does not replace it.
-                              </p>
+                        <div className="bg-red-950/15 border border-red-500/15 p-4 md:px-6 rounded-2xl flex flex-col gap-3 text-xs text-red-200 shadow-lg backdrop-blur-md relative overflow-hidden shrink-0 w-full transition-all duration-300">
+                          <div className="absolute inset-x-0 top-0 h-[1px] bg-red-500/30" />
+                          
+                          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 w-full">
+                            <div className="flex gap-3 items-center">
+                              <AlertCircle className="w-4 h-4 text-red-400 shrink-0 animate-pulse" />
+                              <div className="flex flex-wrap items-center gap-x-2.5">
+                                <span className="font-mono text-[10px] uppercase tracking-widest text-red-400 font-black">
+                                  ⚠ Safety Protocol Active
+                                </span>
+                                <span className="text-slate-300 text-[11px] font-sans">
+                                  This app does not diagnose, treat, or cure disease.
+                                </span>
+                              </div>
                             </div>
+                            
+                            <button
+                              type="button"
+                              onClick={() => setIsDisclaimerExpanded(!isDisclaimerExpanded)}
+                              className="text-[11px] font-mono font-black text-red-400 hover:text-red-300 underline underline-offset-4 cursor-pointer transition-all self-start sm:self-auto"
+                            >
+                              {isDisclaimerExpanded ? '[Hide full disclaimer]' : '[View full disclaimer]'}
+                            </button>
                           </div>
+
+                          {/* Collapsible Content */}
+                          <AnimatePresence initial={false}>
+                            {isDisclaimerExpanded && (
+                              <motion.div
+                                initial={{ height: 0, opacity: 0, marginTop: 0 }}
+                                animate={{ height: 'auto', opacity: 1, marginTop: 4 }}
+                                exit={{ height: 0, opacity: 0, marginTop: 0 }}
+                                transition={{ duration: 0.3, ease: 'easeInOut' }}
+                                className="overflow-hidden space-y-2 border-t border-red-500/10 pt-3"
+                              >
+                                <p className="leading-7 text-slate-300 font-sans">
+                                  It explains possible mind-body patterns and lifestyle-related mechanisms for educational reflection. Always consult a licensed medical professional for diagnosis, medication, labs, and treatment.
+                                </p>
+                                <p className="text-[11px] text-red-300/85 leading-7 font-mono font-bold">
+                                  <strong>DIABETES PROTOCOL:</strong> Do not stop insulin, metformin, GLP-1 medication, or any prescribed treatment based on this app.
+                                </p>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
                         </div>
                       )}
 
                       {/* Medical Safety Protocols */}
-                      <div className="bg-slate-950/40 border border-white/5 rounded-3xl p-6 space-y-6">
-                        <div className="flex items-center gap-2 border-b border-white/5 pb-3">
+                      <div className="bg-gradient-to-br from-red-950/35 via-black/80 to-[#05070B] border border-red-400/25 hover:border-red-300/45 p-6 md:p-8 rounded-[2.2rem] flex flex-col justify-between space-y-6 shadow-[0_0_45px_rgba(239,68,68,0.13)] transition-all duration-300 premium-3d-card hover:scale-[1.018] hover:shadow-[0_0_55px_rgba(239,68,68,0.18)] group relative overflow-hidden backdrop-blur-xl">
+                        <div className="absolute -right-12 -top-12 w-28 h-28 bg-red-500/5 rounded-full blur-xl pointer-events-none" />
+                        <div className="flex items-center gap-2 border-b border-red-500/10 pb-3 relative z-10">
                           <Shield className="w-5 h-5 text-red-400" />
                           <div>
                             <h4 className="text-sm font-black font-mono text-white uppercase tracking-wider"> Standards</h4>
@@ -2216,13 +2145,13 @@ return ailment?.primaryPattern || ailment?.pattern || ailment?.metaphor || ailme
       <div className="absolute inset-0 glowing-bg-grid opacity-100 pointer-events-none z-0" />
 
       {/* Header Navigation with Real Glassmorphism */}
-      <nav className="h-20 border-b border-white/10 flex items-center justify-between px-6 md:px-10 flex-shrink-0 bg-[#07080d]/60 backdrop- sticky top-0 z-50 relative">
+      <nav className="h-20 border-b border-white/10 flex items-center justify-between px-6 md:px-10 flex-shrink-0 bg-[#07080d]/60 backdrop-blur-xl sticky top-0 z-50 relative">
         <div 
           onClick={() => setActiveTab('dictionary')} 
           className="text-2xl font-black tracking-tighter not-italic cursor-pointer hover:opacity-95 transition-opacity flex items-center gap-2 font-display"
         >
-          <span className="text-white">Cure Your Life</span>
-          <span className="bg-red-500 text-white text-[11px] font-mono tracking-widest font-black uppercase px-2 py-0.5 rounded shadow-[0_0_12px_rgba(239,68,68,0.4)]">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-indigo-100 to-indigo-300 drop-shadow-[0_0_15px_rgba(99,102,241,0.5)]">Cure Your Life</span>
+          <span className="bg-gradient-to-br from-red-500 to-rose-600 border border-red-400/30 text-white text-[11px] font-mono tracking-widest font-black uppercase px-2 py-0.5 rounded shadow-[0_0_15px_rgba(239,68,68,0.6)]">
             +
           </span>
         </div>
@@ -2260,7 +2189,7 @@ return ailment?.primaryPattern || ailment?.pattern || ailment?.metaphor || ailme
             className={`px-4 py-2 font-bold uppercase text-[11px] tracking-widest transition-all rounded-xl cursor-pointer ${
               isPremium 
                 ? 'bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 text-black shadow-[0_0_20px_rgba(245,158,11,0.4)] hover:scale-105'
-                : 'border border-amber-500/30 text-amber-400 hover:bg-amber-500/10 hover:border-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.08)] backdrop-'
+                : 'border border-amber-500/30 text-amber-400 hover:bg-amber-500/10 hover:border-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.08)] backdrop-blur-md'
             }`}
           >
             {isPremium ? '✦ Premium Active' : '✦ Unlock Premium'}
@@ -2276,7 +2205,7 @@ return ailment?.primaryPattern || ailment?.pattern || ailment?.metaphor || ailme
       </nav>
 
       {/* Supabase Auth Strip */}
-      <div className="border-b border-white/10 bg-black/45 backdrop- px-6 md:px-10 py-3 relative z-40">
+      <div className="border-b border-white/10 bg-black/45 backdrop-blur-xl px-6 md:px-10 py-3 relative z-40">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-3 lg:items-center justify-between">
           <div className="flex flex-col gap-1">
             <span className="text-[10px] font-mono uppercase tracking-[0.22em] text-cyan-400 font-black">
@@ -2346,7 +2275,7 @@ return ailment?.primaryPattern || ailment?.pattern || ailment?.metaphor || ailme
       </div>
 
       {/* Mobile Nav Bar with Glassmorphism */}
-      <div className="md:hidden flex border-b border-white/10 bg-[#07080d]/80 backdrop- justify-around py-3.5 text-[11px] font-bold uppercase tracking-wider text-slate-400 relative z-40 font-display">
+      <div className="md:hidden flex border-b border-white/10 bg-[#07080d]/80 backdrop-blur-xl justify-around py-3.5 text-[11px] font-bold uppercase tracking-wider text-slate-400 relative z-40 font-display">
         <button 
           onClick={() => setActiveTab('dictionary')}
           className={`${activeTab === 'dictionary' ? 'text-indigo-400 font-extrabold' : ''}`}
@@ -2380,51 +2309,20 @@ return ailment?.primaryPattern || ailment?.pattern || ailment?.metaphor || ailme
         {activeTab === 'dictionary' && (
           <main className="flex-1 flex flex-col p-6 md:p-10 overflow-y-auto w-full space-y-8">
             
-            {/* Disclaimer Banner (Collapsible Safety/Legal Guardrail) */}
-            <div className="bg-red-950/15 border border-red-500/15 p-4 md:px-6 rounded-2xl flex flex-col gap-3 text-xs text-red-200 shadow-lg backdrop- relative overflow-hidden shrink-0 w-full transition-all duration-300">
-              <div className="absolute inset-x-0 top-0 h-[1px] bg-red-500/30" />
-              
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 w-full">
-                <div className="flex gap-3 items-center">
-                  <AlertCircle className="w-4 h-4 text-red-400 shrink-0 animate-pulse" />
-                  <div className="flex flex-wrap items-center gap-x-2.5">
-                    <span className="font-mono text-[10px] uppercase tracking-widest text-red-400 font-black">
-                      ⚠ Safety Protocol Active
-                    </span>
-                    <span className="text-slate-300 text-[11px] font-sans">
-                      This app does not diagnose, treat, or cure disease.
-                    </span>
-                  </div>
+            {/* Global Disclaimer Banner */}
+            <div className="bg-red-950/20 border border-red-500/25 p-5 md:px-6 rounded-2xl text-xs text-red-200 shadow-lg relative overflow-hidden backdrop-blur-md mb-2 shrink-0 w-full">
+              <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-red-500" />
+              <div className="flex gap-4.5 items-start">
+                <AlertOctagon className="w-5 h-5 text-red-400 shrink-0 mt-0.5 animate-pulse" />
+                <div className="space-y-1.5">
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-red-400 block font-black">
+                    CRITICAL MEDICAL STANDARDS & PHARMACEUTICAL REASSURANCE
+                  </span>
+                  <p className="leading-7 font-sans text-slate-300">
+                    This psychosomatic map is for <strong>educational reflection and stress-pattern awareness only</strong>. It is not diagnostic and does not replace medical treatment. <strong>Under no circumstances should you discontinue, alter, or delay any prescribed medicine</strong> (including insulin, metformin, thyroid replacement, cardiovascular, or blood sugar therapies). Somatic healing complements physical medicine; it does not replace it.
+                  </p>
                 </div>
-                
-                <button
-                  type="button"
-                  onClick={() => setIsDisclaimerExpanded(!isDisclaimerExpanded)}
-                  className="text-[11px] font-mono font-black text-red-400 hover:text-red-300 underline underline-offset-4 cursor-pointer transition-all self-start sm:self-auto"
-                >
-                  {isDisclaimerExpanded ? '[Hide full disclaimer]' : '[View full disclaimer]'}
-                </button>
               </div>
-
-              {/* Collapsible Content */}
-              <AnimatePresence initial={false}>
-                {isDisclaimerExpanded && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0, marginTop: 0 }}
-                    animate={{ height: 'auto', opacity: 1, marginTop: 4 }}
-                    exit={{ height: 0, opacity: 0, marginTop: 0 }}
-                    transition={{ duration: 0.3, ease: 'easeInOut' }}
-                    className="overflow-hidden space-y-2 border-t border-red-500/10 pt-3"
-                  >
-                    <p className="leading-7 text-slate-300 font-sans">
-                      It explains possible mind-body patterns and lifestyle-related mechanisms for educational reflection. Always consult a licensed medical professional for diagnosis, medication, labs, and treatment.
-                    </p>
-                    <p className="text-[11px] text-red-300/85 leading-7 font-mono font-bold">
-                      <strong>DIABETES PROTOCOL:</strong> Do not stop insulin, metformin, GLP-1 medication, or any prescribed treatment based on this app.
-                    </p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
             </div>
 
             {/* Intro Header with Gorgeous Gradient Text */}
@@ -2448,7 +2346,7 @@ return ailment?.primaryPattern || ailment?.pattern || ailment?.metaphor || ailme
                   e.preventDefault();
                   setActiveTab('decoder');
                 }}
-                className="relative flex items-center p-1.5 rounded-full border border-indigo-500/35 bg-black/60 backdrop- shadow-[0_0_30px_rgba(99,102,241,0.15)] group focus-within:border-indigo-400 focus-within:shadow-[0_0_40px_rgba(99,102,241,0.25)] transition-all duration-300"
+                className="relative flex items-center p-1.5 rounded-full border border-indigo-500/35 bg-black/60 backdrop-blur-xl shadow-[0_0_30px_rgba(99,102,241,0.15)] group focus-within:border-indigo-400 focus-within:shadow-[0_0_40px_rgba(99,102,241,0.25)] transition-all duration-300"
               >
                 {/* Background ambient pulse glow behind the command bar */}
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500/5 to-purple-500/5 -z-10  group-hover:opacity-100 opacity-60 transition-opacity duration-500" />
@@ -2609,37 +2507,30 @@ return ailment?.primaryPattern || ailment?.pattern || ailment?.metaphor || ailme
                     const activeColor = meta.color;
                     return (
                       <div 
-                        className="glass-panel p-6 md:p-8 rounded-[2.5rem] relative overflow-hidden bg-black/75 transition-all duration-300 relative z-10"
-                        style={{
-                          borderColor: `${activeColor}28`,
-                          borderWidth: '1.5px',
-                          borderStyle: 'solid',
+                        className="relative rounded-[2.5rem] p-6 mb-4 overflow-hidden border transition-all duration-500 backdrop-blur-xl"
+                        style={{ 
+                          backgroundColor: 'rgba(5, 7, 11, 0.55)',
+                          borderColor: `${activeColor}25`,
                           boxShadow: `0 0 35px ${activeColor}12`
                         }}
                       >
-                        {/* High-intensity Left-side radial gradient glow that fades into the dark glass panel */}
+                        {/* High-intensity centered radial gradient glow that fades into the dark glass panel */}
                         <div 
-                          className="absolute inset-y-0 left-0 w-[60%] pointer-events-none opacity-30 z-0"
+                          className="absolute inset-0 pointer-events-none opacity-20 z-0"
                           style={{
-                            background: `radial-gradient(circle at 0% 50%, ${activeColor} 0%, transparent 75%)`
+                            background: `radial-gradient(circle at 50% 50%, ${activeColor} 0%, transparent 60%)`
                           }}
-                        />
-                        
-                        {/* Left edge solid vibrant accent bar */}
-                        <div 
-                          className="absolute left-0 top-1/5 bottom-1/5 w-[3.5px] rounded-r-md pointer-events-none z-10"
-                          style={{ backgroundColor: activeColor }}
                         />
 
                         {/* Extra subtle overall ambient soft backdrop */}
                         <div 
-                          className="absolute -top-16 -left-16 w-64 h-64 rounded-full blur-3xl opacity-[0.15] pointer-events-none"
+                          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full blur-3xl opacity-[0.15] pointer-events-none"
                           style={{ backgroundColor: activeColor }}
                         />
 
-                        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-                          <div className="space-y-2.5">
-                            <div className="flex items-center gap-2.5">
+                        <div className="relative z-10 flex flex-col items-center justify-center gap-6 text-center w-full">
+                          <div className="space-y-3.5 flex flex-col items-center w-full">
+                            <div className="flex items-center justify-center gap-3">
                               <span 
                                 className="text-[11px] font-mono tracking-widest uppercase px-3 py-1 rounded-full font-black border transition-all duration-300"
                                 style={{ 
@@ -2654,11 +2545,16 @@ return ailment?.primaryPattern || ailment?.pattern || ailment?.metaphor || ailme
                                 {filteredAilments.length} {filteredAilments.length === 1 ? 'Symptom' : 'Symptoms'} Found
                               </span>
                             </div>
-                            <h2 className="text-2xl md:text-4xl font-black uppercase tracking-tight text-white font-display">
-                              <span style={{ color: activeColor }}>{selectedCategory.charAt(0)}</span>
-                              {selectedCategory.slice(1)}
+                            <h2 
+                              className="text-4xl md:text-6xl font-black uppercase tracking-tighter font-display bg-clip-text text-transparent drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]"
+                              style={{ 
+                                backgroundImage: `linear-gradient(to top, transparent -20%, #ffffff 80%)`,
+                                WebkitTextStroke: `1.5px ${activeColor}80`
+                              }}
+                            >
+                              {selectedCategory}
                             </h2>
-                            <p className="text-xs md:text-sm text-slate-300 font-sans font-light leading-7 max-w-xl">
+                            <p className="text-xs md:text-sm text-slate-300 font-sans font-light leading-7 max-w-xl mx-auto">
                               {meta.desc}
                             </p>
                           </div>
@@ -3104,7 +3000,7 @@ return ailment?.primaryPattern || ailment?.pattern || ailment?.metaphor || ailme
       {/* Monetization & Premium Access Paywall Modal */}
       <AnimatePresence>
         {showPaywall && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm">
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
