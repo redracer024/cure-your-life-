@@ -76,4 +76,3 @@ export const renderOrganIllustration = (id: string) => {
     </svg>
   );
 };
-};
