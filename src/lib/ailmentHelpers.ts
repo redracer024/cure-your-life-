@@ -1,3 +1,5 @@
+import type { Ailment } from '../types';
+
 const softenMedicalClaims = (text: string): string => {
   if (!text) return "";
   let softened = text;
@@ -422,14 +424,62 @@ const getEnrichedAilment = (ailment: Ailment): Required<Ailment> => {
   };
 };
 
-interface AilmentAccordionItemProps {
-  key?: string | number;
-  ailment: Ailment;
-  isSelected: boolean;
-  onSelect: () => void;
-  globalTone: 'clinical' | 'witty' | 'brutal';
-  onJournalRedirect: () => void;
-}
+const getCardPatterns = (name: string, id: string, enriched: any) => {
+  const normName = name.toLowerCase();
+  const normId = id.toLowerCase();
+  
+  if (normId === 'lower-back-pain' || normName === 'lower back pain') {
+    return {
+      pattern: "Lumbar guarding, support strain, posture load, and pain sensitization may interact.",
+      safety: "Bowel/bladder changes • saddle numbness • leg weakness"
+    };
+  }
+  if (normId === 'shoulder-tension' || normName.includes('frozen shoulder') || normName === 'shoulder problems' || normName.includes('shoulder-tension')) {
+    return {
+      pattern: "Shoulder guarding, reduced range of motion, stress bracing, and inflammation may interact.",
+      safety: "Major injury • fever/swelling • sudden severe weakness"
+    };
+  }
+  if (normName.includes('upper back pain') || normName.includes('back problems (upper)')) {
+    return {
+      pattern: "Neck/shoulder tension, thoracic stiffness, breath restriction, and stress bracing may interact.",
+      safety: "Chest pain • shortness of breath • arm weakness"
+    };
+  }
+  if (normName.includes('middle back pain') || normName.includes('back problems (middle)')) {
+    return {
+      pattern: "Thoracic guarding, rib restriction, posture strain, and protective bracing may interact.",
+      safety: "Fever • trauma • severe unrelenting pain"
+    };
+  }
+  if (normId === 'back-problems-lower' || normName.includes('lower back problems') || normName.includes('back problems (lower)')) {
+    return {
+      pattern: "Lumbar load, psoas/hip guarding, poor recovery, and nerve sensitivity may interact.",
+      safety: "Saddle numbness • bowel/bladder changes • progressive weakness"
+    };
+  }
+  
+  // Fallbacks
+  const fallbackPattern = getHeroPrimaryPattern(enriched);
+  
+  let fallbackSafety = "";
+  if (enriched.medical_safety) {
+    const alerts = enriched.medical_safety.critical_alerts || enriched.medical_safety.seek_immediate_care_if || [];
+    if (alerts.length > 0) {
+      fallbackSafety = alerts.slice(0, 3).join(" • ");
+    } else if (enriched.medical_safety.do_not_ignore) {
+      fallbackSafety = enriched.medical_safety.do_not_ignore;
+    } else {
+      fallbackSafety = "Sudden severe worsening • high fever • sensory loss";
+    }
+  }
+  
+  return {
+    pattern: fallbackPattern,
+    safety: fallbackSafety
+  };
+};
+
 
 
 export {

@@ -37,7 +37,7 @@ import { Ailment, SymptomAnalysisResponse } from './types';
 import { getEnrichedAilment, getHeroPrimaryPattern, getHeroCascade, getHeroTags, shouldShowSafetyBadges, getTonePreviews, triggerHapticPattern, getSymptomHapticPattern, formatParagraphText, getStructuredMedicalMechanismText, getStructuredClinicalText, getStructuredWittyText, getStructuredBrutalText, getStructuredResetText, getStructuredInfluenceText, getStructuredBiologyPath, getCardPatterns } from './lib/ailmentHelpers';
 import DailyPromptsPanel from './components/DailyPromptsPanel';
 import SomaticJournalPanel from './components/SomaticJournalPanel';
-import AilmentAccordionItem, { CATEGORY_META } from './components/ailments/AilmentAccordionItem';
+import AilmentAccordionItem, { CATEGORY_META, renderCategoryIcon } from './components/ailments/AilmentAccordionItem';
 import { CategoryBackground } from './components/CategoryBackground';
 import { authFetch, isSupabaseConfigured, supabase } from './lib/supabaseClient';
 import { motion, AnimatePresence } from 'motion/react';
