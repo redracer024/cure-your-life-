@@ -1,0 +1,117 @@
+name: Repair feature branch
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/premium-content-engine
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Repair extraction
+        shell: bash
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+
+          app = Path('src/App.tsx')
+          accordion = Path('src/components/ailments/AilmentAccordionItem.tsx')
+          helpers = Path('src/lib/ailmentHelpers.ts')
+          backup = Path('src/App.tsx.before-3d-cards-lung-boost.20260719-010250.bak')
+
+          app_text = app.read_text()
+          accordion_text = accordion.read_text()
+          helpers_text = helpers.read_text()
+          backup_text = backup.read_text()
+
+          shared_start = app_text.index('function TruncatedText')
+          shared_end = app_text.index('export default function App()')
+          shared_helpers = app_text[shared_start:shared_end]
+
+          imports = """import React, { useEffect, useRef, useState } from 'react';
+          import { Activity, AlertCircle, Apple, BookOpen, Brain, ChevronRight, Dna, Dumbbell, Feather, Flame, Heart, Layers, Moon, Shield, Sparkles } from 'lucide-react';
+          import { AnimatePresence, motion } from 'motion/react';
+          import type { Ailment } from '../../types';
+          import SomaticBreathingRegulator from '../breathing/SomaticBreathingRegulator';
+          import {
+            softenMedicalClaims,
+            getEnrichedAilment,
+            getCardPatterns,
+            triggerHapticPattern,
+            getSymptomHapticPattern,
+            formatParagraphText,
+            getStructuredInfluenceText,
+            getStructuredResetText,
+          } from '../../lib/ailmentHelpers';
+
+          interface AilmentAccordionItemProps {
+            key?: React.Key;
+            ailment: Ailment;
+            isSelected: boolean;
+            onSelect: () => void;
+            globalTone: 'clinical' | 'witty' | 'brutal';
+            onJournalRedirect: () => void;
+          }
+
+          """
+
+          if not accordion_text.startswith('import '):
+              accordion_text = imports + shared_helpers + accordion_text
+
+          accordion_text = accordion_text.replace('const renderCategoryIcon = ', 'export const renderCategoryIcon = ', 1)
+          accordion.write_text(accordion_text)
+
+          if not helpers_text.startswith("import type { Ailment }"):
+              helpers_text = "import type { Ailment } from '../types';\n\n" + helpers_text
+
+          if 'const getCardPatterns =' not in helpers_text:
+              block_start = backup_text.index('const getCardPatterns =')
+              block_end = backup_text.index('\nfunction TruncatedText', block_start)
+              card_patterns = backup_text[block_start:block_end].rstrip() + '\n\n'
+              marker = 'interface AilmentAccordionItemProps {'
+              helpers_text = helpers_text.replace(marker, card_patterns + marker, 1)
+
+          props_start = helpers_text.find('interface AilmentAccordionItemProps {')
+          if props_start != -1:
+              props_end = helpers_text.find('\n}\n', props_start)
+              if props_end != -1:
+                  helpers_text = helpers_text[:props_start] + helpers_text[props_end + 3:]
+
+          helpers.write_text(helpers_text)
+
+          app_text = app_text.replace(
+              "import AilmentAccordionItem, { CATEGORY_META } from './components/ailments/AilmentAccordionItem';",
+              "import AilmentAccordionItem, { CATEGORY_META, renderCategoryIcon } from './components/ailments/AilmentAccordionItem';",
+              1,
+          )
+          app.write_text(app_text)
+          PY
+
+      - name: Verify
+        run: |
+          npm ci
+          npm run lint
+          npm run build
+
+      - name: Commit repair to feature branch
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/App.tsx src/components/ailments/AilmentAccordionItem.tsx src/lib/ailmentHelpers.ts
+          git commit -m "Fix broken component extraction" || exit 0
+          git push origin HEAD:feature/premium-content-engine
