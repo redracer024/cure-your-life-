@@ -1,23 +1,21 @@
 import React from 'react';
+import { usePremium } from '../context/PremiumContext';
 
 interface NavigationProps {
     activeTab: 'dictionary' | 'decoder' | 'daily' | 'journal';
     setActiveTab: (tab: 'dictionary' | 'decoder' | 'daily' | 'journal') => void;
     openDecoder: () => void;
-    isPremium: boolean;
-    setShowPaywall: (show: boolean) => void;
 }
 
 export const Navigation: React.FC<NavigationProps> = ({
     activeTab,
     setActiveTab,
     openDecoder,
-    isPremium,
-    setShowPaywall
 }) => {
+    const premium = usePremium();
+
     return (
         <>
-            {/* Header Navigation with Real Glassmorphism */}
             <nav className="h-20 border-b border-white/10 flex items-center justify-between px-6 md:px-10 flex-shrink-0 bg-[#07080d]/60 backdrop-blur-xl sticky top-0 z-50 relative">
                 <div
                     onClick={() => setActiveTab('dictionary')}
@@ -58,13 +56,13 @@ export const Navigation: React.FC<NavigationProps> = ({
 
                 <div className="flex items-center space-x-3">
                     <button
-                        onClick={() => setShowPaywall(true)}
-                        className={`px-4 py-2 font-bold uppercase text-[11px] tracking-widest transition-all rounded-xl cursor-pointer ${isPremium
+                        onClick={() => premium.setShowPaywall(true)}
+                        className={`px-4 py-2 font-bold uppercase text-[11px] tracking-widest transition-all rounded-xl cursor-pointer ${premium.isPremium
                             ? 'bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 text-black shadow-[0_0_20px_rgba(245,158,11,0.4)] hover:scale-105'
                             : 'border border-amber-500/30 text-amber-400 hover:bg-amber-500/10 hover:border-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.08)] backdrop-blur-md'
                             }`}
                     >
-                        {isPremium ? '✦ Premium Active' : '✦ Unlock Premium'}
+                        {premium.isPremium ? '✦ Premium Active' : '✦ Unlock Premium'}
                     </button>
 
                     <button
@@ -76,7 +74,6 @@ export const Navigation: React.FC<NavigationProps> = ({
                 </div>
             </nav>
 
-            {/* Mobile Nav Bar with Glassmorphism */}
             <div className="md:hidden flex border-b border-white/10 bg-[#07080d]/80 backdrop-blur-xl justify-around py-3.5 text-[11px] font-bold uppercase tracking-wider text-slate-400 relative z-40 font-display">
                 <button
                     onClick={() => setActiveTab('dictionary')}
