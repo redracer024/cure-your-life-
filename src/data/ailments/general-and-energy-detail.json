@@ -1,0 +1,3913 @@
+[
+  {
+    "id": "chronic-fatigue",
+    "tones": {
+      "clinical": {
+        "mechanism": "Dysregulation of the HPA axis induces a state of chronic hypocortisolemia accompanied by elevations in tumor necrosis factor-alpha (TNF-a) and interleukins. This pro-inflammatory milieu downregulates mitochondrial ATP synthase, leading to severe cellular bioenergetic exhaustion.",
+        "protocol": [
+          "Implement structured pacing protocols, strictly maintaining a fixed daily energy budget.",
+          "Integrate low-impact restorative training (Yoga Nidra, NSDR) to rebuild parasympathetic tone.",
+          "Check full thyroid panels and early morning cortisol levels to rule out endocrine pathology."
+        ],
+        "citations": [
+          "Frontiers in Endocrinology: 'HPA Axis Dysfunction in Chronic Fatigue Syndrome' (2022).",
+          "Mitochondrion Journal: 'Cellular Bioenergetics and Mitochondrial Dysfunction'."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Blown Main Fuse Box",
+        "metaphorText": "Your body is an older house that was wired for 100 amps, but you've plugged in an industrial pottery kiln, a commercial laundry mat, and four crypto-mining rigs.",
+        "visualWarehouseDescription": "Imagine the electrical board in your basement. Sparks are flying out of the plaster. The main safety breaker is melting. Rather than turning off the commercial dryer (your stressful job), you are running around plugging in extension cords (caffeine pills) trying to power a hot tub. The main system eventually snaps off, leaving you in total pitch blackness, wondering why the ceiling fan won't spin.",
+        "wittyAdvice": "Caffeine is not energy. It is an interest-bearing loan taken out against your future nervous system. Your credit is currently maxed out."
+      },
+      "brutal": {
+        "realityCheck": "You are physically exhausted because you are exhausting to be around. You spend 90% of your energy maintaining a perfect facade of competency while suppressing massive oceans of anger. Your body didn't break down; it staged a mutiny to save your life from your own choices.",
+        "protocolTitle": "Unplug the Parasitic Drains",
+        "protocolSteps": [
+          "Identify the one commitment you dread every single week, and cancel it immediately.",
+          "Stop drinking caffeine after 11 AM. You are whipping an exhausted horse and wondering why it collapses.",
+          "Lie flat on the floor in absolute silence for 20 minutes. No phone, no podcast, no planning.",
+          "Acknowledge that your need to be needed is what is actually murdering your adrenals."
+        ]
+      }
+    },
+    "biologyPath": [
+      {
+        "title": "Boundary Failure",
+        "description": "You say 'Yes' to demands that actually make your soul contract, draining structural limits.",
+        "expandedDetails": "Chronic over-giving and lack of healthy boundaries force your body to constantly produce compensatory adrenaline to survive the day."
+      },
+      {
+        "title": "Adrenal Sprint",
+        "description": "Your system floods itself with adrenaline and cortisol to push through the exhaustion.",
+        "expandedDetails": "The body utilizes emergency reserves of glucocorticoids. You feel wired but tired, running on high-friction survival chemicals."
+      },
+      {
+        "title": "HPA Blunting",
+        "description": "The feedback loop of your stress response system degrades from constant activation.",
+        "expandedDetails": "The hypothalamus-pituitary-adrenal axis flattens its baseline rhythm, leaving you with extremely low morning cortisol and zero wakefulness signals."
+      },
+      {
+        "title": "Mitochondrial Drag",
+        "description": "Your cellular powerhouses fail to generate ATP efficiently due to low-grade inflammation.",
+        "expandedDetails": "Low cortisol allows pro-inflammatory cytokines to circulate freely, disrupting mitochondrial membrane potential and rendering normal cellular energy production sluggish."
+      },
+      {
+        "title": "System Shutdown",
+        "description": "Your body throws the emergency breaker, plunging you into deep, heavy fatigue.",
+        "expandedDetails": "Because you refused to rest willingly, your somatic intelligence cuts the power to force compliance. The bed is your only remaining option."
+      }
+    ],
+    "medical_safety": {
+      "critical_alerts": [
+        "Falling asleep or severe sleepiness while driving or operating machinery",
+        "Sleep issues accompanied by chest pain, shortness of breath, or heart racing",
+        "Waking up gasping, choking, or with a sudden sensation of suffocation",
+        "Persistent fatigue accompanied by unexplained weight loss, fever, or night sweats",
+        "Severe, overwhelming fatigue that may contribute to rapid functional decline",
+        "Sleep disturbances accompanied by suicidal thoughts or severe mood disruption"
+      ],
+      "seek_immediate_care_if": [
+        "You experience chest pain, severe shortness of breath, or fainting in connection with fatigue or waking up",
+        "You experience suicidal thoughts, severe confusion, or sudden neurological deficits",
+        "You are at risk of falling asleep while driving or doing other safety-critical activities"
+      ],
+      "schedule_care_if": [
+        "You experience chronic, unrefreshing sleep or severe daytime sleepiness for more than a few weeks",
+        "You have persistent, loud snoring with witnessed pauses in breathing (possible sleep apnea)",
+        "You have unexplained weight loss, night sweats, or progressive fatigue that worsens despite rest"
+      ],
+      "self_care_allowed_if": "Maintaining consistent sleep hygiene, winding down without screens, and light exercise can support healthy natural sleep cycles.",
+      "do_not_ignore": "Chronic fatigue and severe sleep disturbances can be indicators of cardiovascular strain, clinical depression, or sleep apnea, and need formal evaluation.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease. Seek professional medical care for diagnosis, treatment, medication decisions, or urgent symptoms."
+    }
+  },
+  {
+    "id": "balance-loss",
+    "medical_safety": {
+      "critical_alerts": [
+        "Sudden numbness or weakness of the face, arm, or leg (especially on one side)",
+        "Sudden confusion, trouble speaking, or understanding speech",
+        "Sudden trouble seeing in one or both eyes",
+        "Sudden trouble walking, dizziness, loss of balance, or coordination",
+        "Sudden, severe headache with no known cause ('thunderclap' headache)",
+        "New onset of facial droop or facial muscle weakness"
+      ],
+      "seek_immediate_care_if": [
+        "You experience sudden facial drooping, arm weakness, or slurred speech (the FAST stroke indicators)",
+        "You have a sudden, blindingly severe headache or sudden loss of vision",
+        "You experience a seizure, sudden confusion, or loss of consciousness"
+      ],
+      "schedule_care_if": [
+        "You have frequent or progressively worsening headaches that interfere with sleep or work",
+        "You experience occasional mild dizziness or subtle changes in coordination or memory",
+        "You have persistent jaw pain or clicking that does not improve with stress reduction"
+      ],
+      "self_care_allowed_if": "Mild, familiar headaches or muscle tension may respond well to rest, hydration, and gentle massage.",
+      "do_not_ignore": "Sudden neurological deficits or severe headaches must be immediately evaluated to rule out stroke, aneurysm, or other brain emergencies.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease. Seek professional medical care for diagnosis, treatment, medication decisions, or urgent symptoms."
+    }
+  },
+  {
+    "id": "hypotension",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Weak thready pulse fading into silence, long gaps.",
+        "hapticPattern": [
+          120,
+          300,
+          80,
+          600,
+          60,
+          4000
+        ],
+        "uiBackgroundAccent": "#6B7B8D"
+      },
+      "hero": {
+        "primaryPattern": "Low blood pressure may be harmless if asymptomatic, but dizziness, fainting, shock signs, chest pain, bleeding, infection, dehydration, or confusion needs medical evaluation or emergency care.",
+        "cascade": [
+          "Pressure Drops",
+          "Flow Weakens",
+          "Dizzy/Faint Risk",
+          "Cause Check"
+        ],
+        "tags": [
+          "#hypotension",
+          "#dizziness",
+          "#fainting"
+        ],
+        "safetyPreview": "Fainting, shock signs, confusion, chest pain, severe weakness, dehydration, bleeding, fever/infection, cold clammy skin, or injury from fall needs urgent care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Low Pressure",
+          "short": "Lower pressure may be normal or symptomatic.",
+          "detail": "Some people naturally run low without problems. Symptoms and context decide concern."
+        },
+        {
+          "title": "Orthostatic Drop",
+          "short": "Standing can trigger symptoms.",
+          "detail": "Orthostatic hypotension is a drop in blood pressure on standing due to volume, medication, autonomic, heart, endocrine, or neurologic factors."
+        },
+        {
+          "title": "Volume and Pump",
+          "short": "Blood volume and heart output matter.",
+          "detail": "Dehydration, bleeding, infection, heart rhythm/pump issues, and medications can lower effective circulation."
+        },
+        {
+          "title": "Shock Risk",
+          "short": "Extreme low pressure is urgent.",
+          "detail": "Confusion, cold clammy skin, rapid breathing, weak pulse, fainting, or severe weakness can signal shock and needs emergency help."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Low Blood Pressure, Orthostatic Symptoms & Shock Screen",
+          "sections": [
+            {
+              "heading": "Stage 1 — Low Is Not Always Bad",
+              "body": [
+                "Low blood pressure can be normal in some people if there are no symptoms.",
+                "The problem starts when flow is not enough for the brain and organs. Very inconsiderate of gravity."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Symptoms and Causes",
+              "body": [
+                "Symptoms can include dizziness, fainting, fatigue, blurred vision, nausea, cold clammy skin, weakness, confusion, or falls.",
+                "Causes include dehydration, bleeding, infection, medications, heart problems, endocrine disorders, autonomic dysfunction, and posture-related drops."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Treatment Direction",
+              "body": [
+                "Care may include hydration, salt adjustment if medically appropriate, compression, medication review, treating infection/bleeding/endocrine/heart causes, and positional strategies.",
+                "Do not increase salt or fluids aggressively if you have heart/kidney issues without clinician guidance. Bodies love exceptions, because why be simple."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Safety Check",
+              "body": [
+                "Seek urgent care for fainting, shock signs, chest pain, shortness of breath, confusion, severe weakness, bleeding, dehydration, fever/infection, or injury from falls.",
+                "Passing out is not a productivity strategy."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Tired Pump",
+          "paragraphs": [
+            "Your circulation is a tired pump trying to push blood uphill while gravity acts smug.",
+            "Sometimes that is just your normal baseline. Sometimes it is dehydration, medication, autonomic dysfunction, bleeding, infection, heart trouble, or the body running on fumes.",
+            "If you stand and the world fades out, sit down. Revolutionary, I know.",
+            "Find the cause, treat the volume/pump/tone problem, and stop letting the floor catch you.",
+            "Prime the pump safely or keep treating fainting like an inconvenient hobby. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Depletion Reality Check",
+          "paragraphs": [
+            "You may have low blood pressure. You may also have a depletion-and-collapse pattern.",
+            "Medical first: symptomatic hypotension can come from dehydration, bleeding, infection, medication effects, heart issues, endocrine problems, autonomic dysfunction, or shock.",
+            "Symbolically, ask where your system has no push left.",
+            "But do not romanticize depletion. Fainting and shock signs need care, not poetry.",
+            "Prime the pump safely or keep treating fainting like an inconvenient hobby. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Qi / Yang Depletion Image",
+          "tag": "Low Force",
+          "paragraphs": [
+            "In TCM imagery, low pressure can be framed as depleted force or sinking energy.",
+            "Medically, symptoms, readings, and causes decide care."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Drained Self",
+          "tag": "Collapse",
+          "paragraphs": [
+            "The Drained Self has no push left.",
+            "The reset is replenishment plus evaluation."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Tired Pump",
+          "tag": "Circulation",
+          "paragraphs": [
+            "The pump image captures weak circulation.",
+            "Sometimes the pump needs fluids; sometimes medication review; sometimes emergency care."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Gravity Problem",
+          "tag": "Standing Drop",
+          "paragraphs": [
+            "Standing can reveal low pressure regulation.",
+            "Move slowly, sit safely, investigate patterns."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Prime the Pump",
+          "tag": "Reset",
+          "paragraphs": [
+            "The reset is safety, hydration if appropriate, cause review, and medical care when needed.",
+            "No heroic fainting."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Tired Pump & Orthostatic Safety Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "If dizzy or faint, sit or lie down immediately.",
+          "Elevate legs if safe and appropriate.",
+          "Check for red flags: chest pain, shortness of breath, confusion, bleeding, fever, severe weakness, injury, dehydration, or shock signs.",
+          "If red flags are present, seek urgent/emergency care.",
+          "If safe, hydrate as appropriate and stand slowly while tracking readings/symptoms."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Low Blood Pressure may require medical evaluation, diagnosis, monitoring, and condition-specific treatment.",
+        "items": [
+          {
+            "label": "Hydration review",
+            "detail": "Dehydration can lower pressure; fluid intake may help when safe for the person."
+          },
+          {
+            "label": "Slow position changes",
+            "detail": "Rise slowly, pause before walking, and sit if symptoms start."
+          },
+          {
+            "label": "Medication review",
+            "detail": "Blood pressure meds, diuretics, alpha-blockers, beta-blockers, and other drugs can contribute."
+          },
+          {
+            "label": "Medical cause check",
+            "detail": "Fainting, recurrent symptoms, heart symptoms, endocrine issues, anemia/bleeding, infection, or POTS-like symptoms need evaluation."
+          }
+        ],
+        "avoid": [
+          "Do not ignore fainting, shock signs, confusion, chest pain, shortness of breath, bleeding, fever, severe dehydration, or injury from falls.",
+          "Do not add lots of salt or fluids without medical guidance if you have heart, kidney, liver, or blood pressure issues."
+        ]
+      },
+      "brutalActions": [
+        "Sit before you drop.",
+        "Track readings lying/sitting/standing.",
+        "Review medications and hydration.",
+        "Get evaluated if fainting or red flags show up."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Low blood pressure is blood pressure lower than expected for a person. It may be normal without symptoms, but symptomatic hypotension can involve dizziness, fainting, fatigue, blurred vision, nausea, cold/clammy skin, dehydration, bleeding, infection, heart problems, endocrine issues, autonomic dysfunction, orthostatic hypotension, postprandial hypotension, POTS-like symptoms, or medication effects.",
+        "protocol": [
+          "Track readings, symptoms, standing triggers, fainting, fluid intake, bleeding, vomiting/diarrhea, fever/infection, medications, heart symptoms, pregnancy, diabetes, adrenal/thyroid issues, POTS symptoms, and injuries from falls.",
+          "Use medical evaluation when symptoms are new, severe, persistent, progressive, recurrent, or paired with red flags.",
+          "Symbolic interpretation never replaces diagnosis, emergency care, prescribed medication, or treatment."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Tired Pump",
+        "metaphorText": "Your circulation is a tired pump trying to push blood uphill while gravity acts smug.",
+        "wittyAdvice": "Prime the pump safely or keep treating fainting like an inconvenient hobby. Your choice."
+      },
+      "brutal": {
+        "realityCheck": "You may have low blood pressure. You may also have a depletion-and-collapse pattern.",
+        "protocolTitle": "PRIME THE PUMP",
+        "protocolSteps": [
+          "Sit/lie down.",
+          "Check shock signs.",
+          "Hydrate if safe.",
+          "Stand slowly.",
+          "Evaluate recurrent symptoms."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Fainting, collapse, confusion, severe weakness, or injury from falling",
+        "Cold clammy skin, rapid breathing, weak pulse, blue/gray skin, or shock concern",
+        "Chest pain, shortness of breath, palpitations, severe headache, or neurologic symptoms",
+        "Bleeding, black stools, vomiting/diarrhea with dehydration, fever/infection, or severe fluid loss",
+        "Pregnancy, diabetes, adrenal/thyroid disease, heart disease, or new medication-related symptoms"
+      ],
+      "seek_immediate_care_if": [
+        "Fainting/collapse, shock signs, chest pain, shortness of breath, confusion, bleeding, severe dehydration, infection signs, or serious injury occurs"
+      ],
+      "schedule_care_if": [
+        "Dizziness, fainting, orthostatic symptoms, recurrent low readings, medication concerns, POTS-like symptoms, or fatigue persist"
+      ],
+      "self_care_allowed_if": "Sitting/lying down, slow position changes, hydration if safe, and symptom tracking may support mild known episodes without red flags.",
+      "do_not_ignore": "Symptomatic low blood pressure can signal dehydration, bleeding, infection, heart problems, endocrine issues, medication effects, or shock.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure hypotension."
+    }
+  },
+  {
+    "id": "cancer-general",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Dense shock pulse, hollow pause, steady grounding pulse.",
+        "hapticPattern": [
+          3000,
+          4000,
+          2000,
+          4000
+        ],
+        "uiBackgroundAccent": "#5A4A4A"
+      },
+      "hero": {
+        "primaryPattern": "Cancer is a medical diagnosis requiring prompt evaluation, staging, and treatment planning; emotional meaning can support coping but never replaces oncology care.",
+        "cascade": [
+          "Cell Rules Break",
+          "Growth Spreads",
+          "Diagnosis/Staging",
+          "Treatment Plan"
+        ],
+        "tags": [
+          "cancer",
+          "oncology",
+          "diagnosis"
+        ],
+        "safetyPreview": "New lump, abnormal bleeding, unexplained weight loss, persistent cough, bowel/bladder changes, severe pain, neurologic symptoms, or suspicious screening results need medical evaluation."
+      },
+      "biologyPathway": [
+        {
+          "title": "Abnormal Growth",
+          "short": "Cells grow outside normal control.",
+          "detail": "Cancer involves genetic and cellular changes that let cells grow, invade, or spread depending on type and stage."
+        },
+        {
+          "title": "Diagnosis",
+          "short": "Imaging, labs, biopsy, and staging guide care.",
+          "detail": "Cancer workup depends on the organ involved and often requires pathology confirmation."
+        },
+        {
+          "title": "Treatment",
+          "short": "Treatment is type- and stage-specific.",
+          "detail": "Surgery, radiation, chemotherapy, immunotherapy, targeted therapy, hormone therapy, surveillance, or combinations may be used."
+        },
+        {
+          "title": "Support",
+          "short": "Emotional care belongs alongside treatment.",
+          "detail": "Counseling, support groups, symptom control, nutrition, sleep, and practical help matter. Cancer already brings enough paperwork from hell."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Cancer Diagnosis, Staging & Treatment Planning",
+          "sections": [
+            {
+              "heading": "Stage 1 — Not One Disease",
+              "body": [
+                "Cancer is many diseases, not one monster with one rulebook.",
+                "Type, stage, grade, biomarkers, location, and overall health guide treatment."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Diagnosis and Staging",
+              "body": [
+                "Workup may include exam, labs, imaging, biopsy, pathology, and staging.",
+                "Guessing is not diagnosis. The microscope gets a vote."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Treatment Options",
+              "body": [
+                "Treatment may include surgery, radiation, chemotherapy, immunotherapy, targeted therapy, hormone therapy, surveillance, palliative care, or combinations.",
+                "Modern oncology is complicated, because apparently cell biology signed up for law school."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Support and Safety",
+              "body": [
+                "Seek care for suspicious symptoms or urgent treatment side effects.",
+                "Emotional support, counseling, practical help, and second opinions can be part of good care."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Overgrown Garden",
+          "paragraphs": [
+            "Your body is a garden and one section started ignoring the zoning laws.",
+            "The useful plan is not denial, not panic, and not internet supplement roulette.",
+            "The useful plan is evaluation, diagnosis, staging, treatment, support, and asking very specific questions until the medical fog starts behaving.",
+            "The symbolism can help with meaning. It does not get to fire the oncologist.",
+            "Treat the garden medically and support the person emotionally, or keep pretending weeds respect denial. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Medical Reality Check",
+          "paragraphs": [
+            "You may have Cancer — General Diagnosis or a cancer concern. You may also have a shock-and-meaning pattern.",
+            "Medical first: suspected cancer needs prompt evaluation. Diagnosed cancer needs an oncology plan.",
+            "Screening, biopsy, imaging, staging, and treatment decisions belong with qualified clinicians.",
+            "Symbolically, ask what this diagnosis forces you to face, but do not blame yourself for cellular disease.",
+            "Treat the garden medically and support the person emotionally, or keep pretending weeds respect denial. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Qi Stagnation / Blood Stasis Image",
+          "tag": "Meaning Layer",
+          "paragraphs": [
+            "In TCM imagery, masses may be discussed through stagnation or stasis.",
+            "Medically, cancer is cellular disease requiring oncology care."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "The Self-Carer",
+          "tag": "Archetype",
+          "paragraphs": [
+            "The symbolic layer here is shock, mortality, attention, support, and the demand to stop pretending the body can be ignored.",
+            "Meaning can support coping. It must never become blame."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "The Overgrown Garden",
+          "tag": "Metaphor",
+          "paragraphs": [
+            "Your body is a garden where one patch has started growing outside the normal rules and now needs specialists with maps, tools, and actual treatment.",
+            "The metaphor is emotional scaffolding, not a treatment plan."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Support System",
+          "tag": "Care",
+          "paragraphs": [
+            "Cancer care is a team sport nobody asked to join.",
+            "Bring notes, questions, second opinions when needed, and a person who can remember what the doctor said while your brain becomes soup."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Treatment Plus Meaning",
+          "tag": "Reset",
+          "paragraphs": [
+            "The reset is medical action plus nervous-system support.",
+            "Both matter. One does not replace the other."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Oncology Grounding & Next-Step Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit somewhere safe.",
+          "Place one hand on the heart and one on the affected area if comfortable.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale slowly for 8 seconds.",
+          "Think: I am not alone. I take the next medical step. I support my body without blaming it."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Cancer — General Diagnosis may require medical evaluation, diagnosis, and condition-specific treatment.",
+        "items": [
+          {
+            "label": "Medical evaluation",
+            "detail": "Get suspicious symptoms, abnormal screening results, or new lumps evaluated promptly."
+          },
+          {
+            "label": "Treatment team",
+            "detail": "Oncology, surgery, radiation oncology, primary care, and specialists may all be involved depending on type."
+          },
+          {
+            "label": "Support system",
+            "detail": "Bring someone to visits, take notes, ask about stage, goals, options, side effects, and second opinions."
+          },
+          {
+            "label": "Emotional care",
+            "detail": "Counseling and support groups help carry the shock without replacing treatment."
+          }
+        ],
+        "avoid": [
+          "Do not delay evaluation for suspicious symptoms.",
+          "Do not replace cancer treatment with supplements, detoxes, diets, energy work, or miracle protocols.",
+          "Do not blame yourself for cancer."
+        ]
+      },
+      "brutalActions": [
+        "Schedule or keep medical evaluation.",
+        "Write down symptoms and questions.",
+        "Bring support to appointments.",
+        "Do not let fear, shame, or miracle-cure marketing run the treatment plan."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Cancer is not one disease. It is a group of diseases involving abnormal cell growth with potential invasion or spread. Diagnosis and treatment depend on cancer type, location, stage, biology, and the person’s health.",
+        "protocol": [
+          "Track symptoms, screening history, family history, diagnosis stage if known, treatment plan, side effects, weight loss, pain, bleeding, fatigue, fever, infection signs, and urgent changes. Follow oncology guidance.",
+          "Use medical evaluation when symptoms are new, severe, progressive, persistent, recurrent, or paired with red flags.",
+          "Symbolic interpretation never replaces diagnosis, screening, emergency care, or treatment."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Overgrown Garden",
+        "metaphorText": "Your body is a garden and one section started ignoring the zoning laws.",
+        "wittyAdvice": "Treat the garden medically and support the person emotionally, or keep pretending weeds respect denial. Your choice."
+      },
+      "brutal": {
+        "realityCheck": "You may have Cancer — General Diagnosis or a cancer concern. You may also have a shock-and-meaning pattern.",
+        "protocolTitle": "MEDICAL CARE FIRST",
+        "protocolSteps": [
+          "Evaluate symptoms.",
+          "Confirm diagnosis.",
+          "Stage accurately.",
+          "Follow treatment plan.",
+          "Use emotional support."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "New or growing lump, abnormal bleeding, coughing blood, blood in stool or urine, unexplained weight loss, persistent fever/night sweats",
+        "Persistent cough, trouble breathing, severe pain, new neurologic symptoms, seizure, severe headache, jaundice",
+        "Infection signs during chemotherapy/immunotherapy or severe treatment side effects",
+        "Suspicious imaging, biopsy, lab, screening result, or clinician concern"
+      ],
+      "seek_immediate_care_if": [
+        "Severe symptoms, bleeding, trouble breathing, neurologic deficits, severe pain, infection signs during treatment, or feeling medically unsafe occur"
+      ],
+      "schedule_care_if": [
+        "Any suspicious symptom persists or abnormal screening/imaging/lab result appears",
+        "A diagnosis needs staging, treatment planning, side-effect management, or second opinion"
+      ],
+      "self_care_allowed_if": "Supportive routines, sleep, nutrition, movement as tolerated, counseling, and support groups may help alongside medical care.",
+      "do_not_ignore": "Cancer symptoms, screening abnormalities, new lumps, unexplained weight loss, bleeding, persistent cough, neurologic symptoms, or treatment side effects need medical guidance.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure cancer."
+    }
+  },
+  {
+    "id": "bedwetting-childhood",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Soft irregular leak-like pulses spaced apart, followed by a short alert buzz.",
+        "hapticPattern": [
+          120,
+          4500,
+          120,
+          5000,
+          300
+        ],
+        "uiBackgroundAccent": "#4B6A8B"
+      },
+      "hero": {
+        "primaryPattern": "Childhood bedwetting may involve development, deep sleep, nighttime urine production, bladder capacity, constipation, stress, or medical causes.",
+        "cascade": [
+          "Deep Sleep",
+          "Bladder Signal",
+          "Arousal Miss",
+          "Wet Bed"
+        ],
+        "tags": [
+          "#no shame",
+          "#sleep",
+          "#bladder"
+        ],
+        "safetyPreview": "Pain, daytime accidents, fever, excessive thirst, new onset, UTI symptoms, constipation, or persistent bedwetting deserves medical evaluation."
+      },
+      "biologyPathway": [
+        {
+          "title": "Sleep Arousal",
+          "short": "The child may not wake to bladder signals.",
+          "detail": "Some children sleep deeply or have delayed development of nighttime bladder signaling."
+        },
+        {
+          "title": "Nighttime Urine Production",
+          "short": "More urine may be made overnight.",
+          "detail": "Some children produce more urine at night than their bladder can comfortably hold."
+        },
+        {
+          "title": "Bladder Capacity and Timing",
+          "short": "Capacity and coordination are still developing.",
+          "detail": "The bladder, brain, hormones, and sleep system all have to coordinate. Development is not a moral failure, despite humanity's tragic addiction to blame."
+        },
+        {
+          "title": "Medical and Stress Contributors",
+          "short": "Look for physical and emotional drivers.",
+          "detail": "Constipation, UTI, diabetes symptoms, sleep apnea, stress, new home changes, or family history can contribute."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Childhood Sleep-Bladder Coordination",
+          "sections": [
+            {
+              "heading": "Stage 1 — Developmental Timing",
+              "body": [
+                "Childhood bedwetting is common and often relates to sleep depth, bladder capacity, nighttime urine production, and development of bladder-brain signaling.",
+                "It is not laziness, spite, or a child plotting against your laundry basket."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Physical Contributors",
+              "body": [
+                "Constipation, urinary tract infection, sleep issues, family history, and high nighttime urine production can contribute.",
+                "Excessive thirst, weight loss, fever, pain with urination, or new daytime accidents need medical attention."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Stress and Safety",
+              "body": [
+                "Stress and family disruption can make bedwetting worse for some children.",
+                "Shame increases distress and does not teach the nervous system safety."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Parent Response",
+              "body": [
+                "The adult's job is calm consistency: clean up, reassure, track patterns, address constipation or sleep issues, and involve a clinician when symptoms are new, persistent, painful, or concerning.",
+                "You cannot shame a sleeping bladder into maturity. Grim discovery for people who think yelling is a treatment plan."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Night Guard and the Parking Lot",
+          "paragraphs": [
+            "Your child's bladder is a night-shift security guard protecting an empty parking lot.",
+            "No one told him the threat is gone. His radio crackles. His coffee is cold. A leaf blows past and he hits the panic button.",
+            "The panic button is the bladder signal. The leaf might be a dream, room temperature, constipation pressure, stress, or a body still learning how nighttime works.",
+            "The bedwetting is the guard accidentally flooding the parking lot because he confused the flush button with the lights.",
+            "It is not malice. It is not laziness. It is a sleepy body system doing a bad impression of competence.",
+            "The guard thinks every red mark on the calendar is his fault. Someone needs to tell him the parking lot was never in danger."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The No-Shame Parent Check",
+          "paragraphs": [
+            "This is not about a child being lazy. This is not about a child not trying hard enough.",
+            "This is about a sleeping body system, development, bladder signaling, possible constipation, possible stress, and maybe a medical issue that needs checking.",
+            "The adult in the room needs to understand this: shame is gasoline. It does not dry the bed. It burns the child.",
+            "Every angry cleanup teaches the child that their body is unsafe, embarrassing, and disappointing. That lesson sticks.",
+            "Say: it is okay, we will clean it up, you are safe. Then actually mean it.",
+            "Track patterns. Check constipation. Watch for pain, thirst, fever, daytime accidents, or sudden changes. Get medical help when needed.",
+            "Armor down. The child needs safety more than a lecture."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Kidney-Bladder Security System",
+          "tag": "Water Element",
+          "paragraphs": [
+            "In Chinese medicine, the Kidney and Bladder are linked with water regulation and fear.",
+            "Symbolically, nighttime wetting can mirror a system that does not yet feel safe enough to rest and hold."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "The Unslept Sentinel",
+          "tag": "Childhood Watcher",
+          "paragraphs": [
+            "The Sentinel is the part that stays alert even when the child sleeps.",
+            "The healing pattern is consistency, calm, and repeated proof that night is safe."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Shame Release",
+          "tag": "Protection",
+          "paragraphs": [
+            "A child cannot relax under shame.",
+            "The adult response becomes part of the child's nervous system training."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Safe Night Ritual",
+          "tag": "Regulation",
+          "paragraphs": [
+            "Predictable bedtime routines can support the body.",
+            "The goal is not control through fear. It is trust through repetition."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Blame-Free Repair",
+          "tag": "Attachment",
+          "paragraphs": [
+            "Cleanup can become a safety ritual instead of a punishment.",
+            "Calm repair tells the child: your body had an accident, not a moral collapse."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Night Safety Anchoring",
+        "modality": "Parent-Child Regulation",
+        "steps": [
+          "Before sleep, sit with the child if they want company.",
+          "Have them place one hand on the belly and one on the chest.",
+          "Breathe in together for 4 seconds and out for 8 seconds.",
+          "Say: You are safe. Night is safe. If there is an accident, we will clean it up. You are not in trouble.",
+          "Repeat nightly without shame."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Persistent, painful, new, or concerning bedwetting should be discussed with a clinician.",
+        "items": [
+          {
+            "label": "Calm cleanup",
+            "detail": "No shame, no punishment, no dramatic midnight courtroom."
+          },
+          {
+            "label": "Bathroom before bed",
+            "detail": "A consistent pre-sleep bathroom routine may help."
+          },
+          {
+            "label": "Constipation check",
+            "detail": "Constipation can worsen bladder control in children."
+          },
+          {
+            "label": "Pattern tracking",
+            "detail": "Track frequency, fluids, stress, sleep, constipation, and daytime symptoms."
+          }
+        ],
+        "avoid": [
+          "Do not shame, punish, or mock the child.",
+          "Do not ignore pain, fever, excessive thirst, weight loss, new daytime accidents, or sudden new bedwetting."
+        ]
+      },
+      "brutalActions": [
+        "Use calm cleanup.",
+        "Check constipation and daytime symptoms.",
+        "Create a predictable bedtime routine.",
+        "Get medical care for pain, fever, excessive thirst, weight loss, sudden onset, or daytime accidents."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Childhood bedwetting can involve development, deep sleep, nighttime urine production, bladder capacity, constipation, family history, stress, sleep issues, urinary tract infection, diabetes symptoms, or other medical causes.",
+        "protocol": [
+          "Use calm cleanup and no shame.",
+          "Track patterns, constipation, fluids, and daytime symptoms.",
+          "Seek medical evaluation for pain, fever, excessive thirst, weight loss, sudden onset, or daytime accidents."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for pediatric medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Night Guard and the Parking Lot",
+        "metaphorText": "The child's bladder is a night-shift security guard hitting the panic button because nobody told him the parking lot is safe.",
+        "wittyAdvice": "Fire the shame committee. Hire consistency, bedtime routine, and a washing machine with emotional boundaries."
+      },
+      "brutal": {
+        "realityCheck": "This is not laziness. Shame will not fix a sleeping body system.",
+        "protocolTitle": "NO-SHAME NIGHT RESET",
+        "protocolSteps": [
+          "Reassure the child.",
+          "Clean up calmly.",
+          "Track patterns.",
+          "Check constipation and red flags.",
+          "Get pediatric guidance when needed."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Pain or burning with urination",
+        "Fever, back pain, or signs of urinary tract infection",
+        "Excessive thirst, weight loss, or increased daytime urination",
+        "New daytime accidents or sudden new bedwetting after being dry",
+        "Constipation, snoring/sleep apnea symptoms, or significant behavior change",
+        "Bedwetting with neurologic symptoms or weakness"
+      ],
+      "seek_immediate_care_if": [
+        "The child has fever, back pain, severe pain with urination, weakness, confusion, or signs of serious illness",
+        "There is excessive thirst, weight loss, or symptoms concerning for diabetes",
+        "There are neurologic symptoms or sudden major changes"
+      ],
+      "schedule_care_if": [
+        "Bedwetting is persistent, new after a long dry period, or paired with daytime accidents",
+        "The child has constipation, snoring, sleep issues, stress changes, or urinary symptoms",
+        "The family needs guidance on alarms, routines, or medical evaluation"
+      ],
+      "self_care_allowed_if": "Calm cleanup, bedtime routine, bathroom before bed, constipation awareness, and no-shame support may help without red flags.",
+      "do_not_ignore": "Childhood bedwetting can be developmental, but new, painful, daytime, or medically suspicious symptoms should be evaluated.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "bedwetting-adulthood",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Irregular leaking pulses with a long slow vibration, sudden release, and hollow silence.",
+        "hapticPattern": [
+          2000,
+          120,
+          250,
+          5000
+        ],
+        "uiBackgroundAccent": "#5D4B6B"
+      },
+      "hero": {
+        "primaryPattern": "Adult bedwetting can involve sleep, urinary, neurologic, medication, alcohol, diabetes, infection, prostate/bladder, stress, or trauma-related factors.",
+        "cascade": [
+          "Sleep Signal",
+          "Bladder Event",
+          "Arousal Miss",
+          "Shame Spike"
+        ],
+        "tags": [
+          "#adult enuresis",
+          "#sleep",
+          "#medical check"
+        ],
+        "safetyPreview": "New or recurring adult bedwetting should be medically evaluated, especially with thirst, pain, fever, neurologic symptoms, snoring, medication changes, or daytime urinary symptoms."
+      },
+      "biologyPathway": [
+        {
+          "title": "Sleep-Bladder Coordination",
+          "short": "The brain must wake or inhibit the reflex.",
+          "detail": "Nighttime bladder control depends on sleep, arousal, urine production, bladder storage, and nervous-system coordination."
+        },
+        {
+          "title": "Medical Contributors",
+          "short": "Many physical causes are possible.",
+          "detail": "Adult bedwetting can involve sleep apnea, diabetes, UTI, medications, alcohol, neurologic conditions, prostate/bladder issues, seizures, or other causes."
+        },
+        {
+          "title": "Stress and Trauma Layer",
+          "short": "Stress may disrupt sleep and arousal.",
+          "detail": "Stress or trauma history can contribute for some people by fragmenting sleep and keeping the nervous system on alert, but it should not be assumed as the only cause."
+        },
+        {
+          "title": "Shame Loop",
+          "short": "Shame delays care.",
+          "detail": "The more shame piles on, the harder it can be to get help. The symptom deserves evaluation, not self-hatred."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Adult Nocturnal Enuresis Evaluation Pattern",
+          "sections": [
+            {
+              "heading": "Stage 1 — Adult Bedwetting Needs Evaluation",
+              "body": [
+                "Adult bedwetting is not something to dismiss as laziness or moral failure.",
+                "Recurring or new adult bedwetting deserves medical evaluation because many treatable physical causes are possible."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Possible Physical Contributors",
+              "body": [
+                "Possible contributors include urinary tract infection, diabetes, sleep apnea, alcohol, medication effects, prostate or bladder problems, neurologic conditions, seizures, severe constipation, or hormonal/urine production issues.",
+                "Daytime urgency, pain, excessive thirst, fever, snoring, medication changes, or neurologic symptoms make evaluation more important."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Stress, Trauma, and Sleep",
+              "body": [
+                "Stress and trauma history can contribute for some people by fragmenting sleep, increasing hyperarousal, or changing the body's nighttime safety signals.",
+                "But trauma should not be assumed as the only cause. The adult body deserves actual medical checking, not a dramatic monologue with no lab work."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Shame Reduction",
+              "body": [
+                "Shame is common and deeply unhelpful.",
+                "Track the pattern, protect sleep, get evaluated, and treat the body like it is sending a signal rather than betraying you."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Defunct Home Security System",
+          "paragraphs": [
+            "Your bladder is now a defunct home security system installed after an old break-in.",
+            "The break-in is over. The burglars are gone. But the system is still blaring every time a mouse sneezes in the wall.",
+            "At night, the alarm system glitches. It mistakes bladder fullness, sleep disruption, medication effects, stress, or random nervous-system nonsense for a full emergency.",
+            "The bed gets wet. The shame gets louder. The security company sends another bill paid entirely in embarrassment.",
+            "But the alarm system is not evil. It is outdated, overtuned, and badly in need of inspection.",
+            "Someone needs to check the wiring, the sensors, the sleep system, the fluid schedule, and possibly the fact that Gary from security has been awake since 1997."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Shame Is Not the Treatment",
+          "paragraphs": [
+            "You do not have a character flaw. You have a symptom that needs attention.",
+            "Waking up wet as an adult can feel humiliating. It can make you hide, avoid intimacy, avoid doctors, and pretend it was a one-off until it is very obviously not a one-off.",
+            "That shame is not helping. Shame is not a diagnostic tool. Shame cannot check your blood sugar, urine, prostate, sleep apnea, medication list, or nervous system.",
+            "Get evaluated. Track it. Look at sleep, alcohol, medications, urinary symptoms, thirst, stress, trauma, and timing.",
+            "If trauma is part of the picture, handle it with care. If sleep apnea is part of the picture, treat it like oxygen matters, because, tragically, it does.",
+            "You cannot punish your body into safety. You investigate, support, and treat it.",
+            "Drop the shame costume. Make the appointment before embarrassment starts pretending it is medical advice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Kidney Reserve",
+          "tag": "Water Element",
+          "paragraphs": [
+            "In Chinese medicine, the Kidney is associated with fear, reserves, and water regulation.",
+            "Symbolically, adult bedwetting may mirror exhaustion, depleted reserve, and difficulty trusting the night."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Bladder Gatekeeper",
+          "tag": "Lower Gate",
+          "paragraphs": [
+            "The Bladder is the reservoir and release gate.",
+            "When the gatekeeper is exhausted or confused, release may happen outside conscious control."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "The Exhausted Gatekeeper",
+          "tag": "Shadow Guardian",
+          "paragraphs": [
+            "The Gatekeeper was built to protect.",
+            "When it never gets relief, it may fail not from weakness but from exhaustion."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Night Safety",
+          "tag": "Trauma Layer",
+          "paragraphs": [
+            "For some people, night carries old fear.",
+            "The symbolic reset is teaching the body: I am not there anymore. Night is not the old threat."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Disarming Shame",
+          "tag": "Repair",
+          "paragraphs": [
+            "The symptom asks for care, not disgust.",
+            "Medical evaluation and emotional safety can work together without pretending one replaces the other."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Night Safety & Medical Tracking Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Before sleep, lie down with one hand on the lower belly and one hand on the chest.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "On each exhale, say: I am not there anymore. I am safe now. Night is safe. I can rest.",
+          "Afterward, track sleep, fluids, alcohol, medications, urinary symptoms, and timing for medical discussion."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Adult bedwetting should be medically evaluated, especially if new, recurring, or paired with other symptoms.",
+        "items": [
+          {
+            "label": "Track patterns",
+            "detail": "Record timing, fluids, alcohol, medications, sleep quality, snoring, stress, and urinary symptoms."
+          },
+          {
+            "label": "Protect sleep",
+            "detail": "Poor sleep and sleep apnea symptoms can matter."
+          },
+          {
+            "label": "Reduce shame",
+            "detail": "Shame delays help. It does not fix bladder signaling."
+          },
+          {
+            "label": "Medical check",
+            "detail": "Ask about UTI, diabetes, sleep apnea, medication effects, prostate/bladder issues, neurologic causes, and other possibilities."
+          }
+        ],
+        "avoid": [
+          "Do not ignore new or recurring adult bedwetting.",
+          "Do not assume it is only trauma or only stress."
+        ]
+      },
+      "brutalActions": [
+        "Track it without lying to yourself.",
+        "Check sleep, alcohol, medications, thirst, urinary symptoms, and stress.",
+        "Book medical evaluation if recurring or new.",
+        "Stop letting shame pretend it is a treatment plan."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Adult bedwetting can involve sleep apnea, diabetes, urinary tract infection, medications, alcohol, neurologic conditions, prostate or bladder issues, seizures, severe stress, trauma-related sleep disruption, or other medical causes.",
+        "protocol": [
+          "Track timing, fluids, sleep, alcohol, medications, stress, and urinary symptoms.",
+          "Seek medical evaluation for new or recurring adult bedwetting.",
+          "Get urgent care for neurologic symptoms, fever, severe pain, confusion, or serious illness signs."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for adult medical evaluation."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Defunct Home Security System",
+        "metaphorText": "Your bladder is an old security system still blaring because nobody inspected the wiring after the original threat passed.",
+        "wittyAdvice": "Check the sensors before you blame the house. The shame department is famously terrible at diagnostics."
+      },
+      "brutal": {
+        "realityCheck": "You do not have a character flaw. You have a symptom that needs attention.",
+        "protocolTitle": "CALL OFF THE ALARM",
+        "protocolSteps": [
+          "Track the pattern.",
+          "Reduce shame.",
+          "Review sleep, meds, alcohol, thirst, and urinary symptoms.",
+          "Get medical evaluation."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "New or recurring adult bedwetting",
+        "Pain or burning with urination, fever, back pain, or suspected UTI",
+        "Excessive thirst, weight loss, or increased urination",
+        "Neurologic symptoms, weakness, numbness, seizures, confusion, or new back injury",
+        "Snoring, choking/gasping during sleep, or suspected sleep apnea",
+        "Medication changes, heavy alcohol use, prostate symptoms, or daytime urinary symptoms"
+      ],
+      "seek_immediate_care_if": [
+        "There are neurologic symptoms, confusion, seizures, severe weakness, or new loss of bladder control",
+        "There is fever, back pain, severe urinary pain, or signs of serious infection",
+        "There are symptoms concerning for diabetes or serious illness"
+      ],
+      "schedule_care_if": [
+        "Adult bedwetting is new, recurring, or worsening",
+        "You have daytime urgency, frequency, leakage, prostate symptoms, snoring, medication changes, or heavy alcohol use",
+        "Shame is preventing you from seeking care"
+      ],
+      "self_care_allowed_if": "Tracking fluids, sleep, alcohol, medications, stress, and urinary symptoms may support a medical discussion, but recurring adult bedwetting should be evaluated.",
+      "do_not_ignore": "Adult bedwetting has many possible medical causes and should not be treated as purely emotional or trauma-based.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "cysts",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Dense enclosed throb, sharp pop-like release, long pause.",
+        "hapticPattern": [
+          2000,
+          120,
+          300,
+          3000
+        ],
+        "uiBackgroundAccent": "#6B7B6B"
+      },
+      "hero": {
+        "primaryPattern": "Cysts are closed sacs that can be benign, painful, infected, ruptured, hormonally related, or suspicious depending on location; new, painful, growing, infected, pelvic, breast, or neurologic cysts need evaluation.",
+        "cascade": [
+          "Pocket Forms",
+          "Material Collects",
+          "Pressure/Infection Risk",
+          "Evaluate Type"
+        ],
+        "tags": [
+          "#cysts",
+          "#lumps",
+          "#evaluation"
+        ],
+        "safetyPreview": "Sudden severe pain, fever, redness/warmth/swelling, rapid growth, drainage, pelvic pain with nausea/vomiting/faintness, new breast lump, or neurologic symptoms needs care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Closed Sac",
+          "short": "A cyst is a pocket.",
+          "detail": "A cyst can contain fluid, air, keratin, blood, pus, or semi-solid material depending on type."
+        },
+        {
+          "title": "Location Matters",
+          "short": "Skin, ovary, breast, joint, kidney, brain, and more.",
+          "detail": "A tiny skin cyst and an ovarian cyst with torsion risk are not the same problem, because biology loves making categories annoying."
+        },
+        {
+          "title": "Complications",
+          "short": "Pain, infection, rupture, torsion, pressure.",
+          "detail": "Cysts can become painful, infected, inflamed, ruptured, large enough to press on structures, or complicated depending on site."
+        },
+        {
+          "title": "Evaluation",
+          "short": "Exam and imaging guide care.",
+          "detail": "Care may include watchful waiting, ultrasound/imaging, drainage, medication, hormonal management, biopsy, or surgical removal depending on type."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Cyst Type, Location, Complication & Evaluation Pathway",
+          "sections": [
+            {
+              "heading": "Stage 1 — Cyst Is a Structure, Not a Single Diagnosis",
+              "body": [
+                "A cyst is a closed sac-like structure that may contain fluid, air, or semi-solid material.",
+                "The meaning and risk depend heavily on where it is and what type it is."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Common Types",
+              "body": [
+                "Common types include epidermoid/skin cysts, ovarian cysts, breast cysts, ganglion cysts, pilonidal cysts, Baker’s cysts, renal cysts, and PCOS-related ovarian findings.",
+                "This is why 'I have a cyst' is not enough information. The cyst apparently wants a zip code."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Treatment Direction",
+              "body": [
+                "Treatment may include monitoring, imaging, drainage, antibiotics if infected, hormonal management, aspiration, biopsy, or surgical removal.",
+                "Do not squeeze or cut cysts at home, unless your goal is turning a bump into a medical regret."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Safety Check",
+              "body": [
+                "Seek urgent care for fever, spreading redness/warmth, severe pain, rapid swelling, pus, sudden severe pelvic pain, nausea/vomiting/faintness, or neurologic symptoms.",
+                "Any new breast lump needs medical evaluation, even if you suspect a cyst."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Water Balloon",
+          "paragraphs": [
+            "Your body made a water balloon in a place water balloons do not usually belong.",
+            "Sometimes it is harmless. Sometimes it gets infected. Sometimes it ruptures. Sometimes it sits on an ovary and starts acting like a tiny emergency goblin.",
+            "The answer is not kitchen-counter surgery.",
+            "The answer is identifying the type, location, risk, and right treatment.",
+            "Release the pressure safely or keep treating a sealed pocket like it owes you an explanation. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Containment Reality Check",
+          "paragraphs": [
+            "You may have a cyst problem. You may also have a containment-and-release pattern.",
+            "Medical first: cyst risk depends on location, size, symptoms, infection signs, rupture, torsion risk, breast changes, and whether it is growing or suspicious.",
+            "Symbolically, ask what you keep holding in a pocket.",
+            "But do not make the cyst your fault. Bodies make pockets for reasons ranging from boring to serious.",
+            "Release the pressure safely or keep treating a sealed pocket like it owes you an explanation. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Spleen Dampness / Liver Stagnation",
+          "tag": "Accumulation",
+          "paragraphs": [
+            "In TCM imagery, cysts can be mapped to dampness, stagnation, and accumulated fluids.",
+            "Medically, cyst type and location are the actual decision-makers."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Pocket Self",
+          "tag": "Containment",
+          "paragraphs": [
+            "The Pocket Self stores what feels unsafe to release.",
+            "The Releaser learns flow without self-blame."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Water Balloon",
+          "tag": "Pressure",
+          "paragraphs": [
+            "The water balloon image captures contained pressure.",
+            "Pop it yourself? No. Let people with sterile tools and training handle the balloon circus."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Boundary Wall",
+          "tag": "Sac",
+          "paragraphs": [
+            "A cyst wall holds contents apart from surrounding tissue.",
+            "Symbolically, the wall asks what has been separated off."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Safe Release",
+          "tag": "Reset",
+          "paragraphs": [
+            "The reset is evaluation, safe treatment, and emotional release without blame.",
+            "No bathroom surgery. Civilization has dentists and doctors for a reason."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Pocket Release & Safe Evaluation Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit comfortably and do not press hard on the cyst.",
+          "Place one hand nearby, not forcefully on it, and one hand on the chest.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale slowly for 8 seconds.",
+          "Think: I release what I can emotionally, and I get the pocket checked medically when needed."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Cysts may require medical evaluation, diagnosis, and condition-specific treatment.",
+        "items": [
+          {
+            "label": "Medical evaluation",
+            "detail": "New, growing, painful, recurrent, deep, breast, pelvic, neurologic, or suspicious cysts deserve evaluation."
+          },
+          {
+            "label": "Warm compress for some skin cysts",
+            "detail": "A warm compress may ease mild inflamed skin cysts, but it does not replace care for infection or deep cysts."
+          },
+          {
+            "label": "Imaging when indicated",
+            "detail": "Ultrasound, mammogram, MRI/CT, or other imaging may be used depending on location."
+          },
+          {
+            "label": "Do not squeeze",
+            "detail": "Squeezing can worsen inflammation or infection and fail to remove the cyst wall."
+          }
+        ],
+        "avoid": [
+          "Do not ignore fever, spreading redness/warmth, severe pain, rapid swelling, pus, sudden pelvic pain, vomiting, faintness, new breast lump, or neurologic symptoms.",
+          "Do not cut, burn, lance, squeeze, or drain cysts at home."
+        ]
+      },
+      "brutalActions": [
+        "Identify location and red flags.",
+        "Stop poking it.",
+        "Schedule evaluation if new/growing/painful/suspicious.",
+        "Release one thing emotionally without blaming your body for building a pocket."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "A cyst is a closed sac-like structure that may contain fluid, air, or semi-solid material. Cysts can occur in skin, ovaries, breasts, kidneys, joints, brain, liver, or other tissues. Many are benign, but some can become painful, infected, ruptured, torsed, hormonally linked, recurrent, or rarely malignant depending on type and location.",
+        "protocol": [
+          "Track location, size, growth, pain, redness, warmth, drainage, fever, sudden severe pain, pelvic symptoms, breast changes, kidney/urinary symptoms, neurologic symptoms, recurrence, and whether imaging or exam has been done.",
+          "Use medical or mental-health evaluation when symptoms are new, severe, progressive, persistent, recurrent, or paired with red flags.",
+          "Symbolic interpretation never replaces diagnosis, emergency care, or treatment."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for professional care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Water Balloon",
+        "metaphorText": "Your body made a water balloon in a place water balloons do not usually belong.",
+        "wittyAdvice": "Release the pressure safely or keep treating a sealed pocket like it owes you an explanation. Your choice."
+      },
+      "brutal": {
+        "realityCheck": "You may have a cyst problem. You may also have a containment-and-release pattern.",
+        "protocolTitle": "EVALUATE THE POCKET",
+        "protocolSteps": [
+          "Check red flags.",
+          "Do not squeeze.",
+          "Track size/pain.",
+          "Use imaging/exam if needed.",
+          "Treat by type/location."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Fever, spreading redness, warmth, swelling, pus, or severe skin pain",
+        "Sudden severe pelvic pain, nausea, vomiting, faintness, shoulder pain, or suspected ovarian torsion/rupture",
+        "New breast lump, nipple discharge, skin dimpling, breast redness/swelling, or persistent breast change",
+        "Rapidly growing, hard/fixed, deep, recurrent, or unexplained lump",
+        "Neurologic symptoms, severe headache, kidney/urinary symptoms, or cyst in a critical organ"
+      ],
+      "seek_immediate_care_if": [
+        "There is fever, spreading infection, sudden severe pelvic pain, vomiting/faintness, severe pain, neurologic symptoms, or feeling medically unsafe"
+      ],
+      "schedule_care_if": [
+        "A cyst is new, growing, painful, recurrent, deep, breast-related, pelvic, or uncertain",
+        "Imaging, drainage, biopsy, hormonal management, or surgical review may be needed"
+      ],
+      "self_care_allowed_if": "Observation or warm compress may be reasonable for a small uncomplicated known skin cyst without red flags while arranging care if needed.",
+      "do_not_ignore": "Cysts are often benign but location and symptoms decide risk.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "depression",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Heavy sinking thud, long hollow silence, long pause.",
+        "hapticPattern": [
+          2000,
+          3000,
+          2000
+        ],
+        "uiBackgroundAccent": "#4B4B5B"
+      },
+      "hero": {
+        "primaryPattern": "Depression is a serious medical mood disorder; suicidal thoughts, self-harm thoughts, inability to stay safe, psychosis, severe functional collapse, or mania symptoms need urgent help.",
+        "cascade": [
+          "Energy Drains",
+          "Interest Fades",
+          "Function Drops",
+          "Support/Treatment"
+        ],
+        "tags": [
+          "#depression",
+          "#mentalhealth",
+          "#support"
+        ],
+        "safetyPreview": "Self-harm or suicidal thoughts, plan/intent, inability to stay safe, psychosis, severe neglect, mania, substance crisis, or sudden worsening needs immediate support."
+      },
+      "biologyPathway": [
+        {
+          "title": "Mood Disorder",
+          "short": "Depression affects mood, body, and function.",
+          "detail": "Depression can change sleep, appetite, concentration, energy, pleasure, self-worth, movement speed, pain, and daily functioning."
+        },
+        {
+          "title": "Multifactorial Causes",
+          "short": "It is not weakness.",
+          "detail": "Genetics, brain signaling, inflammation, hormones, trauma, stress, grief, substance use, medications, chronic illness, and social stress can contribute."
+        },
+        {
+          "title": "Treatable",
+          "short": "Treatment can help.",
+          "detail": "Therapy, medication, lifestyle support, sleep treatment, social support, substance care, and medical review can all matter."
+        },
+        {
+          "title": "Safety First",
+          "short": "Suicidal thoughts need immediate help.",
+          "detail": "Thoughts of suicide/self-harm, inability to stay safe, or a plan/intent requires immediate crisis/emergency support. No spiritual bypassing allowed."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Depressive Mood, Anhedonia, Function & Safety Pathway",
+          "sections": [
+            {
+              "heading": "Stage 1 — Depression Is Medical",
+              "body": [
+                "Depression is a serious mood disorder, not weakness, laziness, or a bad attitude.",
+                "Symptoms can affect mood, sleep, appetite, energy, thinking, movement, pain, and functioning."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Causes and Contributors",
+              "body": [
+                "Depression can involve genetic, biological, trauma-related, medication-related, medical, substance-related, sleep-related, and social contributors.",
+                "A single cause explanation is usually too small for a disorder this obnoxiously layered."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Treatment Options",
+              "body": [
+                "Treatment may include therapy, medication, support groups, exercise as tolerated, sleep treatment, medical review, substance care, and structured daily support.",
+                "Severe or treatment-resistant depression may require specialist care and other treatments."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Safety Check",
+              "body": [
+                "If there are thoughts of suicide or self-harm, plan/intent, inability to stay safe, psychosis, mania, severe neglect, or danger to self/others, seek immediate emergency/crisis help.",
+                "Depression can lie. Safety gets priority over the lie."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Dimmer Switch",
+          "paragraphs": [
+            "Your life is a room and the dimmer switch is stuck on low.",
+            "People keep shouting just turn on the lights, as if the switch is not broken, the wiring is not fried, and the electric company is not run by raccoons.",
+            "The fix is not shame.",
+            "The fix is treatment, support, sleep, food, routine, medical review, and sometimes medication or therapy because the room deserves electricity.",
+            "Turn the dimmer up with real support or keep blaming yourself for a room with broken wiring. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Depletion Reality Check",
+          "paragraphs": [
+            "You may have depression. You may also have a depletion-and-disconnection pattern.",
+            "Medical first: depression is treatable and serious. Safety comes first when self-harm or suicidal thoughts appear.",
+            "Symbolically, ask what has drained you, but do not turn depression into a moral failure.",
+            "You are not weak for needing help. You are a human nervous system, not a motivational poster with legs.",
+            "Turn the dimmer up with real support or keep blaming yourself for a room with broken wiring. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Heart-Kidney Depletion",
+          "tag": "Low Flame",
+          "paragraphs": [
+            "In TCM imagery, depression can be discussed through depleted Shen, Essence, or constrained flow.",
+            "Medically, depression needs evidence-based care and safety support."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Nourished Self",
+          "tag": "Receiving",
+          "paragraphs": [
+            "The Nourished Self receives support without shame.",
+            "The Depleted Self learned to run on empty."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Dimmer Switch",
+          "tag": "Low Light",
+          "paragraphs": [
+            "The dimmer image captures color draining from the world.",
+            "The wiring can be supported."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Hollow Room",
+          "tag": "Anhedonia",
+          "paragraphs": [
+            "Anhedonia is the room where things that used to matter feel flat.",
+            "The absence of feeling is a symptom, not a verdict."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Light Return",
+          "tag": "Reset",
+          "paragraphs": [
+            "The reset is safety, treatment, tiny actions, and connection.",
+            "The light returns by degrees, not by bullying."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Dimmer Switch & Safety-First Mood Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "First ask: am I safe right now?",
+          "If unsafe, seek immediate emergency/crisis support or contact a trusted person now.",
+          "If safe, sit with both feet on the floor.",
+          "Inhale through the nose for 4 seconds and exhale for 8 seconds.",
+          "Think: I do not have to fix my whole life today. I take one safe next step."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Depression may require medical evaluation, diagnosis, and condition-specific treatment.",
+        "items": [
+          {
+            "label": "Professional care",
+            "detail": "Therapy, medication evaluation, primary care, psychiatry, or community mental-health support can help."
+          },
+          {
+            "label": "Safety plan",
+            "detail": "A safety plan, trusted contacts, removing means, and emergency/crisis support matter when risk is present."
+          },
+          {
+            "label": "Small routine",
+            "detail": "Food, water, daylight, movement as tolerated, sleep timing, and one task can reduce load slightly."
+          },
+          {
+            "label": "Medical review",
+            "detail": "Thyroid issues, anemia, vitamin deficiencies, sleep apnea, chronic illness, medications, and substances can worsen mood."
+          }
+        ],
+        "avoid": [
+          "Do not ignore suicidal thoughts, self-harm thoughts, plan/intent, inability to stay safe, psychosis, mania, severe neglect, or danger to self/others.",
+          "Do not stop antidepressants or psychiatric medication suddenly without medical guidance.",
+          "Do not treat depression as weakness or a personality defect."
+        ]
+      },
+      "brutalActions": [
+        "Check safety first.",
+        "Tell one trusted person the truth.",
+        "Book or keep mental-health/medical care.",
+        "Do one tiny body-maintenance action before negotiating with hopelessness."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Depression is a medical mood disorder that can involve persistent low mood, loss of interest or pleasure, sleep/appetite changes, fatigue, guilt or worthlessness, difficulty concentrating, psychomotor changes, physical symptoms, and thoughts of death or suicide. Causes are multifactorial and can include genetics, brain chemistry, inflammation, trauma, stress, grief, substance use, medications, chronic illness, sleep problems, and social factors.",
+        "protocol": [
+          "Track mood, anhedonia, sleep, appetite/weight, energy, concentration, guilt, agitation/slowing, substance use, medication changes, medical conditions, trauma/grief, social support, self-harm thoughts, suicide thoughts, and ability to function.",
+          "Use medical or mental-health evaluation when symptoms are new, severe, progressive, persistent, recurrent, or paired with red flags.",
+          "Symbolic interpretation never replaces diagnosis, emergency care, or treatment."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for professional care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Dimmer Switch",
+        "metaphorText": "Your life is a room and the dimmer switch is stuck on low.",
+        "wittyAdvice": "Turn the dimmer up with real support or keep blaming yourself for a room with broken wiring. Your choice."
+      },
+      "brutal": {
+        "realityCheck": "You may have depression. You may also have a depletion-and-disconnection pattern.",
+        "protocolTitle": "SAFETY, THEN LIGHT",
+        "protocolSteps": [
+          "Check safety.",
+          "Reach support.",
+          "Seek treatment.",
+          "Do one tiny routine.",
+          "Do not trust hopelessness as prophecy."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Thoughts of suicide, self-harm, death, or not wanting to live",
+        "Plan, intent, access to means, recent attempt, or inability to stay safe",
+        "Psychosis, hallucinations, paranoia, mania, severe agitation, or not sleeping for days",
+        "Severe neglect of food, fluids, medication, hygiene, children/pets, or basic safety",
+        "Substance crisis, overdose risk, domestic violence danger, or sudden severe worsening"
+      ],
+      "seek_immediate_care_if": [
+        "There are suicidal/self-harm thoughts with plan, intent, means, inability to stay safe, psychosis, mania, overdose risk, or immediate danger",
+        "You feel unable to keep yourself or someone else safe"
+      ],
+      "schedule_care_if": [
+        "Low mood, anhedonia, sleep/appetite changes, fatigue, guilt, concentration problems, or functional impairment persists",
+        "Medication, therapy, medical review, trauma support, substance care, or psychiatric evaluation is needed"
+      ],
+      "self_care_allowed_if": "Tiny supportive routines, connection, sleep/food/water support, movement as tolerated, and grounding can help alongside professional care.",
+      "do_not_ignore": "Depression is treatable, but safety risk needs immediate help.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure depression."
+    }
+  },
+  {
+    "id": "left-side-body-problems",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Left-heavy dragging thud, sharp release, long pause.",
+        "hapticPattern": [
+          2000,
+          120,
+          300,
+          3000
+        ],
+        "uiBackgroundAccent": "#6B5B8B"
+      },
+      "hero": {
+        "primaryPattern": "Left-sided symptoms can be musculoskeletal, nerve-related, vascular, cardiac, neurologic, organ-related, or referred pain; sudden weakness/numbness, speech/vision changes, chest pain, or severe pain needs urgent care.",
+        "cascade": [
+          "One Side Signals",
+          "Cause Unknown",
+          "Red Flags Screen",
+          "Evaluate System"
+        ],
+        "tags": [
+          "#leftside",
+          "#onesided",
+          "#redflags"
+        ],
+        "safetyPreview": "Sudden weakness/numbness, face droop, speech/vision/balance changes, chest pressure, shortness of breath, severe pain, fainting, or new neurologic symptoms needs emergency care."
+      },
+      "biologyPathway": [
+        {
+          "title": "One-Sided Symptom",
+          "short": "Location helps but does not diagnose.",
+          "detail": "Left-sided symptoms may come from muscles, nerves, joints, spine, blood vessels, heart, lungs, spleen, kidney, colon, skin, or brain."
+        },
+        {
+          "title": "Stroke Screen",
+          "short": "Sudden neurologic signs are urgent.",
+          "detail": "Sudden face droop, arm/leg weakness or numbness, speech trouble, vision changes, balance loss, or severe headache can signal stroke."
+        },
+        {
+          "title": "Heart Screen",
+          "short": "Left arm/jaw/chest symptoms can matter.",
+          "detail": "Chest pressure, shortness of breath, sweating, nausea, jaw/arm/back pain, or faintness can signal heart attack or other cardiac problems."
+        },
+        {
+          "title": "Musculoskeletal and Nerve Causes",
+          "short": "Common does not mean harmless.",
+          "detail": "Posture, strain, disc issues, sciatica, joint dysfunction, shingles, or nerve compression can cause left-sided pain or numbness."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Left-Sided Symptom Triage, Referred Pain & Red-Flag Screening",
+          "sections": [
+            {
+              "heading": "Stage 1 — Side Is a Clue, Not a Diagnosis",
+              "body": [
+                "Left-sided symptoms can come from many systems.",
+                "The side matters, but it does not magically diagnose the problem. If only anatomy were that merciful."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Emergency Screens",
+              "body": [
+                "Sudden weakness, numbness, face droop, speech trouble, vision changes, balance loss, severe headache, chest pain, shortness of breath, or fainting needs urgent/emergency care.",
+                "Stroke and heart symptoms do not get processed as metaphors first."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Common Non-Emergency Causes",
+              "body": [
+                "Gradual or recurring left-sided pain may involve posture, muscle strain, nerve compression, sciatica, spine issues, joint problems, shingles, or organ-related referred pain.",
+                "Evaluation depends on location, onset, severity, and associated symptoms."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Meaning Layer",
+              "body": [
+                "Symbolically, the left side is often described as receptive, emotional, or yin/feminine in some traditions.",
+                "That can be useful for reflection only after medical triage has had the microphone."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The One-Sided Car",
+          "paragraphs": [
+            "Your body is a car and the left tire is wobbling.",
+            "Maybe the tire is low. Maybe the axle is bent. Maybe the engine is on fire and everyone is weirdly discussing tire symbolism.",
+            "One-sided symptoms are not automatically emotional and not automatically catastrophic.",
+            "Check the emergency lights first: stroke signs, chest pain, severe sudden symptoms, weakness, numbness, speech, vision, balance.",
+            "Fix the left tire safely or keep driving a one-sided car into medical traffic. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Left-Side Reality Check",
+          "paragraphs": [
+            "You may have a left-sided body symptom. You may also have a receiving-and-balance pattern.",
+            "Medical first: sudden left-sided weakness, numbness, speech/vision/balance changes, chest pain, shortness of breath, or severe pain needs urgent care.",
+            "Symbolically, ask what you struggle to receive only after the body is safe.",
+            "Do not make the left side carry a spiritual explanation when it might be a nerve, heart, brain, lung, kidney, spleen, colon, or joint issue.",
+            "Fix the left tire safely or keep driving a one-sided car into medical traffic. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Yin / Receptive Side",
+          "tag": "Symbolic Only",
+          "paragraphs": [
+            "Some traditions map the left side to receiving, yin, emotion, or the feminine principle.",
+            "This is symbolic, not diagnostic. Medicine gets first chair."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Receiver",
+          "tag": "Support",
+          "paragraphs": [
+            "The Receiver learns to take in support without apology.",
+            "Receiving is not the same as helplessness. Humans keep confusing those, naturally."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "One-Sided Car",
+          "tag": "Imbalance",
+          "paragraphs": [
+            "The car image captures imbalance and compensation.",
+            "Fix the tire before writing poetry about the wheel."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Referred Pain",
+          "tag": "Body Map",
+          "paragraphs": [
+            "Pain can show up away from its source.",
+            "The body is a terrible cartographer, so symptoms need context."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Balanced Support",
+          "tag": "Reset",
+          "paragraphs": [
+            "The reset is triage, support, evaluation, and reflection.",
+            "One-sided pain deserves two-sided attention."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Left Tire Check & Receptive-Side Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "First check for emergency signs: weakness, numbness, face droop, speech/vision changes, chest pain, shortness of breath, severe sudden pain.",
+          "If any are present, seek emergency care.",
+          "If safe, sit supported with both feet grounded.",
+          "Inhale for 4 seconds and exhale for 8 seconds.",
+          "Think: I receive support. I check the body before assigning meaning."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Left Side of Body Problems may require medical evaluation, diagnosis, and condition-specific treatment.",
+        "items": [
+          {
+            "label": "Symptom mapping",
+            "detail": "Note exact location, onset, severity, triggers, and associated symptoms."
+          },
+          {
+            "label": "Emergency screen",
+            "detail": "Stroke and heart symptoms require emergency response."
+          },
+          {
+            "label": "Muscle/nerve care",
+            "detail": "Physical therapy or medical evaluation may help posture, sciatica, joint, or nerve issues."
+          },
+          {
+            "label": "Organ/referred pain review",
+            "detail": "Left chest, abdomen, flank, pelvic, or shoulder pain can come from internal organs and needs appropriate evaluation."
+          }
+        ],
+        "avoid": [
+          "Do not ignore sudden weakness, numbness, face droop, speech trouble, vision changes, balance loss, severe headache, chest pain, shortness of breath, or fainting.",
+          "Do not use side-symbolism to delay medical care."
+        ]
+      },
+      "brutalActions": [
+        "Screen stroke and heart symptoms first.",
+        "Write down exact location and onset.",
+        "Get evaluated if symptoms are new, severe, persistent, recurrent, or unexplained.",
+        "Receive help before the car starts shedding parts."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Left-sided body symptoms can come from muscle strain, posture, nerve compression, sciatica, neck/back problems, joint issues, circulation problems, heart attack symptoms, stroke/TIA symptoms, lung/spleen/kidney/colon issues, injury, shingles, inflammatory disease, or referred pain from internal organs.",
+        "protocol": [
+          "Track exact location, onset, sudden vs gradual, weakness, numbness, face droop, speech/vision/balance changes, chest pressure, shortness of breath, jaw/arm/back pain, abdominal pain, fever, rash, injury, and neurologic symptoms.",
+          "Use medical or mental-health evaluation when symptoms are new, severe, progressive, persistent, recurrent, or paired with red flags.",
+          "Symbolic interpretation never replaces diagnosis, emergency care, or treatment."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for professional care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The One-Sided Car",
+        "metaphorText": "Your body is a car and the left tire is wobbling.",
+        "wittyAdvice": "Fix the left tire safely or keep driving a one-sided car into medical traffic. Your choice."
+      },
+      "brutal": {
+        "realityCheck": "You may have a left-sided body symptom. You may also have a receiving-and-balance pattern.",
+        "protocolTitle": "CHECK THE LEFT TIRE",
+        "protocolSteps": [
+          "Screen emergency signs.",
+          "Map location/onset.",
+          "Check heart/stroke signs.",
+          "Evaluate muscle/nerve/organ causes.",
+          "Reflect only after safety."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Sudden weakness, numbness, face droop, speech trouble, vision changes, balance loss, or severe headache",
+        "Chest pressure/pain, shortness of breath, sweating, nausea, jaw/arm/back pain, or fainting",
+        "Sudden severe abdominal, flank, pelvic, testicular, or shoulder pain",
+        "New severe neurologic symptoms, trouble walking, confusion, seizure, or head injury",
+        "Fever, rash/shingles concern, swelling, loss of pulse, cold limb, or severe unexplained pain"
+      ],
+      "seek_immediate_care_if": [
+        "Stroke-like symptoms, heart attack symptoms, severe sudden pain, fainting, seizure, cold/pale limb, or inability to walk/use the limb occurs"
+      ],
+      "schedule_care_if": [
+        "Left-sided pain, numbness, tingling, weakness, swelling, rash, organ-area pain, or recurring symptoms persist or are unexplained"
+      ],
+      "self_care_allowed_if": "Gentle rest, posture support, symptom tracking, and avoiding triggers may support mild known musculoskeletal symptoms without red flags.",
+      "do_not_ignore": "One-sided symptoms can be harmless, but sudden neurologic or cardiac symptoms can be life-threatening.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "weight-arms",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Heavy weighted thud followed by long hollow silence.",
+        "hapticPattern": [
+          2000,
+          4000,
+          2000,
+          4000
+        ],
+        "uiBackgroundAccent": "#6B5B4B"
+      },
+      "hero": {
+        "primaryPattern": "Weight around the arms may involve genetics, hormones, body composition, total fat, muscle loss, sleep, stress, meds, activity, pain, insulin resistance, and medical factors.",
+        "cascade": [
+          "Load Builds",
+          "Body Stores",
+          "Risk Context Matters",
+          "Support Plan"
+        ],
+        "tags": [
+          "#weight",
+          "#arms",
+          "#metabolic"
+        ],
+        "safetyPreview": "Sudden gain, swelling, shortness of breath, chest pain, rapid unexplained change, eating disorder symptoms, diabetes/thyroid symptoms, or severe distress needs care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Distribution Pattern",
+          "short": "Fat distribution is not random.",
+          "detail": "The arms pattern can involve genetics, hormones, age, muscle mass, total body fat, and metabolic context."
+        },
+        {
+          "title": "Risk Context",
+          "short": "Belly fat can carry higher metabolic risk.",
+          "detail": "Visceral abdominal fat is more strongly tied to cardiovascular and diabetes risk than many other fat patterns."
+        },
+        {
+          "title": "No Spot Reduction",
+          "short": "You cannot choose exactly where fat leaves first.",
+          "detail": "Training builds muscle and function locally, but fat loss patterns follow biology, not influencer promises."
+        },
+        {
+          "title": "Medical Review",
+          "short": "Sudden change matters.",
+          "detail": "Fluid retention, heart/kidney/liver disease, thyroid issues, meds, pregnancy, and hormonal changes can change body shape."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Weight Issues (Arms) Distribution & Metabolic Context",
+          "sections": [
+            {
+              "heading": "Stage 1 — Body Area Is a Clue, Not a Verdict",
+              "body": [
+                "Weight around the arms can reflect body composition, hormones, age, genetics, activity, and overall metabolic health.",
+                "It is not a moral scorecard. Humanity keeps trying that. It remains stupid."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Medical Contributors",
+              "body": [
+                "Medications, thyroid disease, insulin resistance, PCOS, menopause, pregnancy, sleep apnea, chronic pain, disability, depression, trauma, and food access can all matter.",
+                "BMI is only a screening tool and does not tell the whole story."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Health-Focused Plan",
+              "body": [
+                "A useful plan may include labs, blood pressure, glucose/A1c, lipids, sleep, movement, food structure, medication review, mental health support, and obesity medicine options.",
+                "The goal is sustainable health, not punishment cosplay."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Safety Check",
+              "body": [
+                "Sudden weight gain, swelling, shortness of breath, chest pain, severe fatigue, rapid unexplained change, pregnancy possibility, or eating disorder behaviors need medical care.",
+                "Do not turn fluid retention into a motivational quote."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Overstuffed Storage Shelf",
+          "paragraphs": [
+            "Your body is an overstuffed house, and this area is where some of the boxes keep landing.",
+            "Some boxes are genetics. Some are hormones. Some are meds. Some are sleep debt. Some are pain. Some are food patterns. Some are emotional junk mail from a decade nobody wanted.",
+            "The fix is not yelling at the room.",
+            "The fix is sorting the house with labs, routines, support, movement, nutrition, and less shame from people whose medical training came from comment sections.",
+            "Clear one shelf or keep asking tired arms to store every box the house refuses to sort. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Accumulation Reality Check",
+          "paragraphs": [
+            "You may have a weight issues (arms) concern. You may also have an accumulation-and-load pattern.",
+            "Medical first: weight distribution can involve hormones, genetics, medications, sleep, insulin resistance, pain, disability, activity, and food environment.",
+            "Symbolically, ask what you keep carrying.",
+            "What load is yours? What load got dumped on you? What need are you trying to store instead of meet?",
+            "Build the medical plan. Build the emotional release. Do both, because bodies are obnoxiously real.",
+            "Clear one shelf or keep asking tired arms to store every box the house refuses to sort. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Spleen Dampness",
+          "tag": "Accumulation",
+          "paragraphs": [
+            "In TCM imagery, dampness can symbolize heaviness and accumulation.",
+            "Medically, weight distribution still involves biology and health context."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Liver Stagnation",
+          "tag": "Blocked Flow",
+          "paragraphs": [
+            "Stagnation imagery asks where movement or expression has stopped.",
+            "Real movement plans still need pain, ability, and safety accounted for."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "The Accumulator",
+          "tag": "Storage",
+          "paragraphs": [
+            "The Accumulator keeps boxes because letting go once felt unsafe.",
+            "The Releaser removes one box at a time."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Protective Buffer",
+          "tag": "Armor",
+          "paragraphs": [
+            "Weight can feel symbolically protective.",
+            "That meaning can be explored without pretending it is the only cause."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "One Box Out",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The reset is one sustainable action, not a shame ritual.",
+            "The house gets sorted room by room."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "One Box Out & Body Area Release Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Place one hand on the arms and one hand on the heart.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "Whisper: I release what I no longer need to carry. I support my body without punishment.",
+          "Choose one action: walk, hydrate, plan protein/fiber, sleep earlier, review meds, or schedule labs."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Weight Issues (Arms) may require medical evaluation, diagnosis, and condition-specific treatment.",
+        "items": [
+          {
+            "label": "Medical review",
+            "detail": "Review A1c/glucose, lipids, blood pressure, thyroid if indicated, sleep apnea, medications, PCOS/menopause/pregnancy context, pain, and mood."
+          },
+          {
+            "label": "Food structure",
+            "detail": "Protein, fiber, whole foods, hydration, and regular meals can support appetite and metabolic health."
+          },
+          {
+            "label": "Movement",
+            "detail": "Use realistic movement that respects pain, disability, strength, and current capacity."
+          },
+          {
+            "label": "Strength training",
+            "detail": "Build muscle and function even though spot fat loss is a lying little sales goblin."
+          }
+        ],
+        "avoid": [
+          "Do not ignore sudden gain, swelling, shortness of breath, chest pain, rapid unexplained change, or severe fatigue.",
+          "Do not use starvation, purging, laxatives, dangerous supplements, or shame as a weight plan."
+        ]
+      },
+      "brutalActions": [
+        "Check labs and meds.",
+        "Pick one sustainable routine.",
+        "Stop letting shame manage the project.",
+        "Remove one box from the arms story today."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Weight distribution around the arms can reflect genetics, sex hormones, age, muscle mass, total body fat, visceral/subcutaneous fat, insulin resistance, medications, sleep, stress, menopause/pregnancy history, activity, pain, disability, and medical conditions. Spot reduction is not how fat loss works, because biology enjoys disappointing marketing departments.",
+        "protocol": [
+          "Track sudden changes, swelling, pain, shortness of breath, diabetes symptoms, thyroid symptoms, medications, sleep apnea, PCOS/menopause/pregnancy context, eating disorder symptoms, and overall metabolic markers.",
+          "Use symptom tracking and medical evaluation when symptoms are severe, persistent, recurrent, progressive, or paired with red flags.",
+          "Do not replace diagnosis or prescribed treatment with symbolic interpretation."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Overstuffed Storage Shelf",
+        "metaphorText": "The arms room is full of boxes: biology, hormones, sleep debt, food patterns, meds, stress, and emotional junk mail.",
+        "wittyAdvice": "Sort one box at a time. Do not burn the house down."
+      },
+      "brutal": {
+        "realityCheck": "You may have a weight issues (arms) concern. You may also have an accumulation-and-load pattern.",
+        "protocolTitle": "ONE BOX OUT",
+        "protocolSteps": [
+          "Check labs.",
+          "Review meds.",
+          "Structure food.",
+          "Move realistically.",
+          "Release one load."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Sudden rapid weight gain, swelling in legs/abdomen, shortness of breath, or chest pain",
+        "Severe fatigue, unexplained weight change, weakness, or thyroid symptoms",
+        "Pregnancy possibility, fluid retention, kidney/liver/heart symptoms, or medication-related gain",
+        "Excessive thirst, frequent urination, blurry vision, or diabetes symptoms",
+        "Eating disorder symptoms: bingeing, purging, restriction, laxative misuse, or severe distress",
+        "Severe depression, self-harm thoughts, or body-image crisis"
+      ],
+      "seek_immediate_care_if": [
+        "Weight gain occurs with shortness of breath, chest pain, severe swelling, fainting, confusion, or feeling medically unsafe",
+        "Eating behaviors or body distress involve self-harm, purging, or medical instability",
+        "Rapid unexplained gain suggests fluid retention or serious illness"
+      ],
+      "schedule_care_if": [
+        "Weight is affecting health, mobility, sleep, blood pressure, glucose, lipids, pain, or mood",
+        "You need medication review, lab screening, sleep apnea evaluation, hormone review, or obesity treatment options",
+        "Weight change is rapid, unexplained, or distressing"
+      ],
+      "self_care_allowed_if": "Sustainable food structure, movement, sleep support, stress reduction, and tracking can support weight health without red flags.",
+      "do_not_ignore": "Weight is complex and not a moral failure. Sudden changes and metabolic symptoms need medical evaluation.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "weight-belly",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Heavy weighted thud followed by long hollow silence.",
+        "hapticPattern": [
+          2000,
+          4000,
+          2000,
+          4000
+        ],
+        "uiBackgroundAccent": "#6B5B4B"
+      },
+      "hero": {
+        "primaryPattern": "Weight around the belly may involve genetics, hormones, body composition, total fat, muscle loss, sleep, stress, meds, activity, pain, insulin resistance, and medical factors.",
+        "cascade": [
+          "Load Builds",
+          "Body Stores",
+          "Risk Context Matters",
+          "Support Plan"
+        ],
+        "tags": [
+          "#weight",
+          "#belly",
+          "#metabolic"
+        ],
+        "safetyPreview": "Sudden gain, swelling, shortness of breath, chest pain, rapid unexplained change, eating disorder symptoms, diabetes/thyroid symptoms, or severe distress needs care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Distribution Pattern",
+          "short": "Fat distribution is not random.",
+          "detail": "The belly pattern can involve genetics, hormones, age, muscle mass, total body fat, and metabolic context."
+        },
+        {
+          "title": "Risk Context",
+          "short": "Belly fat can carry higher metabolic risk.",
+          "detail": "Visceral abdominal fat is more strongly tied to cardiovascular and diabetes risk than many other fat patterns."
+        },
+        {
+          "title": "No Spot Reduction",
+          "short": "You cannot choose exactly where fat leaves first.",
+          "detail": "Training builds muscle and function locally, but fat loss patterns follow biology, not influencer promises."
+        },
+        {
+          "title": "Medical Review",
+          "short": "Sudden change matters.",
+          "detail": "Fluid retention, heart/kidney/liver disease, thyroid issues, meds, pregnancy, and hormonal changes can change body shape."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Weight Issues (Belly) Distribution & Metabolic Context",
+          "sections": [
+            {
+              "heading": "Stage 1 — Body Area Is a Clue, Not a Verdict",
+              "body": [
+                "Weight around the belly can reflect body composition, hormones, age, genetics, activity, and overall metabolic health.",
+                "It is not a moral scorecard. Humanity keeps trying that. It remains stupid."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Medical Contributors",
+              "body": [
+                "Medications, thyroid disease, insulin resistance, PCOS, menopause, pregnancy, sleep apnea, chronic pain, disability, depression, trauma, and food access can all matter.",
+                "BMI is only a screening tool and does not tell the whole story."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Health-Focused Plan",
+              "body": [
+                "A useful plan may include labs, blood pressure, glucose/A1c, lipids, sleep, movement, food structure, medication review, mental health support, and obesity medicine options.",
+                "The goal is sustainable health, not punishment cosplay."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Safety Check",
+              "body": [
+                "Sudden weight gain, swelling, shortness of breath, chest pain, severe fatigue, rapid unexplained change, pregnancy possibility, or eating disorder behaviors need medical care.",
+                "Do not turn fluid retention into a motivational quote."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Overpacked Control Room",
+          "paragraphs": [
+            "Your body is an overstuffed house, and this area is where some of the boxes keep landing.",
+            "Some boxes are genetics. Some are hormones. Some are meds. Some are sleep debt. Some are pain. Some are food patterns. Some are emotional junk mail from a decade nobody wanted.",
+            "The fix is not yelling at the room.",
+            "The fix is sorting the house with labs, routines, support, movement, nutrition, and less shame from people whose medical training came from comment sections.",
+            "Sort the control room or keep letting the metabolic storage closet run the building. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Accumulation Reality Check",
+          "paragraphs": [
+            "You may have a weight issues (belly) concern. You may also have an accumulation-and-load pattern.",
+            "Medical first: weight distribution can involve hormones, genetics, medications, sleep, insulin resistance, pain, disability, activity, and food environment.",
+            "Symbolically, ask what you keep carrying.",
+            "What load is yours? What load got dumped on you? What need are you trying to store instead of meet?",
+            "Build the medical plan. Build the emotional release. Do both, because bodies are obnoxiously real.",
+            "Sort the control room or keep letting the metabolic storage closet run the building. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Spleen Dampness",
+          "tag": "Accumulation",
+          "paragraphs": [
+            "In TCM imagery, dampness can symbolize heaviness and accumulation.",
+            "Medically, weight distribution still involves biology and health context."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Liver Stagnation",
+          "tag": "Blocked Flow",
+          "paragraphs": [
+            "Stagnation imagery asks where movement or expression has stopped.",
+            "Real movement plans still need pain, ability, and safety accounted for."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "The Accumulator",
+          "tag": "Storage",
+          "paragraphs": [
+            "The Accumulator keeps boxes because letting go once felt unsafe.",
+            "The Releaser removes one box at a time."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Protective Buffer",
+          "tag": "Armor",
+          "paragraphs": [
+            "Weight can feel symbolically protective.",
+            "That meaning can be explored without pretending it is the only cause."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "One Box Out",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The reset is one sustainable action, not a shame ritual.",
+            "The house gets sorted room by room."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "One Box Out & Body Area Release Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Place one hand on the belly and one hand on the heart.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "Whisper: I release what I no longer need to carry. I support my body without punishment.",
+          "Choose one action: walk, hydrate, plan protein/fiber, sleep earlier, review meds, or schedule labs."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Weight Issues (Belly) may require medical evaluation, diagnosis, and condition-specific treatment.",
+        "items": [
+          {
+            "label": "Medical review",
+            "detail": "Review A1c/glucose, lipids, blood pressure, thyroid if indicated, sleep apnea, medications, PCOS/menopause/pregnancy context, pain, and mood."
+          },
+          {
+            "label": "Food structure",
+            "detail": "Protein, fiber, whole foods, hydration, and regular meals can support appetite and metabolic health."
+          },
+          {
+            "label": "Movement",
+            "detail": "Use realistic movement that respects pain, disability, strength, and current capacity."
+          },
+          {
+            "label": "Strength training",
+            "detail": "Build muscle and function even though spot fat loss is a lying little sales goblin."
+          }
+        ],
+        "avoid": [
+          "Do not ignore sudden gain, swelling, shortness of breath, chest pain, rapid unexplained change, or severe fatigue.",
+          "Do not use starvation, purging, laxatives, dangerous supplements, or shame as a weight plan."
+        ]
+      },
+      "brutalActions": [
+        "Check labs and meds.",
+        "Pick one sustainable routine.",
+        "Stop letting shame manage the project.",
+        "Remove one box from the belly story today."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Weight distribution around the belly can reflect genetics, sex hormones, age, muscle mass, total body fat, visceral/subcutaneous fat, insulin resistance, medications, sleep, stress, menopause/pregnancy history, activity, pain, disability, and medical conditions. Spot reduction is not how fat loss works, because biology enjoys disappointing marketing departments.",
+        "protocol": [
+          "Track sudden changes, swelling, pain, shortness of breath, diabetes symptoms, thyroid symptoms, medications, sleep apnea, PCOS/menopause/pregnancy context, eating disorder symptoms, and overall metabolic markers.",
+          "Use symptom tracking and medical evaluation when symptoms are severe, persistent, recurrent, progressive, or paired with red flags.",
+          "Do not replace diagnosis or prescribed treatment with symbolic interpretation."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Overpacked Control Room",
+        "metaphorText": "The belly room is full of boxes: biology, hormones, sleep debt, food patterns, meds, stress, and emotional junk mail.",
+        "wittyAdvice": "Sort one box at a time. Do not burn the house down."
+      },
+      "brutal": {
+        "realityCheck": "You may have a weight issues (belly) concern. You may also have an accumulation-and-load pattern.",
+        "protocolTitle": "ONE BOX OUT",
+        "protocolSteps": [
+          "Check labs.",
+          "Review meds.",
+          "Structure food.",
+          "Move realistically.",
+          "Release one load."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Sudden rapid weight gain, swelling in legs/abdomen, shortness of breath, or chest pain",
+        "Severe fatigue, unexplained weight change, weakness, or thyroid symptoms",
+        "Pregnancy possibility, fluid retention, kidney/liver/heart symptoms, or medication-related gain",
+        "Excessive thirst, frequent urination, blurry vision, or diabetes symptoms",
+        "Eating disorder symptoms: bingeing, purging, restriction, laxative misuse, or severe distress",
+        "Severe depression, self-harm thoughts, or body-image crisis"
+      ],
+      "seek_immediate_care_if": [
+        "Weight gain occurs with shortness of breath, chest pain, severe swelling, fainting, confusion, or feeling medically unsafe",
+        "Eating behaviors or body distress involve self-harm, purging, or medical instability",
+        "Rapid unexplained gain suggests fluid retention or serious illness"
+      ],
+      "schedule_care_if": [
+        "Weight is affecting health, mobility, sleep, blood pressure, glucose, lipids, pain, or mood",
+        "You need medication review, lab screening, sleep apnea evaluation, hormone review, or obesity treatment options",
+        "Weight change is rapid, unexplained, or distressing"
+      ],
+      "self_care_allowed_if": "Sustainable food structure, movement, sleep support, stress reduction, and tracking can support weight health without red flags.",
+      "do_not_ignore": "Weight is complex and not a moral failure. Sudden changes and metabolic symptoms need medical evaluation.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "weight-hips",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Heavy weighted thud followed by long hollow silence.",
+        "hapticPattern": [
+          2000,
+          4000,
+          2000,
+          4000
+        ],
+        "uiBackgroundAccent": "#6B5B4B"
+      },
+      "hero": {
+        "primaryPattern": "Weight around the hips may involve genetics, hormones, body composition, total fat, muscle loss, sleep, stress, meds, activity, pain, insulin resistance, and medical factors.",
+        "cascade": [
+          "Load Builds",
+          "Body Stores",
+          "Risk Context Matters",
+          "Support Plan"
+        ],
+        "tags": [
+          "#weight",
+          "#hips",
+          "#metabolic"
+        ],
+        "safetyPreview": "Sudden gain, swelling, shortness of breath, chest pain, rapid unexplained change, eating disorder symptoms, diabetes/thyroid symptoms, or severe distress needs care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Distribution Pattern",
+          "short": "Fat distribution is not random.",
+          "detail": "The hips pattern can involve genetics, hormones, age, muscle mass, total body fat, and metabolic context."
+        },
+        {
+          "title": "Risk Context",
+          "short": "Belly fat can carry higher metabolic risk.",
+          "detail": "Visceral abdominal fat is more strongly tied to cardiovascular and diabetes risk than many other fat patterns."
+        },
+        {
+          "title": "No Spot Reduction",
+          "short": "You cannot choose exactly where fat leaves first.",
+          "detail": "Training builds muscle and function locally, but fat loss patterns follow biology, not influencer promises."
+        },
+        {
+          "title": "Medical Review",
+          "short": "Sudden change matters.",
+          "detail": "Fluid retention, heart/kidney/liver disease, thyroid issues, meds, pregnancy, and hormonal changes can change body shape."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Weight Issues (Hips) Distribution & Metabolic Context",
+          "sections": [
+            {
+              "heading": "Stage 1 — Body Area Is a Clue, Not a Verdict",
+              "body": [
+                "Weight around the hips can reflect body composition, hormones, age, genetics, activity, and overall metabolic health.",
+                "It is not a moral scorecard. Humanity keeps trying that. It remains stupid."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Medical Contributors",
+              "body": [
+                "Medications, thyroid disease, insulin resistance, PCOS, menopause, pregnancy, sleep apnea, chronic pain, disability, depression, trauma, and food access can all matter.",
+                "BMI is only a screening tool and does not tell the whole story."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Health-Focused Plan",
+              "body": [
+                "A useful plan may include labs, blood pressure, glucose/A1c, lipids, sleep, movement, food structure, medication review, mental health support, and obesity medicine options.",
+                "The goal is sustainable health, not punishment cosplay."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Safety Check",
+              "body": [
+                "Sudden weight gain, swelling, shortness of breath, chest pain, severe fatigue, rapid unexplained change, pregnancy possibility, or eating disorder behaviors need medical care.",
+                "Do not turn fluid retention into a motivational quote."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Overloaded Foundation Beams",
+          "paragraphs": [
+            "Your body is an overstuffed house, and this area is where some of the boxes keep landing.",
+            "Some boxes are genetics. Some are hormones. Some are meds. Some are sleep debt. Some are pain. Some are food patterns. Some are emotional junk mail from a decade nobody wanted.",
+            "The fix is not yelling at the room.",
+            "The fix is sorting the house with labs, routines, support, movement, nutrition, and less shame from people whose medical training came from comment sections.",
+            "Rebalance the foundation or keep making your hips carry the whole house like unpaid architecture. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Accumulation Reality Check",
+          "paragraphs": [
+            "You may have a weight issues (hips) concern. You may also have an accumulation-and-load pattern.",
+            "Medical first: weight distribution can involve hormones, genetics, medications, sleep, insulin resistance, pain, disability, activity, and food environment.",
+            "Symbolically, ask what you keep carrying.",
+            "What load is yours? What load got dumped on you? What need are you trying to store instead of meet?",
+            "Build the medical plan. Build the emotional release. Do both, because bodies are obnoxiously real.",
+            "Rebalance the foundation or keep making your hips carry the whole house like unpaid architecture. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Spleen Dampness",
+          "tag": "Accumulation",
+          "paragraphs": [
+            "In TCM imagery, dampness can symbolize heaviness and accumulation.",
+            "Medically, weight distribution still involves biology and health context."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Liver Stagnation",
+          "tag": "Blocked Flow",
+          "paragraphs": [
+            "Stagnation imagery asks where movement or expression has stopped.",
+            "Real movement plans still need pain, ability, and safety accounted for."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "The Accumulator",
+          "tag": "Storage",
+          "paragraphs": [
+            "The Accumulator keeps boxes because letting go once felt unsafe.",
+            "The Releaser removes one box at a time."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Protective Buffer",
+          "tag": "Armor",
+          "paragraphs": [
+            "Weight can feel symbolically protective.",
+            "That meaning can be explored without pretending it is the only cause."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "One Box Out",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The reset is one sustainable action, not a shame ritual.",
+            "The house gets sorted room by room."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "One Box Out & Body Area Release Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Place one hand on the hips and one hand on the heart.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "Whisper: I release what I no longer need to carry. I support my body without punishment.",
+          "Choose one action: walk, hydrate, plan protein/fiber, sleep earlier, review meds, or schedule labs."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Weight Issues (Hips) may require medical evaluation, diagnosis, and condition-specific treatment.",
+        "items": [
+          {
+            "label": "Medical review",
+            "detail": "Review A1c/glucose, lipids, blood pressure, thyroid if indicated, sleep apnea, medications, PCOS/menopause/pregnancy context, pain, and mood."
+          },
+          {
+            "label": "Food structure",
+            "detail": "Protein, fiber, whole foods, hydration, and regular meals can support appetite and metabolic health."
+          },
+          {
+            "label": "Movement",
+            "detail": "Use realistic movement that respects pain, disability, strength, and current capacity."
+          },
+          {
+            "label": "Strength training",
+            "detail": "Build muscle and function even though spot fat loss is a lying little sales goblin."
+          }
+        ],
+        "avoid": [
+          "Do not ignore sudden gain, swelling, shortness of breath, chest pain, rapid unexplained change, or severe fatigue.",
+          "Do not use starvation, purging, laxatives, dangerous supplements, or shame as a weight plan."
+        ]
+      },
+      "brutalActions": [
+        "Check labs and meds.",
+        "Pick one sustainable routine.",
+        "Stop letting shame manage the project.",
+        "Remove one box from the hips story today."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Weight distribution around the hips can reflect genetics, sex hormones, age, muscle mass, total body fat, visceral/subcutaneous fat, insulin resistance, medications, sleep, stress, menopause/pregnancy history, activity, pain, disability, and medical conditions. Spot reduction is not how fat loss works, because biology enjoys disappointing marketing departments.",
+        "protocol": [
+          "Track sudden changes, swelling, pain, shortness of breath, diabetes symptoms, thyroid symptoms, medications, sleep apnea, PCOS/menopause/pregnancy context, eating disorder symptoms, and overall metabolic markers.",
+          "Use symptom tracking and medical evaluation when symptoms are severe, persistent, recurrent, progressive, or paired with red flags.",
+          "Do not replace diagnosis or prescribed treatment with symbolic interpretation."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Overloaded Foundation Beams",
+        "metaphorText": "The hips room is full of boxes: biology, hormones, sleep debt, food patterns, meds, stress, and emotional junk mail.",
+        "wittyAdvice": "Sort one box at a time. Do not burn the house down."
+      },
+      "brutal": {
+        "realityCheck": "You may have a weight issues (hips) concern. You may also have an accumulation-and-load pattern.",
+        "protocolTitle": "ONE BOX OUT",
+        "protocolSteps": [
+          "Check labs.",
+          "Review meds.",
+          "Structure food.",
+          "Move realistically.",
+          "Release one load."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Sudden rapid weight gain, swelling in legs/abdomen, shortness of breath, or chest pain",
+        "Severe fatigue, unexplained weight change, weakness, or thyroid symptoms",
+        "Pregnancy possibility, fluid retention, kidney/liver/heart symptoms, or medication-related gain",
+        "Excessive thirst, frequent urination, blurry vision, or diabetes symptoms",
+        "Eating disorder symptoms: bingeing, purging, restriction, laxative misuse, or severe distress",
+        "Severe depression, self-harm thoughts, or body-image crisis"
+      ],
+      "seek_immediate_care_if": [
+        "Weight gain occurs with shortness of breath, chest pain, severe swelling, fainting, confusion, or feeling medically unsafe",
+        "Eating behaviors or body distress involve self-harm, purging, or medical instability",
+        "Rapid unexplained gain suggests fluid retention or serious illness"
+      ],
+      "schedule_care_if": [
+        "Weight is affecting health, mobility, sleep, blood pressure, glucose, lipids, pain, or mood",
+        "You need medication review, lab screening, sleep apnea evaluation, hormone review, or obesity treatment options",
+        "Weight change is rapid, unexplained, or distressing"
+      ],
+      "self_care_allowed_if": "Sustainable food structure, movement, sleep support, stress reduction, and tracking can support weight health without red flags.",
+      "do_not_ignore": "Weight is complex and not a moral failure. Sudden changes and metabolic symptoms need medical evaluation.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "weight-thighs",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Heavy weighted thud followed by long hollow silence.",
+        "hapticPattern": [
+          2000,
+          4000,
+          2000,
+          4000
+        ],
+        "uiBackgroundAccent": "#6B5B4B"
+      },
+      "hero": {
+        "primaryPattern": "Weight around the thighs may involve genetics, hormones, body composition, total fat, muscle loss, sleep, stress, meds, activity, pain, insulin resistance, and medical factors.",
+        "cascade": [
+          "Load Builds",
+          "Body Stores",
+          "Risk Context Matters",
+          "Support Plan"
+        ],
+        "tags": [
+          "#weight",
+          "#thighs",
+          "#metabolic"
+        ],
+        "safetyPreview": "Sudden gain, swelling, shortness of breath, chest pain, rapid unexplained change, eating disorder symptoms, diabetes/thyroid symptoms, or severe distress needs care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Distribution Pattern",
+          "short": "Fat distribution is not random.",
+          "detail": "The thighs pattern can involve genetics, hormones, age, muscle mass, total body fat, and metabolic context."
+        },
+        {
+          "title": "Risk Context",
+          "short": "Belly fat can carry higher metabolic risk.",
+          "detail": "Visceral abdominal fat is more strongly tied to cardiovascular and diabetes risk than many other fat patterns."
+        },
+        {
+          "title": "No Spot Reduction",
+          "short": "You cannot choose exactly where fat leaves first.",
+          "detail": "Training builds muscle and function locally, but fat loss patterns follow biology, not influencer promises."
+        },
+        {
+          "title": "Medical Review",
+          "short": "Sudden change matters.",
+          "detail": "Fluid retention, heart/kidney/liver disease, thyroid issues, meds, pregnancy, and hormonal changes can change body shape."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Weight Issues (Thighs) Distribution & Metabolic Context",
+          "sections": [
+            {
+              "heading": "Stage 1 — Body Area Is a Clue, Not a Verdict",
+              "body": [
+                "Weight around the thighs can reflect body composition, hormones, age, genetics, activity, and overall metabolic health.",
+                "It is not a moral scorecard. Humanity keeps trying that. It remains stupid."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Medical Contributors",
+              "body": [
+                "Medications, thyroid disease, insulin resistance, PCOS, menopause, pregnancy, sleep apnea, chronic pain, disability, depression, trauma, and food access can all matter.",
+                "BMI is only a screening tool and does not tell the whole story."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Health-Focused Plan",
+              "body": [
+                "A useful plan may include labs, blood pressure, glucose/A1c, lipids, sleep, movement, food structure, medication review, mental health support, and obesity medicine options.",
+                "The goal is sustainable health, not punishment cosplay."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Safety Check",
+              "body": [
+                "Sudden weight gain, swelling, shortness of breath, chest pain, severe fatigue, rapid unexplained change, pregnancy possibility, or eating disorder behaviors need medical care.",
+                "Do not turn fluid retention into a motivational quote."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Freight Elevators",
+          "paragraphs": [
+            "Your body is an overstuffed house, and this area is where some of the boxes keep landing.",
+            "Some boxes are genetics. Some are hormones. Some are meds. Some are sleep debt. Some are pain. Some are food patterns. Some are emotional junk mail from a decade nobody wanted.",
+            "The fix is not yelling at the room.",
+            "The fix is sorting the house with labs, routines, support, movement, nutrition, and less shame from people whose medical training came from comment sections.",
+            "Unload the freight or keep making your thighs haul everyone else’s furniture upstairs. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Accumulation Reality Check",
+          "paragraphs": [
+            "You may have a weight issues (thighs) concern. You may also have an accumulation-and-load pattern.",
+            "Medical first: weight distribution can involve hormones, genetics, medications, sleep, insulin resistance, pain, disability, activity, and food environment.",
+            "Symbolically, ask what you keep carrying.",
+            "What load is yours? What load got dumped on you? What need are you trying to store instead of meet?",
+            "Build the medical plan. Build the emotional release. Do both, because bodies are obnoxiously real.",
+            "Unload the freight or keep making your thighs haul everyone else’s furniture upstairs. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Spleen Dampness",
+          "tag": "Accumulation",
+          "paragraphs": [
+            "In TCM imagery, dampness can symbolize heaviness and accumulation.",
+            "Medically, weight distribution still involves biology and health context."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Liver Stagnation",
+          "tag": "Blocked Flow",
+          "paragraphs": [
+            "Stagnation imagery asks where movement or expression has stopped.",
+            "Real movement plans still need pain, ability, and safety accounted for."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "The Accumulator",
+          "tag": "Storage",
+          "paragraphs": [
+            "The Accumulator keeps boxes because letting go once felt unsafe.",
+            "The Releaser removes one box at a time."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Protective Buffer",
+          "tag": "Armor",
+          "paragraphs": [
+            "Weight can feel symbolically protective.",
+            "That meaning can be explored without pretending it is the only cause."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "One Box Out",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The reset is one sustainable action, not a shame ritual.",
+            "The house gets sorted room by room."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "One Box Out & Body Area Release Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Place one hand on the thighs and one hand on the heart.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "Whisper: I release what I no longer need to carry. I support my body without punishment.",
+          "Choose one action: walk, hydrate, plan protein/fiber, sleep earlier, review meds, or schedule labs."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Weight Issues (Thighs) may require medical evaluation, diagnosis, and condition-specific treatment.",
+        "items": [
+          {
+            "label": "Medical review",
+            "detail": "Review A1c/glucose, lipids, blood pressure, thyroid if indicated, sleep apnea, medications, PCOS/menopause/pregnancy context, pain, and mood."
+          },
+          {
+            "label": "Food structure",
+            "detail": "Protein, fiber, whole foods, hydration, and regular meals can support appetite and metabolic health."
+          },
+          {
+            "label": "Movement",
+            "detail": "Use realistic movement that respects pain, disability, strength, and current capacity."
+          },
+          {
+            "label": "Strength training",
+            "detail": "Build muscle and function even though spot fat loss is a lying little sales goblin."
+          }
+        ],
+        "avoid": [
+          "Do not ignore sudden gain, swelling, shortness of breath, chest pain, rapid unexplained change, or severe fatigue.",
+          "Do not use starvation, purging, laxatives, dangerous supplements, or shame as a weight plan."
+        ]
+      },
+      "brutalActions": [
+        "Check labs and meds.",
+        "Pick one sustainable routine.",
+        "Stop letting shame manage the project.",
+        "Remove one box from the thighs story today."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Weight distribution around the thighs can reflect genetics, sex hormones, age, muscle mass, total body fat, visceral/subcutaneous fat, insulin resistance, medications, sleep, stress, menopause/pregnancy history, activity, pain, disability, and medical conditions. Spot reduction is not how fat loss works, because biology enjoys disappointing marketing departments.",
+        "protocol": [
+          "Track sudden changes, swelling, pain, shortness of breath, diabetes symptoms, thyroid symptoms, medications, sleep apnea, PCOS/menopause/pregnancy context, eating disorder symptoms, and overall metabolic markers.",
+          "Use symptom tracking and medical evaluation when symptoms are severe, persistent, recurrent, progressive, or paired with red flags.",
+          "Do not replace diagnosis or prescribed treatment with symbolic interpretation."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Freight Elevators",
+        "metaphorText": "The thighs room is full of boxes: biology, hormones, sleep debt, food patterns, meds, stress, and emotional junk mail.",
+        "wittyAdvice": "Sort one box at a time. Do not burn the house down."
+      },
+      "brutal": {
+        "realityCheck": "You may have a weight issues (thighs) concern. You may also have an accumulation-and-load pattern.",
+        "protocolTitle": "ONE BOX OUT",
+        "protocolSteps": [
+          "Check labs.",
+          "Review meds.",
+          "Structure food.",
+          "Move realistically.",
+          "Release one load."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Sudden rapid weight gain, swelling in legs/abdomen, shortness of breath, or chest pain",
+        "Severe fatigue, unexplained weight change, weakness, or thyroid symptoms",
+        "Pregnancy possibility, fluid retention, kidney/liver/heart symptoms, or medication-related gain",
+        "Excessive thirst, frequent urination, blurry vision, or diabetes symptoms",
+        "Eating disorder symptoms: bingeing, purging, restriction, laxative misuse, or severe distress",
+        "Severe depression, self-harm thoughts, or body-image crisis"
+      ],
+      "seek_immediate_care_if": [
+        "Weight gain occurs with shortness of breath, chest pain, severe swelling, fainting, confusion, or feeling medically unsafe",
+        "Eating behaviors or body distress involve self-harm, purging, or medical instability",
+        "Rapid unexplained gain suggests fluid retention or serious illness"
+      ],
+      "schedule_care_if": [
+        "Weight is affecting health, mobility, sleep, blood pressure, glucose, lipids, pain, or mood",
+        "You need medication review, lab screening, sleep apnea evaluation, hormone review, or obesity treatment options",
+        "Weight change is rapid, unexplained, or distressing"
+      ],
+      "self_care_allowed_if": "Sustainable food structure, movement, sleep support, stress reduction, and tracking can support weight health without red flags.",
+      "do_not_ignore": "Weight is complex and not a moral failure. Sudden changes and metabolic symptoms need medical evaluation.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "right-side-body-problems",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Right-heavy blocked thud, sharp left release, long pause.",
+        "hapticPattern": [
+          2000,
+          120,
+          300,
+          3000
+        ],
+        "uiBackgroundAccent": "#8B5B4C"
+      },
+      "hero": {
+        "primaryPattern": "Right-sided symptoms can be musculoskeletal, nerve-related, vascular, neurologic, organ-related, or referred pain; sudden weakness/numbness, severe abdominal pain, chest symptoms, or neurologic signs need urgent care.",
+        "cascade": [
+          "Right Side Signals",
+          "Cause Unknown",
+          "Red Flags Screen",
+          "Evaluate System"
+        ],
+        "tags": [
+          "#rightside",
+          "#onesided",
+          "#redflags"
+        ],
+        "safetyPreview": "Sudden weakness/numbness, face droop, speech/vision/balance changes, severe right abdominal pain, fever/vomiting, chest pain, shortness of breath, or severe sudden pain needs urgent care."
+      },
+      "biologyPathway": [
+        {
+          "title": "One-Sided Symptom",
+          "short": "Side helps locate possibilities.",
+          "detail": "Right-sided pain can come from muscles, nerves, spine, joints, blood vessels, brain, lung, liver, gallbladder, appendix, kidney, skin, or referred pain."
+        },
+        {
+          "title": "Stroke Screen",
+          "short": "Sudden neurologic signs are urgent.",
+          "detail": "Sudden weakness, numbness, face droop, speech trouble, vision changes, balance loss, or severe headache can signal stroke or TIA."
+        },
+        {
+          "title": "Abdominal Screen",
+          "short": "Right abdomen matters.",
+          "detail": "Right upper abdominal pain can involve gallbladder/liver; right lower abdominal pain can involve appendix or bowel/urinary/reproductive causes."
+        },
+        {
+          "title": "Muscle/Nerve Causes",
+          "short": "Common still needs context.",
+          "detail": "Posture, strain, disc issues, sciatica, joint dysfunction, shingles, or nerve compression can cause right-sided pain or numbness."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Right-Sided Symptom Triage, Organ Screens & Red Flags",
+          "sections": [
+            {
+              "heading": "Stage 1 — Side Is a Clue, Not a Diagnosis",
+              "body": [
+                "Right-sided symptoms can come from many body systems.",
+                "The side tells you where to look. It does not hand you a diagnosis in a gift bag."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Emergency Screens",
+              "body": [
+                "Sudden weakness, numbness, face droop, speech trouble, vision changes, balance loss, severe headache, chest pain, shortness of breath, fainting, or severe sudden pain needs urgent care.",
+                "Severe right lower abdominal pain with fever/vomiting can be appendicitis-type territory. Gallbladder and kidney issues can also live on the right-side complaint board."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Common Non-Emergency Causes",
+              "body": [
+                "Gradual or recurring right-sided pain may involve posture, muscle strain, nerve compression, sciatica, spine issues, joint problems, shingles, or organ-related referred pain.",
+                "Evaluation depends on location, onset, severity, and associated symptoms."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Meaning Layer",
+              "body": [
+                "Symbolically, the right side is often described as action, expression, or yang/active principle in some traditions.",
+                "That layer is for reflection after medical triage. The appendix does not care about archetypes."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Stuck Right Pedal",
+          "paragraphs": [
+            "Your body is a car and the right pedal is stuck.",
+            "Maybe it is a mechanical issue. Maybe a nerve. Maybe your gallbladder is throwing rocks. Maybe the appendix is pulling the fire alarm.",
+            "Right-sided symptoms are not automatically emotional and not automatically catastrophic.",
+            "Check the warning lights first: stroke signs, chest symptoms, severe abdominal pain, fever, vomiting, weakness, numbness, speech, vision, balance.",
+            "Unjam the pedal safely or keep flooring a car that needs actual diagnosis. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Right-Side Reality Check",
+          "paragraphs": [
+            "You may have a right-sided body symptom. You may also have an action-and-expression pattern.",
+            "Medical first: sudden right-sided weakness, numbness, speech/vision/balance changes, chest symptoms, severe abdominal pain, fever, vomiting, or severe sudden pain needs urgent care.",
+            "Symbolically, ask what action is blocked only after the body is safe.",
+            "Do not make the right side carry a spiritual explanation when it might be nerve, brain, gallbladder, appendix, liver, kidney, lung, or muscle.",
+            "Unjam the pedal safely or keep flooring a car that needs actual diagnosis. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Yang / Action Side",
+          "tag": "Symbolic Only",
+          "paragraphs": [
+            "Some traditions map the right side to action, yang, or outward expression.",
+            "This is symbolic, not diagnostic. Medicine gets the microphone first."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Actor Archetype",
+          "tag": "Movement",
+          "paragraphs": [
+            "The Actor takes clean action.",
+            "The Blocked Self freezes or overdrives. Neither diagnoses pain."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Stuck Pedal",
+          "tag": "Action Block",
+          "paragraphs": [
+            "The pedal image captures blocked movement.",
+            "A jammed pedal still needs inspection, not a sermon."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Referred Pain",
+          "tag": "Body Map",
+          "paragraphs": [
+            "Right-sided pain can be referred from organs.",
+            "The body is a messy map with terrible handwriting."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Act Safely",
+          "tag": "Reset",
+          "paragraphs": [
+            "The reset is triage, support, evaluation, and then action.",
+            "Right action starts with not ignoring danger signs."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Right Pedal Check & Action-Side Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "First check for emergency signs: weakness, numbness, face droop, speech/vision changes, chest pain, shortness of breath, severe right abdominal pain, fever, vomiting, or severe sudden pain.",
+          "If any are present, seek emergency care.",
+          "If safe, sit supported with both feet grounded.",
+          "Inhale for 4 seconds and exhale for 8 seconds.",
+          "Think: I act safely. I check the body before assigning meaning."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Right Side of Body Problems may require medical, mental-health, or professional evaluation depending on symptoms.",
+        "items": [
+          {
+            "label": "Symptom mapping",
+            "detail": "Note exact location, onset, severity, triggers, and associated symptoms."
+          },
+          {
+            "label": "Emergency screen",
+            "detail": "Stroke, heart, appendix, gallbladder, kidney, and lung red flags require urgent care."
+          },
+          {
+            "label": "Muscle/nerve care",
+            "detail": "Physical therapy or medical evaluation may help posture, sciatica, joint, or nerve issues."
+          },
+          {
+            "label": "Organ/referred pain review",
+            "detail": "Right chest, abdomen, flank, pelvic, or shoulder pain can come from internal organs and needs context."
+          }
+        ],
+        "avoid": [
+          "Do not ignore sudden weakness, numbness, face droop, speech trouble, vision changes, balance loss, chest pain, shortness of breath, severe abdominal pain, fever/vomiting, fainting, or severe sudden pain.",
+          "Do not use side-symbolism to delay medical care."
+        ]
+      },
+      "brutalActions": [
+        "Screen stroke, heart, abdominal, and organ red flags first.",
+        "Write down exact location and onset.",
+        "Get evaluated if symptoms are new, severe, persistent, recurrent, or unexplained.",
+        "Take one clean action after safety is handled."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Right-sided body symptoms can come from muscle strain, posture, nerve compression, sciatica, neck/back problems, joint issues, circulation problems, stroke/TIA symptoms, gallbladder disease, liver problems, appendicitis, right kidney issues, right lung problems, shingles, injury, inflammation, or referred pain from internal organs.",
+        "protocol": [
+          "Track exact location, onset, sudden vs gradual, weakness, numbness, face droop, speech/vision/balance changes, chest pain, shortness of breath, right upper abdominal pain, right lower abdominal pain, fever, vomiting, injury, rash, and neurologic symptoms.",
+          "Use medical, neurologic, mental-health, or emergency evaluation when symptoms are sudden, severe, progressive, persistent, recurrent, or paired with red flags.",
+          "Symbolic interpretation never replaces diagnosis, emergency care, therapy, or treatment."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for professional care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Stuck Right Pedal",
+        "metaphorText": "Your body is a car and the right pedal is stuck.",
+        "wittyAdvice": "Unjam the pedal safely or keep flooring a car that needs actual diagnosis. Your choice."
+      },
+      "brutal": {
+        "realityCheck": "You may have a right-sided body symptom. You may also have an action-and-expression pattern.",
+        "protocolTitle": "CHECK THE RIGHT PEDAL",
+        "protocolSteps": [
+          "Screen emergency signs.",
+          "Map location/onset.",
+          "Check organ/stroke/heart signs.",
+          "Evaluate muscle/nerve causes.",
+          "Reflect only after safety."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Sudden weakness, numbness, face droop, speech trouble, vision changes, balance loss, or severe headache",
+        "Chest pressure/pain, shortness of breath, sweating, nausea, jaw/arm/back pain, or fainting",
+        "Severe right lower abdominal pain, fever, vomiting, rebound pain, or appendicitis concern",
+        "Right upper abdominal pain after meals, fever, jaundice, vomiting, or gallbladder/liver concern",
+        "Flank pain, blood in urine, fever, rash/shingles concern, cold limb, swelling, or severe unexplained pain"
+      ],
+      "seek_immediate_care_if": [
+        "Stroke-like symptoms, heart attack symptoms, severe sudden pain, fainting, seizure, severe abdominal pain with fever/vomiting, cold/pale limb, or inability to walk/use the limb occurs"
+      ],
+      "schedule_care_if": [
+        "Right-sided pain, numbness, tingling, weakness, swelling, rash, organ-area pain, or recurring symptoms persist or are unexplained"
+      ],
+      "self_care_allowed_if": "Gentle rest, posture support, symptom tracking, and avoiding triggers may support mild known musculoskeletal symptoms without red flags.",
+      "do_not_ignore": "One-sided symptoms can be harmless, but sudden neurologic, cardiac, or abdominal symptoms can be life-threatening.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "stroke",
+    "medical_safety": {
+      "critical_alerts": [
+        "Sudden numbness or weakness of the face, arm, or leg (especially on one side)",
+        "Sudden confusion, trouble speaking, or understanding speech",
+        "Sudden trouble seeing in one or both eyes",
+        "Sudden trouble walking, dizziness, loss of balance, or coordination",
+        "Sudden, severe headache with no known cause ('thunderclap' headache)",
+        "New onset of facial droop or facial muscle weakness"
+      ],
+      "seek_immediate_care_if": [
+        "You experience sudden facial drooping, arm weakness, or slurred speech (the FAST stroke indicators)",
+        "You have a sudden, blindingly severe headache or sudden loss of vision",
+        "You experience a seizure, sudden confusion, or loss of consciousness"
+      ],
+      "schedule_care_if": [
+        "You have frequent or progressively worsening headaches that interfere with sleep or work",
+        "You experience occasional mild dizziness or subtle changes in coordination or memory",
+        "You have persistent jaw pain or clicking that does not improve with stress reduction"
+      ],
+      "self_care_allowed_if": "Mild, familiar headaches or muscle tension may respond well to rest, hydration, and gentle massage.",
+      "do_not_ignore": "Sudden neurological deficits or severe headaches must be immediately evaluated to rule out stroke, aneurysm, or other brain emergencies.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease. Seek professional medical care for diagnosis, treatment, medication decisions, or urgent symptoms."
+    }
+  },
+  {
+    "id": "tetanus",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Violent jolt, sustained rigid clamp, long silence.",
+        "hapticPattern": [
+          500,
+          120,
+          3000,
+          4000
+        ],
+        "uiBackgroundAccent": "#5A2A2A"
+      },
+      "hero": {
+        "primaryPattern": "Tetanus is a life-threatening medical emergency caused by bacterial toxin after contaminated wounds; lockjaw, painful spasms, swallowing/breathing trouble, or rigidity needs emergency care.",
+        "cascade": [
+          "Wound Exposure",
+          "Toxin Forms",
+          "Brakes Fail",
+          "Spasms Become Emergency"
+        ],
+        "tags": [
+          "#tetanus",
+          "#emergency",
+          "#vaccine"
+        ],
+        "safetyPreview": "Lockjaw, painful spasms, trouble swallowing/breathing, neck/back rigidity, fever, autonomic symptoms, dirty wound, or uncertain vaccine status needs urgent care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Clostridium tetani",
+          "short": "Spores can enter wounds.",
+          "detail": "Tetanus bacteria can enter through punctures, contaminated wounds, burns, crush injuries, animal bites, or wounds exposed to soil/dust/manure."
+        },
+        {
+          "title": "Toxin Blocks Brakes",
+          "short": "Tetanospasmin disrupts inhibition.",
+          "detail": "The toxin interferes with inhibitory nerve signaling, causing severe involuntary muscle contractions."
+        },
+        {
+          "title": "Lockjaw and Spasms",
+          "short": "Jaw stiffness can be an early sign.",
+          "detail": "Symptoms may include jaw stiffness, trouble swallowing, neck/back/abdominal rigidity, painful spasms, sweating, high blood pressure, and breathing trouble."
+        },
+        {
+          "title": "Vaccination Prevents",
+          "short": "Boosters and wound care matter.",
+          "detail": "Vaccination and proper wound management prevent tetanus. Natural infection does not reliably protect you, because biology loves cruel jokes."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Tetanus Toxin & Loss of Nervous-System Brakes",
+          "sections": [
+            {
+              "heading": "Stage 1 — Emergency Infection",
+              "body": [
+                "Tetanus is a potentially fatal bacterial toxin disease.",
+                "It is not a stress cramp and not a mind-body pattern."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Brake Failure",
+              "body": [
+                "The toxin blocks inhibitory nerve signals, causing severe spasms and rigidity.",
+                "Jaw stiffness, trouble swallowing, and painful spasms are major warning signs."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Hospital Treatment",
+              "body": [
+                "Treatment can require hospitalization, wound care, tetanus immune globulin, antibiotics, sedating/muscle-relaxing medications, and breathing support.",
+                "This is not backyard medicine unless the backyard contains an ICU, which it does not."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Prevention",
+              "body": [
+                "Vaccination boosters and proper wound care prevent tetanus.",
+                "Dirty, deep, puncture, crush, burn, or animal-bite wounds may require medical review."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Overridden Brakes",
+          "paragraphs": [
+            "Your nervous system is a car whose brake lines have been cut.",
+            "The gas pedal is stuck. The driver is screaming stop. The muscles are not taking notes.",
+            "That is tetanus. Not tension. Not spiritual rigidity. Not a Pilates opportunity.",
+            "The reset protocol is emergency care.",
+            "The prevention protocol is vaccination and wound care.",
+            "No one wins a debate with tetanospasmin. The toxin does not attend workshops."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Medical Emergency Reality Check",
+          "paragraphs": [
+            "You do not have a metaphor problem. You may have a life-threatening emergency.",
+            "Tetanus can kill. Jaw stiffness, painful spasms, trouble swallowing, trouble breathing, neck/back rigidity, or symptoms after a contaminated wound need emergency care.",
+            "Do not search for home remedies.",
+            "Do not wait to see if it passes.",
+            "Get emergency care. Get vaccinated. Clean wounds properly.",
+            "This is survival, not symbolism."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Locked Sinews",
+          "tag": "Emergency Symbol",
+          "paragraphs": [
+            "Symbolically, tetanus looks like total lock and loss of regulation.",
+            "Medically, the infection outranks all symbolism."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Overpowered Self",
+          "tag": "No Control",
+          "paragraphs": [
+            "The body is taken over by toxin-driven signals.",
+            "The pattern is infection, not psychology."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Cut Brakes",
+          "tag": "Toxin",
+          "paragraphs": [
+            "The car image means the brakes are gone.",
+            "You do not meditate a brakeless car down a mountain."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Vaccination Shield",
+          "tag": "Prevention",
+          "paragraphs": [
+            "The real protective layer is vaccination.",
+            "The booster is less poetic than a ritual, and far more useful."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Emergency Care",
+          "tag": "Action",
+          "paragraphs": [
+            "The only reset is emergency medical treatment.",
+            "The app should say that loudly."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Emergency Care Now",
+        "modality": "Medical Emergency",
+        "steps": [
+          "Do not attempt home treatment for suspected tetanus.",
+          "Seek emergency medical care immediately.",
+          "Mention any recent wound, puncture, burn, animal bite, soil/dust/manure exposure, and vaccination history.",
+          "Follow clinician guidance for wound care, tetanus immune globulin, antibiotics, vaccination, and hospital monitoring.",
+          "For future prevention, keep tetanus vaccination current."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Prevention Only",
+        "disclaimer": "There are no home remedies for suspected tetanus. This is emergency medical care territory.",
+        "items": [
+          {
+            "label": "Vaccination",
+            "detail": "Stay current with tetanus-containing vaccines and boosters."
+          },
+          {
+            "label": "Wound care",
+            "detail": "Clean wounds promptly and seek care for dirty, deep, puncture, crush, burn, or animal-bite wounds."
+          },
+          {
+            "label": "Booster/TIG review",
+            "detail": "Clinicians decide whether booster or tetanus immune globulin is needed based on wound type and vaccine history."
+          },
+          {
+            "label": "Emergency symptoms",
+            "detail": "Lockjaw, trouble swallowing, painful spasms, stiffness, or breathing problems require emergency care."
+          }
+        ],
+        "avoid": [
+          "Do not use herbs, supplements, stretching, or breathing exercises for suspected tetanus.",
+          "Do not delay emergency care for lockjaw, painful spasms, trouble swallowing, trouble breathing, or recent contaminated wound symptoms."
+        ]
+      },
+      "brutalActions": [
+        "Get emergency care for suspected tetanus.",
+        "Keep tetanus vaccination current.",
+        "Get dirty/deep puncture wounds evaluated.",
+        "Do not negotiate with lockjaw like it is a mindset issue."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Tetanus is a potentially life-threatening infection caused by Clostridium tetani toxin that disrupts inhibitory nerve signaling and causes severe muscle spasms and rigidity.",
+        "protocol": [
+          "Seek emergency medical care immediately for suspected tetanus symptoms.",
+          "Report wound type, soil/dust/manure exposure, animal bite, burn, puncture, and vaccination history.",
+          "Use vaccination and proper wound management for prevention."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for emergency care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Overridden Brakes",
+        "metaphorText": "The nervous system car has cut brake lines and a stuck gas pedal. This is not a workshop exercise.",
+        "wittyAdvice": "Emergency care first. Poetry can wait in the lobby."
+      },
+      "brutal": {
+        "realityCheck": "You do not have a metaphor problem. You may have a life-threatening emergency.",
+        "protocolTitle": "EMERGENCY CARE NOW",
+        "protocolSteps": [
+          "Call emergency care.",
+          "Report wound history.",
+          "Report vaccination status.",
+          "Do not home-treat.",
+          "Prevent with boosters."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Jaw stiffness or lockjaw",
+        "Painful muscle spasms, neck/back/abdominal rigidity, or arching",
+        "Trouble swallowing, trouble breathing, choking, or laryngeal spasm symptoms",
+        "Fever, sweating, high blood pressure, fast heart rate, or severe autonomic symptoms",
+        "Recent dirty/deep puncture wound, crush injury, burn, animal bite, or soil/dust/manure exposure",
+        "Unknown or overdue tetanus vaccination status"
+      ],
+      "seek_immediate_care_if": [
+        "Any tetanus symptoms occur, especially lockjaw, spasms, swallowing trouble, breathing trouble, or rigidity",
+        "A contaminated wound occurs with uncertain vaccination history",
+        "You feel medically unsafe after a wound"
+      ],
+      "schedule_care_if": [
+        "You need tetanus booster review after a wound",
+        "Vaccination status is unknown or overdue",
+        "A wound is dirty, deep, puncture-type, crushed, burned, or from an animal bite"
+      ],
+      "self_care_allowed_if": "Only basic wound cleaning while seeking appropriate medical guidance. Suspected tetanus itself is not self-care appropriate.",
+      "do_not_ignore": "Tetanus can be fatal and requires emergency medical treatment.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "prostate-cancer",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Slow urinary pressure build, sharp release, pause.",
+        "hapticPattern": [
+          2000,
+          120,
+          300,
+          3000
+        ],
+        "uiBackgroundAccent": "#8B7B8B"
+      },
+      "hero": {
+        "primaryPattern": "Prostate cancer may be silent early; urinary symptoms, blood in urine/semen, bone pain, abnormal PSA, or high-risk history needs medical evaluation.",
+        "cascade": [
+          "Screen/Signal",
+          "PSA/Exam",
+          "Biopsy/Staging",
+          "Treatment/Surveillance"
+        ],
+        "tags": [
+          "prostate cancer",
+          "PSA",
+          "urinary symptoms"
+        ],
+        "safetyPreview": "Blood in urine/semen, urinary obstruction, severe back/bone pain, abnormal PSA, weakness/numbness, or inability to urinate needs medical care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Abnormal Growth",
+          "short": "Cells grow outside normal control.",
+          "detail": "Cancer involves genetic and cellular changes that let cells grow, invade, or spread depending on type and stage."
+        },
+        {
+          "title": "Diagnosis",
+          "short": "Imaging, labs, biopsy, and staging guide care.",
+          "detail": "Cancer workup depends on the organ involved and often requires pathology confirmation."
+        },
+        {
+          "title": "Treatment",
+          "short": "Treatment is type- and stage-specific.",
+          "detail": "Surgery, radiation, chemotherapy, immunotherapy, targeted therapy, hormone therapy, surveillance, or combinations may be used."
+        },
+        {
+          "title": "Support",
+          "short": "Emotional care belongs alongside treatment.",
+          "detail": "Counseling, support groups, symptom control, nutrition, sleep, and practical help matter. Cancer already brings enough paperwork from hell."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "PSA Screening, Urinary Symptoms & Prostate Cancer Planning",
+          "sections": [
+            {
+              "heading": "Stage 1 — Often Silent Early",
+              "body": [
+                "Prostate cancer may cause no symptoms at first.",
+                "That is rude, but common. Screening decisions matter."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Warning Signs",
+              "body": [
+                "Urinary difficulty, weak stream, blood in urine/semen, pelvic pain, bone pain, or abnormal PSA needs medical review.",
+                "Many urinary symptoms are from non-cancer causes, but guessing is not a urology degree."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Diagnosis",
+              "body": [
+                "Evaluation may include PSA, digital rectal exam, MRI, biopsy, staging imaging, and risk stratification.",
+                "Not every prostate cancer is treated the same. Some are monitored; some are treated aggressively."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Treatment Choices",
+              "body": [
+                "Options may include active surveillance, surgery, radiation, hormone therapy, chemotherapy, targeted therapy, immunotherapy, or palliative care depending on risk and stage.",
+                "Shared decision-making matters because side effects matter."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Pressure Valve",
+          "paragraphs": [
+            "The pressure valve is acting up, and masculinity is not a substitute for urology. Devastating news for stubborn men everywhere.",
+            "The useful plan is not denial, not panic, and not internet supplement roulette.",
+            "The useful plan is evaluation, diagnosis, staging, treatment, support, and asking very specific questions until the medical fog starts behaving.",
+            "The symbolism can help with meaning. It does not get to fire the oncologist.",
+            "Check the valve and choose care with facts, or keep letting pride manage the plumbing. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Medical Reality Check",
+          "paragraphs": [
+            "You may have Prostate Cancer or a cancer concern. You may also have a shock-and-meaning pattern.",
+            "Medical first: suspected cancer needs prompt evaluation. Diagnosed cancer needs an oncology plan.",
+            "Screening, biopsy, imaging, staging, and treatment decisions belong with qualified clinicians.",
+            "Symbolically, ask what this diagnosis forces you to face, but do not blame yourself for cellular disease.",
+            "Check the valve and choose care with facts, or keep letting pride manage the plumbing. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Qi Stagnation / Blood Stasis Image",
+          "tag": "Meaning Layer",
+          "paragraphs": [
+            "In TCM imagery, masses may be discussed through stagnation or stasis.",
+            "Medically, cancer is cellular disease requiring oncology care."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "The Potency Archetype",
+          "tag": "Archetype",
+          "paragraphs": [
+            "The symbolic layer here is potency, identity, aging, vulnerability, and bodily control without shame.",
+            "Meaning can support coping. It must never become blame."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "The Pressure Valve",
+          "tag": "Metaphor",
+          "paragraphs": [
+            "The prostate is a pressure valve in the lower system, and urinary changes or abnormal PSA deserve actual evaluation, not masculine denial theater.",
+            "The metaphor is emotional scaffolding, not a treatment plan."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Support System",
+          "tag": "Care",
+          "paragraphs": [
+            "Cancer care is a team sport nobody asked to join.",
+            "Bring notes, questions, second opinions when needed, and a person who can remember what the doctor said while your brain becomes soup."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Treatment Plus Meaning",
+          "tag": "Reset",
+          "paragraphs": [
+            "The reset is medical action plus nervous-system support.",
+            "Both matter. One does not replace the other."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Pressure Valve & Grounded Care Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit somewhere safe.",
+          "Place one hand on the heart and one on the affected area if comfortable.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale slowly for 8 seconds.",
+          "Think: I am not alone. I take the next medical step. I support my body without blaming it."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Prostate Cancer may require medical evaluation, diagnosis, and condition-specific treatment.",
+        "items": [
+          {
+            "label": "Medical evaluation",
+            "detail": "Discuss urinary symptoms, PSA, family history, race/ancestry risk, and screening preferences with a clinician."
+          },
+          {
+            "label": "Shared decision-making",
+            "detail": "Ask about benefits/risks of PSA screening, biopsy, active surveillance, and treatment."
+          },
+          {
+            "label": "Symptom tracking",
+            "detail": "Track stream strength, frequency, nighttime urination, blood, pain, and sexual/ejaculatory symptoms."
+          },
+          {
+            "label": "Support",
+            "detail": "Treatment side effects can involve urinary, sexual, bowel, and emotional health. Support is not optional fluff."
+          }
+        ],
+        "avoid": [
+          "Do not ignore blood in urine/semen, urinary obstruction, severe back/bone pain, or abnormal PSA.",
+          "Do not treat prostate symptoms as a masculinity test.",
+          "Do not replace urology/oncology care with supplements."
+        ]
+      },
+      "brutalActions": [
+        "Schedule or keep medical evaluation.",
+        "Write down symptoms and questions.",
+        "Bring support to appointments.",
+        "Do not let fear, shame, or miracle-cure marketing run the treatment plan."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Prostate cancer is cancer of the prostate gland. It may cause no symptoms early. Possible signs can include urinary difficulty, weak stream, frequent urination, blood in urine/semen, pelvic/back/bone pain, or erectile/ejaculatory symptoms. Screening decisions often involve PSA testing and shared decision-making based on age, risk, and preferences.",
+        "protocol": [
+          "Track symptoms, screening history, family history, diagnosis stage if known, treatment plan, side effects, weight loss, pain, bleeding, fatigue, fever, infection signs, and urgent changes. Follow oncology guidance.",
+          "Use medical evaluation when symptoms are new, severe, progressive, persistent, recurrent, or paired with red flags.",
+          "Symbolic interpretation never replaces diagnosis, screening, emergency care, or treatment."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Pressure Valve",
+        "metaphorText": "The pressure valve is acting up, and masculinity is not a substitute for urology. Devastating news for stubborn men everywhere.",
+        "wittyAdvice": "Check the valve and choose care with facts, or keep letting pride manage the plumbing. Your choice."
+      },
+      "brutal": {
+        "realityCheck": "You may have Prostate Cancer or a cancer concern. You may also have a shock-and-meaning pattern.",
+        "protocolTitle": "MEDICAL CARE FIRST",
+        "protocolSteps": [
+          "Evaluate symptoms.",
+          "Confirm diagnosis.",
+          "Stage accurately.",
+          "Follow treatment plan.",
+          "Use emotional support."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Inability to urinate, severe pelvic/back/bone pain, leg weakness/numbness, or spinal cord symptoms",
+        "Blood in urine or semen, abnormal PSA, urinary obstruction, recurrent urinary infections",
+        "Unexplained weight loss, bone pain, fatigue, or known prostate cancer with new severe symptoms",
+        "Fever/infection signs during treatment or severe treatment side effects"
+      ],
+      "seek_immediate_care_if": [
+        "Severe symptoms, bleeding, trouble breathing, neurologic deficits, severe pain, infection signs during treatment, or feeling medically unsafe occur"
+      ],
+      "schedule_care_if": [
+        "Urinary symptoms, abnormal PSA, blood in urine/semen, family history, high-risk profile, or screening questions need clinician discussion",
+        "Diagnosis, staging, active surveillance, treatment choice, or side-effect support is needed"
+      ],
+      "self_care_allowed_if": "Supportive routines, sleep, nutrition, movement as tolerated, counseling, and support groups may help alongside medical care.",
+      "do_not_ignore": "Cancer symptoms, screening abnormalities, new lumps, unexplained weight loss, bleeding, persistent cough, neurologic symptoms, or treatment side effects need medical guidance.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure cancer."
+    }
+  },
+  {
+    "id": "martyr-complex",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Heavy carrying thud, sharp giving-away release, long pause.",
+        "hapticPattern": [
+          2000,
+          120,
+          300,
+          3000
+        ],
+        "uiBackgroundAccent": "#6B4C4C"
+      },
+      "hero": {
+        "primaryPattern": "Martyr complex is not a formal diagnosis; it is an over-giving pattern that can feed burnout, resentment, depression, anxiety, boundary collapse, and stress-related health strain.",
+        "cascade": [
+          "Worth Tied to Usefulness",
+          "Over-Giving Builds",
+          "Resentment Hides",
+          "Burnout Arrives"
+        ],
+        "tags": [
+          "#martyr",
+          "#boundaries",
+          "#burnout"
+        ],
+        "safetyPreview": "Self-harm thoughts, suicidal thoughts, severe depression, inability to function, domestic abuse, caregiver collapse, or feeling unsafe needs immediate/professional support."
+      },
+      "biologyPathway": [
+        {
+          "title": "Not a Diagnosis",
+          "short": "It is a pattern, not a DSM label.",
+          "detail": "Martyr complex describes chronic self-sacrifice and identity built around suffering, usefulness, and carrying others."
+        },
+        {
+          "title": "Stress Load",
+          "short": "Over-giving keeps stress systems activated.",
+          "detail": "Chronic caregiving, resentment suppression, and poor boundaries can worsen sleep, anxiety, mood, pain, immune strain, and burnout."
+        },
+        {
+          "title": "Boundary Collapse",
+          "short": "The person says yes while the body says no.",
+          "detail": "Guilt, fear of abandonment, duty, and identity can make small boundaries feel like treason."
+        },
+        {
+          "title": "Therapy Support",
+          "short": "Boundaries can be trained.",
+          "detail": "Therapy, support groups, assertiveness practice, and caregiver respite can help rebuild receiving and limits."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Over-Giving, Boundary Collapse & Burnout Risk",
+          "sections": [
+            {
+              "heading": "Stage 1 — Pattern, Not Diagnosis",
+              "body": [
+                "Martyr complex is not a clinical diagnosis.",
+                "It describes a pattern of chronic self-sacrifice, over-giving, guilt around needs, and identity tied to being useful."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Burnout Pathway",
+              "body": [
+                "Over-giving without reciprocity can fuel exhaustion, resentment, anxiety, depression, sleep disruption, and stress-related symptoms.",
+                "The body eventually notices the unpaid labor. Rude, but fair."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Boundary Repair",
+              "body": [
+                "Treatment direction may include therapy, assertiveness practice, trauma work, caregiver support, practical delegation, and tiny repeatable boundaries.",
+                "A small no is not a felony, despite what guilt keeps testifying."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Safety Check",
+              "body": [
+                "Seek urgent support for self-harm thoughts, suicidal thoughts, severe depression, domestic violence, caregiver collapse, or inability to function.",
+                "If there is nothing left to give, the next task is safety, not more giving."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Overworked Donkey",
+          "paragraphs": [
+            "You are the donkey and everyone keeps adding luggage.",
+            "One bag is guilt. One is duty. One is someone else’s crisis. One is a suitcase labeled but I’m the only reliable one, which is always how the trap gets dressed for church.",
+            "The donkey is not noble because it is collapsing.",
+            "Unload the bags, build boundaries, get help, and let someone else carry their own emotional camping gear.",
+            "Unload the donkey or keep letting every suitcase prove you exist. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Martyr’s Invoice",
+          "paragraphs": [
+            "You may have a martyr pattern. You may also have a worth-through-usefulness pattern.",
+            "This is not sainthood. It is often fear wearing a halo.",
+            "Your worth is not measured by how much you can suffer before you become inconvenient.",
+            "Medical and mental-health first: if depression, self-harm thoughts, suicidal thoughts, or collapse shows up, get support now.",
+            "Unload the donkey or keep letting every suitcase prove you exist. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Spleen Qi Sinking",
+          "tag": "Depletion",
+          "paragraphs": [
+            "In TCM imagery, over-giving maps to depletion and sinking energy.",
+            "Psychologically, chronic over-functioning can become burnout."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Recipient Archetype",
+          "tag": "Receiving",
+          "paragraphs": [
+            "The Recipient knows how to receive without earning it.",
+            "The Martyr believes rest must be paid for with suffering. Terrible accounting."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Overworked Donkey",
+          "tag": "Load",
+          "paragraphs": [
+            "The donkey image captures carrying what is not yours.",
+            "The reset is unloading, not decorating the harness."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Hidden Resentment",
+          "tag": "Suppressed No",
+          "paragraphs": [
+            "Resentment often marks a boundary that never got spoken.",
+            "A clean no is kinder than a poisoned yes."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Receiving Practice",
+          "tag": "Reset",
+          "paragraphs": [
+            "The reset is small no, small receive, small rest.",
+            "Worth remains when usefulness stops. Annoying to the martyr, liberating to the human."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Donkey Unloading & Receiving Practice",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit upright with one hand on the heart and one on the belly.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale for 8 seconds.",
+          "Think: I am valuable even when I am not useful.",
+          "Choose one bag to put down today: one no, one request for help, one task returned to its owner."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Martyr Complex may require medical, mental-health, or professional evaluation depending on symptoms.",
+        "items": [
+          {
+            "label": "Therapy/counseling",
+            "detail": "Therapy can help with guilt, boundaries, trauma, codependency patterns, and identity outside usefulness."
+          },
+          {
+            "label": "Small boundaries",
+            "detail": "Start with small repeatable no statements instead of dramatic life redesign."
+          },
+          {
+            "label": "Caregiver respite",
+            "detail": "Caregivers need scheduled relief, not heroic collapse."
+          },
+          {
+            "label": "Health check",
+            "detail": "Burnout, depression, sleep disruption, pain, and anxiety deserve professional support."
+          }
+        ],
+        "avoid": [
+          "Do not ignore self-harm thoughts, suicidal thoughts, severe depression, domestic violence, caregiver collapse, or inability to function.",
+          "Do not use guilt as a calendar manager."
+        ]
+      },
+      "brutalActions": [
+        "Say one clean no.",
+        "Ask one person for help.",
+        "Return one task to its owner.",
+        "Stop turning exhaustion into your personality résumé."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "A martyr complex is not a clinical diagnosis. It is a behavioral and psychological pattern involving chronic self-sacrifice, over-giving, guilt around self-care, poor boundaries, resentment, burnout risk, anxiety, depression, and physical stress symptoms. Chronic caregiving or over-functioning without support can worsen exhaustion and health strain.",
+        "protocol": [
+          "Track burnout, resentment, guilt when saying no, sleep, mood, anxiety, health symptoms, caregiving load, lack of reciprocity, self-harm thoughts, suicidal thoughts, and whether therapy/support is available.",
+          "Use medical, neurologic, mental-health, or emergency evaluation when symptoms are sudden, severe, progressive, persistent, recurrent, or paired with red flags.",
+          "Symbolic interpretation never replaces diagnosis, emergency care, therapy, or treatment."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for professional care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Overworked Donkey",
+        "metaphorText": "You are the donkey and everyone keeps adding luggage.",
+        "wittyAdvice": "Unload the donkey or keep letting every suitcase prove you exist. Your choice."
+      },
+      "brutal": {
+        "realityCheck": "You may have a martyr pattern. You may also have a worth-through-usefulness pattern.",
+        "protocolTitle": "UNLOAD THE DONKEY",
+        "protocolSteps": [
+          "Check safety.",
+          "Name the false duty.",
+          "Say one no.",
+          "Receive one thing.",
+          "Get support if burnout/depression is present."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Thoughts of self-harm, suicide, death, or not wanting to live",
+        "Severe depression, panic, inability to function, or feeling emotionally unsafe",
+        "Caregiver collapse, neglect of basic needs, or severe burnout",
+        "Domestic violence, coercion, exploitation, or unsafe dependency dynamics",
+        "Physical symptoms from exhaustion, chest pain, fainting, severe insomnia, or substance crisis"
+      ],
+      "seek_immediate_care_if": [
+        "Self-harm or suicidal thoughts include plan, intent, means, or inability to stay safe",
+        "You are in immediate danger, being abused, or cannot care for basic safety"
+      ],
+      "schedule_care_if": [
+        "Over-giving, guilt, resentment, burnout, depression, anxiety, or boundary collapse persists",
+        "Therapy, caregiver support, medical evaluation, or crisis planning is needed"
+      ],
+      "self_care_allowed_if": "Rest, boundaries, asking for help, journaling, therapy, and caregiver respite can support this pattern.",
+      "do_not_ignore": "Chronic self-sacrifice can become burnout, depression, physical illness, or safety risk.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure mental-health conditions."
+    }
+  }
+]

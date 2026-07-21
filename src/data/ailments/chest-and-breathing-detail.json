@@ -1,0 +1,2875 @@
+[
+  {
+    "id": "chest-tightness",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Slow squeezing pressure, sharp release, long pause.",
+        "hapticPattern": [
+          2000,
+          120,
+          500,
+          3000
+        ],
+        "uiBackgroundAccent": "#6B4C5B"
+      },
+      "hero": {
+        "primaryPattern": "Chest tightness can be cardiac, respiratory, reflux-related, musculoskeletal, anxiety-related, or serious; chest pressure with shortness of breath, sweating, nausea, lightheadedness, or arm/jaw/back pain needs emergency care.",
+        "cascade": [
+          "Chest Constricts",
+          "Cause Unknown",
+          "Red Flags Screen",
+          "Treat Source"
+        ],
+        "tags": [
+          "#chesttightness",
+          "#redflags",
+          "#breathing"
+        ],
+        "safetyPreview": "Chest pressure/pain with shortness of breath, sweating, nausea, faintness, arm/jaw/back radiation, blue lips, coughing blood, or severe sudden symptoms needs emergency care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Many Causes",
+          "short": "Chest tightness is not one diagnosis.",
+          "detail": "It can come from heart, lungs, reflux, muscles/ribs, anxiety/panic, blood clots, infection, or other causes."
+        },
+        {
+          "title": "Heart Screen",
+          "short": "Cardiac symptoms are urgent.",
+          "detail": "Pressure, squeezing, exertional symptoms, radiation to arm/jaw/back, sweating, nausea, shortness of breath, or lightheadedness can signal heart attack/angina."
+        },
+        {
+          "title": "Lung Screen",
+          "short": "Breathing signs matter.",
+          "detail": "Asthma, pneumonia, bronchitis, COPD, pulmonary embolism, and other lung issues can cause tightness and shortness of breath."
+        },
+        {
+          "title": "Stress/Panic",
+          "short": "Real symptoms, after red flags.",
+          "detail": "Anxiety and panic can cause chest tightness, hyperventilation, tingling, dizziness, and fear, but dangerous causes must be considered first."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Chest Pressure, Cardiac/Lung Red Flags & Cause Sorting",
+          "sections": [
+            {
+              "heading": "Stage 1 — Symptom, Not Diagnosis",
+              "body": [
+                "Chest tightness is a symptom with many possible causes.",
+                "It can be harmless, uncomfortable, anxiety-related, or life-threatening. Excellent design, body. Very intuitive."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Emergency Screen",
+              "body": [
+                "Seek emergency care for chest pressure/pain with shortness of breath, sweating, nausea, lightheadedness/fainting, pain to arm/jaw/back, blue lips, coughing blood, severe sudden symptoms, or known heart disease.",
+                "Do not wait to see if a possible heart/lung emergency becomes more emotionally convenient."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Common Causes",
+              "body": [
+                "Possible causes include angina/heart attack, asthma, bronchitis, pneumonia, COPD, pulmonary embolism, GERD, costochondritis, muscle strain, panic/anxiety, and hyperventilation.",
+                "Treatment depends on the cause. Wild concept: chest symptoms need context."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Symbolic Layer",
+              "body": [
+                "After danger is ruled out, chest tightness may symbolically map to constriction, pressure, fear, grief, guarded emotion, or not feeling safe to expand.",
+                "The seatbelt metaphor is useful only after the crash risk is checked."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Too-Tight Seatbelt",
+          "paragraphs": [
+            "Your chest is a seatbelt pulled one click too tight.",
+            "Maybe anxiety tightened it. Maybe reflux is burning behind it. Maybe a rib joint is acting dramatic. Maybe your heart or lungs are trying to get emergency customer support.",
+            "So first: red flags.",
+            "Then you can loosen the belt with breath, care, evaluation, and actual treatment.",
+            "Loosen the seatbelt safely or keep pretending chest pressure is always just stress. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Chest Tightness Reality Check",
+          "paragraphs": [
+            "You may have chest tightness. You may also have a constriction-and-expansion pattern.",
+            "Medical first: chest pressure with shortness of breath, sweating, nausea, faintness, or radiation to arm/jaw/back can be serious and needs emergency care.",
+            "Symbolically, ask what has you braced only after danger is ruled out.",
+            "Do not spiritualize chest symptoms while your heart and lungs are waving flags.",
+            "Loosen the seatbelt safely or keep pretending chest pressure is always just stress. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Heart/Lung Gate",
+          "tag": "Expansion",
+          "paragraphs": [
+            "Symbolically, the chest can map to breath, heart, grief, openness, and protection.",
+            "Medically, heart and lung red flags go first."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Guarded Heart",
+          "tag": "Protection",
+          "paragraphs": [
+            "The Guarded Heart tightens before it trusts.",
+            "Evaluation teaches whether the tightness is emotional, structural, respiratory, cardiac, or something else."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Too-Tight Seatbelt",
+          "tag": "Constriction",
+          "paragraphs": [
+            "The seatbelt image captures pressure and guarded expansion.",
+            "Seatbelts save lives; overly tight ones make breathing miserable. Nuance, the thing humans keep misplacing."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Held Breath",
+          "tag": "Panic",
+          "paragraphs": [
+            "Panic can create real chest symptoms.",
+            "Real does not mean dangerous, but dangerous must be screened."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Safe Expansion",
+          "tag": "Reset",
+          "paragraphs": [
+            "The reset is red-flag screening, care by cause, and slow expansion once safe.",
+            "Emergency signs are not journal prompts."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Seatbelt Loosening & Chest Safety Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Check emergency signs: chest pressure/pain with shortness of breath, sweating, nausea, faintness, arm/jaw/back radiation, blue lips, coughing blood, or severe sudden symptoms.",
+          "If present, seek emergency care.",
+          "If danger has been ruled out or symptoms are known/mild, sit upright with feet grounded.",
+          "Exhale longer than you inhale, such as 4 seconds in and 8 seconds out.",
+          "Think: I expand only after I know I am safe."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Chest Tightness may require medical evaluation, diagnosis, monitoring, imaging, medication, or emergency care depending on symptoms.",
+        "items": [
+          {
+            "label": "Medical triage",
+            "detail": "New, severe, exertional, recurrent, or unexplained chest tightness should be evaluated."
+          },
+          {
+            "label": "Cause tracking",
+            "detail": "Track exertion, meals/reflux, breathing symptoms, cough/fever, movement, anxiety/panic, and radiation."
+          },
+          {
+            "label": "Breathing after safety",
+            "detail": "Slow exhale breathing may help panic/hyperventilation after emergency signs are ruled out."
+          },
+          {
+            "label": "Condition-specific care",
+            "detail": "Heart, lung, reflux, musculoskeletal, and anxiety causes require different treatment."
+          }
+        ],
+        "avoid": [
+          "Do not ignore chest pressure/pain with shortness of breath, sweating, nausea, lightheadedness, arm/jaw/back pain, blue lips, coughing blood, severe sudden symptoms, or heart history.",
+          "Do not assume chest tightness is anxiety without screening red flags."
+        ]
+      },
+      "brutalActions": [
+        "Screen emergency signs.",
+        "Do not minimize chest symptoms.",
+        "Track trigger and pattern.",
+        "Treat the actual cause, not the nearest convenient explanation."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Chest tightness is a symptom with many possible causes, including heart attack/angina, pulmonary embolism, asthma, bronchitis, pneumonia, COPD, GERD, costochondritis, muscle strain, panic/anxiety, hyperventilation, medication effects, and other medical causes. Red flags require urgent evaluation.",
+        "protocol": [
+          "Track onset, duration, exertion, radiation to arm/jaw/back, shortness of breath, nausea, sweating, lightheadedness, palpitations, wheeze, fever, cough, reflux, movement-related pain, anxiety/panic, heart history, clot risk, and oxygen if available.",
+          "Use medical evaluation when symptoms are new, severe, persistent, progressive, recurrent, or paired with red flags.",
+          "Symbolic interpretation never replaces diagnosis, imaging, emergency care, prescribed medication, or treatment."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Too-Tight Seatbelt",
+        "metaphorText": "Your chest is a seatbelt pulled one click too tight.",
+        "wittyAdvice": "Loosen the seatbelt safely or keep pretending chest pressure is always just stress. Your choice."
+      },
+      "brutal": {
+        "realityCheck": "You may have chest tightness. You may also have a constriction-and-expansion pattern.",
+        "protocolTitle": "CHECK THE SEATBELT",
+        "protocolSteps": [
+          "Screen emergency signs.",
+          "Seek care if red flags.",
+          "Map cause clues.",
+          "Treat by source.",
+          "Breathe only after safety."
+        ]
+      }
+    },
+    "biologyPath": [
+      {
+        "title": "Grief Shield",
+        "description": "The emotional center contracts to protect the heart from painful interactions or old grief.",
+        "expandedDetails": "A subconscious command activates defensive chest posture, physically pulling the shoulders forward and tightening the pectoral girdle."
+      },
+      {
+        "title": "Apical Breathing",
+        "description": "Your breathing pattern shifts entirely from the belly up to the collarbones.",
+        "expandedDetails": "You stop using your diaphragm. Breathing becomes shallow and rapid, relying solely on upper rib cage expansion."
+      },
+      {
+        "title": "Intercostal Strain",
+        "description": "The small muscles between your ribs undergo chronic contraction and muscle fatigue.",
+        "expandedDetails": "The intercostals and pectoralis minor muscles are forced to act as primary movers of respiration, leading to micro-spasms and local soreness."
+      },
+      {
+        "title": "Oxygen Clamping",
+        "description": "Shallow breathing alters carbon dioxide levels in the blood, triggering a brainstem alarm.",
+        "expandedDetails": "A drop in arterial CO2 (hypocapnia) can contribute to systemic vasoconstriction and lightheadedness, which the brain interprets as an active lack of oxygen."
+      },
+      {
+        "title": "Somatic Suffocation",
+        "description": "A tight, iron band wraps around your lungs, making full expansion feel impossible.",
+        "expandedDetails": "The physical constriction feedback loop is complete, generating a secondary panic wave that further locks up respiratory muscles."
+      }
+    ],
+    "medical_safety": {
+      "critical_alerts": [
+        "Chest pressure/pain with shortness of breath, sweating, nausea, lightheadedness, fainting, or pain to arm/jaw/back",
+        "Known heart disease, high blood pressure crisis symptoms, irregular heartbeat with weakness/fainting, or severe sudden symptoms",
+        "Blue lips/skin, severe breathing trouble, coughing blood, or low oxygen",
+        "Fever with chest pain/SOB, pneumonia concern, pulmonary embolism risk, or recent surgery/immobility",
+        "New, severe, exertional, recurrent, or unexplained chest tightness"
+      ],
+      "seek_immediate_care_if": [
+        "Chest pressure/pain occurs with shortness of breath, sweating, nausea, faintness, arm/jaw/back radiation, blue lips, coughing blood, severe sudden symptoms, or heart/lung danger signs"
+      ],
+      "schedule_care_if": [
+        "Chest tightness is new, recurrent, exertional, unexplained, linked with breathing/reflux/panic/movement, or affecting function"
+      ],
+      "self_care_allowed_if": "Slow breathing, posture, hydration, reflux avoidance, and relaxation may support known mild non-emergency patterns after red flags are ruled out.",
+      "do_not_ignore": "Chest tightness can be heart, lung, clot, reflux, muscle, panic, or other medical causes.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure chest tightness."
+    }
+  },
+  {
+    "id": "heart-palpitations",
+    "medical_safety": {
+      "critical_alerts": [
+        "Chest pain, pressure, squeezing, or fullness",
+        "Pain radiating to the arm, shoulder, neck, jaw, or back",
+        "Severe shortness of breath or difficulty breathing",
+        "Fainting, dizziness, or lightheadedness",
+        "Bluish tint to lips, face, or fingernails (cyanosis)",
+        "Coughing up blood or pink-tinged sputum"
+      ],
+      "seek_immediate_care_if": [
+        "You experience sudden chest pain or pressure, especially if spreading to the arm, jaw, or back",
+        "You have severe shortness of breath, feel faint, or develop blue lips",
+        "A rapid, irregular, or fluttering heartbeat occurs suddenly along with sweating, nausea, or profound weakness"
+      ],
+      "schedule_care_if": [
+        "You experience occasional mild shortness of breath during normal daily activities",
+        "You have persistent coughing, wheezing, or blood pressure readings that are consistently elevated",
+        "You experience occasional heart palpitations or skipping beats that do not may contribute to dizziness or pain"
+      ],
+      "self_care_allowed_if": "Slow diaphragmatic breathing and relaxation techniques can help soothe mild, stress-induced chest tightness or hyperventilation.",
+      "do_not_ignore": "Chest or breathing discomfort requires immediate medical attention to rule out life-threatening cardiac or pulmonary emergencies.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease. Seek professional medical care for diagnosis, treatment, medication decisions, or urgent symptoms."
+    }
+  },
+  {
+    "id": "allergy-hayfever",
+    "structuredContent": {
+      "version": 1,
+      "hero": {
+        "primaryPattern": "Mast cell sensitization, histamine release, Wei Qi boundary weakness, and nervous-system hypervigilance may amplify allergic reactivity.",
+        "cascade": [
+          "Environmental Contact",
+          "Wei Qi Boundary Alarm",
+          "Mast Cell Priming",
+          "Histamine Storm",
+          "Mucus & Itch Response",
+          "Hypervigilance Feedback Loop"
+        ],
+        "tags": [
+          "#wei qi shield",
+          "#mast cell calm",
+          "#ghost alarm"
+        ],
+        "safetyPreview": "Severe swelling, throat tightness, wheezing, trouble breathing, fainting, blue lips, or signs of anaphylaxis require emergency care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Environmental Contact",
+          "short": "Pollen, dust, mold, or dander contacts a sensitized system.",
+          "detail": "Allergy symptoms often begin when pollen, dust mites, mold spores, animal dander, or other triggers contact the nose, eyes, throat, airway, or skin. The trigger may be harmless by itself, but the immune system has learned to treat it as a threat."
+        },
+        {
+          "title": "IgE Recognition",
+          "short": "The immune system flags the trigger.",
+          "detail": "In allergic patterns, IgE antibodies can bind to allergens and cross-link receptors on mast cells and basophils. That immune recognition tells the body to launch a defensive response even when the substance is not truly dangerous."
+        },
+        {
+          "title": "Mast Cell Degranulation",
+          "short": "Mast cells dump inflammatory chemicals.",
+          "detail": "Mast cells release histamine, leukotrienes, prostaglandins, cytokines, and other inflammatory mediators. This is the chemical alarm bell behind itching, sneezing, watery eyes, swelling, mucus, and airway irritation."
+        },
+        {
+          "title": "Histamine Storm",
+          "short": "Vessels leak, tissues swell, mucus rises.",
+          "detail": "Histamine increases blood-vessel permeability and irritates nerve endings. The result can be runny nose, congestion, watery eyes, itching, flushing, sneezing, throat irritation, and a body that acts like spring is an invading army."
+        },
+        {
+          "title": "Nervous-System Amplification",
+          "short": "Stress lowers the reaction threshold.",
+          "detail": "Stress chemistry, sympathetic activation, and low vagal tone can make immune reactions feel louder and harder to settle. The body may become quicker to flare, slower to calm, and more likely to treat neutral contact as danger."
+        },
+        {
+          "title": "Safety Escalation Check",
+          "short": "Know when allergy becomes emergency.",
+          "detail": "Mild hay fever is one thing. Trouble breathing, throat tightness, tongue or lip swelling, fainting, confusion, blue lips, or a rapidly spreading whole-body reaction is not a journaling prompt. That is emergency territory."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Mast Cell & Histamine Cascade",
+          "sections": [
+            {
+              "heading": "Stage 1 — Sensitized Immune Recognition",
+              "body": [
+                "Allergies and hay fever involve an immune system that has learned to identify a normally harmless substance as a threat.",
+                "Common triggers include pollen, dust mites, mold, pet dander, grasses, weeds, trees, smoke, perfumes, and environmental irritants. The trigger is not necessarily dangerous. The immune interpretation is the problem."
+              ]
+            },
+            {
+              "heading": "Stage 2 — IgE and Mast Cell Activation",
+              "body": [
+                "IgE antibodies can bind to allergens and cross-link receptors on mast cells. Once the mast cell receives enough signal, it degranulates.",
+                "Degranulation releases histamine and other inflammatory mediators. This is the biochemical alarm behind sneezing, itching, watery eyes, swelling, congestion, and mucus."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Histamine Storm",
+              "body": [
+                "Histamine increases blood-vessel permeability, irritates sensory nerves, and increases mucus production.",
+                "The nose runs, the eyes water, the throat scratches, the skin itches, and the airway may feel irritated or tight. The body is trying to flush out an invader, even when the invader is just pollen existing like a botanical idiot."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Stress and Vagal Tone",
+              "body": [
+                "Stress does not mean allergies are imaginary. It means the nervous system and immune system talk to each other.",
+                "Low vagal tone, chronic sympathetic arousal, poor sleep, and ongoing hypervigilance can lower the threshold for immune reactivity. The allergy pathway becomes easier to trigger and harder to calm."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Retired Mall Cop at the Garden Center",
+          "paragraphs": [
+            "Your immune system is now a retired, paranoid mall cop who was fired from the mall and now works as a greeter at a garden center. He has a whistle around his neck, a flashlight with dead batteries, and a binder full of suspicious persons that includes every living plant, animal, and dust mote in a three-mile radius.",
+            "Your mast cells are his trigger finger. Every time a pollen grain floats past, not attacking, just existing, just doing its botanical job of making baby plants, the mall cop screams CONTACT and hits the alarm.",
+            "Histamine floods the scene. Your nose becomes a faucet. Your eyes swell. Your throat tightens like someone filed paperwork to temporarily close the airway.",
+            "But here is the absurd part: there is no intruder. It is pollen. It has no agenda. It does not know you exist. It just wants to find another flower.",
+            "Your mast cells are not fighting an enemy. They are fighting the memory of an enemy. Somewhere in your life, your nervous system installed a security system that never got the memo that the war ended.",
+            "Now you sneeze at sunshine. You itch at air. The mall cop is standing in the gardening aisle macing a rose bush, and you are paying for the cleanup.",
+            "The garden center has a break room with a coffee mug that says WORLD'S OKAYEST DEFENDER. The microwave has been beeping for three years. No one has turned it off.",
+            "The mall cop has a schedule he wrote himself: ALERT, ALL SHIFT, EVERY SHIFT. His binder has tabs labeled POLLEN, DUST, MOLD, and UNTITLED, PROBABLY ALSO DANGEROUS. The untitled tab has four hundred pages.",
+            "The worst part? The mall cop reports directly to you. You sign his paychecks. You wrote the schedule. You gave him the binder. Every time you brace for the worst, every time you assume the other shoe will drop, every time you scan the room for threats, you train the mall cop. And the mall cop is just following orders."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Ghost Alarm Reality Check",
+          "paragraphs": [
+            "You do not have only a pollen problem. You may also have an I never felt safe problem. A something bad happened and I never processed it problem. A my nervous system is still waiting for the other shoe to drop problem.",
+            "Now your immune system is attacking air. Congratulations. You have weaponized your own survival instinct.",
+            "Every time you were startled awake as a kid, your body logged it. Every time you held your breath waiting for a door to slam, logged. Every time you walked on eggshells around someone who should have protected you, logged, encrypted, and burned into the body’s threat map.",
+            "Your allergies may not be just a random nuisance. They can become a body-level habit of treating neutral contact like danger. Grass did not hurt you. Pollen did not betray you. Dust mites did not emotionally neglect you. People did. Circumstances did. Environments did.",
+            "Because no one helped your body sound the all-clear, your immune system became the overprotective parent you never had. It attacks pollen. It attacks cat dander. It attacks dust. It attacks scented candles like lavender committed a felony.",
+            "Antihistamines can stop the sneeze. They do not necessarily stop the terror underneath the pattern. Medication matters. Use it when needed. But the deeper work is teaching the body that every contact with the world is not an invasion.",
+            "You have been training your immune system to be afraid every time you brace, catastrophize, scan, assume the worst, or say I knew it when something goes wrong. You are the drill sergeant. You are the one who keeps the soldiers on high alert.",
+            "Sound the all-clear. Tell your body: we made it out. We are not there anymore. The threat is gone.",
+            "The person who hurt you is not in the room. The situation that terrified you is over. The unsafe house is a memory. Your body may not know that yet. You have to bring it back into the present.",
+            "The present is a Tuesday in spring. The present has pollen. The pollen is not your mother. The pollen is not your father. The pollen is just pollen. It is not out to get you.",
+            "Teach your body that the war is over. Teach it with breath. Teach it with rest. Teach it with slow exhales that say I am safe. Teach it by not bracing. Teach it by not scanning. Teach it by letting yourself believe, for one second, that the world is actually okay.",
+            "The world is not perfect. Not predictable. Not always kind. But okay enough. The threat level is green. Your mast cells are still on red. Write the memo. Deliver it. Breathe it into your body until it believes you.",
+            "Armor down or stay reactive. Charming little choice, that one."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Wei Qi Boundary Weakness",
+          "tag": "Defensive Qi",
+          "paragraphs": [
+            "In Chinese medicine, the Lung governs Wei Qi, the protective boundary between the body and the outside world.",
+            "In an allergy pattern, this boundary may act confused or underpowered. The body cannot clearly tell neutral contact from threat. Pollen becomes an invader. Dust becomes a demon. Cat dander becomes a tiny biological war crime."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Lung-Kidney Rooting",
+          "tag": "Rooted Breath",
+          "paragraphs": [
+            "The Lung disperses and descends Qi. The Kidney helps root and anchor the breath.",
+            "When the system feels depleted, unrooted, or unsafe, defensive energy may float at the surface. The body becomes twitchy at the boundary, reacting quickly to anything that crosses it."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Hypervigilant Sentinel",
+          "tag": "Shadow Guard",
+          "paragraphs": [
+            "The immune system becomes the sentinel that never sleeps. It watches, scans, suspects, and fires before checking whether the target is real.",
+            "This can mirror a life pattern where resting felt dangerous and being caught off guard once meant disaster. The Safe One, the part that trusts the world enough to relax, gets exiled."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Ghost Alarm Pattern",
+          "tag": "Old Threat Memory",
+          "paragraphs": [
+            "The body may not only be reacting to pollen. It may be reacting to the memory of threat: old unpredictability, emotional neglect, walking on eggshells, or never feeling protected.",
+            "The ghost is not the pollen. The ghost is the old feeling of being unsafe in your own skin."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Wei Qi Strengthening",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The goal is not to shame the immune system. It is trying to protect you. The goal is to teach it discrimination: this is pollen, not danger; this is air, not attack.",
+            "Use warmth, longer exhales, steady posture, and a repeated safety cue to help the body feel protected without launching a full immune military operation."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Wei Qi Strengthening & Vagal Restoration",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit upright. Rub your palms together until warm, then place them over your upper chest.",
+          "Inhale through the nose for 4 seconds, imagining warm gold light expanding under your palms.",
+          "Exhale through the nose for 8 seconds, imagining that protective field extending a few inches beyond your skin.",
+          "On each exhale, whisper: The world is not my enemy. I am safe.",
+          "Continue for 2 minutes. Use this as support, not as a substitute for allergy medication or medical care."
+        ]
+      },
+      "brutalActions": [
+        "Name the threat your body keeps expecting. Be honest. Pollen is probably not the original villain.",
+        "When symptoms flare, say out loud: I am not under attack. This is a body alarm, not proof of danger.",
+        "Stop training the mall cop. Notice bracing, scanning, and catastrophizing before the immune system turns them into marching orders.",
+        "Use medication and trigger control when needed. Then do the deeper work of teaching your body the war is over."
+      ],
+      "hardware": {
+        "hapticProfile": "Rapid, scattered, unpredictable bursts like a sensor array misfiring or mast cells degranulating.",
+        "hapticPattern": [
+          18,
+          35,
+          18,
+          35,
+          18,
+          180,
+          18,
+          120,
+          18,
+          35,
+          18,
+          35,
+          18,
+          35,
+          18
+        ],
+        "uiBackgroundAccent": "#6B8C5C"
+      }
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Allergies and hay fever involve IgE-mediated immune recognition, mast cell degranulation, histamine release, mucus production, itching, swelling, sneezing, watery eyes, and nervous-system amplification.",
+        "protocol": [
+          "Follow prescribed allergy medication, inhaler, nasal spray, eye drop, or immunotherapy guidance from a licensed clinician.",
+          "Reduce known triggers when possible: pollen exposure, dust mites, mold, smoke, pet dander, and strong fragrances.",
+          "For mild symptoms only, use slow longer exhales and warm hands over the upper chest to support parasympathetic downshifting.",
+          "Seek urgent care for throat tightness, wheezing, facial/tongue swelling, faintness, confusion, or signs of anaphylaxis."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for allergy diagnosis, medication, or emergency care.",
+          "Severe allergic reactions can be life-threatening and require immediate medical attention."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Retired Mall Cop at the Garden Center",
+        "metaphorText": "Your immune system is now a retired, paranoid mall cop who was fired from the mall and now works as a greeter at a garden center. He has a whistle around his neck, a flashlight with dead batteries, and a binder full of suspicious persons that includes every living plant, animal, and dust mote in a three-mile radius.\n\nYour mast cells are his trigger finger. Every time a pollen grain floats past, not attacking, just existing, just doing its botanical job of making baby plants, the mall cop screams CONTACT and hits the alarm.\n\nHistamine floods the scene. Your nose becomes a faucet. Your eyes swell. Your throat tightens like someone filed paperwork to temporarily close the airway.\n\nBut here is the absurd part: there is no intruder. It is pollen. It has no agenda. It does not know you exist. It just wants to find another flower.\n\nYour mast cells are not fighting an enemy. They are fighting the memory of an enemy. Somewhere in your life, your nervous system installed a security system that never got the memo that the war ended.\n\nNow you sneeze at sunshine. You itch at air. The mall cop is standing in the gardening aisle macing a rose bush, and you are paying for the cleanup.\n\nThe garden center has a break room with a coffee mug that says WORLD'S OKAYEST DEFENDER. The microwave has been beeping for three years. No one has turned it off.\n\nThe mall cop has a schedule he wrote himself: ALERT, ALL SHIFT, EVERY SHIFT. His binder has tabs labeled POLLEN, DUST, MOLD, and UNTITLED, PROBABLY ALSO DANGEROUS. The untitled tab has four hundred pages.\n\nThe worst part? The mall cop reports directly to you. You sign his paychecks. You wrote the schedule. You gave him the binder. Every time you brace for the worst, every time you assume the other shoe will drop, every time you scan the room for threats, you train the mall cop. And the mall cop is just following orders.",
+        "wittyAdvice": "The mall cop is not evil. He is just badly trained, sleep deprived, and somehow in charge of histamine. Revoke a little of his authority."
+      },
+      "brutal": {
+        "realityCheck": "You do not have only a pollen problem. You may also have an I never felt safe problem. A something bad happened and I never processed it problem. A my nervous system is still waiting for the other shoe to drop problem.\n\nNow your immune system is attacking air. Congratulations. You have weaponized your own survival instinct.\n\nEvery time you were startled awake as a kid, your body logged it. Every time you held your breath waiting for a door to slam, logged. Every time you walked on eggshells around someone who should have protected you, logged, encrypted, and burned into the body’s threat map.\n\nYour allergies may not be just a random nuisance. They can become a body-level habit of treating neutral contact like danger. Grass did not hurt you. Pollen did not betray you. Dust mites did not emotionally neglect you. People did. Circumstances did. Environments did.\n\nBecause no one helped your body sound the all-clear, your immune system became the overprotective parent you never had. It attacks pollen. It attacks cat dander. It attacks dust. It attacks scented candles like lavender committed a felony.\n\nAntihistamines can stop the sneeze. They do not necessarily stop the terror underneath the pattern. Medication matters. Use it when needed. But the deeper work is teaching the body that every contact with the world is not an invasion.\n\nYou have been training your immune system to be afraid every time you brace, catastrophize, scan, assume the worst, or say I knew it when something goes wrong. You are the drill sergeant. You are the one who keeps the soldiers on high alert.\n\nSound the all-clear. Tell your body: we made it out. We are not there anymore. The threat is gone.\n\nThe person who hurt you is not in the room. The situation that terrified you is over. The unsafe house is a memory. Your body may not know that yet. You have to bring it back into the present.\n\nThe present is a Tuesday in spring. The present has pollen. The pollen is not your mother. The pollen is not your father. The pollen is just pollen. It is not out to get you.\n\nTeach your body that the war is over. Teach it with breath. Teach it with rest. Teach it with slow exhales that say I am safe. Teach it by not bracing. Teach it by not scanning. Teach it by letting yourself believe, for one second, that the world is actually okay.\n\nThe world is not perfect. Not predictable. Not always kind. But okay enough. The threat level is green. Your mast cells are still on red. Write the memo. Deliver it. Breathe it into your body until it believes you.\n\nArmor down or stay reactive. Charming little choice, that one.",
+        "protocolTitle": "SOUND THE ALL-CLEAR",
+        "protocolSteps": [
+          "Name the threat your body keeps expecting. Be honest. Pollen is probably not the original villain.",
+          "When symptoms flare, say out loud: I am not under attack. This is a body alarm, not proof of danger.",
+          "Stop training the mall cop. Notice bracing, scanning, and catastrophizing before the immune system turns them into marching orders.",
+          "Use medication and trigger control when needed. Then do the deeper work of teaching your body the war is over."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Trouble breathing, wheezing, or throat tightness",
+        "Swelling of lips, tongue, face, throat, or around the eyes",
+        "Fainting, confusion, severe weakness, or feeling like you may pass out",
+        "Blue lips or fingernails",
+        "Rapidly spreading hives or whole-body reaction",
+        "Known severe allergy exposure or possible anaphylaxis"
+      ],
+      "seek_immediate_care_if": [
+        "You have signs of anaphylaxis, breathing trouble, throat tightness, facial/tongue swelling, fainting, confusion, or blue lips",
+        "Symptoms rapidly worsen or involve more than one body system, such as skin plus breathing, stomach symptoms plus dizziness, or swelling plus wheezing",
+        "You used epinephrine or were told to use it for severe allergic reactions"
+      ],
+      "schedule_care_if": [
+        "Allergy symptoms are frequent, worsening, seasonal, or interfering with sleep or daily function",
+        "Over-the-counter medication is not controlling symptoms",
+        "You have asthma, wheezing, recurrent sinus infections, or chronic nasal congestion",
+        "You want evaluation for allergy testing, prescription treatment, or immunotherapy"
+      ],
+      "self_care_allowed_if": "Trigger reduction, nasal rinsing with sterile/distilled or previously boiled water, showering after pollen exposure, changing pillowcases, using air filtration, and gentle calming practices may support mild, familiar allergy symptoms.",
+      "do_not_ignore": "Severe allergic reactions can become life-threatening. Mind-body reflection must never delay epinephrine, emergency care, prescribed medication, or professional allergy/asthma treatment.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease. Seek professional medical care for diagnosis, treatment, medication decisions, or urgent symptoms."
+    }
+  },
+  {
+    "id": "asthma",
+    "structuredContent": {
+      "version": 1,
+      "hero": {
+        "primaryPattern": "Asthma involves airway inflammation and narrowing; severe shortness of breath, blue lips/fingertips, trouble speaking, exhaustion, or symptoms not improving with rescue treatment needs emergency care.",
+        "cascade": [
+          "Trigger Hits",
+          "Airways Inflame",
+          "Bronchospasm/Mucus",
+          "Action Plan"
+        ],
+        "tags": [
+          "#asthma",
+          "#airways",
+          "#inhaler"
+        ],
+        "safetyPreview": "Severe shortness of breath, blue lips/fingertips, trouble speaking, chest retractions, exhaustion, confusion, or rescue inhaler not helping needs emergency care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Inflamed Airways",
+          "short": "The airways become swollen and reactive.",
+          "detail": "Asthma airways can inflame, narrow, and produce mucus, making airflow harder."
+        },
+        {
+          "title": "Bronchospasm",
+          "short": "Smooth muscle tightens.",
+          "detail": "Triggers can make airway muscles constrict, causing wheeze, chest tightness, cough, and shortness of breath."
+        },
+        {
+          "title": "Exacerbation Risk",
+          "short": "Attacks can escalate.",
+          "detail": "Severe attacks may cause low oxygen, inability to speak, blue lips/skin, exhaustion, or need for emergency treatment."
+        },
+        {
+          "title": "Action Plan",
+          "short": "Asthma needs a plan.",
+          "detail": "Controller medicines, rescue inhalers, trigger control, peak flow, biologics for some severe asthma, and written action plans guide care."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Airway Inflammation, Bronchospasm & Asthma Action Plan",
+          "sections": [
+            {
+              "heading": "Stage 1 — Chronic Airway Disease",
+              "body": [
+                "Asthma is a chronic airway condition with inflammation, hyperreactivity, and variable airflow obstruction.",
+                "It can be allergic, non-allergic, exercise-triggered, infection-triggered, eosinophilic, or mixed. Because lungs apparently enjoy subcategories."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Symptoms and Triggers",
+              "body": [
+                "Symptoms can include wheezing, coughing, chest tightness, shortness of breath, nighttime waking, and exercise limitation.",
+                "Triggers include allergens, smoke, pollution, viral infections, cold air, exercise, stress, and irritants."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Treatment Direction",
+              "body": [
+                "Care may include rescue inhalers, inhaled corticosteroids, combination inhalers, leukotriene modifiers, trigger control, biologics for severe asthma, and an asthma action plan.",
+                "Medication adherence matters more than heroic suffering. Shocking development."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Safety Check",
+              "body": [
+                "Seek emergency care for severe shortness of breath, blue lips/fingertips, inability to speak in full sentences, chest retractions, confusion, exhaustion, or symptoms not improving after rescue treatment.",
+                "Breathing comes before journaling."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Pinched Straw",
+          "paragraphs": [
+            "Your lungs are a straw and someone pinched it while demanding you sip normally.",
+            "Inflammation swells the straw, mucus clogs it, bronchospasm squeezes it, and then everyone acts surprised when air files a complaint.",
+            "The plan is not to argue with the straw.",
+            "The plan is controller care, rescue medicine, trigger control, and an emergency plan when breathing turns ugly.",
+            "Unpinch the straw medically or keep asking tight airways to run a marathon. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Suffocation Reality Check",
+          "paragraphs": [
+            "You may have asthma. You may also have a constriction-and-breath pattern.",
+            "Medical first: severe asthma symptoms can be life-threatening and need urgent care.",
+            "Symbolically, ask where life feels suffocating only after the airway is safe.",
+            "Asthma is not your fault, and inhalers are not weakness. They are tiny engineering for rebellious tubes.",
+            "Unpinch the straw medically or keep asking tight airways to run a marathon. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Lung Qi Constraint",
+          "tag": "Breath",
+          "paragraphs": [
+            "In TCM imagery, asthma may be mapped to Lung constraint or phlegm/deficiency patterns.",
+            "Medically, airway inflammation and bronchospasm need asthma care."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Silenced Breath",
+          "tag": "Expression",
+          "paragraphs": [
+            "The Silenced Breath feels unable to take in or express.",
+            "The inhaler still gets to exist."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Pinched Straw",
+          "tag": "Constriction",
+          "paragraphs": [
+            "The straw image captures narrowed airflow.",
+            "When the straw is closing, action plan first."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Mucus Barrier",
+          "tag": "Protection",
+          "paragraphs": [
+            "Mucus can protect and obstruct.",
+            "Symbolically, protection can become restriction."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Open the Airway",
+          "tag": "Reset",
+          "paragraphs": [
+            "The reset is action plan, meds, triggers, and calming once safe.",
+            "No spiritual bypassing the bronchi."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Straw Unpinching & Asthma Safety Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Check severity: can you speak normally, are lips/fingertips blue, is rescue medicine helping?",
+          "Follow your asthma action plan and use prescribed rescue medicine as directed.",
+          "Seek emergency care if severe or not improving.",
+          "If safe, sit upright and breathe slowly through pursed lips if helpful.",
+          "Think: I open the airway with care, not panic or denial."
+        ]
+      },
+      "brutalActions": [
+        "Know your action plan.",
+        "Track rescue inhaler use.",
+        "Avoid known triggers.",
+        "Get urgent care when breathing crosses the line."
+      ],
+      "hardware": {
+        "hapticProfile": "Tight rapid clusters like breathing through a straw, hollow pause, repeat.",
+        "hapticPattern": [
+          100,
+          80,
+          100,
+          80,
+          100,
+          80,
+          100,
+          700,
+          100,
+          80,
+          100,
+          80,
+          100
+        ],
+        "uiBackgroundAccent": "#5D8AA8"
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Asthma may require medical evaluation, diagnosis, monitoring, and condition-specific treatment.",
+        "items": [
+          {
+            "label": "Asthma action plan",
+            "detail": "A written plan helps decide daily control, rescue treatment, and emergency thresholds."
+          },
+          {
+            "label": "Trigger control",
+            "detail": "Avoid smoke, allergens, irritants, infection exposure where possible, and known exercise/cold-air triggers."
+          },
+          {
+            "label": "Medication adherence",
+            "detail": "Controller and rescue medicines work differently; use as prescribed."
+          },
+          {
+            "label": "Pulmonology/allergy care",
+            "detail": "Poorly controlled or severe asthma may need specialist review and possible biologic therapy."
+          }
+        ],
+        "avoid": [
+          "Do not ignore blue lips/fingertips, severe shortness of breath, trouble speaking, confusion, exhaustion, chest retractions, or rescue medicine not helping.",
+          "Do not stop asthma medication because symptoms are quiet without clinician guidance."
+        ]
+      }
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Asthma is a chronic respiratory condition involving airway inflammation, bronchial hyperreactivity, variable airflow obstruction, bronchospasm, mucus production, and exacerbations triggered by allergens, infections, smoke, pollution, exercise, cold air, stress, or irritants.",
+        "protocol": [
+          "Track wheeze, cough, chest tightness, shortness of breath, nighttime symptoms, rescue inhaler use, peak flow if used, triggers, infections, smoke exposure, allergies, exercise symptoms, blue lips/fingertips, and action plan status.",
+          "Use medical evaluation when symptoms are new, severe, persistent, progressive, recurrent, or paired with red flags.",
+          "Symbolic interpretation never replaces diagnosis, emergency care, prescribed medication, or treatment."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Pinched Straw",
+        "metaphorText": "Your lungs are a straw and someone pinched it while demanding you sip normally.",
+        "wittyAdvice": "Unpinch the straw medically or keep asking tight airways to run a marathon. Your choice."
+      },
+      "brutal": {
+        "realityCheck": "You may have asthma. You may also have a constriction-and-breath pattern.",
+        "protocolTitle": "UNPINCH THE STRAW",
+        "protocolSteps": [
+          "Check severity.",
+          "Use action plan.",
+          "Use prescribed rescue treatment.",
+          "Avoid triggers.",
+          "Seek emergency care for red flags."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Severe shortness of breath, blue lips/fingertips/skin, or low oxygen concern",
+        "Cannot speak full sentences, severe wheeze, silent chest, chest retractions, confusion, or exhaustion",
+        "Symptoms not improving after prescribed rescue medicine",
+        "Frequent rescue inhaler use, nighttime symptoms, or worsening attacks",
+        "Asthma with allergic reaction/anaphylaxis symptoms"
+      ],
+      "seek_immediate_care_if": [
+        "Severe breathing trouble, blue color, confusion, exhaustion, trouble speaking, silent chest, or rescue treatment not helping occurs"
+      ],
+      "schedule_care_if": [
+        "Asthma is recurrent, worsening, needing frequent rescue inhaler, causing nighttime symptoms, limiting activity, or lacks an action plan"
+      ],
+      "self_care_allowed_if": "Trigger avoidance, action-plan use, controller adherence, hydration, and breathing positioning may support known mild symptoms without red flags.",
+      "do_not_ignore": "Asthma attacks can become life-threatening.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure asthma."
+    }
+  },
+  {
+    "id": "hypertension",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Heavy THUD-thud pulse repeated, then pause.",
+        "hapticPattern": [
+          500,
+          160,
+          180,
+          300,
+          500,
+          160,
+          180,
+          300,
+          500,
+          160,
+          180,
+          2000
+        ],
+        "uiBackgroundAccent": "#A8322D"
+      },
+      "hero": {
+        "primaryPattern": "High blood pressure is often symptomless but raises heart, stroke, kidney, and vision risks; readings over 180/120 with chest pain, shortness of breath, weakness/numbness, vision changes, or speech trouble needs emergency care.",
+        "cascade": [
+          "Pressure Rises",
+          "Vessels Strain",
+          "Organs Risk",
+          "Monitor/Treat"
+        ],
+        "tags": [
+          "#hypertension",
+          "#bloodpressure",
+          "#heart"
+        ],
+        "safetyPreview": "BP over 180/120 with chest pain, shortness of breath, weakness/numbness, vision changes, severe headache, confusion, or trouble speaking needs emergency care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Silent Risk",
+          "short": "High BP often has no symptoms.",
+          "detail": "Hypertension can damage blood vessels and organs over time even when a person feels fine."
+        },
+        {
+          "title": "Pressure Systems",
+          "short": "Heart, vessels, kidneys, hormones.",
+          "detail": "Blood pressure reflects cardiac output, vascular resistance, kidney sodium/water handling, RAAS hormones, sympathetic tone, and vessel stiffness."
+        },
+        {
+          "title": "Complications",
+          "short": "Heart, brain, kidneys, eyes.",
+          "detail": "Untreated hypertension increases risk of heart attack, stroke, heart failure, kidney disease, vision loss, and vascular disease."
+        },
+        {
+          "title": "Measured Management",
+          "short": "Numbers guide care.",
+          "detail": "Home monitoring, lifestyle changes, and medications may be used. Guessing blood pressure is peak human comedy and bad medicine."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Blood Pressure Measurement, Vascular Strain & Emergency Thresholds",
+          "sections": [
+            {
+              "heading": "Stage 1 — Silent Killer",
+              "body": [
+                "Hypertension is persistently elevated blood pressure and often has no symptoms.",
+                "Feeling fine does not prove the pressure is fine. The body is unhelpful like that."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Causes and Contributors",
+              "body": [
+                "Contributors can include age, genetics, kidney/hormonal regulation, vascular stiffness, sodium, weight, inactivity, alcohol, smoking, sleep apnea, medications, and chronic stress.",
+                "Treatment depends on actual readings and risk."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Treatment Direction",
+              "body": [
+                "Care may include home monitoring, diet changes, sodium reduction, exercise, weight management, alcohol/smoking changes, sleep apnea treatment, and medications such as ACE inhibitors, ARBs, calcium channel blockers, thiazide diuretics, beta blockers, or others.",
+                "Medication choice is clinician territory, not random pill roulette."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Safety Check",
+              "body": [
+                "Seek emergency care for blood pressure over 180/120 with chest pain, shortness of breath, weakness/numbness, vision changes, confusion, severe headache, or trouble speaking.",
+                "Hypertensive emergency is not the time for a calming candle."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Pressure Cooker",
+          "paragraphs": [
+            "Your cardiovascular system is a pressure cooker and the gauge has opinions.",
+            "The heart pumps, the vessels tighten, the kidneys negotiate fluid, and stress shows up like an unpaid manager yelling hold the line.",
+            "Sometimes you feel nothing. That is the trick.",
+            "Measure the pressure, treat the causes, follow the plan, and stop making your arteries cosplay industrial plumbing.",
+            "Release the pressure with real monitoring and care or keep pretending the gauge is decorative. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Pressure That Never Drops Reality Check",
+          "paragraphs": [
+            "You may have hypertension. You may also have a pressure-and-overdrive pattern.",
+            "Medical first: high blood pressure is measured, monitored, and treated. It is not diagnosed by vibes.",
+            "Symbolically, ask what pressure never gets released.",
+            "But do not blame yourself into ignoring genetics, kidneys, sleep apnea, medications, and vascular biology.",
+            "Release the pressure with real monitoring and care or keep pretending the gauge is decorative. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Liver Yang / Pressure Image",
+          "tag": "Heat",
+          "paragraphs": [
+            "In TCM imagery, high pressure may be framed as rising heat or constrained flow.",
+            "Medically, BP numbers and organ risk drive care."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Pressure Keeper",
+          "tag": "Overdrive",
+          "paragraphs": [
+            "The Pressure Keeper stays braced.",
+            "The reset is measured release, not denial."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Pressure Cooker",
+          "tag": "Gauge",
+          "paragraphs": [
+            "The cooker image captures sealed stress.",
+            "But the cuff is the actual gauge. Use it."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Constricted Flow",
+          "tag": "Vessels",
+          "paragraphs": [
+            "Constricted vessels mirror held pressure symbolically.",
+            "Vascular biology still gets a real treatment plan."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Steam Release",
+          "tag": "Reset",
+          "paragraphs": [
+            "The reset is monitoring, medical care, lifestyle support, and calmer baseline.",
+            "No guessing with arteries."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Pressure Cooker Release & Blood Pressure Check",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "If BP is over 180/120, rest 5 minutes and recheck if safe.",
+          "If over 180/120 with chest pain, shortness of breath, weakness/numbness, vision changes, severe headache, confusion, or trouble speaking, seek emergency care.",
+          "If no emergency signs, follow clinician instructions and log the reading.",
+          "Sit with feet flat and exhale slowly for 8 seconds.",
+          "Think: I measure the pressure and release what I can, medically and emotionally."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. High Blood Pressure may require medical evaluation, diagnosis, monitoring, and condition-specific treatment.",
+        "items": [
+          {
+            "label": "Home monitoring",
+            "detail": "Use a validated cuff, correct size, and consistent technique."
+          },
+          {
+            "label": "Lifestyle support",
+            "detail": "Sodium reduction, DASH-style eating, activity, weight management, sleep, smoking/alcohol changes, and sleep apnea care may help."
+          },
+          {
+            "label": "Medication adherence",
+            "detail": "Take blood pressure medication as prescribed and discuss side effects before stopping."
+          },
+          {
+            "label": "Risk review",
+            "detail": "Kidney disease, diabetes, sleep apnea, medications, family history, and cardiovascular risk affect the plan."
+          }
+        ],
+        "avoid": [
+          "Do not ignore BP over 180/120 with chest pain, shortness of breath, weakness/numbness, vision changes, severe headache, confusion, or trouble speaking.",
+          "Do not stop BP medication suddenly without clinician guidance."
+        ]
+      },
+      "brutalActions": [
+        "Measure with a cuff.",
+        "Log readings.",
+        "Know emergency symptoms.",
+        "Treat pressure like a number, not a personality trait."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Hypertension is persistently elevated blood pressure. It can involve vascular resistance, kidney/hormonal regulation, sympathetic nervous system activity, vascular stiffness, genetics, age, sodium intake, weight, activity, alcohol, smoking, sleep apnea, medications, kidney disease, endocrine conditions, and chronic stress.",
+        "protocol": [
+          "Track home readings, cuff size, timing, medications, sodium/alcohol, sleep apnea symptoms, kidney disease, chest pain, shortness of breath, severe headache, weakness/numbness, vision changes, and trouble speaking.",
+          "Use medical evaluation when symptoms are new, severe, persistent, progressive, recurrent, or paired with red flags.",
+          "Symbolic interpretation never replaces diagnosis, emergency care, prescribed medication, or treatment."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Pressure Cooker",
+        "metaphorText": "Your cardiovascular system is a pressure cooker and the gauge has opinions.",
+        "wittyAdvice": "Release the pressure with real monitoring and care or keep pretending the gauge is decorative. Your choice."
+      },
+      "brutal": {
+        "realityCheck": "You may have hypertension. You may also have a pressure-and-overdrive pattern.",
+        "protocolTitle": "READ THE GAUGE",
+        "protocolSteps": [
+          "Measure correctly.",
+          "Check emergency signs.",
+          "Log readings.",
+          "Follow medical plan.",
+          "Release pressure safely."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Blood pressure over 180/120 with chest pain, shortness of breath, weakness, numbness, vision changes, confusion, severe headache, or trouble speaking",
+        "Stroke-like symptoms, heart attack symptoms, fainting, severe back pain, or severe neurologic symptoms",
+        "Pregnancy with high blood pressure symptoms",
+        "Very high readings repeatedly or sudden severe worsening",
+        "Known kidney/heart disease with uncontrolled BP"
+      ],
+      "seek_immediate_care_if": [
+        "BP is over 180/120 with symptoms such as chest pain, shortness of breath, weakness/numbness, vision changes, confusion, severe headache, or trouble speaking"
+      ],
+      "schedule_care_if": [
+        "Home readings are repeatedly high, medications cause side effects, BP plan is unclear, or risk factors are present"
+      ],
+      "self_care_allowed_if": "Logging readings, reducing sodium, limiting alcohol, activity as advised, sleep support, and stress reduction may help alongside medical care.",
+      "do_not_ignore": "Hypertension can silently damage the heart, brain, kidneys, eyes, and blood vessels.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure hypertension."
+    }
+  },
+  {
+    "id": "breast-problems",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Dense heavy pressure, sharp stab, long pause.",
+        "hapticPattern": [
+          2000,
+          120,
+          500,
+          3000
+        ],
+        "uiBackgroundAccent": "#E8A0A0"
+      },
+      "hero": {
+        "primaryPattern": "Breast cysts, lumps, and soreness can be benign or serious; any new/persistent lump, skin dimpling/redness/thickening, nipple discharge/retraction, or breast change needs medical evaluation.",
+        "cascade": [
+          "Change Noticed",
+          "Benign vs Concerning",
+          "Imaging/Exam",
+          "Treat by Cause"
+        ],
+        "tags": [
+          "#breast",
+          "#lump",
+          "#imaging"
+        ],
+        "safetyPreview": "New or changing lump, skin dimpling/redness/thickening, nipple discharge especially bloody, nipple retraction, swelling, fever, or persistent focal pain needs care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Cysts and Hormones",
+          "short": "Fluid-filled sacs can be benign.",
+          "detail": "Breast cysts are often benign and may fluctuate with hormonal cycles, but imaging may be needed to confirm what they are."
+        },
+        {
+          "title": "Solid Lumps",
+          "short": "Some are benign, some are not.",
+          "detail": "Fibroadenomas and other benign masses occur, but persistent or changing lumps need evaluation to rule out cancer or other problems."
+        },
+        {
+          "title": "Pain/Soreness",
+          "short": "Mastalgia has many causes.",
+          "detail": "Breast soreness can be cyclic, non-cyclic, infection-related, trauma-related, medication-related, or referred from chest wall structures."
+        },
+        {
+          "title": "Red Flags",
+          "short": "Breast and nipple changes matter.",
+          "detail": "Skin dimpling, redness, peau d’orange changes, nipple retraction, bloody discharge, persistent focal pain, or new lump needs medical care."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Breast Lump, Cyst, Pain & Imaging Safety Pathway",
+          "sections": [
+            {
+              "heading": "Stage 1 — Identify the Type of Change",
+              "body": [
+                "Breast symptoms may involve cysts, solid lumps, soreness, infection, hormonal changes, trauma, nipple changes, skin changes, or cancer.",
+                "The first step is not interpretation. It is figuring out what changed. Humanity survives another obvious rule."
+              ]
+            },
+            {
+              "heading": "Stage 2 — New or Changing Findings Need Care",
+              "body": [
+                "Any new, persistent, changing, hard, fixed, or unexplained breast lump needs medical evaluation.",
+                "Skin dimpling, thickening, redness, ulceration, nipple discharge especially bloody, or nipple retraction also needs evaluation."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Imaging and Follow-Up",
+              "body": [
+                "Evaluation may include clinical exam, ultrasound, mammogram, diagnostic imaging, aspiration, biopsy, antibiotics for infection, or other targeted care.",
+                "The goal is to know what it is instead of narrating around it."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Symbolic Layer",
+              "body": [
+                "Symbolically, breast symptoms may map to nourishment, receiving, over-giving, tenderness, and the cost of always being the source.",
+                "That reflection belongs beside care, not in place of care."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Overstuffed Purse",
+          "paragraphs": [
+            "Your breast tissue is an overstuffed purse and something in there is poking the lining.",
+            "Maybe it is benign hormonal clutter. Maybe it is a cyst. Maybe it is a harmless solid lump. Maybe it is something that needs biopsy, because biology apparently refuses to use color-coded labels.",
+            "So first: exam, imaging, and follow-up.",
+            "Then, sure, ask where you are giving without receiving.",
+            "Organize the purse medically first or keep treating a breast warning light like emotional clutter. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Nourishment Reality Check",
+          "paragraphs": [
+            "You may have a breast symptom. You may also have a nourishment-and-receiving pattern.",
+            "Medical first: new lumps, skin changes, nipple discharge, nipple retraction, swelling, redness, fever, or persistent focal pain need evaluation.",
+            "Symbolically, this may ask where you give, hold, nurture, or receive.",
+            "But breast changes are not your fault, and they are not proof you failed to love yourself correctly. That idea can go fall into a well.",
+            "Organize the purse medically first or keep treating a breast warning light like emotional clutter. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Nourishment Image",
+          "tag": "Receiving",
+          "paragraphs": [
+            "Breast symbolism often maps to nurturing and receiving.",
+            "Medically, imaging and exam decide what a breast change is."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Over-Giver",
+          "tag": "Care",
+          "paragraphs": [
+            "The Over-Giver feeds everyone else and forgets to receive.",
+            "Reflection can be useful after safety is handled."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Overstuffed Purse",
+          "tag": "Accumulation",
+          "paragraphs": [
+            "The purse image captures holding too much.",
+            "But lumps need assessment, not just metaphorical decluttering."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Tender Boundary",
+          "tag": "Sensitivity",
+          "paragraphs": [
+            "Soreness may symbolize tenderness and overextension.",
+            "Pain can also be hormonal, infectious, muscular, medication-related, or cancer-related."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Receive Nourishment",
+          "tag": "Reset",
+          "paragraphs": [
+            "The reset is care, imaging when needed, and receiving support.",
+            "No emotional purse rummaging before medical triage."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Breast Awareness & Nourishment Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Check for red flags: new/changing lump, skin dimpling/redness/thickening, nipple discharge/retraction, fever, swelling, or persistent focal pain.",
+          "If present, schedule medical evaluation promptly.",
+          "If already evaluated and safe, sit upright with one hand over the chest and one on the heart.",
+          "Inhale gently for 4 seconds and exhale for 8 seconds.",
+          "Think: I can receive care. I do not have to hold everything alone."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Breast Problems may require medical evaluation, diagnosis, monitoring, imaging, medication, or emergency care depending on symptoms.",
+        "items": [
+          {
+            "label": "Medical evaluation",
+            "detail": "New or changing breast findings should be checked with exam and imaging when indicated."
+          },
+          {
+            "label": "Breast awareness",
+            "detail": "Know what is normal for you and report changes."
+          },
+          {
+            "label": "Supportive comfort",
+            "detail": "Supportive bras, warm/cool compresses, and OTC pain relief if safe may help soreness."
+          },
+          {
+            "label": "Cycle tracking",
+            "detail": "Tracking pain/lumps across the menstrual cycle can help distinguish cyclic patterns from persistent changes."
+          }
+        ],
+        "avoid": [
+          "Do not ignore new or changing lumps, skin changes, nipple discharge, nipple retraction, fever, swelling, or persistent focal pain.",
+          "Do not delay evaluation because a lump is painful or because you think it is probably a cyst."
+        ]
+      },
+      "brutalActions": [
+        "Check for red flags.",
+        "Book evaluation for new or changing findings.",
+        "Track cycle and symptoms.",
+        "Receive care before decoding symbolism."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Breast problems can include cysts, lumps, soreness, mastalgia, infection, fibroadenomas, hormonal changes, trauma, fat necrosis, musculoskeletal pain, medication-related tenderness, nipple discharge, skin changes, or breast cancer. Any new, persistent, changing, hard/fixed lump or concerning breast/nipple/skin change needs medical evaluation and often imaging.",
+        "protocol": [
+          "Track new lump, growth/change, pain, cycle timing, redness/warmth, fever, nipple discharge, bloody discharge, nipple retraction, dimpling, skin thickening, swelling, family history, pregnancy/breastfeeding, age, and last mammogram/imaging.",
+          "Use medical evaluation when symptoms are new, severe, persistent, progressive, recurrent, or paired with red flags.",
+          "Symbolic interpretation never replaces diagnosis, imaging, emergency care, prescribed medication, or treatment."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Overstuffed Purse",
+        "metaphorText": "Your breast tissue is an overstuffed purse and something in there is poking the lining.",
+        "wittyAdvice": "Organize the purse medically first or keep treating a breast warning light like emotional clutter. Your choice."
+      },
+      "brutal": {
+        "realityCheck": "You may have a breast symptom. You may also have a nourishment-and-receiving pattern.",
+        "protocolTitle": "ORGANIZE THE PURSE SAFELY",
+        "protocolSteps": [
+          "Notice change.",
+          "Screen red flags.",
+          "Get imaging/exam.",
+          "Track pattern.",
+          "Reflect after care."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "New, persistent, changing, hard, fixed, or unexplained breast lump",
+        "Skin dimpling, puckering, thickening, redness, ulceration, warmth, swelling, or peau d’orange appearance",
+        "Nipple discharge especially bloody or spontaneous, nipple inversion/retraction, or new nipple change",
+        "Fever, severe breast pain, abscess concern, breastfeeding infection concern, or rapidly worsening redness",
+        "Family history/high risk or abnormal screening needing follow-up"
+      ],
+      "seek_immediate_care_if": [
+        "Severe infection signs, fever with breast redness/swelling, rapidly worsening symptoms, or serious systemic illness occurs"
+      ],
+      "schedule_care_if": [
+        "Any new or changing lump, persistent focal pain, nipple discharge/retraction, skin change, or concerning breast symptom occurs"
+      ],
+      "self_care_allowed_if": "Comfort measures may support mild cyclic soreness already known to be benign, but new or changing findings need care.",
+      "do_not_ignore": "Breast changes can be benign, but evaluation is how you know.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure breast disease."
+    }
+  },
+  {
+    "id": "bronchitis",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Coarse rattling vibration, hacking cough pulse, long pause.",
+        "hapticPattern": [
+          2000,
+          120,
+          500,
+          3000
+        ],
+        "uiBackgroundAccent": "#8B7B7B"
+      },
+      "hero": {
+        "primaryPattern": "Bronchitis is airway inflammation; severe shortness of breath, chest pain, coughing blood, high/persistent fever, low oxygen, worsening symptoms, or high-risk status needs medical care.",
+        "cascade": [
+          "Airways Inflame",
+          "Mucus Builds",
+          "Cough Tries to Clear",
+          "Watch Red Flags"
+        ],
+        "tags": [
+          "#bronchitis",
+          "#cough",
+          "#mucus"
+        ],
+        "safetyPreview": "Severe shortness of breath, chest pain, coughing blood, high fever, low oxygen, confusion, blue lips, dehydration, or worsening after improvement needs care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Bronchial Inflammation",
+          "short": "Airways swell and make mucus.",
+          "detail": "Inflamed bronchial tubes can cause cough, mucus, wheezing, chest tightness, fatigue, and breathing discomfort."
+        },
+        {
+          "title": "Acute Bronchitis",
+          "short": "Often viral.",
+          "detail": "Most acute bronchitis follows viral infection; cough can persist for weeks even after other symptoms improve."
+        },
+        {
+          "title": "Chronic Bronchitis",
+          "short": "COPD pattern.",
+          "detail": "Chronic bronchitis involves long-term productive cough and is commonly linked to smoking or irritant exposure."
+        },
+        {
+          "title": "Pneumonia/Asthma/COPD Screen",
+          "short": "Not every cough is simple.",
+          "detail": "Severe symptoms, fever, low oxygen, chest pain, blood, or high-risk status requires evaluation for pneumonia, asthma/COPD exacerbation, or other causes."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Bronchial Inflammation, Cough Duration & Red-Flag Screening",
+          "sections": [
+            {
+              "heading": "Stage 1 — Airway Inflammation",
+              "body": [
+                "Bronchitis is inflammation of the bronchial tubes.",
+                "Symptoms can include cough, mucus, wheezing, chest tightness, fatigue, and sometimes fever."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Acute vs Chronic",
+              "body": [
+                "Acute bronchitis is usually viral and often follows a cold or respiratory infection.",
+                "Chronic bronchitis is a COPD-related long-term productive cough pattern, often from smoking or irritant exposure. Your lungs, sadly, do keep receipts."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Treatment Direction",
+              "body": [
+                "Care may include rest, fluids, humidified air, OTC symptom relief if safe, inhalers if bronchospasm is present, avoiding smoke/irritants, and medical evaluation when needed.",
+                "Antibiotics usually do not help viral bronchitis unless a bacterial complication is suspected."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Safety Check",
+              "body": [
+                "Seek medical care for severe shortness of breath, chest pain, coughing blood, high/persistent fever, low oxygen, confusion, blue lips, dehydration, or worsening after initial improvement.",
+                "Coughing is clearing. Suffocating is not."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Clogged Vacuum",
+          "paragraphs": [
+            "Your airways are a clogged vacuum rattling like it swallowed a sock.",
+            "The mucus is dust, the cough is the motor trying to clear the tube, and the bronchial lining is irritated enough to file a workplace complaint.",
+            "Sometimes it is viral and annoying. Sometimes it is COPD, asthma, pneumonia, or a red-flag situation.",
+            "Clear the airway safely, avoid irritants, use meds when appropriate, and stop asking viruses to respect antibiotics.",
+            "Clear the vacuum safely or keep asking clogged airways to handle dust like professionals. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Congestion Reality Check",
+          "paragraphs": [
+            "You may have bronchitis. You may also have a clearing-and-release pattern.",
+            "Medical first: severe breathing symptoms, chest pain, blood, high fever, low oxygen, or worsening after improvement needs evaluation.",
+            "Symbolically, bronchitis may ask what needs to be cleared.",
+            "But infection and airway inflammation are real, and your cough is not proof you failed at emotional dusting.",
+            "Clear the vacuum safely or keep asking clogged airways to handle dust like professionals. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Phlegm / Lung Image",
+          "tag": "Clearing",
+          "paragraphs": [
+            "In TCM imagery, bronchitis can map to phlegm and Lung constraint.",
+            "Medically, infection, irritants, asthma/COPD, and pneumonia risk drive care."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Unspoken Air",
+          "tag": "Expression",
+          "paragraphs": [
+            "The chest may symbolize what needs to come out.",
+            "The airway still deserves actual treatment."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Clogged Vacuum",
+          "tag": "Mucus",
+          "paragraphs": [
+            "The vacuum image captures mucus and impaired clearing.",
+            "Maintenance includes rest, fluids, air quality, and medical review if needed."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Irritant Memory",
+          "tag": "Smoke",
+          "paragraphs": [
+            "Smoke and irritants train airways to stay inflamed.",
+            "Avoiding them is not weakness; it is lung diplomacy."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Clear Safely",
+          "tag": "Reset",
+          "paragraphs": [
+            "The reset is symptom tracking, airway support, and red-flag awareness.",
+            "No macho coughing contests."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Clogged Vacuum & Airway Safety Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Check for red flags: severe shortness of breath, chest pain, blood, high fever, blue lips, low oxygen, confusion, or worsening after improvement.",
+          "If present, seek medical care.",
+          "If safe, sit upright and sip fluids if tolerated.",
+          "Breathe gently and avoid smoke/irritants.",
+          "Think: I clear what can clear, and I get help when breathing is not okay."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Bronchitis may require medical evaluation, diagnosis, monitoring, imaging, medication, or emergency care depending on symptoms.",
+        "items": [
+          {
+            "label": "Hydration and humidified air",
+            "detail": "Fluids and humidified air may ease mucus and throat irritation if safe."
+          },
+          {
+            "label": "Avoid irritants",
+            "detail": "Smoke, vaping, dust, fumes, and pollution can worsen bronchial irritation."
+          },
+          {
+            "label": "Symptom relief",
+            "detail": "OTC cough medicines or pain/fever reducers may help some people if safe for them."
+          },
+          {
+            "label": "Medical review",
+            "detail": "Asthma/COPD history, severe symptoms, high fever, blood, low oxygen, immune risk, or persistent/worsening cough needs care."
+          }
+        ],
+        "avoid": [
+          "Do not ignore severe shortness of breath, chest pain, coughing blood, high fever, low oxygen, confusion, blue lips, dehydration, or worsening after initial improvement.",
+          "Do not assume antibiotics are needed for viral bronchitis."
+        ]
+      },
+      "brutalActions": [
+        "Track cough duration and severity.",
+        "Avoid smoke/vape/irritants.",
+        "Check red flags.",
+        "Get evaluated if symptoms are severe or worsening."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Bronchitis is inflammation of the bronchial tubes. Acute bronchitis often follows a viral respiratory infection and causes cough, mucus, wheeze, chest tightness, fatigue, and sometimes fever; antibiotics usually do not help viral bronchitis. Chronic bronchitis is a COPD-related pattern of long-term productive cough, often linked to smoking or irritant exposure.",
+        "protocol": [
+          "Track cough duration, mucus color/amount, fever, shortness of breath, wheeze, chest pain, oxygen if available, blood in sputum, smoking/vape exposure, COPD/asthma history, immune risk, and worsening after initial improvement.",
+          "Use medical evaluation when symptoms are new, severe, persistent, progressive, recurrent, or paired with red flags.",
+          "Symbolic interpretation never replaces diagnosis, imaging, emergency care, prescribed medication, or treatment."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Clogged Vacuum",
+        "metaphorText": "Your airways are a clogged vacuum rattling like it swallowed a sock.",
+        "wittyAdvice": "Clear the vacuum safely or keep asking clogged airways to handle dust like professionals. Your choice."
+      },
+      "brutal": {
+        "realityCheck": "You may have bronchitis. You may also have a clearing-and-release pattern.",
+        "protocolTitle": "CLEAR THE VACUUM",
+        "protocolSteps": [
+          "Screen red flags.",
+          "Avoid irritants.",
+          "Hydrate if safe.",
+          "Use symptom care.",
+          "Evaluate persistent/worsening cough."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Severe shortness of breath, chest pain, blue lips/skin, confusion, or low oxygen",
+        "Coughing up blood",
+        "High or persistent fever, fever returning after improvement, or pneumonia concern",
+        "Worsening after initial improvement, dehydration, severe weakness, or high-risk immune/heart/lung condition",
+        "Asthma/COPD exacerbation symptoms"
+      ],
+      "seek_immediate_care_if": [
+        "Severe breathing trouble, chest pain, coughing blood, blue lips, confusion, low oxygen, or serious worsening occurs"
+      ],
+      "schedule_care_if": [
+        "Cough persists, worsens, returns with fever, occurs with wheezing/SOB, or person has asthma/COPD/smoking/immune risk"
+      ],
+      "self_care_allowed_if": "Rest, fluids, humidified air, avoiding smoke, and OTC symptom care may help mild uncomplicated acute bronchitis if safe.",
+      "do_not_ignore": "Bronchitis can mimic or worsen asthma, COPD, pneumonia, or other serious illness.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure bronchitis."
+    }
+  },
+  {
+    "id": "cystic-fibrosis",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Thick sticky dragging pulse, cough-like release, long pause.",
+        "hapticPattern": [
+          2000,
+          120,
+          500,
+          3000
+        ],
+        "uiBackgroundAccent": "#6B7B6B"
+      },
+      "hero": {
+        "primaryPattern": "Cystic fibrosis is a genetic CFTR-related condition causing thick mucus, lung/digestive complications, and lifelong specialist care; fever, shortness of breath, coughing blood, or worsening cough needs prompt medical attention.",
+        "cascade": [
+          "CFTR Defect",
+          "Thick Mucus",
+          "Airway/Digestive Burden",
+          "Specialist Care"
+        ],
+        "tags": [
+          "#cysticfibrosis",
+          "#CFTR",
+          "#airwayclearance"
+        ],
+        "safetyPreview": "Shortness of breath, coughing blood, fever, worsening cough/sputum, chest pain, low oxygen, dehydration, poor weight gain, or pulmonary exacerbation signs need medical care."
+      },
+      "biologyPathway": [
+        {
+          "title": "CFTR Gene",
+          "short": "Salt-water transport is disrupted.",
+          "detail": "CFTR variants impair chloride and water movement, making secretions thicker and harder to clear."
+        },
+        {
+          "title": "Lung Disease",
+          "short": "Mucus blocks and infects airways.",
+          "detail": "Thick mucus impairs mucociliary clearance, creating airway obstruction, recurrent infection, inflammation, and bronchiectasis risk."
+        },
+        {
+          "title": "Digestive Effects",
+          "short": "Pancreatic ducts can clog.",
+          "detail": "Pancreatic insufficiency can reduce digestive enzyme delivery, causing malabsorption, greasy stools, vitamin deficiencies, and poor growth/weight gain."
+        },
+        {
+          "title": "Modern Treatment",
+          "short": "Care has changed dramatically.",
+          "detail": "Care may include airway clearance, inhaled medications, antibiotics, pancreatic enzymes, nutrition support, CFTR modulators, mental-health support, and transplant evaluation in advanced disease."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "CFTR Dysfunction, Thick Mucus & Multidisciplinary CF Care",
+          "sections": [
+            {
+              "heading": "Stage 1 — Genetic Condition, Not Mindset",
+              "body": [
+                "Cystic fibrosis is a genetic CFTR-related condition.",
+                "It is not caused by emotional stuckness, stress, or failure to release. That framing can go straight into the medical trash compactor."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Lung and Digestive Pathway",
+              "body": [
+                "Thick sticky mucus can impair airway clearance, drive infections/inflammation, and obstruct pancreatic enzyme flow.",
+                "This can affect breathing, digestion, growth/weight, vitamins, sinuses, liver, fertility, and diabetes risk."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Treatment Direction",
+              "body": [
+                "CF care may include airway clearance, inhaled mucus thinners, bronchodilators, antibiotics, pancreatic enzyme replacement, high-calorie nutrition, vitamins, CFTR modulators, and specialist follow-up.",
+                "Treatment is highly individualized and belongs with a CF care team."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Safety Check",
+              "body": [
+                "Seek prompt care for fever, worsening cough or sputum, shortness of breath, chest pain, coughing blood, low oxygen, dehydration, or rapid decline.",
+                "In CF, little changes can become big problems. Biology, tragically, loves escalation."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Clogged Drain",
+          "paragraphs": [
+            "Your lungs are a sink and the drain is clogged with gluey nonsense.",
+            "Except this is not because the plumber was lazy. The CFTR plumbing system came from the factory with a defect.",
+            "So the job is not positive thinking. The job is airway clearance, medications, enzymes, nutrition, modulators if eligible, infection care, and CF specialists.",
+            "You can still use the metaphor for morale: keep the drain moving, keep the crew scheduled, and do not let the sink turn into a swamp.",
+            "Clear the drain medically or keep pretending genetic plumbing responds to pep talks. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Genetic Stuckness Reality Check",
+          "paragraphs": [
+            "You may have cystic fibrosis. You may also relate to a stuck-flow pattern while living with a real genetic condition.",
+            "CF is not your fault. You did not fail to breathe freely hard enough.",
+            "The hard truth is that CF care is relentless: clearance, meds, enzymes, nutrition, infection watch, clinic visits, and mental load.",
+            "The other hard truth: modern care has changed the landscape for many people, and staying engaged with treatment matters.",
+            "Clear the drain medically or keep pretending genetic plumbing responds to pep talks. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Phlegm / Damp Image",
+          "tag": "Symbolic Only",
+          "paragraphs": [
+            "Symbolically, CF can map to stuck flow and thickened clearing.",
+            "Medically, CF is genetic and needs CF-specialist care."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "The Clearer",
+          "tag": "Persistence",
+          "paragraphs": [
+            "The Clearer keeps returning to the task without making the burden a moral failure.",
+            "Care routines are not weakness; they are maintenance against a real genetic load."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Clogged Drain",
+          "tag": "Mucus",
+          "paragraphs": [
+            "The drain image captures thick secretions and clearing effort.",
+            "The plumber is the CF care team, not willpower with a wrench."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Flow Without Blame",
+          "tag": "Self-Compassion",
+          "paragraphs": [
+            "The emotional work is reducing shame and burnout around a lifelong condition.",
+            "There is no virtue in blaming yourself for CF."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Maintenance Rhythm",
+          "tag": "Care",
+          "paragraphs": [
+            "The reset is following the plan, noticing changes early, and asking for support.",
+            "A chronic condition deserves chronic support, shocking concept."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "CF Care Check & Flow Support Reset",
+        "modality": "Safety-First Regulation",
+        "steps": [
+          "Check for red flags: shortness of breath, fever, worsening cough/sputum, coughing blood, chest pain, low oxygen, dehydration, or rapid decline.",
+          "If present, contact the CF team or seek urgent care as directed.",
+          "If stable, do the next care-plan step: airway clearance, prescribed meds, enzymes, hydration/nutrition, or tracking.",
+          "Breathe slowly only as comfort, not as a replacement for treatment.",
+          "Think: this is genetic, not my fault, and I support flow with real care."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Cystic Fibrosis may require medical evaluation, emergency care, specialist treatment, medication, monitoring, or long-term management.",
+        "items": [
+          {
+            "label": "CF specialist care",
+            "detail": "CF needs multidisciplinary care through pulmonology/CF specialists."
+          },
+          {
+            "label": "Airway clearance",
+            "detail": "Chest physiotherapy, devices, breathing techniques, and inhaled therapies may help mucus clearance as prescribed."
+          },
+          {
+            "label": "Pancreatic enzymes/nutrition",
+            "detail": "Pancreatic enzyme replacement, vitamins, and nutrition support may be needed for malabsorption."
+          },
+          {
+            "label": "CFTR modulators",
+            "detail": "Some people are eligible for CFTR modulator therapy based on mutation type and clinical factors."
+          }
+        ],
+        "avoid": [
+          "Do not ignore fever, shortness of breath, coughing blood, worsening cough/sputum, low oxygen, dehydration, chest pain, or rapid decline.",
+          "Do not replace CF treatment with breathing exercises, supplements, or symbolism."
+        ]
+      },
+      "brutalActions": [
+        "Follow the CF plan.",
+        "Track red flags early.",
+        "Keep specialist follow-up.",
+        "Drop the self-blame. The gene did not ask for your opinion."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Cystic fibrosis is a genetic condition caused by CFTR gene variants that affect salt and water movement across cells. This leads to thick, sticky mucus in the lungs, pancreas, digestive tract, and other organs. CF can cause chronic lung infections, impaired mucociliary clearance, pancreatic insufficiency, malabsorption, poor weight gain, sinus disease, infertility in many males, liver disease, diabetes risk, and progressive lung disease. Modern CFTR modulators have transformed care for many eligible people, but CF still requires specialist management.",
+        "protocol": [
+          "Track cough, sputum, fever, shortness of breath, blood in sputum, weight, appetite, stools/grease, enzyme use, CFTR modulator eligibility, airway clearance adherence, oxygen levels if used, infections, diabetes symptoms, and CF clinic follow-up.",
+          "Use emergency care when symptoms match red flags. Use medical/specialist care for diagnosis, monitoring, and treatment.",
+          "Symbolic interpretation never replaces emergency care, prescribed medication, specialist care, or treatment."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Clogged Drain",
+        "metaphorText": "Your lungs are a sink and the drain is clogged with gluey nonsense.",
+        "wittyAdvice": "Clear the drain medically or keep pretending genetic plumbing responds to pep talks. Your choice."
+      },
+      "brutal": {
+        "realityCheck": "You may have cystic fibrosis. You may also relate to a stuck-flow pattern while living with a real genetic condition.",
+        "protocolTitle": "CLEAR THE DRAIN MEDICALLY",
+        "protocolSteps": [
+          "Check red flags.",
+          "Contact CF team if worsening.",
+          "Do airway clearance.",
+          "Use prescribed meds/enzymes.",
+          "Track changes."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Shortness of breath, low oxygen, chest pain, or breathing difficulty",
+        "Coughing up blood",
+        "Fever, worsening cough, increased/change in sputum, or pulmonary exacerbation concern",
+        "Dehydration, severe fatigue, poor intake, poor weight gain, or severe GI symptoms",
+        "Mental-health crisis, severe depression/anxiety, or treatment burnout"
+      ],
+      "seek_immediate_care_if": [
+        "Breathing difficulty, coughing blood, low oxygen, severe chest pain, severe dehydration, or rapid decline occurs"
+      ],
+      "schedule_care_if": [
+        "Cough/sputum worsens, weight/digestion changes, treatment tolerance changes, or CF care plan needs review"
+      ],
+      "self_care_allowed_if": "Follow the individualized CF plan, airway clearance, hydration/nutrition, prescribed meds, and mental-health support when stable.",
+      "do_not_ignore": "CF is a complex genetic condition with lung, digestive, nutritional, infectious, endocrine, and emotional-health risks.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure cystic fibrosis."
+    }
+  },
+  {
+    "id": "heart-attack",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Crushing pressure, stabbing explosion, long hollow silence.",
+        "hapticPattern": [
+          2000,
+          120,
+          500,
+          4000
+        ],
+        "uiBackgroundAccent": "#8B2A2A"
+      },
+      "hero": {
+        "primaryPattern": "Heart attack is a medical emergency; chest pressure/pain, shortness of breath, nausea, sweating, lightheadedness, or pain to arm/jaw/back means call emergency services immediately.",
+        "cascade": [
+          "Blood Flow Blocks",
+          "Heart Muscle Starves",
+          "Emergency Damage Risk",
+          "Call 911"
+        ],
+        "tags": [
+          "#heartattack",
+          "#emergency",
+          "#call911"
+        ],
+        "safetyPreview": "Call emergency services now for suspected heart attack. Do not drive yourself. Do not use breathing exercises as a substitute for emergency care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Blocked Blood Flow",
+          "short": "Heart muscle loses oxygen.",
+          "detail": "A coronary blockage can deprive heart muscle of oxygen, causing damage or death of tissue."
+        },
+        {
+          "title": "Plaque and Clot",
+          "short": "Atherosclerosis can rupture.",
+          "detail": "Plaque rupture can trigger a clot that blocks the artery; spasm or other causes can also reduce flow."
+        },
+        {
+          "title": "Symptoms Vary",
+          "short": "Not always dramatic chest pain.",
+          "detail": "Symptoms may include pressure, shortness of breath, sweating, nausea, fatigue, dizziness, or pain to arm, jaw, neck, back, or stomach."
+        },
+        {
+          "title": "Time Is Muscle",
+          "short": "Faster treatment saves heart tissue.",
+          "detail": "Emergency treatment may include aspirin, ECG, oxygen if needed, nitroglycerin when appropriate, catheterization/stent, clot-busting therapy in some settings, and monitored care."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Myocardial Infarction Emergency Action Pathway",
+          "sections": [
+            {
+              "heading": "Stage 1 — Emergency First",
+              "body": [
+                "A heart attack is a medical emergency.",
+                "If symptoms suggest a heart attack, call emergency services immediately and do not drive yourself. The app does not get a vote."
+              ]
+            },
+            {
+              "heading": "Stage 2 — What Happens",
+              "body": [
+                "Blood flow to part of the heart is blocked, causing ischemia and possible death of heart muscle.",
+                "The longer the blockage persists, the more heart muscle can be damaged. Time is muscle, and muscle is not famous for regenerating on command."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Symptoms",
+              "body": [
+                "Symptoms can include chest pain/pressure, shortness of breath, sweating, nausea/vomiting, lightheadedness, fatigue, and pain spreading to arm, jaw, neck, back, or stomach.",
+                "Symptoms may be atypical or subtle, especially in women, older adults, and people with diabetes."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Aftercare",
+              "body": [
+                "Long-term care may include antiplatelet drugs, statins, beta-blockers, ACE inhibitors/ARBs, smoking cessation, blood pressure/cholesterol/diabetes control, exercise guidance, diet changes, and cardiac rehabilitation.",
+                "Reflection belongs after survival, not during the alarm."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Clogged Highway",
+          "paragraphs": [
+            "Your heart is a highway and one lane just got blocked by a crash.",
+            "Traffic is backing up, oxygen deliveries are late, and the heart muscle is not accepting excuses from the road crew.",
+            "This is not the moment to journal about pressure.",
+            "Call emergency services, chew aspirin only if advised/appropriate, and let professionals open the road.",
+            "Clear the highway with emergency care or keep treating a cardiac alarm like a calendar reminder. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Cardiac Emergency Reality Check",
+          "paragraphs": [
+            "A heart attack is a medical emergency. You may also recognize a pressure-and-warning-signs pattern after emergency care is handled.",
+            "The hard truth is simple: call emergency services. Do not drive yourself. Do not wait it out.",
+            "No breathing reset, emotional insight, supplement, or masculine stubbornness gets priority over blood flow to heart muscle.",
+            "After care, you can look at pressure, stress, grief, lifestyle, support, and rehab.",
+            "Clear the highway with emergency care or keep treating a cardiac alarm like a calendar reminder. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Heart Symbolism",
+          "tag": "Aftercare",
+          "paragraphs": [
+            "Symbolically, the heart can map to pressure, grief, love, and life force.",
+            "During symptoms, symbolism shuts up and emergency care speaks."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Pressure Keeper",
+          "tag": "Stress",
+          "paragraphs": [
+            "After survival, the pressure pattern may be worth examining.",
+            "Before survival, call 911. Stunningly simple."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Clogged Highway",
+          "tag": "Blood Flow",
+          "paragraphs": [
+            "The highway image captures blocked flow.",
+            "Blocked coronary flow needs emergency medicine, not optimism."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Warning Signals",
+          "tag": "Alarm",
+          "paragraphs": [
+            "Chest symptoms are alarms, not personality quizzes.",
+            "Ignoring alarms is not toughness; it is gambling with heart muscle."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Rehabilitation",
+          "tag": "Recovery",
+          "paragraphs": [
+            "Recovery may involve cardiac rehab, medications, lifestyle changes, and emotional support.",
+            "Survival first, meaning second."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Heart Attack Emergency Action",
+        "modality": "Safety-First Regulation",
+        "steps": [
+          "If heart attack symptoms are present, call emergency services immediately.",
+          "Do not drive yourself.",
+          "Stop activity, sit or lie down safely, and unlock the door if alone.",
+          "Follow dispatcher instructions, including aspirin only if advised and safe for you.",
+          "Reflection and breathing exercises wait until after emergency care."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Heart Attack may require medical evaluation, emergency care, specialist treatment, medication, monitoring, or long-term management.",
+        "items": [
+          {
+            "label": "Emergency services",
+            "detail": "Suspected heart attack needs emergency response, ECG, monitoring, and rapid treatment."
+          },
+          {
+            "label": "Cardiac rehabilitation",
+            "detail": "After treatment, cardiac rehab supports recovery, exercise safety, education, and risk reduction."
+          },
+          {
+            "label": "Medication adherence",
+            "detail": "Post-heart-attack medications reduce risk and should be taken as prescribed."
+          },
+          {
+            "label": "Risk-factor care",
+            "detail": "Blood pressure, cholesterol, diabetes, smoking, activity, diet, sleep, and stress all belong in follow-up care."
+          }
+        ],
+        "avoid": [
+          "Do not drive yourself with suspected heart attack symptoms.",
+          "Do not wait for symptoms to pass when chest pressure/pain occurs with shortness of breath, sweating, nausea, faintness, or arm/jaw/back pain.",
+          "Do not use breathing exercises, supplements, or emotional interpretation as emergency treatment."
+        ]
+      },
+      "brutalActions": [
+        "Call emergency services.",
+        "Do not drive yourself.",
+        "Follow dispatcher instructions.",
+        "Do cardiac rehab and follow-up after survival."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "A heart attack, or myocardial infarction, occurs when blood flow to part of the heart muscle is blocked long enough to damage or kill heart tissue. It commonly involves coronary artery disease, plaque rupture, clot formation, spasm, or other coronary obstruction. Symptoms can include chest pressure/pain, shortness of breath, sweating, nausea/vomiting, lightheadedness, fatigue, and pain spreading to the arm, jaw, neck, back, or stomach. Some heart attacks have atypical or subtle symptoms, especially in women, older adults, and people with diabetes.",
+        "protocol": [
+          "Track chest pressure/pain, onset, exertion, radiation, shortness of breath, sweating, nausea/vomiting, lightheadedness/fainting, fatigue, diabetes, heart history, blood pressure, cholesterol, smoking, and whether emergency services were called.",
+          "Use emergency care when symptoms match red flags. Use medical/specialist care for diagnosis, monitoring, and treatment.",
+          "Symbolic interpretation never replaces emergency care, prescribed medication, specialist care, or treatment."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Clogged Highway",
+        "metaphorText": "Your heart is a highway and one lane just got blocked by a crash.",
+        "wittyAdvice": "Clear the highway with emergency care or keep treating a cardiac alarm like a calendar reminder. Your choice."
+      },
+      "brutal": {
+        "realityCheck": "A heart attack is a medical emergency. You may also recognize a pressure-and-warning-signs pattern after emergency care is handled.",
+        "protocolTitle": "CALL EMERGENCY SERVICES",
+        "protocolSteps": [
+          "Call 911/emergency services.",
+          "Do not drive.",
+          "Stop activity.",
+          "Follow dispatcher instructions.",
+          "Do aftercare later."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Chest pain, pressure, squeezing, heaviness, or discomfort",
+        "Shortness of breath, sweating, nausea/vomiting, lightheadedness, fainting, or unusual fatigue",
+        "Pain or discomfort spreading to arm, jaw, neck, back, shoulder, or stomach",
+        "Symptoms in a person with diabetes, heart disease, high blood pressure, high cholesterol, smoking history, or older age",
+        "Sudden collapse, severe weakness, irregular heartbeat, or cardiac arrest signs"
+      ],
+      "seek_immediate_care_if": [
+        "Any suspected heart attack symptoms occur. Call emergency services immediately and do not drive yourself."
+      ],
+      "schedule_care_if": [
+        "Heart risk factors, exertional chest symptoms, abnormal tests, or post-heart-attack follow-up needs review"
+      ],
+      "self_care_allowed_if": "After emergency care and clinician guidance, cardiac rehab, medication adherence, risk-factor control, and stress support may help recovery.",
+      "do_not_ignore": "Heart attack symptoms can be subtle and time-sensitive.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure heart attack. Suspected heart attack requires emergency care."
+    }
+  },
+  {
+    "id": "hyperventilation",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Fast choppy breath pulses, gasping throb, pause.",
+        "hapticPattern": [
+          300,
+          80,
+          300,
+          80,
+          300,
+          120,
+          1000,
+          2000
+        ],
+        "uiBackgroundAccent": "#7B8B8B"
+      },
+      "hero": {
+        "primaryPattern": "Hyperventilation can happen with panic but can also mimic serious heart/lung problems; chest pain, confusion, fainting, blue lips, severe shortness of breath, or first/worst episode needs medical care.",
+        "cascade": [
+          "Breath Speeds",
+          "CO2 Drops",
+          "Symptoms Scare",
+          "Loop Escalates"
+        ],
+        "tags": [
+          "#hyperventilation",
+          "#panic",
+          "#breathing"
+        ],
+        "safetyPreview": "Chest pain, fainting, confusion, blue lips, severe shortness of breath, wheeze, oxygen concern, clot risk, heart symptoms, or first/worst episode needs medical care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Overbreathing",
+          "short": "Breathing exceeds metabolic need.",
+          "detail": "Fast or deep breathing can reduce carbon dioxide, changing blood chemistry and causing symptoms."
+        },
+        {
+          "title": "Symptom Loop",
+          "short": "Symptoms can feed fear.",
+          "detail": "Dizziness, tingling, chest tightness, and breathlessness can scare the person, which increases breathing speed and continues the loop."
+        },
+        {
+          "title": "Diagnosis of Exclusion",
+          "short": "Serious causes must be considered.",
+          "detail": "Asthma, COPD, pulmonary embolism, heart issues, infection, metabolic problems, substances, and medications can overlap."
+        },
+        {
+          "title": "Slow Breathing",
+          "short": "Controlled exhale can help when safe.",
+          "detail": "Gentle slowed breathing and anxiety treatment may help panic-related hyperventilation after red flags are ruled out."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Rapid Breathing, CO2 Drop & Serious-Cause Screening",
+          "sections": [
+            {
+              "heading": "Stage 1 — Overbreathing",
+              "body": [
+                "Hyperventilation means breathing faster or deeper than the body needs.",
+                "This can lower carbon dioxide and cause dizziness, tingling, chest tightness, shortness of breath, palpitations, and fear."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Panic Loop",
+              "body": [
+                "Panic can trigger hyperventilation, and hyperventilation symptoms can trigger more panic.",
+                "The loop is obnoxious because the body mistakes its own alarm for proof of danger. Classic nervous-system nonsense."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Rule Out Danger",
+              "body": [
+                "Hyperventilation can overlap with asthma, COPD, pulmonary embolism, heart issues, infection, pain, substances, medications, and metabolic problems.",
+                "Chest pain, fainting, confusion, blue lips, severe shortness of breath, or first/worst episode needs medical evaluation."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Treatment Direction",
+              "body": [
+                "When serious causes are ruled out, treatment may include slow breathing, CBT, panic/anxiety treatment, exposure work, grounding, medication when appropriate, and trigger planning.",
+                "Paper-bag breathing is not generally recommended because it can be dangerous when the cause is not simple anxiety."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Gas Pedal Stuck Down",
+          "paragraphs": [
+            "Your breath is a car and the gas pedal is stuck to the floor.",
+            "The engine revs, carbon dioxide drops, your hands tingle, your chest feels weird, and panic shouts, see, we are dying.",
+            "Maybe it is panic. Maybe it is asthma, heart, clot, infection, or something else trying to wear the same costume.",
+            "So check red flags first, then slow the breath like a person taking the keys back from a raccoon.",
+            "Slow the gas pedal safely or keep letting panic drive the breathing. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Panic Loop Reality Check",
+          "paragraphs": [
+            "You may have hyperventilation. You may also have a panic-speed-and-overdrive pattern.",
+            "Medical first: chest pain, fainting, confusion, blue lips, severe shortness of breath, or first/worst episode needs care.",
+            "The hard truth: fighting the breath often speeds the loop.",
+            "The other truth: you are not broken. Your alarm system is over-firing, and it can be retrained once danger is ruled out.",
+            "Slow the gas pedal safely or keep letting panic drive the breathing. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Wind / Panic Image",
+          "tag": "Speed",
+          "paragraphs": [
+            "Symbolically, hyperventilation can map to life moving too fast.",
+            "Medically, serious causes must be excluded."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Overdrive Self",
+          "tag": "Speed",
+          "paragraphs": [
+            "The Overdrive Self tries to outrun feeling.",
+            "The reset is slowing without forcing."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Gas Pedal",
+          "tag": "Breath Loop",
+          "paragraphs": [
+            "The gas pedal image captures rapid breathing feeding panic.",
+            "The driver needs skill, not shame."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "False Alarm",
+          "tag": "Nervous System",
+          "paragraphs": [
+            "A false alarm can feel real because the sensations are real.",
+            "Real symptoms still deserve proper screening."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Slow the Exhale",
+          "tag": "Reset",
+          "paragraphs": [
+            "The reset is red-flag screening, slow exhale, grounding, and anxiety care when appropriate.",
+            "No paper-bag theater."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Gas Pedal Release & Safe Breathing Reset",
+        "modality": "Safety-First Regulation",
+        "steps": [
+          "Check red flags: chest pain, fainting, confusion, blue lips, severe shortness of breath, wheeze, heart symptoms, clot risk, or first/worst episode.",
+          "If red flags are present, seek medical care.",
+          "Do not use paper-bag breathing.",
+          "If safe, breathe gently: inhale normally, then exhale slowly for longer than the inhale.",
+          "Name five things you see and keep the exhale slow until the loop softens."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Hyperventilation may require medical evaluation, emergency care, specialist treatment, medication, monitoring, or long-term management.",
+        "items": [
+          {
+            "label": "Medical screening",
+            "detail": "First, severe, unexplained, or red-flag episodes need evaluation."
+          },
+          {
+            "label": "Slow exhale breathing",
+            "detail": "Longer exhale breathing can help settle panic-related hyperventilation when safe."
+          },
+          {
+            "label": "CBT/panic treatment",
+            "detail": "CBT, exposure-based approaches, grounding, and appropriate medication can help recurrent panic-related episodes."
+          },
+          {
+            "label": "Trigger review",
+            "detail": "Asthma, COPD, heart symptoms, clot risk, infection, substances, medications, and metabolic issues should be considered."
+          }
+        ],
+        "avoid": [
+          "Do not ignore chest pain, fainting, confusion, blue lips, severe shortness of breath, wheeze, or first/worst episode.",
+          "Do not breathe into a paper bag unless specifically medically directed."
+        ]
+      },
+      "brutalActions": [
+        "Screen danger signs.",
+        "Stop the paper-bag movie scene.",
+        "Lengthen the exhale.",
+        "Treat panic/anxiety if this repeats."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Hyperventilation is breathing faster or deeper than the body needs, lowering carbon dioxide and sometimes causing dizziness, tingling, chest tightness, shortness of breath, palpitations, numbness, hand cramps, and fear. It can occur with panic/anxiety but can also be triggered by asthma, COPD, pulmonary embolism, heart problems, metabolic issues, medication/substance effects, infection, pain, or other medical conditions. Hyperventilation syndrome is a diagnosis of exclusion.",
+        "protocol": [
+          "Track onset, trigger, panic symptoms, chest pain, fainting, confusion, wheeze, oxygen if available, asthma/COPD history, clot risk, heart symptoms, fever, substances, medications, and whether episodes recur.",
+          "Use emergency care when symptoms match red flags. Use medical/specialist care for diagnosis, monitoring, and treatment.",
+          "Symbolic interpretation never replaces emergency care, prescribed medication, specialist care, or treatment."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Gas Pedal Stuck Down",
+        "metaphorText": "Your breath is a car and the gas pedal is stuck to the floor.",
+        "wittyAdvice": "Slow the gas pedal safely or keep letting panic drive the breathing. Your choice."
+      },
+      "brutal": {
+        "realityCheck": "You may have hyperventilation. You may also have a panic-speed-and-overdrive pattern.",
+        "protocolTitle": "RELEASE THE GAS PEDAL",
+        "protocolSteps": [
+          "Check red flags.",
+          "No paper bag.",
+          "Long slow exhale.",
+          "Ground attention.",
+          "Treat recurring panic/anxiety."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Chest pain, severe shortness of breath, blue lips/skin, or low oxygen concern",
+        "Confusion, fainting, loss of consciousness, severe weakness, or neurologic symptoms",
+        "Wheezing/asthma symptoms, COPD history, pulmonary embolism risk, heart disease, or irregular heartbeat",
+        "First episode, worst episode, or unexplained rapid breathing",
+        "Fever, infection concern, overdose/substance issue, medication reaction, pregnancy, or metabolic risk"
+      ],
+      "seek_immediate_care_if": [
+        "Chest pain, fainting, confusion, blue lips, severe shortness of breath, first/worst episode, clot/heart/asthma concern, or loss of consciousness occurs"
+      ],
+      "schedule_care_if": [
+        "Episodes recur, panic attacks are suspected, breathing symptoms are unexplained, or anxiety treatment/medical screening is needed"
+      ],
+      "self_care_allowed_if": "After red flags are ruled out, gentle slow exhale breathing, grounding, and panic-management skills may help.",
+      "do_not_ignore": "Hyperventilation can be panic-related, but serious heart, lung, clot, infection, metabolic, or medication causes can mimic it.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure hyperventilation."
+    }
+  },
+  {
+    "id": "lung-problems",
+    "medical_safety": {
+      "critical_alerts": [
+        "Chest pain, pressure, squeezing, or fullness",
+        "Pain radiating to the arm, shoulder, neck, jaw, or back",
+        "Severe shortness of breath or difficulty breathing",
+        "Fainting, dizziness, or lightheadedness",
+        "Bluish tint to lips, face, or fingernails (cyanosis)",
+        "Coughing up blood or pink-tinged sputum"
+      ],
+      "seek_immediate_care_if": [
+        "You experience sudden chest pain or pressure, especially if spreading to the arm, jaw, or back",
+        "You have severe shortness of breath, feel faint, or develop blue lips",
+        "A rapid, irregular, or fluttering heartbeat occurs suddenly along with sweating, nausea, or profound weakness"
+      ],
+      "schedule_care_if": [
+        "You experience occasional mild shortness of breath during normal daily activities",
+        "You have persistent coughing, wheezing, or blood pressure readings that are consistently elevated",
+        "You experience occasional heart palpitations or skipping beats that do not may contribute to dizziness or pain"
+      ],
+      "self_care_allowed_if": "Slow diaphragmatic breathing and relaxation techniques can help soothe mild, stress-induced chest tightness or hyperventilation.",
+      "do_not_ignore": "Chest or breathing discomfort requires immediate medical attention to rule out life-threatening cardiac or pulmonary emergencies.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease. Seek professional medical care for diagnosis, treatment, medication decisions, or urgent symptoms."
+    }
+  },
+  {
+    "id": "pneumonia",
+    "medical_safety": {
+      "critical_alerts": [
+        "Chest pain, pressure, squeezing, or fullness",
+        "Pain radiating to the arm, shoulder, neck, jaw, or back",
+        "Severe shortness of breath or difficulty breathing",
+        "Fainting, dizziness, or lightheadedness",
+        "Bluish tint to lips, face, or fingernails (cyanosis)",
+        "Coughing up blood or pink-tinged sputum"
+      ],
+      "seek_immediate_care_if": [
+        "You experience sudden chest pain or pressure, especially if spreading to the arm, jaw, or back",
+        "You have severe shortness of breath, feel faint, or develop blue lips",
+        "A rapid, irregular, or fluttering heartbeat occurs suddenly along with sweating, nausea, or profound weakness"
+      ],
+      "schedule_care_if": [
+        "You experience occasional mild shortness of breath during normal daily activities",
+        "You have persistent coughing, wheezing, or blood pressure readings that are consistently elevated",
+        "You experience occasional heart palpitations or skipping beats that do not may contribute to dizziness or pain"
+      ],
+      "self_care_allowed_if": "Slow diaphragmatic breathing and relaxation techniques can help soothe mild, stress-induced chest tightness or hyperventilation.",
+      "do_not_ignore": "Chest or breathing discomfort requires immediate medical attention to rule out life-threatening cardiac or pulmonary emergencies.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease. Seek professional medical care for diagnosis, treatment, medication decisions, or urgent symptoms."
+    }
+  },
+  {
+    "id": "breast-cancer",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Dense immovable pressure, sharp stab, pause.",
+        "hapticPattern": [
+          2000,
+          120,
+          500,
+          3000
+        ],
+        "uiBackgroundAccent": "#E8A0A0"
+      },
+      "hero": {
+        "primaryPattern": "Breast changes need prompt medical evaluation; screening and treatment decisions depend on risk, imaging, biopsy, pathology, and tumor biology.",
+        "cascade": [
+          "Breast Change",
+          "Imaging/Biopsy",
+          "Subtype/Staging",
+          "Treatment Plan"
+        ],
+        "tags": [
+          "breast cancer",
+          "breast lump",
+          "mammogram"
+        ],
+        "safetyPreview": "New lump, nipple discharge, skin dimpling, nipple inversion, swelling, redness, abnormal mammogram, or family/genetic risk needs medical evaluation."
+      },
+      "biologyPathway": [
+        {
+          "title": "Abnormal Growth",
+          "short": "Cells grow outside normal control.",
+          "detail": "Cancer involves genetic and cellular changes that let cells grow, invade, or spread depending on type and stage."
+        },
+        {
+          "title": "Diagnosis",
+          "short": "Imaging, labs, biopsy, and staging guide care.",
+          "detail": "Cancer workup depends on the organ involved and often requires pathology confirmation."
+        },
+        {
+          "title": "Treatment",
+          "short": "Treatment is type- and stage-specific.",
+          "detail": "Surgery, radiation, chemotherapy, immunotherapy, targeted therapy, hormone therapy, surveillance, or combinations may be used."
+        },
+        {
+          "title": "Support",
+          "short": "Emotional care belongs alongside treatment.",
+          "detail": "Counseling, support groups, symptom control, nutrition, sleep, and practical help matter. Cancer already brings enough paperwork from hell."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Breast Change, Imaging, Biopsy & Tumor Biology",
+          "sections": [
+            {
+              "heading": "Stage 1 — Breast Change",
+              "body": [
+                "A new lump or change in breast/nipple/skin deserves evaluation.",
+                "Do not negotiate with a lump like it is a roommate who might move out."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Diagnosis",
+              "body": [
+                "Evaluation may include clinical exam, mammogram, ultrasound, MRI, biopsy, and pathology.",
+                "Subtype markers like hormone receptors and HER2 can affect treatment."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Treatment",
+              "body": [
+                "Treatment may include surgery, radiation, chemotherapy, hormone therapy, targeted therapy, immunotherapy, or combinations.",
+                "Plans vary. Cancer refuses the convenience of one-size-fits-all."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Genetics and Support",
+              "body": [
+                "Family history or young diagnosis may prompt genetic counseling/testing.",
+                "Support matters because fear does not become smaller when carried alone."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Overburdened Nurturing Field",
+          "paragraphs": [
+            "The nurturing field found a hard knot, and no, the answer is not pretending the field is just moody.",
+            "The useful plan is not denial, not panic, and not internet supplement roulette.",
+            "The useful plan is evaluation, diagnosis, staging, treatment, support, and asking very specific questions until the medical fog starts behaving.",
+            "The symbolism can help with meaning. It does not get to fire the oncologist.",
+            "Evaluate the lump, build the care team, and stop making the nurturer carry the whole farm alone. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Medical Reality Check",
+          "paragraphs": [
+            "You may have Breast Cancer or a cancer concern. You may also have a shock-and-meaning pattern.",
+            "Medical first: suspected cancer needs prompt evaluation. Diagnosed cancer needs an oncology plan.",
+            "Screening, biopsy, imaging, staging, and treatment decisions belong with qualified clinicians.",
+            "Symbolically, ask what this diagnosis forces you to face, but do not blame yourself for cellular disease.",
+            "Evaluate the lump, build the care team, and stop making the nurturer carry the whole farm alone. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Qi Stagnation / Blood Stasis Image",
+          "tag": "Meaning Layer",
+          "paragraphs": [
+            "In TCM imagery, masses may be discussed through stagnation or stasis.",
+            "Medically, cancer is cellular disease requiring oncology care."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "The Nurturer",
+          "tag": "Archetype",
+          "paragraphs": [
+            "The symbolic layer here is caregiving, overgiving, receiving support, and body trust without self-blame.",
+            "Meaning can support coping. It must never become blame."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "The Overburdened Nurturing Field",
+          "tag": "Metaphor",
+          "paragraphs": [
+            "The breast is the nurturing field, and a suspicious lump or change is not a metaphor to solve. It is a signal to evaluate.",
+            "The metaphor is emotional scaffolding, not a treatment plan."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Support System",
+          "tag": "Care",
+          "paragraphs": [
+            "Cancer care is a team sport nobody asked to join.",
+            "Bring notes, questions, second opinions when needed, and a person who can remember what the doctor said while your brain becomes soup."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Treatment Plus Meaning",
+          "tag": "Reset",
+          "paragraphs": [
+            "The reset is medical action plus nervous-system support.",
+            "Both matter. One does not replace the other."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Breast Care & Support Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit somewhere safe.",
+          "Place one hand on the heart and one on the affected area if comfortable.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale slowly for 8 seconds.",
+          "Think: I am not alone. I take the next medical step. I support my body without blaming it."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Breast Cancer may require medical evaluation, diagnosis, and condition-specific treatment.",
+        "items": [
+          {
+            "label": "Prompt evaluation",
+            "detail": "New breast or nipple changes deserve medical evaluation."
+          },
+          {
+            "label": "Screening",
+            "detail": "Follow clinician guidance for mammograms and risk-based screening."
+          },
+          {
+            "label": "Genetic risk",
+            "detail": "Family history may warrant genetic counseling/testing."
+          },
+          {
+            "label": "Treatment planning",
+            "detail": "Ask about stage, subtype, receptors, treatment goals, and side effects."
+          }
+        ],
+        "avoid": [
+          "Do not delay evaluation of a lump or nipple/skin change.",
+          "Do not replace oncology care with alternative protocols.",
+          "Do not turn breast cancer into a punishment for caregiving."
+        ]
+      },
+      "brutalActions": [
+        "Schedule or keep medical evaluation.",
+        "Write down symptoms and questions.",
+        "Bring support to appointments.",
+        "Do not let fear, shame, or miracle-cure marketing run the treatment plan."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Breast cancer is cancer arising in breast tissue. Warning signs can include a new lump, thickening, nipple discharge, nipple inversion, skin dimpling, breast swelling, redness, pain, or abnormal mammogram. Treatment depends on subtype, stage, hormone/HER2 status, genetics, and overall health.",
+        "protocol": [
+          "Track symptoms, screening history, family history, diagnosis stage if known, treatment plan, side effects, weight loss, pain, bleeding, fatigue, fever, infection signs, and urgent changes. Follow oncology guidance.",
+          "Use medical evaluation when symptoms are new, severe, progressive, persistent, recurrent, or paired with red flags.",
+          "Symbolic interpretation never replaces diagnosis, screening, emergency care, or treatment."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Overburdened Nurturing Field",
+        "metaphorText": "The nurturing field found a hard knot, and no, the answer is not pretending the field is just moody.",
+        "wittyAdvice": "Evaluate the lump, build the care team, and stop making the nurturer carry the whole farm alone. Your choice."
+      },
+      "brutal": {
+        "realityCheck": "You may have Breast Cancer or a cancer concern. You may also have a shock-and-meaning pattern.",
+        "protocolTitle": "MEDICAL CARE FIRST",
+        "protocolSteps": [
+          "Evaluate symptoms.",
+          "Confirm diagnosis.",
+          "Stage accurately.",
+          "Follow treatment plan.",
+          "Use emotional support."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "New breast lump, hard mass, or rapidly changing area",
+        "Bloody nipple discharge, nipple inversion, skin dimpling, peau d’orange, swelling, redness, or warmth",
+        "Abnormal mammogram/ultrasound/MRI or clinician concern",
+        "Fever, severe treatment side effects, infection signs, or uncontrolled pain during treatment"
+      ],
+      "seek_immediate_care_if": [
+        "Severe symptoms, bleeding, trouble breathing, neurologic deficits, severe pain, infection signs during treatment, or feeling medically unsafe occur"
+      ],
+      "schedule_care_if": [
+        "A breast change, lump, abnormal screening result, or family/genetic risk needs evaluation",
+        "Treatment planning, second opinion, or side-effect management is needed"
+      ],
+      "self_care_allowed_if": "Supportive routines, sleep, nutrition, movement as tolerated, counseling, and support groups may help alongside medical care.",
+      "do_not_ignore": "Cancer symptoms, screening abnormalities, new lumps, unexplained weight loss, bleeding, persistent cough, neurologic symptoms, or treatment side effects need medical guidance.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure cancer."
+    }
+  },
+  {
+    "id": "lung-cancer",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Tight breathless pressure, sharp gasp, pause.",
+        "hapticPattern": [
+          2000,
+          120,
+          500,
+          3000
+        ],
+        "uiBackgroundAccent": "#8B7B7B"
+      },
+      "hero": {
+        "primaryPattern": "Persistent cough, coughing blood, shortness of breath, chest pain, unexplained weight loss, or high-risk smoking history needs medical evaluation and possible screening.",
+        "cascade": [
+          "Airway Signal",
+          "Imaging",
+          "Biopsy/Staging",
+          "Treatment Plan"
+        ],
+        "tags": [
+          "lung cancer",
+          "persistent cough",
+          "coughing blood"
+        ],
+        "safetyPreview": "Coughing blood, persistent/worsening cough, chest pain, shortness of breath, unexplained weight loss, recurrent pneumonia, or high-risk smoking history needs care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Abnormal Growth",
+          "short": "Cells grow outside normal control.",
+          "detail": "Cancer involves genetic and cellular changes that let cells grow, invade, or spread depending on type and stage."
+        },
+        {
+          "title": "Diagnosis",
+          "short": "Imaging, labs, biopsy, and staging guide care.",
+          "detail": "Cancer workup depends on the organ involved and often requires pathology confirmation."
+        },
+        {
+          "title": "Treatment",
+          "short": "Treatment is type- and stage-specific.",
+          "detail": "Surgery, radiation, chemotherapy, immunotherapy, targeted therapy, hormone therapy, surveillance, or combinations may be used."
+        },
+        {
+          "title": "Support",
+          "short": "Emotional care belongs alongside treatment.",
+          "detail": "Counseling, support groups, symptom control, nutrition, sleep, and practical help matter. Cancer already brings enough paperwork from hell."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Persistent Cough, Imaging, Biopsy & Lung Cancer Screening",
+          "sections": [
+            {
+              "heading": "Stage 1 — Lung Signals",
+              "body": [
+                "Persistent cough, coughing blood, shortness of breath, chest pain, hoarseness, and unexplained weight loss need evaluation.",
+                "The lungs should not have to send smoke signals."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Screening",
+              "body": [
+                "High-risk adults may qualify for annual low-dose CT screening.",
+                "Screening is for people at risk, not a replacement for quitting smoking or symptom evaluation."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Diagnosis",
+              "body": [
+                "Workup may include chest imaging, CT, PET, bronchoscopy, biopsy, and molecular testing.",
+                "Tumor markers can affect targeted therapy or immunotherapy options."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Treatment",
+              "body": [
+                "Treatment may include surgery, radiation, chemotherapy, immunotherapy, targeted therapy, or palliative/supportive care depending on type and stage.",
+                "Air matters. This should not be controversial."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Blocked Air System",
+          "paragraphs": [
+            "The air system is throwing alarms, and pretending the smoke detector is just dramatic is how humans lose buildings.",
+            "The useful plan is not denial, not panic, and not internet supplement roulette.",
+            "The useful plan is evaluation, diagnosis, staging, treatment, support, and asking very specific questions until the medical fog starts behaving.",
+            "The symbolism can help with meaning. It does not get to fire the oncologist.",
+            "Check the lungs and build the plan, or keep asking breath to work around a blocked air system. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Medical Reality Check",
+          "paragraphs": [
+            "You may have Lung Cancer or a cancer concern. You may also have a shock-and-meaning pattern.",
+            "Medical first: suspected cancer needs prompt evaluation. Diagnosed cancer needs an oncology plan.",
+            "Screening, biopsy, imaging, staging, and treatment decisions belong with qualified clinicians.",
+            "Symbolically, ask what this diagnosis forces you to face, but do not blame yourself for cellular disease.",
+            "Check the lungs and build the plan, or keep asking breath to work around a blocked air system. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Qi Stagnation / Blood Stasis Image",
+          "tag": "Meaning Layer",
+          "paragraphs": [
+            "In TCM imagery, masses may be discussed through stagnation or stasis.",
+            "Medically, cancer is cellular disease requiring oncology care."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "The Breath Keeper",
+          "tag": "Archetype",
+          "paragraphs": [
+            "The symbolic layer here is breath, grief, receiving life, smoke, exposure, and fear without blame.",
+            "Meaning can support coping. It must never become blame."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "The Blocked Air System",
+          "tag": "Metaphor",
+          "paragraphs": [
+            "The lungs are the air system, and a persistent cough or blood in the sputum is not something to file under probably fine.",
+            "The metaphor is emotional scaffolding, not a treatment plan."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Support System",
+          "tag": "Care",
+          "paragraphs": [
+            "Cancer care is a team sport nobody asked to join.",
+            "Bring notes, questions, second opinions when needed, and a person who can remember what the doctor said while your brain becomes soup."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Treatment Plus Meaning",
+          "tag": "Reset",
+          "paragraphs": [
+            "The reset is medical action plus nervous-system support.",
+            "Both matter. One does not replace the other."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Breath System & Care Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit somewhere safe.",
+          "Place one hand on the heart and one on the affected area if comfortable.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale slowly for 8 seconds.",
+          "Think: I am not alone. I take the next medical step. I support my body without blaming it."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Lung Cancer may require medical evaluation, diagnosis, and condition-specific treatment.",
+        "items": [
+          {
+            "label": "Prompt symptom care",
+            "detail": "Coughing blood, persistent cough, chest pain, shortness of breath, or weight loss needs evaluation."
+          },
+          {
+            "label": "Screening if high risk",
+            "detail": "Ask about low-dose CT if age/smoking history fits screening criteria."
+          },
+          {
+            "label": "Smoking support",
+            "detail": "Quitting support improves health at any stage and belongs without shame."
+          },
+          {
+            "label": "Molecular testing",
+            "detail": "Ask whether tumor testing affects targeted or immune treatment options."
+          }
+        ],
+        "avoid": [
+          "Do not ignore coughing blood or persistent cough.",
+          "Do not delay evaluation because you fear the answer.",
+          "Do not replace oncology care with lung detox nonsense."
+        ]
+      },
+      "brutalActions": [
+        "Schedule or keep medical evaluation.",
+        "Write down symptoms and questions.",
+        "Bring support to appointments.",
+        "Do not let fear, shame, or miracle-cure marketing run the treatment plan."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Lung cancer is cancer arising in lung tissue. Warning signs can include persistent or changing cough, coughing blood, shortness of breath, chest pain, hoarseness, unexplained weight loss, recurrent pneumonia, fatigue, or wheezing. High-risk people may qualify for annual low-dose CT screening.",
+        "protocol": [
+          "Track symptoms, screening history, family history, diagnosis stage if known, treatment plan, side effects, weight loss, pain, bleeding, fatigue, fever, infection signs, and urgent changes. Follow oncology guidance.",
+          "Use medical evaluation when symptoms are new, severe, progressive, persistent, recurrent, or paired with red flags.",
+          "Symbolic interpretation never replaces diagnosis, screening, emergency care, or treatment."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Blocked Air System",
+        "metaphorText": "The air system is throwing alarms, and pretending the smoke detector is just dramatic is how humans lose buildings.",
+        "wittyAdvice": "Check the lungs and build the plan, or keep asking breath to work around a blocked air system. Your choice."
+      },
+      "brutal": {
+        "realityCheck": "You may have Lung Cancer or a cancer concern. You may also have a shock-and-meaning pattern.",
+        "protocolTitle": "MEDICAL CARE FIRST",
+        "protocolSteps": [
+          "Evaluate symptoms.",
+          "Confirm diagnosis.",
+          "Stage accurately.",
+          "Follow treatment plan.",
+          "Use emotional support."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Coughing blood, severe shortness of breath, chest pain, blue lips, or respiratory distress",
+        "Persistent or worsening cough, recurrent pneumonia, unexplained weight loss, hoarseness, or fatigue",
+        "Abnormal chest imaging, high-risk smoking history, asbestos/radon/occupational exposure concern",
+        "Fever/infection signs during treatment or severe treatment side effects"
+      ],
+      "seek_immediate_care_if": [
+        "Severe symptoms, bleeding, trouble breathing, neurologic deficits, severe pain, infection signs during treatment, or feeling medically unsafe occur"
+      ],
+      "schedule_care_if": [
+        "Symptoms persist or imaging is abnormal",
+        "High-risk screening eligibility, smoking cessation support, diagnosis, staging, or treatment planning is needed"
+      ],
+      "self_care_allowed_if": "Supportive routines, sleep, nutrition, movement as tolerated, counseling, and support groups may help alongside medical care.",
+      "do_not_ignore": "Cancer symptoms, screening abnormalities, new lumps, unexplained weight loss, bleeding, persistent cough, neurologic symptoms, or treatment side effects need medical guidance.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure cancer."
+    }
+  }
+]

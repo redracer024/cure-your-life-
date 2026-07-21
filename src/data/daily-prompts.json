@@ -1,0 +1,37 @@
+[
+  {
+    "id": "dp-1",
+    "prompt": "The Posture Check",
+    "category": "Back & Shoulders",
+    "reflectionQuestion": "Are you sitting like a gargoyle guarding a medieval cathedral right now? Take a deep breath, drop your shoulders away from your ears, and ask yourself: What heavy burden are you carrying today that doesn't actually belong to you?",
+    "sarcasticQuote": "\"My shoulders are up here to keep my ears warm, obviously, and not because I'm micromanaging 14 crises that are out of my control.\""
+  },
+  {
+    "id": "dp-2",
+    "prompt": "The Swallowed Truth",
+    "category": "Stomach & Gut",
+    "reflectionQuestion": "What did you agree to in the last 24 hours that made your stomach twist? What truth are you swallowing to maintain a false peace in a relationship or at work?",
+    "sarcasticQuote": "\"I love digesting passive-aggressive feedback for breakfast, it goes so well with my stomach acid and daily regret.\""
+  },
+  {
+    "id": "dp-3",
+    "prompt": "The Control Surrender",
+    "category": "Head & Neck",
+    "reflectionQuestion": "Are you currently trying to calculate 50 moves ahead in a game you aren't even playing? What would happen if you accepted that you cannot control the outcome of next week?",
+    "sarcasticQuote": "\"If I just think about this problem for 4 more hours straight, I'm sure the universe will bend to my specific desires out of sheer exhaustion.\""
+  },
+  {
+    "id": "dp-4",
+    "prompt": "The Boundary Inspection",
+    "category": "Skin & General",
+    "reflectionQuestion": "Who has access to your emotional energy without a ticket? Is your skin flaring or your energy draining because you are acting as a free emotional charging station for everyone else?",
+    "sarcasticQuote": "\"Please, walk all over my boundaries. I have plenty of skin cells to regenerate, and I love feeling physically exhausted for other people's comfort.\""
+  },
+  {
+    "id": "dp-5",
+    "prompt": "The Jaw Release",
+    "category": "Head & Neck",
+    "reflectionQuestion": "Unclench your jaw right now. Is your tongue pressed hard against the roof of your mouth? What unspoken words are you literally biting down on?",
+    "sarcasticQuote": "\"I hold my tension in my teeth because crushing my own enamel is much cheaper than telling people how I actually feel.\""
+  }
+]

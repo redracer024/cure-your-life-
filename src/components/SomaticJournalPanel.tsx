@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { SomaticJournalEntry } from '../types';
-import { AILMENTS } from '../data/dictionary';
+import { searchCoreAilments } from '../data';
 import { 
   Plus, 
   BookOpen, 
@@ -164,8 +164,8 @@ export default function SomaticJournalPanel() {
 
     // Step 1: Look for local dictionary keyword match
     const symptomLower = physicalSymptom.toLowerCase();
-    const matchedAilment = AILMENTS.find(a => 
-      symptomLower.includes(a.name.toLowerCase().split(' ')[0]) || 
+    const matchedAilment = searchCoreAilments(symptomLower).find(a =>
+      symptomLower.includes(a.name.toLowerCase().split(' ')[0]) ||
       symptomLower.includes(a.id.split('-')[0]) ||
       (a.category && symptomLower.includes(a.category.toLowerCase().split(' ')[0]))
     );

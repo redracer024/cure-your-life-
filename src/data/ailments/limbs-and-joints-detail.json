@@ -1,0 +1,2602 @@
+[
+  {
+    "id": "knee-pain",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Grinding scrape with sudden wobble and pause.",
+        "hapticPattern": [
+          2000,
+          120,
+          500,
+          3000
+        ],
+        "uiBackgroundAccent": "#6B7B7B"
+      },
+      "hero": {
+        "primaryPattern": "Knee pain may involve arthritis, kneecap tracking, meniscus injury, ligament injury, tendonitis, bursitis, trauma, gout, infection, overuse, weakness, alignment, or inflammatory disease.",
+        "cascade": [
+          "Load Lands",
+          "Joint Irritates",
+          "Support Wobbles",
+          "Cause Check"
+        ],
+        "tags": [
+          "#kneepain",
+          "#joint",
+          "#support"
+        ],
+        "safetyPreview": "Sudden severe pain, major swelling, redness/warmth, fever, inability to bear weight, locking, buckling, trauma, or calf swelling needs care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Weight-Bearing Joint",
+          "short": "The knee carries load and motion.",
+          "detail": "The knee handles walking, stairs, bending, rotation, and shock absorption. It is a hinge with delusions of being a suspension bridge."
+        },
+        {
+          "title": "Common Sources",
+          "short": "Cartilage, ligaments, tendons, bursa, and kneecap can all hurt.",
+          "detail": "Pain may come from OA, meniscus, ACL/MCL/LCL/PCL, patellofemoral pain, tendonitis, bursitis, gout, infection, or referred pain."
+        },
+        {
+          "title": "Instability Screen",
+          "short": "Buckling and locking matter.",
+          "detail": "Locking, giving way, major swelling, inability to bear weight, or trauma can suggest structural injury."
+        },
+        {
+          "title": "Support Plan",
+          "short": "Strength, mobility, diagnosis, and load matter.",
+          "detail": "Care can include rest, ice/heat, compression, physical therapy, strengthening, weight/load management, medications, injections, imaging, or surgery depending on cause."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Knee Load, Stability, and Injury Cascade",
+          "sections": [
+            {
+              "heading": "Stage 1 — Knee Pain Has Many Causes",
+              "body": [
+                "Knee pain is a symptom, not a diagnosis.",
+                "Possible causes include arthritis, meniscus tears, ligament injuries, tendonitis, bursitis, kneecap tracking problems, gout, infection, trauma, and inflammatory disease."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Stability and Load",
+              "body": [
+                "The knee needs strong muscles, cartilage, ligaments, tendons, alignment, and joint surfaces to cooperate.",
+                "When one piece quits, the whole department starts acting dramatic."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Red Flags",
+              "body": [
+                "Sudden severe pain, major swelling, inability to bear weight, locking, buckling, redness/warmth, fever, trauma, or calf swelling needs evaluation.",
+                "Do not turn a potentially injured joint into a motivational hike."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Rehab and Treatment",
+              "body": [
+                "Treatment depends on the cause and may include physical therapy, strengthening, load changes, medication, injections, imaging, or surgery.",
+                "Quadriceps, hamstrings, hips, ankles, and gait mechanics often matter because the knee has needy neighbors."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Rusty Hinge With a Trust Problem",
+          "paragraphs": [
+            "Your knee is a door hinge that has been carrying the entire building and receiving zero maintenance budget.",
+            "Sometimes the hinge is rusty. Sometimes the door is misaligned. Sometimes the screws are loose. Sometimes the whole frame got kicked by trauma.",
+            "Grinding, buckling, swelling, locking, or pain means the hinge is not just being moody.",
+            "Oil helps metaphorically. Strengthening helps physically. Diagnosis helps everyone stop guessing like medieval carpenters.",
+            "The knee wants forward movement, but it also wants support before it carries your heroic nonsense up another flight of stairs.",
+            "Oil the hinge and check the structure or keep asking a wobbly door to carry your future. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Next Step Reality Check",
+          "paragraphs": [
+            "You may have a knee problem. You may also have a stuck-forward-motion pattern.",
+            "Medical first: knee pain can be arthritis, ligament injury, meniscus tear, tendon irritation, bursitis, gout, infection, trauma, or tracking problem.",
+            "Symbolically, ask what step feels unsafe.",
+            "But do not ignore swelling, locking, buckling, fever, or inability to bear weight. Your future does not need you limping heroically into worse damage.",
+            "Build support, then move. Strength before swagger.",
+            "Oil the hinge and check the structure or keep asking a wobbly door to carry your future. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Kidney-Knee Support",
+          "tag": "Foundation",
+          "paragraphs": [
+            "In Chinese medicine imagery, the knee is tied to deep support and structural reserve.",
+            "Symbolically, knee pain can ask whether the next step has enough foundation."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Liver Sinews",
+          "tag": "Movement",
+          "paragraphs": [
+            "The Liver image relates to tendons, ligaments, and smooth motion.",
+            "When movement feels blocked, the knee becomes the argument."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Forward Mover",
+          "tag": "Next Step",
+          "paragraphs": [
+            "The Forward Mover wants direction.",
+            "The frightened part wants proof the ground will hold."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Rusty Hinge",
+          "tag": "Load Bearing",
+          "paragraphs": [
+            "The hinge image asks what needs oil, strengthening, or repair.",
+            "Metaphors are cute. X-rays and exams are sometimes cuter."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Supported Step",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The reset is support before momentum.",
+            "Forward movement works better when the joint trusts the load."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Knee Support & Next Step Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit with the affected knee supported.",
+          "Place one hand on the knee and one on the chest.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "Whisper: I can move forward with support. I do not force an unstable step."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Knee pain needs diagnosis when severe, persistent, swollen, unstable, traumatic, or function-limiting.",
+        "items": [
+          {
+            "label": "RICE basics",
+            "detail": "Rest, ice, compression, and elevation may help acute mild strain if no red flags are present."
+          },
+          {
+            "label": "Strengthening",
+            "detail": "Quadriceps, hamstrings, glutes, hips, and calves often matter for knee support."
+          },
+          {
+            "label": "Load management",
+            "detail": "Modify stairs, kneeling, running, jumping, and heavy carrying during flares."
+          },
+          {
+            "label": "Medical review",
+            "detail": "Imaging or physical therapy may be needed for locking, buckling, swelling, trauma, or persistent pain."
+          }
+        ],
+        "avoid": [
+          "Do not ignore inability to bear weight, severe swelling, redness/warmth, fever, calf swelling, trauma, locking, or buckling.",
+          "Do not force painful exercise through a mechanically unstable knee."
+        ]
+      },
+      "brutalActions": [
+        "Check red flags before pretending it is fine.",
+        "Strengthen the support system.",
+        "Stop using pain as a personality test.",
+        "Take one supported step, not ten dramatic ones."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Knee pain can come from osteoarthritis, patellofemoral pain, meniscus tears, ligament sprains/tears, tendonitis, bursitis, trauma, gout, infection, referred pain, overuse, weakness, alignment issues, or inflammatory arthritis.",
+        "protocol": [
+          "Track swelling, warmth, injury, locking, buckling, ability to bear weight, pain location, stairs, range of motion, and fever.",
+          "Seek urgent care for severe pain, major swelling, redness/warmth, fever, trauma, calf swelling, or inability to bear weight.",
+          "Use physical therapy, strengthening, load management, and medical evaluation based on cause."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for orthopedic or physical therapy care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Rusty Hinge With a Trust Problem",
+        "metaphorText": "The knee hinge is grinding, wobbling, and tired of being asked to carry a building with no maintenance budget.",
+        "wittyAdvice": "Oil the hinge, strengthen the frame, and stop making instability do motivational labor."
+      },
+      "brutal": {
+        "realityCheck": "You may have a knee problem. You may also have a stuck-forward-motion pattern.",
+        "protocolTitle": "SUPPORTED NEXT STEP",
+        "protocolSteps": [
+          "Check red flags.",
+          "Reduce load.",
+          "Strengthen support.",
+          "Treat the cause.",
+          "Move forward safely."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Sudden severe knee pain or major swelling",
+        "Inability to bear weight or walk",
+        "Redness, warmth, fever, or feeling ill",
+        "Knee locking, buckling, giving way, or obvious deformity",
+        "Pain after trauma, fall, twisting injury, or popping sound",
+        "Calf swelling, shortness of breath, chest pain, or clot concern"
+      ],
+      "seek_immediate_care_if": [
+        "You cannot bear weight, the knee is deformed, severely swollen, hot/red, or paired with fever",
+        "There is trauma with severe pain or instability",
+        "There are clot symptoms such as calf swelling with shortness of breath or chest pain"
+      ],
+      "schedule_care_if": [
+        "Knee pain persists, recurs, limits movement, or affects stairs/work/sleep",
+        "Locking, buckling, swelling, or mechanical symptoms occur",
+        "You need diagnosis, imaging, physical therapy, or arthritis/injury care"
+      ],
+      "self_care_allowed_if": "Rest, ice/heat, compression, elevation, gentle movement, and load modification may support mild non-traumatic pain without red flags.",
+      "do_not_ignore": "Knee pain has many causes; unstable, swollen, hot, traumatic, or function-limiting pain needs evaluation.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "arthritis",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Grinding stiff resistant pulse with sharp cracking release and pause.",
+        "hapticPattern": [
+          2000,
+          120,
+          300,
+          3000
+        ],
+        "uiBackgroundAccent": "#8B7B7B"
+      },
+      "hero": {
+        "primaryPattern": "Arthritis may involve osteoarthritis, rheumatoid arthritis, psoriatic arthritis, gout, infection, injury, autoimmune inflammation, cartilage loss, swelling, stiffness, pain, or reduced motion.",
+        "cascade": [
+          "Joint Irritates",
+          "Stiffness Builds",
+          "Movement Narrows",
+          "Cause Check"
+        ],
+        "tags": [
+          "#arthritis",
+          "#joints",
+          "#movement"
+        ],
+        "safetyPreview": "Hot/red/swollen joint, fever, severe pain, sudden swelling, trauma, rash, fatigue, morning stiffness over 30 minutes, or symmetrical swelling needs care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Joint Inflammation",
+          "short": "The joint becomes painful, stiff, or swollen.",
+          "detail": "Arthritis can involve cartilage, synovium, bone, tendons, ligaments, immune signaling, crystals, infection, or post-injury change."
+        },
+        {
+          "title": "OA vs Inflammatory Arthritis",
+          "short": "Wear-pattern and immune-pattern arthritis differ.",
+          "detail": "Osteoarthritis often relates to cartilage and mechanical load. Rheumatoid and psoriatic arthritis involve immune inflammation and need early care."
+        },
+        {
+          "title": "Red Flags",
+          "short": "Some joints are urgent.",
+          "detail": "A hot, red, swollen joint with fever or severe pain can signal infection or crystal disease. Morning stiffness, fatigue, and symmetrical swelling can suggest inflammatory arthritis."
+        },
+        {
+          "title": "Movement Support",
+          "short": "Motion helps, but diagnosis matters.",
+          "detail": "Gentle movement, strengthening, weight support, medication, injections, rheumatology, orthopedic care, or surgery may be appropriate depending on cause."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Joint Inflammation, Cartilage, and Movement Cascade",
+          "sections": [
+            {
+              "heading": "Stage 1 — Arthritis Is a Category",
+              "body": [
+                "Arthritis means joint pain, stiffness, inflammation, swelling, or reduced motion.",
+                "It is not one disease. It can be osteoarthritis, rheumatoid arthritis, psoriatic arthritis, gout, infection, injury-related, autoimmune, or other causes."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Movement Gets Expensive",
+              "body": [
+                "Inflamed or damaged joints can hurt, stiffen, grind, swell, or lose range of motion.",
+                "The gate squeaks because the hinge has a problem, not because the hinge has a weak mindset."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Early Diagnosis Matters",
+              "body": [
+                "Inflammatory arthritis can damage joints if ignored.",
+                "Morning stiffness over 30 minutes, symmetrical swelling, fatigue, rash, psoriasis, or multiple swollen joints deserve evaluation."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Treatment Is Not One Thing",
+              "body": [
+                "Care may include movement, strengthening, weight support, anti-inflammatory medication, disease-modifying medication, injections, splints, surgery, or specialist care.",
+                "The right plan depends on the cause, because joints are annoyingly specific."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Rusty Gate",
+          "paragraphs": [
+            "Your joints are gate hinges on an abandoned farm.",
+            "Some hinges are rusty from time and load. Some are being attacked by the immune system. Some have crystals in them because biology apparently collects decorative gravel.",
+            "The farmer keeps saying he'll oil it later. The gate keeps screaming.",
+            "Movement matters, but so does knowing whether the hinge needs oil, a new bolt, or a rheumatologist with a clipboard.",
+            "The goal is not becoming a statue. The goal is safer movement and less inflammatory nonsense.",
+            "Oil the gate properly or keep calling rust a personality trait. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Stiff Resistance Reality Check",
+          "paragraphs": [
+            "You may have an arthritis problem. You may also have a rigidity-and-resistance pattern.",
+            "Medical first: arthritis can be inflammatory, degenerative, infectious, crystal-related, autoimmune, injury-related, or systemic.",
+            "Do not explain away hot swollen joints with emotional symbolism. That is how people speedrun regret.",
+            "Symbolically, ask what you refuse to bend on.",
+            "Rigidity can feel like control until it starts costing movement.",
+            "Get the joint assessed. Move gently. Strengthen wisely. Treat the cause.",
+            "Oil the gate properly or keep calling rust a personality trait. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Liver Sinews",
+          "tag": "Flexibility",
+          "paragraphs": [
+            "In Chinese medicine imagery, Liver relates to tendons, sinews, and smooth movement.",
+            "Symbolically, joint stiffness can mirror blocked flexibility."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Kidney Bones",
+          "tag": "Structure",
+          "paragraphs": [
+            "Kidney imagery relates to bones and deep support.",
+            "The joint asks for both structure and flow."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Unyielding Self",
+          "tag": "Shadow Rigidity",
+          "paragraphs": [
+            "The Unyielding Self survives by refusing to bend.",
+            "The healthier pattern is flexibility without collapse."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Rusty Gate",
+          "tag": "Movement Symbol",
+          "paragraphs": [
+            "The rusty gate points to movement that has become costly.",
+            "Medical diagnosis determines whether the rust is wear, immune fire, crystals, injury, or infection."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Bend Without Breaking",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The reset is gentle movement, medical care, and emotional flexibility.",
+            "You are allowed to bend without surrendering your spine."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Joint Ease & Gate Oiling Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Place one hand near the affected joint or on the heart if multiple joints hurt.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "Imagine warm oil moving through the joint without forcing it.",
+          "Whisper: I allow safe movement. I release unnecessary resistance."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Arthritis type matters, and inflammatory or infected joints need medical care.",
+        "items": [
+          {
+            "label": "Diagnosis first",
+            "detail": "OA, RA, psoriatic arthritis, gout, infection, injury, and autoimmune causes need different treatment."
+          },
+          {
+            "label": "Gentle movement",
+            "detail": "Range-of-motion and strengthening can support function when safe."
+          },
+          {
+            "label": "Heat or cold",
+            "detail": "Heat may reduce stiffness; cold may reduce swelling after activity or flare."
+          },
+          {
+            "label": "Risk tracking",
+            "detail": "Track morning stiffness, swelling, redness, warmth, fatigue, fever, rash, psoriasis, gout pattern, and affected joints."
+          }
+        ],
+        "avoid": [
+          "Do not ignore hot red swollen joints, fever, severe sudden pain, trauma, or rapidly worsening symptoms.",
+          "Do not delay care for suspected RA or inflammatory arthritis."
+        ]
+      },
+      "brutalActions": [
+        "Identify the arthritis type.",
+        "Move gently instead of freezing solid.",
+        "Do not ignore hot swollen joints.",
+        "Bend on one thing emotionally, but get the joint checked medically."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Arthritis describes joint inflammation, pain, stiffness, swelling, and reduced motion. Causes include osteoarthritis, rheumatoid arthritis, psoriatic arthritis, gout, infection, lupus, injury, autoimmune disease, crystal disease, and other inflammatory or degenerative conditions.",
+        "protocol": [
+          "Track joint pattern, swelling, redness, warmth, stiffness duration, fatigue, fever, rash, psoriasis, trauma, and function.",
+          "Seek urgent care for hot swollen joint, fever, severe pain, sudden swelling, trauma, or suspected infection.",
+          "Seek early evaluation for morning stiffness, symmetrical swelling, or possible inflammatory arthritis."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for rheumatology or orthopedic care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Rusty Gate",
+        "metaphorText": "The hinge is stiff, the gate is screaming, and the farmer keeps pretending squeaking is a personality.",
+        "wittyAdvice": "Oil the hinge, diagnose the rust, and stop treating inflammation like a motivational issue."
+      },
+      "brutal": {
+        "realityCheck": "You may have an arthritis problem. You may also have a rigidity-and-resistance pattern.",
+        "protocolTitle": "BEND WITHOUT BREAKING",
+        "protocolSteps": [
+          "Identify the cause.",
+          "Move safely.",
+          "Treat inflammation.",
+          "Strengthen wisely.",
+          "Release unnecessary rigidity."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Hot, red, swollen joint or fever",
+        "Severe sudden joint pain, especially with swelling",
+        "Joint pain after trauma, fall, or injury",
+        "Morning stiffness longer than 30 minutes with swollen/symmetrical joints",
+        "Fatigue, rash, psoriasis, eye symptoms, weight loss, or systemic symptoms",
+        "Joint deformity, loss of function, or rapidly worsening pain"
+      ],
+      "seek_immediate_care_if": [
+        "A joint is hot, red, severely painful, swollen, or paired with fever",
+        "Joint pain follows major trauma or you cannot bear weight/use the joint",
+        "Symptoms suggest infection, gout crisis, fracture, or serious inflammatory flare"
+      ],
+      "schedule_care_if": [
+        "Joint pain persists, recurs, limits function, or includes stiffness/swelling",
+        "Morning stiffness, symmetrical swelling, fatigue, psoriasis, rash, or autoimmune symptoms are present",
+        "You need diagnosis, imaging, labs, rheumatology, orthopedic, or medication planning"
+      ],
+      "self_care_allowed_if": "Gentle movement, heat/cold, rest/activity balance, and tracking may support mild known arthritis without red flags.",
+      "do_not_ignore": "Arthritis is not one disease. Some types can damage joints or signal infection/systemic illness.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "carpal-tunnel",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Sharp electric zap, numb silence, crawling burn, and pause.",
+        "hapticPattern": [
+          300,
+          2000,
+          1000,
+          3000
+        ],
+        "uiBackgroundAccent": "#8B7B7B"
+      },
+      "hero": {
+        "primaryPattern": "CTS may involve median nerve compression, night numbness, tingling, wrist pain, thumb/index/middle finger symptoms, weakness, repetitive strain, pregnancy, diabetes, hypothyroidism, RA, or vibration exposure.",
+        "cascade": [
+          "Tunnel Narrows",
+          "Median Nerve Compresses",
+          "Signal Fades",
+          "Grip Weakens"
+        ],
+        "tags": [
+          "#carpaltunnel",
+          "#mediannerve",
+          "#wrist"
+        ],
+        "safetyPreview": "Progressive weakness, muscle wasting, constant numbness, severe pain, sudden loss of hand function, trauma, or neck/arm neurologic symptoms need care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Median Nerve Compression",
+          "short": "The nerve gets squeezed at the wrist.",
+          "detail": "The median nerve passes through the carpal tunnel. Pressure there can disrupt sensation and strength."
+        },
+        {
+          "title": "Symptom Map",
+          "short": "Thumb, index, middle, and part of ring finger are classic.",
+          "detail": "CTS often causes numbness, tingling, burning, pain, weakness, night waking, or dropping objects."
+        },
+        {
+          "title": "Risk Factors",
+          "short": "Work, health, and hormones can matter.",
+          "detail": "Repetitive hand use, wrist flexion, vibration tools, pregnancy, diabetes, hypothyroidism, rheumatoid arthritis, obesity, and anatomy can contribute."
+        },
+        {
+          "title": "Preventing Nerve Damage",
+          "short": "Persistent compression needs attention.",
+          "detail": "Splints, ergonomic changes, therapy, injections, medication review, or surgery may be needed depending on severity."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Median Nerve Compression & Hand Signal Loss",
+          "sections": [
+            {
+              "heading": "Stage 1 — The Tunnel Gets Crowded",
+              "body": [
+                "Carpal tunnel syndrome occurs when the median nerve is compressed at the wrist.",
+                "This can cause numbness, tingling, burning, pain, weakness, or clumsiness."
+              ]
+            },
+            {
+              "heading": "Stage 2 — The Signal Fades",
+              "body": [
+                "The median nerve supplies sensation to the thumb, index, middle, and part of the ring finger.",
+                "When the signal is squeezed, the hand may wake you at night, drop objects, or feel like it belongs to a ghost with poor ergonomics."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Causes and Contributors",
+              "body": [
+                "Repetitive strain, wrist position, pregnancy, diabetes, hypothyroidism, rheumatoid arthritis, obesity, anatomy, and vibration exposure can contribute.",
+                "Neck nerve problems can mimic CTS, so location and exam matter."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Care Check",
+              "body": [
+                "Progressive weakness, constant numbness, muscle wasting, severe pain, sudden loss of function, trauma, or neurologic symptoms need medical evaluation.",
+                "Untreated severe CTS can cause lasting nerve damage, which is a deeply stupid prize for ignoring tingles."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Pinched Garden Hose",
+          "paragraphs": [
+            "Your wrist is a garden hose and the median nerve is the water line.",
+            "A rock is sitting on the hose. The flowers, your fingers, are wilting and filing tiny botanical complaints.",
+            "The numbness is the water not getting through. The tingling is the water trying to force past the rock.",
+            "Sometimes the rock is repetitive work. Sometimes pregnancy fluid shifts. Sometimes diabetes, hypothyroidism, RA, anatomy, or tools that vibrate like tiny jackhammers.",
+            "Move the rock with splints, ergonomics, medical review, nerve testing if needed, and less heroic wrist abuse.",
+            "The hose cannot flow while you keep parking a boulder on it."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Grip Reality Check",
+          "paragraphs": [
+            "You may have a carpal tunnel problem. You may also have a grip-and-release pattern.",
+            "Medical first: CTS is median nerve compression. It is not solved by yelling at your wrist to be more emotionally available.",
+            "Symbolically, ask what you are holding too tightly.",
+            "But practically, check repetitive strain, wrist position, pregnancy, diabetes, thyroid, RA, and vibration exposure.",
+            "Open your hand emotionally, sure. Also wear the splint if recommended and stop sleeping with your wrist folded like cursed origami.",
+            "Move the rock off the hose or keep wondering why the flowers are numb. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Liver-Blood Flow",
+          "tag": "Hand Signal",
+          "paragraphs": [
+            "In Chinese medicine imagery, Liver Blood and Qi flow relate to tendons, grip, and movement.",
+            "CTS symbolically asks where the signal to act has been compressed."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Gripping Self",
+          "tag": "Control",
+          "paragraphs": [
+            "The Gripping Self holds tightly because release once felt unsafe.",
+            "The Releaser opens the hand without abandoning responsibility."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Narrow Passage",
+          "tag": "Compression",
+          "paragraphs": [
+            "The carpal tunnel is literally a narrow passage.",
+            "The metaphor writes itself, because apparently anatomy also does symbolism."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Pinched Hose",
+          "tag": "Signal Block",
+          "paragraphs": [
+            "The hose image points to signal loss.",
+            "The answer is pressure relief, not more grip."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Open the Hand",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The reset is splint/ergonomics/medical care plus release.",
+            "Signal returns when compression eases."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Median Nerve Signal & Open Hand Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit upright with arms supported and wrists neutral.",
+          "Open both hands gently without forcing stretch.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "Whisper: I release unnecessary grip. I allow the signal to flow."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Persistent or worsening CTS can cause nerve damage and may need medical treatment.",
+        "items": [
+          {
+            "label": "Neutral wrist splint",
+            "detail": "Night splinting may reduce wrist flexion and nerve compression when appropriate."
+          },
+          {
+            "label": "Ergonomics",
+            "detail": "Adjust keyboard, tools, grip force, vibration exposure, and repetitive wrist position."
+          },
+          {
+            "label": "Medical review",
+            "detail": "Evaluate diabetes, thyroid disease, pregnancy, RA, neck nerve issues, and severity."
+          },
+          {
+            "label": "Nerve testing",
+            "detail": "Nerve conduction studies may help confirm severity when symptoms persist or weakness appears."
+          }
+        ],
+        "avoid": [
+          "Do not ignore progressive weakness, muscle wasting, constant numbness, severe pain, trauma, or sudden loss of hand function.",
+          "Do not force aggressive stretches that worsen numbness or pain."
+        ]
+      },
+      "brutalActions": [
+        "Keep wrists neutral.",
+        "Use a night splint if recommended.",
+        "Check diabetes/thyroid/RA contributors.",
+        "Release one death-grip habit before your median nerve files for divorce."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Carpal tunnel syndrome occurs when the median nerve is compressed at the wrist, causing numbness, tingling, pain, burning, weakness, clumsiness, or symptoms in the thumb, index, middle, and part of the ring finger. Risks include repetitive hand use, wrist position, pregnancy, diabetes, hypothyroidism, rheumatoid arthritis, obesity, anatomy, and vibration exposure.",
+        "protocol": [
+          "Track finger distribution, night waking, weakness, dropping objects, repetitive use, wrist posture, and health contributors.",
+          "Try neutral wrist positioning and medical-guided splinting/ergonomic changes when appropriate.",
+          "Seek care for progressive weakness, muscle wasting, constant numbness, severe pain, trauma, or uncertain diagnosis."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for neurology, hand specialist, or occupational therapy care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Pinched Garden Hose",
+        "metaphorText": "The median nerve hose is pinched and the finger flowers are filing complaints.",
+        "wittyAdvice": "Move the rock, neutralize the wrist, and stop sleeping in cursed origami mode."
+      },
+      "brutal": {
+        "realityCheck": "You may have a carpal tunnel problem. You may also have a grip-and-release pattern.",
+        "protocolTitle": "MOVE THE ROCK",
+        "protocolSteps": [
+          "Neutral wrist.",
+          "Night splint if appropriate.",
+          "Review risk factors.",
+          "Get evaluated if weakness appears.",
+          "Open the hand."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Progressive hand weakness, dropping objects, or thumb muscle wasting",
+        "Constant numbness, severe pain, or symptoms that no longer come and go",
+        "Sudden loss of hand function, trauma, or severe swelling",
+        "Neck pain with arm weakness/numbness or symptoms outside median nerve pattern",
+        "Diabetes, hypothyroidism, rheumatoid arthritis, pregnancy, or bilateral symptoms",
+        "Symptoms interfering with sleep, work, driving, or tool safety"
+      ],
+      "seek_immediate_care_if": [
+        "There is sudden weakness, loss of hand function, trauma, severe pain/swelling, or neurologic symptoms",
+        "Symptoms suggest stroke, spinal/neck nerve compression, or serious injury",
+        "Hand weakness rapidly worsens"
+      ],
+      "schedule_care_if": [
+        "Numbness/tingling persists, recurs, wakes you at night, or causes dropping objects",
+        "Symptoms are bilateral or linked with diabetes, thyroid disease, pregnancy, RA, or repetitive work",
+        "Splinting/ergonomics do not help or diagnosis is uncertain"
+      ],
+      "self_care_allowed_if": "Neutral wrist positioning, rest breaks, ergonomic changes, and gentle movement may support mild intermittent symptoms without red flags.",
+      "do_not_ignore": "Persistent median nerve compression can cause lasting weakness or sensation loss.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "finger-thumb",
+    "medical_safety": {
+      "critical_alerts": [
+        "Sudden, severe, or excruciating pain with no obvious cause",
+        "Pain that begins after a major physical injury or trauma",
+        "Pain accompanied by fever, chills, night sweats, or unexplained weight loss",
+        "Pain with new neurological deficits like weakness, numbness, or loss of coordination",
+        "Pain that steadily worsens despite rest, splinting, or gentle care",
+        "New pain in a patient with a personal history of cancer"
+      ],
+      "seek_immediate_care_if": [
+        "You experience sudden, unbearable pain or pain following a major injury",
+        "Your pain is accompanied by high fever, confusion, or a cold, pale limb",
+        "You experience sudden weakness, numbness, or loss of bowel or bladder control"
+      ],
+      "schedule_care_if": [
+        "Your pain is persistent, gradually worsening, or lasts longer than 2-3 weeks",
+        "You have pain with unexplained weight loss, night sweats, or a history of cancer",
+        "Your joint or muscle pain is accompanied by persistent morning stiffness or visible swelling"
+      ],
+      "self_care_allowed_if": "Gentle movement, thermal therapy (ice/heat), and rest are reasonable for managing mild, transient muscular strains or familiar joint stiffness.",
+      "do_not_ignore": "Chronic or severe pain should not be masked with analgesics without a professional diagnosis of the underlying physical cause.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease. Seek professional medical care for diagnosis, treatment, medication decisions, or urgent symptoms."
+    }
+  },
+  {
+    "id": "finger-index",
+    "medical_safety": {
+      "critical_alerts": [
+        "Sudden, severe, or excruciating pain with no obvious cause",
+        "Pain that begins after a major physical injury or trauma",
+        "Pain accompanied by fever, chills, night sweats, or unexplained weight loss",
+        "Pain with new neurological deficits like weakness, numbness, or loss of coordination",
+        "Pain that steadily worsens despite rest, splinting, or gentle care",
+        "New pain in a patient with a personal history of cancer"
+      ],
+      "seek_immediate_care_if": [
+        "You experience sudden, unbearable pain or pain following a major injury",
+        "Your pain is accompanied by high fever, confusion, or a cold, pale limb",
+        "You experience sudden weakness, numbness, or loss of bowel or bladder control"
+      ],
+      "schedule_care_if": [
+        "Your pain is persistent, gradually worsening, or lasts longer than 2-3 weeks",
+        "You have pain with unexplained weight loss, night sweats, or a history of cancer",
+        "Your joint or muscle pain is accompanied by persistent morning stiffness or visible swelling"
+      ],
+      "self_care_allowed_if": "Gentle movement, thermal therapy (ice/heat), and rest are reasonable for managing mild, transient muscular strains or familiar joint stiffness.",
+      "do_not_ignore": "Chronic or severe pain should not be masked with analgesics without a professional diagnosis of the underlying physical cause.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease. Seek professional medical care for diagnosis, treatment, medication decisions, or urgent symptoms."
+    }
+  },
+  {
+    "id": "osteoporosis",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Hollow fragile vibration with sharp crack and long silence.",
+        "hapticPattern": [
+          2000,
+          120,
+          300,
+          4000
+        ],
+        "uiBackgroundAccent": "#8B8B8B"
+      },
+      "hero": {
+        "primaryPattern": "Osteoporosis may involve low bone density, fragile bone structure, fracture risk, menopause/aging, steroids, smoking/alcohol, low vitamin D/calcium, inactivity, thyroid/GI/kidney issues, or medication effects.",
+        "cascade": [
+          "Bone Density Falls",
+          "Structure Weakens",
+          "Fracture Risk Rises",
+          "Foundation Plan"
+        ],
+        "tags": [
+          "#osteoporosis",
+          "#DEXA",
+          "#fracture"
+        ],
+        "safetyPreview": "Fragility fracture, sudden severe back pain, height loss, stooped posture, hip/wrist/spine pain after minor trauma, or long-term steroid use needs care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Bone Remodeling",
+          "short": "Bone is constantly rebuilt.",
+          "detail": "Osteoblasts build bone and osteoclasts resorb bone. Osteoporosis happens when strength/density declines enough to raise fracture risk."
+        },
+        {
+          "title": "Silent Risk",
+          "short": "Often no symptoms until fracture.",
+          "detail": "Osteoporosis is often silent. A low-trauma fracture may be the first clue, which is a wildly rude notification system."
+        },
+        {
+          "title": "Risk Factors",
+          "short": "Age, menopause, meds, nutrition, and diseases matter.",
+          "detail": "Risk can rise with aging, postmenopause, family history, low weight, smoking, alcohol, low calcium/vitamin D, inactivity, corticosteroids, thyroid/parathyroid/GI/kidney issues, and some medications."
+        },
+        {
+          "title": "Prevention and Treatment",
+          "short": "Screening and fall prevention matter.",
+          "detail": "DXA/DEXA, FRAX/risk assessment, nutrition, resistance/weight-bearing exercise, balance, fall prevention, and medication can reduce risk depending on the case."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Bone Density, Fragility, and Fracture Risk",
+          "sections": [
+            {
+              "heading": "Stage 1 — Silent Bone Loss",
+              "body": [
+                "Osteoporosis is low bone strength/density that raises fracture risk.",
+                "It often has no obvious symptoms until a fracture occurs."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Fragility Fractures",
+              "body": [
+                "Common fracture sites include hip, spine, and wrist.",
+                "Sudden back pain, height loss, stooped posture, or fracture from minor trauma needs evaluation."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Risk Review",
+              "body": [
+                "Age, menopause, family history, low body weight, smoking, alcohol, low calcium/vitamin D, inactivity, corticosteroids, thyroid/GI/kidney disease, and some medications can contribute.",
+                "The skeleton is apparently affected by the entire life spreadsheet."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Treatment Plan",
+              "body": [
+                "Care may include DXA/DEXA scan, calcium/vitamin D review, resistance and weight-bearing exercise, balance training, fall prevention, and medication when appropriate.",
+                "Do not wait for a fracture to start respecting the foundation."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Hollow Tree",
+          "paragraphs": [
+            "Your bones are a tree trunk that has been quietly losing density while the forest committee remained optimistic.",
+            "From the outside, the tree may look fine. Inside, the structure can be getting porous.",
+            "The termites may be age, menopause, steroids, low vitamin D, low calcium, smoking, alcohol, inactivity, thyroid issues, GI problems, kidney disease, or plain genetic nonsense.",
+            "The next strong wind is a fall, a cough, a twist, or a minor trauma that should not break anything but does.",
+            "The plan is screening, nutrients, strength, balance, fall prevention, and medications when appropriate.",
+            "Rebuild the foundation properly or keep letting termites run facilities management. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Foundation Reality Check",
+          "paragraphs": [
+            "You may have an osteoporosis problem. You may also have a foundation-and-support pattern.",
+            "Medical first: osteoporosis is fracture risk. It needs screening, risk review, fall prevention, and treatment when indicated.",
+            "Symbolically, ask what has been hollowing your foundation.",
+            "What support have you refused? What depletion have you normalized? What load are you carrying without enough structure?",
+            "Receive support before collapse teaches the lesson louder.",
+            "Rebuild the foundation properly or keep letting termites run facilities management. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Kidney-Jing Foundation",
+          "tag": "Bone Reserve",
+          "paragraphs": [
+            "In Chinese medicine imagery, Kidney Jing relates to bones, marrow, aging, and deep reserve.",
+            "Symbolically, osteoporosis asks where the foundation needs replenishing."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Rooted One",
+          "tag": "Support",
+          "paragraphs": [
+            "The Rooted One receives support without apology.",
+            "Bones need load, nutrients, hormones, and protection, not martyrdom."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Hollow Tree",
+          "tag": "Fragile Strength",
+          "paragraphs": [
+            "The hollow tree may stand until the storm arrives.",
+            "Screening exists so the storm is not the first diagnosis."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Fall Prevention",
+          "tag": "Real-World Safety",
+          "paragraphs": [
+            "A strong foundation includes fewer trip hazards and better balance.",
+            "Very glamorous, if your hobbies include not breaking a hip."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Rebuild Density",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The reset is support, screening, movement, nutrients, and medication when needed.",
+            "The skeleton appreciates boring consistency."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Foundation & Bone Support Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit upright with one hand on the lower back and one on the heart.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "Whisper: I am supported. I can rebuild my foundation with care.",
+          "Then choose one practical action: schedule DXA, check vitamin D/calcium plan, walk, strength train, remove a trip hazard, or review medications."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Osteoporosis requires risk assessment, possible DXA/DEXA screening, and clinician-guided treatment.",
+        "items": [
+          {
+            "label": "Bone density testing",
+            "detail": "DXA/DEXA can assess bone mineral density and fracture risk when screening is appropriate."
+          },
+          {
+            "label": "Calcium and vitamin D review",
+            "detail": "Ask a clinician about intake, blood levels when indicated, and safe dosing."
+          },
+          {
+            "label": "Resistance and weight-bearing exercise",
+            "detail": "Strength and impact/loading, when safe, support bone and muscle."
+          },
+          {
+            "label": "Fall prevention",
+            "detail": "Balance training, vision checks, footwear, lighting, and removing trip hazards reduce fracture risk."
+          },
+          {
+            "label": "Medication options",
+            "detail": "Bisphosphonates and other bone medications may be appropriate based on risk."
+          }
+        ],
+        "avoid": [
+          "Do not ignore fragility fractures, sudden severe back pain, height loss, or hip/spine/wrist pain after minor trauma.",
+          "Do not start high-dose calcium/vitamin D or stop bone medications without medical guidance."
+        ]
+      },
+      "brutalActions": [
+        "Check fracture risk instead of guessing.",
+        "Build strength and balance.",
+        "Remove one trip hazard today.",
+        "Receive support before your skeleton has to send a formal complaint."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Osteoporosis is low bone mass and structural bone deterioration that increases fracture risk, often without symptoms until a fragility fracture.",
+        "protocol": [
+          "Review risk factors and consider DXA/DEXA screening when appropriate.",
+          "Use clinician-guided calcium/vitamin D, resistance/weight-bearing exercise, balance training, fall prevention, and medication when indicated.",
+          "Seek care for fractures after minor trauma, sudden severe back pain, height loss, or new spine/hip/wrist pain."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for bone-health care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Hollow Tree",
+        "metaphorText": "The tree may look fine outside while the trunk gets hollow, because bones enjoy being secretive until invoices arrive.",
+        "wittyAdvice": "Screen the foundation before the storm performs diagnostics."
+      },
+      "brutal": {
+        "realityCheck": "You may have an osteoporosis problem. You may also have a foundation-and-support pattern.",
+        "protocolTitle": "REBUILD THE FOUNDATION",
+        "protocolSteps": [
+          "Get screened.",
+          "Review risk factors.",
+          "Strength train safely.",
+          "Prevent falls.",
+          "Accept support."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Fracture from minor trauma or fall from standing height",
+        "Sudden severe back pain, height loss, or stooped posture",
+        "Hip, spine, wrist, rib, or pelvic pain after minor injury",
+        "Long-term corticosteroid use, early menopause, very low body weight, eating disorder history, or major risk factors",
+        "Frequent falls, balance problems, vision issues, or unsafe home environment",
+        "New weakness, numbness, bowel/bladder changes, or severe spine symptoms"
+      ],
+      "seek_immediate_care_if": [
+        "A fracture is suspected, especially hip/spine/wrist after minor trauma",
+        "Sudden severe back pain occurs with weakness, numbness, or bowel/bladder symptoms",
+        "You cannot walk, bear weight, or feel medically unsafe"
+      ],
+      "schedule_care_if": [
+        "Bone density screening is due or risk factors are present",
+        "You have height loss, back pain, family history, long-term steroid use, early menopause, or prior low-trauma fracture",
+        "You need calcium/vitamin D, medication, exercise, or fall-prevention planning"
+      ],
+      "self_care_allowed_if": "Safe weight-bearing/resistance exercise, balance work, nutrition support, and fall prevention may support bone health alongside medical guidance.",
+      "do_not_ignore": "Osteoporosis is often silent until fracture. Screening and prevention matter.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "rheumatoid-arthritis",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Burning inflammatory wave with sharp flare and pause.",
+        "hapticPattern": [
+          3000,
+          120,
+          500,
+          3000
+        ],
+        "uiBackgroundAccent": "#8B3A3A"
+      },
+      "hero": {
+        "primaryPattern": "RA is systemic autoimmune inflammatory arthritis that can damage joints and affect whole-body health; early diagnosis and disease-modifying treatment can matter.",
+        "cascade": [
+          "Immune Misfires",
+          "Synovium Inflames",
+          "Joints Swell",
+          "Damage Risk Builds"
+        ],
+        "tags": [
+          "#RA",
+          "#autoimmune",
+          "#joints"
+        ],
+        "safetyPreview": "Hot swollen joints, fever, severe flare, chest pain, shortness of breath, eye pain/redness, infection signs, medication side effects, or progressive disability needs care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Autoimmune Inflammation",
+          "short": "The immune system attacks joint lining.",
+          "detail": "RA inflames synovial tissue and can damage cartilage, bone, tendons, and ligaments over time."
+        },
+        {
+          "title": "Symmetrical Pattern",
+          "short": "Both sides often hurt.",
+          "detail": "RA commonly affects small joints of hands/feet symmetrically, with morning stiffness and fatigue."
+        },
+        {
+          "title": "Systemic Disease",
+          "short": "RA is more than joints.",
+          "detail": "RA can involve cardiovascular risk, lungs, eyes, nodules, anemia, infections, and medication monitoring."
+        },
+        {
+          "title": "Early Treatment",
+          "short": "DMARDs can prevent damage.",
+          "detail": "Disease-modifying therapy can reduce inflammation and protect joints. Not glamorous, just important."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Autoimmune Synovitis & Joint Damage Risk",
+          "sections": [
+            {
+              "heading": "Stage 1 — Systemic Autoimmune Disease",
+              "body": [
+                "RA is not regular wear-and-tear arthritis.",
+                "It is an autoimmune inflammatory disease that can affect joints and the whole body."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Joint Pattern",
+              "body": [
+                "RA often causes symmetrical swollen/tender joints, morning stiffness, fatigue, and flares.",
+                "Hands and feet are common targets, because apparently the immune system has terrible manners."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Treatment Matters",
+              "body": [
+                "Early rheumatology evaluation and disease-modifying treatment can help prevent joint damage.",
+                "Medication is not weakness. It is ceasefire logistics."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Safety Check",
+              "body": [
+                "Seek care for fever, severe flare, infection signs, chest pain, shortness of breath, eye symptoms, or medication side effects.",
+                "Inflammatory disease gets medical attention, not a lecture about attitude."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Friendly Fire Incident",
+          "paragraphs": [
+            "Your immune system is the border patrol and it has misread the map.",
+            "The joints are your own buildings. The soldiers are firing anyway.",
+            "The commander keeps yelling THREAT while the city council, your hands and knees, begs everyone to stop exploding the infrastructure.",
+            "The ceasefire plan is rheumatology, labs, meds, flare tracking, movement, rest, and infection awareness.",
+            "Breathing helps your nervous system. DMARDs handle the actual military policy.",
+            "Declare ceasefire and get treatment or keep letting friendly fire remodel the joints. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The War Within Reality Check",
+          "paragraphs": [
+            "You may have rheumatoid arthritis. You may also have a self-attack pattern.",
+            "Medical first: RA is autoimmune and can damage joints. Get rheumatology care. Track flares. Take meds as prescribed.",
+            "Symbolically, ask where self-criticism became discipline.",
+            "What part of you keeps firing inward?",
+            "Stop the emotional war, yes. Also do not leave autoimmune inflammation untreated like a medieval peasant with Wi-Fi.",
+            "Declare ceasefire and get treatment or keep letting friendly fire remodel the joints. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Damp-Heat Bi Pattern",
+          "tag": "Inflamed Joints",
+          "paragraphs": [
+            "In TCM imagery, painful swollen joints can be described as obstruction with heat and dampness.",
+            "Medically, RA is autoimmune inflammation and needs proper care."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Self-Protector",
+          "tag": "Ceasefire",
+          "paragraphs": [
+            "The Self-Protector stops internal attack.",
+            "Protection includes medication, rest, boundaries, and less self-cruelty."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Friendly Fire",
+          "tag": "Immune Confusion",
+          "paragraphs": [
+            "Friendly fire is the image for immune misrecognition.",
+            "The goal is not blame. The goal is ceasefire."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Inflamed Boundary",
+          "tag": "Systemic Signal",
+          "paragraphs": [
+            "RA asks where the whole system is inflamed.",
+            "Joints are loud, but the disease is systemic."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Disease-Modifying Peace",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The reset is medical treatment plus inner ceasefire.",
+            "Both matter. One does not replace the other."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Ceasefire & Immune Grounding Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit upright with one hand on the heart and one on the lower belly.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "Whisper: I am not my enemy. I choose care. I choose ceasefire.",
+          "Then choose one practical action: track flare, take meds, rest, contact rheumatology, or check infection signs."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Rheumatoid Arthritis may require medical evaluation, diagnosis, and condition-specific treatment.",
+        "items": [
+          {
+            "label": "Rheumatology care",
+            "detail": "RA usually needs specialist-guided disease-modifying treatment."
+          },
+          {
+            "label": "Flare tracking",
+            "detail": "Track stiffness, swelling, fatigue, fever, infections, meds, sleep, and stress."
+          },
+          {
+            "label": "Gentle movement",
+            "detail": "Movement can support function when balanced with rest and flare severity."
+          },
+          {
+            "label": "Cardiovascular/infection awareness",
+            "detail": "RA and some medications can affect whole-body risk."
+          }
+        ],
+        "avoid": [
+          "Do not delay care for suspected RA.",
+          "Do not ignore fever, infection signs, chest pain, shortness of breath, eye symptoms, severe flare, or medication side effects."
+        ]
+      },
+      "brutalActions": [
+        "Get rheumatology care.",
+        "Track flares.",
+        "Take meds as prescribed.",
+        "Stop using self-attack as fake discipline."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Rheumatoid arthritis is a chronic systemic autoimmune inflammatory disease that can cause symmetrical joint pain, swelling, morning stiffness, fatigue, nodules, deformity, and extra-articular risks including cardiovascular, lung, eye, and infection concerns.",
+        "protocol": [
+          "Track swollen/tender joints, symmetry, morning stiffness duration, fatigue, fever, weight loss, nodules, rash, eye/lung symptoms, meds, infections, and flare triggers. Rheumatology care matters.",
+          "Use symptom tracking and medical evaluation when symptoms are severe, persistent, recurrent, progressive, or paired with red flags.",
+          "Do not replace diagnosis or prescribed treatment with symbolic interpretation."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Friendly Fire Incident",
+        "metaphorText": "The immune border patrol is firing at your own joint buildings because someone lost the map.",
+        "wittyAdvice": "Declare ceasefire with actual RA treatment, not vibes in a helmet."
+      },
+      "brutal": {
+        "realityCheck": "You may have rheumatoid arthritis. You may also have a self-attack pattern.",
+        "protocolTitle": "DECLARE CEASEFIRE",
+        "protocolSteps": [
+          "See rheumatology.",
+          "Track flares.",
+          "Use meds correctly.",
+          "Protect joints.",
+          "Stop self-attack."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Hot swollen painful joints with fever or feeling ill",
+        "Severe flare, rapidly worsening swelling, or loss of function",
+        "Chest pain, shortness of breath, cough, eye pain/redness/vision changes",
+        "Infection signs while on immune-modifying medication",
+        "Medication side effects, severe fatigue, weight loss, or systemic symptoms"
+      ],
+      "seek_immediate_care_if": [
+        "There is fever with joint swelling, severe infection concern, chest pain, shortness of breath, eye symptoms, or severe medication reaction",
+        "You feel medically unsafe"
+      ],
+      "schedule_care_if": [
+        "Morning stiffness, symmetrical joint swelling, fatigue, or suspected RA is present",
+        "Flares recur or medications need review"
+      ],
+      "self_care_allowed_if": "Rest/activity balance, gentle movement, symptom tracking, and stress reduction may support care alongside treatment.",
+      "do_not_ignore": "RA can damage joints and affect whole-body health. Early treatment matters.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "muscle-spasms",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Sudden twitch, aching cramp, and pause.",
+        "hapticPattern": [
+          200,
+          120,
+          2000,
+          3000
+        ],
+        "uiBackgroundAccent": "#6B4C4C"
+      },
+      "hero": {
+        "primaryPattern": "Muscle spasms can be benign or signal dehydration, electrolytes, nerve compression, medication effects, neurologic disease, infection, tetanus, or functional movement disorder.",
+        "cascade": [
+          "Signal Overloads",
+          "Muscle Contracts",
+          "Cramp Holds",
+          "Cause Check"
+        ],
+        "tags": [
+          "#spasms",
+          "#cramps",
+          "#nerves"
+        ],
+        "safetyPreview": "Severe/persistent spasms, weakness, numbness, bladder/bowel changes, jaw stiffness, fever, recent wound, seizure, confusion, or breathing/swallowing trouble needs urgent care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Involuntary Contraction",
+          "short": "The muscle contracts without permission.",
+          "detail": "Spasms can be brief twitches or painful cramps that lock a muscle temporarily."
+        },
+        {
+          "title": "Common Causes",
+          "short": "Hydration, electrolytes, fatigue, nerves, and meds matter.",
+          "detail": "Dehydration, low electrolytes, overuse, nerve irritation, medications, pregnancy, and metabolic issues can contribute."
+        },
+        {
+          "title": "Neurologic and Functional Causes",
+          "short": "Movement disorders can mimic each other.",
+          "detail": "Dystonia, myoclonus, tics, Parkinsonism, MS, spinal issues, and functional/psychogenic movement disorders can produce spasms or jerks."
+        },
+        {
+          "title": "Emergency Screen",
+          "short": "Tetanus and spinal compression are not casual.",
+          "detail": "Jaw stiffness, trouble swallowing, breathing issues, severe weakness, bladder/bowel changes, or recent contaminated wound need urgent care."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Muscle Hyperexcitability & Involuntary Contraction Cascade",
+          "sections": [
+            {
+              "heading": "Stage 1 — Spasm Is a Symptom",
+              "body": [
+                "A muscle spasm is involuntary contraction.",
+                "It can be mild and temporary or painful and medically significant. Very helpful range, biology."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Causes to Check",
+              "body": [
+                "Hydration, electrolytes, overuse, fatigue, medications, nerve compression, thyroid/kidney/metabolic issues, pregnancy, and neurologic disease can contribute.",
+                "Stress can worsen tension but should not be treated as the only cause."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Functional/Psychogenic Layer",
+              "body": [
+                "Functional or psychogenic movement symptoms can be involuntary and real.",
+                "They are not faking. The nervous system can misfire without structural damage."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Safety Check",
+              "body": [
+                "Seek urgent care for jaw stiffness, trouble swallowing/breathing, recent contaminated wound, fever, severe weakness, numbness, bladder/bowel changes, seizure, confusion, or rapidly worsening symptoms.",
+                "Do not breathe through tetanus. Emergency room, not incense."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Overloaded Circuit",
+          "paragraphs": [
+            "Your muscles are circuits and the nervous system is the electrical grid.",
+            "Sometimes the grid is low on electrolytes. Sometimes the wires are irritated. Sometimes meds are involved. Sometimes the whole breaker panel is stressed.",
+            "Then the circuit twitches, cramps, locks, and sends a complaint in the form of pain.",
+            "The fix depends on the cause: hydration, electrolytes, stretching, medication review, nerve care, neurologic evaluation, or emergency treatment.",
+            "Reset the breaker safely or keep letting the electrical grid throw tiny riots. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Involuntary Release Reality Check",
+          "paragraphs": [
+            "You may have a muscle spasm problem. You may also have a tension-release pattern.",
+            "Medical first: spasms can come from hydration, electrolytes, nerves, meds, neurologic disease, infection, or tetanus.",
+            "Symbolically, ask what has been held so tightly the body started forcing release.",
+            "But if there is weakness, numbness, bladder/bowel change, fever, lockjaw, trouble swallowing, or a dirty wound, metaphor sits down and medicine takes over.",
+            "Release tension consciously. Check the physical cause. Stop treating the circuit like it should enjoy overload.",
+            "Reset the breaker safely or keep letting the electrical grid throw tiny riots. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Liver-Sinew Tension",
+          "tag": "Muscle Qi",
+          "paragraphs": [
+            "In TCM imagery, Liver governs sinews and smooth flow.",
+            "Spasm symbolizes flow interrupted by tension."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Tense Self",
+          "tag": "Held Pressure",
+          "paragraphs": [
+            "The Tense Self learned that relaxation was unsafe.",
+            "The Relaxed Self releases without collapse."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Breaker Panel",
+          "tag": "Nervous System",
+          "paragraphs": [
+            "The breaker trips when the load is too high.",
+            "The goal is not shame. It is load management and diagnosis."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Forced Release",
+          "tag": "Cramp",
+          "paragraphs": [
+            "The cramp forces release after too much holding.",
+            "Better to release before the muscle stages a mutiny."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Safe Relaxation",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The reset is physical cause review plus downshift.",
+            "Relaxation is not weakness. It is electrical maintenance."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Circuit Breaker & Muscle Release Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit or lie comfortably unless symptoms worsen.",
+          "Place one hand near the affected muscle and one on the chest.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "Whisper: I release tension safely. I check what needs checking."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Muscle Spasms may require medical evaluation, diagnosis, and condition-specific treatment.",
+        "items": [
+          {
+            "label": "Hydration/electrolytes",
+            "detail": "Hydration and electrolyte balance may help some cramps, especially after sweating or illness."
+          },
+          {
+            "label": "Gentle stretch/massage",
+            "detail": "Gentle stretching or massage can help simple cramps if no injury/red flags are present."
+          },
+          {
+            "label": "Medication review",
+            "detail": "Some medicines can contribute to cramps or twitching."
+          },
+          {
+            "label": "Medical evaluation",
+            "detail": "Frequent, severe, progressive, or unexplained spasms need cause review."
+          }
+        ],
+        "avoid": [
+          "Do not ignore lockjaw, trouble swallowing/breathing, recent dirty wound, fever, severe weakness, numbness, bladder/bowel changes, seizure, or confusion.",
+          "Do not force aggressive stretching if pain is severe or injury is suspected."
+        ]
+      },
+      "brutalActions": [
+        "Check red flags.",
+        "Hydrate and review electrolytes if appropriate.",
+        "Review meds.",
+        "Release one tension pattern before the muscle starts unionizing."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Muscle spasms are involuntary muscle contractions ranging from twitches to painful cramps. Causes can include dehydration, electrolyte imbalance, overuse, fatigue, nerve compression, medication effects, pregnancy, kidney/thyroid/metabolic disorders, neurologic disease, dystonia, myoclonus, infection, tetanus, or functional/psychogenic movement disorders.",
+        "protocol": [
+          "Track location, duration, severity, hydration, exercise, medications, weakness, numbness, bladder/bowel changes, fever, jaw stiffness, recent wound, neurologic symptoms, and whether spasms disrupt sleep or daily life.",
+          "Use symptom tracking and medical evaluation when symptoms are severe, persistent, recurrent, progressive, or paired with red flags.",
+          "Do not replace diagnosis or prescribed treatment with symbolic interpretation."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Overloaded Circuit",
+        "metaphorText": "The electrical grid is overloaded and the muscle circuits are throwing tiny riots.",
+        "wittyAdvice": "Reset the breaker, but check whether the wiring is actually damaged."
+      },
+      "brutal": {
+        "realityCheck": "You may have a muscle spasm problem. You may also have a tension-release pattern.",
+        "protocolTitle": "RESET THE BREAKER",
+        "protocolSteps": [
+          "Check emergency signs.",
+          "Hydrate appropriately.",
+          "Stretch gently.",
+          "Review meds.",
+          "Evaluate persistent spasms."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Jaw stiffness, lockjaw, trouble swallowing, trouble breathing, or recent dirty/deep wound",
+        "Severe or persistent spasms, whole-body rigidity, fever, confusion, seizure, or severe pain",
+        "Progressive weakness, numbness, saddle numbness, bladder/bowel changes, or spinal cord concern",
+        "Chest pain, fainting, severe dehydration, kidney disease symptoms, or electrolyte concerns",
+        "New neurologic symptoms, abnormal movements, or rapidly worsening spasms"
+      ],
+      "seek_immediate_care_if": [
+        "Tetanus-like symptoms, breathing/swallowing trouble, seizure, confusion, severe weakness, bladder/bowel changes, or spinal cord signs occur",
+        "Spasms are severe, generalized, progressive, or paired with fever or recent contaminated wound"
+      ],
+      "schedule_care_if": [
+        "Spasms are recurrent, persistent, worsening, disrupting sleep/work, or unexplained",
+        "Medication, electrolyte, thyroid/kidney/metabolic, neurologic, or functional movement causes need review"
+      ],
+      "self_care_allowed_if": "Gentle stretching, hydration, rest, heat/ice, and trigger tracking may support mild brief cramps without red flags.",
+      "do_not_ignore": "Spasms can be benign, but serious neurologic, infectious, metabolic, or spinal causes must be ruled out when red flags appear.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "varicose-veins",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Heavy dragging thud with aching release and pause.",
+        "hapticPattern": [
+          2000,
+          120,
+          500,
+          3000
+        ],
+        "uiBackgroundAccent": "#6B4C6B"
+      },
+      "hero": {
+        "primaryPattern": "Varicose veins involve weakened vein walls/valves and blood pooling; sudden painful swelling, redness, warmth, skin ulcers, bleeding, or clot symptoms need care.",
+        "cascade": [
+          "Valve Weakens",
+          "Blood Pools",
+          "Vein Bulges",
+          "Leg Heaviness Builds"
+        ],
+        "tags": [
+          "#varicose",
+          "#veins",
+          "#flow"
+        ],
+        "safetyPreview": "Sudden one-sided swelling, redness, warmth, severe pain, shortness of breath, chest pain, bleeding vein, skin ulcer, or infection signs needs urgent care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Valve Failure",
+          "short": "Blood flows backward and pools.",
+          "detail": "Leg veins use valves to help blood return to the heart against gravity. When valves fail, veins can enlarge and twist."
+        },
+        {
+          "title": "Symptoms",
+          "short": "Heavy, aching legs are common.",
+          "detail": "Varicose veins may cause aching, heaviness, swelling, itching, skin changes, cramps, or visible bulging veins."
+        },
+        {
+          "title": "Risk Factors",
+          "short": "Standing, pregnancy, age, and family history matter.",
+          "detail": "Pregnancy, age, family history, obesity, prolonged standing/sitting, and prior clots can raise risk."
+        },
+        {
+          "title": "Clot Screen",
+          "short": "Sudden painful swelling is different.",
+          "detail": "A suddenly swollen, red, warm, painful leg can signal a clot or infection and needs care."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Venous Valve Failure & Blood Pooling Cascade",
+          "sections": [
+            {
+              "heading": "Stage 1 — Vein Valves Struggle",
+              "body": [
+                "Varicose veins happen when vein walls or valves weaken.",
+                "Blood can pool in the legs instead of returning smoothly to the heart. Gravity, the original villain."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Heavy Legs",
+              "body": [
+                "Symptoms can include aching, heaviness, swelling, itching, visible bulging veins, skin changes, and cramps.",
+                "Long standing or sitting may worsen symptoms."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Treatment Options",
+              "body": [
+                "Compression, walking, leg elevation, weight support, sclerotherapy, laser/radiofrequency ablation, or procedures may help depending on severity.",
+                "A vascular clinician can evaluate reflux and risk."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Safety Check",
+              "body": [
+                "Seek urgent care for sudden one-sided swelling, redness, warmth, severe pain, chest pain, shortness of breath, bleeding vein, ulcer, or infection signs.",
+                "Do not let a clot audition as a spiritual lesson."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Backed-Up River",
+          "paragraphs": [
+            "Your leg veins are a river trying to flow uphill to the heart.",
+            "The valves are supposed to act like little gates. Some gates are now hanging sideways and making excuses.",
+            "The river pools. The banks bulge. The legs feel heavy, because the plumbing department has lost discipline.",
+            "Compression, walking, elevation, and vascular treatment can help the river move.",
+            "Let the river return properly or keep making your leg veins run uphill with bad valves and optimism. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Flow Return Reality Check",
+          "paragraphs": [
+            "You may have a varicose vein problem. You may also have a flow-return pattern.",
+            "Medical first: varicose veins are vein valve/wall problems. Sudden swelling, warmth, redness, pain, ulcers, bleeding, chest pain, or shortness of breath needs care.",
+            "Symbolically, ask where you keep giving without allowing return.",
+            "What energy leaves you and never comes back?",
+            "Receive support. Move the legs. Elevate the river. Get vascular care when needed.",
+            "Let the river return properly or keep making your leg veins run uphill with bad valves and optimism. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Liver-Blood Stagnation",
+          "tag": "Flow",
+          "paragraphs": [
+            "In TCM imagery, varicose veins map easily to blood stagnation.",
+            "Medically, valve failure and venous insufficiency still do the plumbing."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Depleted Self",
+          "tag": "Receiving",
+          "paragraphs": [
+            "The Depleted Self gives without return.",
+            "The Flow allows circulation back to the heart."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Backed-Up River",
+          "tag": "Pooling",
+          "paragraphs": [
+            "Pooling shows where return is blocked.",
+            "The river needs movement and working gates."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Leg Burden",
+          "tag": "Heaviness",
+          "paragraphs": [
+            "Heavy legs symbolize effort without recovery.",
+            "Restoring return is the practice."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Return to Heart",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The reset is elevation, walking, compression if appropriate, and receiving support.",
+            "Flow goes both ways, allegedly a radical concept."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Venous Return & River Flow Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Lie down with legs elevated if comfortable.",
+          "Place one hand on the heart and one near the affected area.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "Whisper: I allow flow to return. I receive support."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Varicose Veins may require medical evaluation, diagnosis, and condition-specific treatment.",
+        "items": [
+          {
+            "label": "Leg elevation",
+            "detail": "Elevating legs may reduce pooling and heaviness."
+          },
+          {
+            "label": "Walking/calf pump",
+            "detail": "Regular walking activates calf muscles that help venous return."
+          },
+          {
+            "label": "Compression",
+            "detail": "Compression stockings may help some people but should be clinician-guided if circulation problems exist."
+          },
+          {
+            "label": "Vascular care",
+            "detail": "Ultrasound and procedures may be used for symptomatic or complicated veins."
+          }
+        ],
+        "avoid": [
+          "Do not ignore sudden one-sided swelling, redness, warmth, severe pain, chest pain, shortness of breath, bleeding veins, ulcers, or infection signs.",
+          "Do not use compression without guidance if you have arterial circulation problems."
+        ]
+      },
+      "brutalActions": [
+        "Walk or move calves.",
+        "Elevate legs.",
+        "Check clot red flags.",
+        "Receive one thing instead of pouring yourself out again."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Varicose veins are enlarged, twisted veins usually caused by weakened vein walls or valves that allow blood to pool. Risk factors include age, pregnancy, family history, prolonged standing/sitting, obesity, prior clots, and hormonal factors.",
+        "protocol": [
+          "Track aching, heaviness, swelling, skin color changes, ulcers, sudden pain/redness/warmth, one-sided swelling, pregnancy, clot history, prolonged standing/sitting, and compression tolerance.",
+          "Use symptom tracking and medical evaluation when symptoms are severe, persistent, recurrent, progressive, or paired with red flags.",
+          "Do not replace diagnosis or prescribed treatment with symbolic interpretation."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Backed-Up River",
+        "metaphorText": "The leg river is backed up because the valve gates are acting like broken toll booths.",
+        "wittyAdvice": "Move the river, elevate the legs, and do not ignore clot-shaped drama."
+      },
+      "brutal": {
+        "realityCheck": "You may have a varicose vein problem. You may also have a flow-return pattern.",
+        "protocolTitle": "LET THE RIVER RETURN",
+        "protocolSteps": [
+          "Check red flags.",
+          "Move calves.",
+          "Elevate legs.",
+          "Use compression appropriately.",
+          "Receive support."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Sudden one-sided leg swelling, pain, redness, or warmth",
+        "Chest pain, shortness of breath, coughing blood, fainting, or clot/PE symptoms",
+        "Bleeding varicose vein",
+        "Skin ulcer, infection signs, worsening discoloration, or severe swelling",
+        "Pregnancy, prior DVT, clotting disorder, recent surgery, or prolonged immobilization"
+      ],
+      "seek_immediate_care_if": [
+        "A leg suddenly becomes swollen, painful, red, or warm",
+        "Chest pain, shortness of breath, fainting, or coughing blood occurs",
+        "A varicose vein bleeds heavily or infection signs appear"
+      ],
+      "schedule_care_if": [
+        "Varicose veins ache, swell, itch, cause skin changes, limit activity, or worsen",
+        "You need compression guidance, ultrasound, or vascular treatment options"
+      ],
+      "self_care_allowed_if": "Walking, leg elevation, avoiding prolonged standing/sitting, and guided compression may support mild symptoms without red flags.",
+      "do_not_ignore": "Sudden painful swelling can indicate a clot. Skin ulcers and bleeding need medical care.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "restless-leg-syndrome",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Jumpy irregular staccato twitches followed by creeping crawling throb and pause.",
+        "hapticPattern": [
+          200,
+          100,
+          200,
+          120,
+          2000,
+          3000
+        ],
+        "uiBackgroundAccent": "#4B6B8B"
+      },
+      "hero": {
+        "primaryPattern": "RLS may involve urge to move, crawling/aching sensations, worse rest/night symptoms, temporary relief with movement, iron deficiency, dopamine pathways, pregnancy, kidney disease, neuropathy, meds, caffeine, or sleep disruption.",
+        "cascade": [
+          "Rest Begins",
+          "Creep Signal",
+          "Move Urge",
+          "Sleep Breaks"
+        ],
+        "tags": [
+          "#RLS",
+          "#legs",
+          "#sleep"
+        ],
+        "safetyPreview": "Sudden weakness, severe pain, swelling, one-sided symptoms, neurologic signs, severe insomnia, or major impairment needs medical care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Sensorimotor Urge",
+          "short": "The legs feel compelled to move.",
+          "detail": "RLS creates uncomfortable sensations and an urge to move, usually worse during rest and at night."
+        },
+        {
+          "title": "Temporary Relief",
+          "short": "Movement helps briefly.",
+          "detail": "Walking, stretching, or moving the legs may relieve symptoms temporarily, which is why bedtime becomes a tiny marching parade nobody asked for."
+        },
+        {
+          "title": "Iron and Dopamine",
+          "short": "Brain iron and dopamine pathways may be involved.",
+          "detail": "RLS is linked with iron status and dopamine-related movement signaling in many cases."
+        },
+        {
+          "title": "Trigger Screen",
+          "short": "Meds and conditions can worsen it.",
+          "detail": "Iron deficiency, pregnancy, kidney disease, neuropathy, diabetes, medications, caffeine, alcohol, and sleep deprivation can contribute."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "RLS Sensorimotor Urge & Sleep Disruption",
+          "sections": [
+            {
+              "heading": "Stage 1 — Neurological Sensorimotor Disorder",
+              "body": [
+                "Restless Legs Syndrome is medically a neurological sensorimotor disorder.",
+                "It involves an urge to move the legs, often with crawling, pulling, aching, throbbing, or creeping sensations."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Rest and Night Pattern",
+              "body": [
+                "Symptoms typically worsen at rest, especially evening or night, and improve temporarily with movement.",
+                "The legs become night-shift employees with terrible boundaries."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Iron, Dopamine, and Triggers",
+              "body": [
+                "RLS can be associated with iron deficiency, dopamine pathway dysfunction, pregnancy, kidney disease, neuropathy, diabetes, and some medications.",
+                "Caffeine, alcohol, fatigue, and sleep deprivation can worsen symptoms for some people."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Safety Check",
+              "body": [
+                "Seek care for severe sleep disruption, sudden weakness, severe pain, swelling, one-sided symptoms, numbness, or new neurologic signs.",
+                "Not every leg problem is RLS. The legs are dramatic, but sometimes they are reporting real crimes."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "Rex the Overcaffeinated Guard Dog",
+          "paragraphs": [
+            "Your legs are Rex, a guard dog who has been fed espresso and threat briefings for years.",
+            "Rex is pacing the yard at 2 AM because a squirrel may or may not be plotting against national security.",
+            "The creeping sensation is Rex sniffing the fence. The twitching is his little caffeine tremor. The urge to move is him sprinting after a leaf with suspicious energy.",
+            "Sometimes Rex needs less caffeine. Sometimes he needs iron checked. Sometimes medications, pregnancy, kidney issues, or neuropathy are in the yard too.",
+            "The goal is not to yell at Rex. The goal is to stop giving him espresso and check whether the fence is actually on fire.",
+            "Poor Rex. Annoying, but loyal."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Running Mode Reality Check",
+          "paragraphs": [
+            "You do have a restless leg problem. You may also have a never-stop-running pattern.",
+            "Medical first: RLS can involve iron, dopamine signaling, pregnancy, kidney disease, meds, neuropathy, caffeine, alcohol, and sleep disruption.",
+            "Symbolically, ask what part of you does not trust stillness.",
+            "What do you think will catch you if you stop moving? What old danger is your body still outrunning?",
+            "Stillness is not the enemy. But untreated RLS is not solved by whispering at your calves like a wizard.",
+            "Check ferritin with a clinician. Review meds. Reduce triggers. Ground the nervous system.",
+            "Let Rex lie down or keep buying espresso for a guard dog at 2 AM. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Kidney-Bladder Lower Body",
+          "tag": "Water Element",
+          "paragraphs": [
+            "In Chinese medicine imagery, the Kidney and Bladder relate to the lower body, fear, and support.",
+            "Symbolically, restless legs can mirror a body that does not trust the ground."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Fleeing Self",
+          "tag": "Shadow Runner",
+          "paragraphs": [
+            "The Fleeing Self stays ready to run.",
+            "The Grounded One learns to land without collapsing."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Rex the Guard Dog",
+          "tag": "Hypervigilance",
+          "paragraphs": [
+            "Rex is trying to protect you.",
+            "He also needs less stimulation and better instructions."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Stillness Alarm",
+          "tag": "Somatic Threat",
+          "paragraphs": [
+            "This symptom can ask why rest feels unsafe.",
+            "The answer may be medical, emotional, or both."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Ground the Legs",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The reset is ferritin/medical review, reduced triggers, movement rhythm, and safety cues.",
+            "Let the legs learn the shift is over."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Leg Grounding & Rex Calm-Down",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit with feet flat or lie down with knees supported.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "Imagine warm heavy sand filling the legs from hips to feet.",
+          "Whisper: I am safe to be still. The ground is holding me. I do not have to run."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. RLS may need medical evaluation, ferritin testing, medication review, or sleep care.",
+        "items": [
+          {
+            "label": "Ferritin check",
+            "detail": "Low iron stores can worsen RLS. Test before supplementing."
+          },
+          {
+            "label": "Trigger reduction",
+            "detail": "Caffeine, alcohol, sleep deprivation, and some medications may worsen symptoms."
+          },
+          {
+            "label": "Gentle movement",
+            "detail": "Walking, stretching, massage, or heat/cold may help some people."
+          },
+          {
+            "label": "Medication review",
+            "detail": "Antihistamines, antidepressants, dopamine blockers, and anti-nausea meds can worsen RLS in some people."
+          }
+        ],
+        "avoid": [
+          "Do not start iron supplements without medical guidance.",
+          "Do not ignore sudden weakness, swelling, severe pain, one-sided symptoms, neurologic signs, or severe sleep impairment."
+        ]
+      },
+      "brutalActions": [
+        "Check ferritin instead of guessing.",
+        "Cut late caffeine and alcohol experiments.",
+        "Review meds that may worsen RLS.",
+        "Tell Rex the yard is secure, then give your legs actual medical respect."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Restless Legs Syndrome is a neurological sensorimotor disorder involving an urge to move the legs, uncomfortable sensations, worsening at rest or night, and temporary relief with movement. It can be linked with iron deficiency, dopamine pathways, pregnancy, kidney disease, neuropathy, diabetes, medications, caffeine, alcohol, and sleep disruption.",
+        "protocol": [
+          "Track timing, sensations, sleep impact, caffeine/alcohol, medications, pregnancy, kidney disease, neuropathy, and diabetes.",
+          "Ask about ferritin/iron testing and medication review.",
+          "Seek care for severe sleep disruption, sudden weakness, severe pain, swelling, one-sided symptoms, or neurologic signs."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for sleep/neurology care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "Rex the Overcaffeinated Guard Dog",
+        "metaphorText": "Your legs are Rex, a guard dog on espresso patrol at 2 AM.",
+        "wittyAdvice": "Take away Rex's espresso and check whether his iron bowl is empty."
+      },
+      "brutal": {
+        "realityCheck": "You do have a restless leg problem. You may also have a never-stop-running pattern.",
+        "protocolTitle": "LET REX LIE DOWN",
+        "protocolSteps": [
+          "Check ferritin.",
+          "Review meds.",
+          "Reduce caffeine/alcohol.",
+          "Move gently.",
+          "Ground before bed."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Sudden leg weakness, numbness, paralysis, or new neurologic symptoms",
+        "Severe leg pain, swelling, redness, warmth, or one-sided calf symptoms",
+        "Severe insomnia, dangerous daytime sleepiness, or major impairment",
+        "RLS symptoms with pregnancy, kidney disease, neuropathy, diabetes, or anemia symptoms",
+        "Medication changes that coincide with worsening symptoms",
+        "Symptoms that are new, rapidly worsening, or not typical for RLS"
+      ],
+      "seek_immediate_care_if": [
+        "You have sudden weakness, severe pain, swelling, redness/warmth, one-sided symptoms, or neurologic signs",
+        "Sleepiness creates driving/work safety risk",
+        "Symptoms are severe, new, or paired with serious illness signs"
+      ],
+      "schedule_care_if": [
+        "RLS symptoms disrupt sleep or occur often",
+        "You need ferritin/iron testing, medication review, or evaluation for secondary causes",
+        "Self-care is not helping"
+      ],
+      "self_care_allowed_if": "Reducing triggers, gentle movement, stretching, heat/cold, massage, and sleep routine may support mild RLS without red flags.",
+      "do_not_ignore": "RLS is not purely emotional or just restlessness. Iron status, medications, neurologic factors, pregnancy, kidney disease, and other causes may matter.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "trigger-finger",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Catching, locking, pulling pulse with sharp snapping release and pause.",
+        "hapticPattern": [
+          2000,
+          120,
+          300,
+          3000
+        ],
+        "uiBackgroundAccent": "#8B7B6B"
+      },
+      "hero": {
+        "primaryPattern": "Trigger Finger may involve tendon/pulley thickening, catching, locking, snapping, pain, stiffness, repetitive grip, diabetes, rheumatoid arthritis, gout, hypothyroidism, or manual/vibration work.",
+        "cascade": [
+          "Tendon Irritates",
+          "Pulley Narrows",
+          "Motion Catches",
+          "Release Snaps"
+        ],
+        "tags": [
+          "#trigger-finger",
+          "#tendon",
+          "#locking"
+        ],
+        "safetyPreview": "Severe pain, redness, swelling, heat, infection signs, inability to straighten/bend the finger, progressive locking, diabetes/RA/gout concerns, or failed home care needs medical care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Tendon Glide",
+          "short": "The tendon should slide smoothly.",
+          "detail": "The flexor tendon moves through a pulley system. When the passage thickens or narrows, the tendon can catch."
+        },
+        {
+          "title": "Catching and Locking",
+          "short": "Motion becomes jerky.",
+          "detail": "The finger may lock in a bent position and then snap free, because apparently even tiny tendons can become dramatic stage actors."
+        },
+        {
+          "title": "Risk Factors",
+          "short": "Grip and medical conditions matter.",
+          "detail": "Repetitive gripping, forceful use, diabetes, rheumatoid arthritis, gout, hypothyroidism, and vibration/manual work can contribute."
+        },
+        {
+          "title": "Treatment Path",
+          "short": "Splint, injection, therapy, or surgery may help.",
+          "detail": "Care can include activity modification, splinting, corticosteroid injection, hand therapy, and sometimes surgical release depending on severity."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Trigger Finger Tendon Catching & Pulley Narrowing",
+          "sections": [
+            {
+              "heading": "Stage 1 — Stenosing Tenosynovitis",
+              "body": [
+                "Trigger Finger is a tendon-gliding problem, not a character flaw.",
+                "It involves catching, pain, stiffness, locking, or snapping as the flexor tendon moves through the pulley."
+              ]
+            },
+            {
+              "heading": "Stage 2 — The Snap",
+              "body": [
+                "The snap is the tendon forcing past a narrowed or irritated point.",
+                "Very cinematic for something so small. Still medical."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Contributors",
+              "body": [
+                "Repetitive gripping, forceful hand use, diabetes, rheumatoid arthritis, gout, hypothyroidism, and vibration work can increase risk.",
+                "Medical context matters, especially if symptoms recur or multiple digits are involved."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Care Check",
+              "body": [
+                "Seek care for severe pain, redness, swelling, heat, infection signs, inability to straighten or bend the finger, progressive locking, or symptoms affecting work/sleep.",
+                "Treatment may include splinting, steroid injection, therapy, or surgical release."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Sticky Drawer",
+          "paragraphs": [
+            "Your finger is now a desk drawer stuck on a bad track.",
+            "It is not trying to ruin your day. It is just terrible at gliding right now.",
+            "The tendon pulls. The pulley catches. The release comes with a snap, like the body installed a cheap office drawer in your hand.",
+            "Grip work, diabetes, arthritis, gout, thyroid issues, or repeated strain may be part of the mess.",
+            "The answer is proper care, less forced gripping, and not treating a tendon like it owes you rent.",
+            "Unjam the drawer properly or keep pretending the snap is a personality trait. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Grip Reality Check",
+          "paragraphs": [
+            "You may have a trigger finger problem. You may also have a grip-and-release pattern.",
+            "Medical first: this is tendon/pulley catching. It can need splints, injections, therapy, or surgery.",
+            "Symbolically, ask what you keep gripping until release becomes violent.",
+            "Control feels safe until the hand starts locking around it.",
+            "Open the hand emotionally. Also stop aggravating the tendon like a genius trying to win a fight with anatomy.",
+            "Unjam the drawer properly or keep pretending the snap is a personality trait. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Liver-Sinew Stagnation",
+          "tag": "Tendon Flow",
+          "paragraphs": [
+            "In Chinese medicine imagery, Liver governs sinews and smooth movement.",
+            "Symbolically, trigger digit asks where movement has become stuck."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Gripping Self",
+          "tag": "Control",
+          "paragraphs": [
+            "The Gripping Self holds because release once felt dangerous.",
+            "The healthier pattern is controlled release, not forced snapping."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Pulley Gate",
+          "tag": "Narrow Passage",
+          "paragraphs": [
+            "The pulley is a literal narrow gate.",
+            "When the gate catches, movement becomes negotiation."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Forced Release",
+          "tag": "Snap Pattern",
+          "paragraphs": [
+            "The snap can symbolize release that only happens after too much pressure.",
+            "Better to release before the body has to do slapstick."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Open Hand",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The reset is medical care plus less death-grip living.",
+            "The hand is allowed to open."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Trigger Finger Glide & Open Hand Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit with the hand supported and relaxed.",
+          "Place the other hand gently over the base of the affected finger.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "Whisper: I release unnecessary grip. I allow smooth motion without force."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Trigger Finger can worsen or lock and may need medical evaluation.",
+        "items": [
+          {
+            "label": "Reduce aggravating grip",
+            "detail": "Limit forceful gripping, pinching, vibration, or repetitive triggering when possible."
+          },
+          {
+            "label": "Splinting",
+            "detail": "A clinician may recommend splinting to reduce catching and irritation."
+          },
+          {
+            "label": "Medical review",
+            "detail": "Ask about diabetes, rheumatoid arthritis, gout, hypothyroidism, and repeated strain."
+          },
+          {
+            "label": "Treatment options",
+            "detail": "Corticosteroid injection or surgical release may be considered depending on severity."
+          }
+        ],
+        "avoid": [
+          "Do not force the finger open or closed if it is painfully locked.",
+          "Do not ignore redness, warmth, swelling, severe pain, infection signs, or progressive loss of function."
+        ]
+      },
+      "brutalActions": [
+        "Stop force-gripping through the catch.",
+        "Track what triggers the lock.",
+        "Review diabetes/RA/gout/thyroid contributors.",
+        "Open one metaphorical hand before the tendon starts billing you."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Trigger Finger is stenosing tenosynovitis affecting the flexor tendon, causing catching, locking, snapping, pain, or stiffness.",
+        "protocol": [
+          "Track catching, locking, pain, stiffness, triggering activities, and affected digits.",
+          "Reduce forceful gripping and seek medical review if persistent, painful, or progressive.",
+          "Seek prompt care for severe pain, swelling, redness, heat, infection signs, or inability to move the digit."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for hand specialist care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Sticky Drawer",
+        "metaphorText": "The finger catches because the tendon track is acting like cheap office furniture.",
+        "wittyAdvice": "Lubricate the metaphor, but treat the tendon."
+      },
+      "brutal": {
+        "realityCheck": "You may have a trigger finger problem. You may also have a grip-and-release pattern.",
+        "protocolTitle": "OPEN THE HAND",
+        "protocolSteps": [
+          "Reduce grip strain.",
+          "Track locking.",
+          "Review medical risks.",
+          "Get evaluated.",
+          "Release control before the tendon stages a protest."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Severe pain, redness, warmth, swelling, or infection signs around the finger/hand",
+        "Inability to straighten or bend the finger",
+        "Progressive locking, multiple affected digits, or worsening function",
+        "Diabetes, rheumatoid arthritis, gout, hypothyroidism, or immune suppression",
+        "Numbness, weakness, trauma, or symptoms suggesting another nerve/tendon injury",
+        "Symptoms interfering with work, sleep, gripping, or daily function"
+      ],
+      "seek_immediate_care_if": [
+        "There is severe pain, infection signs, trauma, sudden loss of function, or the digit is stuck and cannot be moved",
+        "Redness/warmth/swelling spreads or fever occurs",
+        "You feel medically unsafe"
+      ],
+      "schedule_care_if": [
+        "Catching, locking, pain, or stiffness persists or recurs",
+        "You have diabetes, RA, gout, thyroid disease, or multiple trigger digits",
+        "Splinting/activity changes do not help"
+      ],
+      "self_care_allowed_if": "Activity reduction, gentle motion, and avoiding forceful gripping may support mild symptoms without red flags.",
+      "do_not_ignore": "Persistent trigger digit can worsen and may need injection or surgical release.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "trigger-thumb",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Catching, locking, pulling pulse with sharp snapping release and pause.",
+        "hapticPattern": [
+          2000,
+          120,
+          300,
+          3000
+        ],
+        "uiBackgroundAccent": "#8B7B6B"
+      },
+      "hero": {
+        "primaryPattern": "Trigger Thumb may involve tendon/pulley thickening, catching, locking, snapping, pain, stiffness, repetitive grip, diabetes, rheumatoid arthritis, gout, hypothyroidism, or manual/vibration work.",
+        "cascade": [
+          "Tendon Irritates",
+          "Pulley Narrows",
+          "Motion Catches",
+          "Release Snaps"
+        ],
+        "tags": [
+          "#trigger-thumb",
+          "#tendon",
+          "#locking"
+        ],
+        "safetyPreview": "Severe pain, redness, swelling, heat, infection signs, inability to straighten/bend the thumb, progressive locking, diabetes/RA/gout concerns, or failed home care needs medical care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Tendon Glide",
+          "short": "The tendon should slide smoothly.",
+          "detail": "The flexor pollicis longus tendon moves through a pulley system. When the passage thickens or narrows, the tendon can catch."
+        },
+        {
+          "title": "Catching and Locking",
+          "short": "Motion becomes jerky.",
+          "detail": "The thumb may lock in a bent position and then snap free, because apparently even tiny tendons can become dramatic stage actors."
+        },
+        {
+          "title": "Risk Factors",
+          "short": "Grip and medical conditions matter.",
+          "detail": "Repetitive gripping, forceful use, diabetes, rheumatoid arthritis, gout, hypothyroidism, and vibration/manual work can contribute."
+        },
+        {
+          "title": "Treatment Path",
+          "short": "Splint, injection, therapy, or surgery may help.",
+          "detail": "Care can include activity modification, splinting, corticosteroid injection, hand therapy, and sometimes surgical release depending on severity."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Trigger Thumb Tendon Catching & Pulley Narrowing",
+          "sections": [
+            {
+              "heading": "Stage 1 — Stenosing Tenosynovitis",
+              "body": [
+                "Trigger Thumb is a tendon-gliding problem, not a character flaw.",
+                "It involves catching, pain, stiffness, locking, or snapping as the flexor pollicis longus tendon moves through the pulley."
+              ]
+            },
+            {
+              "heading": "Stage 2 — The Snap",
+              "body": [
+                "The snap is the tendon forcing past a narrowed or irritated point.",
+                "Very cinematic for something so small. Still medical."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Contributors",
+              "body": [
+                "Repetitive gripping, forceful hand use, diabetes, rheumatoid arthritis, gout, hypothyroidism, and vibration work can increase risk.",
+                "Medical context matters, especially if symptoms recur or multiple digits are involved."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Care Check",
+              "body": [
+                "Seek care for severe pain, redness, swelling, heat, infection signs, inability to straighten or bend the thumb, progressive locking, or symptoms affecting work/sleep.",
+                "Treatment may include splinting, steroid injection, therapy, or surgical release."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Clinging Monkey",
+          "paragraphs": [
+            "Your thumb is now a monkey clinging to a branch.",
+            "It is not trying to ruin your day. It is just terrible at gliding right now.",
+            "The tendon pulls. The pulley catches. The release comes with a snap, like the body installed a cheap office drawer in your hand.",
+            "Grip work, diabetes, arthritis, gout, thyroid issues, or repeated strain may be part of the mess.",
+            "The answer is proper care, less forced gripping, and not treating a tendon like it owes you rent.",
+            "Release the monkey properly or keep letting one thumb cosplay as a locked steering wheel. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Grip Reality Check",
+          "paragraphs": [
+            "You may have a trigger thumb problem. You may also have a grip-and-release pattern.",
+            "Medical first: this is tendon/pulley catching. It can need splints, injections, therapy, or surgery.",
+            "Symbolically, ask what you keep gripping until release becomes violent.",
+            "Control feels safe until the hand starts locking around it.",
+            "Open the hand emotionally. Also stop aggravating the tendon like a genius trying to win a fight with anatomy.",
+            "Release the monkey properly or keep letting one thumb cosplay as a locked steering wheel. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Liver-Sinew Stagnation",
+          "tag": "Tendon Flow",
+          "paragraphs": [
+            "In Chinese medicine imagery, Liver governs sinews and smooth movement.",
+            "Symbolically, trigger digit asks where movement has become stuck."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Gripping Self",
+          "tag": "Control",
+          "paragraphs": [
+            "The Gripping Self holds because release once felt dangerous.",
+            "The healthier pattern is controlled release, not forced snapping."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Pulley Gate",
+          "tag": "Narrow Passage",
+          "paragraphs": [
+            "The pulley is a literal narrow gate.",
+            "When the gate catches, movement becomes negotiation."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Forced Release",
+          "tag": "Snap Pattern",
+          "paragraphs": [
+            "The snap can symbolize release that only happens after too much pressure.",
+            "Better to release before the body has to do slapstick."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Open Hand",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The reset is medical care plus less death-grip living.",
+            "The hand is allowed to open."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Trigger Thumb Glide & Open Hand Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit with the hand supported and relaxed.",
+          "Place the other hand gently over the base of the affected thumb.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "Whisper: I release unnecessary grip. I allow smooth motion without force."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Trigger Thumb can worsen or lock and may need medical evaluation.",
+        "items": [
+          {
+            "label": "Reduce aggravating grip",
+            "detail": "Limit forceful gripping, pinching, vibration, or repetitive triggering when possible."
+          },
+          {
+            "label": "Splinting",
+            "detail": "A clinician may recommend splinting to reduce catching and irritation."
+          },
+          {
+            "label": "Medical review",
+            "detail": "Ask about diabetes, rheumatoid arthritis, gout, hypothyroidism, and repeated strain."
+          },
+          {
+            "label": "Treatment options",
+            "detail": "Corticosteroid injection or surgical release may be considered depending on severity."
+          }
+        ],
+        "avoid": [
+          "Do not force the thumb open or closed if it is painfully locked.",
+          "Do not ignore redness, warmth, swelling, severe pain, infection signs, or progressive loss of function."
+        ]
+      },
+      "brutalActions": [
+        "Stop force-gripping through the catch.",
+        "Track what triggers the lock.",
+        "Review diabetes/RA/gout/thyroid contributors.",
+        "Open one metaphorical hand before the tendon starts billing you."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Trigger Thumb is stenosing tenosynovitis affecting the flexor pollicis longus tendon, causing catching, locking, snapping, pain, or stiffness.",
+        "protocol": [
+          "Track catching, locking, pain, stiffness, triggering activities, and affected digits.",
+          "Reduce forceful gripping and seek medical review if persistent, painful, or progressive.",
+          "Seek prompt care for severe pain, swelling, redness, heat, infection signs, or inability to move the digit."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for hand specialist care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Clinging Monkey",
+        "metaphorText": "The thumb catches because the tendon track is acting like cheap office furniture.",
+        "wittyAdvice": "Lubricate the metaphor, but treat the tendon."
+      },
+      "brutal": {
+        "realityCheck": "You may have a trigger thumb problem. You may also have a grip-and-release pattern.",
+        "protocolTitle": "OPEN THE HAND",
+        "protocolSteps": [
+          "Reduce grip strain.",
+          "Track locking.",
+          "Review medical risks.",
+          "Get evaluated.",
+          "Release control before the tendon stages a protest."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Severe pain, redness, warmth, swelling, or infection signs around the thumb/hand",
+        "Inability to straighten or bend the thumb",
+        "Progressive locking, multiple affected digits, or worsening function",
+        "Diabetes, rheumatoid arthritis, gout, hypothyroidism, or immune suppression",
+        "Numbness, weakness, trauma, or symptoms suggesting another nerve/tendon injury",
+        "Symptoms interfering with work, sleep, gripping, or daily function"
+      ],
+      "seek_immediate_care_if": [
+        "There is severe pain, infection signs, trauma, sudden loss of function, or the digit is stuck and cannot be moved",
+        "Redness/warmth/swelling spreads or fever occurs",
+        "You feel medically unsafe"
+      ],
+      "schedule_care_if": [
+        "Catching, locking, pain, or stiffness persists or recurs",
+        "You have diabetes, RA, gout, thyroid disease, or multiple trigger digits",
+        "Splinting/activity changes do not help"
+      ],
+      "self_care_allowed_if": "Activity reduction, gentle motion, and avoiding forceful gripping may support mild symptoms without red flags.",
+      "do_not_ignore": "Persistent trigger digit can worsen and may need injection or surgical release.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  }
+]

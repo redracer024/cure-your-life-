@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
+import type { AilmentCore } from '../../types/dictionary';
+import { getDetailForAilment, mergeCoreAndDetail } from '../../data';
 import type { Ailment } from '../../types';
 import {
   getEnrichedAilment,
@@ -8,6 +10,7 @@ import {
   getSymptomHapticPattern,
 } from '../../lib/ailmentHelpers';
 import { CATEGORY_META } from './ailmentCategoryMeta';
+import { CATEGORY_SLUGS } from '../../data';
 import { AnatomicalSilhouette } from '../visuals/AnatomicalSilhouette';
 import { AilmentHeroCard } from './AilmentHeroCard';
 import { AilmentTabNav } from './AilmentTabNav';
@@ -18,7 +21,7 @@ import { AilmentResetPanel } from './panels/AilmentResetPanel';
 
 interface AilmentAccordionItemProps {
   key?: React.Key;
-  ailment: Ailment;
+  ailment: AilmentCore;
   isSelected: boolean;
   onSelect: () => void;
   globalTone: 'clinical' | 'witty' | 'brutal';
@@ -26,7 +29,10 @@ interface AilmentAccordionItemProps {
 }
 
 function AilmentAccordionItem({ ailment, isSelected, onSelect, globalTone, onJournalRedirect }: AilmentAccordionItemProps) {
-  const enriched = getEnrichedAilment(ailment);
+  const [detail, setDetail] = useState<Ailment | null>(null);
+  const [isLoadingDetail, setIsLoadingDetail] = useState(false);
+
+  const enriched = getEnrichedAilment(mergeCoreAndDetail(ailment, detail) as Ailment);
   const [innerTab, setInnerTab] = useState<'tones' | 'influence' | 'reset' | 'safety'>('safety');
   const [localTone, setLocalTone] = useState<'clinical' | 'witty' | 'brutal'>(globalTone);
   const [isDisclaimerExpanded, setIsDisclaimerExpanded] = useState(false);
@@ -65,6 +71,31 @@ function AilmentAccordionItem({ ailment, isSelected, onSelect, globalTone, onJou
   useEffect(() => {
     setLocalTone(globalTone);
   }, [globalTone]);
+
+  // Load detail data when accordion is selected
+  useEffect(() => {
+    if (!isSelected) return;
+
+    const slug = CATEGORY_SLUGS[ailment.category];
+    if (!slug) return;
+
+    let cancelled = false;
+
+    async function loadDetail() {
+      setIsLoadingDetail(true);
+      const found = await getDetailForAilment(ailment.id, slug);
+      if (!cancelled && found) {
+        setDetail(found);
+      }
+      setIsLoadingDetail(false);
+    }
+
+    loadDetail();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [isSelected, ailment.id, ailment.category]);
 
   // Safety opens first every time a symptom panel is selected.
   useEffect(() => {
@@ -149,30 +180,43 @@ function AilmentAccordionItem({ ailment, isSelected, onSelect, globalTone, onJou
 
               {/* Tab Contents */}
               <div className="min-h-[120px]">
-                <AnimatePresence mode="wait">
-                  {innerTab === 'tones' && (
-                    <AilmentTonePanel enriched={enriched} />
-                  )}
+                {isLoadingDetail && !detail ? (
+                  <div className="space-y-4">
+                    <div className="text-xs font-mono text-slate-500 uppercase tracking-widest animate-pulse">
+                      Loading detailed analysis...
+                    </div>
+                    <div className="space-y-3">
+                      <div className="h-4 bg-white/5 rounded w-3/4" />
+                      <div className="h-4 bg-white/5 rounded w-1/2" />
+                      <div className="h-4 bg-white/5 rounded w-2/3" />
+                    </div>
+                  </div>
+                ) : (
+                  <AnimatePresence mode="wait">
+                    {innerTab === 'tones' && (
+                      <AilmentTonePanel enriched={enriched} />
+                    )}
 
-                  {innerTab === 'influence' && (
-                    <AilmentInfluencePanel enriched={enriched} />
-                  )}
+                    {innerTab === 'influence' && (
+                      <AilmentInfluencePanel enriched={enriched} />
+                    )}
 
-                  {innerTab === 'reset' && (
-                    <AilmentResetPanel
-                      enriched={enriched}
-                      onJournalRedirect={onJournalRedirect}
-                    />
-                  )}
+                    {innerTab === 'reset' && (
+                      <AilmentResetPanel
+                        enriched={enriched}
+                        onJournalRedirect={onJournalRedirect}
+                      />
+                    )}
 
-                  {innerTab === 'safety' && (
-                    <AilmentSafetyPanel
-                      enriched={enriched}
-                      isDisclaimerExpanded={isDisclaimerExpanded}
-                      setIsDisclaimerExpanded={setIsDisclaimerExpanded}
-                    />
-                  )}
-                </AnimatePresence>
+                    {innerTab === 'safety' && (
+                      <AilmentSafetyPanel
+                        enriched={enriched}
+                        isDisclaimerExpanded={isDisclaimerExpanded}
+                        setIsDisclaimerExpanded={setIsDisclaimerExpanded}
+                      />
+                    )}
+                  </AnimatePresence>
+                )}
 
                 <div className="flex flex-col sm:flex-row gap-3 justify-between items-stretch sm:items-center pt-5 border-t border-white/5">
                   <button

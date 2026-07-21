@@ -1,0 +1,2653 @@
+[
+  {
+    "id": "diabetes",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Slow heavy syrupy thuds with dragging pulse rhythm.",
+        "hapticPattern": [
+          1200,
+          120,
+          1400,
+          120,
+          1600,
+          3000
+        ],
+        "uiBackgroundAccent": "#B85C1A"
+      },
+      "hero": {
+        "primaryPattern": "Type 2 diabetes involves insulin resistance, high blood sugar, beta-cell strain, metabolic risk, and long-term heart, kidney, nerve, eye, and circulation complications.",
+        "cascade": [
+          "Insulin Resistance",
+          "Glucose Rises",
+          "Beta Cells Strain",
+          "Risk Monitoring"
+        ],
+        "tags": [
+          "#type2diabetes",
+          "#A1c",
+          "#metabolic"
+        ],
+        "safetyPreview": "Confusion, severe weakness, vomiting, fruity breath, deep breathing, severe dehydration, very high/low sugar symptoms, chest pain, or infection signs need urgent care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Insulin Resistance",
+          "short": "Cells respond less to insulin.",
+          "detail": "Insulin helps glucose enter cells. In type 2 diabetes, cells resist the signal, so glucose can remain high in the bloodstream."
+        },
+        {
+          "title": "Beta-Cell Strain",
+          "short": "The pancreas works harder.",
+          "detail": "The pancreas may produce extra insulin at first, then struggle over time as beta-cell function declines."
+        },
+        {
+          "title": "Vascular and Nerve Risk",
+          "short": "High glucose damages systems.",
+          "detail": "Long-term high blood sugar can injure blood vessels, nerves, eyes, kidneys, heart, feet, and wound healing."
+        },
+        {
+          "title": "Monitoring",
+          "short": "Numbers matter.",
+          "detail": "A1c, glucose, blood pressure, cholesterol, kidney function, eye exams, foot checks, meds, food, and activity all matter. Annoying paperwork, lifesaving point."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Insulin Resistance & Blood Glucose Cascade",
+          "sections": [
+            {
+              "heading": "Stage 1 — Metabolic Disease",
+              "body": [
+                "Type 2 diabetes is medically a chronic metabolic disease involving insulin resistance and high blood glucose.",
+                "It is not just sugar, not just weight, and not proof that your character went bankrupt."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Processing Glucose",
+              "body": [
+                "Insulin helps move glucose from blood into cells.",
+                "When cells resist insulin, glucose builds up in the bloodstream and the pancreas may have to work harder."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Complication Prevention",
+              "body": [
+                "Long-term management reduces risk to the heart, kidneys, nerves, eyes, feet, circulation, and wound healing.",
+                "A1c, blood pressure, cholesterol, kidney function, eye exams, foot care, meds, nutrition, and activity are not glamorous, just important."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Emergency Signs",
+              "body": [
+                "Confusion, severe weakness, vomiting, fruity breath, deep breathing, severe dehydration, very high or low blood sugar symptoms, chest pain, or serious infection signs need urgent care.",
+                "Do not spiritualize diabetic emergencies. That is how humans get turned into cautionary slides."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Sugar Processing Plant With Jammed Doors",
+          "paragraphs": [
+            "Your metabolism is a sugar processing plant where insulin keeps knocking on cell doors.",
+            "The workers used to answer. Now the doors stick, the conveyor belt jams, and glucose is piling up like boxes in a warehouse run by raccoons.",
+            "The pancreas is the overworked manager printing more insulin memos while the workers stop reading emails.",
+            "Cortisol and stress keep yelling WORK HARDER, which is not a treatment plan, though middle management keeps trying it.",
+            "The factory needs real management: labs, meds if prescribed, food rhythm, movement, sleep, blood pressure, cholesterol, kidney checks, eyes, and feet.",
+            "The factory can improve. It just cannot be run on denial and cinnamon folklore."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Over-Processing Reality Check",
+          "paragraphs": [
+            "You do have a metabolic problem. You may also have an over-processing pattern.",
+            "Medical first: Type 2 diabetes is serious. Track A1c/glucose. Take meds as directed. Watch heart, kidney, nerve, eye, and foot risk.",
+            "Symbolically, ask what you keep trying to metabolize that is not actually nourishing.",
+            "What obligations are you swallowing? What demands are being sold to you as sweetness? What yes keeps turning into metabolic sludge?",
+            "Do not stop meds. Do not ignore symptoms. Do not confuse self-reflection with glucose control.",
+            "Receive real nourishment. Release non-nourishing loads. Manage the actual disease.",
+            "Process the real load or keep making your pancreas work unpaid overtime. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Spleen-Pancreas Processing",
+          "tag": "Earth Element",
+          "paragraphs": [
+            "In Chinese medicine imagery, Spleen relates to transformation and nourishment.",
+            "Symbolically, diabetes can mirror a processing system overwhelmed by what it has to handle."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Sweetness and Nourishment",
+          "tag": "Receiving",
+          "paragraphs": [
+            "Sweetness can symbolize love, ease, and nourishment.",
+            "The question is whether what is being taken in is actually nourishing."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Consumed Self",
+          "tag": "Obligation Intake",
+          "paragraphs": [
+            "The Consumed Self keeps accepting what exceeds capacity.",
+            "The healthier pattern is enough, not endless intake."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Syrupy Load",
+          "tag": "Metabolic Symbol",
+          "paragraphs": [
+            "The glucose backlog becomes an image for unprocessed load.",
+            "Medically, it is blood sugar and needs actual care."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Process and Release",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The reset is medical management plus reducing non-nourishing burdens.",
+            "The pancreas is not your emotional unpaid intern."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Metabolic Grounding & Processing Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit upright with one hand on the lower belly and one on the chest.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "Whisper: I can receive what nourishes me and release what I cannot process.",
+          "Then choose one practical action: check glucose if directed, take meds, walk, plan a balanced meal, or schedule labs."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Type 2 diabetes requires medical monitoring, medication guidance, and individualized care.",
+        "items": [
+          {
+            "label": "Monitor",
+            "detail": "Track glucose/A1c as directed, plus blood pressure, cholesterol, kidney function, eyes, and feet."
+          },
+          {
+            "label": "Medication adherence",
+            "detail": "Take prescribed medications as directed and do not stop without medical guidance."
+          },
+          {
+            "label": "Food rhythm",
+            "detail": "Protein, fiber, whole foods, hydration, and carbohydrate awareness can support glucose stability."
+          },
+          {
+            "label": "Movement",
+            "detail": "Regular movement can improve insulin sensitivity when safe and medically appropriate."
+          }
+        ],
+        "avoid": [
+          "Do not ignore confusion, vomiting, fruity breath, deep breathing, severe weakness, dehydration, severe high/low sugar symptoms, chest pain, or infection signs.",
+          "Do not stop meds or replace care with supplements."
+        ]
+      },
+      "brutalActions": [
+        "Track A1c/glucose like numbers are allowed to matter.",
+        "Take prescribed meds.",
+        "Move after meals when safe.",
+        "Stop saying yes to loads your body keeps reporting as too much."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Type 2 diabetes is a chronic metabolic condition involving high blood glucose, insulin resistance, and relative insulin deficiency over time. It increases risk for heart disease, stroke, kidney disease, neuropathy, vision problems, wounds, infections, and other complications.",
+        "protocol": [
+          "Monitor A1c/glucose, blood pressure, cholesterol, kidney function, eyes, feet, medications, nutrition, activity, and symptoms.",
+          "Do not stop or adjust diabetes medication without medical guidance.",
+          "Seek urgent care for confusion, vomiting, fruity breath, deep breathing, severe dehydration, severe high/low sugar symptoms, chest pain, or serious infection."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for diabetes care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Sugar Processing Plant With Jammed Doors",
+        "metaphorText": "Insulin keeps knocking, cells stop answering, and glucose piles up on the conveyor belt.",
+        "wittyAdvice": "Fix the factory with actual care, not cinnamon mythology."
+      },
+      "brutal": {
+        "realityCheck": "You do have a metabolic problem. You may also have an over-processing pattern.",
+        "protocolTitle": "PROCESS THE REAL LOAD",
+        "protocolSteps": [
+          "Monitor numbers.",
+          "Take meds.",
+          "Move safely.",
+          "Eat with structure.",
+          "Release one non-nourishing obligation."
+        ]
+      }
+    },
+    "biologyPath": [
+      {
+        "title": "Stress Load",
+        "description": "Your system detects chronic emotional conflict or survival anxiety, starting the alarm.",
+        "expandedDetails": "Under perpetual demands—real or manufactured by overthinking—the amygdala sounds a continuous warning, preventing the nervous system from entering the restorative parasympathetic state."
+      },
+      {
+        "title": "Cortisol Rise",
+        "description": "The HPA axis floods your bloodstream with stress hormones, preparing you to run.",
+        "expandedDetails": "Your stress hormone. It tells the liver to release glucose because your body thinks danger is near. Cortisol also makes cells less receptive to insulin, reserving glucose in the blood for immediate physical defense."
+      },
+      {
+        "title": "Liver Glucose Output",
+        "description": "The liver dumps stored sugar to feed muscles for a fight that never actually happens.",
+        "expandedDetails": "Normally, the liver stores glucose as glycogen. Under stress, it undergoes gluconeogenesis, turning proteins and fats into extra blood sugar, believing you need immediate muscular energy to fight off a saber-toothed predator (which is actually just an email)."
+      },
+      {
+        "title": "Insulin Resistance",
+        "description": "Overwhelmed cells shut their doors to protect themselves from the glucose flood.",
+        "expandedDetails": "As blood sugar remains chronically high, insulin is constantly pumped out to clear it. Overworked cells downregulate their receptors, effectively jamming the 'locks' so insulin can no longer deliver sugar inside. Sugar backs up in the bloodstream."
+      },
+      {
+        "title": "Beta-Cell Overload",
+        "description": "The pancreas burns out trying to produce double the insulin to force the locked doors.",
+        "expandedDetails": "The beta-cells in your pancreas work overtime, screaming to produce more insulin. Over years, this hyper-secretion may contribute to mitochondrial damage, beta-cell exhaustion, and eventually, a decline in total insulin production capability."
+      }
+    ],
+    "medical_safety": {
+      "critical_alerts": [
+        "Confusion, fainting, severe weakness, seizure, or altered mental status",
+        "Vomiting, abdominal pain, fruity/acetone breath, deep rapid breathing, or severe dehydration",
+        "Very high or very low blood sugar symptoms",
+        "Chest pain, shortness of breath, stroke symptoms, severe infection, or non-healing wound",
+        "Excessive thirst, frequent urination, unexplained weight loss, blurry vision, or numbness/tingling",
+        "Medication side effects, hypoglycemia, or inability to keep fluids down"
+      ],
+      "seek_immediate_care_if": [
+        "You have DKA-like symptoms, severe hypoglycemia symptoms, confusion, chest pain, stroke symptoms, severe infection, or dehydration",
+        "Blood sugar is dangerously high/low according to your care plan",
+        "You feel medically unsafe or cannot keep fluids down"
+      ],
+      "schedule_care_if": [
+        "You have diabetes symptoms or need screening",
+        "A1c/glucose, blood pressure, cholesterol, kidney, eye, or foot monitoring is overdue",
+        "Your readings, symptoms, medications, or lifestyle plan need review"
+      ],
+      "self_care_allowed_if": "Food rhythm, movement, sleep, stress regulation, and tracking may support diabetes care when used alongside medical guidance.",
+      "do_not_ignore": "Type 2 diabetes is a serious medical condition. It is not purely emotional or cured by lifestyle slogans.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "appetite-excessive",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Gnawing hollow hunger throb followed by sharp grasping pang and pause.",
+        "hapticPattern": [
+          2000,
+          120,
+          300,
+          3000
+        ],
+        "uiBackgroundAccent": "#6B5B4B"
+      },
+      "hero": {
+        "primaryPattern": "Excessive appetite may involve diabetes, hypoglycemia, thyroid issues, medications, sleep disruption, mood, eating disorders, hormones, neurologic causes, or stress-driven cravings.",
+        "cascade": [
+          "Signal Rises",
+          "Satiety Disrupts",
+          "Craving Grabs",
+          "Need Check"
+        ],
+        "tags": [
+          "#hyperphagia",
+          "#hunger",
+          "#satiety"
+        ],
+        "safetyPreview": "Excessive thirst, frequent urination, unexplained weight loss, tremors, rapid heartbeat, fainting, binge/purge patterns, or sudden appetite change needs medical care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Hunger Signal",
+          "short": "Appetite can rise for many reasons.",
+          "detail": "Hunger is shaped by glucose, hormones, sleep, medications, stress, mood, digestion, and brain signaling."
+        },
+        {
+          "title": "Medical Causes",
+          "short": "Diabetes and thyroid matter.",
+          "detail": "Diabetes, hypoglycemia, hyperthyroidism, pregnancy, medications, neurologic conditions, and rare genetic syndromes can cause excessive appetite."
+        },
+        {
+          "title": "Satiety Disruption",
+          "short": "Fullness signals can get noisy.",
+          "detail": "Ghrelin, leptin, insulin, cortisol, sleep disruption, and emotional stress can affect appetite and cravings."
+        },
+        {
+          "title": "Emotional Hunger",
+          "short": "Food can become a substitute.",
+          "detail": "Food may soothe, distract, numb, or temporarily fill an emotional need, but it cannot replace connection, rest, safety, or treatment."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Excessive Appetite & Satiety Signal Cascade",
+          "sections": [
+            {
+              "heading": "Stage 1 — Hyperphagia Is a Symptom",
+              "body": [
+                "Excessive appetite is a symptom, not a moral failure.",
+                "Possible causes include diabetes, hypoglycemia, hyperthyroidism, medications, sleep disruption, pregnancy/hormones, neurologic conditions, mood disorders, eating disorders, and stress."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Hunger Hormones and Blood Sugar",
+              "body": [
+                "Appetite is influenced by glucose, insulin, ghrelin, leptin, cortisol, sleep, and brain reward pathways.",
+                "The body can demand food when energy use, blood sugar, stress, medication effects, or satiety signaling gets disrupted."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Emotional Eating Without Shame",
+              "body": [
+                "Food can become a substitute for safety, connection, rest, comfort, or relief.",
+                "That does not make you weak. It means the warehouse has been using snacks as emergency infrastructure, because apparently the city planner quit."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Red Flag Check",
+              "body": [
+                "Excessive thirst, frequent urination, unexplained weight loss, vision changes, tremors, rapid heartbeat, fainting, purging, severe distress, or sudden major appetite change needs medical evaluation.",
+                "Do not turn diabetes symptoms into a journal prompt."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Warehouse With a Broken Full Sensor",
+          "paragraphs": [
+            "Your appetite system is a warehouse with a full sensor that has been lying to management.",
+            "The shelves may be full, but the sensor keeps yelling WE NEED MORE INVENTORY.",
+            "Cortisol and Adrenaline are panicked supervisors ordering emergency shipments because a famine might arrive. The famine is not currently on the schedule.",
+            "Boxes clog the aisles. The forklift driver is crying. Someone labeled one crate CONNECTION and then filled it with chips.",
+            "Sometimes this is medical. Sometimes it is emotional. Sometimes it is medication, blood sugar, thyroid, sleep, or stress being a committee of goblins.",
+            "The job is not shame. The job is inventory."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Hollow Hunger Reality Check",
+          "paragraphs": [
+            "You do have an excessive appetite problem. You may also have a hunger-you-have-not-named pattern.",
+            "Medical first: blood sugar, thyroid, meds, sleep, mood, eating disorder patterns, pregnancy/hormones, and neurologic causes matter.",
+            "Symbolically, ask what you are actually hungry for.",
+            "Connection? Rest? Safety? Permission to stop? Comfort? Control? Relief?",
+            "Food can help hunger. It cannot become your entire emotional supply chain without consequences.",
+            "Name the hunger, check the body, and build a real source of nourishment.",
+            "Name the hunger or keep sending emergency shipments to a warehouse that is already full. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Spleen-Stomach Signal",
+          "tag": "Earth Element",
+          "paragraphs": [
+            "In Chinese medicine, Spleen and Stomach imagery relates to nourishment and processing.",
+            "Symbolically, excessive appetite can mirror a system asking for nourishment it cannot quite receive."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "False Hunger Heat",
+          "tag": "Restless Reaching",
+          "paragraphs": [
+            "Heat can symbolize restless reaching and dissatisfaction.",
+            "The body may feel like it keeps asking even after food arrives."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Insatiable Self",
+          "tag": "Shadow Hunger",
+          "paragraphs": [
+            "The Insatiable Self keeps reaching because the true need has not been named.",
+            "The answer is not punishment. It is discernment."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Warehouse Inventory",
+          "tag": "Need Audit",
+          "paragraphs": [
+            "This layer asks whether the hunger is physical, emotional, medical, or situational.",
+            "Different hunger needs different food."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Name the Hunger",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The reset is pausing long enough to identify the need.",
+            "Then feed the correct system instead of dumping boxes into the warehouse."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Appetite Grounding & Hunger Naming",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit upright with one hand on the stomach and one hand on the chest.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "Whisper: I can name what I need. Food is one form of nourishment, not the only one.",
+          "Then ask: is this body hunger, emotional hunger, habit hunger, or a medical signal?"
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Sudden, severe, distressing, or medically suspicious appetite changes need medical evaluation.",
+        "items": [
+          {
+            "label": "Track patterns",
+            "detail": "Track hunger timing, meals, thirst, urination, weight change, sleep, mood, medications, cravings, and binge patterns."
+          },
+          {
+            "label": "Protein/fiber rhythm",
+            "detail": "Balanced meals with protein, fiber, and hydration may support satiety for some people."
+          },
+          {
+            "label": "Sleep review",
+            "detail": "Poor sleep can worsen hunger and cravings."
+          },
+          {
+            "label": "Medical check",
+            "detail": "Consider glucose/A1c, thyroid, medication review, mood/eating disorder screening, and other causes with a clinician."
+          }
+        ],
+        "avoid": [
+          "Do not ignore excessive thirst, frequent urination, unexplained weight loss, fainting, tremors, rapid heartbeat, or sudden major appetite change.",
+          "Do not use shame, starvation, purging, or stimulant nonsense as appetite management."
+        ]
+      },
+      "brutalActions": [
+        "Check blood sugar and thyroid symptoms before blaming your character.",
+        "Track what hunger follows: stress, sleep loss, meds, boredom, fear, or real physical need.",
+        "Build one non-food source of nourishment.",
+        "Get eating-disorder support if eating feels compulsive or distressing."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Excessive appetite, also called hyperphagia or polyphagia, can be caused by diabetes, hypoglycemia, hyperthyroidism, medications, depression, anxiety, eating disorders, sleep problems, pregnancy or hormonal changes, neurologic conditions, genetic syndromes, substance use, or chronic stress.",
+        "protocol": [
+          "Track hunger, thirst, urination, weight change, sleep, mood, medications, cravings, and eating patterns.",
+          "Seek care for diabetes symptoms, thyroid symptoms, fainting, sudden appetite changes, or distressing eating patterns.",
+          "Use medical and mental-health support instead of shame."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical or eating-disorder care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Warehouse With a Broken Full Sensor",
+        "metaphorText": "Your appetite warehouse keeps ordering emergency inventory because the full sensor has unionized against reality.",
+        "wittyAdvice": "Audit the warehouse before ordering another truckload of emergency snacks."
+      },
+      "brutal": {
+        "realityCheck": "You do have an excessive appetite problem. You may also have a hunger-you-have-not-named pattern.",
+        "protocolTitle": "NAME THE HUNGER",
+        "protocolSteps": [
+          "Check medical causes.",
+          "Track hunger timing.",
+          "Stabilize meals.",
+          "Name the unmet need.",
+          "Get support for compulsive eating."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Excessive thirst, frequent urination, unexplained weight loss, blurry vision, or fatigue",
+        "Tremors, sweating, rapid heartbeat, anxiety spikes, heat intolerance, or suspected thyroid issue",
+        "Fainting, confusion, severe weakness, or hypoglycemia symptoms",
+        "Compulsive eating, bingeing, purging, restriction, laxative misuse, or major eating distress",
+        "Sudden major appetite change, neurologic symptoms, severe headache, or personality/behavior change",
+        "Pregnancy possibility, medication changes, steroid use, or substance-related appetite changes"
+      ],
+      "seek_immediate_care_if": [
+        "There are severe blood sugar symptoms, fainting, confusion, severe weakness, or dehydration",
+        "Eating patterns involve purging, self-harm, medical instability, or feeling unsafe",
+        "Appetite change is sudden with neurologic symptoms or severe illness"
+      ],
+      "schedule_care_if": [
+        "Appetite is persistently excessive, distressing, or paired with weight change",
+        "You have diabetes symptoms, thyroid symptoms, medication changes, or sleep/mood concerns",
+        "Eating feels compulsive or out of control"
+      ],
+      "self_care_allowed_if": "Pattern tracking, regular meals, protein/fiber balance, hydration, sleep support, and stress regulation may help mild appetite changes without red flags.",
+      "do_not_ignore": "Hyperphagia can be medical, psychiatric, medication-related, hormonal, or neurologic. It is not just lack of willpower.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "appetite-loss",
+    "medical_safety": {
+      "critical_alerts": [
+        "Vomiting blood or material that looks like coffee grounds",
+        "Blood in your stool, or black, tarry, foul-smelling stools",
+        "Severe, sudden, or progressively worsening abdominal pain",
+        "Persistent vomiting and inability to keep any fluids down",
+        "Signs of dehydration, such as extreme thirst, dry mouth, or little to no urine",
+        "Yellowing of the skin or eyes (jaundice)"
+      ],
+      "seek_immediate_care_if": [
+        "You vomit blood, pass black/tarry stools, or have severe, rigid abdominal pain",
+        "You are severely dehydrated from persistent vomiting or diarrhea and cannot tolerate fluids",
+        "You have sudden abdominal pain accompanied by a high fever and abdominal rigidity"
+      ],
+      "schedule_care_if": [
+        "You experience unexplained weight loss, persistent diarrhea, or ongoing difficulty swallowing",
+        "Your digestive symptoms last longer than two weeks or steadily worsen",
+        "You develop new, unexplained changes in your bowel patterns or persistent bloating"
+      ],
+      "self_care_allowed_if": "A temporary bland diet, staying hydrated, and gentle abdomen massages can help soothe minor, stress-related digestive upset.",
+      "do_not_ignore": "Persistent or severe digestive symptoms should never be ignored as they may indicate bleeding, ulceration, or bowel obstruction.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease. Seek professional medical care for diagnosis, treatment, medication decisions, or urgent symptoms."
+    }
+  },
+  {
+    "id": "cholesterol-high",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Thick sluggish dragging vibration followed by gritty scrape and silence.",
+        "hapticPattern": [
+          3000,
+          120,
+          300,
+          4000
+        ],
+        "uiBackgroundAccent": "#8B7B5B"
+      },
+      "hero": {
+        "primaryPattern": "High cholesterol may involve elevated LDL, triglycerides, ApoB/non-HDL particles, genetics, diet, diabetes, thyroid issues, kidney/liver disease, medications, and cardiovascular risk.",
+        "cascade": [
+          "Lipids Rise",
+          "Particles Circulate",
+          "Plaque Risk Builds",
+          "Risk Plan"
+        ],
+        "tags": [
+          "#cholesterol",
+          "#LDL",
+          "#heart risk"
+        ],
+        "safetyPreview": "Chest pain, shortness of breath, jaw/arm pain, stroke symptoms, leg pain with walking, or very high inherited cholesterol patterns need medical care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Lipid Transport",
+          "short": "Cholesterol travels in particles.",
+          "detail": "LDL, triglyceride-rich particles, HDL, non-HDL cholesterol, ApoB, and Lp(a) can help define cardiovascular risk."
+        },
+        {
+          "title": "Plaque Formation",
+          "short": "Atherogenic particles can enter artery walls.",
+          "detail": "Over time, certain cholesterol-containing particles can contribute to plaque buildup and narrowed or unstable arteries."
+        },
+        {
+          "title": "Risk Context",
+          "short": "Numbers are interpreted with risk.",
+          "detail": "Age, blood pressure, diabetes, smoking, family history, kidney disease, inflammation, prior events, and LDL level affect treatment decisions."
+        },
+        {
+          "title": "Management",
+          "short": "Lifestyle and meds may both matter.",
+          "detail": "Nutrition, activity, weight, smoking cessation, sleep, treating diabetes/thyroid issues, and lipid-lowering medication can reduce risk when appropriate."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Lipid Particles & Atherosclerosis Risk Cascade",
+          "sections": [
+            {
+              "heading": "Stage 1 — Lipids in Blood",
+              "body": [
+                "High cholesterol/hyperlipidemia means blood lipids or atherogenic particles are elevated enough to raise concern.",
+                "LDL cholesterol and triglycerides matter, but overall cardiovascular risk context matters too."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Artery Risk",
+              "body": [
+                "Atherogenic particles can contribute to plaque buildup in artery walls.",
+                "That raises risk for heart attack, stroke, and peripheral artery disease over time."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Causes and Contributors",
+              "body": [
+                "Genetics, diet, diabetes, thyroid disease, kidney/liver disease, medications, alcohol, smoking, menopause, and family history can affect lipid levels.",
+                "Stress may worsen behaviors and physiology in some people, but it is not the sole explanation. Cholesterol is annoyingly material."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Treatment Planning",
+              "body": [
+                "Management depends on lipid panel, ASCVD risk, family history, diabetes, blood pressure, smoking, prior events, and clinician judgment.",
+                "Medication is not moral failure. Sometimes it is pipe maintenance with better chemistry."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Grease Trap in the Basement",
+          "paragraphs": [
+            "Your cardiovascular system is an old building with pipes that were never meant to host a grease parade.",
+            "The liver-plumber is overworked. LDL particles are carrying cargo. Triglycerides are making the hallway slippery.",
+            "The landlord keeps saying WE'RE FINE while the building inspector tapes another note to the boiler room door.",
+            "Some sludge comes from genetics. Some from diet. Some from diabetes, thyroid issues, meds, alcohol, smoking, or age. The pipes are a group project.",
+            "The cleanout plan is labs, risk score, food pattern, movement, smoking status, glucose, blood pressure, and meds if needed.",
+            "The grease trap does not empty itself because you forgave your uncle in a journal. Touching, but insufficient."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Buildup Reality Check",
+          "paragraphs": [
+            "You do have a high cholesterol problem. You may also have an accumulation pattern.",
+            "Medical first: high LDL/triglycerides can raise heart attack and stroke risk. Get labs. Know your risk. Treat it.",
+            "Symbolically, ask what has been building up.",
+            "What resentment, grief, stress, habit, or avoidance has become sludge in your life?",
+            "Release matters emotionally. But arteries also need nutrition, movement, not smoking, diabetes control, blood pressure control, and sometimes medication.",
+            "Do not confuse letting go with lipid management. Do both.",
+            "Clean the grease trap or keep asking narrow pipes to host a sludge parade. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Spleen Dampness",
+          "tag": "Earth Element",
+          "paragraphs": [
+            "In Chinese medicine imagery, dampness can symbolize heaviness, residue, and slow movement.",
+            "High cholesterol can symbolically mirror buildup, though medically it is lipid particles and cardiovascular risk."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Liver Flow",
+          "tag": "Wood Element",
+          "paragraphs": [
+            "The Liver image relates to smooth flow.",
+            "When flow feels blocked, the symbol becomes sluggish blood and narrowed paths."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "The Accumulator",
+          "tag": "Shadow Holding",
+          "paragraphs": [
+            "The Accumulator holds what should move through.",
+            "The release pattern asks what can be metabolized, grieved, spoken, or discarded."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Grease Trap",
+          "tag": "System Maintenance",
+          "paragraphs": [
+            "The body needs maintenance, not shame.",
+            "Labs and treatment are not betrayals of self-awareness."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Free Flow",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The reset is risk-based care plus emotional release.",
+            "Flow requires fewer clogs and fewer lies about clogs."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Free Flow & Grease Trap Cleanout",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit upright with one hand on the chest and one on the lower belly.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "Whisper: I release what I no longer need to hold. I support free flow.",
+          "Then choose one practical action: schedule labs, take meds, walk, plan fiber/protein, stop smoking, or check blood pressure/glucose."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. High cholesterol needs lab-based risk assessment and clinician-guided treatment decisions.",
+        "items": [
+          {
+            "label": "Know the numbers",
+            "detail": "Track LDL, HDL, triglycerides, non-HDL, and risk factors. Ask about ApoB or Lp(a) when appropriate."
+          },
+          {
+            "label": "Food pattern",
+            "detail": "Soluble fiber, unsaturated fats, fewer trans fats, and less ultra-processed food can support lipid health."
+          },
+          {
+            "label": "Movement",
+            "detail": "Regular activity supports metabolic and cardiovascular risk reduction."
+          },
+          {
+            "label": "Medication plan",
+            "detail": "Statins or other lipid-lowering medications may be appropriate depending on risk."
+          }
+        ],
+        "avoid": [
+          "Do not stop cholesterol medication without medical guidance.",
+          "Do not ignore chest pain, stroke symptoms, shortness of breath, jaw/arm pain, or severe leg circulation symptoms."
+        ]
+      },
+      "brutalActions": [
+        "Get lipid labs.",
+        "Know cardiovascular risk instead of guessing.",
+        "Take prescribed meds.",
+        "Release one old grudge, then eat some fiber like an adult with plumbing."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "High cholesterol/hyperlipidemia involves elevated blood lipids such as LDL cholesterol, triglycerides, or other atherogenic particles. It can contribute to atherosclerosis and increase risk of heart attack, stroke, and peripheral artery disease.",
+        "protocol": [
+          "Get lipid testing and cardiovascular risk assessment.",
+          "Review diabetes, blood pressure, smoking, family history, kidney/thyroid/liver issues, medications, diet, movement, and sleep.",
+          "Follow clinician-guided lifestyle and medication plans; seek emergency care for chest pain, stroke symptoms, or severe vascular symptoms."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for cardiovascular care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Grease Trap in the Basement",
+        "metaphorText": "Your pipes are carrying too much lipid cargo and the building inspector is tired of your denial decor.",
+        "wittyAdvice": "Clean the trap with labs, risk assessment, food, movement, and meds when needed."
+      },
+      "brutal": {
+        "realityCheck": "You do have a high cholesterol problem. You may also have an accumulation pattern.",
+        "protocolTitle": "CLEAN THE GREASE TRAP",
+        "protocolSteps": [
+          "Check labs.",
+          "Assess risk.",
+          "Move.",
+          "Eat fiber.",
+          "Take meds if prescribed."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Chest pain, shortness of breath, jaw/arm/back pain, sweating, nausea, or heart attack symptoms",
+        "Face droop, arm weakness, speech trouble, vision loss, severe headache, or stroke symptoms",
+        "Severe leg pain with walking, cold/pale foot, non-healing wounds, or circulation symptoms",
+        "Very high LDL, strong family history, early heart attack/stroke in family, or suspected familial hypercholesterolemia",
+        "Diabetes, smoking, high blood pressure, kidney disease, or multiple cardiovascular risk factors",
+        "Medication side effects or muscle pain/weakness while on lipid-lowering therapy"
+      ],
+      "seek_immediate_care_if": [
+        "You have heart attack, stroke, severe circulation, or serious medication reaction symptoms",
+        "Chest pain or shortness of breath is new, severe, or concerning",
+        "Neurologic symptoms suggest stroke"
+      ],
+      "schedule_care_if": [
+        "Cholesterol labs are high or overdue",
+        "You have family history, diabetes, high blood pressure, smoking, kidney disease, or risk factors",
+        "You need medication review or risk-based treatment planning"
+      ],
+      "self_care_allowed_if": "Food pattern, movement, smoking cessation, sleep, stress reduction, and medication adherence can support cholesterol management under medical guidance.",
+      "do_not_ignore": "High cholesterol can increase cardiovascular risk without symptoms. It is not just emotional buildup.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "impotence",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Weak thready tap that fades into silence with long gaps.",
+        "hapticPattern": [
+          120,
+          2000,
+          4500,
+          120,
+          2000
+        ],
+        "uiBackgroundAccent": "#6B5B6B"
+      },
+      "hero": {
+        "primaryPattern": "ED may involve blood flow, cardiovascular health, diabetes, nerves, hormones, medications, sleep, alcohol/substances, mood, stress, relationship factors, or performance anxiety.",
+        "cascade": [
+          "Signal Starts",
+          "Blood Flow Needed",
+          "Pressure Interferes",
+          "Cause Check"
+        ],
+        "tags": [
+          "#ED",
+          "#blood flow",
+          "#presence"
+        ],
+        "safetyPreview": "Chest pain, shortness of breath, sudden ED, severe testicular pain, urinary changes, numbness, or cardiovascular symptoms need medical care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Erection Signal",
+          "short": "Nerves and blood vessels coordinate.",
+          "detail": "An erection depends on nerve signaling, nitric-oxide blood-vessel relaxation, healthy blood flow, smooth muscle function, hormones, and arousal."
+        },
+        {
+          "title": "Vascular Check",
+          "short": "Blood flow matters.",
+          "detail": "ED can be an early clue to cardiovascular disease, diabetes, hypertension, vascular disease, or other circulation problems."
+        },
+        {
+          "title": "Hormone and Medication Check",
+          "short": "Testosterone, thyroid, prolactin, and meds can matter.",
+          "detail": "Low testosterone, thyroid problems, elevated prolactin, SSRIs, blood pressure meds, alcohol, substances, and other medications can contribute."
+        },
+        {
+          "title": "Performance Loop",
+          "short": "Anxiety blocks parasympathetic arousal.",
+          "detail": "Stress and performance pressure can activate the sympathetic nervous system, which is exactly the wrong committee for relaxed blood flow."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "ED Blood Flow, Nerve, Hormone & Stress Cascade",
+          "sections": [
+            {
+              "heading": "Stage 1 — ED Is a Symptom",
+              "body": [
+                "Erectile dysfunction is persistent difficulty getting or maintaining an erection sufficient for sex.",
+                "It can be vascular, neurologic, endocrine, medication-related, psychological, relationship-related, or mixed."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Blood Flow and Cardiovascular Risk",
+              "body": [
+                "An erection is largely a vascular event requiring blood-vessel relaxation and adequate blood flow.",
+                "ED can sometimes be an early sign of diabetes, high blood pressure, atherosclerosis, or cardiovascular disease."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Performance Pressure",
+              "body": [
+                "Anxiety and stress can push the body toward sympathetic activation, which is bad timing for erection physiology.",
+                "Trying harder often makes the system more threatened, because apparently the penis did not request a motivational speech."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Care Check",
+              "body": [
+                "Seek medical review for new or persistent ED, sudden onset, low libido, urinary symptoms, pelvic pain, penile curvature, numbness, diabetes symptoms, or medication changes.",
+                "Get urgent care for chest pain, shortness of breath, severe testicular pain, or neurologic symptoms."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Helium Tank and the Panicked Party Balloon",
+          "paragraphs": [
+            "Your erection system is a party balloon with a helium tank controlled by blood flow, nerves, hormones, mood, sleep, meds, and stress.",
+            "Cortisol and Adrenaline are panicked supervisors guarding the tank while yelling THIS BETTER GO WELL.",
+            "That is, naturally, the exact attitude that makes the party balloon reconsider its career.",
+            "Sometimes the tank is low from vascular disease, diabetes, testosterone issues, medication effects, alcohol, sleep apnea, or depression.",
+            "Sometimes the tank is fine but the room feels like a performance review with naked consequences.",
+            "The goal is not yelling at the balloon. It is checking the tank, lowering the pressure, and returning to presence."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Performance Pressure Reality Check",
+          "paragraphs": [
+            "You may have an erectile dysfunction problem. You may also have a performance-pressure pattern.",
+            "Medical first: ED can point to cardiovascular disease, diabetes, meds, hormones, nerves, depression, anxiety, sleep apnea, alcohol, or relationship stress.",
+            "Do not reduce it to confidence. Also do not ignore your arteries because your ego feels awkward.",
+            "Symbolically, ask where intimacy became a stage instead of a connection.",
+            "What makes you feel watched instead of wanted? Where are you trying to prove instead of feel?",
+            "Get the medical workup. Talk honestly. Take pressure off the performance.",
+            "Take pressure off the stage or keep asking a vascular system to perform under threat lighting. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Kidney Essence",
+          "tag": "Water Element",
+          "paragraphs": [
+            "In Chinese medicine, Kidney imagery is linked with sexual vitality, fear, and deep reserve.",
+            "Symbolically, ED can mirror depletion or fear around adequacy."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Heart-Pelvis Connection",
+          "tag": "Presence",
+          "paragraphs": [
+            "Arousal needs safety, connection, and body presence.",
+            "Performance pressure splits attention away from sensation."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Hidden Self",
+          "tag": "Vulnerability",
+          "paragraphs": [
+            "The hidden self avoids being seen when intimacy feels risky.",
+            "Healing is not proving. It is safe showing up."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Threat Lighting",
+          "tag": "Sympathetic Block",
+          "paragraphs": [
+            "When the body thinks it is being evaluated, blood flow may not cooperate.",
+            "The body is many things. A stage prop is not one of them."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Presence Over Performance",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The reset is medical care, pressure reduction, communication, and nervous-system downshift.",
+            "Presence is not pass/fail."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Performance Ease & Presence Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit upright with one hand on the lower belly and one on the chest.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "Whisper: I am safe. I am present. I do not have to perform.",
+          "Then choose one practical step: review meds, schedule care, talk to your partner, reduce alcohol, or check sleep."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care, Lifestyle, and Supplement Caution",
+        "disclaimer": "Supportive care is not a cure. ED can be an early cardiovascular, diabetes, medication, hormonal, neurologic, sleep, mental-health, or relationship signal. Supplements can interact with medications and are not automatically safe.",
+        "items": [
+          {
+            "label": "Medical review first",
+            "detail": "Ask about blood pressure, diabetes/A1c, cholesterol, cardiovascular risk, testosterone if indicated, thyroid/prolactin if indicated, sleep apnea, medications, alcohol/substances, and mood."
+          },
+          {
+            "label": "Exercise",
+            "detail": "Regular moderate activity supports blood flow, cardiovascular health, glucose control, mood, and erectile function."
+          },
+          {
+            "label": "Mediterranean-style diet",
+            "detail": "Fruits, vegetables, legumes, whole grains, fish, olive oil, nuts, and less ultra-processed food support vascular health."
+          },
+          {
+            "label": "Sleep",
+            "detail": "Poor sleep can worsen testosterone, stress hormones, mood, and sexual function."
+          },
+          {
+            "label": "Smoking and alcohol",
+            "detail": "Smoking damages blood vessels. Alcohol can impair erectile response and worsen sleep."
+          },
+          {
+            "label": "Panax ginseng",
+            "detail": "Some studies suggest possible benefit, but dosing, product quality, side effects, and interactions matter.",
+            "caution": "May cause insomnia, headaches, dizziness, or interact with medications. Ask a clinician first."
+          },
+          {
+            "label": "Saffron",
+            "detail": "Some small studies suggest possible sexual-function benefit, but evidence is limited and product quality varies.",
+            "caution": "Avoid high-dose experimentation without medical guidance."
+          },
+          {
+            "label": "L-arginine",
+            "detail": "May support nitric-oxide pathways in some people.",
+            "caution": "Can cause GI side effects and may interact with blood-pressure meds, nitrates, PDE5 inhibitors, or heart conditions. Do not stack casually with Viagra/Cialis."
+          },
+          {
+            "label": "Avoid yohimbe",
+            "detail": "Yohimbe can raise blood pressure, trigger fast or irregular heartbeat, anxiety, seizures, or serious cardiovascular problems.",
+            "caution": "Do not use without medical supervision."
+          },
+          {
+            "label": "Avoid mystery enhancement pills",
+            "detail": "Many so-called natural sexual-performance products have hidden drug-like ingredients or unsafe dosing.",
+            "caution": "Especially dangerous with heart disease, nitrates, blood-pressure medication, diabetes, or multiple meds."
+          }
+        ],
+        "avoid": [
+          "Do not ignore ED as purely psychological, especially with diabetes, high blood pressure, cholesterol, smoking, chest symptoms, or cardiovascular risk.",
+          "Do not use nitrates with PDE5 inhibitors like sildenafil/tadalafil.",
+          "Do not buy gas-station or online mystery ED pills.",
+          "Do not treat supplements as safer than prescriptions just because the bottle has a leaf on it. Leaves have committed crimes."
+        ]
+      },
+      "brutalActions": [
+        "Check cardiovascular and diabetes risk.",
+        "Review meds, alcohol, sleep, and testosterone if indicated.",
+        "Use lifestyle support before supplement roulette.",
+        "Avoid yohimbe and mystery boner pills like they owe you money."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Erectile dysfunction is difficulty getting or maintaining an erection sufficient for sex. It can involve cardiovascular disease, diabetes, high blood pressure, vascular disease, nerve injury, low testosterone, thyroid or prolactin problems, depression, anxiety, relationship stress, medications, alcohol/substance use, sleep apnea, pelvic surgery, or Peyronie's disease.",
+        "protocol": [
+          "Seek medical review for new, persistent, sudden, or distressing ED.",
+          "Check cardiovascular/metabolic risk, diabetes, blood pressure, medications, hormones if indicated, sleep, mood, and relationship factors.",
+          "Seek urgent care for chest pain, shortness of breath, severe testicular pain, neurologic symptoms, or concerning urinary changes."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical evaluation."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Helium Tank and the Panicked Party Balloon",
+        "metaphorText": "The balloon is not lazy. The helium system needs blood flow, nerves, hormones, safety, and fewer supervisors screaming.",
+        "wittyAdvice": "Check the tank and stop turning intimacy into a performance audit."
+      },
+      "brutal": {
+        "realityCheck": "You may have an erectile dysfunction problem. You may also have a performance-pressure pattern.",
+        "protocolTitle": "PRESENCE OVER PERFORMANCE",
+        "protocolSteps": [
+          "Check medical causes.",
+          "Review meds.",
+          "Reduce pressure.",
+          "Communicate.",
+          "Stop buying gas-station mystery tablets."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Chest pain, shortness of breath, jaw/arm pain, sweating, or heart symptoms",
+        "Sudden ED with neurologic symptoms, numbness, weakness, or back/pelvic injury",
+        "Severe testicular pain, penile pain, trauma, curvature, or urinary changes",
+        "Diabetes symptoms, high blood pressure, vascular disease, or cardiovascular risk",
+        "Low libido, fatigue, infertility concerns, or hormone symptoms",
+        "Depression, severe anxiety, relationship coercion, or self-harm thoughts"
+      ],
+      "seek_immediate_care_if": [
+        "ED occurs with chest pain, shortness of breath, neurologic symptoms, severe testicular pain, trauma, or feeling medically unsafe",
+        "A prolonged painful erection occurs after medication or substance use",
+        "Mental-health distress includes self-harm thoughts"
+      ],
+      "schedule_care_if": [
+        "ED is new, persistent, sudden, or distressing",
+        "You have diabetes, blood pressure, cholesterol, medication, hormone, sleep, mood, or relationship concerns",
+        "You want safe treatment options"
+      ],
+      "self_care_allowed_if": "Stress reduction, communication, alcohol reduction, sleep support, exercise, and medical risk tracking may support ED without red flags.",
+      "do_not_ignore": "ED can be an early cardiovascular or metabolic warning sign. It is not always psychological.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "menopause-problems",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Hot rushing surge followed by prickly chill and pause.",
+        "hapticPattern": [
+          2000,
+          120,
+          500,
+          3000
+        ],
+        "uiBackgroundAccent": "#D46A4C"
+      },
+      "hero": {
+        "primaryPattern": "Menopause/perimenopause may involve hormone fluctuation, hot flashes, night sweats, sleep disruption, mood changes, cycle changes, vaginal/urinary symptoms, libido changes, bone risk, and cardiovascular risk shifts.",
+        "cascade": [
+          "Hormones Shift",
+          "Thermostat Narrows",
+          "Heat Surges",
+          "New Baseline"
+        ],
+        "tags": [
+          "#menopause",
+          "#hot flashes",
+          "#transition"
+        ],
+        "safetyPreview": "Postmenopausal bleeding, heavy/prolonged bleeding, severe depression/anxiety, self-harm thoughts, chest pain, neurologic symptoms, or severe impairment needs care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Hormone Transition",
+          "short": "Estrogen and progesterone shift.",
+          "detail": "Perimenopause can involve years of hormone fluctuation before menopause is confirmed after 12 months without a period."
+        },
+        {
+          "title": "Vasomotor Symptoms",
+          "short": "Hot flashes and night sweats happen.",
+          "detail": "Hormone changes can affect the brain's temperature regulation, producing sudden heat, sweating, chills, and sleep disruption."
+        },
+        {
+          "title": "Mood, Sleep, and Body Changes",
+          "short": "Many systems can feel it.",
+          "detail": "Sleep, mood, cognition, libido, vaginal and urinary tissues, joints, skin, weight distribution, and migraines may shift."
+        },
+        {
+          "title": "Long-Term Health",
+          "short": "Bone and heart risk matter.",
+          "detail": "Bone density, cardiovascular risk, cholesterol, blood pressure, and genitourinary health may need screening and prevention planning."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Hormone Transition & Thermoregulation Cascade",
+          "sections": [
+            {
+              "heading": "Stage 1 — Menopause and Perimenopause",
+              "body": [
+                "Menopause is diagnosed after 12 consecutive months without a menstrual period.",
+                "Perimenopause can last years and may bring irregular cycles, hot flashes, night sweats, sleep disruption, mood shifts, and body changes."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Thermostat Narrowing",
+              "body": [
+                "Estrogen shifts can affect the hypothalamus and narrow the body's temperature comfort zone.",
+                "That can create hot flashes, sweating, chills, and night waking, because apparently the HVAC system wanted drama."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Treatment Options",
+              "body": [
+                "Management can include lifestyle changes, hormone therapy for some people, non-hormonal medications, vaginal therapies, sleep support, mood care, and bone/heart screening.",
+                "Treatment choice depends on symptoms, risk factors, uterus status, bleeding pattern, medical history, and clinician guidance."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Safety Check",
+              "body": [
+                "Postmenopausal bleeding, heavy or prolonged bleeding, severe depression/anxiety, self-harm thoughts, chest pain, neurologic symptoms, or severe impairment needs medical care.",
+                "Natural transition does not mean suffer silently until the thermostat starts smoking."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Thermostat War",
+          "paragraphs": [
+            "Your body is a building with a thermostat that has lost faith in reality.",
+            "The heat turns on during summer. The AC turns on during winter. The occupants are sweaty, cold, annoyed, and deeply unimpressed.",
+            "Estrogen and progesterone are retiring managers who left no forwarding address.",
+            "The hypothalamus keeps yelling IS IT HOT? IS IT COLD? LET'S DO BOTH.",
+            "The maintenance team needs calibration: sleep support, symptom tracking, medical options, and fewer people telling you this is just aging.",
+            "The building is not doomed. It needs a new operating manual."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Transition Reality Check",
+          "paragraphs": [
+            "You may have menopause symptoms. You may also have an identity-transition pattern.",
+            "Medical first: hot flashes, bleeding changes, sleep disruption, mood symptoms, vaginal dryness, urinary symptoms, bone risk, and heart risk deserve real care.",
+            "Symbolically, ask what role is ending and what new self is trying to come online.",
+            "Menopause is not proof you are disappearing. It is proof the old operating system is being replaced while you are still using the device.",
+            "Grieve what is ending. Treat what needs treating. Build the next chapter with actual support.",
+            "Calibrate the thermostat or keep letting the building run heat and AC at the same time. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Kidney Jing Transition",
+          "tag": "Water Element",
+          "paragraphs": [
+            "In Chinese medicine, Kidney Jing is tied to aging, reproduction, and deep reserve.",
+            "Menopause becomes the symbolic transition of reproductive energy into another form of power."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Yin-Yang Recalibration",
+          "tag": "Heat and Cooling",
+          "paragraphs": [
+            "Hot flashes symbolize heat that cannot settle.",
+            "The work is cooling, anchoring, and adjusting the new rhythm."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Wise Woman Archetype",
+          "tag": "Crone/Wisdom",
+          "paragraphs": [
+            "The Wise Woman is not decline.",
+            "She is authority after approval stops being the main currency."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Role Release",
+          "tag": "Identity Shift",
+          "paragraphs": [
+            "This layer asks who you are beyond fertility, youth, caretaking, or being chosen.",
+            "The answer may take time. Annoying, but real."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Thermostat Calibration",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The reset is medical support, cooling practices, rest, and identity permission.",
+            "The building needs recalibration, not demolition."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Thermostat Calibration & Transition Grounding",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit upright with one hand on the chest and one on the lower belly.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "Whisper: I am becoming something new. I am safe in transition. I am not lost.",
+          "Then choose one practical step: track symptoms, cool the room, hydrate, schedule care, or ask about treatment options."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Menopause symptoms may need medical evaluation, hormone/non-hormone treatment, mental-health care, or screening.",
+        "items": [
+          {
+            "label": "Symptom tracking",
+            "detail": "Track bleeding, hot flashes, night sweats, mood, sleep, vaginal/urinary symptoms, libido, headaches, and triggers."
+          },
+          {
+            "label": "Cooling support",
+            "detail": "Layers, cool room, fans, hydration, and trigger tracking may help hot flashes."
+          },
+          {
+            "label": "Medical options",
+            "detail": "Ask about hormone therapy, non-hormonal options, vaginal therapies, bone density, and heart risk based on your history."
+          },
+          {
+            "label": "Mood support",
+            "detail": "Depression, anxiety, rage spikes, and self-harm thoughts deserve prompt care."
+          }
+        ],
+        "avoid": [
+          "Do not ignore postmenopausal bleeding, heavy bleeding, severe mood symptoms, self-harm thoughts, chest pain, or neurologic symptoms.",
+          "Do not buy miracle menopause cures from someone whose credentials are vibes and a ring light."
+        ]
+      },
+      "brutalActions": [
+        "Track symptoms.",
+        "Get bleeding changes checked.",
+        "Ask about real treatment options.",
+        "Write one line of the next chapter instead of worshiping the old script."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Menopause is defined after 12 months without a menstrual period and is related to declining ovarian hormone production. Perimenopause can cause irregular cycles, hot flashes, night sweats, sleep problems, mood changes, brain fog, vaginal dryness, urinary symptoms, libido changes, joint pain, and bone/cardiovascular risk changes.",
+        "protocol": [
+          "Track bleeding, vasomotor symptoms, sleep, mood, vaginal/urinary symptoms, libido, pain, migraines, and triggers.",
+          "Discuss hormone and non-hormone options, bone density, cardiovascular risk, and genitourinary symptoms with a clinician.",
+          "Seek urgent care for severe mood crisis, self-harm thoughts, chest pain, neurologic symptoms, or concerning bleeding."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for menopause care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Thermostat War",
+        "metaphorText": "Your hypothalamus is running heat and AC at the same time while the hormone managers flee the building.",
+        "wittyAdvice": "Calibrate the thermostat and stop pretending suffering is a maturity badge."
+      },
+      "brutal": {
+        "realityCheck": "You may have menopause symptoms. You may also have an identity-transition pattern.",
+        "protocolTitle": "WRITE THE NEW STORY",
+        "protocolSteps": [
+          "Track symptoms.",
+          "Check bleeding.",
+          "Treat sleep/mood.",
+          "Protect bones/heart.",
+          "Claim the next chapter."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Bleeding after menopause or heavy/prolonged/unusual bleeding",
+        "Severe depression, anxiety, panic, rage, or self-harm thoughts",
+        "Chest pain, shortness of breath, stroke symptoms, severe headache, or neurologic symptoms",
+        "Severe pelvic pain, new abdominal bloating, unexplained weight loss, or concerning discharge",
+        "Frequent urinary symptoms, recurrent UTIs, painful sex, or severe vaginal dryness",
+        "Fracture risk, height loss, severe bone pain, or osteoporosis concerns"
+      ],
+      "seek_immediate_care_if": [
+        "There are self-harm thoughts, chest pain, stroke symptoms, severe neurologic symptoms, or feeling unsafe",
+        "Bleeding is heavy, severe, or occurs after menopause",
+        "Severe pelvic pain or serious illness symptoms occur"
+      ],
+      "schedule_care_if": [
+        "Menopause symptoms disrupt sleep, mood, sex, work, or daily life",
+        "Bleeding pattern changes, vaginal/urinary symptoms, libido changes, or pain need review",
+        "Bone density, cardiovascular risk, or treatment options need discussion"
+      ],
+      "self_care_allowed_if": "Cooling strategies, symptom tracking, sleep support, movement, and stress regulation may support mild symptoms while medical options are considered.",
+      "do_not_ignore": "Menopause is natural, but severe symptoms and bleeding changes still need medical care.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "overweight",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Slow heavy thud followed by long hollow silence.",
+        "hapticPattern": [
+          2000,
+          4000,
+          2000,
+          4000
+        ],
+        "uiBackgroundAccent": "#6B5B4B"
+      },
+      "hero": {
+        "primaryPattern": "Weight concerns may involve genetics, environment, sleep, stress, meds, hormones, thyroid, PCOS, insulin resistance, pain, disability, mood, trauma, access, and energy balance.",
+        "cascade": [
+          "Load Builds",
+          "Metabolism Adapts",
+          "Risk Shifts",
+          "Support Plan"
+        ],
+        "tags": [
+          "#weight",
+          "#metabolic",
+          "#support"
+        ],
+        "safetyPreview": "Sudden weight gain, swelling, shortness of breath, chest pain, severe fatigue, pregnancy possibility, thyroid symptoms, or rapid unexplained change needs care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Body Weight Regulation",
+          "short": "Weight is regulated by many systems.",
+          "detail": "Appetite, hormones, sleep, stress, medications, activity, pain, genetics, environment, and energy balance all interact."
+        },
+        {
+          "title": "Metabolic Health",
+          "short": "Risk markers matter.",
+          "detail": "Blood pressure, A1c/glucose, cholesterol, waist circumference, liver health, sleep apnea, and mobility can matter more than a single scale number."
+        },
+        {
+          "title": "Medication and Hormone Factors",
+          "short": "Some causes are medical.",
+          "detail": "Steroids, antidepressants, antipsychotics, insulin, hormonal changes, PCOS, thyroid disease, menopause, sleep apnea, and pain can contribute."
+        },
+        {
+          "title": "Shame Backfires",
+          "short": "Weight stigma worsens care.",
+          "detail": "Shame can increase avoidance, stress eating, isolation, and healthcare delay. Very bold strategy for making things worse."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Weight Regulation & Metabolic Risk Context",
+          "sections": [
+            {
+              "heading": "Stage 1 — More Than BMI",
+              "body": [
+                "Overweight and obesity are health categories, but BMI is only a screening tool.",
+                "Body composition, waist circumference, metabolic labs, function, symptoms, and individual history matter."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Causes and Contributors",
+              "body": [
+                "Weight can be influenced by genetics, environment, food access, sleep, stress, medications, hormones, thyroid disease, PCOS, insulin resistance, pain, disability, trauma, mood, and energy balance.",
+                "So yes, it is complex. No, that does not mean hopeless."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Health-Focused Plan",
+              "body": [
+                "Care can include nutrition, movement, sleep, mental health, medication review, labs, treatment for conditions, anti-obesity medications, or surgery when appropriate.",
+                "The goal is health, function, and sustainable change, not punishment cosplay."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Safety Check",
+              "body": [
+                "Sudden weight gain, swelling, shortness of breath, chest pain, severe fatigue, rapid unexplained change, pregnancy possibility, or thyroid symptoms needs medical evaluation.",
+                "A scale can be boring. Sudden fluid gain can be serious."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Overstuffed House",
+          "paragraphs": [
+            "Your body is a house that has accumulated boxes for years.",
+            "Some boxes are genetics. Some are meds. Some are stress. Some are sleep debt. Some are pain. Some are food patterns. Some are emotional junk mail from 2009.",
+            "The closets are full and the attic is rude.",
+            "The answer is not burning the house down. The answer is sorting boxes with medical help, realistic routines, and less shame from people who think metabolism is a motivational quote.",
+            "One box at a time leaves the house.",
+            "The house deserves maintenance, not contempt."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Load Reality Check",
+          "paragraphs": [
+            "You may have a weight concern. You may also have an accumulation-and-load pattern.",
+            "Medical first: weight is affected by biology, environment, meds, sleep, stress, hormones, access, pain, mental health, and energy balance.",
+            "Symbolically, ask what you are carrying.",
+            "What obligation, grief, fear, habit, injury, medication, or survival pattern added boxes to the house?",
+            "Shame is useless. Avoidance is expensive. A plan beats self-hatred every time.",
+            "Check the medical causes. Build sustainable routines. Remove one box.",
+            "Clean one room of the house or keep renting storage units for things you never wanted. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Spleen Dampness",
+          "tag": "Earth Element",
+          "paragraphs": [
+            "In Chinese medicine imagery, dampness can symbolize heaviness, accumulation, and difficulty transforming input.",
+            "Medically, weight is still biology, environment, and energy regulation."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Liver Stagnation",
+          "tag": "Blocked Flow",
+          "paragraphs": [
+            "The Liver image relates to movement and frustration.",
+            "When life feels stuck, the body may feel stuck too."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "The Accumulator",
+          "tag": "Shadow Storage",
+          "paragraphs": [
+            "The Accumulator keeps boxes because letting go once felt dangerous.",
+            "The Releaser learns what can leave safely."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Protective Buffer",
+          "tag": "Armor/Insulation",
+          "paragraphs": [
+            "Weight can symbolically feel like protection or insulation.",
+            "That meaning may be useful, but it is not the only cause."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "One Box Leaves",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The reset is realistic support, medical review, and one sustainable change.",
+            "No crash diets. No shame rituals. Humanity has suffered enough."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "One Box Out & Metabolic Support Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit upright with one hand on the belly and one on the heart.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "Whisper: I can release one thing at a time. I support my body without punishment.",
+          "Then choose one practical step: walk, hydrate, plan protein/fiber, schedule labs, review meds, or sleep earlier."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Weight concerns may need medical evaluation, nutrition support, medication review, mental-health care, or obesity medicine support.",
+        "items": [
+          {
+            "label": "Medical review",
+            "detail": "Review A1c/glucose, lipids, blood pressure, thyroid if indicated, medications, sleep apnea, PCOS/hormones, pain, and mood."
+          },
+          {
+            "label": "Food structure",
+            "detail": "Protein, fiber, whole foods, hydration, and regular meals may support appetite and metabolic health."
+          },
+          {
+            "label": "Movement",
+            "detail": "Start with realistic movement that respects pain, disability, and fitness level."
+          },
+          {
+            "label": "Support options",
+            "detail": "Ask about anti-obesity medications, bariatric surgery, or specialist care when appropriate."
+          }
+        ],
+        "avoid": [
+          "Do not ignore sudden weight gain, swelling, shortness of breath, chest pain, rapid unexplained change, or severe fatigue.",
+          "Do not use starvation, purging, laxatives, dangerous supplements, or shame as a weight plan."
+        ]
+      },
+      "brutalActions": [
+        "Check labs and meds.",
+        "Pick one sustainable routine.",
+        "Stop letting shame be the project manager.",
+        "Remove one box from the house today."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Overweight and obesity involve excess body fat or weight that may affect health, but BMI is only a screening tool. Causes and contributors can include genetics, environment, food access, sleep, stress, medications, hormones, thyroid disease, PCOS, insulin resistance, pain, disability, mental health, trauma, socioeconomic factors, and energy balance.",
+        "protocol": [
+          "Review BMI limitations, waist circumference, labs, blood pressure, sleep, meds, pain, hormones, mood, and function.",
+          "Build a health-focused plan with nutrition, movement, sleep, stress support, medication review, and treatment options when appropriate.",
+          "Seek care for sudden weight gain, swelling, shortness of breath, chest pain, rapid unexplained change, or severe fatigue."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical evaluation or obesity medicine care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Overstuffed House",
+        "metaphorText": "The house is full of boxes: biology, meds, stress, sleep debt, pain, food patterns, and emotional junk mail.",
+        "wittyAdvice": "Sort one box at a time. Do not burn the house down."
+      },
+      "brutal": {
+        "realityCheck": "You may have a weight concern. You may also have an accumulation-and-load pattern.",
+        "protocolTitle": "ONE BOX OUT",
+        "protocolSteps": [
+          "Check labs.",
+          "Review meds.",
+          "Structure food.",
+          "Move realistically.",
+          "Release one load."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Sudden rapid weight gain, swelling in legs/abdomen, shortness of breath, or chest pain",
+        "Severe fatigue, unexplained weight change, weakness, or thyroid symptoms",
+        "Pregnancy possibility, fluid retention, kidney/liver/heart symptoms, or medication-related gain",
+        "Excessive thirst, frequent urination, blurry vision, or diabetes symptoms",
+        "Eating disorder symptoms: bingeing, purging, restriction, laxative misuse, or severe distress",
+        "Severe depression, self-harm thoughts, or body-image crisis"
+      ],
+      "seek_immediate_care_if": [
+        "Weight gain occurs with shortness of breath, chest pain, severe swelling, fainting, confusion, or feeling medically unsafe",
+        "Eating behaviors or body distress involve self-harm, purging, or medical instability",
+        "Rapid unexplained gain suggests fluid retention or serious illness"
+      ],
+      "schedule_care_if": [
+        "Weight is affecting health, mobility, sleep, blood pressure, glucose, lipids, pain, or mood",
+        "You need medication review, lab screening, sleep apnea evaluation, PCOS/hormone review, or obesity treatment options",
+        "Weight change is rapid, unexplained, or distressing"
+      ],
+      "self_care_allowed_if": "Sustainable food structure, movement, sleep support, stress reduction, and tracking can support weight health without red flags.",
+      "do_not_ignore": "Weight is complex and not a moral failure. Sudden changes and metabolic symptoms need medical evaluation.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "sterility",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Hollow aching pulse followed by long silence and waiting.",
+        "hapticPattern": [
+          3000,
+          2000,
+          3000,
+          2000
+        ],
+        "uiBackgroundAccent": "#6B5B7B"
+      },
+      "hero": {
+        "primaryPattern": "Infertility may involve ovulation, sperm, tubes, uterus, endometriosis, PCOS, age, hormones, thyroid/prolactin, genetics, medications, lifestyle, or unexplained factors.",
+        "cascade": [
+          "Trying Continues",
+          "Cause Search",
+          "Grief Rises",
+          "Options Open"
+        ],
+        "tags": [
+          "#infertility",
+          "#fertility",
+          "#creation"
+        ],
+        "safetyPreview": "Pelvic pain, abnormal bleeding, irregular/absent periods, recurrent miscarriage, testicular pain/swelling, severe distress, or age-related timing needs care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Timed Conception",
+          "short": "Conception depends on multiple systems.",
+          "detail": "Ovulation, sperm production and movement, fallopian tubes, uterus, hormones, timing, and embryo development all have to cooperate. A rude number of departments, frankly."
+        },
+        {
+          "title": "Female Factors",
+          "short": "Ovulation, tubes, uterus, and endometriosis can matter.",
+          "detail": "PCOS, diminished ovarian reserve, thyroid/prolactin issues, tubal damage, endometriosis, fibroids, polyps, uterine abnormalities, and age can contribute."
+        },
+        {
+          "title": "Male Factors",
+          "short": "Semen analysis matters.",
+          "detail": "Low sperm count, motility issues, morphology issues, varicocele, hormones, infections, medications, heat, and lifestyle factors can contribute."
+        },
+        {
+          "title": "Unexplained and Treatable Paths",
+          "short": "No clear cause does not mean no options.",
+          "detail": "Unexplained infertility exists, and options can include timing, medications, IUI, IVF, donor options, surgery, or adoption/surrogacy depending on goals and resources."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Fertility Evaluation & Reproductive Pathways",
+          "sections": [
+            {
+              "heading": "Stage 1 — Infertility Is Medical, Not Moral",
+              "body": [
+                "Infertility is difficulty conceiving after regular unprotected sex over a defined period, often 12 months or sooner with age/history factors.",
+                "It can involve either partner, both partners, or no clearly identifiable cause."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Causes to Check",
+              "body": [
+                "Ovulation, sperm, tubes, uterus, endometriosis, PCOS, age, hormones, thyroid/prolactin, medications, infections, and lifestyle can all matter.",
+                "Testing both partners is basic sanity, not blame distribution."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Grief and Pressure",
+              "body": [
+                "Infertility can bring grief, shame, anger, jealousy, exhaustion, and relationship strain.",
+                "Emotional support is not optional decoration. This process can chew people up if they try to white-knuckle it."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Options",
+              "body": [
+                "Options can include ovulation tracking, medications, surgery, IUI, IVF, donor gametes, gestational carrier, adoption, or choosing a child-free path.",
+                "The right path depends on diagnosis, values, money, health, age, and emotional capacity."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Garden That Needs Soil Testing",
+          "paragraphs": [
+            "Your reproductive system is a garden, and the garden is not blooming on command.",
+            "Maybe the timing is off. Maybe the soil needs testing. Maybe the pollen is weak. Maybe the irrigation system is blocked. Maybe the weather is a clown show.",
+            "The worst gardener in the world says JUST RELAX. That gardener should be escorted off the property.",
+            "The garden needs evaluation: ovulation, sperm, tubes, uterus, hormones, history, and sometimes a specialist with expensive acronyms.",
+            "Longing is real. Grief is real. So is medical testing.",
+            "Do not let the empty garden become proof you are empty."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Waiting Room Reality Check",
+          "paragraphs": [
+            "You may have an infertility concern. You may also have a blocked-creation pattern.",
+            "Medical first: infertility can be female factor, male factor, combined, or unexplained. It needs evaluation, not self-blame.",
+            "Symbolically, ask what creation means to you beyond one outcome.",
+            "What are you grieving? What future are you terrified to lose? What identity did you tie to becoming a parent?",
+            "This is not your punishment. This is not proof you are defective. This is a hard road that deserves answers, support, and options.",
+            "Restore the garden carefully or keep blaming the soil without testing it. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Kidney Jing and Creation",
+          "tag": "Water Element",
+          "paragraphs": [
+            "In Chinese medicine, Kidney Jing symbolizes reproductive reserve and deep life potential.",
+            "Infertility can symbolically mirror depletion, timing, blocked flow, or longing."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Chong and Ren Vessels",
+          "tag": "Conception Pathways",
+          "paragraphs": [
+            "The Chong and Ren images describe reproductive nourishment and flow.",
+            "Medically, actual anatomy and hormones still get the final vote. Annoying but fair."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Unborn Self",
+          "tag": "Creator Archetype",
+          "paragraphs": [
+            "The Unborn Self represents what wants to come into life.",
+            "That may be a child, a project, a new identity, or a grief that needs naming."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Empty Garden",
+          "tag": "Longing",
+          "paragraphs": [
+            "The garden image holds longing without turning it into blame.",
+            "A quiet garden is not a worthless garden."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Creation Support",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The reset is medical evaluation, grief support, and widening the definition of creation.",
+            "Testing first. Shame never."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Garden Grounding & Creation Support",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit upright with one hand on the lower belly and one on the heart.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "Whisper: I am not a failure. I can seek answers. I can still create meaning.",
+          "Then choose one practical step: track cycles, schedule evaluation, ask for semen analysis, seek counseling, or write down options."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Infertility requires medical evaluation and can involve either partner or both.",
+        "items": [
+          {
+            "label": "Evaluate both partners",
+            "detail": "Semen analysis, ovulation/cycle review, ovarian reserve, hormones, tubes, uterus, and history may all matter."
+          },
+          {
+            "label": "Timing matters",
+            "detail": "Seek evaluation after the appropriate trying window, sooner with age over 35 or concerning history."
+          },
+          {
+            "label": "Mental health support",
+            "detail": "Fertility grief is real and deserves support from someone who understands it."
+          },
+          {
+            "label": "Options map",
+            "detail": "Discuss medications, IUI, IVF, donor options, surgery, adoption, surrogacy, or child-free paths depending on goals."
+          }
+        ],
+        "avoid": [
+          "Do not blame only one partner without testing.",
+          "Do not ignore pelvic pain, abnormal bleeding, irregular/absent periods, recurrent miscarriage, testicular symptoms, or severe distress."
+        ]
+      },
+      "brutalActions": [
+        "Get both partners evaluated.",
+        "Stop letting shame replace semen analysis and labs.",
+        "Name the grief without making it identity.",
+        "List every path to creation, not just the one that hurts most today."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Infertility is difficulty conceiving after a period of regular unprotected sex, commonly 12 months or 6 months when age or medical history warrants earlier evaluation. Causes can involve ovulation, sperm, tubes, uterus, endometriosis, age, hormones, PCOS, thyroid/prolactin issues, genetics, medications, lifestyle, or unexplained factors.",
+        "protocol": [
+          "Evaluate both partners and review ovulation, semen, tubes, uterus, hormones, age, medications, and history.",
+          "Seek care sooner with age over 35, irregular periods, pelvic pain, endometriosis, recurrent miscarriage, known male factor, or prior reproductive issues.",
+          "Use mental-health support for grief, stress, relationship strain, or distress."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for fertility care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Garden That Needs Soil Testing",
+        "metaphorText": "The garden is not blooming on command, so test the soil, pollen, timing, and plumbing before blaming the moon.",
+        "wittyAdvice": "No shame. More testing. Fewer people saying just relax."
+      },
+      "brutal": {
+        "realityCheck": "You may have an infertility concern. You may also have a blocked-creation pattern.",
+        "protocolTitle": "TEST THE GARDEN",
+        "protocolSteps": [
+          "Evaluate both partners.",
+          "Check cycles.",
+          "Check semen.",
+          "Seek support.",
+          "Map real options."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Severe pelvic pain, abnormal bleeding, or sudden menstrual cycle changes",
+        "Irregular or absent periods, very painful periods, or suspected endometriosis/PCOS",
+        "Recurrent miscarriage or pregnancy loss",
+        "Testicular pain, swelling, lumps, erectile/ejaculation issues, or known male factor concerns",
+        "Age over 35 with 6 months trying, age over 40, or known reproductive history risks",
+        "Severe depression, anxiety, relationship crisis, or self-harm thoughts"
+      ],
+      "seek_immediate_care_if": [
+        "There is severe pelvic/testicular pain, heavy bleeding, pregnancy emergency concern, or feeling unsafe",
+        "Mental-health distress includes self-harm thoughts",
+        "A serious infection or acute reproductive emergency is suspected"
+      ],
+      "schedule_care_if": [
+        "Trying has continued for 12 months, or 6 months if age/history warrants earlier evaluation",
+        "Cycles are irregular/absent, pelvic pain is present, miscarriages occurred, or male factor symptoms exist",
+        "You need fertility options, testing, or emotional support"
+      ],
+      "self_care_allowed_if": "Cycle tracking, healthy routines, avoiding smoking/excess alcohol, medication review, and stress support may help while evaluation is pursued.",
+      "do_not_ignore": "Infertility can involve either partner or both. It is not a personal failure or purely emotional blockage.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "thrush",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Thick pasty scraping vibration followed by sharp itch and pause.",
+        "hapticPattern": [
+          2000,
+          120,
+          300,
+          3000
+        ],
+        "uiBackgroundAccent": "#E8D5C4"
+      },
+      "hero": {
+        "primaryPattern": "Thrush/candidiasis may involve Candida overgrowth, antibiotics, diabetes, immune suppression, steroid inhalers, dentures, dry mouth, hormones, pregnancy, or local irritation.",
+        "cascade": [
+          "Terrain Shifts",
+          "Candida Overgrows",
+          "Coating/Itch Starts",
+          "Cause Review"
+        ],
+        "tags": [
+          "#thrush",
+          "#candida",
+          "#overgrowth"
+        ],
+        "safetyPreview": "Fever, severe pain, trouble swallowing, immune suppression, diabetes symptoms, recurrent thrush, pregnancy, or worsening after treatment needs medical care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Candida Balance",
+          "short": "Candida can live normally in small amounts.",
+          "detail": "Candida may exist in the mouth, gut, skin, or vagina without causing disease until conditions allow overgrowth."
+        },
+        {
+          "title": "Overgrowth Triggers",
+          "short": "Antibiotics, diabetes, immune suppression, and steroids matter.",
+          "detail": "Broad-spectrum antibiotics, high blood sugar, immune suppression, steroid inhalers, dry mouth, dentures, pregnancy, hormones, and irritation can increase risk."
+        },
+        {
+          "title": "Symptoms by Location",
+          "short": "Mouth and vaginal symptoms differ.",
+          "detail": "Oral thrush can cause white patches, soreness, cracking, or swallowing pain. Vaginal yeast can cause itching, burning, redness, soreness, and thick white discharge."
+        },
+        {
+          "title": "Recurrent Screen",
+          "short": "Repeated thrush needs cause review.",
+          "detail": "Recurrent or severe candidiasis can point to diabetes, immune suppression, medication effects, or resistant/recurrent infection."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Candida Overgrowth & Terrain Shift",
+          "sections": [
+            {
+              "heading": "Stage 1 — Candida Overgrowth",
+              "body": [
+                "Thrush/candidiasis is Candida yeast overgrowth.",
+                "It can affect the mouth, vagina, skin folds, nipples, or other body areas."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Why It Happens",
+              "body": [
+                "Risk factors can include antibiotics, diabetes/high blood sugar, immune suppression, steroid inhalers, dentures, dry mouth, pregnancy/hormonal changes, irritation, and some medications.",
+                "Candida is opportunistic, because apparently even yeast understands timing."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Treatment Depends on Location",
+              "body": [
+                "Treatment may involve antifungal medication and correcting contributing factors.",
+                "Rinse after steroid inhalers, manage blood sugar, address denture fit/hygiene, and finish prescribed treatment when directed."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Safety Check",
+              "body": [
+                "Seek care for fever, severe pain, trouble swallowing, immune suppression, diabetes symptoms, recurrent thrush, pregnancy, spreading rash, or worsening after treatment.",
+                "Repeated yeast problems deserve investigation, not another round of shrugging."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Overgrown Candida Garden",
+          "paragraphs": [
+            "Your body is a garden where Candida was supposed to be a minor background plant.",
+            "Then antibiotics, blood sugar, dry mouth, hormones, steroids, dentures, immune stress, or irritation opened the gate.",
+            "Now the weeds have a newsletter and a parking permit.",
+            "The flowers are still there. The terrain just needs help.",
+            "That help may be antifungal treatment, blood sugar review, inhaler rinsing, denture care, trigger tracking, or medical evaluation.",
+            "Do not hand the garden to miracle detox people. They will sell you compost and fear."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Overgrowth Reality Check",
+          "paragraphs": [
+            "You may have a thrush problem. You may also have an overgrowth-and-depletion pattern.",
+            "Medical first: Candida overgrowth can point to antibiotics, diabetes, immune suppression, steroid inhalers, dry mouth, dentures, hormones, pregnancy, or irritation.",
+            "Symbolically, ask what small thing has been allowed to take over.",
+            "What obligation, habit, sweetness, resentment, or exhaustion has spread past its proper place?",
+            "Treat the yeast. Check the terrain. Restore balance without declaring war on your body.",
+            "Restore the terrain or keep letting the yeast open a garden center. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Spleen Damp-Heat",
+          "tag": "Overgrowth Terrain",
+          "paragraphs": [
+            "In Chinese medicine language, damp-heat can symbolize sticky overgrowth and irritation.",
+            "Medically, Candida still requires appropriate diagnosis and treatment."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Balanced Self",
+          "tag": "Equilibrium",
+          "paragraphs": [
+            "The Balanced Self knows when enough is enough.",
+            "Overgrowth asks where proportion has been lost."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Garden Terrain",
+          "tag": "Microbiome",
+          "paragraphs": [
+            "The garden image focuses on terrain, not blame.",
+            "You are not dirty. The ecosystem needs adjustment."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Sweetness and Yeast",
+          "tag": "Fuel",
+          "paragraphs": [
+            "High blood sugar can support yeast growth.",
+            "Symbolically, sweetness without balance can feed what should stay small."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Restore Balance",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The reset is antifungal care, risk-factor review, and reducing what feeds recurrence.",
+            "Weeds get pulled. Soil gets repaired."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Candida Terrain & Balance Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit upright with one hand on the lower belly and one on the upper chest.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "Whisper: I restore balance. I release what has grown beyond what is needed.",
+          "Then choose one practical action: take prescribed antifungal, rinse after inhaler use, review blood sugar, clean dentures, or schedule care for recurrence."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Thrush/candidiasis may need antifungal treatment and evaluation for underlying causes.",
+        "items": [
+          {
+            "label": "Treat appropriately",
+            "detail": "Use antifungal treatment as directed for the location and severity."
+          },
+          {
+            "label": "Review risk factors",
+            "detail": "Antibiotics, diabetes, steroid inhalers, dentures, dry mouth, pregnancy, hormones, and immune status may matter."
+          },
+          {
+            "label": "Rinse after inhalers",
+            "detail": "Rinsing the mouth after inhaled steroids can reduce oral thrush risk."
+          },
+          {
+            "label": "Check recurrence",
+            "detail": "Recurrent thrush deserves evaluation for diabetes, immune suppression, medication effects, or resistant infection."
+          }
+        ],
+        "avoid": [
+          "Do not ignore trouble swallowing, fever, severe pain, immune suppression, diabetes symptoms, pregnancy, spreading rash, or recurrent symptoms.",
+          "Do not treat every genital symptom as yeast without testing."
+        ]
+      },
+      "brutalActions": [
+        "Treat the yeast correctly.",
+        "Check blood sugar if symptoms recur.",
+        "Rinse after steroid inhalers.",
+        "Pull one overgrown obligation out by the roots."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Thrush/candidiasis is Candida yeast overgrowth that can affect the mouth, vagina, skin folds, nipples, or other areas. Risk factors include antibiotics, diabetes/high blood sugar, immune suppression, steroid inhalers, dentures, dry mouth, pregnancy/hormonal changes, irritation, and some medications.",
+        "protocol": [
+          "Treat with appropriate antifungal medication when diagnosed.",
+          "Review diabetes, immune status, antibiotics, steroid inhalers, dentures, dry mouth, hormones, pregnancy, and recurrence.",
+          "Seek care for severe pain, trouble swallowing, fever, immune suppression, recurrent thrush, or worsening after treatment."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Overgrown Candida Garden",
+        "metaphorText": "Candida stopped being a background plant and started opening franchises.",
+        "wittyAdvice": "Treat the yeast, fix the terrain, and do not buy fear-compost from detox goblins."
+      },
+      "brutal": {
+        "realityCheck": "You may have a thrush problem. You may also have an overgrowth-and-depletion pattern.",
+        "protocolTitle": "RESTORE THE TERRAIN",
+        "protocolSteps": [
+          "Treat correctly.",
+          "Check recurrence.",
+          "Review diabetes risk.",
+          "Reduce triggers.",
+          "Restore balance."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Trouble swallowing, chest pain with swallowing, dehydration, or inability to eat/drink",
+        "Fever, severe pain, spreading rash, or feeling very ill",
+        "Immune suppression, chemotherapy, transplant meds, HIV concern, or uncontrolled diabetes",
+        "Recurrent thrush, frequent yeast infections, or symptoms not improving after treatment",
+        "Pregnancy with symptoms or uncertainty about treatment safety",
+        "Genital sores, pelvic pain, foul odor, green/yellow discharge, or STI concern"
+      ],
+      "seek_immediate_care_if": [
+        "There is trouble swallowing, severe illness, dehydration, fever, or immune suppression with worsening symptoms",
+        "Symptoms are severe, spreading, or paired with serious infection signs",
+        "You feel medically unsafe"
+      ],
+      "schedule_care_if": [
+        "Thrush is recurrent, persistent, severe, or diagnosis is uncertain",
+        "Diabetes, immune suppression, steroid inhaler use, dentures, dry mouth, pregnancy, or antibiotics may be involved",
+        "Genital symptoms could be BV, STI, irritation, or something other than yeast"
+      ],
+      "self_care_allowed_if": "Risk-factor tracking and following prescribed antifungal treatment may support known uncomplicated thrush.",
+      "do_not_ignore": "Recurrent thrush can signal diabetes, immune suppression, medication effects, or another underlying issue.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "thyroid-problems",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Alternating flutter and slow dragging thuds followed by pause.",
+        "hapticPattern": [
+          100,
+          80,
+          100,
+          80,
+          100,
+          250,
+          900,
+          250,
+          900,
+          3000
+        ],
+        "uiBackgroundAccent": "#6B7B8B"
+      },
+      "hero": {
+        "primaryPattern": "Thyroid problems may involve low or high thyroid hormone, autoimmune disease, nodules, thyroiditis, medication effects, iodine, pregnancy/postpartum changes, pituitary issues, or structural thyroid disease.",
+        "cascade": [
+          "Signal Shifts",
+          "Metabolism Changes",
+          "Body Speeds/Slows",
+          "Labs Guide Care"
+        ],
+        "tags": [
+          "#thyroid",
+          "#TSH",
+          "#metabolism"
+        ],
+        "safetyPreview": "Chest pain, rapid heartbeat, shortness of breath, fever, confusion, severe weakness, eye symptoms, neck swelling, pregnancy, or medication changes need care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Thyroid Hormones",
+          "short": "T4 and T3 regulate metabolic pace.",
+          "detail": "The thyroid makes hormones that influence energy use, heart rate, temperature, digestion, mood, skin, hair, and many other systems."
+        },
+        {
+          "title": "Hypothyroid Pattern",
+          "short": "Too little hormone slows systems.",
+          "detail": "Hypothyroidism can cause fatigue, cold intolerance, constipation, dry skin, hair loss, depression, weight gain, heavy periods, and slow heart rate."
+        },
+        {
+          "title": "Hyperthyroid Pattern",
+          "short": "Too much hormone speeds systems.",
+          "detail": "Hyperthyroidism can cause weight loss, heat intolerance, anxiety, tremor, palpitations, diarrhea, insomnia, sweating, and eye symptoms in Graves' disease."
+        },
+        {
+          "title": "Labs and Treatment",
+          "short": "Testing guides treatment.",
+          "detail": "TSH and free T4 are common starting labs; treatment depends on the cause. Please do not let vibes manage endocrine chemistry."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Thyroid Hormone Pace & System Regulation",
+          "sections": [
+            {
+              "heading": "Stage 1 — Thyroid Regulates Pace",
+              "body": [
+                "The thyroid produces hormones that influence metabolism, temperature, heart rate, digestion, mood, skin, hair, and energy.",
+                "Problems can be underactive, overactive, inflammatory, autoimmune, nodular, medication-related, postpartum, or pituitary-related."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Too Slow vs Too Fast",
+              "body": [
+                "Hypothyroidism can feel like fatigue, coldness, constipation, depression, weight gain, dry skin, and brain fog.",
+                "Hyperthyroidism can feel like anxiety, heat, weight loss, palpitations, tremor, insomnia, sweating, and frequent bowel movements."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Lab-Guided Care",
+              "body": [
+                "Thyroid care is guided by labs, symptoms, cause, pregnancy status, medications, and exam findings.",
+                "Do not stop, start, or change thyroid medication without medical guidance. The gland is dramatic enough already."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Emergency Check",
+              "body": [
+                "Chest pain, severe rapid heartbeat, shortness of breath, fever, confusion, agitation, fainting, severe weakness, eye pain/vision changes, or major neck swelling needs urgent care.",
+                "Thyroid storm and severe hypothyroid states are not self-care projects."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Broken Thermostat With a Clipboard",
+          "paragraphs": [
+            "Your thyroid is the thermostat for the metabolic building.",
+            "Sometimes it runs the heat in July. Sometimes it turns the entire building into a walk-in freezer and calls it efficiency.",
+            "T3 and T4 are the maintenance crew. TSH is the increasingly frustrated email from management.",
+            "When the system runs too slow, everyone moves like wet cement. When it runs too fast, the elevators start screaming.",
+            "The fix is labs, medication management, cause review, and not letting internet strangers adjust your dose with the confidence of medieval barbers.",
+            "The building can be recalibrated. First, stop arguing with the thermostat and test the wires."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Pace Reality Check",
+          "paragraphs": [
+            "You may have a thyroid problem. You may also have a pace-and-rhythm pattern.",
+            "Medical first: thyroid problems require labs and real treatment. Autoimmune disease, nodules, meds, iodine, pregnancy, and pituitary issues can all matter.",
+            "Symbolically, ask who has been setting your pace.",
+            "Are you rushing to prove yourself? Frozen from burnout? Swinging between sprint and collapse?",
+            "Find your rhythm, yes. But also check TSH/free T4 and take medication correctly if prescribed.",
+            "Check the thermostat with labs or keep letting the building argue with its own HVAC. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Kidney-Stomach Rhythm",
+          "tag": "Energy Pace",
+          "paragraphs": [
+            "In symbolic Chinese medicine language, thyroid imbalance can be mapped to deep reserve and transformation.",
+            "Medically, thyroid hormones and labs remain the actual steering wheel."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Throat Expression",
+          "tag": "Voice/Pace",
+          "paragraphs": [
+            "The thyroid sits at the throat, making it symbolically tied to voice and pace.",
+            "The question becomes: whose timing are you living by?"
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Rushed Self",
+          "tag": "Shadow Speed",
+          "paragraphs": [
+            "The Rushed Self fears slowing down.",
+            "The Frozen Self fears moving again."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Thermostat War",
+          "tag": "Metabolic Conflict",
+          "paragraphs": [
+            "This layer imagines hyper and hypo as speed conflicts.",
+            "Testing determines which one is actually happening."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Lab-Guided Calibration",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The reset is rhythm, medication safety, and medical monitoring.",
+            "Your pace matters. So do the numbers."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Thyroid Pace & Thermostat Calibration",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit upright with one hand near the throat and one on the lower belly.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "Whisper: I find my own pace. I listen to my body and check what needs checking.",
+          "Then choose one practical action: take meds correctly, schedule labs, track symptoms, or call for urgent care if red flags are present."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Thyroid disorders require lab-based diagnosis and medical treatment when present.",
+        "items": [
+          {
+            "label": "Lab monitoring",
+            "detail": "TSH and free T4 are commonly used; free T3, antibodies, ultrasound, or other tests may be ordered depending on context."
+          },
+          {
+            "label": "Medication consistency",
+            "detail": "Take thyroid medication exactly as directed and watch interactions with food, calcium, iron, antacids, and other meds."
+          },
+          {
+            "label": "Symptom tracking",
+            "detail": "Track heart rate, weight, temperature tolerance, mood, sleep, bowel changes, skin/hair, periods, and neck/eye symptoms."
+          },
+          {
+            "label": "Cause review",
+            "detail": "Ask about Hashimoto's, Graves', thyroiditis, nodules, pregnancy/postpartum, iodine, medications, and pituitary issues when relevant."
+          }
+        ],
+        "avoid": [
+          "Do not change thyroid medication without medical guidance.",
+          "Do not ignore chest pain, severe rapid heartbeat, fever/confusion, shortness of breath, fainting, severe weakness, eye symptoms, or neck swelling."
+        ]
+      },
+      "brutalActions": [
+        "Get labs instead of guessing.",
+        "Take thyroid meds correctly if prescribed.",
+        "Track symptoms like a grown-up with a malfunctioning thermostat.",
+        "Stop letting everyone else set your pace."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Thyroid problems include hypothyroidism, hyperthyroidism, thyroiditis, nodules, goiter, autoimmune Hashimoto's or Graves' disease, medication effects, iodine issues, pregnancy/postpartum changes, pituitary issues, or thyroid cancer. Symptoms depend on whether hormone levels are low, high, fluctuating, or structurally abnormal.",
+        "protocol": [
+          "Track symptoms and use lab-guided evaluation with a clinician.",
+          "Do not adjust thyroid medication without medical guidance.",
+          "Seek urgent care for chest pain, severe rapid heartbeat, shortness of breath, fever/confusion, fainting, severe weakness, eye symptoms, or neck swelling."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for thyroid/endocrine care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Broken Thermostat With a Clipboard",
+        "metaphorText": "The thyroid building is either freezing the tenants or boiling the elevators, and TSH keeps sending angry emails.",
+        "wittyAdvice": "Test the wires before yelling at the thermostat."
+      },
+      "brutal": {
+        "realityCheck": "You may have a thyroid problem. You may also have a pace-and-rhythm pattern.",
+        "protocolTitle": "CHECK THE THERMOSTAT",
+        "protocolSteps": [
+          "Get labs.",
+          "Take meds correctly.",
+          "Track symptoms.",
+          "Review causes.",
+          "Find your pace."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Chest pain, severe rapid heartbeat, irregular heartbeat, fainting, or shortness of breath",
+        "Fever, confusion, agitation, vomiting/diarrhea, severe weakness, or thyroid storm concern",
+        "Extreme fatigue, hypothermia, confusion, very slow heart rate, or severe hypothyroid concern",
+        "Eye pain, bulging eyes, double vision, vision changes, or severe light sensitivity",
+        "Neck swelling, trouble swallowing, trouble breathing, hoarseness, or rapidly enlarging thyroid lump",
+        "Pregnancy/postpartum thyroid symptoms or medication changes"
+      ],
+      "seek_immediate_care_if": [
+        "There are heart symptoms, severe weakness, fever/confusion, fainting, severe shortness of breath, or thyroid storm/myxedema concern",
+        "Eye symptoms are severe or vision is affected",
+        "Neck swelling causes breathing/swallowing trouble"
+      ],
+      "schedule_care_if": [
+        "Symptoms suggest hypo- or hyperthyroidism",
+        "Medication monitoring, dose adjustment, pregnancy/postpartum care, or lab review is needed",
+        "There is goiter, nodules, family history, autoimmune symptoms, or persistent unexplained symptoms"
+      ],
+      "self_care_allowed_if": "Symptom tracking, medication consistency, sleep/stress support, and nutrition basics may support thyroid care alongside medical guidance.",
+      "do_not_ignore": "Thyroid disorders are medical conditions that need labs and clinician-guided management.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "vaginitis",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Sharp irritated stings followed by a long aching throb and pause.",
+        "hapticPattern": [
+          300,
+          100,
+          300,
+          120,
+          2000,
+          3000
+        ],
+        "uiBackgroundAccent": "#E8A0A0"
+      },
+      "hero": {
+        "primaryPattern": "Vaginitis may involve BV, yeast, trichomoniasis, STIs, irritants, low estrogen, antibiotics, diabetes, hormones, pregnancy, immune changes, or microbiome disruption.",
+        "cascade": [
+          "Balance Shifts",
+          "Tissue Irritates",
+          "Discharge/Itch Starts",
+          "Cause Must Be Identified"
+        ],
+        "tags": [
+          "#vaginitis",
+          "#BV",
+          "#yeast",
+          "#testing"
+        ],
+        "safetyPreview": "Fever, pelvic pain, pregnancy, foul odor, green/yellow discharge, bleeding, sores, STI concern, severe pain, or recurrent symptoms needs medical care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Vaginal Ecosystem",
+          "short": "pH and microbes matter.",
+          "detail": "The vaginal ecosystem relies on pH, lactobacilli, hormones, immune function, and tissue integrity. Yes, it is basically a tiny biochemical city council."
+        },
+        {
+          "title": "Common Causes",
+          "short": "BV, yeast, trichomoniasis, irritants, and low estrogen can all mimic each other.",
+          "detail": "BV often causes thin discharge and odor; yeast often causes itching and thick white discharge; trichomoniasis can cause frothy yellow-green discharge and requires partner treatment."
+        },
+        {
+          "title": "Wrong Treatment Problem",
+          "short": "Guessing can worsen symptoms.",
+          "detail": "Antifungal cream will not treat BV or trichomoniasis, and antibiotics can worsen yeast. Civilization invented testing for a reason."
+        },
+        {
+          "title": "Recurrence Screen",
+          "short": "Repeated symptoms need cause review.",
+          "detail": "Recurrent vaginitis may involve diabetes, immune suppression, hormones, sexual exposure, products, antibiotics, douching, or resistant/recurrent infection."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Vaginal Microbiome & Inflammation Cascade",
+          "sections": [
+            {
+              "heading": "Stage 1 — Vaginitis Is a Category, Not One Disease",
+              "body": [
+                "Vaginitis means inflammation or irritation of vaginal/vulvar tissue.",
+                "The cause can be BV, yeast, trichomoniasis, STI-related, allergic/irritant, low estrogen, pregnancy/hormonal, diabetes-related, or another condition."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Symptoms Overlap",
+              "body": [
+                "Itching, burning, discharge, odor, sex pain, and urinary discomfort can overlap between causes.",
+                "This is why guessing is a spectacularly annoying medical strategy."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Testing and Treatment",
+              "body": [
+                "Treatment depends on the cause: antibiotics, antifungals, STI treatment, estrogen therapy, irritant removal, diabetes management, or other care.",
+                "Trichomoniasis requires partner treatment. BV and yeast do not follow the same rules."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Safety Check",
+              "body": [
+                "Seek care for fever, pelvic pain, pregnancy, foul odor, green/yellow discharge, sores, bleeding, severe pain, STI concern, or recurrent symptoms.",
+                "Do not turn pelvic infection signs into a breathing exercise."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Walled Garden With Bad Landscaping",
+          "paragraphs": [
+            "Your vaginal ecosystem is a walled garden with flowers, weeds, pH rules, and a gardener who is one bad antibiotic away from quitting.",
+            "The lactobacilli are the flowers. BV bacteria are the weeds. Candida is the thistle. Trichomoniasis is not a weed; it is an STI goblin with paperwork.",
+            "Stress, douching, scented products, antibiotics, hormones, sex, diabetes, and immune changes can all mess with the garden.",
+            "The answer is not throwing random cream over the fence.",
+            "The answer is figuring out what is actually growing there, then treating it correctly.",
+            "The garden deserves testing, not vibes in a tube."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Listen Before It Burns Reality Check",
+          "paragraphs": [
+            "You may have a vaginitis problem. You may also have a neglected-signal pattern.",
+            "Medical first: vaginitis needs cause-based diagnosis. BV, yeast, trich, irritation, low estrogen, and STIs do not all use the same treatment.",
+            "Symbolically, ask what signal you kept dismissing until the body got louder.",
+            "What changed: product, partner, antibiotic, blood sugar, hormone shift, stress, soap, douching, or sex pattern?",
+            "Pay attention early. Get tested when needed. Stop guessing with drugstore roulette.",
+            "Restore the garden properly or keep letting irritation run the neighborhood council. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Liver-Spleen Damp-Heat",
+          "tag": "Lower Burner",
+          "paragraphs": [
+            "In Chinese medicine language, damp-heat can symbolize irritation, discharge, heat, and imbalance in the lower body.",
+            "Medically, the cause still needs diagnosis. The microscope outranks the metaphor."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Self-Caring One",
+          "tag": "Attention",
+          "paragraphs": [
+            "The Self-Caring One intervenes early.",
+            "She does not wait until the garden is screaming."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Boundary and Products",
+          "tag": "Irritant Filter",
+          "paragraphs": [
+            "This layer asks what is being allowed into a sensitive ecosystem.",
+            "Some things simply do not belong there, and apparently scented soap needed to be told."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Microbiome Balance",
+          "tag": "Inner Ecology",
+          "paragraphs": [
+            "Balance is not sterility.",
+            "The goal is a healthy ecosystem, not nuking everything from orbit."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Attention Before Escalation",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The reset is noticing, testing, treating correctly, and removing triggers.",
+            "The garden improves when the gardener stops winging it."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Pelvic Ecosystem Grounding",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit upright with one hand on the lower belly and one on the heart.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "Whisper: I listen early. I restore balance with care, not shame.",
+          "Then choose one practical action: stop irritants, avoid douching, track symptoms, schedule testing, or follow prescribed treatment."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Vaginitis treatment depends on the cause and may require testing, prescriptions, STI treatment, or pregnancy-safe care.",
+        "items": [
+          {
+            "label": "Get the cause identified",
+            "detail": "BV, yeast, trichomoniasis, irritants, low estrogen, and STIs can overlap."
+          },
+          {
+            "label": "Avoid douching",
+            "detail": "Douching and scented products can disrupt the vaginal ecosystem."
+          },
+          {
+            "label": "Track triggers",
+            "detail": "Track antibiotics, sex, products, hormones, blood sugar, pregnancy, stress, and recurrence."
+          },
+          {
+            "label": "Partner treatment when needed",
+            "detail": "Trichomoniasis and some STI-related causes require partner treatment."
+          }
+        ],
+        "avoid": [
+          "Do not ignore fever, pelvic pain, pregnancy, sores, bleeding, severe pain, STI concern, foul odor, green/yellow discharge, or recurrent symptoms.",
+          "Do not repeatedly self-treat without diagnosis."
+        ]
+      },
+      "brutalActions": [
+        "Stop guessing the cause.",
+        "Avoid douching and scented products.",
+        "Get testing for recurrent or unclear symptoms.",
+        "Listen before the downstairs garden starts filing formal complaints."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Vaginitis is inflammation or irritation of the vagina/vulva. Causes can include bacterial vaginosis, yeast infection, trichomoniasis, STIs, irritants/allergies, low estrogen, antibiotics, diabetes, pregnancy, hormonal changes, immune suppression, or other gynecologic conditions.",
+        "protocol": [
+          "Track discharge, odor, itching, burning, pelvic pain, urinary symptoms, bleeding, products, sex, STI risk, pregnancy, diabetes symptoms, antibiotics, and recurrence.",
+          "Seek diagnosis before repeating treatment.",
+          "Seek care promptly for pelvic pain, fever, pregnancy, severe pain, bleeding, sores, STI concern, or recurrent symptoms."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for gynecologic care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Walled Garden With Bad Landscaping",
+        "metaphorText": "The flowers, weeds, thistles, pH, hormones, and products are fighting over landscaping rights.",
+        "wittyAdvice": "Test the garden before dumping random cream on the roses."
+      },
+      "brutal": {
+        "realityCheck": "You may have a vaginitis problem. You may also have a neglected-signal pattern.",
+        "protocolTitle": "TEST THE GARDEN",
+        "protocolSteps": [
+          "Identify the cause.",
+          "Stop irritants.",
+          "Avoid douching.",
+          "Treat correctly.",
+          "Track recurrence."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Fever, pelvic pain, lower abdominal pain, or feeling very ill",
+        "Pregnancy with vaginitis symptoms, odor, bleeding, pain, or fluid concerns",
+        "Green/yellow discharge, foul odor, sores, blisters, bleeding, or STI exposure concern",
+        "Severe pain, pain during sex, painful urination, or worsening after treatment",
+        "Recurrent vaginitis, diabetes symptoms, immune suppression, or recent antibiotics",
+        "Symptoms after assault or non-consensual exposure"
+      ],
+      "seek_immediate_care_if": [
+        "There is fever, pelvic pain, pregnancy concern, severe pain, heavy bleeding, or feeling unsafe",
+        "Symptoms suggest pelvic infection or severe STI-related illness",
+        "You feel medically unsafe or symptoms rapidly worsen"
+      ],
+      "schedule_care_if": [
+        "Symptoms are new, recurrent, unclear, or not improving",
+        "Discharge/odor/itching/burning needs diagnosis",
+        "Pregnancy, STI concern, diabetes symptoms, or recurrent infections are present"
+      ],
+      "self_care_allowed_if": "Avoiding irritants and tracking symptoms may help while seeking diagnosis, but cause-based treatment is often needed.",
+      "do_not_ignore": "Vaginitis has multiple causes. The wrong treatment can worsen symptoms or miss an STI/pelvic infection.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  }
+]

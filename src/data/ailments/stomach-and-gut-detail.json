@@ -1,0 +1,3813 @@
+[
+  {
+    "id": "irritable-bowel",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Chaotic alternating pulses: cramping bursts, heavy pressure, then hollow silence.",
+        "hapticPattern": [
+          80,
+          60,
+          80,
+          60,
+          80,
+          500,
+          2500,
+          150,
+          4000
+        ],
+        "uiBackgroundAccent": "#7B6B5B"
+      },
+      "hero": {
+        "primaryPattern": "IBS may involve gut-brain axis sensitivity, altered motility, visceral hypersensitivity, food triggers, stress, diarrhea, constipation, bloating, and pain.",
+        "cascade": [
+          "Stress Signal",
+          "ENS Reacts",
+          "Motility Swings",
+          "Pain Loop"
+        ],
+        "tags": [
+          "#IBS",
+          "#gut brain",
+          "#motility"
+        ],
+        "safetyPreview": "Blood, black stool, weight loss, fever, anemia, nighttime diarrhea, persistent vomiting, severe/worsening pain, or new symptoms after age 50 needs medical evaluation."
+      },
+      "biologyPathway": [
+        {
+          "title": "Gut-Brain Axis",
+          "short": "The brain and gut signal each other.",
+          "detail": "IBS involves communication between the brain, gut nerves, microbiome, immune signals, stress system, and digestive movement."
+        },
+        {
+          "title": "Visceral Sensitivity",
+          "short": "The gut feels signals more intensely.",
+          "detail": "People with IBS may have heightened sensitivity to stretching, gas, stool movement, or normal digestive activity."
+        },
+        {
+          "title": "Motility Changes",
+          "short": "Movement can speed up, slow down, or alternate.",
+          "detail": "IBS can involve diarrhea, constipation, mixed patterns, bloating, urgency, incomplete evacuation, and abdominal pain."
+        },
+        {
+          "title": "Trigger Loop",
+          "short": "Stress, food, sleep, and hormones can interact.",
+          "detail": "Stress does not make IBS imaginary. It can amplify motility, sensitivity, pain, urgency, and the loop of symptoms causing more anxiety."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Gut-Brain Axis & Motility Dysregulation",
+          "sections": [
+            {
+              "heading": "Stage 1 — Disorder of Gut-Brain Interaction",
+              "body": [
+                "IBS is medically a disorder of gut-brain interaction.",
+                "It commonly involves abdominal pain related to bowel habits, diarrhea, constipation, mixed patterns, bloating, urgency, and visceral sensitivity."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Motility and Sensitivity",
+              "body": [
+                "The gut may move too quickly, too slowly, or unpredictably.",
+                "Nerves in the gut may also become more sensitive to gas, stretching, stool movement, or normal digestion."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Triggers and Amplifiers",
+              "body": [
+                "Food triggers, stress, sleep, hormones, infection history, microbiome changes, and nervous-system arousal can all influence symptoms.",
+                "This does not mean IBS is fake. It means the gut and brain are stuck in a deeply annoying group chat."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Red Flag Check",
+              "body": [
+                "Blood, black stool, unintentional weight loss, fever, anemia, nighttime diarrhea, persistent vomiting, severe or worsening pain, family history concerns, or new symptoms after age 50 require medical evaluation.",
+                "Do not label every bowel problem IBS just because the acronym is convenient."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Airport With a Screaming Control Tower",
+          "paragraphs": [
+            "Your digestive system is an airport stuck in permanent weather delays.",
+            "The control tower, also known as your nervous system, cannot decide whether to ground all flights or clear every runway immediately.",
+            "GROUND ALL FLIGHTS becomes constipation. CLEAR EVERYTHING NOW becomes diarrhea. The baggage carousel is either spinning like a carnival ride or dead in the corner.",
+            "The passengers, your emotions and partially digested life events, are extremely upset.",
+            "There is a sign that says WE'RE DOING OUR BEST in Comic Sans. Someone wrote OUR BEST IS NOT GOOD ENOUGH underneath. Rude, but fair.",
+            "The goal is not to fire the airport. The goal is to stop running every Tuesday afternoon like an international incident."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Indigestible Life Reality Check",
+          "paragraphs": [
+            "You do have an IBS problem. You may also have a processing-overload problem.",
+            "Do not stop at food blame. Food matters. FODMAPs may matter. Dairy may matter. Gluten may matter for some people. Medical evaluation matters.",
+            "But if your gut goes chaotic every time your life does, ask what your system cannot process.",
+            "What obligation are you swallowing? What relationship keeps turning your stomach? What pressure keeps flipping you between hold everything and evacuate immediately?",
+            "Your gut is not your enemy. It is an overreactive messenger with terrible timing.",
+            "Stabilize the basics: food tracking, sleep, stress rhythm, medical rule-outs, and actual boundaries.",
+            "Land one plane at a time or keep letting the control tower scream. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Spleen-Liver Disharmony",
+          "tag": "Earth/Wood Pattern",
+          "paragraphs": [
+            "In Chinese medicine, the Spleen is associated with processing and the Liver with smooth flow.",
+            "Symbolically, IBS can mirror processing disrupted by worry, frustration, and stuck movement."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Fractured Conveyor Archetype",
+          "tag": "Shadow Flow",
+          "paragraphs": [
+            "The Flowing One moves through life without forcing hold or release.",
+            "When suppressed, the gut may alternate between too much control and too little containment."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Gut as Weather System",
+          "tag": "Somatic Forecast",
+          "paragraphs": [
+            "IBS can symbolically feel like an internal climate that changes without warning.",
+            "The goal is not domination. It is pattern recognition."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Indigestible Life",
+          "tag": "Meaning Layer",
+          "paragraphs": [
+            "This symptom can ask what part of life feels impossible to digest.",
+            "The body may be reacting to both food and context."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Control Tower Reset",
+          "tag": "Regulation",
+          "paragraphs": [
+            "The reset is rhythm: meals, sleep, breath, boundaries, and medical guidance.",
+            "One plane at a time. One signal at a time."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Gut-Brain Regulation & Control Tower Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit or lie down with both hands on the lower belly.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "On each exhale, whisper: I process what is mine. I release what is not. One signal at a time.",
+          "Continue for 2 minutes, then write one trigger, one food pattern, and one life stressor without turning it into a courtroom drama."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. IBS symptoms should be evaluated when red flags appear or symptoms are new, severe, or worsening.",
+        "items": [
+          {
+            "label": "Pattern tracking",
+            "detail": "Track food, stress, sleep, bowel pattern, pain, bloating, and urgency."
+          },
+          {
+            "label": "Regular rhythm",
+            "detail": "Consistent meals, sleep, hydration, and movement may support gut regulation."
+          },
+          {
+            "label": "Trigger experiments",
+            "detail": "Diet changes should be careful and trackable, not chaotic pantry warfare."
+          },
+          {
+            "label": "Stress regulation",
+            "detail": "Longer exhales, grounding, therapy, and boundaries may reduce gut-brain amplification."
+          }
+        ],
+        "avoid": [
+          "Do not ignore blood, black stool, weight loss, fever, anemia, nighttime diarrhea, persistent vomiting, severe/worsening pain, or new symptoms after age 50.",
+          "Do not assume every gut symptom is IBS without medical rule-outs."
+        ]
+      },
+      "brutalActions": [
+        "Track food and life stress together.",
+        "Stop blaming one random meal for a whole nervous-system pattern.",
+        "Create rhythm: sleep, meals, hydration, movement.",
+        "Get medical care for red flags or new/worsening symptoms."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "IBS is a disorder of gut-brain interaction involving abdominal pain with changes in bowel habits, visceral hypersensitivity, motility changes, stress sensitivity, food triggers, and altered gut signaling.",
+        "protocol": [
+          "Track food, stress, sleep, bowel pattern, pain, bloating, and urgency.",
+          "Seek medical evaluation for red flags or new/worsening symptoms.",
+          "Use clinician-guided strategies for IBS subtype, diet, medications, stress, and bowel pattern."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical diagnosis or IBS care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Airport With a Screaming Control Tower",
+        "metaphorText": "Your gut airport keeps switching between grounding every flight and launching everything at once.",
+        "wittyAdvice": "Calm the control tower before baggage claim becomes a crime scene."
+      },
+      "brutal": {
+        "realityCheck": "You do have an IBS problem. You may also have a processing-overload problem.",
+        "protocolTitle": "LAND ONE PLANE AT A TIME",
+        "protocolSteps": [
+          "Track patterns.",
+          "Rule out red flags.",
+          "Create rhythm.",
+          "Name the indigestible life stressor.",
+          "Use medical guidance instead of random food panic."
+        ]
+      }
+    },
+    "biologyPath": [
+      {
+        "title": "Subconscious Alarm",
+        "description": "Your mind registers a threat—usually related to loss of control or fear of instability.",
+        "expandedDetails": "The amygdala activates a defense posture, diverting focus from internal homeostasis to external threat monitoring."
+      },
+      {
+        "title": "Vagal Shutdown",
+        "description": "The vagus nerve drops its parasympathetic 'rest & digest' signaling to the GI tract.",
+        "expandedDetails": "Blood flow is shunted away from the abdominal organs to feed the limbs for survival, halting normal enzymatic digestion."
+      },
+      {
+        "title": "CRF Release",
+        "description": "Stress hormones trigger local inflammation directly inside the intestinal lining.",
+        "expandedDetails": "Corticotropin-releasing factor activates mucosal mast cells, which release cytokines that irritate the enteric nervous system."
+      },
+      {
+        "title": "Smooth Muscle Spasm",
+        "description": "Intestinal smooth muscles contract irregularly, leading to cramps and transit errors.",
+        "expandedDetails": "The rhythmic contractions of peristalsis are replaced by hyper-reactive spasming, either stalling transit completely or rushing it through."
+      },
+      {
+        "title": "Visceral Flare",
+        "description": "Nerves in your gut become hyper-sensitive, translating normal gas into extreme pain.",
+        "expandedDetails": "Localized hypersensitivity may contribute to a feedback loop, telling your brain that your digestive tract is in a state of terminal collapse."
+      }
+    ],
+    "medical_safety": {
+      "critical_alerts": [
+        "Blood in stool or black/tarry stool",
+        "Unintentional weight loss, fever, or anemia symptoms",
+        "Nighttime diarrhea that wakes you from sleep",
+        "Persistent vomiting or dehydration",
+        "Severe, worsening, or localized abdominal pain",
+        "New bowel symptoms after age 50 or strong family history of colon cancer, IBD, or celiac disease"
+      ],
+      "seek_immediate_care_if": [
+        "You have severe pain, blood/black stool, persistent vomiting, dehydration, fainting, or serious illness signs",
+        "Symptoms are rapidly worsening or unlike your usual IBS pattern",
+        "You have fever, severe weakness, or signs of obstruction/infection"
+      ],
+      "schedule_care_if": [
+        "Symptoms are new, worsening, persistent, or affecting daily life",
+        "You have recurrent diarrhea/constipation, weight change, nighttime symptoms, or food restriction concerns",
+        "You need help identifying IBS subtype and treatment options"
+      ],
+      "self_care_allowed_if": "Tracking patterns, regular meals, hydration, sleep, movement, and stress regulation may support known IBS without red flags.",
+      "do_not_ignore": "IBS should not be used as a catch-all label for unexplained gut symptoms with red flags. It is not purely emotional.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "acid-reflux",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Hot, burning, ascending pulses that rise like acid climbing a pipe.",
+        "hapticPattern": [
+          1800,
+          80,
+          300,
+          3000
+        ],
+        "uiBackgroundAccent": "#8B3A2A"
+      },
+      "hero": {
+        "primaryPattern": "Lower esophageal sphincter function, reflux pressure, acid exposure, meal timing, and stress-related symptom sensitivity may amplify GERD patterns.",
+        "cascade": [
+          "Pressure Builds",
+          "Valve Weakens",
+          "Acid Rises",
+          "Tissue Burns"
+        ],
+        "tags": [
+          "#reflux",
+          "#LES",
+          "#swallowed fire"
+        ],
+        "safetyPreview": "Chest pain, trouble swallowing, vomiting blood, black stool, weight loss, or persistent/worsening reflux needs medical evaluation."
+      },
+      "biologyPathway": [
+        {
+          "title": "Pressure Builds",
+          "short": "Stomach pressure rises.",
+          "detail": "Large meals, lying down soon after eating, certain triggers, abdominal pressure, hiatal hernia, pregnancy, some medications, and stress-related tension can all increase reflux pressure."
+        },
+        {
+          "title": "LES Barrier Weakens",
+          "short": "The reflux valve does not hold fully.",
+          "detail": "The lower esophageal sphincter normally helps keep stomach contents down. When the barrier is weak or overwhelmed by pressure, acid and stomach contents can move upward."
+        },
+        {
+          "title": "Acid Exposure",
+          "short": "Stomach contents irritate the esophagus.",
+          "detail": "The esophagus is not built to handle repeated acid exposure. This can create burning, sour taste, regurgitation, throat irritation, cough, or hoarseness."
+        },
+        {
+          "title": "Symptom Loop",
+          "short": "Fear and focus can make the burn louder.",
+          "detail": "Stress does not mean reflux is imaginary. Stress can change sensitivity, breathing, tension, and perception of discomfort, making symptoms feel more intense or harder to ignore."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Reflux Barrier & Acid Exposure Cascade",
+          "sections": [
+            {
+              "heading": "Stage 1 — Reflux Pressure",
+              "body": [
+                "Acid reflux happens when stomach contents move upward into the esophagus.",
+                "This can be influenced by meal size, timing, lying down after eating, abdominal pressure, trigger foods, hiatal hernia, pregnancy, smoking, weight changes, and some medications."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Lower Esophageal Sphincter Function",
+              "body": [
+                "The lower esophageal sphincter is the valve-like barrier between the stomach and esophagus.",
+                "When it relaxes inappropriately, weakens, or is overwhelmed by pressure, reflux can occur."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Esophageal Irritation",
+              "body": [
+                "Repeated acid exposure can irritate the esophagus and throat.",
+                "Symptoms may include heartburn, sour taste, regurgitation, cough, hoarseness, throat burning, nausea, or chest discomfort."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Stress and Symptom Sensitivity",
+              "body": [
+                "Stress can amplify reflux symptoms by changing breathing, muscle tension, sleep, eating patterns, and nervous-system sensitivity.",
+                "That does not make reflux symbolic only. It means the body and stress system are rude enough to collaborate."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "Gary and the Backwards Sewer System",
+          "paragraphs": [
+            "Your digestive system is now a poorly designed, underfunded sewer system in a town that keeps flushing things it should not.",
+            "Your stomach is the tank. Normally, flow goes downward. But two furious supervisors named Cortisol and Adrenaline keep hitting the backflow button because you never know when you might need to revisit something.",
+            "The lower esophageal sphincter is the valve at the top of the tank. It is supposed to close tightly. One-way flow only. But Gary the pump operator has not had a break since 2004.",
+            "Gary keeps leaving the valve ajar. The pressure rises. The acid backs up into the esophagus, which is not designed for this nonsense.",
+            "The control room has a sign that says DON'T PANIC in Comic Sans. There is a coffee mug that says WORLD'S OKAYEST PUMP OPERATOR. Gary is doing his best, which is upsetting, because his best is currently acid in your throat.",
+            "And you keep taking antacids. Antacids can lower the burn. They do not necessarily fix the pressure, the timing, the valve behavior, or the emotional habit of swallowing fire and calling it dinner."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Swallowed Fire Reality Check",
+          "paragraphs": [
+            "You do have a reflux problem. You may also have an I will just keep it down problem.",
+            "How many times have you felt heat rise in your chest, anger in your throat, and truth behind your teeth, then swallowed it like a shot of poison?",
+            "Every it is fine that was absolutely not fine has to go somewhere. Every unfinished argument. Every swallowed insult. Every truth that scared you.",
+            "Food can trigger reflux. Spicy food, late meals, chocolate, alcohol, coffee, stress eating, and lying down too soon can matter. But sometimes the burn also asks what you keep refusing to say.",
+            "Medication can matter. Lifestyle changes can matter. Medical care can matter. But if your whole life is one long performance of swallowing fire, do not act shocked when the fire keeps rising.",
+            "The next time the burn shows up, ask: what am I keeping down that wants to come up?",
+            "Speak it safely. Write it. Say it to the mirror. Stop making your esophagus hold a press conference for every sentence you buried.",
+            "Armor down or stay inflamed. Charming little bargain."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Stomach Qi Rebellion",
+          "tag": "Middle Burner",
+          "paragraphs": [
+            "In Chinese medicine, Stomach Qi normally descends. Food, experience, and emotion are meant to move downward and onward.",
+            "Reflux symbolically mirrors a reversal: what should descend rises instead."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Liver Fire Invading Stomach",
+          "tag": "Wood Over Earth",
+          "paragraphs": [
+            "The Liver is associated with smooth flow and anger. When anger is stuck or swallowed, the symbolic Liver pattern can press into the Stomach.",
+            "The result is fire moving upward: heat, pressure, irritation, and the feeling of words burning their way back up."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Swallowed Fire Archetype",
+          "tag": "Shadow Voice",
+          "paragraphs": [
+            "The Speaker is the part that names what is wrong.",
+            "When that voice is suppressed long enough, the throat and chest become the symbolic chimney for fire that was never spoken."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Throat Gate",
+          "tag": "Expression",
+          "paragraphs": [
+            "The symptom may ask what truth is trying to rise.",
+            "The body may be saying: this cannot stay down forever."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Descending the Fire",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The goal is downward settling: upright posture, slower exhale, less pressure, and honest naming.",
+            "Do not use emotional reflection as a substitute for reflux care, medication guidance, or evaluation of concerning symptoms."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Stomach Qi Descending & Liver Fire Cooling",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit upright. Place one hand on the sternum and one hand on the lower belly.",
+          "Inhale through the nose for 4 seconds, imagining cool silver light moving from throat to stomach.",
+          "Exhale through the mouth for 8 seconds, imagining heat leaving through the hands.",
+          "On each exhale, whisper: I do not have to swallow what burns me. I release what I should have said.",
+          "Continue for 2 minutes. Stay upright afterward."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Persistent or concerning reflux symptoms need medical evaluation.",
+        "items": [
+          {
+            "label": "Meal timing",
+            "detail": "Avoid lying down soon after eating; many people do better staying upright after meals."
+          },
+          {
+            "label": "Smaller meals",
+            "detail": "Large meals can increase reflux pressure."
+          },
+          {
+            "label": "Trigger tracking",
+            "detail": "Track foods, timing, alcohol, caffeine, stress, sleep, and symptoms."
+          },
+          {
+            "label": "Sleep position",
+            "detail": "Some people use head-of-bed elevation or left-side sleeping for nighttime reflux support."
+          }
+        ],
+        "avoid": [
+          "Do not ignore chest pain, trouble swallowing, vomiting blood, black stool, or unexplained weight loss.",
+          "Do not stop prescribed reflux medication without medical guidance."
+        ]
+      },
+      "brutalActions": [
+        "Ask: what truth keeps rising?",
+        "Write the sentence you keep swallowing.",
+        "Stay upright and use slow longer exhales.",
+        "Get medical care for chest pain, trouble swallowing, bleeding signs, weight loss, or persistent symptoms."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Acid reflux and GERD involve stomach contents moving upward into the esophagus, often related to lower esophageal sphincter function, pressure, meal timing, irritation, and symptom sensitivity.",
+        "protocol": [
+          "Stay upright after meals and track triggers.",
+          "Consider smaller meals and avoid late heavy eating.",
+          "Seek medical care for chest pain, trouble swallowing, vomiting blood, black stool, weight loss, or persistent symptoms."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for reflux diagnosis or medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "Gary and the Backwards Sewer System",
+        "metaphorText": "Your stomach is an underfunded sewer tank and Gary the exhausted pump operator keeps leaving the top valve open.",
+        "wittyAdvice": "Give Gary a break, lower the pressure, and stop feeding the backflow machine at midnight like a goblin with a death wish."
+      },
+      "brutal": {
+        "realityCheck": "You do have a reflux problem. You may also have an I will just keep it down problem.",
+        "protocolTitle": "SPIT THE FIRE",
+        "protocolSteps": [
+          "Name what you are swallowing.",
+          "Write the truth without making it pretty.",
+          "Stay upright and slow the exhale.",
+          "Get medical care for red flags or persistent reflux."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Chest pain, pressure, shortness of breath, sweating, jaw/arm pain, or symptoms that could be heart-related",
+        "Trouble swallowing, painful swallowing, choking, or food sticking",
+        "Vomiting blood or material that looks like coffee grounds",
+        "Black or tarry stool",
+        "Unexplained weight loss, persistent vomiting, or severe weakness",
+        "Persistent or worsening reflux despite self-care"
+      ],
+      "seek_immediate_care_if": [
+        "Symptoms could be heart-related or include chest pressure, shortness of breath, sweating, or pain radiating to jaw/arm",
+        "You vomit blood, have black stool, severe weakness, or trouble swallowing",
+        "Pain is severe, new, or unlike your usual reflux"
+      ],
+      "schedule_care_if": [
+        "Reflux occurs often, wakes you at night, or affects eating/sleep",
+        "Over-the-counter medication is needed frequently",
+        "You have chronic cough, hoarseness, throat symptoms, nausea, or swallowing concerns"
+      ],
+      "self_care_allowed_if": "Meal timing, trigger tracking, upright posture after meals, smaller meals, and stress downshifting may support mild familiar reflux without red flags.",
+      "do_not_ignore": "GERD can overlap with serious conditions. Chest pain and swallowing problems should not be treated as purely emotional or dietary.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "abdominal-cramps",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Sharp, twisting, knotting pulses that start as a dull throb and escalate into sudden cramping staccato.",
+        "hapticPattern": [
+          900,
+          80,
+          70,
+          80,
+          70,
+          80,
+          70,
+          4000
+        ],
+        "uiBackgroundAccent": "#6B4C3B"
+      },
+      "hero": {
+        "primaryPattern": "Gut-brain axis activation, enteric sensitivity, irregular motility, gas pressure, and smooth muscle spasm may amplify abdominal cramping.",
+        "cascade": [
+          "Stress Signal",
+          "ENS Alert",
+          "Motility Shift",
+          "Smooth Muscle Spasm"
+        ],
+        "tags": [
+          "#gut brain",
+          "#motility",
+          "#swallowed truth"
+        ],
+        "safetyPreview": "Severe, worsening, localized, persistent, feverish, bloody, pregnancy-related, or unexplained abdominal pain needs medical evaluation."
+      },
+      "biologyPathway": [
+        {
+          "title": "Gut-Brain Signal",
+          "short": "Stress and emotion talk to the gut.",
+          "detail": "The gut is heavily connected to the nervous system. Stress, fear, anger, meals, hormones, and inflammation can all influence how strongly the digestive tract reacts."
+        },
+        {
+          "title": "Enteric Nervous System Alert",
+          "short": "The gut's nerve network becomes reactive.",
+          "detail": "The enteric nervous system helps coordinate digestion. When it becomes sensitized or dysregulated, normal movement, gas, or stretching can feel painful."
+        },
+        {
+          "title": "Motility Disruption",
+          "short": "Movement becomes too fast, too slow, or chaotic.",
+          "detail": "Cramping can occur when intestinal contractions become uncoordinated. This may come with bloating, gas, diarrhea, constipation, or the charming sensation that your intestines joined a marching band."
+        },
+        {
+          "title": "Smooth Muscle Spasm",
+          "short": "The gut wall tightens.",
+          "detail": "The intestinal wall contains smooth muscle. When contractions become excessive or poorly coordinated, the result can feel like twisting, knotting, squeezing, or sharp cramps."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Gut-Brain & Motility Cascade",
+          "sections": [
+            {
+              "heading": "Stage 1 — Gut-Brain Axis Activation",
+              "body": [
+                "Abdominal cramps can involve communication between the brain, autonomic nervous system, vagus nerve, immune system, and enteric nervous system.",
+                "Stress does not make the pain fake. It can change motility, muscle tension, sensitivity, and the way the gut interprets normal pressure or movement."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Enteric Nervous System Sensitivity",
+              "body": [
+                "The enteric nervous system helps coordinate digestive movement. When it becomes reactive, normal digestive activity may feel exaggerated, painful, urgent, or chaotic.",
+                "This can show up with cramping, bloating, gas, diarrhea, constipation, or alternating patterns."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Smooth Muscle Spasm",
+              "body": [
+                "The intestines use smooth muscle contractions to move contents forward. If contractions become irregular or excessive, the sensation can be twisting, squeezing, knotting, or sharp cramping.",
+                "Medically, this can overlap with many possibilities, from gas and constipation to infection, food intolerance, menstrual pain, IBS, inflammatory bowel disease, gallbladder issues, appendicitis, or other causes."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Escalation Check",
+              "body": [
+                "Mild familiar cramps are different from severe, worsening, localized, persistent, or unusual abdominal pain.",
+                "Fever, vomiting, blood in stool, black stool, fainting, pregnancy, severe tenderness, inability to pass stool or gas, or pain in the lower right abdomen should not be treated as a metaphorical scavenger hunt."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Airport Security Line From Hell",
+          "paragraphs": [
+            "Your digestive system is now a chronically understaffed airport security line during the holiday rush. The TSA agents, also known as your enteric nervous system, have been working triple shifts without breaks.",
+            "Your intestines are the conveyor belt. Normally, luggage moves along, gets sorted, and exits appropriately. But stress hormones keep slapping the emergency stop button because something might be suspicious.",
+            "Food? Suspicious. Air? Suspicious. That thing you wanted to say to your boss three years ago? Highly suspicious.",
+            "The conveyor belt stutters, stops, jerks forward, and jams again. That is the cramp. Not exactly a luxury travel experience.",
+            "The baggage claim carousel is also broken. One suitcase has been circling for years. It is that argument you never finished. The owner is nowhere to be found because, tragically, the owner is you.",
+            "The lost-and-found has a sign that says EMOTIONAL BAGGAGE: PLEASE CLAIM WITHIN 30 DAYS. The sign was posted in 2004. The hallway is now a mountain of unclaimed luggage. The cramping is the mountain shifting."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Swallowed Truth Reality Check",
+          "paragraphs": [
+            "You may not have only a gut problem. You may also have an I will just swallow this problem. A don't make a scene problem. A what is the point of saying anything problem.",
+            "How many times have you wanted to say stop and did not? How many times did your stomach clench while your mouth smiled and nodded like a badly trained customer service employee?",
+            "Every swallowed insult, protest, boundary, truth, need, and no has to go somewhere. If it never leaves your mouth, your body may start storing it lower down.",
+            "Food may be the trigger. That does not mean food is always the whole story. Sometimes food is just the messenger unlucky enough to walk into a room full of old emotional explosives.",
+            "The next time your stomach tightens, ask the rude but useful question: what am I not saying?",
+            "Say it safely. Write it. Speak it to the mirror. Tell the truth somewhere your body can hear you. Your gut was not built to be a vault for every sentence you were too tired or scared to finish.",
+            "Armor down or stay twisted. Annoying little choice, but there it is."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Spleen Transportation & Transformation",
+          "tag": "Earth Element",
+          "paragraphs": [
+            "In Chinese medicine, the Spleen is associated with transforming food, experience, and thought into usable energy.",
+            "When worry and overthinking dominate, the symbolic Spleen pattern can feel bogged down: too much rumination, not enough movement."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Liver Qi Stagnation",
+          "tag": "Wood Element",
+          "paragraphs": [
+            "The Liver is associated with the smooth flow of Qi. Frustration, anger, and suppressed action are classic symbolic themes here.",
+            "When the Liver pattern feels stuck, the gut may become the place where blocked movement is felt as twisting, pressure, or cramping."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Swallowed Truth Archetype",
+          "tag": "Shadow Voice",
+          "paragraphs": [
+            "The Expresser is the part that knows how to say this is wrong, I am angry, I need this, and no.",
+            "When that voice is suppressed long enough, the gut becomes the prison for what the mouth would not release."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Digesting Life",
+          "tag": "Somatic Metaphor",
+          "paragraphs": [
+            "The symptom can symbolically ask what experience you are trying to digest that your body knows is not yours to carry.",
+            "The cramp becomes the body's clenched punctuation mark."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Smoothing the Gut Field",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The goal is not to force the gut to relax. The goal is to make it safe enough to unclench.",
+            "Warmth, longer exhales, gentle pressure, and naming the swallowed truth can support the reset pattern for mild, familiar cramps."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Spleen Qi Smoothing & Enteric Downregulation",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit or lie down and place both palms over the lower belly.",
+          "Inhale through the nose for 4 seconds, imagining warmth spreading through the abdomen.",
+          "Exhale through the mouth for 8 seconds, letting the belly soften under your hands.",
+          "On each exhale, whisper: I release what I should have said. I digest what is mine. I let go of what is not.",
+          "Continue for 2 minutes. Stop if pain worsens or feels unusual."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a diagnosis or cure. Severe, worsening, or unusual abdominal pain needs medical evaluation.",
+        "items": [
+          {
+            "label": "Warmth",
+            "detail": "A warm compress may support mild cramping or tension."
+          },
+          {
+            "label": "Hydration",
+            "detail": "Small sips of water or electrolyte fluids may help when cramps are related to dehydration, diarrhea, or constipation."
+          },
+          {
+            "label": "Gentle movement",
+            "detail": "Slow walking may help gas and motility for mild familiar cramps."
+          },
+          {
+            "label": "Food pattern tracking",
+            "detail": "Track meals, stress, bowel changes, and timing instead of blaming one random sandwich like it acted alone."
+          }
+        ],
+        "avoid": [
+          "Do not ignore severe, localized, persistent, or worsening pain.",
+          "Do not use laxatives, anti-diarrheals, or supplements without care if symptoms are severe or unusual."
+        ]
+      },
+      "brutalActions": [
+        "Ask: what am I not saying?",
+        "Write the real sentence, not the polite version.",
+        "Put warmth on the belly and exhale longer than you inhale.",
+        "If pain is severe, unusual, or worsening, get medical care instead of trying to journal your appendix into compliance."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Abdominal cramps can involve gut-brain axis activation, enteric nervous system sensitivity, irregular motility, gas pressure, constipation, diarrhea, and smooth muscle spasm.",
+        "protocol": [
+          "Use warmth, hydration, and gentle movement for mild familiar cramps.",
+          "Track food, stress, bowel pattern, and timing.",
+          "Seek medical care for severe, worsening, localized, persistent, feverish, bloody, pregnancy-related, or unusual pain."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for diagnosis or medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Airport Security Line From Hell",
+        "metaphorText": "Your intestines are a holiday airport conveyor belt run by exhausted TSA agents who keep flagging every bag as suspicious.",
+        "wittyAdvice": "Claim one emotional suitcase before your gut sends the entire airport into lockdown."
+      },
+      "brutal": {
+        "realityCheck": "You may not have only a gut problem. You may also have an I will just swallow this problem.",
+        "protocolTitle": "SPIT OUT THE TRUTH",
+        "protocolSteps": [
+          "Name the sentence you swallowed.",
+          "Write it without making it polite.",
+          "Use warmth and longer exhales for mild familiar cramps.",
+          "Get medical care if pain is severe, unusual, or worsening."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Severe, sudden, or worsening abdominal pain",
+        "Pain with fever, repeated vomiting, fainting, confusion, or rigid/tender abdomen",
+        "Blood in stool, black/tarry stool, or vomiting blood",
+        "Pain in pregnancy or possible pregnancy",
+        "Lower-right abdominal pain, severe one-sided pain, or pain after injury",
+        "Inability to pass stool or gas with swelling/distention"
+      ],
+      "seek_immediate_care_if": [
+        "Pain is severe, sudden, worsening, or unlike your usual symptoms",
+        "You have fever, fainting, blood, black stool, repeated vomiting, pregnancy, or severe tenderness",
+        "You suspect appendicitis, obstruction, infection, or another urgent cause"
+      ],
+      "schedule_care_if": [
+        "Cramps are recurring, worsening, unexplained, or affecting daily life",
+        "You have ongoing diarrhea, constipation, weight loss, appetite changes, or persistent bloating",
+        "Symptoms repeatedly follow certain foods or stress patterns"
+      ],
+      "self_care_allowed_if": "Warmth, fluids, gentle movement, rest, and symptom tracking may support mild, familiar cramps without red flags.",
+      "do_not_ignore": "Abdominal pain has many possible causes. Severe, persistent, localized, bloody, feverish, pregnancy-related, or unusual pain should not be treated as purely emotional.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "anus-itching",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Sharp, irritating, stinging pulses alternating with maddening silence and a single prick.",
+        "hapticPattern": [
+          60,
+          60,
+          60,
+          4000,
+          120
+        ],
+        "uiBackgroundAccent": "#6B4C4C"
+      },
+      "hero": {
+        "primaryPattern": "Skin irritation, moisture, friction, hygiene habits, inflammation, and holding/release symbolism may overlap in pruritus ani.",
+        "cascade": [
+          "Irritation",
+          "Scratch Urge",
+          "Barrier Damage",
+          "Itch Loop"
+        ],
+        "tags": [
+          "#skin barrier",
+          "#release",
+          "#itch loop"
+        ],
+        "safetyPreview": "Bleeding, pain, discharge, persistent rash, worms, infection signs, or itching that does not improve needs medical evaluation."
+      },
+      "biologyPathway": [
+        {
+          "title": "Skin Irritation",
+          "short": "Sensitive skin becomes inflamed.",
+          "detail": "Anal itching often starts with irritation of delicate perianal skin. Moisture, stool residue, sweat, diarrhea, friction, tight clothing, scented products, or aggressive wiping can all contribute."
+        },
+        {
+          "title": "Barrier Damage",
+          "short": "Scratching and over-cleaning make it worse.",
+          "detail": "Scratching may feel relieving for approximately three glorious seconds, then damages the skin barrier and intensifies the itch-burn cycle."
+        },
+        {
+          "title": "Medical Causes",
+          "short": "There may be a physical driver.",
+          "detail": "Possible contributors include hemorrhoids, fissures, yeast or fungal irritation, dermatitis, eczema, psoriasis, pinworms, infections, leakage, or bowel changes."
+        },
+        {
+          "title": "Itch-Scratch Loop",
+          "short": "The more you scratch, the louder it gets.",
+          "detail": "Itching drives scratching. Scratching inflames the skin. Inflamed skin itches more. The loop is stupid, effective, and deeply committed to ruining your evening."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Perianal Skin Irritation & Itch Loop",
+          "sections": [
+            {
+              "heading": "Stage 1 — Local Irritation",
+              "body": [
+                "Anal itching is medically about irritated skin around the anus. It can come from moisture, stool residue, sweating, diarrhea, friction, clothing, scented products, or hygiene habits.",
+                "This area is delicate. Over-cleaning can be just as irritating as under-cleaning, because apparently the body enjoys making moderation the most annoying answer."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Barrier Damage",
+              "body": [
+                "Scratching, harsh soaps, scented wipes, and repeated wiping can damage the skin barrier.",
+                "Once the barrier is irritated, even normal moisture or friction can feel intense."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Possible Medical Drivers",
+              "body": [
+                "Common contributors can include hemorrhoids, fissures, yeast or fungal irritation, dermatitis, eczema, psoriasis, leakage, diarrhea, constipation, pinworms, or infection.",
+                "Persistent symptoms deserve evaluation instead of heroic bathroom detective work."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Itch-Scratch Cycle",
+              "body": [
+                "The itch drives scratching. Scratching causes inflammation. Inflammation creates more itching.",
+                "Breaking the loop usually means calming the skin, reducing irritants, keeping the area dry, and getting care if symptoms persist or include red flags."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "Gary at the Exit Gate",
+          "paragraphs": [
+            "Your anus is now a cranky, overworked security guard at the exit gate of a storage facility that has been at 110 percent capacity since 2013.",
+            "His name is Gary. He has not had a vacation in a decade. The gate is rusted. The hinges are screaming. There are way too many boxes behind the gate.",
+            "The gate was designed to open and close with ease. But Gary has been told to keep everything secure because you never know when you might need something you threw away.",
+            "So the gate stays tense. Boxes pile up. The hinges squeak. The area gets irritated. That is the itch. The gate is screaming: I am tired of holding all of this.",
+            "The storage facility has a sign that says CLOSED FOR INVENTORY. It has been up for years. The inventory is every grudge, grievance, old wound, and identity you keep refusing to release.",
+            "The security office has a mug that says WORLD'S OKAYEST GATEKEEPER. The gate is now a fire hazard. The itching is not the whole problem. The itching is the alarm."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Exit Gate Reality Check",
+          "paragraphs": [
+            "You may not have only an anal itching problem. You may also have an I cannot let go problem. A holding on feels safer than trusting problem.",
+            "Medically, yes, check irritation, moisture, wiping, hemorrhoids, fissures, dermatitis, infection, and all the unglamorous body mechanics nobody wants printed on a motivational mug.",
+            "Symbolically, though, ask the question: what are you holding onto?",
+            "Not just the obvious grudge. The deeper thing. The identity. The story. The version of yourself that depends on being wronged.",
+            "Scratching gives a second of relief and then makes the loop worse. Very human. Very on-brand. Very similar to replaying the same resentment and wondering why you still feel inflamed.",
+            "The next time the itch demands attention, ask: what am I refusing to release?",
+            "Let go of the story. Let go of the grievance. Let go of the version of you that thinks clenching is the same thing as safety.",
+            "Open the gate safely or keep scratching at the alarm. The body does love its crude little metaphors."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Large Intestine Release",
+          "tag": "Metal Element",
+          "paragraphs": [
+            "In Chinese medicine, the Large Intestine is associated with elimination and release.",
+            "Symbolically, this pattern asks what is no longer useful but still being held."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Kidney Fear & Control",
+          "tag": "Root Safety",
+          "paragraphs": [
+            "The Kidney pattern relates to fear, willpower, survival, and deep reserves.",
+            "If release feels unsafe, the body may keep tightening around what should pass."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "The Gatekeeper Archetype",
+          "tag": "Shadow Guard",
+          "paragraphs": [
+            "The Gatekeeper decides what leaves and what stays.",
+            "When the Gatekeeper is anxious, everything gets held too long."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Shame and Release",
+          "tag": "Hidden Charge",
+          "paragraphs": [
+            "This symptom can carry shame because of where it happens.",
+            "The symbolic work is to separate bodily care from embarrassment. The body is not immoral. It is irritated."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Opening the Gate Safely",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The goal is not dramatic surrender. The goal is safe release.",
+            "Relax the pelvic floor, reduce irritants, stop scratching, and let the body learn that letting go is allowed."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Large Intestine Release & Pelvic Floor Softening",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit on the edge of a chair with feet flat and hands on thighs.",
+          "Inhale through the nose for 4 seconds, letting the belly and pelvic floor stay soft.",
+          "Exhale through the mouth for 8 seconds, imagining the pelvic floor unclenching by one percent.",
+          "On each exhale, whisper: I release what I no longer need to hold. I am safe to let go.",
+          "Continue for 2 minutes. Do not scratch during the practice. The app cannot believe this sentence is necessary, but here we are."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Persistent, painful, bleeding, infected, or unexplained anal itching needs medical evaluation.",
+        "items": [
+          {
+            "label": "Gentle cleaning",
+            "detail": "Use plain water or gentle unscented care. Avoid aggressive wiping."
+          },
+          {
+            "label": "Keep dry",
+            "detail": "Moisture can worsen irritation. Breathable underwear and careful drying may help."
+          },
+          {
+            "label": "Avoid irritants",
+            "detail": "Avoid scented wipes, harsh soaps, fragrances, and scratchy clothing."
+          },
+          {
+            "label": "Break the itch loop",
+            "detail": "Scratching usually worsens inflammation even if it feels satisfying for two cursed seconds."
+          }
+        ],
+        "avoid": [
+          "Do not ignore bleeding, pain, discharge, rash, worms, fever, or persistent symptoms.",
+          "Do not use steroid, antifungal, antibiotic, or numbing products long-term without medical guidance."
+        ]
+      },
+      "brutalActions": [
+        "Ask what you are holding onto.",
+        "Stop scratching and reduce irritants.",
+        "Use gentle cleaning and dryness.",
+        "Get medical care for red flags or persistent symptoms."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Anal itching can involve perianal skin irritation, moisture, friction, over-wiping, stool residue, hemorrhoids, fissures, dermatitis, yeast or fungal irritation, pinworms, psoriasis, or infection.",
+        "protocol": [
+          "Use gentle unscented cleaning and keep the area dry.",
+          "Avoid scratching, harsh soaps, scented wipes, and aggressive wiping.",
+          "Seek care for bleeding, pain, discharge, worms, rash, infection signs, or persistent symptoms."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for diagnosis or medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "Gary at the Exit Gate",
+        "metaphorText": "The exit gate is run by Gary, an overworked storage-facility guard who has kept CLOSED FOR INVENTORY up since 2013.",
+        "wittyAdvice": "Maybe stop scratching the gate and figure out why Gary thinks every box has to stay forever."
+      },
+      "brutal": {
+        "realityCheck": "You may not have only an anal itching problem. You may also have an I cannot let go problem.",
+        "protocolTitle": "OPEN THE GATE SAFELY",
+        "protocolSteps": [
+          "Ask what you are holding onto.",
+          "Stop scratching and reduce irritants.",
+          "Use gentle cleaning and dryness.",
+          "Get medical care for red flags or persistent symptoms."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Rectal bleeding, black stool, pus, discharge, fever, or severe pain",
+        "New lump, rapidly worsening swelling, or severe tenderness",
+        "Visible worms or severe nighttime itching suggestive of pinworms",
+        "Rash spreading beyond the area or signs of infection",
+        "Persistent itching that does not improve with gentle care",
+        "Symptoms in a child, immunocompromised person, or person with diabetes"
+      ],
+      "seek_immediate_care_if": [
+        "You have significant bleeding, severe pain, fever, pus, or rapidly worsening swelling",
+        "You have black stool, severe rectal pain, or signs of infection",
+        "Symptoms are severe or you are immunocompromised"
+      ],
+      "schedule_care_if": [
+        "Itching persists, recurs, or disrupts sleep",
+        "You suspect hemorrhoids, fissures, yeast/fungal irritation, dermatitis, psoriasis, pinworms, or leakage",
+        "Over-the-counter care is not helping or you are unsure what is causing it"
+      ],
+      "self_care_allowed_if": "Gentle cleaning, dryness, avoiding scented products, breathable underwear, and not scratching may support mild irritation without red flags.",
+      "do_not_ignore": "Anal itching has many physical causes. Persistent, painful, bleeding, infected, or unexplained symptoms should not be treated as purely emotional.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "bed-wetting",
+    "medical_safety": {
+      "critical_alerts": [
+        "Blood in the urine (pink, red, or cola-colored)",
+        "Inability to urinate despite having a full bladder",
+        "Severe pain in the back, side, flank, or groin (kidney stone or infection sign)",
+        "Urinary symptoms accompanied by high fever, chills, or vomiting",
+        "Sudden onset of bedwetting in an adult",
+        "Pain or burning during urination with fever or confusion"
+      ],
+      "seek_immediate_care_if": [
+        "You cannot urinate at all, or see visible blood in your urine",
+        "You have severe flank pain radiating to the groin with fever and vomiting",
+        "You experience sudden urinary incontinence with numbness in your back or legs"
+      ],
+      "schedule_care_if": [
+        "You experience painful or burning urination, increased frequency, or daytime accidents",
+        "You have new or worsening nighttime bedwetting, or excessive, unquenchable thirst",
+        "You need screening to rule out UTIs, diabetes, constipation, sleep apnea, or neurological issues"
+      ],
+      "self_care_allowed_if": "Drinking plenty of water and maintaining regular bowel habits can support bladder health and reduce minor irritation.",
+      "do_not_ignore": "Urinary changes or pain can indicate infections, stones, or underlying systemic conditions that require timely medical diagnosis.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease. Seek professional medical care for diagnosis, treatment, medication decisions, or urgent symptoms."
+    }
+  },
+  {
+    "id": "constipation",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Heavy, blocked, straining pulses that mimic pushing against resistance.",
+        "hapticPattern": [
+          3000,
+          80,
+          200,
+          4000
+        ],
+        "uiBackgroundAccent": "#6B5B4B"
+      },
+      "hero": {
+        "primaryPattern": "Slow motility, low fluid, low fiber, medication effects, pelvic floor tension, inactivity, or stress-related holding may amplify constipation.",
+        "cascade": [
+          "Motility Slows",
+          "Water Reabsorbs",
+          "Stool Hardens",
+          "Exit Resists"
+        ],
+        "tags": [
+          "#motility",
+          "#release",
+          "#fiber"
+        ],
+        "safetyPreview": "Severe pain, vomiting, swollen abdomen, blood, black stool, inability to pass gas, or persistent constipation needs medical evaluation."
+      },
+      "biologyPathway": [
+        {
+          "title": "Motility Slows",
+          "short": "Transit takes too long.",
+          "detail": "When stool stays in the colon longer than usual, more water gets reabsorbed and stool becomes harder."
+        },
+        {
+          "title": "Stool Hardens",
+          "short": "The exit gets more difficult.",
+          "detail": "Low fluid, low fiber, medications, low activity, IBS-C, pelvic floor dysfunction, or other medical issues can make stool harder to pass."
+        },
+        {
+          "title": "Straining Loop",
+          "short": "Pushing can create more tension.",
+          "detail": "Straining may increase pelvic floor tension and make release harder, which is a beautifully stupid design feature."
+        },
+        {
+          "title": "Escalation Risk",
+          "short": "Some constipation is urgent.",
+          "detail": "Severe pain, vomiting, swelling, inability to pass gas, blood, black stool, or sudden major change can point to more serious causes."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Slow Motility & Stool Retention Cascade",
+          "sections": [
+            {
+              "heading": "Stage 1 — Slow Transit",
+              "body": [
+                "Constipation is medically about difficult, infrequent, incomplete, or hard bowel movements.",
+                "It can happen when intestinal transit slows and stool sits long enough for too much water to be reabsorbed."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Contributing Factors",
+              "body": [
+                "Common contributors include low fiber, low fluid, low activity, ignoring the urge, medication effects, IBS-C, pelvic floor dysfunction, pregnancy, hypothyroidism, neurologic conditions, or other medical issues.",
+                "Stress can contribute by changing routine, tension, appetite, hydration, and autonomic balance."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Strain and Tension",
+              "body": [
+                "The harder you strain, the more the pelvic floor may tighten.",
+                "Sometimes the exit problem is not a lack of effort. It is too much effort pointed at the wrong muscle system."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Escalation Check",
+              "body": [
+                "Constipation with severe pain, vomiting, belly swelling, inability to pass gas, blood, black stool, unexplained weight loss, or sudden major change deserves medical care.",
+                "The colon is not a place to practice denial as a wellness modality."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Recycling Center Shutdown",
+          "paragraphs": [
+            "Your colon is now a chronically understaffed recycling center that has not had a pickup in weeks.",
+            "The conveyor belt is jammed. The workers are on strike. Management keeps sending memos that say WE NEED MORE PRODUCT while the product piles up and starts to smell.",
+            "Cortisol and Adrenaline keep hitting the STOP button because you never know when you might need that old yogurt container.",
+            "The workers hung a sign on the break room door that says WE WON'T MOVE UNTIL YOU RELAX.",
+            "Management responds by calling a three-hour meeting about why nothing is moving. The meeting achieves nothing, because of course it does.",
+            "There is a poster on the wall that says TEAMWORK MAKES THE BOWEL MOVEMENT. It is crooked. Nobody has the energy to fix it."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Holding-On Reality Check",
+          "paragraphs": [
+            "You do have a constipation problem. You may also have an I cannot let go problem.",
+            "What are you holding onto? Not just food. Not just waste. The story, the control, the grievance, the old identity, the version of you that thinks release equals danger.",
+            "You push. Nothing. You push harder. Still nothing. Very symbolic. Deeply irritating.",
+            "Fiber can help. Water can help. Walking can help. Medical care can help. But if your whole life is clench, control, resist, repeat, your body may learn the choreography.",
+            "The next useful question is not how hard can I force this. It is what needs to soften so movement can happen.",
+            "Release is not collapse. Letting go is not losing everything. Sometimes the exit is just an exit.",
+            "Open the exit gently or keep living like a storage unit with organs. Elegant? No. Accurate? Unfortunately."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Spleen Transformation",
+          "tag": "Earth Element",
+          "paragraphs": [
+            "In Chinese medicine, the Spleen is associated with processing and transforming.",
+            "When worry dominates, the symbolic processing system can feel slow, heavy, and overloaded."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Large Intestine Release",
+          "tag": "Metal Element",
+          "paragraphs": [
+            "The Large Intestine is associated with elimination and letting go.",
+            "Constipation symbolically asks what is still being held after it has stopped being useful."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "The Hoarder's Gut",
+          "tag": "Shadow Releaser",
+          "paragraphs": [
+            "The Releaser is the part that knows how to be done.",
+            "When that part is suppressed, the gut becomes a storage room instead of a river."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Control Pattern",
+          "tag": "Somatic Clench",
+          "paragraphs": [
+            "This symptom can mirror the belief that if you release, you will lose control.",
+            "The body may be asking for trust instead of more force."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Softening the Exit",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The goal is not aggressive pushing. The goal is coordinated release.",
+            "Breath, hydration, fiber as tolerated, movement, routine, and pelvic floor softening can support that process."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Large Intestine Release & Motility Support",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit on the toilet or edge of a chair with feet supported. A small footstool can help create a squat-like posture.",
+          "Inhale through the nose for 4 seconds and let the belly expand.",
+          "Exhale through the mouth for 8 seconds and relax the jaw, belly, and pelvic floor.",
+          "On each exhale, whisper: I release what I no longer need to hold. I am safe to let go.",
+          "Do not strain. If nothing happens, pause and try again later."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Persistent, severe, sudden, or painful constipation needs medical evaluation.",
+        "items": [
+          {
+            "label": "Fluids",
+            "detail": "Hydration supports softer stool."
+          },
+          {
+            "label": "Fiber as tolerated",
+            "detail": "Fiber can help some constipation, but increasing too quickly may worsen gas or bloating."
+          },
+          {
+            "label": "Movement",
+            "detail": "Walking can support motility."
+          },
+          {
+            "label": "Toilet posture",
+            "detail": "A footstool and relaxed breathing may help reduce pelvic floor resistance."
+          }
+        ],
+        "avoid": [
+          "Do not use castor oil, harsh laxative stacking, repeated enemas, or stimulant laxatives without medical guidance.",
+          "Do not ignore severe pain, vomiting, swelling, blood, black stool, inability to pass gas, or sudden major bowel change."
+        ]
+      },
+      "brutalActions": [
+        "Drink water like a mammal with plumbing.",
+        "Walk gently after fiber instead of waiting for magic.",
+        "Stop straining and soften the pelvic floor.",
+        "Get care for severe pain, vomiting, swelling, blood, black stool, inability to pass gas, or persistent constipation."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Constipation can involve slowed motility, hard or dry stool, inadequate fiber or fluid, medication effects, pelvic floor dysfunction, low activity, IBS-C, endocrine issues, neurologic causes, or bowel obstruction in severe cases.",
+        "protocol": [
+          "Use fluids, fiber as tolerated, movement, toilet routine, and relaxed breathing.",
+          "Avoid straining and harsh laxative stacking.",
+          "Seek care for severe pain, vomiting, swelling, blood, black stool, inability to pass gas, or persistent constipation."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for diagnosis or medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Recycling Center Shutdown",
+        "metaphorText": "Your colon is an understaffed recycling center where the conveyor belt jammed and the workers are refusing to move until management relaxes.",
+        "wittyAdvice": "Add water, movement, and fiber carefully. Do not set the recycling center on fire with castor oil just because Grandma owned a spoon."
+      },
+      "brutal": {
+        "realityCheck": "You do have a constipation problem. You may also have an I cannot let go problem.",
+        "protocolTitle": "OPEN THE DOOR SAFELY",
+        "protocolSteps": [
+          "Hydrate.",
+          "Move gently.",
+          "Use fiber as tolerated.",
+          "Relax instead of straining.",
+          "Get care for red flags or persistent symptoms."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Severe abdominal pain, vomiting, or swollen/distended abdomen",
+        "Inability to pass stool or gas",
+        "Blood in stool or black/tarry stool",
+        "Sudden constipation with major change from normal pattern",
+        "Unexplained weight loss, fever, weakness, or persistent symptoms",
+        "Constipation in pregnancy, older adults, infants, or medically high-risk people"
+      ],
+      "seek_immediate_care_if": [
+        "You have severe pain, vomiting, swollen belly, inability to pass gas, blood, black stool, or signs of obstruction",
+        "Constipation is sudden, severe, or unlike your normal pattern",
+        "You are high-risk or symptoms are rapidly worsening"
+      ],
+      "schedule_care_if": [
+        "Constipation is recurrent, persistent, or requires frequent laxatives",
+        "You have weight loss, appetite changes, anemia concerns, or ongoing bowel changes",
+        "Self-care is not helping"
+      ],
+      "self_care_allowed_if": "Fluids, fiber as tolerated, gentle movement, toilet posture, and relaxed breathing may support mild constipation without red flags.",
+      "do_not_ignore": "Constipation can be medication-related, metabolic, neurologic, pelvic-floor-related, or obstructive. It should not be treated as purely emotional.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "diarrhea",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Rapid, chaotic, urgent pulses that mimic something rushing through too quickly.",
+        "hapticPattern": [
+          80,
+          60,
+          80,
+          60,
+          80,
+          120,
+          80,
+          60,
+          80,
+          220,
+          300,
+          2000
+        ],
+        "uiBackgroundAccent": "#8B7B6B"
+      },
+      "hero": {
+        "primaryPattern": "Rapid transit, fluid imbalance, enteric nervous system activation, infection, food triggers, medications, inflammation, or stress may amplify diarrhea.",
+        "cascade": [
+          "Urgency Signal",
+          "Rapid Transit",
+          "Poor Absorption",
+          "Fluid Loss"
+        ],
+        "tags": [
+          "#rapid transit",
+          "#urgency",
+          "#containment"
+        ],
+        "safetyPreview": "Dehydration, blood, fever, severe pain, persistent diarrhea, recent antibiotics, travel exposure, pregnancy, or high-risk health status needs medical evaluation."
+      },
+      "biologyPathway": [
+        {
+          "title": "Transit Speeds Up",
+          "short": "The gut moves too quickly.",
+          "detail": "Diarrhea can happen when stool moves through the intestines too quickly for water to be absorbed properly."
+        },
+        {
+          "title": "Fluid Stays in the Stool",
+          "short": "Water is not reclaimed.",
+          "detail": "Infections, irritation, inflammation, certain foods, medications, anxiety, and stress can all alter fluid handling in the gut."
+        },
+        {
+          "title": "Enteric Alarm",
+          "short": "The gut's nerve network gets reactive.",
+          "detail": "The enteric nervous system coordinates motility and secretion. When irritated or stressed, it may push contents through with rude, unnecessary urgency."
+        },
+        {
+          "title": "Dehydration Risk",
+          "short": "Fluid loss can become the danger.",
+          "detail": "The symptom may be embarrassing, but the real risk is dehydration, electrolyte imbalance, or missing a more serious cause."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Rapid Transit & Fluid Loss Cascade",
+          "sections": [
+            {
+              "heading": "Stage 1 — Rapid Transit",
+              "body": [
+                "Diarrhea is medically a digestive symptom. It can happen when stool moves through the intestines too quickly or when excess fluid remains in the stool.",
+                "Possible causes include viral or bacterial infection, food poisoning, food intolerance, medication effects, stress, anxiety, IBS, inflammatory bowel disease, gallbladder issues, or other medical causes."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Enteric Nervous System Activation",
+              "body": [
+                "The gut has its own nerve network, the enteric nervous system. It helps regulate motility, secretion, and sensitivity.",
+                "Stress does not make diarrhea fake. Stress can change gut movement, urgency, sensitivity, and how quickly the system tries to clear itself."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Water Absorption Failure",
+              "body": [
+                "When transit is too fast, the colon has less time to absorb water.",
+                "The result can be loose stool, urgency, cramping, bloating, and that deeply undignified sprint toward porcelain civilization."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Escalation Check",
+              "body": [
+                "The biggest concern is dehydration or a serious underlying cause.",
+                "Blood, black stool, fever, severe abdominal pain, repeated vomiting, signs of dehydration, diarrhea after antibiotics, recent travel, pregnancy, immunocompromised status, or symptoms lasting more than a couple days should be taken seriously."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Firefighter With Too Many False Alarms",
+          "paragraphs": [
+            "Your colon is now a chronically overworked, underpaid firefighter who has been responding to false alarms for years.",
+            "The siren is always going off. The hose is always leaking. The fire is either a real digestive issue or your own panic wearing a tiny firefighter helmet.",
+            "Normally, the firefighter responds with appropriate urgency. But stress hormones named Cortisol and Adrenaline keep calling in every emotion as a five-alarm fire.",
+            "A thought? Emergency. A deadline? Emergency. A suspicious taco? Emergency with sirens.",
+            "The firefighter stops inspecting the scene and just blasts everything out. That is diarrhea: evacuate first, process later.",
+            "The fire station poster says EVACUATE FIRST. PROCESS LATER. Someone wrote STOP SENDING FALSE ALARMS underneath. Nobody listened, because apparently the management committee is made of caffeine and unresolved dread."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Overwhelm Reality Check",
+          "paragraphs": [
+            "You do have a diarrhea problem. You may also have an everything is urgent problem.",
+            "Your body may be saying: I cannot hold this, process this, contain this, and pretend I am fine at the same time.",
+            "You have been pushing through, handling everything, absorbing chaos, and calling it normal because apparently humans think suffering quietly is a personality trait.",
+            "Food, infection, medication, inflammation, and medical issues absolutely matter. Do not turn every bowel movement into a childhood analysis seminar.",
+            "But if diarrhea shows up every time life becomes too much, ask the useful question: what am I trying to evacuate before I have actually processed it?",
+            "You may need fluids. You may need rest. You may need medical care. You may also need to stop living like every inconvenience is a burning building.",
+            "Ask for help before your body starts filing emergency reports through your colon.",
+            "Lower the emergency setting or keep evacuating every signal like a disaster drill."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Spleen Containment",
+          "tag": "Earth Element",
+          "paragraphs": [
+            "In Chinese medicine, the Spleen is associated with processing, transforming, and containing.",
+            "Symbolically, diarrhea can mirror a system that cannot hold long enough to process."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Kidney Fear & Collapse",
+          "tag": "Water Element",
+          "paragraphs": [
+            "The Kidney pattern relates to fear, reserves, and the deep sense of safety.",
+            "When safety feels gone, the symbolic body may stop containing and start evacuating."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "The Leaky Vessel Archetype",
+          "tag": "Shadow Container",
+          "paragraphs": [
+            "The Container is the part that can hold experience without cracking.",
+            "When overwhelmed, the vessel leaks. The body says: this is too much to hold."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Urgency Pattern",
+          "tag": "Somatic Alarm",
+          "paragraphs": [
+            "This symptom can ask where life has become all urgency and no digestion.",
+            "The body may be trying to clear something before it knows what it is."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Containment Reset",
+          "tag": "Grounding Practice",
+          "paragraphs": [
+            "The symbolic goal is not clenching harder. It is safe containment.",
+            "Breath, warmth, fluids, and support tell the body it does not have to evacuate every signal immediately."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Spleen Qi Containing & Kidney Anchoring",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit or lie down and place both hands on the lower belly.",
+          "Inhale through the nose for 4 seconds, imagining warmth spreading through the abdomen.",
+          "Exhale through the mouth for 8 seconds, imagining heaviness draining down through the feet.",
+          "On each exhale, whisper: I am safe. I can hold what is mine. I release what I do not need to hold.",
+          "Continue for 2 minutes. Prioritize fluids and medical care if red flags are present."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Diarrhea can become dangerous through dehydration or serious underlying causes.",
+        "items": [
+          {
+            "label": "Fluids",
+            "detail": "Use small frequent sips of water or oral rehydration/electrolyte fluids."
+          },
+          {
+            "label": "Rest",
+            "detail": "Give the gut and nervous system a lower-demand environment instead of pretending you are a productivity machine with plumbing."
+          },
+          {
+            "label": "Bland foods",
+            "detail": "Simple tolerated foods may help while symptoms settle."
+          },
+          {
+            "label": "Trigger tracking",
+            "detail": "Track meals, travel, sick contacts, medications, stress, and timing."
+          }
+        ],
+        "avoid": [
+          "Do not ignore dehydration, blood, fever, severe pain, persistent diarrhea, or diarrhea after antibiotics.",
+          "Do not use anti-diarrheal medication when there is fever, bloody stool, or suspected serious infection unless medically advised."
+        ]
+      },
+      "brutalActions": [
+        "Hydrate first. Philosophy second.",
+        "Ask: what feels too urgent to process?",
+        "Lower demand on your system for a few hours.",
+        "Get care for dehydration, blood, fever, severe pain, recent antibiotics, travel illness, pregnancy, or persistent symptoms."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Diarrhea can involve rapid intestinal transit, increased fluid in the stool, infection, food intolerance, inflammation, medication effects, anxiety, stress, or enteric nervous system dysregulation.",
+        "protocol": [
+          "Prioritize fluids and electrolytes.",
+          "Track food, medication, travel, stress, and timing.",
+          "Seek care for dehydration, blood, fever, severe pain, persistent symptoms, recent antibiotics, pregnancy, or high-risk health status."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for diagnosis or medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Firefighter With Too Many False Alarms",
+        "metaphorText": "Your colon is an exhausted firefighter who keeps blasting the hose because every signal is being reported as a five-alarm fire.",
+        "wittyAdvice": "Turn off the siren, hydrate, and stop making your colon respond to emails like they are burning buildings."
+      },
+      "brutal": {
+        "realityCheck": "You do have a diarrhea problem. You may also have an everything is urgent problem.",
+        "protocolTitle": "STOP THE FALSE ALARM",
+        "protocolSteps": [
+          "Hydrate first.",
+          "Name what feels urgent.",
+          "Reduce demand on your system.",
+          "Get care for red flags or persistent symptoms."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Signs of dehydration: dizziness, confusion, very dark urine, little/no urination, dry mouth, extreme thirst",
+        "Blood in stool, black stool, or severe rectal bleeding",
+        "High fever, severe abdominal pain, rigid belly, or worsening pain",
+        "Repeated vomiting or inability to keep fluids down",
+        "Diarrhea after recent antibiotics or hospitalization",
+        "Recent travel, suspected food poisoning, pregnancy, infant/elderly/immunocompromised/high-risk health status"
+      ],
+      "seek_immediate_care_if": [
+        "You have severe dehydration, blood, black stool, severe pain, high fever, confusion, fainting, or cannot keep fluids down",
+        "Diarrhea follows antibiotics or you suspect serious infection",
+        "You are pregnant, immunocompromised, elderly, caring for an infant, or medically high-risk"
+      ],
+      "schedule_care_if": [
+        "Diarrhea lasts more than a couple days or keeps returning",
+        "You have weight loss, nighttime diarrhea, persistent abdominal pain, or ongoing bowel changes",
+        "Symptoms repeatedly follow certain foods, stress patterns, medications, or travel"
+      ],
+      "self_care_allowed_if": "Fluids, electrolytes, rest, bland tolerated foods, and tracking triggers may support mild short-term diarrhea without red flags.",
+      "do_not_ignore": "Diarrhea can be infectious, inflammatory, medication-related, or dangerous through dehydration. It should not be treated as purely emotional.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "gas-pain",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Sharp shifting pulses, low rumble, hollow release, and irregular pause.",
+        "hapticPattern": [
+          300,
+          120,
+          1000,
+          120,
+          500,
+          2500
+        ],
+        "uiBackgroundAccent": "#7B8B6B"
+      },
+      "hero": {
+        "primaryPattern": "Gas pain may involve swallowed air, fermentation, constipation, food intolerance, motility changes, trapped gas, or stress-related gut tension.",
+        "cascade": [
+          "Gas Forms",
+          "Motility Slows",
+          "Pressure Traps",
+          "Pain Signals"
+        ],
+        "tags": [
+          "#gas",
+          "#pressure",
+          "#motility"
+        ],
+        "safetyPreview": "Severe pain, persistent bloating, vomiting, fever, blood, black stool, chest pain, or inability to pass gas/stool needs medical evaluation."
+      },
+      "biologyPathway": [
+        {
+          "title": "Gas Formation",
+          "short": "Air and fermentation create gas.",
+          "detail": "Gas can come from swallowed air, carbonation, and fermentation of carbohydrates by gut bacteria."
+        },
+        {
+          "title": "Motility and Trapping",
+          "short": "Movement determines whether gas passes.",
+          "detail": "If motility is slow, irregular, or blocked by constipation, gas can become trapped and stretch the intestinal wall."
+        },
+        {
+          "title": "Stretch Pain",
+          "short": "Pressure activates pain receptors.",
+          "detail": "Trapped gas stretches bowel tissue and activates mechanoreceptors, creating sharp, shifting, crampy, or stabbing pain."
+        },
+        {
+          "title": "Trigger Pattern",
+          "short": "Food, stress, and habits matter.",
+          "detail": "Food intolerance, IBS, constipation, stress tension, eating quickly, chewing gum, and carbonated drinks can all contribute."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Gas Formation, Trapping & Stretch Pain",
+          "sections": [
+            {
+              "heading": "Stage 1 — Gas Production",
+              "body": [
+                "Gas pain and flatulence are medically digestive symptoms. Gas can come from swallowed air, carbonation, and bacterial fermentation of food.",
+                "Common contributors include beans, dairy intolerance, high-FODMAP foods, constipation, eating quickly, chewing gum, IBS, and changes in gut motility."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Trapped Pressure",
+              "body": [
+                "Gas becomes painful when it gets trapped or moves poorly through the intestines.",
+                "The bowel wall stretches, pressure builds, and pain signals fire because the gut is a dramatic tube with nerve endings. Wonderful engineering."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Stress and Tension",
+              "body": [
+                "Stress can change breathing, diaphragm tension, abdominal bracing, motility, and gut sensitivity.",
+                "That does not mean gas is imaginary. It means the nervous system can make pressure feel louder."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Escalation Check",
+              "body": [
+                "Mild familiar gas is different from severe or persistent abdominal symptoms.",
+                "Severe pain, persistent bloating, vomiting, fever, blood, black stool, chest pain, weight loss, or inability to pass gas or stool should be evaluated."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Broken Elevator Apartment Building",
+          "paragraphs": [
+            "Your gut is now an overstuffed apartment building with one broken elevator.",
+            "The tenants are gas bubbles. They are trapped in hallways, stairwells, and air ducts, complaining to management with the confidence of people who have never paid rent.",
+            "The landlord, your stress hormones, keeps saying EVERYTHING IS FINE while the building groans like a haunted duplex.",
+            "The maintenance guy, your parasympathetic nervous system, has not been seen since 2017. He left a sticky note that says GONE FISHING.",
+            "A burp or fart releases one tenant. Great. But if the elevator is still broken, the pressure builds again.",
+            "The goal is not to shame the tenants. The goal is to fix movement through the building before the plumbing files a formal complaint."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Pressure Release Reality Check",
+          "paragraphs": [
+            "You do have a gas problem. You may also have a pressure management problem.",
+            "Maybe it is food. Maybe it is dairy, beans, carbonation, constipation, IBS, eating too fast, or your gut bacteria hosting a tiny music festival.",
+            "But if gas pain shows up every time you swallow irritation, avoid conflict, and call pressure peace, ask the useful question: what am I not releasing?",
+            "The pressure does not disappear because you act calm. It moves somewhere.",
+            "Sometimes it comes out as tension. Sometimes it comes out as bloating. Sometimes your body chooses comedy and makes it everyone else's problem.",
+            "Say what you mean safely. Move your body. Breathe lower. Stop letting every unspoken sentence become a trapped tenant in your abdomen.",
+            "Let the pressure out or keep living like a shaken soda bottle. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Liver Qi Stagnation",
+          "tag": "Wood Element",
+          "paragraphs": [
+            "In Chinese medicine, the Liver is associated with smooth flow.",
+            "Symbolically, trapped gas can mirror blocked movement, stuck irritation, or pressure that has no clean outlet."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Spleen Transformation",
+          "tag": "Earth Element",
+          "paragraphs": [
+            "The Spleen pattern is associated with processing and transforming.",
+            "When worry and overthinking dominate, digestion can symbolically feel bogged down and gassy."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Pressure Cooker Archetype",
+          "tag": "Shadow Expresser",
+          "paragraphs": [
+            "The Expresser releases pressure before it becomes explosive.",
+            "When suppressed, the gut becomes the pressure chamber and gas becomes the rude little messenger."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Trapped Voice",
+          "tag": "Somatic Signal",
+          "paragraphs": [
+            "This symptom can ask where irritation is being swallowed instead of expressed.",
+            "The body may be looking for a safer exit."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Moving the Elevator",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The symbolic reset is movement without force.",
+            "Walking, breath, warmth, and honest naming can tell the system: pressure is allowed to move."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Liver Qi Smoothing & Gut Pressure Release",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Lie on your back with knees bent and feet flat, or sit comfortably.",
+          "Place both hands on the lower belly.",
+          "Inhale through the nose for 4 seconds and let the belly expand gently.",
+          "Exhale through the mouth for 8 seconds, imagining pressure moving downward and outward.",
+          "On each exhale, whisper: I release pressure safely. I let what is trapped move."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Severe, persistent, or unusual gas pain should be medically evaluated.",
+        "items": [
+          {
+            "label": "Gentle walking",
+            "detail": "Movement can help gas move through the intestines."
+          },
+          {
+            "label": "Positioning",
+            "detail": "Knees-to-chest or lying on the left side may help some people release trapped gas."
+          },
+          {
+            "label": "Trigger tracking",
+            "detail": "Track dairy, beans, carbonated drinks, high-FODMAP foods, eating speed, constipation, and stress."
+          },
+          {
+            "label": "Warmth",
+            "detail": "A warm compress may support relaxation for mild familiar gas pain."
+          }
+        ],
+        "avoid": [
+          "Do not ignore severe pain, persistent bloating, vomiting, fever, blood, black stool, chest pain, or inability to pass gas or stool.",
+          "Do not assume all bloating is harmless if it is new, worsening, or persistent."
+        ]
+      },
+      "brutalActions": [
+        "Walk gently before declaring your abdomen haunted.",
+        "Track food, carbonation, constipation, and stress.",
+        "Say the irritating thing safely instead of making your gut store it.",
+        "Get care for severe, persistent, or red-flag symptoms."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Gas pain and flatulence can involve swallowed air, fermentation, constipation, slowed or irregular motility, food intolerance, IBS, stress-related tension, or other digestive causes.",
+        "protocol": [
+          "Use gentle movement, warmth, positioning, hydration, and trigger tracking for mild familiar gas.",
+          "Track dairy, beans, carbonated drinks, high-FODMAP foods, constipation, eating speed, and stress.",
+          "Seek care for severe pain, persistent bloating, vomiting, fever, blood, black stool, chest pain, or inability to pass gas/stool."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for diagnosis or medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Broken Elevator Apartment Building",
+        "metaphorText": "Your gut is an overstuffed apartment building where trapped gas tenants are stuck because the elevator stopped moving.",
+        "wittyAdvice": "Fix the elevator with walking, breath, warmth, and fewer suspicious dietary experiments."
+      },
+      "brutal": {
+        "realityCheck": "You do have a gas problem. You may also have a pressure management problem.",
+        "protocolTitle": "LET THE PRESSURE MOVE",
+        "protocolSteps": [
+          "Walk gently.",
+          "Track food and constipation.",
+          "Use longer exhales.",
+          "Name what pressure you are holding.",
+          "Get medical care for red flags."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Severe or worsening abdominal pain",
+        "Persistent or progressive bloating/distension",
+        "Vomiting, fever, fainting, or severe weakness",
+        "Blood in stool or black/tarry stool",
+        "Chest pain or shortness of breath",
+        "Inability to pass gas or stool",
+        "Unexplained weight loss or major bowel habit change"
+      ],
+      "seek_immediate_care_if": [
+        "Pain is severe, worsening, or paired with vomiting, fever, fainting, rigid belly, blood, black stool, or inability to pass gas/stool",
+        "Symptoms include chest pain or shortness of breath",
+        "Bloating is persistent, progressive, or unusual"
+      ],
+      "schedule_care_if": [
+        "Gas pain or bloating is recurrent, persistent, worsening, or affecting daily life",
+        "You have weight loss, bowel changes, nighttime symptoms, or food intolerance concerns",
+        "Self-care is not helping"
+      ],
+      "self_care_allowed_if": "Gentle walking, warmth, positioning, hydration, and trigger tracking may support mild familiar gas without red flags.",
+      "do_not_ignore": "Gas pain is usually benign but can overlap with obstruction, infection, inflammation, cardiac symptoms, or other serious causes. Do not treat severe or persistent symptoms as purely emotional.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "heartburn",
+    "structuredContent": {
+      "version": 1,
+      "hero": {
+        "primaryPattern": "Heartburn may involve reflux pressure, lower esophageal sphincter function, acid exposure, meal timing, trigger foods, medications, hiatal hernia, pregnancy, or stress sensitivity.",
+        "cascade": [
+          "Pressure Builds",
+          "Valve Opens",
+          "Acid Rises",
+          "Tissue Burns"
+        ],
+        "tags": [
+          "#heartburn",
+          "#reflux",
+          "#LES"
+        ],
+        "safetyPreview": "Chest pain, trouble swallowing, vomiting blood, black stool, weight loss, severe symptoms, or persistent reflux needs medical evaluation."
+      },
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Reflux Barrier & Acid Exposure Cascade",
+          "sections": [
+            {
+              "heading": "Stage 1 — Reflux Pressure",
+              "body": [
+                "Heartburn is medically a reflux symptom. It usually happens when stomach contents move upward into the esophagus.",
+                "Meal size, late eating, lying down after meals, abdominal pressure, trigger foods, smoking, alcohol, medications, pregnancy, and hiatal hernia can contribute."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Lower Esophageal Sphincter Function",
+              "body": [
+                "The lower esophageal sphincter is the valve-like barrier between the stomach and esophagus.",
+                "When it relaxes inappropriately, weakens, or is overwhelmed by pressure, reflux can happen."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Esophageal Irritation",
+              "body": [
+                "The esophagus is not designed for repeated acid exposure.",
+                "Symptoms can include burning, sour taste, regurgitation, cough, hoarseness, nausea, throat irritation, or chest discomfort."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Escalation Check",
+              "body": [
+                "Chest pain should not automatically be assumed to be heartburn.",
+                "Trouble swallowing, vomiting blood, black stool, unexplained weight loss, persistent vomiting, severe symptoms, or ongoing reflux should be medically evaluated."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "Gary and the Backwards Sewer System",
+          "paragraphs": [
+            "Your stomach is a sewer tank with a top valve that is supposed to stay closed.",
+            "Gary the pump operator has not had a break since 2004. Under pressure, Gary leaves the valve cracked open.",
+            "The acid backs up into the esophagus, which is absolutely not built for sewer-water tourism.",
+            "The control room has a DON'T PANIC sign in Comic Sans and a coffee mug that says WORLD'S OKAYEST PUMP OPERATOR.",
+            "Antacids may lower the burn, but they do not always fix the pressure, timing, valve behavior, or the habit of eating like consequences were invented by cowards."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Swallowed Fire Reality Check",
+          "paragraphs": [
+            "You do have a reflux problem. You may also have an I will just keep it down problem.",
+            "Food matters. Meal timing matters. Medication guidance matters. Chest pain red flags matter. Do not turn GERD into a poetry slam and ignore medicine.",
+            "But if the burn rises every time you swallow anger and perform peace, ask what truth keeps climbing back up.",
+            "Your throat does not need to become a chimney for every sentence you were too tired, scared, or trained to say.",
+            "Cool the fire. Speak safely. Stay upright. Track triggers. Get care when symptoms cross the line.",
+            "Cool the fire or keep feeding the chimney. Your choice."
+          ]
+        }
+      },
+      "brutalActions": [
+        "Stay upright after meals.",
+        "Track food, timing, alcohol, caffeine, stress, and symptoms.",
+        "Ask what truth keeps rising.",
+        "Get care for chest pain, trouble swallowing, bleeding signs, weight loss, or persistent reflux."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Heartburn and GERD involve stomach contents moving upward into the esophagus, often related to lower esophageal sphincter function, pressure, meal timing, irritation, trigger foods, medications, pregnancy, hiatal hernia, or symptom sensitivity.",
+        "protocol": [
+          "Stay upright after meals and avoid late heavy meals.",
+          "Track food, timing, alcohol, caffeine, stress, and symptoms.",
+          "Seek care for chest pain, trouble swallowing, vomiting blood, black stool, weight loss, or persistent reflux."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for reflux diagnosis or medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "Gary and the Backwards Sewer System",
+        "metaphorText": "Gary the pump operator keeps leaving the valve open and the stomach tank keeps backing up into the esophagus.",
+        "wittyAdvice": "Lower the pressure, stay upright, and stop asking midnight nachos to behave like a salad."
+      },
+      "brutal": {
+        "realityCheck": "You do have a reflux problem. You may also have an I will just keep it down problem.",
+        "protocolTitle": "COOL THE FIRE",
+        "protocolSteps": [
+          "Stay upright.",
+          "Track triggers.",
+          "Name what keeps rising.",
+          "Do not ignore chest pain or swallowing red flags."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Chest pain, pressure, shortness of breath, sweating, jaw/arm pain, or symptoms that could be heart-related",
+        "Trouble swallowing, painful swallowing, choking, or food sticking",
+        "Vomiting blood or material that looks like coffee grounds",
+        "Black or tarry stool",
+        "Unexplained weight loss, persistent vomiting, or severe weakness",
+        "Persistent or worsening reflux despite self-care"
+      ],
+      "seek_immediate_care_if": [
+        "Symptoms could be heart-related or include chest pressure, shortness of breath, sweating, or pain radiating to jaw/arm",
+        "You vomit blood, have black stool, severe weakness, or trouble swallowing",
+        "Pain is severe, new, or unlike your usual reflux"
+      ],
+      "schedule_care_if": [
+        "Reflux occurs often, wakes you at night, or affects eating/sleep",
+        "Over-the-counter medication is needed frequently",
+        "You have chronic cough, hoarseness, throat symptoms, nausea, or swallowing concerns"
+      ],
+      "self_care_allowed_if": "Meal timing, trigger tracking, upright posture after meals, smaller meals, and stress downshifting may support mild familiar reflux without red flags.",
+      "do_not_ignore": "Heartburn can overlap with serious conditions, including heart-related symptoms. Chest pain and swallowing problems should not be treated as purely emotional or dietary.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "hemorrhoids",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Heavy swollen pressure pulses with sharp stinging release and silence.",
+        "hapticPattern": [
+          3000,
+          100,
+          500,
+          4000
+        ],
+        "uiBackgroundAccent": "#8B3A3A"
+      },
+      "hero": {
+        "primaryPattern": "Hemorrhoids may involve swollen anal/rectal vessels, straining, constipation, diarrhea, pregnancy, prolonged sitting, heavy lifting, or pelvic pressure.",
+        "cascade": [
+          "Pressure Builds",
+          "Strain Increases",
+          "Veins Swell",
+          "Pain/Bleed"
+        ],
+        "tags": [
+          "#hemorrhoids",
+          "#straining",
+          "#release"
+        ],
+        "safetyPreview": "Heavy bleeding, black stool, severe pain, fever, pus, new lump, or persistent symptoms needs medical evaluation."
+      },
+      "biologyPathway": [
+        {
+          "title": "Pressure Builds",
+          "short": "Anal/rectal pressure increases.",
+          "detail": "Straining, constipation, diarrhea, pregnancy, prolonged sitting, and heavy lifting can increase pressure around hemorrhoidal vessels."
+        },
+        {
+          "title": "Veins and Tissue Swell",
+          "short": "Hemorrhoidal cushions enlarge.",
+          "detail": "Hemorrhoids involve swollen vascular tissue around the anus or lower rectum."
+        },
+        {
+          "title": "Irritation and Bleeding",
+          "short": "Friction can cause pain or blood.",
+          "detail": "Passing stool, wiping, or ongoing pressure can irritate swollen tissue and sometimes cause bright red bleeding."
+        },
+        {
+          "title": "Strain-Clench Loop",
+          "short": "Pain can create more tension.",
+          "detail": "Pain may cause clenching, and clenching may worsen difficulty releasing. The loop is not bright, but it is committed."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Hemorrhoidal Pressure & Straining Cascade",
+          "sections": [
+            {
+              "heading": "Stage 1 — Pressure and Straining",
+              "body": [
+                "Hemorrhoids are medically swollen blood vessels/tissue cushions around the anus or lower rectum.",
+                "Common contributors include constipation, straining, diarrhea, pregnancy, prolonged sitting, heavy lifting, aging, and increased abdominal or pelvic pressure."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Swelling and Irritation",
+              "body": [
+                "The swollen tissue can itch, burn, ache, sting, bleed bright red, or feel like a lump.",
+                "Pain can make a person clench, strain, or avoid bowel movements, which can worsen the cycle."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Soft Exit Strategy",
+              "body": [
+                "The goal is easier stool, less straining, less irritation, and less pressure.",
+                "Fluids, fiber as tolerated, movement, footstool posture, warm sitz baths, and avoiding long toilet sessions may help mild cases."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Escalation Check",
+              "body": [
+                "Heavy bleeding, black stool, severe pain, fever, pus, rapidly worsening swelling, or persistent bleeding needs medical evaluation.",
+                "Do not assume all rectal bleeding is hemorrhoids. The body is annoying, not always obvious."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "Gary the Nightclub Bouncer",
+          "paragraphs": [
+            "Your anus is now a nightclub with a cranky bouncer named Gary.",
+            "The velvet rope is swollen, the line is out the door, and Gary has been told to keep everyone secure even though half the crowd should have left hours ago.",
+            "Every time you strain, Gary tries to hold the door closed while the entire crowd pushes forward.",
+            "The hinges scream. The rope stretches. The fire marshal, also known as your body, starts sending notices.",
+            "The hemorrhoid is not the villain. It is the swollen evidence that the door has been forced too many times.",
+            "Gary does not need a pep talk. Gary needs less pressure, softer exits, and maybe for you to stop doomscrolling on the toilet like it is a command center."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Forced Exit Reality Check",
+          "paragraphs": [
+            "You do have a hemorrhoid problem. You may also have a forcing-the-exit problem.",
+            "Stop treating bowel movements like a competitive event. Straining harder is not strength. It is how you turn a bathroom trip into a vascular protest.",
+            "Medically, soften the stool, reduce pressure, stop sitting forever, and get bleeding or severe pain checked.",
+            "Symbolically, ask where you are pushing against a door that needs softening, not violence.",
+            "You do not need more force. You need timing, hydration, patience, movement, and a body that trusts release.",
+            "Stop forcing the door or keep paying interest in swelling. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Large Intestine Release",
+          "tag": "Metal Element",
+          "paragraphs": [
+            "In Chinese medicine, the Large Intestine is associated with elimination and release.",
+            "Symbolically, hemorrhoids can mirror painful release after too much holding or straining."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Kidney Reserve and Fear",
+          "tag": "Water Element",
+          "paragraphs": [
+            "The Kidney pattern relates to fear, reserves, and safety.",
+            "If release feels unsafe, the lower gate may tighten and strain."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Clenched Gate Archetype",
+          "tag": "Shadow Releaser",
+          "paragraphs": [
+            "The Releaser knows how to let something leave without a battle.",
+            "When suppressed, release becomes a fight and the gate takes the damage."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Forced Control Pattern",
+          "tag": "Somatic Strain",
+          "paragraphs": [
+            "This symptom can ask where control has become physical strain.",
+            "The body may be asking for less force and more trust."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Soft Exit",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The symbolic reset is softening instead of pushing.",
+            "Breath, foot support, hydration, fiber as tolerated, and shorter toilet sessions can support that pattern."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Pelvic Floor Softening & Pressure Release",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit on the edge of a chair or toilet with feet supported.",
+          "Inhale through the nose for 4 seconds and relax the jaw and belly.",
+          "Exhale through the mouth for 8 seconds, imagining the pelvic floor softening by one percent.",
+          "On each exhale, whisper: I release without force. I do not have to push against a closed door.",
+          "Continue for 2 minutes. Do not strain."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Persistent, severe, bleeding, or painful hemorrhoid symptoms need medical evaluation.",
+        "items": [
+          {
+            "label": "Avoid straining",
+            "detail": "Straining increases pressure and can worsen hemorrhoids."
+          },
+          {
+            "label": "Fluids and fiber",
+            "detail": "Hydration and fiber as tolerated can support softer stool."
+          },
+          {
+            "label": "Warm sitz bath",
+            "detail": "Warm water may soothe irritation for some people."
+          },
+          {
+            "label": "Short toilet time",
+            "detail": "Do not camp on the toilet with your phone like a tiny porcelain office."
+          }
+        ],
+        "avoid": [
+          "Do not ignore heavy bleeding, black stool, severe pain, fever, pus, rapidly worsening swelling, or persistent bleeding.",
+          "Do not assume all rectal bleeding is hemorrhoids."
+        ]
+      },
+      "brutalActions": [
+        "Stop straining.",
+        "Use fluids and fiber as tolerated.",
+        "Shorten toilet sessions.",
+        "Get care for heavy bleeding, black stool, severe pain, fever, pus, new lump, or persistent symptoms."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Hemorrhoids are swollen blood vessels/tissue cushions around the anus or lower rectum, often associated with straining, constipation, diarrhea, pregnancy, prolonged sitting, heavy lifting, aging, or increased pressure.",
+        "protocol": [
+          "Avoid straining and long toilet sessions.",
+          "Use fluids, fiber as tolerated, movement, warm sitz baths, and footstool posture for mild symptoms.",
+          "Seek care for heavy bleeding, black stool, severe pain, fever, pus, new lump, or persistent symptoms."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical diagnosis or care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "Gary the Nightclub Bouncer",
+        "metaphorText": "Gary is trying to manage a packed nightclub exit with a swollen velvet rope and too much pressure at the door.",
+        "wittyAdvice": "Stop powerlifting bowel movements and give Gary a softer exit strategy."
+      },
+      "brutal": {
+        "realityCheck": "You do have a hemorrhoid problem. You may also have a forcing-the-exit problem.",
+        "protocolTitle": "SOFT EXIT ONLY",
+        "protocolSteps": [
+          "Stop straining.",
+          "Hydrate.",
+          "Use fiber as tolerated.",
+          "Keep toilet sessions short.",
+          "Get care for bleeding, severe pain, or persistent symptoms."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Heavy rectal bleeding or bleeding that persists",
+        "Black or tarry stool",
+        "Severe rectal pain, rapidly worsening swelling, or painful hard lump",
+        "Fever, pus, discharge, or signs of infection",
+        "Dizziness, weakness, fainting, or anemia symptoms",
+        "New rectal bleeding, unexplained weight loss, or major bowel habit change"
+      ],
+      "seek_immediate_care_if": [
+        "Bleeding is heavy, persistent, or paired with dizziness, weakness, black stool, or severe pain",
+        "There is fever, pus, rapidly worsening swelling, or signs of infection",
+        "Pain is severe or a lump becomes very painful/hard"
+      ],
+      "schedule_care_if": [
+        "Symptoms persist, recur, or do not improve with self-care",
+        "You have new rectal bleeding or are unsure it is hemorrhoids",
+        "There are bowel habit changes, weight loss, or ongoing constipation/diarrhea"
+      ],
+      "self_care_allowed_if": "Fluids, fiber as tolerated, avoiding straining, short toilet sessions, footstool posture, and warm sitz baths may support mild hemorrhoid symptoms without red flags.",
+      "do_not_ignore": "Rectal bleeding should not automatically be blamed on hemorrhoids. Severe, persistent, black, heavy, or unexplained bleeding needs evaluation.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "hernia",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Heavy, bulging pressure pulses with a sharp pop and hollow pause.",
+        "hapticPattern": [
+          3000,
+          100,
+          300,
+          4000
+        ],
+        "uiBackgroundAccent": "#6B4C4C"
+      },
+      "hero": {
+        "primaryPattern": "Hernia patterns may involve abdominal wall weakness, strain, lifting, coughing, constipation, pressure, pregnancy, prior surgery, or tissue vulnerability.",
+        "cascade": [
+          "Pressure Builds",
+          "Wall Weakens",
+          "Tissue Pushes",
+          "Bulge Appears"
+        ],
+        "tags": [
+          "#hernia",
+          "#pressure",
+          "#boundary"
+        ],
+        "safetyPreview": "Severe pain, vomiting, redness, fever, tender bulge, sudden worsening, trapped bulge, or inability to pass stool/gas needs urgent medical care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Wall Weakness",
+          "short": "A weak point forms.",
+          "detail": "A hernia happens when tissue pushes through a weak area in muscle or connective tissue. This can be congenital, age-related, surgical, pressure-related, or strain-related."
+        },
+        {
+          "title": "Pressure Rises",
+          "short": "Internal pressure pushes outward.",
+          "detail": "Heavy lifting, coughing, constipation, pregnancy, obesity, repeated straining, and physical overuse can increase pressure against the wall."
+        },
+        {
+          "title": "Bulge or Pain",
+          "short": "Tissue protrudes.",
+          "detail": "The result may be a visible or felt bulge, aching, pressure, burning, pulling, or pain that worsens with strain."
+        },
+        {
+          "title": "Trapping Risk",
+          "short": "Some hernias become urgent.",
+          "detail": "If tissue becomes stuck or blood supply is threatened, the situation can become serious. Severe pain, vomiting, redness, fever, or a trapped tender bulge needs urgent care."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Abdominal Wall Pressure & Herniation Cascade",
+          "sections": [
+            {
+              "heading": "Stage 1 — Structural Weak Point",
+              "body": [
+                "A hernia is medically a structural tissue-wall problem.",
+                "It occurs when tissue or part of an organ pushes through a weak spot in muscle or connective tissue."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Pressure and Strain",
+              "body": [
+                "Common contributors can include heavy lifting, chronic coughing, constipation/straining, pregnancy, prior surgery, aging, obesity, or congenital tissue weakness.",
+                "Stress may contribute indirectly if it leads to overwork, bracing, poor recovery, or repeated strain, but it is not the sole cause."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Bulge and Discomfort",
+              "body": [
+                "A hernia may cause a bulge, pressure, aching, burning, pulling, or pain that changes with position or strain.",
+                "Some hernias are reducible. Some are not. The body did not ask for this little wall-demolition project."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Urgent Warning Signs",
+              "body": [
+                "Severe pain, sudden worsening, vomiting, fever, redness, a tender bulge, a bulge that cannot be pushed back in, or inability to pass stool/gas can signal incarceration or strangulation.",
+                "Those symptoms need urgent medical care, not a breathing exercise and a brave little speech."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Overstuffed Storage Unit",
+          "paragraphs": [
+            "Your abdominal wall is now a storage unit that has been at 150 percent capacity since 2008.",
+            "The walls are bulging. The door will not close. Management keeps saying just one more box while the building groans like an exhausted grandparent.",
+            "Every I'll handle it is another box. Every don't worry about me is another box. Every I can take more is a refrigerator shoved into a unit that was built for patio furniture.",
+            "The building inspector, also known as your body, has been leaving notes: WALL AT RISK. REMOVE WEIGHT.",
+            "Then a box finds a weak spot and pushes through. That is the hernia. The wall is not being dramatic. The wall has receipts.",
+            "The sign in the office says WE'RE FINE. Someone wrote WE'RE NOT underneath in fresh red marker. The marker is correct."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Over-Functioner Reality Check",
+          "paragraphs": [
+            "You do have a hernia problem. You may also have an I'll handle it problem.",
+            "How many times have you carried more than your body, schedule, or soul could reasonably hold?",
+            "The hernia is not a character weakness. It is a wall problem. And walls fail when pressure keeps rising.",
+            "Medical care matters. Lifting restrictions matter. Urgent warning signs matter. Do not try to mindset your way through a trapped hernia like a motivational idiot.",
+            "Symbolically, though, the message is brutally simple: put something down.",
+            "You are not Atlas. The sky was never yours to carry. Delegating is not weakness. Rest is not failure. Asking for help is not collapse.",
+            "Put the boxes down or keep letting the wall pay for your pride. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Spleen Qi Lifting",
+          "tag": "Earth Element",
+          "paragraphs": [
+            "In Chinese medicine, the Spleen is associated with lifting and containing.",
+            "Symbolically, hernia patterns can mirror a support system that has been asked to hold too much for too long."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Kidney Reserve",
+          "tag": "Water Element",
+          "paragraphs": [
+            "The Kidney pattern relates to deep reserve, fear, and structural endurance.",
+            "When reserves feel depleted, the symbolic wall may feel unsupported."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Collapsed Boundary Archetype",
+          "tag": "Shadow Container",
+          "paragraphs": [
+            "The Container knows how to hold boundaries without strain.",
+            "When suppressed, the person may over-function until the body becomes the boundary enforcer."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Atlas Pattern",
+          "tag": "Over-Carrying",
+          "paragraphs": [
+            "This symptom can ask where you are carrying weight that belongs to others.",
+            "The wall weakens when every no becomes a yes."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Unload the Unit",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The symbolic reset is unloading, delegating, and respecting physical limits.",
+            "The medical reset is evaluation, avoiding strain, and following clinician guidance."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Boundary Unloading & Pressure Downshift",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Lie on your back with knees bent and feet flat, unless that position worsens symptoms.",
+          "Place hands gently on the lower belly, not pressing into the bulge.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds and imagine setting down one box.",
+          "Whisper: I do not have to hold everything. I am allowed to ask for help."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Hernias often need medical evaluation and sometimes surgical repair.",
+        "items": [
+          {
+            "label": "Avoid strain",
+            "detail": "Avoid heavy lifting, straining, or activities that increase pressure until medically cleared."
+          },
+          {
+            "label": "Support constipation prevention",
+            "detail": "Fluids, fiber as tolerated, and avoiding straining can reduce pressure."
+          },
+          {
+            "label": "Track symptoms",
+            "detail": "Note pain, bulge size, reducibility, nausea, vomiting, fever, redness, and bowel changes."
+          },
+          {
+            "label": "Medical evaluation",
+            "detail": "A clinician can determine type, risk, and whether repair is needed."
+          }
+        ],
+        "avoid": [
+          "Do not force a painful bulge back in.",
+          "Do not ignore severe pain, vomiting, fever, redness, tenderness, sudden worsening, trapped bulge, or inability to pass stool/gas."
+        ]
+      },
+      "brutalActions": [
+        "Stop heavy lifting until medically cleared.",
+        "Track whether the bulge is painful, stuck, red, or worsening.",
+        "Put down one responsibility that is not actually yours.",
+        "Get urgent care for severe pain, vomiting, fever, redness, trapped bulge, or inability to pass stool/gas."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "A hernia occurs when tissue or part of an organ pushes through a weak spot in muscle or connective tissue, often related to strain, pressure, lifting, coughing, constipation, pregnancy, prior surgery, aging, or congenital weakness.",
+        "protocol": [
+          "Avoid heavy lifting and straining until medically cleared.",
+          "Track bulge size, pain, reducibility, redness, nausea/vomiting, fever, and bowel changes.",
+          "Seek urgent care for severe pain, vomiting, redness, fever, trapped/tender bulge, or inability to pass stool/gas."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical evaluation."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Overstuffed Storage Unit",
+        "metaphorText": "Your abdominal wall is a storage unit where one more box finally pushed through a weak spot.",
+        "wittyAdvice": "Stop adding boxes. The wall already filed a complaint."
+      },
+      "brutal": {
+        "realityCheck": "You do have a hernia problem. You may also have an I'll handle it problem.",
+        "protocolTitle": "PUT THE BOXES DOWN",
+        "protocolSteps": [
+          "Avoid strain.",
+          "Get medical evaluation.",
+          "Delegate one load.",
+          "Respect urgent warning signs."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Severe or sudden hernia pain",
+        "Bulge that is tender, red, purple, dark, hot, or rapidly worsening",
+        "Bulge that cannot be pushed back in when it normally could",
+        "Nausea, vomiting, fever, or severe weakness",
+        "Abdominal swelling or inability to pass stool/gas",
+        "Pain after lifting with new or worsening bulge"
+      ],
+      "seek_immediate_care_if": [
+        "The bulge is stuck, very painful, tender, red/purple/dark, or suddenly worse",
+        "You have vomiting, fever, severe pain, abdominal swelling, or cannot pass stool/gas",
+        "You suspect incarceration or strangulation"
+      ],
+      "schedule_care_if": [
+        "You notice a new bulge, pressure, burning, or pain that changes with strain",
+        "A known hernia is growing, aching, or limiting activity",
+        "You need guidance on lifting, work limits, support garments, or repair options"
+      ],
+      "self_care_allowed_if": "Avoiding strain, preventing constipation, tracking symptoms, and using clinician-approved support may help while awaiting evaluation.",
+      "do_not_ignore": "A painful, stuck, red, vomiting-associated, or bowel-obstruction-associated hernia can be urgent. Do not treat it as purely emotional.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "kidney-stones",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Sharp stabbing jab, dull throbbing aftershock, and irregular pause.",
+        "hapticPattern": [
+          500,
+          120,
+          2000,
+          3000
+        ],
+        "uiBackgroundAccent": "#8B7B6B"
+      },
+      "hero": {
+        "primaryPattern": "Kidney stones may involve concentrated urine, mineral crystallization, dehydration, stone type, diet, genetics, medications, infection, or urinary tract factors.",
+        "cascade": [
+          "Urine Concentrates",
+          "Minerals Crystallize",
+          "Stone Moves",
+          "Ureter Spasms"
+        ],
+        "tags": [
+          "#kidney stones",
+          "#hydration",
+          "#renal colic"
+        ],
+        "safetyPreview": "Fever/chills, uncontrolled pain, repeated vomiting, inability to urinate, infection signs, or severe/worsening symptoms need urgent medical care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Urine Concentration",
+          "short": "Minerals become concentrated.",
+          "detail": "When urine becomes concentrated, minerals and salts are more likely to crystallize."
+        },
+        {
+          "title": "Stone Formation",
+          "short": "Crystals cluster into stones.",
+          "detail": "Stone type matters. Calcium oxalate, uric acid, struvite, cystine, and other stones can have different causes and prevention strategies."
+        },
+        {
+          "title": "Stone Movement",
+          "short": "Pain spikes when the stone moves.",
+          "detail": "A stone moving through the urinary tract can cause severe flank pain, waves of pain, nausea, vomiting, blood in urine, and urinary urgency."
+        },
+        {
+          "title": "Infection or Blockage Risk",
+          "short": "Some stones become urgent.",
+          "detail": "Fever, chills, inability to urinate, uncontrolled pain, or vomiting can signal complications that need urgent care."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Mineral Crystallization & Renal Colic Cascade",
+          "sections": [
+            {
+              "heading": "Stage 1 — Concentrated Urine",
+              "body": [
+                "Kidney stones form when minerals and salts crystallize in urine.",
+                "Dehydration, low urine volume, diet patterns, genetics, medications, metabolic factors, infection, and urinary tract conditions can all contribute."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Stone Type Matters",
+              "body": [
+                "Not all kidney stones are the same.",
+                "Different stone types can require different prevention strategies, which is why actual evaluation matters more than guessing and drinking mystery wellness sludge."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Renal Colic",
+              "body": [
+                "When a stone moves into the ureter, it can cause severe waves of flank or abdominal pain, nausea, vomiting, urinary urgency, and blood in the urine.",
+                "The pain can be intense because the ureter is narrow and deeply uninterested in hosting jagged mineral souvenirs."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Urgent Warning Signs",
+              "body": [
+                "Fever, chills, uncontrolled pain, repeated vomiting, inability to urinate, severe weakness, or signs of infection need urgent care.",
+                "An infected obstructing stone can be dangerous. Do not attempt to breathe through that like a monk with bad judgment."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Water Treatment Plant Turning Into Gravel",
+          "paragraphs": [
+            "Your kidneys are a water-treatment plant running on emergency drought protocol.",
+            "The filters are clogged. The pipes are scaling. The supervisor keeps yelling CONSERVE EVERYTHING while the plant slowly turns into a beige mineral dungeon.",
+            "Normally, water flows, waste leaves, minerals stay dissolved, and everyone clocks out by five.",
+            "But when the flow gets low and the chemistry gets rude, minerals start gathering like bored construction workers.",
+            "Eventually, they form a stone. A tiny jagged landlord of pain.",
+            "The plant has a DON'T PANIC sign in Comic Sans. Someone wrote TOO LATE underneath. Honestly, fair."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Hardened Fear Reality Check",
+          "paragraphs": [
+            "You do have a kidney stone problem. You may also have a control problem.",
+            "Drink water. Get evaluated. Know your stone type. Follow actual medical guidance. Do not pretend fear release replaces urinalysis, imaging, or pain control.",
+            "Symbolically, though, ask what you have been hardening around.",
+            "How many disasters have you rehearsed? How many what-ifs have you polished into little internal rocks?",
+            "Catastrophizing is not preparation. It is a gravel machine with anxiety branding.",
+            "Let the river move. Stop bracing for every future impact like your worry is a security system.",
+            "Let the river move or keep turning fear into gravel. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Kidney Water Regulation",
+          "tag": "Water Element",
+          "paragraphs": [
+            "In Chinese medicine, the Kidney is associated with water regulation, fear, and deep reserves.",
+            "Symbolically, stones can mirror water that stopped flowing and fear that hardened."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Bladder Reservoir",
+          "tag": "Release Gate",
+          "paragraphs": [
+            "The Bladder pattern relates to storage and release.",
+            "If release feels unsafe, the symbolic system may hold until what is fluid becomes dense."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Petrified Fear Archetype",
+          "tag": "Shadow Fluidity",
+          "paragraphs": [
+            "The Fluid One adapts, flows, and releases.",
+            "When suppressed, fear can feel solid, rigid, and painful to pass."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Control Crystallization",
+          "tag": "Somatic Stone",
+          "paragraphs": [
+            "This symptom can ask where control has become rigidity.",
+            "The body may be asking for flow, hydration, and trust instead of constant bracing."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "River Reset",
+          "tag": "Hydration & Release",
+          "paragraphs": [
+            "The symbolic reset is letting the river move again.",
+            "The medical reset is hydration guidance, stone evaluation, pain management, and urgent care when red flags appear."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Kidney Flow & Fear Softening",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit upright or lie comfortably if symptoms allow.",
+          "Place both hands on the lower back over the kidney area.",
+          "Inhale through the nose for 4 seconds, imagining cool water moving through the back body.",
+          "Exhale through the mouth for 8 seconds, imagining fear softening from stone back into water.",
+          "Whisper: I release the fear I have hardened around. I allow flow."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Kidney stones can require urgent medical care, imaging, pain control, and stone-specific prevention.",
+        "items": [
+          {
+            "label": "Hydration",
+            "detail": "Fluids may help some stones pass and may reduce concentration, but follow medical guidance if vomiting, kidney disease, or restrictions apply."
+          },
+          {
+            "label": "Stone type matters",
+            "detail": "Prevention depends on stone type, urine studies, diet, medications, and medical history."
+          },
+          {
+            "label": "Pain tracking",
+            "detail": "Track pain location, waves, urinary symptoms, fever/chills, nausea/vomiting, and blood in urine."
+          },
+          {
+            "label": "Medical follow-up",
+            "detail": "Evaluation helps determine size, location, obstruction risk, infection risk, and prevention plan."
+          }
+        ],
+        "avoid": [
+          "Do not ignore fever/chills, uncontrolled pain, repeated vomiting, inability to urinate, or infection signs.",
+          "Do not assume all stone prevention is the same for every stone type."
+        ]
+      },
+      "brutalActions": [
+        "Hydrate if safe for you and not vomiting.",
+        "Get evaluated for stone size, location, and type.",
+        "Do not ignore fever, chills, inability to urinate, or uncontrolled pain.",
+        "Name one fear you keep turning into gravel."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Kidney stones form when minerals and salts crystallize in concentrated urine. Risk can involve dehydration, stone type, diet, genetics, medications, infection, metabolic factors, and urinary tract conditions.",
+        "protocol": [
+          "Hydrate if medically safe and able to keep fluids down.",
+          "Seek evaluation for stone size, location, type, obstruction risk, and prevention.",
+          "Get urgent care for fever/chills, uncontrolled pain, vomiting, inability to urinate, or infection signs."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical evaluation or emergency care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Water Treatment Plant Turning Into Gravel",
+        "metaphorText": "Your kidneys are a water-treatment plant where low flow and rude chemistry let minerals start forming tiny jagged souvenirs.",
+        "wittyAdvice": "Drink water like your pipes are not interested in becoming a quarry."
+      },
+      "brutal": {
+        "realityCheck": "You do have a kidney stone problem. You may also have a control problem.",
+        "protocolTitle": "LET THE RIVER MOVE",
+        "protocolSteps": [
+          "Hydrate if safe.",
+          "Get the stone evaluated.",
+          "Know urgent warning signs.",
+          "Stop rehearsing disasters like they are a job."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Fever, chills, or signs of infection",
+        "Uncontrolled or severe flank/abdominal pain",
+        "Repeated vomiting or inability to keep fluids down",
+        "Inability to urinate or very low urine output",
+        "Severe weakness, confusion, fainting, or dehydration signs",
+        "Pregnancy, single kidney, kidney disease, immunocompromised status, or known urinary obstruction"
+      ],
+      "seek_immediate_care_if": [
+        "You have fever/chills with stone symptoms",
+        "Pain is uncontrolled, severe, or paired with repeated vomiting",
+        "You cannot urinate or suspect obstruction/infection",
+        "You are pregnant, have one kidney, kidney disease, or are medically high-risk"
+      ],
+      "schedule_care_if": [
+        "You suspect a kidney stone but symptoms are controlled",
+        "You have recurrent stones or blood in urine",
+        "You need prevention guidance based on stone type"
+      ],
+      "self_care_allowed_if": "Hydration and symptom tracking may support mild controlled symptoms while arranging care, but red flags require urgent evaluation.",
+      "do_not_ignore": "Kidney stones can become dangerous with infection or obstruction. They should not be treated as purely emotional, dietary, or hydration-only problems.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "nausea",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Deep rolling seasick waves that rise, crest, and recede irregularly.",
+        "hapticPattern": [
+          2000,
+          150,
+          3000,
+          900,
+          2500
+        ],
+        "uiBackgroundAccent": "#7B8B6B"
+      },
+      "hero": {
+        "primaryPattern": "Nausea may involve stomach irritation, infection, pregnancy, medications, migraine, motion sickness, reflux, gallbladder issues, dehydration, anxiety, pain, toxins, neurologic or cardiac causes.",
+        "cascade": [
+          "Trigger Signal",
+          "Brain-Gut Alarm",
+          "Stomach Rebellion",
+          "Vomiting Urge"
+        ],
+        "tags": [
+          "#nausea",
+          "#rejection",
+          "#red flags"
+        ],
+        "safetyPreview": "Chest pain, severe abdominal pain, dehydration, blood, pregnancy concerns, severe headache, neurologic symptoms, fever/stiff neck, poisoning risk, or persistent vomiting needs medical care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Trigger Signal",
+          "short": "Many systems can start nausea.",
+          "detail": "Nausea can begin from the gut, brain, inner ear, hormones, medications, pain, toxins, infection, pregnancy, migraine, or stress."
+        },
+        {
+          "title": "Brain-Gut Alarm",
+          "short": "The vomiting center gets alerted.",
+          "detail": "The brain coordinates nausea and vomiting signals through the nervous system, gut, inner ear, and chemical sensors."
+        },
+        {
+          "title": "Gastric Disruption",
+          "short": "Stomach rhythm changes.",
+          "detail": "The stomach may slow, churn irregularly, or prepare to reject contents. This can feel like waves, queasiness, salivation, sweating, and loss of appetite."
+        },
+        {
+          "title": "Red Flag Screen",
+          "short": "Some nausea is serious.",
+          "detail": "Chest pain, severe abdominal pain, dehydration, neurologic symptoms, poisoning, pregnancy concerns, severe headache, or persistent vomiting changes the safety level."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Nausea Trigger & Brain-Gut Alarm Cascade",
+          "sections": [
+            {
+              "heading": "Stage 1 — Nausea Is a Warning Symptom",
+              "body": [
+                "Nausea is not one disease. It is a warning signal with many possible causes.",
+                "Common possibilities include stomach infection, food poisoning, pregnancy, medication effects, migraine, motion sickness, reflux, gallbladder problems, dehydration, anxiety, pain, toxins, or other illness."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Brain-Gut Coordination",
+              "body": [
+                "The brain, gut, inner ear, hormones, and chemical sensors can all contribute to nausea.",
+                "This is why nausea can come from a stomach bug, a migraine, a boat ride, a panic spike, or one cursed burrito with legal immunity."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Rejection Response",
+              "body": [
+                "The body may slow stomach emptying, increase salivation, trigger sweating, reduce appetite, and prepare for vomiting.",
+                "Symbolically, nausea can feel like the body saying: I cannot keep this down."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Escalation Check",
+              "body": [
+                "Seek medical care for chest pain, severe abdominal pain, dehydration, vomiting blood, black stool, severe headache, neurologic symptoms, fever with stiff neck, pregnancy concerns, poisoning risk, or persistent vomiting.",
+                "Nausea is allowed to be emotional. It is not allowed to skip the medical red-flag checklist like a shady wellness influencer."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "Gary the Dishwasher and the Rotten Plates",
+          "paragraphs": [
+            "Your stomach is an overworked dishwasher named Gary.",
+            "Normally, Gary handles plates efficiently: soak, scrub, rinse, repeat. A humble little digestive employee.",
+            "But the restaurant manager keeps sending down rotten plates: stress, bad food, medication side effects, motion sickness, migraine signals, pregnancy hormones, and conversations you are still replaying in your head.",
+            "The sink is overflowing. The smell is suspicious. Gary has that look that says he may walk out or lose his lunch.",
+            "The health inspector, your body, keeps leaving notes: DISHWASHER OVERWORKED. FOOD QUESTIONABLE. CLOSE IMMEDIATELY.",
+            "The nausea is Gary's resignation letter. It says: I cannot scrub one more toxic plate."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Rejection Reality Check",
+          "paragraphs": [
+            "You do have a nausea problem. You may also have an I cannot keep swallowing this pattern.",
+            "Check the medical stuff first. Pregnancy risk, infection, medications, migraine, dehydration, food poisoning, gallbladder, reflux, heart symptoms, and toxins do not care about your emotional metaphors.",
+            "Symbolically, though, nausea is often the body saying: I cannot stomach this.",
+            "What are you forcing yourself to accept? What situation makes your body recoil before your mouth can explain why?",
+            "Not everything deserves to be digested. Some things are meant to be rejected.",
+            "Sip fluids if safe. Rest. Check red flags. Then name the thing you keep swallowing.",
+            "Spit out the poison or keep letting Gary scrub rotten plates. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Stomach Qi Rebellion",
+          "tag": "Middle Burner",
+          "paragraphs": [
+            "In Chinese medicine, Stomach Qi normally descends.",
+            "Symbolically, nausea can mirror a reversal: what should move down rises back up."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Liver Qi Invading Stomach",
+          "tag": "Wood Over Earth",
+          "paragraphs": [
+            "The Liver pattern is associated with frustration and smooth flow.",
+            "When flow is blocked, the symbolic stomach may rebel instead of process."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Rejected Truth Archetype",
+          "tag": "Shadow Spitter",
+          "paragraphs": [
+            "The Spitter knows how to reject what is toxic.",
+            "When that archetype is suppressed, the stomach may carry the refusal."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Disgust Signal",
+          "tag": "Somatic No",
+          "paragraphs": [
+            "Nausea can symbolically ask what your body finds unacceptable.",
+            "The symptom may be a no before the mind has permission to say no."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Descending and Rejecting",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The goal is not to force everything down.",
+            "The goal is to calm the body and clearly reject what does not belong."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Stomach Qi Descending & Safe Rejection",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit upright or lie on your side if that feels better.",
+          "Place one hand on the upper stomach and one hand on the lower belly.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds, imagining the stomach settling downward.",
+          "Whisper: I do not have to swallow what does not serve me. I can reject what is toxic."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Nausea with red flags or persistent vomiting needs medical evaluation.",
+        "items": [
+          {
+            "label": "Small sips",
+            "detail": "Small frequent sips of water or electrolyte fluids may help prevent dehydration."
+          },
+          {
+            "label": "Bland foods",
+            "detail": "If tolerated, bland foods may be easier once vomiting settles."
+          },
+          {
+            "label": "Fresh air and stillness",
+            "detail": "Motion, heat, strong smells, and stress can worsen nausea for some people."
+          },
+          {
+            "label": "Trigger review",
+            "detail": "Check pregnancy risk, medications, alcohol, migraine, food exposure, travel, infection, and timing."
+          }
+        ],
+        "avoid": [
+          "Do not ignore chest pain, severe abdominal pain, dehydration, blood, black stool, severe headache, neurologic symptoms, fever/stiff neck, poisoning risk, or persistent vomiting.",
+          "Do not force food if actively vomiting or unable to keep fluids down."
+        ]
+      },
+      "brutalActions": [
+        "Sip fluids if safe.",
+        "Check obvious causes before analyzing your soul.",
+        "Name what you cannot stomach.",
+        "Get care for red flags, dehydration, pregnancy concerns, poisoning risk, or persistent vomiting."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Nausea is a warning symptom with many possible causes, including infection, food poisoning, pregnancy, medications, migraine, motion sickness, reflux, gallbladder disease, dehydration, anxiety, pain, neurologic problems, cardiac issues, toxins, or obstruction.",
+        "protocol": [
+          "Use small sips, rest, bland foods if tolerated, and trigger tracking for mild nausea.",
+          "Check pregnancy risk, medications, food exposure, migraine, alcohol, dehydration, and illness symptoms.",
+          "Seek care for chest pain, severe abdominal pain, dehydration, blood, black stool, severe headache, neurologic symptoms, fever/stiff neck, poisoning risk, or persistent vomiting."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical evaluation."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "Gary the Dishwasher and the Rotten Plates",
+        "metaphorText": "Gary the stomach dishwasher is being handed rotten plates and is one bad dish away from quitting.",
+        "wittyAdvice": "Stop sending Gary toxic plates and check the medical red flags before blaming your aura."
+      },
+      "brutal": {
+        "realityCheck": "You do have a nausea problem. You may also have an I cannot keep swallowing this pattern.",
+        "protocolTitle": "SPIT OUT THE POISON",
+        "protocolSteps": [
+          "Check medical causes.",
+          "Sip fluids if safe.",
+          "Reduce triggers.",
+          "Name what you cannot stomach.",
+          "Get care for red flags."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Chest pain, shortness of breath, sweating, jaw/arm pain, or heart-related symptoms",
+        "Severe or worsening abdominal pain",
+        "Signs of dehydration, fainting, confusion, very little urination, or inability to keep fluids down",
+        "Vomiting blood, coffee-ground material, black/tarry stool, or blood in stool",
+        "Severe headache, stiff neck, fever, confusion, weakness, numbness, vision changes, or neurologic symptoms",
+        "Pregnancy concerns, poisoning/toxin exposure, severe dizziness, or persistent vomiting"
+      ],
+      "seek_immediate_care_if": [
+        "You have chest pain, severe abdominal pain, neurologic symptoms, stiff neck with fever, poisoning risk, vomiting blood, black stool, severe dehydration, or persistent vomiting",
+        "You are pregnant or might be pregnant with severe nausea/vomiting, dehydration, pain, or bleeding",
+        "Symptoms are severe, sudden, worsening, or unlike your usual pattern"
+      ],
+      "schedule_care_if": [
+        "Nausea persists, recurs, or affects eating/hydration",
+        "You suspect medication side effects, migraine, reflux, gallbladder issues, pregnancy, or chronic digestive problems",
+        "Self-care is not helping"
+      ],
+      "self_care_allowed_if": "Small sips, rest, fresh air, bland foods if tolerated, and trigger tracking may support mild short-term nausea without red flags.",
+      "do_not_ignore": "Nausea has many possible causes and should not be treated as purely emotional, especially with red flags or persistent vomiting.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "stomach-intestinal-problems",
+    "medical_safety": {
+      "critical_alerts": [
+        "Vomiting blood or material that looks like coffee grounds",
+        "Blood in your stool, or black, tarry, foul-smelling stools",
+        "Severe, sudden, or progressively worsening abdominal pain",
+        "Persistent vomiting and inability to keep any fluids down",
+        "Signs of dehydration, such as extreme thirst, dry mouth, or little to no urine",
+        "Yellowing of the skin or eyes (jaundice)"
+      ],
+      "seek_immediate_care_if": [
+        "You vomit blood, pass black/tarry stools, or have severe, rigid abdominal pain",
+        "You are severely dehydrated from persistent vomiting or diarrhea and cannot tolerate fluids",
+        "You have sudden abdominal pain accompanied by a high fever and abdominal rigidity"
+      ],
+      "schedule_care_if": [
+        "You experience unexplained weight loss, persistent diarrhea, or ongoing difficulty swallowing",
+        "Your digestive symptoms last longer than two weeks or steadily worsen",
+        "You develop new, unexplained changes in your bowel patterns or persistent bloating"
+      ],
+      "self_care_allowed_if": "A temporary bland diet, staying hydrated, and gentle abdomen massages can help soothe minor, stress-related digestive upset.",
+      "do_not_ignore": "Persistent or severe digestive symptoms should never be ignored as they may indicate bleeding, ulceration, or bowel obstruction.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease. Seek professional medical care for diagnosis, treatment, medication decisions, or urgent symptoms."
+    }
+  },
+  {
+    "id": "tapeworm",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Creeping, gnawing, hollow pulses with a sharp hungry bite and empty pause.",
+        "hapticPattern": [
+          3000,
+          120,
+          300,
+          4000
+        ],
+        "uiBackgroundAccent": "#6B7B6B"
+      },
+      "hero": {
+        "primaryPattern": "Tapeworm infection is an intestinal parasite issue that may involve exposure through contaminated food, undercooked meat/fish, eggs/larvae, sanitation risk, or travel.",
+        "cascade": [
+          "Exposure",
+          "Parasite Establishes",
+          "Nutrient Drain",
+          "Symptoms/Segments"
+        ],
+        "tags": [
+          "#parasite",
+          "#medical treatment",
+          "#drain"
+        ],
+        "safetyPreview": "Visible worm segments, weight loss, abdominal pain, vomiting, diarrhea, weakness, neurologic symptoms, seizures, fever, or suspected exposure needs medical evaluation."
+      },
+      "biologyPathway": [
+        {
+          "title": "Exposure",
+          "short": "Parasite enters the body.",
+          "detail": "Tapeworm infection can occur after ingesting eggs or larvae, often through contaminated food, undercooked meat or fish, or sanitation-related exposure."
+        },
+        {
+          "title": "Attachment and Growth",
+          "short": "The worm can live in the intestine.",
+          "detail": "Some tapeworms attach to the intestinal lining and absorb nutrients. This is not a metaphorical roommate situation. It is a parasite."
+        },
+        {
+          "title": "Symptoms or Segments",
+          "short": "Signs may be obvious or subtle.",
+          "detail": "Symptoms can include abdominal discomfort, nausea, diarrhea, appetite changes, weight loss, weakness, or visible segments in stool. Some infections can be mild or unnoticed."
+        },
+        {
+          "title": "Complication Check",
+          "short": "Some parasite infections can become serious.",
+          "detail": "Depending on species and exposure, complications can involve blocked ducts, nutritional problems, or neurologic symptoms. Evaluation matters because worm vibes are not a diagnostic category."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Intestinal Parasite Exposure & Treatment Pattern",
+          "sections": [
+            {
+              "heading": "Stage 1 — Parasite Exposure",
+              "body": [
+                "Tapeworm is medically an intestinal parasite, not an emotional state with teeth.",
+                "Possible exposure can include contaminated food, undercooked meat or fish, ingesting eggs or larvae, travel, sanitation issues, or contact with infected sources."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Intestinal Attachment",
+              "body": [
+                "Some tapeworms attach to the intestine and absorb nutrients from the host.",
+                "Symptoms may include abdominal discomfort, nausea, diarrhea, appetite changes, weight loss, weakness, or visible segments in stool."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Diagnosis and Treatment",
+              "body": [
+                "Tapeworm infection should be evaluated medically with appropriate testing.",
+                "Treatment usually involves antiparasitic medication prescribed by a clinician. The app is not going to recommend backyard worm warfare, because apparently we still value civilization."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Escalation Check",
+              "body": [
+                "Seek medical care for visible worm segments, unexplained weight loss, persistent abdominal symptoms, vomiting, diarrhea, weakness, fever, or suspected parasite exposure.",
+                "Neurologic symptoms, seizures, severe headache, confusion, or eye symptoms need urgent evaluation."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Freeloader in Unit 4B",
+          "paragraphs": [
+            "Your intestines are an apartment building, and someone moved into unit 4B without signing a lease.",
+            "This tenant eats your groceries, absorbs your nutrients, leaves you the scraps, and somehow acts like the building owes him cable.",
+            "The landlord, unfortunately, is you. You were busy managing everyone else's crisis and forgot to check who was living rent-free in the gut complex.",
+            "The lobby sign says WE'RE DOING OUR BEST. Someone wrote THEN EVICT THE WORM underneath. Honestly, fair feedback.",
+            "The eviction notice has been on the fridge for years. Today, ideally, it becomes medical testing and treatment instead of another inspirational sticky note.",
+            "Unit 4B does not need compassion. Unit 4B needs a clinician-approved eviction."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Boundary Drain Reality Check",
+          "paragraphs": [
+            "You do have a parasite problem. You may also have a boundary-drain pattern.",
+            "The actual worm needs actual medical treatment. Do not confuse symbolism with treatment unless your goal is to become a cautionary tale with stool samples.",
+            "Symbolically, though, ask who has been feeding on you.",
+            "What job, relationship, family role, habit, or belief keeps eating your energy and leaving you with scraps?",
+            "Your resources are not public property. Your time is not an all-you-can-eat buffet. Your body is not a hotel for freeloaders, literal or emotional.",
+            "Get the parasite treated. Then look at the pattern that made the metaphor hit a little too hard.",
+            "Evict the freeloader or keep donating your life force to unit 4B. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Spleen-Stomach Depletion",
+          "tag": "Earth Element",
+          "paragraphs": [
+            "In Chinese medicine, the Spleen and Stomach are associated with nourishment, transformation, and acquired energy.",
+            "Symbolically, parasite patterns can mirror depletion and nourishment being taken before it can strengthen the self."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Boundary Breach",
+          "tag": "Energetic Gate",
+          "paragraphs": [
+            "The symbolic issue is not just feeding. It is unauthorized access.",
+            "This layer asks where the system stopped screening what gets in and what gets to stay."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "The Parasite Archetype",
+          "tag": "Shadow Drain",
+          "paragraphs": [
+            "The Parasite archetype represents what feeds without reciprocity.",
+            "It asks where your life has normalized being consumed."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Self-Protector",
+          "tag": "Boundary Repair",
+          "paragraphs": [
+            "The Self-Protector says: you cannot feed on me.",
+            "It restores ownership over time, body, attention, food, money, and emotional labor."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Eviction Ritual",
+          "tag": "Medical + Symbolic",
+          "paragraphs": [
+            "The medical eviction is testing and treatment.",
+            "The symbolic eviction is naming what drains you and ending unauthorized access."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Boundary Fortification & Eviction Notice",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit upright with both hands on the lower belly.",
+          "Inhale through the nose for 4 seconds, imagining warmth filling the abdomen.",
+          "Exhale through the mouth for 8 seconds, imagining the boundary around your energy becoming clear.",
+          "Whisper: My energy is my own. I am not food for others. I protect my nourishment.",
+          "Then take one real-world action: schedule care, test, treat, or set one boundary."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Tapeworm infection requires medical evaluation and appropriate antiparasitic treatment when confirmed.",
+        "items": [
+          {
+            "label": "Medical testing",
+            "detail": "Ask a clinician about stool testing or other appropriate evaluation."
+          },
+          {
+            "label": "Treatment",
+            "detail": "Antiparasitic medication may be needed depending on parasite type and diagnosis."
+          },
+          {
+            "label": "Food safety",
+            "detail": "Avoid undercooked meat/fish and follow safe food handling."
+          },
+          {
+            "label": "Household/travel context",
+            "detail": "Mention travel, exposures, pets/livestock, undercooked food, and visible stool segments."
+          }
+        ],
+        "avoid": [
+          "Do not use herbal parasite cleanses as a substitute for medical treatment.",
+          "Do not ignore neurologic symptoms, seizures, severe headache, eye symptoms, fever, severe abdominal pain, or unexplained weight loss."
+        ]
+      },
+      "brutalActions": [
+        "Get tested instead of guessing.",
+        "Use medical treatment if confirmed.",
+        "Identify one emotional freeloader and cut off access.",
+        "Seek urgent care for neurologic symptoms, seizures, severe illness, fever, or severe abdominal pain."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Tapeworm infection is caused by an intestinal parasite and may come from contaminated food, undercooked meat or fish, exposure to eggs/larvae, or sanitation risk. Diagnosis and treatment require medical care.",
+        "protocol": [
+          "Seek medical evaluation and testing for suspected tapeworm.",
+          "Use clinician-directed antiparasitic treatment if confirmed.",
+          "Get urgent care for neurologic symptoms, seizures, severe headache, eye symptoms, fever, severe abdominal pain, or severe illness."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for parasite diagnosis or medical treatment."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Freeloader in Unit 4B",
+        "metaphorText": "Your intestines are an apartment building and unit 4B has a tenant eating groceries without paying rent.",
+        "wittyAdvice": "Evict medically first. Then review your emotional lease agreements."
+      },
+      "brutal": {
+        "realityCheck": "You do have a parasite problem. You may also have a boundary-drain pattern.",
+        "protocolTitle": "EVICT UNIT 4B",
+        "protocolSteps": [
+          "Get tested.",
+          "Treat medically if confirmed.",
+          "Stop letting people feed on your resources.",
+          "Watch for urgent red flags."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Visible worm segments in stool or suspected parasite exposure",
+        "Unexplained weight loss, weakness, persistent diarrhea, abdominal pain, nausea, or appetite changes",
+        "Fever, severe abdominal pain, vomiting, or severe illness",
+        "Neurologic symptoms, seizures, severe headache, confusion, or eye symptoms",
+        "Signs of malnutrition, anemia, or persistent fatigue",
+        "Recent travel, undercooked meat/fish exposure, sanitation exposure, or household exposure"
+      ],
+      "seek_immediate_care_if": [
+        "You have neurologic symptoms, seizures, severe headache, confusion, or eye symptoms",
+        "You have fever, severe abdominal pain, persistent vomiting, severe weakness, or serious illness signs",
+        "You suspect complications or feel acutely unwell"
+      ],
+      "schedule_care_if": [
+        "You see worm segments or suspect tapeworm exposure",
+        "You have unexplained weight loss, persistent digestive symptoms, weakness, or appetite changes",
+        "You need testing and species-appropriate treatment"
+      ],
+      "self_care_allowed_if": "Food safety, hydration, and symptom tracking may support care, but suspected tapeworm needs medical testing and treatment.",
+      "do_not_ignore": "Tapeworm is an actual parasite. It should not be treated as purely emotional, energetic, or self-cleansing.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "ulcers",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Deep gnawing burn, sharp stab, and hollow pause.",
+        "hapticPattern": [
+          2000,
+          120,
+          500,
+          3000
+        ],
+        "uiBackgroundAccent": "#8B3A2A"
+      },
+      "hero": {
+        "primaryPattern": "Peptic ulcers may involve H. pylori, NSAID use, acid injury, smoking, alcohol, protective lining breakdown, and stomach or duodenal erosion.",
+        "cascade": [
+          "Lining Weakens",
+          "Acid Irritates",
+          "Sore Forms",
+          "Pain/Bleed Risk"
+        ],
+        "tags": [
+          "#ulcer",
+          "#H pylori",
+          "#NSAIDs"
+        ],
+        "safetyPreview": "Vomiting blood, black/tarry stool, sudden severe pain, fainting, weakness, or shock symptoms need urgent medical care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Protective Lining Weakens",
+          "short": "The stomach or duodenal lining loses protection.",
+          "detail": "The stomach and duodenum have protective mucus and blood flow. H. pylori, NSAIDs, smoking, alcohol, and other factors can weaken this protection."
+        },
+        {
+          "title": "Acid Irritates Tissue",
+          "short": "Acid reaches vulnerable lining.",
+          "detail": "Acid helps digest food, but when protective barriers fail, acid can irritate and erode tissue."
+        },
+        {
+          "title": "Ulcer Forms",
+          "short": "A sore develops.",
+          "detail": "A peptic ulcer is a sore in the stomach or upper small intestine lining. It can cause burning, gnawing pain, nausea, bloating, or appetite changes."
+        },
+        {
+          "title": "Bleeding or Perforation Risk",
+          "short": "Some ulcers become urgent.",
+          "detail": "Vomiting blood, black stool, sudden severe pain, fainting, severe weakness, or shock symptoms can signal bleeding or perforation."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Peptic Ulcer Lining Breakdown Cascade",
+          "sections": [
+            {
+              "heading": "Stage 1 — Medical Causes First",
+              "body": [
+                "Peptic ulcers are medically real sores in the stomach or upper small intestine lining.",
+                "Common causes include H. pylori infection and NSAID use. Smoking, alcohol, severe physiologic stress, and other conditions may also contribute."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Barrier Failure",
+              "body": [
+                "The stomach is built to handle acid, but only when the protective lining is working.",
+                "When that lining is weakened, acid can irritate and erode tissue, creating gnawing, burning, or stabbing pain."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Testing and Treatment",
+              "body": [
+                "Ulcers often need medical evaluation, especially to check for H. pylori, medication causes, bleeding risk, and proper treatment.",
+                "Breathing exercises do not kill H. pylori. I know, devastating news for the scented-candle economy."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Emergency Signs",
+              "body": [
+                "Vomiting blood, coffee-ground vomit, black/tarry stool, sudden severe abdominal pain, fainting, weakness, or shock symptoms need urgent care.",
+                "Those are not journal prompts. Those are get-help-now signs."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "Gary at the Acid Plant",
+          "paragraphs": [
+            "Your stomach is now a chemical plant with an acid leak.",
+            "Gary the janitor has been patching the same pipe for years with duct tape, denial, and a mug that says WORLD'S OKAYEST LINING.",
+            "The supervisors keep opening the acid valve while Gary screams that the pipe is paper-thin.",
+            "The building inspector, your body, keeps leaving notes: PIPE CORRODED. ACID LEAKING. SHUT DOWN AND CALL SOMEONE QUALIFIED.",
+            "Medication may reduce acid. Antibiotics may be needed if H. pylori is involved. Avoiding NSAIDs may matter. Gary cannot fix this with inspirational breathing alone.",
+            "The plant needs actual repair, not another staff meeting about resilience."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Acid Plant Reality Check",
+          "paragraphs": [
+            "You do have an ulcer problem. You may also have a swallowing-acid pattern.",
+            "Medical first: check H. pylori, NSAID use, bleeding signs, and treatment. Do not spiritualize a hole in your digestive lining while ignoring black stool.",
+            "Symbolically, though, ask what keeps eating at you.",
+            "What resentment do you keep swallowing? What boundary keeps getting burned through? What situation digests you while you pretend you are digesting it?",
+            "Medication can lower acid. Treatment can heal tissue. Boundaries can stop you from walking back into the same acid plant every day.",
+            "Protect your lining. Protect your time. Protect your no.",
+            "Stop feeding the acid plant or let Gary keep patching holes in a burning pipe. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Stomach Fire",
+          "tag": "Middle Burner",
+          "paragraphs": [
+            "In Chinese medicine, Stomach patterns can involve heat, rumination, and disrupted descending flow.",
+            "Symbolically, ulcer pain can mirror heat that has been held too long."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Liver Fire Invading Stomach",
+          "tag": "Wood Over Earth",
+          "paragraphs": [
+            "The Liver pattern is associated with frustration and blocked movement.",
+            "When anger has no outlet, the symbolic stomach becomes the place where heat gathers."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Eaten Self Archetype",
+          "tag": "Boundary Erosion",
+          "paragraphs": [
+            "The Protector says: you cannot eat me alive.",
+            "When that part is suppressed, life can feel corrosive."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Corrosive Rumination",
+          "tag": "Mental Acid",
+          "paragraphs": [
+            "This layer asks what thought, person, obligation, or resentment keeps burning the same place.",
+            "Not every pain is symbolic, but some symbols are suspiciously accurate little jerks."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Protect the Lining",
+          "tag": "Repair",
+          "paragraphs": [
+            "The medical repair is evaluation and treatment.",
+            "The symbolic repair is refusing to keep swallowing what burns."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Stomach Cooling & Boundary Protection",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit upright with one hand below the sternum and one hand on the lower belly.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds, imagining the stomach settling and cooling.",
+          "Whisper: I do not have to swallow what burns me. I protect my boundaries.",
+          "Then take one practical step: note NSAID use, symptoms, food timing, bleeding signs, and whether medical care is needed."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Peptic ulcers need medical evaluation and may require H. pylori testing, medication, and medication-risk review.",
+        "items": [
+          {
+            "label": "Medical evaluation",
+            "detail": "Ask about H. pylori testing, NSAID use, acid suppression, and bleeding risk."
+          },
+          {
+            "label": "Medication review",
+            "detail": "NSAIDs can worsen ulcer risk. Review pain relievers with a clinician."
+          },
+          {
+            "label": "Trigger tracking",
+            "detail": "Track pain timing, meals, alcohol, smoking, NSAIDs, nausea, vomiting, stool color, and weight changes."
+          },
+          {
+            "label": "Gentle routine",
+            "detail": "Regular meals, stress downshifting, and avoiding known irritants may support comfort while pursuing care."
+          }
+        ],
+        "avoid": [
+          "Do not ignore vomiting blood, black/tarry stool, coffee-ground vomit, sudden severe pain, fainting, or severe weakness.",
+          "Do not stop prescribed meds or self-treat suspected H. pylori without medical guidance."
+        ]
+      },
+      "brutalActions": [
+        "Check H. pylori and NSAID risk with a clinician.",
+        "Do not ignore black stool or vomiting blood.",
+        "Name what keeps eating at you.",
+        "Set one boundary before your stomach has to write the complaint in acid."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Peptic ulcers are sores in the stomach or upper small intestine lining. They are commonly associated with H. pylori infection, NSAID use, acid injury, smoking, alcohol, severe physiologic stress, and protective lining breakdown.",
+        "protocol": [
+          "Seek evaluation for persistent or severe ulcer symptoms.",
+          "Ask about H. pylori testing, NSAID risk, and appropriate treatment.",
+          "Get urgent care for vomiting blood, black/tarry stool, sudden severe pain, fainting, severe weakness, or shock symptoms."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for ulcer diagnosis or medical treatment."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "Gary at the Acid Plant",
+        "metaphorText": "Gary keeps patching the acid-burned pipe while management refuses to shut the valve or call a real repair crew.",
+        "wittyAdvice": "Call the clinician, check the acid leak, and stop making Gary fight hydrochloric acid with vibes."
+      },
+      "brutal": {
+        "realityCheck": "You do have an ulcer problem. You may also have a swallowing-acid pattern.",
+        "protocolTitle": "PROTECT THE LINING",
+        "protocolSteps": [
+          "Check medical causes.",
+          "Review NSAIDs.",
+          "Watch bleeding signs.",
+          "Name what eats at you.",
+          "Set one boundary."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Vomiting blood or coffee-ground material",
+        "Black or tarry stool",
+        "Sudden severe abdominal pain or rigid abdomen",
+        "Fainting, dizziness, severe weakness, pale/clammy skin, or shock symptoms",
+        "Persistent vomiting, unexplained weight loss, or trouble swallowing",
+        "Severe pain with fever or worsening symptoms"
+      ],
+      "seek_immediate_care_if": [
+        "You vomit blood, have black/tarry stool, fainting, shock symptoms, or sudden severe abdominal pain",
+        "You suspect bleeding, perforation, or severe illness",
+        "Pain is severe, new, rapidly worsening, or unlike your usual symptoms"
+      ],
+      "schedule_care_if": [
+        "Burning/gnawing upper abdominal pain persists, recurs, or wakes you at night",
+        "You use NSAIDs frequently or have ulcer history",
+        "You need H. pylori testing, medication review, or treatment planning"
+      ],
+      "self_care_allowed_if": "Tracking symptoms, avoiding known irritants, and reviewing NSAID use may support care, but suspected ulcers need medical evaluation.",
+      "do_not_ignore": "Peptic ulcers can bleed or perforate. They should not be treated as purely emotional or stress-only problems.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "colon-cancer",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Grinding blocked pressure, sharp cramp, pause.",
+        "hapticPattern": [
+          2000,
+          120,
+          500,
+          3000
+        ],
+        "uiBackgroundAccent": "#6B5B4B"
+      },
+      "hero": {
+        "primaryPattern": "Blood in stool, persistent bowel changes, unexplained weight loss, anemia, abdominal pain, or positive stool test needs medical evaluation; average-risk screening usually starts at 45.",
+        "cascade": [
+          "Bowel Signal",
+          "Screen/Test",
+          "Scope/Biopsy",
+          "Treatment Plan"
+        ],
+        "tags": [
+          "colon cancer",
+          "colorectal cancer",
+          "colonoscopy"
+        ],
+        "safetyPreview": "Blood in stool, black stool, persistent bowel changes, unexplained weight loss, anemia, severe abdominal pain, or positive stool test needs evaluation."
+      },
+      "biologyPathway": [
+        {
+          "title": "Abnormal Growth",
+          "short": "Cells grow outside normal control.",
+          "detail": "Cancer involves genetic and cellular changes that let cells grow, invade, or spread depending on type and stage."
+        },
+        {
+          "title": "Diagnosis",
+          "short": "Imaging, labs, biopsy, and staging guide care.",
+          "detail": "Cancer workup depends on the organ involved and often requires pathology confirmation."
+        },
+        {
+          "title": "Treatment",
+          "short": "Treatment is type- and stage-specific.",
+          "detail": "Surgery, radiation, chemotherapy, immunotherapy, targeted therapy, hormone therapy, surveillance, or combinations may be used."
+        },
+        {
+          "title": "Support",
+          "short": "Emotional care belongs alongside treatment.",
+          "detail": "Counseling, support groups, symptom control, nutrition, sleep, and practical help matter. Cancer already brings enough paperwork from hell."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Bowel Changes, Screening, Colonoscopy & Treatment Planning",
+          "sections": [
+            {
+              "heading": "Stage 1 — Screening Saves Lives",
+              "body": [
+                "Average-risk colorectal cancer screening commonly starts at age 45.",
+                "Earlier screening may be needed with family history, genetic syndromes, inflammatory bowel disease, or other risks."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Warning Signs",
+              "body": [
+                "Blood in stool, persistent change in bowel habits, unexplained weight loss, anemia, abdominal pain, or positive stool tests need evaluation.",
+                "The colon is not supposed to send crimson newsletters."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Diagnosis",
+              "body": [
+                "Evaluation may include stool testing, colonoscopy, biopsy, imaging, and labs.",
+                "Colonoscopy is not glamorous, but neither is ignoring preventable disaster."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Treatment",
+              "body": [
+                "Treatment may include surgery, chemotherapy, radiation for rectal cancers, targeted therapy, immunotherapy, or surveillance depending on stage and markers.",
+                "Plans depend on location and spread."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Blocked Waste Line",
+          "paragraphs": [
+            "The waste line is backed up and one section is throwing warning flags like a sewer with a legal department.",
+            "The useful plan is not denial, not panic, and not internet supplement roulette.",
+            "The useful plan is evaluation, diagnosis, staging, treatment, support, and asking very specific questions until the medical fog starts behaving.",
+            "The symbolism can help with meaning. It does not get to fire the oncologist.",
+            "Scope the waste line and stop pretending blood in stool is a philosophical suggestion. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Medical Reality Check",
+          "paragraphs": [
+            "You may have Colon Cancer or a cancer concern. You may also have a shock-and-meaning pattern.",
+            "Medical first: suspected cancer needs prompt evaluation. Diagnosed cancer needs an oncology plan.",
+            "Screening, biopsy, imaging, staging, and treatment decisions belong with qualified clinicians.",
+            "Symbolically, ask what this diagnosis forces you to face, but do not blame yourself for cellular disease.",
+            "Scope the waste line and stop pretending blood in stool is a philosophical suggestion. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Qi Stagnation / Blood Stasis Image",
+          "tag": "Meaning Layer",
+          "paragraphs": [
+            "In TCM imagery, masses may be discussed through stagnation or stasis.",
+            "Medically, cancer is cellular disease requiring oncology care."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "The Releaser",
+          "tag": "Archetype",
+          "paragraphs": [
+            "The symbolic layer here is letting go, waste, grief, holding, and release without blaming the patient.",
+            "Meaning can support coping. It must never become blame."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "The Blocked Waste Line",
+          "tag": "Metaphor",
+          "paragraphs": [
+            "The colon is the waste line, and blood or persistent bowel changes are not personality quirks. They are evaluation signals.",
+            "The metaphor is emotional scaffolding, not a treatment plan."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Support System",
+          "tag": "Care",
+          "paragraphs": [
+            "Cancer care is a team sport nobody asked to join.",
+            "Bring notes, questions, second opinions when needed, and a person who can remember what the doctor said while your brain becomes soup."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Treatment Plus Meaning",
+          "tag": "Reset",
+          "paragraphs": [
+            "The reset is medical action plus nervous-system support.",
+            "Both matter. One does not replace the other."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Waste Line & Letting-Go Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit somewhere safe.",
+          "Place one hand on the heart and one on the affected area if comfortable.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale slowly for 8 seconds.",
+          "Think: I am not alone. I take the next medical step. I support my body without blaming it."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Colon Cancer may require medical evaluation, diagnosis, and condition-specific treatment.",
+        "items": [
+          {
+            "label": "Screening",
+            "detail": "Follow age/risk-based colorectal screening guidance."
+          },
+          {
+            "label": "Symptom evaluation",
+            "detail": "Blood, anemia, bowel changes, or weight loss need medical review."
+          },
+          {
+            "label": "Colonoscopy/biopsy",
+            "detail": "Diagnosis often requires visualization and tissue confirmation."
+          },
+          {
+            "label": "Treatment planning",
+            "detail": "Ask about stage, tumor markers, surgery, chemotherapy, immunotherapy, and surveillance."
+          }
+        ],
+        "avoid": [
+          "Do not ignore rectal bleeding or persistent bowel habit changes.",
+          "Do not assume hemorrhoids explain all bleeding without medical review.",
+          "Do not replace colonoscopy or treatment with cleanses. The irony would be unbearable."
+        ]
+      },
+      "brutalActions": [
+        "Schedule or keep medical evaluation.",
+        "Write down symptoms and questions.",
+        "Bring support to appointments.",
+        "Do not let fear, shame, or miracle-cure marketing run the treatment plan."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Colon cancer is cancer of the large intestine and overlaps with colorectal cancer screening and diagnosis. Warning signs can include blood in stool, persistent bowel habit changes, unexplained weight loss, abdominal pain, anemia, fatigue, narrow stools, or positive stool testing. Screening commonly begins at age 45 for average-risk adults, earlier with certain risks.",
+        "protocol": [
+          "Track symptoms, screening history, family history, diagnosis stage if known, treatment plan, side effects, weight loss, pain, bleeding, fatigue, fever, infection signs, and urgent changes. Follow oncology guidance.",
+          "Use medical evaluation when symptoms are new, severe, progressive, persistent, recurrent, or paired with red flags.",
+          "Symbolic interpretation never replaces diagnosis, screening, emergency care, or treatment."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Blocked Waste Line",
+        "metaphorText": "The waste line is backed up and one section is throwing warning flags like a sewer with a legal department.",
+        "wittyAdvice": "Scope the waste line and stop pretending blood in stool is a philosophical suggestion. Your choice."
+      },
+      "brutal": {
+        "realityCheck": "You may have Colon Cancer or a cancer concern. You may also have a shock-and-meaning pattern.",
+        "protocolTitle": "MEDICAL CARE FIRST",
+        "protocolSteps": [
+          "Evaluate symptoms.",
+          "Confirm diagnosis.",
+          "Stage accurately.",
+          "Follow treatment plan.",
+          "Use emotional support."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Blood in stool, black/tarry stool, persistent rectal bleeding, or positive stool test",
+        "Persistent diarrhea/constipation/change in stool caliber, unexplained weight loss, anemia, fatigue",
+        "Severe abdominal pain, vomiting, bowel obstruction symptoms, or inability to pass stool/gas",
+        "Fever/infection signs during treatment or severe treatment side effects"
+      ],
+      "seek_immediate_care_if": [
+        "Severe symptoms, bleeding, trouble breathing, neurologic deficits, severe pain, infection signs during treatment, or feeling medically unsafe occur"
+      ],
+      "schedule_care_if": [
+        "Screening is due, stool test is positive, bowel habits change persistently, or bleeding/anemia occurs",
+        "Family history/genetic risk requires earlier or more frequent screening"
+      ],
+      "self_care_allowed_if": "Supportive routines, sleep, nutrition, movement as tolerated, counseling, and support groups may help alongside medical care.",
+      "do_not_ignore": "Cancer symptoms, screening abnormalities, new lumps, unexplained weight loss, bleeding, persistent cough, neurologic symptoms, or treatment side effects need medical guidance.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure cancer."
+    }
+  }
+]

@@ -1,6 +1,12 @@
 import { useState, useMemo } from 'react';
-import { AILMENTS } from '../data/dictionary';
+import { AilmentCore } from '../types/dictionary';
 import { Ailment } from '../types';
+import {
+  getCoreAilments,
+  getCoreAilmentsByCategory,
+  searchCoreAilments,
+  getCategories
+} from '../data';
 import { isSearchOnlyAilment } from '../lib/ailments/constants';
 
 export interface DictionaryNavigation {
@@ -12,7 +18,7 @@ export interface DictionaryNavigation {
   setSelectedCategory: (category: string | null) => void;
   selectedAilment: Ailment | null;
   setSelectedAilment: (ailment: Ailment | null) => void;
-  filteredAilments: Ailment[];
+  filteredAilments: AilmentCore[];
   categories: string[];
 }
 
@@ -23,25 +29,31 @@ export function useDictionaryNavigation(): DictionaryNavigation {
   const [selectedAilment, setSelectedAilment] = useState<Ailment | null>(null);
 
   const categories = useMemo(() => {
-    const browsable = AILMENTS.filter(a => !isSearchOnlyAilment(a));
-    return ['All', ...Array.from(new Set(browsable.map(a => a.category)))];
+    return getCategories();
   }, []);
 
   const filteredAilments = useMemo(() => {
     const normalizedSearchQuery = searchQuery.trim().toLowerCase();
     const isSearching = normalizedSearchQuery.length > 0;
 
-    return AILMENTS.filter(ailment => {
+    let results: AilmentCore[];
+    if (isSearching) {
+      results = searchCoreAilments(normalizedSearchQuery);
+    } else {
+      results = selectedCategory && selectedCategory !== 'All'
+        ? getCoreAilmentsByCategory(selectedCategory)
+        : getCoreAilments();
+    }
+
+    const filtered = results.filter(ailment => {
       const searchOnly = isSearchOnlyAilment(ailment);
       if (searchOnly && !isSearching) return false;
 
-      const matchesSearch = ailment.name.toLowerCase().includes(normalizedSearchQuery) ||
-        ailment.emotionalRoot.toLowerCase().includes(normalizedSearchQuery) ||
-        ailment.physiologicalDescription.toLowerCase().includes(normalizedSearchQuery);
-
       const matchesCategory = isSearching || selectedCategory === 'All' || ailment.category === selectedCategory;
-      return matchesSearch && matchesCategory;
-    }).sort((a, b) => a.name.localeCompare(b.name));
+      return matchesCategory;
+    });
+
+    return filtered.sort((a, b) => a.name.localeCompare(b.name));
   }, [searchQuery, selectedCategory]);
 
   return {

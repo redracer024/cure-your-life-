@@ -1,0 +1,2884 @@
+[
+  {
+    "id": "lower-back-pain",
+    "medical_safety": {
+      "critical_alerts": [
+        "Loss of bowel or bladder control (cauda equina risk)",
+        "Numbness in the groin or saddle area",
+        "Progressive weakness, numbness, or tingling in one or both legs",
+        "Severe, unrelenting back pain that does not improve when lying down",
+        "Back pain accompanied by fever, chills, or unexplained weight loss",
+        "Back pain after a high-impact fall or vehicle collision"
+      ],
+      "seek_immediate_care_if": [
+        "You experience sudden bowel or bladder dysfunction or saddle-area numbness",
+        "Your leg weakness progresses rapidly or you cannot lift your foot (foot drop)",
+        "The back pain started after major physical trauma like a car crash or high fall"
+      ],
+      "schedule_care_if": [
+        "Your pain persists for more than 4 to 6 weeks despite rest",
+        "The pain radiates down past your knee or may contribute to persistent numbness",
+        "You have a history of cancer, osteoporosis, or immunosuppression and develop new back pain"
+      ],
+      "self_care_allowed_if": "Gentle movement, stretching, and applying ice or heat may be used for mild, uncomplicated muscular soreness.",
+      "do_not_ignore": "Back and spinal symptoms must be evaluated to rule out nerve compression, infection, or structural instability.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease. Seek professional medical care for diagnosis, treatment, medication decisions, or urgent symptoms."
+    }
+  },
+  {
+    "id": "chronic-neck-stiffness",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Grinding resistance, sharp crack, pause.",
+        "hapticPattern": [
+          2000,
+          120,
+          300,
+          3000
+        ],
+        "uiBackgroundAccent": "#6B7B7B"
+      },
+      "hero": {
+        "primaryPattern": "Neck stiffness may be muscular/postural but can also signal nerve compression, disc disease, trauma, infection, meningitis, inflammatory disease, or other serious causes.",
+        "cascade": [
+          "Tension Holds",
+          "Motion Narrows",
+          "Perspective Locks",
+          "Cause Check"
+        ],
+        "tags": [
+          "#neck",
+          "#stiffness",
+          "#cervical"
+        ],
+        "safetyPreview": "Fever, severe headache, stiff neck, rash, light sensitivity, trauma, weakness, numbness, bowel/bladder changes, or severe worsening pain needs urgent care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Muscle Guarding",
+          "short": "Muscles can protect by tightening.",
+          "detail": "Neck muscles can tighten from stress, posture, strain, injury, or pain, reducing motion."
+        },
+        {
+          "title": "Spine/Nerve Causes",
+          "short": "Discs, joints, and nerves can contribute.",
+          "detail": "Cervical disc disease, arthritis, stenosis, or nerve compression can cause neck pain with arm symptoms."
+        },
+        {
+          "title": "Infection Red Flags",
+          "short": "Fever plus stiff neck can be serious.",
+          "detail": "Meningitis and other infections can include fever, headache, stiff neck, confusion, rash, or light sensitivity."
+        },
+        {
+          "title": "Safe Movement",
+          "short": "Gentle beats force.",
+          "detail": "Gentle mobility, ergonomics, PT, heat/ice, and medical review can help depending on cause. Yanking the neck is caveman medicine."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Cervical Stiffness, Guarding & Red-Flag Cascade",
+          "sections": [
+            {
+              "heading": "Stage 1 — Stiff Neck Is a Symptom",
+              "body": [
+                "Neck stiffness can be muscle tension, posture, strain, arthritis, disc disease, or nerve irritation.",
+                "It can also be infection or trauma-related, because the neck insists on being important."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Movement Narrows",
+              "body": [
+                "Tight muscles and irritated joints can reduce rotation, flexion, extension, and comfort.",
+                "Shoulders, jaw, sleep position, screens, and stress all enjoy joining the committee."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Red Flags",
+              "body": [
+                "Fever, severe headache, stiff neck, rash, confusion, light sensitivity, trauma, weakness, numbness, or bowel/bladder symptoms need urgent care.",
+                "A possible meningitis or spinal cord sign is not a stretching prompt."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Support Plan",
+              "body": [
+                "Care may include PT, ergonomics, heat/ice, medication, posture/load changes, imaging, or urgent treatment depending on cause.",
+                "The steering wheel needs safe unlocking, not heroic cranking."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Locked Steering Wheel",
+          "paragraphs": [
+            "Your neck is a steering wheel locked straight ahead.",
+            "The driver says we're fine, while the car misses every exit and becomes emotionally attached to tunnel vision.",
+            "Sometimes the lock is stress. Sometimes posture. Sometimes disc, nerve, arthritis, trauma, or infection.",
+            "Unlocking it safely means checking red flags, reducing load, and restoring motion without trying to wrench the whole dashboard off.",
+            "Unlock the steering wheel safely or keep driving straight into the same wall. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Refusal to Look Reality Check",
+          "paragraphs": [
+            "You may have a neck stiffness problem. You may also have a refusal-to-look pattern.",
+            "Medical first: stiff neck with fever, severe headache, neurologic symptoms, trauma, or rash needs care.",
+            "Symbolically, ask what you refuse to turn toward.",
+            "But do not confuse meningitis red flags with emotional resistance. The neck gets triage before poetry.",
+            "Unlock the steering wheel safely or keep driving straight into the same wall. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Bladder-Gallbladder Stagnation",
+          "tag": "Neck Channels",
+          "paragraphs": [
+            "In TCM imagery, neck/shoulder stiffness maps to blocked flow through related channels.",
+            "Medical red flags still get priority."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Perspective Gate",
+          "tag": "Turning",
+          "paragraphs": [
+            "The neck lets the head see more than one direction.",
+            "Stiffness can symbolize narrowed perspective."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Locked Wheel",
+          "tag": "Control",
+          "paragraphs": [
+            "The locked wheel symbolizes fixation.",
+            "Safe turning returns choice."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Head-Body Bridge",
+          "tag": "Integration",
+          "paragraphs": [
+            "The neck connects thinking with action.",
+            "Tension here often carries both physical and emotional load."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Look Safely",
+          "tag": "Reset",
+          "paragraphs": [
+            "The reset is gentle motion, care, and perspective.",
+            "No forced cranking. We evolved past that, allegedly."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Steering Wheel Unlock & Cervical Release",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit upright with the neck supported.",
+          "Place one hand on the back of the neck and one on the heart.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "Whisper: I turn safely. I allow perspective without force."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Chronic Neck Stiffness may require medical evaluation, diagnosis, and condition-specific treatment.",
+        "items": [
+          {
+            "label": "Gentle mobility",
+            "detail": "Use slow, pain-free range only. No aggressive twisting."
+          },
+          {
+            "label": "Heat/ice",
+            "detail": "Heat may help chronic tension; ice may help acute irritation."
+          },
+          {
+            "label": "Ergonomics",
+            "detail": "Screens, pillows, driving, and work posture can matter."
+          },
+          {
+            "label": "PT/medical care",
+            "detail": "Persistent, recurrent, neurologic, or severe symptoms deserve evaluation."
+          }
+        ],
+        "avoid": [
+          "Do not ignore fever, severe headache, rash, light sensitivity, trauma, weakness, numbness, bowel/bladder changes, or severe worsening pain.",
+          "Do not force neck cracking or aggressive stretches."
+        ]
+      },
+      "brutalActions": [
+        "Check red flags.",
+        "Stop forcing the neck.",
+        "Adjust screen/sleep posture.",
+        "Turn toward one truth without cranking the steering wheel off."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Chronic neck stiffness is reduced neck range of motion, pain, tightness, or guarding. Causes can include muscle strain, posture, stress tension, arthritis, disc disease, nerve compression, whiplash, spinal stenosis, infection, meningitis, inflammatory disease, or trauma.",
+        "protocol": [
+          "Track fever, headache, rash, light sensitivity, trauma, neurologic symptoms, arm numbness/weakness, bowel/bladder changes, severe pain, night pain, stiffness duration, posture triggers, and range of motion.",
+          "Use medical evaluation when symptoms are new, severe, progressive, persistent, recurrent, or paired with red flags.",
+          "Symbolic interpretation never replaces diagnosis or treatment."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Locked Steering Wheel",
+        "metaphorText": "Your neck is a steering wheel locked straight ahead.",
+        "wittyAdvice": "Unlock the steering wheel safely or keep driving straight into the same wall. Your choice."
+      },
+      "brutal": {
+        "realityCheck": "You may have a neck stiffness problem. You may also have a refusal-to-look pattern.",
+        "protocolTitle": "UNLOCK SAFELY",
+        "protocolSteps": [
+          "Check red flags.",
+          "Move gently.",
+          "Reduce load.",
+          "Fix ergonomics.",
+          "Get care if persistent/severe."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Fever, severe headache, stiff neck, rash, confusion, or light sensitivity",
+        "Trauma, fall, whiplash, or severe sudden pain",
+        "Arm weakness/numbness, gait changes, bowel/bladder changes, or spinal cord symptoms",
+        "Cancer/infection risk, unexplained weight loss, night pain, or immune suppression",
+        "Severe worsening pain or inability to move neck"
+      ],
+      "seek_immediate_care_if": [
+        "Stiff neck occurs with fever, severe headache, rash, confusion, light sensitivity, trauma, neurologic symptoms, or bowel/bladder changes"
+      ],
+      "schedule_care_if": [
+        "Neck stiffness persists, recurs, limits activity, radiates, or includes arm symptoms"
+      ],
+      "self_care_allowed_if": "Gentle mobility, heat/ice, posture support, and stress reduction may help mild stiffness without red flags.",
+      "do_not_ignore": "Stiff neck plus fever/headache/neurologic symptoms can be serious.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "shoulder-tension",
+    "medical_safety": {
+      "critical_alerts": [
+        "Loss of bowel or bladder control (cauda equina risk)",
+        "Numbness in the groin or saddle area",
+        "Progressive weakness, numbness, or tingling in one or both legs",
+        "Severe, unrelenting back pain that does not improve when lying down",
+        "Back pain accompanied by fever, chills, or unexplained weight loss",
+        "Back pain after a high-impact fall or vehicle collision"
+      ],
+      "seek_immediate_care_if": [
+        "You experience sudden bowel or bladder dysfunction or saddle-area numbness",
+        "Your leg weakness progresses rapidly or you cannot lift your foot (foot drop)",
+        "The back pain started after major physical trauma like a car crash or high fall"
+      ],
+      "schedule_care_if": [
+        "Your pain persists for more than 4 to 6 weeks despite rest",
+        "The pain radiates down past your knee or may contribute to persistent numbness",
+        "You have a history of cancer, osteoporosis, or immunosuppression and develop new back pain"
+      ],
+      "self_care_allowed_if": "Gentle movement, stretching, and applying ice or heat may be used for mild, uncomplicated muscular soreness.",
+      "do_not_ignore": "Back and spinal symptoms must be evaluated to rule out nerve compression, infection, or structural instability.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease. Seek professional medical care for diagnosis, treatment, medication decisions, or urgent symptoms."
+    }
+  },
+  {
+    "id": "back-upper",
+    "medical_safety": {
+      "critical_alerts": [
+        "Loss of bowel or bladder control (cauda equina risk)",
+        "Numbness in the groin or saddle area",
+        "Progressive weakness, numbness, or tingling in one or both legs",
+        "Severe, unrelenting back pain that does not improve when lying down",
+        "Back pain accompanied by fever, chills, or unexplained weight loss",
+        "Back pain after a high-impact fall or vehicle collision"
+      ],
+      "seek_immediate_care_if": [
+        "You experience sudden bowel or bladder dysfunction or saddle-area numbness",
+        "Your leg weakness progresses rapidly or you cannot lift your foot (foot drop)",
+        "The back pain started after major physical trauma like a car crash or high fall"
+      ],
+      "schedule_care_if": [
+        "Your pain persists for more than 4 to 6 weeks despite rest",
+        "The pain radiates down past your knee or may contribute to persistent numbness",
+        "You have a history of cancer, osteoporosis, or immunosuppression and develop new back pain"
+      ],
+      "self_care_allowed_if": "Gentle movement, stretching, and applying ice or heat may be used for mild, uncomplicated muscular soreness.",
+      "do_not_ignore": "Back and spinal symptoms must be evaluated to rule out nerve compression, infection, or structural instability.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease. Seek professional medical care for diagnosis, treatment, medication decisions, or urgent symptoms."
+    }
+  },
+  {
+    "id": "back-middle",
+    "medical_safety": {
+      "critical_alerts": [
+        "Loss of bowel or bladder control (cauda equina risk)",
+        "Numbness in the groin or saddle area",
+        "Progressive weakness, numbness, or tingling in one or both legs",
+        "Severe, unrelenting back pain that does not improve when lying down",
+        "Back pain accompanied by fever, chills, or unexplained weight loss",
+        "Back pain after a high-impact fall or vehicle collision"
+      ],
+      "seek_immediate_care_if": [
+        "You experience sudden bowel or bladder dysfunction or saddle-area numbness",
+        "Your leg weakness progresses rapidly or you cannot lift your foot (foot drop)",
+        "The back pain started after major physical trauma like a car crash or high fall"
+      ],
+      "schedule_care_if": [
+        "Your pain persists for more than 4 to 6 weeks despite rest",
+        "The pain radiates down past your knee or may contribute to persistent numbness",
+        "You have a history of cancer, osteoporosis, or immunosuppression and develop new back pain"
+      ],
+      "self_care_allowed_if": "Gentle movement, stretching, and applying ice or heat may be used for mild, uncomplicated muscular soreness.",
+      "do_not_ignore": "Back and spinal symptoms must be evaluated to rule out nerve compression, infection, or structural instability.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease. Seek professional medical care for diagnosis, treatment, medication decisions, or urgent symptoms."
+    }
+  },
+  {
+    "id": "back-lower",
+    "medical_safety": {
+      "critical_alerts": [
+        "Loss of bowel or bladder control (cauda equina risk)",
+        "Numbness in the groin or saddle area",
+        "Progressive weakness, numbness, or tingling in one or both legs",
+        "Severe, unrelenting back pain that does not improve when lying down",
+        "Back pain accompanied by fever, chills, or unexplained weight loss",
+        "Back pain after a high-impact fall or vehicle collision"
+      ],
+      "seek_immediate_care_if": [
+        "You experience sudden bowel or bladder dysfunction or saddle-area numbness",
+        "Your leg weakness progresses rapidly or you cannot lift your foot (foot drop)",
+        "The back pain started after major physical trauma like a car crash or high fall"
+      ],
+      "schedule_care_if": [
+        "Your pain persists for more than 4 to 6 weeks despite rest",
+        "The pain radiates down past your knee or may contribute to persistent numbness",
+        "You have a history of cancer, osteoporosis, or immunosuppression and develop new back pain"
+      ],
+      "self_care_allowed_if": "Gentle movement, stretching, and applying ice or heat may be used for mild, uncomplicated muscular soreness.",
+      "do_not_ignore": "Back and spinal symptoms must be evaluated to rule out nerve compression, infection, or structural instability.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease. Seek professional medical care for diagnosis, treatment, medication decisions, or urgent symptoms."
+    }
+  },
+  {
+    "id": "sciatica",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Electric jolt, burning afterburn, and pause.",
+        "hapticPattern": [
+          300,
+          120,
+          2000,
+          3000
+        ],
+        "uiBackgroundAccent": "#8B4C4C"
+      },
+      "hero": {
+        "primaryPattern": "Sciatica is radiating nerve pain down the buttock/leg pathway and may involve disc herniation, stenosis, nerve irritation, piriformis/deep gluteal compression, trauma, or other causes.",
+        "cascade": [
+          "Nerve Irritates",
+          "Signal Shoots",
+          "Leg Burns/Tingles",
+          "Cause Check"
+        ],
+        "tags": [
+          "#sciatica",
+          "#nerve",
+          "#back"
+        ],
+        "safetyPreview": "Bladder/bowel changes, groin/saddle numbness, progressive weakness, fever, trauma, cancer/infection risk, or severe unrelenting pain needs urgent care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Radiating Nerve Pain",
+          "short": "Pain travels down the nerve pathway.",
+          "detail": "Sciatica can cause sharp, burning, shooting, electric pain with numbness, tingling, or weakness."
+        },
+        {
+          "title": "Common Causes",
+          "short": "Disc and spine causes are common.",
+          "detail": "Herniated disc, stenosis, spondylolisthesis, degenerative changes, or deep gluteal/piriformis compression may irritate the nerve."
+        },
+        {
+          "title": "Red Flags",
+          "short": "Some symptoms are urgent.",
+          "detail": "Bladder/bowel dysfunction, saddle numbness, progressive weakness, fever, trauma, or severe neurologic symptoms need prompt care."
+        },
+        {
+          "title": "Movement Plan",
+          "short": "Safe motion beats panic.",
+          "detail": "Care may include physical therapy, meds, imaging if indicated, injections, or surgery for severe/progressive cases."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Sciatic Nerve Irritation & Radiating Pain Cascade",
+          "sections": [
+            {
+              "heading": "Stage 1 — Symptom, Not Diagnosis",
+              "body": [
+                "Sciatica describes radiating pain along the sciatic nerve pathway.",
+                "The cause still has to be found, because nerves love mystery novels."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Nerve Irritation",
+              "body": [
+                "Irritated or compressed nerve roots can create pain, numbness, tingling, burning, or weakness down the leg.",
+                "Sitting, coughing, sneezing, or bending may worsen symptoms."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Causes",
+              "body": [
+                "Herniated disc, spinal stenosis, degenerative changes, spondylolisthesis, deep gluteal compression, trauma, tumors, or infection can contribute.",
+                "The plan depends on the cause and severity."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Emergency Check",
+              "body": [
+                "Seek urgent care for bladder/bowel changes, saddle/groin numbness, progressive leg weakness, fever, trauma, cancer/infection risk, or severe unrelenting pain.",
+                "Do not meditate through a possible nerve emergency."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Pinched Wire",
+          "paragraphs": [
+            "Your sciatic nerve is an electrical wire running from the back into the leg.",
+            "Something is pinching the wire, and the lights are flickering all the way down the hallway.",
+            "The jolt is the wire screaming. The burn is the afterparty nobody invited.",
+            "Maybe the rock is a disc. Maybe stenosis. Maybe a cranky muscle. Maybe something more serious.",
+            "Move the rock safely. Do not kick the breaker box with stretching heroics.",
+            "Move the rock safely or keep letting the wire scream down your leg. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Blocked Path Reality Check",
+          "paragraphs": [
+            "You may have sciatica symptoms. You may also have a blocked-path pattern.",
+            "Medical first: radiating nerve pain needs evaluation when severe, persistent, weak, numb, or paired with red flags.",
+            "Symbolically, ask what path feels blocked.",
+            "But if your leg is weak or your bladder/bowels change, the symbolism can shut up and let emergency medicine drive.",
+            "Clear the path safely. Strengthen what supports it. Stop forcing pain into a personality contest.",
+            "Move the rock safely or keep letting the wire scream down your leg. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Kidney-Bladder Channel",
+          "tag": "Back-Leg Path",
+          "paragraphs": [
+            "In TCM imagery, the back and posterior leg map to Kidney/Bladder pathways.",
+            "Sciatica becomes a symbol of blocked downward flow."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Stuck Self",
+          "tag": "Blocked Path",
+          "paragraphs": [
+            "The Stuck Self fears the next step.",
+            "The Mover clears the path with support."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Pinched Wire",
+          "tag": "Signal Pain",
+          "paragraphs": [
+            "The wire image is nerve signaling under pressure.",
+            "Less compression, more signal. Basic electricity, except meat."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Stand or Sit",
+          "tag": "Movement Conflict",
+          "paragraphs": [
+            "Sciatica can make both motion and stillness difficult.",
+            "The body asks for the right movement, not random suffering."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Clear the Path",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The reset is red-flag screening, safe movement, and care.",
+            "Do not force the nerve. Nerves are petty."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Sciatic Signal & Clear Path Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit or lie in a position that does not worsen symptoms.",
+          "Place one hand on the lower back and one on the thigh.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "Whisper: I move safely. I allow the signal to calm."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Sciatica may require medical evaluation, diagnosis, and condition-specific treatment.",
+        "items": [
+          {
+            "label": "Red flag screen",
+            "detail": "Check bladder/bowel, saddle numbness, progressive weakness, fever, trauma, and severe pain first."
+          },
+          {
+            "label": "Relative rest",
+            "detail": "Avoid positions/lifts that sharply worsen symptoms while staying gently mobile when safe."
+          },
+          {
+            "label": "Physical therapy",
+            "detail": "Guided mobility, core/hip strength, and nerve-friendly movement may help."
+          },
+          {
+            "label": "Medical options",
+            "detail": "Medications, imaging, injections, or surgery may be considered depending on cause/severity."
+          }
+        ],
+        "avoid": [
+          "Do not ignore bladder/bowel changes, groin numbness, progressive weakness, fever, trauma, or severe worsening pain.",
+          "Do not force stretches that increase numbness, weakness, or radiating pain."
+        ]
+      },
+      "brutalActions": [
+        "Screen red flags.",
+        "Stop forcing painful stretches.",
+        "Build support safely.",
+        "Move one real obstacle without abusing your nerve."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Sciatica describes pain radiating along the sciatic nerve pathway, often from lower back or nerve root irritation/compression. Causes can include herniated disc, spinal stenosis, spondylolisthesis, piriformis/deep gluteal syndrome, degenerative changes, trauma, tumors, infection, or other spine/nerve issues.",
+        "protocol": [
+          "Track pain path, numbness/tingling, weakness, bowel/bladder changes, saddle numbness, fever, trauma, cancer history, infection risk, sitting tolerance, cough/sneeze worsening, and walking limits.",
+          "Use symptom tracking and medical evaluation when symptoms are severe, persistent, recurrent, progressive, or paired with red flags.",
+          "Do not replace diagnosis or prescribed treatment with symbolic interpretation."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Pinched Wire",
+        "metaphorText": "The sciatic wire is pinched and the leg lights are flickering like a haunted hallway.",
+        "wittyAdvice": "Move the rock carefully. Do not kick the breaker box."
+      },
+      "brutal": {
+        "realityCheck": "You may have sciatica symptoms. You may also have a blocked-path pattern.",
+        "protocolTitle": "CLEAR THE PATH",
+        "protocolSteps": [
+          "Check red flags.",
+          "Reduce aggravation.",
+          "Move safely.",
+          "Strengthen support.",
+          "Get care if persistent/severe."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Loss of bladder or bowel control, urinary retention, or new incontinence",
+        "Saddle/groin numbness",
+        "Progressive leg weakness, foot drop, or numbness",
+        "Fever, unexplained weight loss, cancer history, infection risk, IV drug use, or immune suppression",
+        "Major trauma, severe unrelenting pain, or inability to walk"
+      ],
+      "seek_immediate_care_if": [
+        "Bladder/bowel changes, saddle numbness, progressive weakness, fever/infection concern, major trauma, or severe neurologic symptoms occur",
+        "You feel medically unsafe"
+      ],
+      "schedule_care_if": [
+        "Radiating leg pain persists, worsens, recurs, limits walking/work/sleep, or includes numbness/tingling",
+        "You need diagnosis, physical therapy, imaging, or medication review"
+      ],
+      "self_care_allowed_if": "Gentle movement, relative rest, heat/ice, and posture modification may support mild symptoms without red flags.",
+      "do_not_ignore": "Sciatica is a symptom. The cause and neurologic safety matter.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "scoliosis",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Slow spiraling pressure with sharp pop and pause.",
+        "hapticPattern": [
+          3000,
+          120,
+          300,
+          3000
+        ],
+        "uiBackgroundAccent": "#6B7B8B"
+      },
+      "hero": {
+        "primaryPattern": "Scoliosis is a structural spinal curve with possible rotation; monitoring depends on age, curve size, growth, progression, pain, function, neurologic signs, and breathing impact.",
+        "cascade": [
+          "Axis Tilts",
+          "Rotation Forms",
+          "Load Shifts",
+          "Monitoring Guides Care"
+        ],
+        "tags": [
+          "#scoliosis",
+          "#spine",
+          "#balance"
+        ],
+        "safetyPreview": "Progressive curve, severe pain, neurologic symptoms, breathing trouble, bowel/bladder symptoms, or rapidly worsening posture needs medical care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Spinal Curve",
+          "short": "The spine curves side-to-side.",
+          "detail": "Scoliosis involves lateral curvature and often rotation, measured clinically and radiographically."
+        },
+        {
+          "title": "Growth and Progression",
+          "short": "Age and growth matter.",
+          "detail": "Adolescent curves may progress during growth; adult curves can be degenerative or related to prior curves."
+        },
+        {
+          "title": "Symptoms",
+          "short": "Pain and asymmetry vary.",
+          "detail": "Some people have visible asymmetry without pain; others develop back pain, imbalance, or in severe cases breathing limits."
+        },
+        {
+          "title": "Treatment Paths",
+          "short": "Observation, PT, bracing, or surgery.",
+          "detail": "Care depends on curve size, age, progression, symptoms, and risk. Naturally, the spine made it complicated."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Spinal Curve, Rotation & Progression Monitoring",
+          "sections": [
+            {
+              "heading": "Stage 1 — Structural Curve",
+              "body": [
+                "Scoliosis is a structural side-to-side curve, often with rotation.",
+                "It is not just bad posture, though posture can influence comfort."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Measurement",
+              "body": [
+                "Curves are commonly tracked with imaging and measurements like Cobb angle.",
+                "Progression risk depends on growth, curve size, type, and age."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Treatment Options",
+              "body": [
+                "Options can include observation, scoliosis-specific physical therapy, bracing during growth, pain management, or surgery for severe/progressive cases.",
+                "The spine, being a diva, prefers individualized engineering."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Safety Check",
+              "body": [
+                "Seek care for progressive curve, severe pain, neurologic symptoms, weakness/numbness, breathing trouble, or bowel/bladder changes.",
+                "A leaning tower still deserves an inspection."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Leaning Tower",
+          "paragraphs": [
+            "Your spine is a leaning tower with one side carrying more load than the other.",
+            "The foundation may be fine, or it may need serious engineering review.",
+            "The builders keep saying we'll straighten it later, which is a bold management plan for architecture.",
+            "Sometimes it needs monitoring. Sometimes bracing. Sometimes PT. Sometimes surgery.",
+            "Balance is not pretending the curve is fake. Balance is supporting the structure that exists.",
+            "Balance the tower support or keep asking a leaning structure to pretend gravity is optional. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Uneven Load Reality Check",
+          "paragraphs": [
+            "You may have scoliosis. You may also have an uneven-load pattern.",
+            "Medical first: scoliosis is structural and needs appropriate monitoring, especially with progression, pain, growth, neurologic signs, or breathing symptoms.",
+            "Symbolically, ask where life became one-sided.",
+            "What burden keeps pulling you off center?",
+            "You can seek center without denying the curve.",
+            "Balance the tower support or keep asking a leaning structure to pretend gravity is optional. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Central Axis",
+          "tag": "Spine",
+          "paragraphs": [
+            "The spine is the body's central pillar.",
+            "Scoliosis symbolically asks where the axis has been pulled."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Uneven Load",
+          "tag": "Asymmetry",
+          "paragraphs": [
+            "One-sided burden becomes the symbolic language.",
+            "Structural care still matters more than poetic symmetry."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Leaning Tower",
+          "tag": "Engineering",
+          "paragraphs": [
+            "The tower needs support, not shame.",
+            "Measurement beats guessing. Annoying, but true."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Center Finder",
+          "tag": "Balance",
+          "paragraphs": [
+            "Center is not always straight.",
+            "Center can mean supported alignment."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Balanced Support",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The reset is monitoring, strengthening, breath, and support.",
+            "The tower deserves scaffolding when needed."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Centering & Tower Support Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit or stand in a supported position.",
+          "Place one hand on the curve area and one on the opposite side.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "Whisper: I find support. I release uneven load where I can."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Scoliosis may require medical evaluation, diagnosis, and condition-specific treatment.",
+        "items": [
+          {
+            "label": "Monitoring",
+            "detail": "Follow clinician guidance for imaging, Cobb angle tracking, and progression risk."
+          },
+          {
+            "label": "Scoliosis-informed PT",
+            "detail": "Specialized exercises may support posture, breathing, strength, and comfort."
+          },
+          {
+            "label": "Bracing when indicated",
+            "detail": "In growing adolescents, bracing may reduce progression risk for certain curves."
+          },
+          {
+            "label": "Pain/function support",
+            "detail": "Core/hip strength, mobility, and ergonomic support may help symptoms."
+          }
+        ],
+        "avoid": [
+          "Do not ignore progressive curvature, neurologic symptoms, breathing trouble, severe pain, or bowel/bladder symptoms.",
+          "Do not rely on generic posture advice for a structural curve."
+        ]
+      },
+      "brutalActions": [
+        "Monitor the curve.",
+        "Build support.",
+        "Stop carrying one-sided loads when possible.",
+        "Ask the tower what scaffolding it needs."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Scoliosis is a side-to-side spinal curvature, often with vertebral rotation. It may be idiopathic, congenital, neuromuscular, adolescent, or adult degenerative. Severity is monitored by exam and imaging such as Cobb angle.",
+        "protocol": [
+          "Track curve monitoring, age/growth status, pain, uneven shoulders/hips, rib prominence, breathing symptoms, neurologic symptoms, progression, bracing/surgery history, and physical therapy plan.",
+          "Use symptom tracking and medical evaluation when symptoms are severe, persistent, recurrent, progressive, or paired with red flags.",
+          "Do not replace diagnosis or prescribed treatment with symbolic interpretation."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Leaning Tower",
+        "metaphorText": "The leaning tower is still standing, but someone should probably stop stacking emotional bricks on one side.",
+        "wittyAdvice": "Measure the curve. Support the tower. Gravity is rude but consistent."
+      },
+      "brutal": {
+        "realityCheck": "You may have scoliosis. You may also have an uneven-load pattern.",
+        "protocolTitle": "BALANCE THE TOWER",
+        "protocolSteps": [
+          "Monitor curve.",
+          "Support spine.",
+          "Strengthen safely.",
+          "Watch progression.",
+          "Balance load."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Rapidly progressive curve or worsening deformity",
+        "Severe back pain, neurologic symptoms, weakness, numbness, or gait changes",
+        "Shortness of breath or reduced exercise tolerance with severe curve",
+        "Bowel/bladder symptoms",
+        "Scoliosis in young child or with neuromuscular condition",
+        "Pain with fever, weight loss, trauma, or cancer/infection risk"
+      ],
+      "seek_immediate_care_if": [
+        "Neurologic symptoms, bowel/bladder changes, severe pain with illness signs, or breathing difficulty occur",
+        "You feel medically unsafe"
+      ],
+      "schedule_care_if": [
+        "Curve monitoring is due, pain/function changes occur, or progression is suspected",
+        "Bracing/PT/surgery opinions or specialist review are needed"
+      ],
+      "self_care_allowed_if": "Gentle strengthening, posture support, breath work, and symptom tracking may support comfort alongside medical monitoring.",
+      "do_not_ignore": "Scoliosis is structural; progression and neurologic/breathing symptoms need evaluation.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "shoulder-problems",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Heavy lift, sharp catch, and pause.",
+        "hapticPattern": [
+          2000,
+          120,
+          300,
+          3000
+        ],
+        "uiBackgroundAccent": "#8B7B7B"
+      },
+      "hero": {
+        "primaryPattern": "Shoulder pain may involve rotator cuff injury, bursitis, impingement, frozen shoulder, arthritis, instability, dislocation, fracture, labral injury, neck referral, diabetes, or thyroid disease.",
+        "cascade": [
+          "Load Lifts",
+          "Tendon/Bursa Irritates",
+          "Motion Catches",
+          "Reach Restricts"
+        ],
+        "tags": [
+          "#shoulder",
+          "#rotatorcuff",
+          "#frozen"
+        ],
+        "safetyPreview": "Trauma, deformity, inability to lift arm, sudden weakness, severe pain, fever/redness, chest pain, or neurologic symptoms needs care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Mobile Joint",
+          "short": "The shoulder trades stability for range.",
+          "detail": "The shoulder moves a lot, which is lovely until tendons, capsule, bursa, or labrum start filing complaints."
+        },
+        {
+          "title": "Rotator Cuff/Bursa",
+          "short": "Tendons and cushions can irritate.",
+          "detail": "Rotator cuff injury, impingement, or bursitis often hurts with reaching, lifting, overhead activity, or lying on that side."
+        },
+        {
+          "title": "Frozen Shoulder",
+          "short": "Capsule stiffness can lock motion.",
+          "detail": "Adhesive capsulitis causes progressive pain and stiffness and is associated with diabetes and thyroid disease."
+        },
+        {
+          "title": "Urgent Causes",
+          "short": "Trauma and weakness matter.",
+          "detail": "Dislocation, fracture, infection, neurologic injury, or acute tear need proper evaluation."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Shoulder Mobility, Tendon, Bursa & Capsule Cascade",
+          "sections": [
+            {
+              "heading": "Stage 1 — Many Possible Causes",
+              "body": [
+                "Shoulder pain is a symptom, not a diagnosis.",
+                "Causes include rotator cuff injury, bursitis, impingement, frozen shoulder, arthritis, instability, fracture, dislocation, labral injury, or neck referral."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Reach Gets Restricted",
+              "body": [
+                "Pain may limit overhead use, sleep, lifting, dressing, or reaching behind the back.",
+                "The crane is built for range, not endless unpaid overtime."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Frozen Shoulder Pattern",
+              "body": [
+                "Adhesive capsulitis can cause progressive stiffness and long recovery.",
+                "Diabetes and thyroid disease are common context clues."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Safety Check",
+              "body": [
+                "Seek urgent care for trauma, deformity, inability to move the arm, severe sudden weakness, fever/redness, chest pain, or neurologic symptoms.",
+                "Not every shoulder pain is 'slept wrong.' Some shoulders bring paperwork."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Overloaded Crane",
+          "paragraphs": [
+            "Your shoulder is a construction crane with a suspicious maintenance record.",
+            "The rotator cuff is the cable. The bursa is the pulley. The capsule is the crane housing that can freeze like bad bureaucracy.",
+            "One more lift, says the operator. One more lift, says the body, while the cable quietly frays.",
+            "Sometimes it needs PT. Sometimes imaging. Sometimes injection or surgery. Sometimes a diabetes/thyroid check.",
+            "The crane can recover better when you stop making it carry the emotional furniture too.",
+            "Unload the crane properly or keep making the shoulder carry a sky it never ordered. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Weight You're Still Carrying Reality Check",
+          "paragraphs": [
+            "You may have a shoulder problem. You may also have a carrying-too-much pattern.",
+            "Medical first: shoulder pain can be tendon, bursa, capsule, joint, nerve, fracture, dislocation, or referred pain.",
+            "Symbolically, ask what weight you keep shouldering.",
+            "What reach is costing you? What burden became identity?",
+            "Put it down emotionally. Also get care if the arm is weak, frozen, deformed, traumatic, or not improving.",
+            "Unload the crane properly or keep making the shoulder carry a sky it never ordered. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Lung-Large Intestine",
+          "tag": "Letting Go",
+          "paragraphs": [
+            "In TCM imagery, the shoulder can relate to grief, breath, and release.",
+            "Letting go does not replace rotator cuff rehab. Obviously."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Atlas Complex",
+          "tag": "Carrying",
+          "paragraphs": [
+            "The Atlas Complex carries the sky.",
+            "The Surrendered One puts down what is not theirs."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Overloaded Crane",
+          "tag": "Burden",
+          "paragraphs": [
+            "The crane image asks what has exceeded safe load.",
+            "Cables deserve maintenance. So do humans, apparently."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Frozen Reach",
+          "tag": "Restriction",
+          "paragraphs": [
+            "Frozen shoulder symbolizes reach locked by protection.",
+            "The body sometimes guards by refusing motion."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Put It Down",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The reset is treatment, load reduction, and release.",
+            "The shoulder is not a storage rack."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Shoulder Unload & Reach Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Sit or stand with the shoulder supported.",
+          "Place one hand on the shoulder and one on the heart.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "Whisper: I put down what is not mine. I allow safe reach."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Shoulder Problems may require medical evaluation, diagnosis, and condition-specific treatment.",
+        "items": [
+          {
+            "label": "Relative rest",
+            "detail": "Reduce painful overhead lifting, forceful reaching, and repeated aggravation."
+          },
+          {
+            "label": "Physical therapy",
+            "detail": "Mobility and strengthening can help many shoulder conditions when matched to diagnosis."
+          },
+          {
+            "label": "Diabetes/thyroid context",
+            "detail": "Frozen shoulder is more common with diabetes and thyroid disorders."
+          },
+          {
+            "label": "Medical review",
+            "detail": "Trauma, weakness, stiffness, night pain, or persistent symptoms may need exam/imaging."
+          }
+        ],
+        "avoid": [
+          "Do not ignore trauma, deformity, severe weakness, inability to lift the arm, fever/redness, chest pain, or neurologic symptoms.",
+          "Do not force aggressive stretches into sharp pain or suspected tear/dislocation."
+        ]
+      },
+      "brutalActions": [
+        "Put down one burden.",
+        "Stop aggravating overhead motions.",
+        "Check weakness and trauma.",
+        "Let the crane get serviced before it drops the load."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Shoulder problems can involve rotator cuff tendinopathy/tear, bursitis, impingement, adhesive capsulitis, arthritis, instability, dislocation, fracture, labral injury, neck nerve referral, or inflammatory disease.",
+        "protocol": [
+          "Track trauma, sudden weakness, inability to lift arm, deformity, night pain, overhead pain, stiffness, range loss, neck symptoms, numbness, diabetes, thyroid disease, and frozen-shoulder progression.",
+          "Use symptom tracking and medical evaluation when symptoms are severe, persistent, recurrent, progressive, or paired with red flags.",
+          "Do not replace diagnosis or prescribed treatment with symbolic interpretation."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Overloaded Crane",
+        "metaphorText": "The shoulder crane is overloaded, the cable is frayed, and the operator keeps requesting one more lift.",
+        "wittyAdvice": "Unload the crane, diagnose the part, and stop making pain carry furniture."
+      },
+      "brutal": {
+        "realityCheck": "You may have a shoulder problem. You may also have a carrying-too-much pattern.",
+        "protocolTitle": "UNLOAD THE CRANE",
+        "protocolSteps": [
+          "Check red flags.",
+          "Reduce load.",
+          "Restore motion safely.",
+          "Strengthen wisely.",
+          "Put down one burden."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Trauma, fall, deformity, dislocation concern, or inability to move the arm",
+        "Sudden severe weakness or inability to lift the arm",
+        "Fever, redness, warmth, severe swelling, or infection signs",
+        "Chest pain, shortness of breath, jaw/arm pain, or heart symptoms",
+        "Neck pain with numbness/weakness or neurologic symptoms",
+        "Severe night pain, unexplained weight loss, cancer/infection risk"
+      ],
+      "seek_immediate_care_if": [
+        "There is trauma, deformity, severe weakness, chest pain, infection signs, neurologic symptoms, or feeling medically unsafe",
+        "The shoulder appears dislocated or fractured"
+      ],
+      "schedule_care_if": [
+        "Pain persists, range of motion is limited, weakness appears, sleep is disrupted, or daily function is affected",
+        "Frozen shoulder, rotator cuff tear, bursitis, or referred neck pain needs evaluation"
+      ],
+      "self_care_allowed_if": "Gentle movement, relative rest, heat/ice, and posture/load changes may support mild symptoms without red flags.",
+      "do_not_ignore": "Shoulder pain can signal tear, dislocation, fracture, infection, nerve issue, or heart-related pain.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "slipped-disk",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Sharp electric jolt with burning afterburn and pause.",
+        "hapticPattern": [
+          300,
+          120,
+          2000,
+          3000
+        ],
+        "uiBackgroundAccent": "#8B4C4C"
+      },
+      "hero": {
+        "primaryPattern": "Herniated/slipped disc may cause local back/neck pain or nerve symptoms into an arm/leg; bladder/bowel changes, saddle numbness, or progressive weakness are urgent.",
+        "cascade": [
+          "Disc Pressures",
+          "Outer Layer Fails",
+          "Nerve Irritates",
+          "Signal Radiates"
+        ],
+        "tags": [
+          "#herniateddisc",
+          "#back",
+          "#nerve"
+        ],
+        "safetyPreview": "Bladder/bowel changes, saddle numbness, progressive weakness, trauma, fever, cancer/infection risk, or severe unrelenting pain needs urgent care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Disc Cushion",
+          "short": "Discs absorb load between vertebrae.",
+          "detail": "A disc has a tougher outer layer and softer inner material that helps absorb pressure."
+        },
+        {
+          "title": "Herniation",
+          "short": "Disc material bulges or leaks.",
+          "detail": "Disc material can irritate or compress nearby nerves, causing local and radiating symptoms."
+        },
+        {
+          "title": "Nerve Symptoms",
+          "short": "Pain can travel.",
+          "detail": "Lumbar discs can cause sciatica-like leg pain; cervical discs can radiate into the arm."
+        },
+        {
+          "title": "Emergency Signs",
+          "short": "Some nerve compression is urgent.",
+          "detail": "Bladder/bowel changes, saddle numbness, or progressive weakness can signal cauda equina or serious neurologic compromise."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Disc Herniation & Nerve Compression Cascade",
+          "sections": [
+            {
+              "heading": "Stage 1 — Disc Material Under Pressure",
+              "body": [
+                "A herniated disc happens when disc material bulges or leaks through the outer layer.",
+                "Sometimes it causes pain; sometimes imaging looks dramatic and symptoms are not. Bodies, naturally, are inconsistent."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Nerve Irritation",
+              "body": [
+                "Nearby nerve roots can become irritated or compressed.",
+                "This can cause numbness, tingling, burning, weakness, or radiating pain down an arm or leg."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Treatment Options",
+              "body": [
+                "Care may include physical therapy, medication, activity modification, injections, imaging, and sometimes surgery.",
+                "Core/hip strength, lifting mechanics, and graded recovery matter when safe."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Emergency Check",
+              "body": [
+                "Seek urgent care for bladder/bowel changes, saddle numbness, progressive weakness, fever, trauma, cancer/infection risk, or severe unrelenting pain.",
+                "A nerve emergency is not a time to become a wellness influencer."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Overstuffed Cushion",
+          "paragraphs": [
+            "Your spine is an overstuffed couch and the disc is the cushion.",
+            "Too much load, twist, strain, degeneration, or bad luck, and the cushion bulges like it has had enough of your household.",
+            "Then the filling presses on the wiring. The wiring is the nerve. The wiring objects loudly.",
+            "The fix may be PT, meds, imaging, injections, surgery, or simply not re-enacting a warehouse job during recovery.",
+            "Pressure needs redistribution. Limits need respect.",
+            "Take weight off the couch or keep waiting for the cushion to file bankruptcy. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Breaking Point Reality Check",
+          "paragraphs": [
+            "You may have a disc problem. You may also have an overload-and-limit pattern.",
+            "Medical first: disc herniation can irritate nerves and needs urgent care when bladder/bowel changes, saddle numbness, or weakness appear.",
+            "Symbolically, ask what pressure has exceeded capacity.",
+            "What have you carried past the point of structural honesty?",
+            "Set limits. Rehab smart. Do not make your spine negotiate with your pride.",
+            "Take weight off the couch or keep waiting for the cushion to file bankruptcy. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Kidney-Bladder Spine",
+          "tag": "Support Channel",
+          "paragraphs": [
+            "In TCM imagery, the spine relates to deep support and the Bladder pathway.",
+            "Disc pain becomes a symbol of overloaded structure."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Overloaded Self",
+          "tag": "Limits",
+          "paragraphs": [
+            "The Overloaded Self keeps carrying past capacity.",
+            "The Balanced Self says enough before rupture."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Blown Cushion",
+          "tag": "Pressure",
+          "paragraphs": [
+            "The cushion image points to compression and load.",
+            "A cushion is not a moral lesson. It is a load-bearing structure."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Pinched Wire",
+          "tag": "Nerve Signal",
+          "paragraphs": [
+            "When disc material irritates a nerve, signals radiate.",
+            "The body sends lightning because email was apparently unavailable."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Redistribute Load",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "The reset is pressure reduction, rehab, and red-flag screening.",
+            "Limits are spinal hygiene."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Disc Decompression & Limit Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "Lie on the back with knees supported or sit in a position that reduces pain.",
+          "Place one hand on the low back or neck area and one on the chest.",
+          "Inhale through the nose for 4 seconds.",
+          "Exhale through the mouth for 8 seconds.",
+          "Whisper: I release pressure. I respect limits before breaking."
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Slipped Disk may require medical evaluation, diagnosis, and condition-specific treatment.",
+        "items": [
+          {
+            "label": "Red flag screen",
+            "detail": "Check bladder/bowel, saddle numbness, progressive weakness, fever, trauma, and severe unrelenting pain."
+          },
+          {
+            "label": "Relative rest",
+            "detail": "Avoid heavy lifting, twisting, and positions that worsen nerve symptoms while staying gently mobile if safe."
+          },
+          {
+            "label": "Physical therapy",
+            "detail": "A guided plan can address mobility, core/hip strength, posture, and return to activity."
+          },
+          {
+            "label": "Medical options",
+            "detail": "Medication, imaging, injections, or surgery may be considered depending on severity and neurologic findings."
+          }
+        ],
+        "avoid": [
+          "Do not ignore bladder/bowel changes, saddle numbness, progressive weakness, trauma, fever, cancer/infection risk, or severe unrelenting pain.",
+          "Do not force aggressive stretching, lifting, or twisting through worsening nerve symptoms."
+        ]
+      },
+      "brutalActions": [
+        "Respect red flags.",
+        "Stop overloading the spine.",
+        "Rehab instead of ego-lifting.",
+        "Set one limit before the cushion files bankruptcy."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "A herniated disc occurs when disc material bulges or leaks through the outer disc layer and may irritate or compress nearby nerves, causing back/neck pain, radiating arm or leg pain, numbness, tingling, weakness, or sciatica.",
+        "protocol": [
+          "Track pain location, radiating symptoms, numbness/tingling, weakness, bladder/bowel changes, saddle numbness, trauma, fever, cancer/infection risk, lifting triggers, and function limits.",
+          "Use symptom tracking and medical evaluation when symptoms are severe, persistent, recurrent, progressive, or paired with red flags.",
+          "Do not replace diagnosis or prescribed treatment with symbolic interpretation."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Overstuffed Cushion",
+        "metaphorText": "The spinal couch cushion blew out and started pressing on the wiring. Excellent interior design by pain.",
+        "wittyAdvice": "Take weight off the couch, rehab smart, and stop asking nerves to be chill about compression."
+      },
+      "brutal": {
+        "realityCheck": "You may have a disc problem. You may also have an overload-and-limit pattern.",
+        "protocolTitle": "REDISTRIBUTE THE LOAD",
+        "protocolSteps": [
+          "Check red flags.",
+          "Reduce pressure.",
+          "Move safely.",
+          "Strengthen support.",
+          "Set limits."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Loss of bladder/bowel control, urinary retention, or new incontinence",
+        "Saddle/groin numbness",
+        "Progressive arm/leg weakness, foot drop, or loss of function",
+        "Major trauma, fever, unexplained weight loss, cancer history, infection risk, or immune suppression",
+        "Severe unrelenting pain, pain with neurologic decline, or inability to walk"
+      ],
+      "seek_immediate_care_if": [
+        "Bladder/bowel changes, saddle numbness, progressive weakness, major trauma, fever/infection concern, or severe neurologic symptoms occur",
+        "You feel medically unsafe"
+      ],
+      "schedule_care_if": [
+        "Pain persists, recurs, radiates, causes numbness/tingling, limits function, or needs diagnosis",
+        "You need physical therapy, imaging, medication review, or spine specialist input"
+      ],
+      "self_care_allowed_if": "Gentle movement, relative rest, heat/ice, posture support, and load modification may support mild symptoms without red flags.",
+      "do_not_ignore": "Disc symptoms with neurologic red flags can be urgent.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
+    }
+  },
+  {
+    "id": "lower-back-pain-left-side",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Heavy left-sided dragging pull, sharp release, pause.",
+        "hapticPattern": [
+          2000,
+          120,
+          300,
+          3000
+        ],
+        "uiBackgroundAccent": "#4B3B4B"
+      },
+      "hero": {
+        "primaryPattern": "Lower Back Pain — Left Side can come from muscles, discs, nerves, joints, posture, stress tension, or referred organ pain. Symbolically, it may overlap with carried grief, receiving support, and burdens that may not be yours, but red flags come first.",
+        "cascade": [
+          "Pain Appears",
+          "Red Flags Screen",
+          "Mechanical/Referred Cause",
+          "Pattern Reflection"
+        ],
+        "tags": [
+          "#leftside",
+          "#lowerback",
+          "#backpain"
+        ],
+        "safetyPreview": "Emergency/urgent signs include trauma, chest pain, fever, cancer history, unexplained weight loss, numbness/weakness, saddle numbness, bowel/bladder changes, severe abdominal pain, urinary infection signs, or worsening neurologic symptoms."
+      },
+      "biologyPathway": [
+        {
+          "title": "Mechanical Load",
+          "short": "Muscles, joints, discs, ribs.",
+          "detail": "Back pain can arise from strain, sprain, posture, repetitive movement, disc problems, arthritis, rib dysfunction, or sacroiliac/pelvic mechanics."
+        },
+        {
+          "title": "Nerve Pathway",
+          "short": "Radiation changes the concern.",
+          "detail": "Pain with numbness, weakness, tingling, or radiating symptoms can involve nerve irritation or compression."
+        },
+        {
+          "title": "Referred Pain",
+          "short": "Organs can mimic back pain.",
+          "detail": "Left lower back pain may come from muscle strain, ligament sprain, disc problems, sciatica, sacroiliac dysfunction, pelvic floor tension, or referred pain from the left kidney, colon, pancreas, ovary/fallopian tube, or other structures."
+        },
+        {
+          "title": "Stress Tension",
+          "short": "Guarding adds load.",
+          "detail": "Stress can increase muscle guarding, shallow breathing, bracing, and movement avoidance, which may worsen pain cycles."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Lower Back Pain — Left Side: Mechanical, Nerve, Referred & Stress-Tension Screen",
+          "sections": [
+            {
+              "heading": "Stage 1 — Locate and Screen",
+              "body": [
+                "Lower Back Pain — Left Side should be screened by location, onset, severity, trauma, radiation, neurologic symptoms, fever, urinary/abdominal/chest symptoms, and medical history.",
+                "Side-specific symbolism is optional. Side-specific organ referral is not optional, because organs are annoying little plot twists."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Common Physical Causes",
+              "body": [
+                "Left lower back pain may come from muscle strain, ligament sprain, disc problems, sciatica, sacroiliac dysfunction, pelvic floor tension, or referred pain from the left kidney, colon, pancreas, ovary/fallopian tube, or other structures.",
+                "Most back pain is mechanical, but red flags and referred pain matter."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Symbolic Layer",
+              "body": [
+                "Symbolically, this pattern may map to carried grief, receiving support, and burdens that may not be yours.",
+                "This is a reflection layer, not a diagnosis and not a claim of cause."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Care Direction",
+              "body": [
+                "Care may include movement modification, heat/ice, gentle mobility, physical therapy, posture/ergonomic changes, medical evaluation, imaging when indicated, medication when appropriate, or emergency care for red flags.",
+                "The goal is to treat the body and learn from the pattern without making either one carry the whole circus."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Lopsided Wheelbarrow",
+          "paragraphs": [
+            "Your lower back is a wheelbarrow overloaded on the left side, grinding because everything got dumped onto one wheel.",
+            "The body may be carrying actual load, emotional load, posture debt, nerve irritation, or organ referral. Very efficient of it to make one pain code mean twelve possible things.",
+            "First check danger signs. Then check mechanics. Then check the life pattern.",
+            "The symbolism can help you listen. The red flags tell you when listening needs a doctor.",
+            "Set down the lopsided load safely or keep letting one wheel drag the whole emotional landscaping business. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Carried Burden Reality Check",
+          "paragraphs": [
+            "You may have Lower Back Pain — Left Side. You may also have a carried grief, receiving support, and burdens that may not be yours pattern.",
+            "Medical first: trauma, neurologic changes, fever, bowel/bladder changes, chest symptoms, abdominal/urinary symptoms, cancer history, or unexplained weight loss changes the game.",
+            "The hard truth: your body may be telling you something about load, movement, posture, fear, grief, obligation, or support.",
+            "The other hard truth: sometimes it is a disc, kidney, gallbladder, heart, lung, rib, nerve, or infection issue. The metaphor does not get to outrank biology.",
+            "Set down the lopsided load safely or keep letting one wheel drag the whole emotional landscaping business. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Left Side Lower Back Map",
+          "tag": "Body Map",
+          "paragraphs": [
+            "In symbolic body mapping, the left side lower back may be associated with carried grief, receiving support, and burdens that may not be yours.",
+            "This is optional reflection, not medical proof."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Load Pattern",
+          "tag": "Burden",
+          "paragraphs": [
+            "Back pain often invites the question: what load is literal and what load is emotional?",
+            "Both can be true, because apparently one spine must host the whole meeting."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "The Lopsided Wheelbarrow",
+          "tag": "Analogy",
+          "paragraphs": [
+            "Your lower back is a wheelbarrow overloaded on the left side, grinding because everything got dumped onto one wheel.",
+            "The analogy is a handle, not a diagnosis."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Guarding Loop",
+          "tag": "Nervous System",
+          "paragraphs": [
+            "Pain can create guarding, guarding can create more pain, and stress can tighten the loop.",
+            "Breaking the loop may require movement, care, rest, boundaries, and treatment."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Set Down / Move Forward",
+          "tag": "Reset",
+          "paragraphs": [
+            "The reset is not pretending pain is emotional.",
+            "It is checking safety, supporting tissue, and asking what the body no longer wants to carry."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Left-Side Burden Release",
+        "modality": "Safety-First Mobility + Autonomic Downregulation",
+        "steps": [
+          "Screen red flags first: trauma, fever, weakness/numbness, saddle numbness, bowel/bladder change, chest pain, severe abdominal pain, urinary symptoms, cancer history, or unexplained weight loss.",
+          "If red flags are present, seek medical care urgently.",
+          "If safe, lie on your back with knees bent or sit supported.",
+          "Breathe in for 4 seconds and exhale for 8 seconds while softening the painful side.",
+          "Ask: what physical load needs adjustment, and what emotional load needs to be set down?"
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Back pain may require medical evaluation, physical therapy, imaging, medication, or emergency care depending on symptoms.",
+        "items": [
+          {
+            "label": "Gentle movement",
+            "detail": "Short walks and gentle mobility may help many non-emergency back pain patterns."
+          },
+          {
+            "label": "Heat or ice",
+            "detail": "Heat or ice may reduce discomfort depending on the situation and preference."
+          },
+          {
+            "label": "Physical therapy",
+            "detail": "PT can assess strength, mobility, posture, nerve signs, and movement patterns."
+          },
+          {
+            "label": "Medical evaluation",
+            "detail": "Needed for red flags, persistent pain, neurologic symptoms, referred pain concerns, or worsening function."
+          }
+        ],
+        "avoid": [
+          "Do not ignore bowel/bladder changes, saddle numbness, new weakness/numbness, fever, trauma, chest pain, severe abdominal pain, urinary symptoms, cancer history, or unexplained weight loss.",
+          "Do not force stretches through sharp, worsening, radiating, or neurologic pain."
+        ]
+      },
+      "brutalActions": [
+        "Check red flags.",
+        "Adjust the physical load.",
+        "Move gently if safe.",
+        "Set down one emotional load that is not yours."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Left lower back pain may come from muscle strain, ligament sprain, disc problems, sciatica, sacroiliac dysfunction, pelvic floor tension, or referred pain from the left kidney, colon, pancreas, ovary/fallopian tube, or other structures.",
+        "protocol": [
+          "Screen red flags and referred pain signs.",
+          "Use gentle movement and supportive care when safe.",
+          "Seek medical evaluation for severe, persistent, progressive, neurologic, traumatic, systemic, chest/abdominal/urinary, or unexplained symptoms."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Lopsided Wheelbarrow",
+        "metaphorText": "Your lower back is a wheelbarrow overloaded on the left side, grinding because everything got dumped onto one wheel.",
+        "wittyAdvice": "Set down the lopsided load safely or keep letting one wheel drag the whole emotional landscaping business. Your choice."
+      },
+      "brutal": {
+        "realityCheck": "You may have Lower Back Pain — Left Side. You may also have a carried grief, receiving support, and burdens that may not be yours pattern.",
+        "protocolTitle": "CHECK THE LOAD",
+        "protocolSteps": [
+          "Screen danger signs.",
+          "Identify physical cause clues.",
+          "Reduce aggravating load.",
+          "Move gently if safe.",
+          "Set down what is not yours."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Back pain after major trauma, fall, accident, or injury",
+        "New weakness, numbness, tingling, pain down both legs, saddle numbness, or bowel/bladder changes",
+        "Fever, chills, infection concern, unexplained weight loss, history of cancer, steroid use, osteoporosis, or immune suppression",
+        "Chest pain, shortness of breath, jaw/arm pain, sweating, nausea, or left upper back pain with cardiac symptoms",
+        "Severe abdominal pain, urinary symptoms, flank pain, blood in urine, gallbladder/liver-type pain, or referred organ concern",
+        "Left flank pain with fever, urinary symptoms, vomiting, blood in urine, or kidney stone/infection concern"
+      ],
+      "seek_immediate_care_if": [
+        "Pain follows trauma, comes with bowel/bladder changes, saddle numbness, new weakness/numbness, chest symptoms, severe abdominal/flank pain, fever/infection signs, or severe sudden worsening"
+      ],
+      "schedule_care_if": [
+        "Pain persists beyond a week or two, worsens, limits function, radiates, recurs, appears after age 50, or has concerning medical history"
+      ],
+      "self_care_allowed_if": "Gentle movement, posture changes, heat/ice, rest from aggravating activity, and reflection may support mild non-emergency back pain.",
+      "do_not_ignore": "Back pain can be mechanical, nerve-related, organ-referred, infection-related, cancer-related, or cardiac/lung-related depending on location and symptoms.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure back pain."
+    }
+  },
+  {
+    "id": "lower-back-pain-right-side",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Sharp right-sided jolt, heavy release, pause.",
+        "hapticPattern": [
+          500,
+          120,
+          2000,
+          3000
+        ],
+        "uiBackgroundAccent": "#8B5B4C"
+      },
+      "hero": {
+        "primaryPattern": "Lower Back Pain — Right Side can come from muscles, discs, nerves, joints, posture, stress tension, or referred organ pain. Symbolically, it may overlap with blocked action, forward motion, and the right to move, but red flags come first.",
+        "cascade": [
+          "Pain Appears",
+          "Red Flags Screen",
+          "Mechanical/Referred Cause",
+          "Pattern Reflection"
+        ],
+        "tags": [
+          "#rightside",
+          "#lowerback",
+          "#backpain"
+        ],
+        "safetyPreview": "Emergency/urgent signs include trauma, chest pain, fever, cancer history, unexplained weight loss, numbness/weakness, saddle numbness, bowel/bladder changes, severe abdominal pain, urinary infection signs, or worsening neurologic symptoms."
+      },
+      "biologyPathway": [
+        {
+          "title": "Mechanical Load",
+          "short": "Muscles, joints, discs, ribs.",
+          "detail": "Back pain can arise from strain, sprain, posture, repetitive movement, disc problems, arthritis, rib dysfunction, or sacroiliac/pelvic mechanics."
+        },
+        {
+          "title": "Nerve Pathway",
+          "short": "Radiation changes the concern.",
+          "detail": "Pain with numbness, weakness, tingling, or radiating symptoms can involve nerve irritation or compression."
+        },
+        {
+          "title": "Referred Pain",
+          "short": "Organs can mimic back pain.",
+          "detail": "Right lower back pain may come from muscle strain, ligament sprain, disc problems, sciatica, sacroiliac dysfunction, pelvic floor tension, or referred pain from the right kidney, liver, gallbladder, ovary/fallopian tube, or other structures."
+        },
+        {
+          "title": "Stress Tension",
+          "short": "Guarding adds load.",
+          "detail": "Stress can increase muscle guarding, shallow breathing, bracing, and movement avoidance, which may worsen pain cycles."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Lower Back Pain — Right Side: Mechanical, Nerve, Referred & Stress-Tension Screen",
+          "sections": [
+            {
+              "heading": "Stage 1 — Locate and Screen",
+              "body": [
+                "Lower Back Pain — Right Side should be screened by location, onset, severity, trauma, radiation, neurologic symptoms, fever, urinary/abdominal/chest symptoms, and medical history.",
+                "Side-specific symbolism is optional. Side-specific organ referral is not optional, because organs are annoying little plot twists."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Common Physical Causes",
+              "body": [
+                "Right lower back pain may come from muscle strain, ligament sprain, disc problems, sciatica, sacroiliac dysfunction, pelvic floor tension, or referred pain from the right kidney, liver, gallbladder, ovary/fallopian tube, or other structures.",
+                "Most back pain is mechanical, but red flags and referred pain matter."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Symbolic Layer",
+              "body": [
+                "Symbolically, this pattern may map to blocked action, forward motion, and the right to move.",
+                "This is a reflection layer, not a diagnosis and not a claim of cause."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Care Direction",
+              "body": [
+                "Care may include movement modification, heat/ice, gentle mobility, physical therapy, posture/ergonomic changes, medical evaluation, imaging when indicated, medication when appropriate, or emergency care for red flags.",
+                "The goal is to treat the body and learn from the pattern without making either one carry the whole circus."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Stuck Right Pedal",
+          "paragraphs": [
+            "Your lower back is a car with the right pedal stuck, trying to move forward while the mechanism jams.",
+            "The body may be carrying actual load, emotional load, posture debt, nerve irritation, or organ referral. Very efficient of it to make one pain code mean twelve possible things.",
+            "First check danger signs. Then check mechanics. Then check the life pattern.",
+            "The symbolism can help you listen. The red flags tell you when listening needs a doctor.",
+            "Unjam the pedal safely or keep asking a frozen car to win the race. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Blocked Action Reality Check",
+          "paragraphs": [
+            "You may have Lower Back Pain — Right Side. You may also have a blocked action, forward motion, and the right to move pattern.",
+            "Medical first: trauma, neurologic changes, fever, bowel/bladder changes, chest symptoms, abdominal/urinary symptoms, cancer history, or unexplained weight loss changes the game.",
+            "The hard truth: your body may be telling you something about load, movement, posture, fear, grief, obligation, or support.",
+            "The other hard truth: sometimes it is a disc, kidney, gallbladder, heart, lung, rib, nerve, or infection issue. The metaphor does not get to outrank biology.",
+            "Unjam the pedal safely or keep asking a frozen car to win the race. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Right Side Lower Back Map",
+          "tag": "Body Map",
+          "paragraphs": [
+            "In symbolic body mapping, the right side lower back may be associated with blocked action, forward motion, and the right to move.",
+            "This is optional reflection, not medical proof."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Load Pattern",
+          "tag": "Burden",
+          "paragraphs": [
+            "Back pain often invites the question: what load is literal and what load is emotional?",
+            "Both can be true, because apparently one spine must host the whole meeting."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "The Stuck Right Pedal",
+          "tag": "Analogy",
+          "paragraphs": [
+            "Your lower back is a car with the right pedal stuck, trying to move forward while the mechanism jams.",
+            "The analogy is a handle, not a diagnosis."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Guarding Loop",
+          "tag": "Nervous System",
+          "paragraphs": [
+            "Pain can create guarding, guarding can create more pain, and stress can tighten the loop.",
+            "Breaking the loop may require movement, care, rest, boundaries, and treatment."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Set Down / Move Forward",
+          "tag": "Reset",
+          "paragraphs": [
+            "The reset is not pretending pain is emotional.",
+            "It is checking safety, supporting tissue, and asking what the body no longer wants to carry."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Right-Side Action Unblocking",
+        "modality": "Safety-First Mobility + Autonomic Downregulation",
+        "steps": [
+          "Screen red flags first: trauma, fever, weakness/numbness, saddle numbness, bowel/bladder change, chest pain, severe abdominal pain, urinary symptoms, cancer history, or unexplained weight loss.",
+          "If red flags are present, seek medical care urgently.",
+          "If safe, lie on your back with knees bent or sit supported.",
+          "Breathe in for 4 seconds and exhale for 8 seconds while softening the painful side.",
+          "Ask: what physical load needs adjustment, and what emotional load needs to be set down?"
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Back pain may require medical evaluation, physical therapy, imaging, medication, or emergency care depending on symptoms.",
+        "items": [
+          {
+            "label": "Gentle movement",
+            "detail": "Short walks and gentle mobility may help many non-emergency back pain patterns."
+          },
+          {
+            "label": "Heat or ice",
+            "detail": "Heat or ice may reduce discomfort depending on the situation and preference."
+          },
+          {
+            "label": "Physical therapy",
+            "detail": "PT can assess strength, mobility, posture, nerve signs, and movement patterns."
+          },
+          {
+            "label": "Medical evaluation",
+            "detail": "Needed for red flags, persistent pain, neurologic symptoms, referred pain concerns, or worsening function."
+          }
+        ],
+        "avoid": [
+          "Do not ignore bowel/bladder changes, saddle numbness, new weakness/numbness, fever, trauma, chest pain, severe abdominal pain, urinary symptoms, cancer history, or unexplained weight loss.",
+          "Do not force stretches through sharp, worsening, radiating, or neurologic pain."
+        ]
+      },
+      "brutalActions": [
+        "Check red flags.",
+        "Adjust the physical load.",
+        "Move gently if safe.",
+        "Set down one emotional load that is not yours."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Right lower back pain may come from muscle strain, ligament sprain, disc problems, sciatica, sacroiliac dysfunction, pelvic floor tension, or referred pain from the right kidney, liver, gallbladder, ovary/fallopian tube, or other structures.",
+        "protocol": [
+          "Screen red flags and referred pain signs.",
+          "Use gentle movement and supportive care when safe.",
+          "Seek medical evaluation for severe, persistent, progressive, neurologic, traumatic, systemic, chest/abdominal/urinary, or unexplained symptoms."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Stuck Right Pedal",
+        "metaphorText": "Your lower back is a car with the right pedal stuck, trying to move forward while the mechanism jams.",
+        "wittyAdvice": "Unjam the pedal safely or keep asking a frozen car to win the race. Your choice."
+      },
+      "brutal": {
+        "realityCheck": "You may have Lower Back Pain — Right Side. You may also have a blocked action, forward motion, and the right to move pattern.",
+        "protocolTitle": "CHECK THE LOAD",
+        "protocolSteps": [
+          "Screen danger signs.",
+          "Identify physical cause clues.",
+          "Reduce aggravating load.",
+          "Move gently if safe.",
+          "Set down what is not yours."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Back pain after major trauma, fall, accident, or injury",
+        "New weakness, numbness, tingling, pain down both legs, saddle numbness, or bowel/bladder changes",
+        "Fever, chills, infection concern, unexplained weight loss, history of cancer, steroid use, osteoporosis, or immune suppression",
+        "Chest pain, shortness of breath, jaw/arm pain, sweating, nausea, or left upper back pain with cardiac symptoms",
+        "Severe abdominal pain, urinary symptoms, flank pain, blood in urine, gallbladder/liver-type pain, or referred organ concern",
+        "Right flank/upper abdominal pain, fever, vomiting, urinary symptoms, jaundice, or gallbladder/kidney/liver concern"
+      ],
+      "seek_immediate_care_if": [
+        "Pain follows trauma, comes with bowel/bladder changes, saddle numbness, new weakness/numbness, chest symptoms, severe abdominal/flank pain, fever/infection signs, or severe sudden worsening"
+      ],
+      "schedule_care_if": [
+        "Pain persists beyond a week or two, worsens, limits function, radiates, recurs, appears after age 50, or has concerning medical history"
+      ],
+      "self_care_allowed_if": "Gentle movement, posture changes, heat/ice, rest from aggravating activity, and reflection may support mild non-emergency back pain.",
+      "do_not_ignore": "Back pain can be mechanical, nerve-related, organ-referred, infection-related, cancer-related, or cardiac/lung-related depending on location and symptoms.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure back pain."
+    }
+  },
+  {
+    "id": "middle-back-pain-left-side",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Slow left-sided squeeze, sharp release, pause.",
+        "hapticPattern": [
+          2000,
+          120,
+          300,
+          3000
+        ],
+        "uiBackgroundAccent": "#6B4B5B"
+      },
+      "hero": {
+        "primaryPattern": "Middle Back Pain — Left Side can come from muscles, discs, nerves, joints, posture, stress tension, or referred organ pain. Symbolically, it may overlap with grief, loss, mourning, and emotional traffic that stopped moving, but red flags come first.",
+        "cascade": [
+          "Pain Appears",
+          "Red Flags Screen",
+          "Mechanical/Referred Cause",
+          "Pattern Reflection"
+        ],
+        "tags": [
+          "#leftside",
+          "#middleback",
+          "#backpain"
+        ],
+        "safetyPreview": "Emergency/urgent signs include trauma, chest pain, fever, cancer history, unexplained weight loss, numbness/weakness, saddle numbness, bowel/bladder changes, severe abdominal pain, urinary infection signs, or worsening neurologic symptoms."
+      },
+      "biologyPathway": [
+        {
+          "title": "Mechanical Load",
+          "short": "Muscles, joints, discs, ribs.",
+          "detail": "Back pain can arise from strain, sprain, posture, repetitive movement, disc problems, arthritis, rib dysfunction, or sacroiliac/pelvic mechanics."
+        },
+        {
+          "title": "Nerve Pathway",
+          "short": "Radiation changes the concern.",
+          "detail": "Pain with numbness, weakness, tingling, or radiating symptoms can involve nerve irritation or compression."
+        },
+        {
+          "title": "Referred Pain",
+          "short": "Organs can mimic back pain.",
+          "detail": "Left middle back pain may come from muscle strain, posture, rib dysfunction, disc issues, osteoarthritis, shingles, rib fracture, or referred pain from the pancreas, stomach, left kidney, left lung, spleen, or other structures."
+        },
+        {
+          "title": "Stress Tension",
+          "short": "Guarding adds load.",
+          "detail": "Stress can increase muscle guarding, shallow breathing, bracing, and movement avoidance, which may worsen pain cycles."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Middle Back Pain — Left Side: Mechanical, Nerve, Referred & Stress-Tension Screen",
+          "sections": [
+            {
+              "heading": "Stage 1 — Locate and Screen",
+              "body": [
+                "Middle Back Pain — Left Side should be screened by location, onset, severity, trauma, radiation, neurologic symptoms, fever, urinary/abdominal/chest symptoms, and medical history.",
+                "Side-specific symbolism is optional. Side-specific organ referral is not optional, because organs are annoying little plot twists."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Common Physical Causes",
+              "body": [
+                "Left middle back pain may come from muscle strain, posture, rib dysfunction, disc issues, osteoarthritis, shingles, rib fracture, or referred pain from the pancreas, stomach, left kidney, left lung, spleen, or other structures.",
+                "Most back pain is mechanical, but red flags and referred pain matter."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Symbolic Layer",
+              "body": [
+                "Symbolically, this pattern may map to grief, loss, mourning, and emotional traffic that stopped moving.",
+                "This is a reflection layer, not a diagnosis and not a claim of cause."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Care Direction",
+              "body": [
+                "Care may include movement modification, heat/ice, gentle mobility, physical therapy, posture/ergonomic changes, medical evaluation, imaging when indicated, medication when appropriate, or emergency care for red flags.",
+                "The goal is to treat the body and learn from the pattern without making either one carry the whole circus."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Broken Bridge",
+          "paragraphs": [
+            "Your middle back is a bridge with the left lane closed, traffic backed up behind grief that never got a proper exit ramp.",
+            "The body may be carrying actual load, emotional load, posture debt, nerve irritation, or organ referral. Very efficient of it to make one pain code mean twelve possible things.",
+            "First check danger signs. Then check mechanics. Then check the life pattern.",
+            "The symbolism can help you listen. The red flags tell you when listening needs a doctor.",
+            "Repair the bridge safely or keep making grief commute through a closed lane. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Unprocessed Grief Reality Check",
+          "paragraphs": [
+            "You may have Middle Back Pain — Left Side. You may also have a grief, loss, mourning, and emotional traffic that stopped moving pattern.",
+            "Medical first: trauma, neurologic changes, fever, bowel/bladder changes, chest symptoms, abdominal/urinary symptoms, cancer history, or unexplained weight loss changes the game.",
+            "The hard truth: your body may be telling you something about load, movement, posture, fear, grief, obligation, or support.",
+            "The other hard truth: sometimes it is a disc, kidney, gallbladder, heart, lung, rib, nerve, or infection issue. The metaphor does not get to outrank biology.",
+            "Repair the bridge safely or keep making grief commute through a closed lane. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Left Side Middle Back Map",
+          "tag": "Body Map",
+          "paragraphs": [
+            "In symbolic body mapping, the left side middle back may be associated with grief, loss, mourning, and emotional traffic that stopped moving.",
+            "This is optional reflection, not medical proof."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Load Pattern",
+          "tag": "Burden",
+          "paragraphs": [
+            "Back pain often invites the question: what load is literal and what load is emotional?",
+            "Both can be true, because apparently one spine must host the whole meeting."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "The Broken Bridge",
+          "tag": "Analogy",
+          "paragraphs": [
+            "Your middle back is a bridge with the left lane closed, traffic backed up behind grief that never got a proper exit ramp.",
+            "The analogy is a handle, not a diagnosis."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Guarding Loop",
+          "tag": "Nervous System",
+          "paragraphs": [
+            "Pain can create guarding, guarding can create more pain, and stress can tighten the loop.",
+            "Breaking the loop may require movement, care, rest, boundaries, and treatment."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Set Down / Move Forward",
+          "tag": "Reset",
+          "paragraphs": [
+            "The reset is not pretending pain is emotional.",
+            "It is checking safety, supporting tissue, and asking what the body no longer wants to carry."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Left-Side Grief Release",
+        "modality": "Safety-First Mobility + Autonomic Downregulation",
+        "steps": [
+          "Screen red flags first: trauma, fever, weakness/numbness, saddle numbness, bowel/bladder change, chest pain, severe abdominal pain, urinary symptoms, cancer history, or unexplained weight loss.",
+          "If red flags are present, seek medical care urgently.",
+          "If safe, lie on your back with knees bent or sit supported.",
+          "Breathe in for 4 seconds and exhale for 8 seconds while softening the painful side.",
+          "Ask: what physical load needs adjustment, and what emotional load needs to be set down?"
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Back pain may require medical evaluation, physical therapy, imaging, medication, or emergency care depending on symptoms.",
+        "items": [
+          {
+            "label": "Gentle movement",
+            "detail": "Short walks and gentle mobility may help many non-emergency back pain patterns."
+          },
+          {
+            "label": "Heat or ice",
+            "detail": "Heat or ice may reduce discomfort depending on the situation and preference."
+          },
+          {
+            "label": "Physical therapy",
+            "detail": "PT can assess strength, mobility, posture, nerve signs, and movement patterns."
+          },
+          {
+            "label": "Medical evaluation",
+            "detail": "Needed for red flags, persistent pain, neurologic symptoms, referred pain concerns, or worsening function."
+          }
+        ],
+        "avoid": [
+          "Do not ignore bowel/bladder changes, saddle numbness, new weakness/numbness, fever, trauma, chest pain, severe abdominal pain, urinary symptoms, cancer history, or unexplained weight loss.",
+          "Do not force stretches through sharp, worsening, radiating, or neurologic pain."
+        ]
+      },
+      "brutalActions": [
+        "Check red flags.",
+        "Adjust the physical load.",
+        "Move gently if safe.",
+        "Set down one emotional load that is not yours."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Left middle back pain may come from muscle strain, posture, rib dysfunction, disc issues, osteoarthritis, shingles, rib fracture, or referred pain from the pancreas, stomach, left kidney, left lung, spleen, or other structures.",
+        "protocol": [
+          "Screen red flags and referred pain signs.",
+          "Use gentle movement and supportive care when safe.",
+          "Seek medical evaluation for severe, persistent, progressive, neurologic, traumatic, systemic, chest/abdominal/urinary, or unexplained symptoms."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Broken Bridge",
+        "metaphorText": "Your middle back is a bridge with the left lane closed, traffic backed up behind grief that never got a proper exit ramp.",
+        "wittyAdvice": "Repair the bridge safely or keep making grief commute through a closed lane. Your choice."
+      },
+      "brutal": {
+        "realityCheck": "You may have Middle Back Pain — Left Side. You may also have a grief, loss, mourning, and emotional traffic that stopped moving pattern.",
+        "protocolTitle": "CHECK THE LOAD",
+        "protocolSteps": [
+          "Screen danger signs.",
+          "Identify physical cause clues.",
+          "Reduce aggravating load.",
+          "Move gently if safe.",
+          "Set down what is not yours."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Back pain after major trauma, fall, accident, or injury",
+        "New weakness, numbness, tingling, pain down both legs, saddle numbness, or bowel/bladder changes",
+        "Fever, chills, infection concern, unexplained weight loss, history of cancer, steroid use, osteoporosis, or immune suppression",
+        "Chest pain, shortness of breath, jaw/arm pain, sweating, nausea, or left upper back pain with cardiac symptoms",
+        "Severe abdominal pain, urinary symptoms, flank pain, blood in urine, gallbladder/liver-type pain, or referred organ concern",
+        "Rash/blistering pain suggesting shingles, cough/fever/SOB, severe abdominal pain, or left flank/kidney symptoms"
+      ],
+      "seek_immediate_care_if": [
+        "Pain follows trauma, comes with bowel/bladder changes, saddle numbness, new weakness/numbness, chest symptoms, severe abdominal/flank pain, fever/infection signs, or severe sudden worsening"
+      ],
+      "schedule_care_if": [
+        "Pain persists beyond a week or two, worsens, limits function, radiates, recurs, appears after age 50, or has concerning medical history"
+      ],
+      "self_care_allowed_if": "Gentle movement, posture changes, heat/ice, rest from aggravating activity, and reflection may support mild non-emergency back pain.",
+      "do_not_ignore": "Back pain can be mechanical, nerve-related, organ-referred, infection-related, cancer-related, or cardiac/lung-related depending on location and symptoms.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure back pain."
+    }
+  },
+  {
+    "id": "middle-back-pain-right-side",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Slow right-sided obligation squeeze, sharp release, pause.",
+        "hapticPattern": [
+          2000,
+          120,
+          300,
+          3000
+        ],
+        "uiBackgroundAccent": "#8B6B5B"
+      },
+      "hero": {
+        "primaryPattern": "Middle Back Pain — Right Side can come from muscles, discs, nerves, joints, posture, stress tension, or referred organ pain. Symbolically, it may overlap with obligation, duty, responsibility, and expectations that may not be yours, but red flags come first.",
+        "cascade": [
+          "Pain Appears",
+          "Red Flags Screen",
+          "Mechanical/Referred Cause",
+          "Pattern Reflection"
+        ],
+        "tags": [
+          "#rightside",
+          "#middleback",
+          "#backpain"
+        ],
+        "safetyPreview": "Emergency/urgent signs include trauma, chest pain, fever, cancer history, unexplained weight loss, numbness/weakness, saddle numbness, bowel/bladder changes, severe abdominal pain, urinary infection signs, or worsening neurologic symptoms."
+      },
+      "biologyPathway": [
+        {
+          "title": "Mechanical Load",
+          "short": "Muscles, joints, discs, ribs.",
+          "detail": "Back pain can arise from strain, sprain, posture, repetitive movement, disc problems, arthritis, rib dysfunction, or sacroiliac/pelvic mechanics."
+        },
+        {
+          "title": "Nerve Pathway",
+          "short": "Radiation changes the concern.",
+          "detail": "Pain with numbness, weakness, tingling, or radiating symptoms can involve nerve irritation or compression."
+        },
+        {
+          "title": "Referred Pain",
+          "short": "Organs can mimic back pain.",
+          "detail": "Right middle back pain may come from muscle strain, posture, rib dysfunction, disc issues, osteoarthritis, spinal stenosis, or referred pain from the gallbladder, liver, right kidney, right lung, or other structures."
+        },
+        {
+          "title": "Stress Tension",
+          "short": "Guarding adds load.",
+          "detail": "Stress can increase muscle guarding, shallow breathing, bracing, and movement avoidance, which may worsen pain cycles."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Middle Back Pain — Right Side: Mechanical, Nerve, Referred & Stress-Tension Screen",
+          "sections": [
+            {
+              "heading": "Stage 1 — Locate and Screen",
+              "body": [
+                "Middle Back Pain — Right Side should be screened by location, onset, severity, trauma, radiation, neurologic symptoms, fever, urinary/abdominal/chest symptoms, and medical history.",
+                "Side-specific symbolism is optional. Side-specific organ referral is not optional, because organs are annoying little plot twists."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Common Physical Causes",
+              "body": [
+                "Right middle back pain may come from muscle strain, posture, rib dysfunction, disc issues, osteoarthritis, spinal stenosis, or referred pain from the gallbladder, liver, right kidney, right lung, or other structures.",
+                "Most back pain is mechanical, but red flags and referred pain matter."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Symbolic Layer",
+              "body": [
+                "Symbolically, this pattern may map to obligation, duty, responsibility, and expectations that may not be yours.",
+                "This is a reflection layer, not a diagnosis and not a claim of cause."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Care Direction",
+              "body": [
+                "Care may include movement modification, heat/ice, gentle mobility, physical therapy, posture/ergonomic changes, medical evaluation, imaging when indicated, medication when appropriate, or emergency care for red flags.",
+                "The goal is to treat the body and learn from the pattern without making either one carry the whole circus."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Overstuffed Suitcase",
+          "paragraphs": [
+            "Your middle back is a suitcase packed with everyone else’s obligations until the zipper starts negotiating with God.",
+            "The body may be carrying actual load, emotional load, posture debt, nerve irritation, or organ referral. Very efficient of it to make one pain code mean twelve possible things.",
+            "First check danger signs. Then check mechanics. Then check the life pattern.",
+            "The symbolism can help you listen. The red flags tell you when listening needs a doctor.",
+            "Unpack the suitcase safely or keep dragging everyone else’s expectations through airport security. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Unreleased Duty Reality Check",
+          "paragraphs": [
+            "You may have Middle Back Pain — Right Side. You may also have a obligation, duty, responsibility, and expectations that may not be yours pattern.",
+            "Medical first: trauma, neurologic changes, fever, bowel/bladder changes, chest symptoms, abdominal/urinary symptoms, cancer history, or unexplained weight loss changes the game.",
+            "The hard truth: your body may be telling you something about load, movement, posture, fear, grief, obligation, or support.",
+            "The other hard truth: sometimes it is a disc, kidney, gallbladder, heart, lung, rib, nerve, or infection issue. The metaphor does not get to outrank biology.",
+            "Unpack the suitcase safely or keep dragging everyone else’s expectations through airport security. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Right Side Middle Back Map",
+          "tag": "Body Map",
+          "paragraphs": [
+            "In symbolic body mapping, the right side middle back may be associated with obligation, duty, responsibility, and expectations that may not be yours.",
+            "This is optional reflection, not medical proof."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Load Pattern",
+          "tag": "Burden",
+          "paragraphs": [
+            "Back pain often invites the question: what load is literal and what load is emotional?",
+            "Both can be true, because apparently one spine must host the whole meeting."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "The Overstuffed Suitcase",
+          "tag": "Analogy",
+          "paragraphs": [
+            "Your middle back is a suitcase packed with everyone else’s obligations until the zipper starts negotiating with God.",
+            "The analogy is a handle, not a diagnosis."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Guarding Loop",
+          "tag": "Nervous System",
+          "paragraphs": [
+            "Pain can create guarding, guarding can create more pain, and stress can tighten the loop.",
+            "Breaking the loop may require movement, care, rest, boundaries, and treatment."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Set Down / Move Forward",
+          "tag": "Reset",
+          "paragraphs": [
+            "The reset is not pretending pain is emotional.",
+            "It is checking safety, supporting tissue, and asking what the body no longer wants to carry."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Right-Side Obligation Release",
+        "modality": "Safety-First Mobility + Autonomic Downregulation",
+        "steps": [
+          "Screen red flags first: trauma, fever, weakness/numbness, saddle numbness, bowel/bladder change, chest pain, severe abdominal pain, urinary symptoms, cancer history, or unexplained weight loss.",
+          "If red flags are present, seek medical care urgently.",
+          "If safe, lie on your back with knees bent or sit supported.",
+          "Breathe in for 4 seconds and exhale for 8 seconds while softening the painful side.",
+          "Ask: what physical load needs adjustment, and what emotional load needs to be set down?"
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Back pain may require medical evaluation, physical therapy, imaging, medication, or emergency care depending on symptoms.",
+        "items": [
+          {
+            "label": "Gentle movement",
+            "detail": "Short walks and gentle mobility may help many non-emergency back pain patterns."
+          },
+          {
+            "label": "Heat or ice",
+            "detail": "Heat or ice may reduce discomfort depending on the situation and preference."
+          },
+          {
+            "label": "Physical therapy",
+            "detail": "PT can assess strength, mobility, posture, nerve signs, and movement patterns."
+          },
+          {
+            "label": "Medical evaluation",
+            "detail": "Needed for red flags, persistent pain, neurologic symptoms, referred pain concerns, or worsening function."
+          }
+        ],
+        "avoid": [
+          "Do not ignore bowel/bladder changes, saddle numbness, new weakness/numbness, fever, trauma, chest pain, severe abdominal pain, urinary symptoms, cancer history, or unexplained weight loss.",
+          "Do not force stretches through sharp, worsening, radiating, or neurologic pain."
+        ]
+      },
+      "brutalActions": [
+        "Check red flags.",
+        "Adjust the physical load.",
+        "Move gently if safe.",
+        "Set down one emotional load that is not yours."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Right middle back pain may come from muscle strain, posture, rib dysfunction, disc issues, osteoarthritis, spinal stenosis, or referred pain from the gallbladder, liver, right kidney, right lung, or other structures.",
+        "protocol": [
+          "Screen red flags and referred pain signs.",
+          "Use gentle movement and supportive care when safe.",
+          "Seek medical evaluation for severe, persistent, progressive, neurologic, traumatic, systemic, chest/abdominal/urinary, or unexplained symptoms."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Overstuffed Suitcase",
+        "metaphorText": "Your middle back is a suitcase packed with everyone else’s obligations until the zipper starts negotiating with God.",
+        "wittyAdvice": "Unpack the suitcase safely or keep dragging everyone else’s expectations through airport security. Your choice."
+      },
+      "brutal": {
+        "realityCheck": "You may have Middle Back Pain — Right Side. You may also have a obligation, duty, responsibility, and expectations that may not be yours pattern.",
+        "protocolTitle": "CHECK THE LOAD",
+        "protocolSteps": [
+          "Screen danger signs.",
+          "Identify physical cause clues.",
+          "Reduce aggravating load.",
+          "Move gently if safe.",
+          "Set down what is not yours."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Back pain after major trauma, fall, accident, or injury",
+        "New weakness, numbness, tingling, pain down both legs, saddle numbness, or bowel/bladder changes",
+        "Fever, chills, infection concern, unexplained weight loss, history of cancer, steroid use, osteoporosis, or immune suppression",
+        "Chest pain, shortness of breath, jaw/arm pain, sweating, nausea, or left upper back pain with cardiac symptoms",
+        "Severe abdominal pain, urinary symptoms, flank pain, blood in urine, gallbladder/liver-type pain, or referred organ concern",
+        "Right upper abdominal/back pain after fatty meals, fever, vomiting, jaundice, urinary symptoms, or gallbladder/liver/kidney concern"
+      ],
+      "seek_immediate_care_if": [
+        "Pain follows trauma, comes with bowel/bladder changes, saddle numbness, new weakness/numbness, chest symptoms, severe abdominal/flank pain, fever/infection signs, or severe sudden worsening"
+      ],
+      "schedule_care_if": [
+        "Pain persists beyond a week or two, worsens, limits function, radiates, recurs, appears after age 50, or has concerning medical history"
+      ],
+      "self_care_allowed_if": "Gentle movement, posture changes, heat/ice, rest from aggravating activity, and reflection may support mild non-emergency back pain.",
+      "do_not_ignore": "Back pain can be mechanical, nerve-related, organ-referred, infection-related, cancer-related, or cardiac/lung-related depending on location and symptoms.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure back pain."
+    }
+  },
+  {
+    "id": "upper-back-pain-left-side",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Heavy left-sided weighted pull, sharp release, pause.",
+        "hapticPattern": [
+          2000,
+          120,
+          300,
+          3000
+        ],
+        "uiBackgroundAccent": "#6B5B6B"
+      },
+      "hero": {
+        "primaryPattern": "Upper Back Pain — Left Side can come from muscles, discs, nerves, joints, posture, stress tension, or referred organ pain. Symbolically, it may overlap with emotional burden, sorrow, caretaking, and carrying too much, but red flags come first.",
+        "cascade": [
+          "Pain Appears",
+          "Red Flags Screen",
+          "Mechanical/Referred Cause",
+          "Pattern Reflection"
+        ],
+        "tags": [
+          "#leftside",
+          "#upperback",
+          "#backpain"
+        ],
+        "safetyPreview": "Emergency/urgent signs include trauma, chest pain, fever, cancer history, unexplained weight loss, numbness/weakness, saddle numbness, bowel/bladder changes, severe abdominal pain, urinary infection signs, or worsening neurologic symptoms."
+      },
+      "biologyPathway": [
+        {
+          "title": "Mechanical Load",
+          "short": "Muscles, joints, discs, ribs.",
+          "detail": "Back pain can arise from strain, sprain, posture, repetitive movement, disc problems, arthritis, rib dysfunction, or sacroiliac/pelvic mechanics."
+        },
+        {
+          "title": "Nerve Pathway",
+          "short": "Radiation changes the concern.",
+          "detail": "Pain with numbness, weakness, tingling, or radiating symptoms can involve nerve irritation or compression."
+        },
+        {
+          "title": "Referred Pain",
+          "short": "Organs can mimic back pain.",
+          "detail": "Left upper back pain may come from muscle strain, forward head posture, tech neck, cervical radiculopathy, disc issues, osteoarthritis, stress tension, or referred cardiac pain such as angina, especially when paired with chest symptoms."
+        },
+        {
+          "title": "Stress Tension",
+          "short": "Guarding adds load.",
+          "detail": "Stress can increase muscle guarding, shallow breathing, bracing, and movement avoidance, which may worsen pain cycles."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Upper Back Pain — Left Side: Mechanical, Nerve, Referred & Stress-Tension Screen",
+          "sections": [
+            {
+              "heading": "Stage 1 — Locate and Screen",
+              "body": [
+                "Upper Back Pain — Left Side should be screened by location, onset, severity, trauma, radiation, neurologic symptoms, fever, urinary/abdominal/chest symptoms, and medical history.",
+                "Side-specific symbolism is optional. Side-specific organ referral is not optional, because organs are annoying little plot twists."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Common Physical Causes",
+              "body": [
+                "Left upper back pain may come from muscle strain, forward head posture, tech neck, cervical radiculopathy, disc issues, osteoarthritis, stress tension, or referred cardiac pain such as angina, especially when paired with chest symptoms.",
+                "Most back pain is mechanical, but red flags and referred pain matter."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Symbolic Layer",
+              "body": [
+                "Symbolically, this pattern may map to emotional burden, sorrow, caretaking, and carrying too much.",
+                "This is a reflection layer, not a diagnosis and not a claim of cause."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Care Direction",
+              "body": [
+                "Care may include movement modification, heat/ice, gentle mobility, physical therapy, posture/ergonomic changes, medical evaluation, imaging when indicated, medication when appropriate, or emergency care for red flags.",
+                "The goal is to treat the body and learn from the pattern without making either one carry the whole circus."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Overloaded Backpack",
+          "paragraphs": [
+            "Your upper back is a backpack overloaded on the left strap, digging into the shoulder because apparently you volunteered to carry the world.",
+            "The body may be carrying actual load, emotional load, posture debt, nerve irritation, or organ referral. Very efficient of it to make one pain code mean twelve possible things.",
+            "First check danger signs. Then check mechanics. Then check the life pattern.",
+            "The symbolism can help you listen. The red flags tell you when listening needs a doctor.",
+            "Repack the backpack safely or keep letting one strap hold the entire human condition. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The World on the Shoulders Reality Check",
+          "paragraphs": [
+            "You may have Upper Back Pain — Left Side. You may also have a emotional burden, sorrow, caretaking, and carrying too much pattern.",
+            "Medical first: trauma, neurologic changes, fever, bowel/bladder changes, chest symptoms, abdominal/urinary symptoms, cancer history, or unexplained weight loss changes the game.",
+            "The hard truth: your body may be telling you something about load, movement, posture, fear, grief, obligation, or support.",
+            "The other hard truth: sometimes it is a disc, kidney, gallbladder, heart, lung, rib, nerve, or infection issue. The metaphor does not get to outrank biology.",
+            "Repack the backpack safely or keep letting one strap hold the entire human condition. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Left Side Upper Back Map",
+          "tag": "Body Map",
+          "paragraphs": [
+            "In symbolic body mapping, the left side upper back may be associated with emotional burden, sorrow, caretaking, and carrying too much.",
+            "This is optional reflection, not medical proof."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Load Pattern",
+          "tag": "Burden",
+          "paragraphs": [
+            "Back pain often invites the question: what load is literal and what load is emotional?",
+            "Both can be true, because apparently one spine must host the whole meeting."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "The Overloaded Backpack",
+          "tag": "Analogy",
+          "paragraphs": [
+            "Your upper back is a backpack overloaded on the left strap, digging into the shoulder because apparently you volunteered to carry the world.",
+            "The analogy is a handle, not a diagnosis."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Guarding Loop",
+          "tag": "Nervous System",
+          "paragraphs": [
+            "Pain can create guarding, guarding can create more pain, and stress can tighten the loop.",
+            "Breaking the loop may require movement, care, rest, boundaries, and treatment."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Set Down / Move Forward",
+          "tag": "Reset",
+          "paragraphs": [
+            "The reset is not pretending pain is emotional.",
+            "It is checking safety, supporting tissue, and asking what the body no longer wants to carry."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Left Upper Back Burden Release",
+        "modality": "Safety-First Mobility + Autonomic Downregulation",
+        "steps": [
+          "Screen red flags first: trauma, fever, weakness/numbness, saddle numbness, bowel/bladder change, chest pain, severe abdominal pain, urinary symptoms, cancer history, or unexplained weight loss.",
+          "If red flags are present, seek medical care urgently.",
+          "If safe, lie on your back with knees bent or sit supported.",
+          "Breathe in for 4 seconds and exhale for 8 seconds while softening the painful side.",
+          "Ask: what physical load needs adjustment, and what emotional load needs to be set down?"
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Back pain may require medical evaluation, physical therapy, imaging, medication, or emergency care depending on symptoms.",
+        "items": [
+          {
+            "label": "Gentle movement",
+            "detail": "Short walks and gentle mobility may help many non-emergency back pain patterns."
+          },
+          {
+            "label": "Heat or ice",
+            "detail": "Heat or ice may reduce discomfort depending on the situation and preference."
+          },
+          {
+            "label": "Physical therapy",
+            "detail": "PT can assess strength, mobility, posture, nerve signs, and movement patterns."
+          },
+          {
+            "label": "Medical evaluation",
+            "detail": "Needed for red flags, persistent pain, neurologic symptoms, referred pain concerns, or worsening function."
+          }
+        ],
+        "avoid": [
+          "Do not ignore bowel/bladder changes, saddle numbness, new weakness/numbness, fever, trauma, chest pain, severe abdominal pain, urinary symptoms, cancer history, or unexplained weight loss.",
+          "Do not force stretches through sharp, worsening, radiating, or neurologic pain."
+        ]
+      },
+      "brutalActions": [
+        "Check red flags.",
+        "Adjust the physical load.",
+        "Move gently if safe.",
+        "Set down one emotional load that is not yours."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Left upper back pain may come from muscle strain, forward head posture, tech neck, cervical radiculopathy, disc issues, osteoarthritis, stress tension, or referred cardiac pain such as angina, especially when paired with chest symptoms.",
+        "protocol": [
+          "Screen red flags and referred pain signs.",
+          "Use gentle movement and supportive care when safe.",
+          "Seek medical evaluation for severe, persistent, progressive, neurologic, traumatic, systemic, chest/abdominal/urinary, or unexplained symptoms."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Overloaded Backpack",
+        "metaphorText": "Your upper back is a backpack overloaded on the left strap, digging into the shoulder because apparently you volunteered to carry the world.",
+        "wittyAdvice": "Repack the backpack safely or keep letting one strap hold the entire human condition. Your choice."
+      },
+      "brutal": {
+        "realityCheck": "You may have Upper Back Pain — Left Side. You may also have a emotional burden, sorrow, caretaking, and carrying too much pattern.",
+        "protocolTitle": "CHECK THE LOAD",
+        "protocolSteps": [
+          "Screen danger signs.",
+          "Identify physical cause clues.",
+          "Reduce aggravating load.",
+          "Move gently if safe.",
+          "Set down what is not yours."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Back pain after major trauma, fall, accident, or injury",
+        "New weakness, numbness, tingling, pain down both legs, saddle numbness, or bowel/bladder changes",
+        "Fever, chills, infection concern, unexplained weight loss, history of cancer, steroid use, osteoporosis, or immune suppression",
+        "Chest pain, shortness of breath, jaw/arm pain, sweating, nausea, or left upper back pain with cardiac symptoms",
+        "Severe abdominal pain, urinary symptoms, flank pain, blood in urine, gallbladder/liver-type pain, or referred organ concern",
+        "Left upper back pain with chest pressure, shortness of breath, sweating, nausea, jaw/arm pain, or exertional symptoms may be cardiac and needs urgent care"
+      ],
+      "seek_immediate_care_if": [
+        "Pain follows trauma, comes with bowel/bladder changes, saddle numbness, new weakness/numbness, chest symptoms, severe abdominal/flank pain, fever/infection signs, or severe sudden worsening"
+      ],
+      "schedule_care_if": [
+        "Pain persists beyond a week or two, worsens, limits function, radiates, recurs, appears after age 50, or has concerning medical history"
+      ],
+      "self_care_allowed_if": "Gentle movement, posture changes, heat/ice, rest from aggravating activity, and reflection may support mild non-emergency back pain.",
+      "do_not_ignore": "Back pain can be mechanical, nerve-related, organ-referred, infection-related, cancer-related, or cardiac/lung-related depending on location and symptoms.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure back pain."
+    }
+  },
+  {
+    "id": "upper-back-pain-right-side",
+    "structuredContent": {
+      "version": 1,
+      "hardware": {
+        "hapticProfile": "Sharp right-sided action jolt, heavy release, pause.",
+        "hapticPattern": [
+          500,
+          120,
+          2000,
+          3000
+        ],
+        "uiBackgroundAccent": "#8B5B4C"
+      },
+      "hero": {
+        "primaryPattern": "Upper Back Pain — Right Side can come from muscles, discs, nerves, joints, posture, stress tension, or referred organ pain. Symbolically, it may overlap with blocked action, expression, doing, and resistance to movement, but red flags come first.",
+        "cascade": [
+          "Pain Appears",
+          "Red Flags Screen",
+          "Mechanical/Referred Cause",
+          "Pattern Reflection"
+        ],
+        "tags": [
+          "#rightside",
+          "#upperback",
+          "#backpain"
+        ],
+        "safetyPreview": "Emergency/urgent signs include trauma, chest pain, fever, cancer history, unexplained weight loss, numbness/weakness, saddle numbness, bowel/bladder changes, severe abdominal pain, urinary infection signs, or worsening neurologic symptoms."
+      },
+      "biologyPathway": [
+        {
+          "title": "Mechanical Load",
+          "short": "Muscles, joints, discs, ribs.",
+          "detail": "Back pain can arise from strain, sprain, posture, repetitive movement, disc problems, arthritis, rib dysfunction, or sacroiliac/pelvic mechanics."
+        },
+        {
+          "title": "Nerve Pathway",
+          "short": "Radiation changes the concern.",
+          "detail": "Pain with numbness, weakness, tingling, or radiating symptoms can involve nerve irritation or compression."
+        },
+        {
+          "title": "Referred Pain",
+          "short": "Organs can mimic back pain.",
+          "detail": "Right upper back pain may come from muscle strain, forward head posture, tech neck, cervical radiculopathy, disc issues, osteoarthritis, stress tension, or referred pain from the gallbladder, liver, right lung, or other structures."
+        },
+        {
+          "title": "Stress Tension",
+          "short": "Guarding adds load.",
+          "detail": "Stress can increase muscle guarding, shallow breathing, bracing, and movement avoidance, which may worsen pain cycles."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Upper Back Pain — Right Side: Mechanical, Nerve, Referred & Stress-Tension Screen",
+          "sections": [
+            {
+              "heading": "Stage 1 — Locate and Screen",
+              "body": [
+                "Upper Back Pain — Right Side should be screened by location, onset, severity, trauma, radiation, neurologic symptoms, fever, urinary/abdominal/chest symptoms, and medical history.",
+                "Side-specific symbolism is optional. Side-specific organ referral is not optional, because organs are annoying little plot twists."
+              ]
+            },
+            {
+              "heading": "Stage 2 — Common Physical Causes",
+              "body": [
+                "Right upper back pain may come from muscle strain, forward head posture, tech neck, cervical radiculopathy, disc issues, osteoarthritis, stress tension, or referred pain from the gallbladder, liver, right lung, or other structures.",
+                "Most back pain is mechanical, but red flags and referred pain matter."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Symbolic Layer",
+              "body": [
+                "Symbolically, this pattern may map to blocked action, expression, doing, and resistance to movement.",
+                "This is a reflection layer, not a diagnosis and not a claim of cause."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Care Direction",
+              "body": [
+                "Care may include movement modification, heat/ice, gentle mobility, physical therapy, posture/ergonomic changes, medical evaluation, imaging when indicated, medication when appropriate, or emergency care for red flags.",
+                "The goal is to treat the body and learn from the pattern without making either one carry the whole circus."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Rusty Gear",
+          "paragraphs": [
+            "Your upper back is a machine with a rusty right gear, grinding every time action, expression, or movement tries to happen.",
+            "The body may be carrying actual load, emotional load, posture debt, nerve irritation, or organ referral. Very efficient of it to make one pain code mean twelve possible things.",
+            "First check danger signs. Then check mechanics. Then check the life pattern.",
+            "The symbolism can help you listen. The red flags tell you when listening needs a doctor.",
+            "Oil the gear safely or keep expecting a rusty machine to perform miracles. Your choice."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Blocked Expression Reality Check",
+          "paragraphs": [
+            "You may have Upper Back Pain — Right Side. You may also have a blocked action, expression, doing, and resistance to movement pattern.",
+            "Medical first: trauma, neurologic changes, fever, bowel/bladder changes, chest symptoms, abdominal/urinary symptoms, cancer history, or unexplained weight loss changes the game.",
+            "The hard truth: your body may be telling you something about load, movement, posture, fear, grief, obligation, or support.",
+            "The other hard truth: sometimes it is a disc, kidney, gallbladder, heart, lung, rib, nerve, or infection issue. The metaphor does not get to outrank biology.",
+            "Oil the gear safely or keep expecting a rusty machine to perform miracles. Your choice."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Right Side Upper Back Map",
+          "tag": "Body Map",
+          "paragraphs": [
+            "In symbolic body mapping, the right side upper back may be associated with blocked action, expression, doing, and resistance to movement.",
+            "This is optional reflection, not medical proof."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Load Pattern",
+          "tag": "Burden",
+          "paragraphs": [
+            "Back pain often invites the question: what load is literal and what load is emotional?",
+            "Both can be true, because apparently one spine must host the whole meeting."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "The Rusty Gear",
+          "tag": "Analogy",
+          "paragraphs": [
+            "Your upper back is a machine with a rusty right gear, grinding every time action, expression, or movement tries to happen.",
+            "The analogy is a handle, not a diagnosis."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Guarding Loop",
+          "tag": "Nervous System",
+          "paragraphs": [
+            "Pain can create guarding, guarding can create more pain, and stress can tighten the loop.",
+            "Breaking the loop may require movement, care, rest, boundaries, and treatment."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Set Down / Move Forward",
+          "tag": "Reset",
+          "paragraphs": [
+            "The reset is not pretending pain is emotional.",
+            "It is checking safety, supporting tissue, and asking what the body no longer wants to carry."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Right Upper Back Action Release",
+        "modality": "Safety-First Mobility + Autonomic Downregulation",
+        "steps": [
+          "Screen red flags first: trauma, fever, weakness/numbness, saddle numbness, bowel/bladder change, chest pain, severe abdominal pain, urinary symptoms, cancer history, or unexplained weight loss.",
+          "If red flags are present, seek medical care urgently.",
+          "If safe, lie on your back with knees bent or sit supported.",
+          "Breathe in for 4 seconds and exhale for 8 seconds while softening the painful side.",
+          "Ask: what physical load needs adjustment, and what emotional load needs to be set down?"
+        ]
+      },
+      "naturalSupport": {
+        "title": "Supportive Care",
+        "disclaimer": "Supportive care is not a cure. Back pain may require medical evaluation, physical therapy, imaging, medication, or emergency care depending on symptoms.",
+        "items": [
+          {
+            "label": "Gentle movement",
+            "detail": "Short walks and gentle mobility may help many non-emergency back pain patterns."
+          },
+          {
+            "label": "Heat or ice",
+            "detail": "Heat or ice may reduce discomfort depending on the situation and preference."
+          },
+          {
+            "label": "Physical therapy",
+            "detail": "PT can assess strength, mobility, posture, nerve signs, and movement patterns."
+          },
+          {
+            "label": "Medical evaluation",
+            "detail": "Needed for red flags, persistent pain, neurologic symptoms, referred pain concerns, or worsening function."
+          }
+        ],
+        "avoid": [
+          "Do not ignore bowel/bladder changes, saddle numbness, new weakness/numbness, fever, trauma, chest pain, severe abdominal pain, urinary symptoms, cancer history, or unexplained weight loss.",
+          "Do not force stretches through sharp, worsening, radiating, or neurologic pain."
+        ]
+      },
+      "brutalActions": [
+        "Check red flags.",
+        "Adjust the physical load.",
+        "Move gently if safe.",
+        "Set down one emotional load that is not yours."
+      ]
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Right upper back pain may come from muscle strain, forward head posture, tech neck, cervical radiculopathy, disc issues, osteoarthritis, stress tension, or referred pain from the gallbladder, liver, right lung, or other structures.",
+        "protocol": [
+          "Screen red flags and referred pain signs.",
+          "Use gentle movement and supportive care when safe.",
+          "Seek medical evaluation for severe, persistent, progressive, neurologic, traumatic, systemic, chest/abdominal/urinary, or unexplained symptoms."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for medical care."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Rusty Gear",
+        "metaphorText": "Your upper back is a machine with a rusty right gear, grinding every time action, expression, or movement tries to happen.",
+        "wittyAdvice": "Oil the gear safely or keep expecting a rusty machine to perform miracles. Your choice."
+      },
+      "brutal": {
+        "realityCheck": "You may have Upper Back Pain — Right Side. You may also have a blocked action, expression, doing, and resistance to movement pattern.",
+        "protocolTitle": "CHECK THE LOAD",
+        "protocolSteps": [
+          "Screen danger signs.",
+          "Identify physical cause clues.",
+          "Reduce aggravating load.",
+          "Move gently if safe.",
+          "Set down what is not yours."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Back pain after major trauma, fall, accident, or injury",
+        "New weakness, numbness, tingling, pain down both legs, saddle numbness, or bowel/bladder changes",
+        "Fever, chills, infection concern, unexplained weight loss, history of cancer, steroid use, osteoporosis, or immune suppression",
+        "Chest pain, shortness of breath, jaw/arm pain, sweating, nausea, or left upper back pain with cardiac symptoms",
+        "Severe abdominal pain, urinary symptoms, flank pain, blood in urine, gallbladder/liver-type pain, or referred organ concern",
+        "Right upper back/shoulder pain with right upper abdominal pain, vomiting, fever, jaundice, or fatty-meal trigger may need gallbladder/liver evaluation"
+      ],
+      "seek_immediate_care_if": [
+        "Pain follows trauma, comes with bowel/bladder changes, saddle numbness, new weakness/numbness, chest symptoms, severe abdominal/flank pain, fever/infection signs, or severe sudden worsening"
+      ],
+      "schedule_care_if": [
+        "Pain persists beyond a week or two, worsens, limits function, radiates, recurs, appears after age 50, or has concerning medical history"
+      ],
+      "self_care_allowed_if": "Gentle movement, posture changes, heat/ice, rest from aggravating activity, and reflection may support mild non-emergency back pain.",
+      "do_not_ignore": "Back pain can be mechanical, nerve-related, organ-referred, infection-related, cancer-related, or cardiac/lung-related depending on location and symptoms.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure back pain."
+    }
+  }
+]

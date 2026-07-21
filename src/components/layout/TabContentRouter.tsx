@@ -8,7 +8,8 @@ import AilmentAccordionItem from '../ailments/AilmentAccordionItem';
 import { SymptomDecoder } from '../SymptomDecoder';
 import DailyPromptsPanel from '../DailyPromptsPanel';
 import SomaticJournalPanel from '../SomaticJournalPanel';
-import { Ailment } from '../../types';
+import type { Ailment } from '../../types';
+import type { AilmentCore } from '../../types/dictionary';
 
 interface TabContentRouterProps {
   activeTab: 'dictionary' | 'decoder' | 'daily' | 'journal';
@@ -18,7 +19,7 @@ interface TabContentRouterProps {
   setSelectedCategory: (category: string | null) => void;
   selectedAilment: Ailment | null;
   setSelectedAilment: (ailment: Ailment | null) => void;
-  filteredAilments: Ailment[];
+  filteredAilments: AilmentCore[];
   categories: string[];
   globalTone: 'clinical' | 'witty' | 'brutal';
   customSymptom: string;

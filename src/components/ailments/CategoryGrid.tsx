@@ -2,15 +2,15 @@ import React from 'react';
 import { Compass, ChevronRight } from 'lucide-react';
 import { CATEGORY_META, renderCategoryIcon } from './ailmentCategoryMeta';
 import { CategoryBackground } from '../CategoryBackground';
-import { Ailment } from '../../types';
+import type { AilmentCore } from '../../types/dictionary';
 
 interface CategoryGridProps {
     categories: string[];
     selectedCategory: string | null;
     setSelectedCategory: (cat: string) => void;
-    browsableAilments: Ailment[];
-    selectedAilment: Ailment | null;
-    setSelectedAilment: (ailment: Ailment | null) => void;
+    browsableAilments: AilmentCore[];
+    selectedAilment: AilmentCore | null;
+    setSelectedAilment: (ailment: AilmentCore | null) => void;
 }
 
 export const CategoryGrid: React.FC<CategoryGridProps> = ({
