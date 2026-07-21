@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Activity } from 'lucide-react';
+import { SomaticShaderCanvas } from '../SomaticShaderCanvas';
 
 export default function SomaticBreathingRegulator() {
   const [cycle, setCycle] = useState<'inhale' | 'hold' | 'exhale' | 'hold-empty'>('inhale');
@@ -27,10 +28,10 @@ export default function SomaticBreathingRegulator() {
 
   const getTheme = () => {
     switch (cycle) {
-      case 'inhale': return { text: 'Inhale Prana', color: 'text-cyan-400', bg: 'bg-cyan-500/20', scale: 'scale-[1.3]' };
-      case 'hold': return { text: 'Lock Vagal Hold', color: 'text-purple-400', bg: 'bg-purple-500/20', scale: 'scale-[1.3]' };
-      case 'exhale': return { text: 'Exhale Trauma', color: 'text-emerald-400', bg: 'bg-emerald-500/20', scale: 'scale-[0.8]' };
-      case 'hold-empty': return { text: 'Somatic Stillness', color: 'text-slate-500', bg: 'bg-slate-500/10', scale: 'scale-[0.8]' };
+      case 'inhale': return { text: 'Inhale Prana', color: 'text-cyan-400', bg: 'bg-cyan-500/20', scale: 'scale-[1.3]', shaderColors: [[0.0, 0.8, 1.0], [0.0, 0.2, 0.5]] as [[number, number, number], [number, number, number]] };
+      case 'hold': return { text: 'Lock Vagal Hold', color: 'text-purple-400', bg: 'bg-purple-500/20', scale: 'scale-[1.3]', shaderColors: [[0.6, 0.2, 1.0], [0.2, 0.0, 0.4]] as [[number, number, number], [number, number, number]] };
+      case 'exhale': return { text: 'Exhale Trauma', color: 'text-emerald-400', bg: 'bg-emerald-500/20', scale: 'scale-[0.8]', shaderColors: [[0.0, 1.0, 0.5], [0.0, 0.3, 0.1]] as [[number, number, number], [number, number, number]] };
+      case 'hold-empty': return { text: 'Somatic Stillness', color: 'text-slate-500', bg: 'bg-slate-500/10', scale: 'scale-[0.8]', shaderColors: [[0.2, 0.2, 0.3], [0.05, 0.05, 0.1]] as [[number, number, number], [number, number, number]] };
     }
   };
 
@@ -39,7 +40,7 @@ export default function SomaticBreathingRegulator() {
   return (
     <div className="relative overflow-hidden bg-gradient-to-br from-emerald-950/30 via-black/80 to-[#05070B] border border-emerald-400/25 p-6 md:p-7 rounded-[2rem] space-y-5 shadow-[0_0_45px_rgba(16,185,129,0.12)] backdrop-blur-xl">
       <div className="absolute top-0 right-0 w-48 h-32 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none animate-pulse" />
-      
+
       <div className="flex items-center justify-between font-mono pb-2 border-b border-white/5">
         <div className="flex items-center gap-1.5 text-[11px] text-emerald-400 uppercase font-black">
           <Activity className="w-4 h-4 text-emerald-400 animate-pulse" />
@@ -56,29 +57,35 @@ export default function SomaticBreathingRegulator() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(45,212,191,0.16),transparent_38%)] pointer-events-none" />
           <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(45,212,191,0.04)_1px,transparent_1px),linear-gradient(to_bottom,rgba(45,212,191,0.04)_1px,transparent_1px)] bg-[size:22px_22px] opacity-35 pointer-events-none" />
 
-          <div className={`absolute w-40 h-40 rounded-full blur-3xl transition-all duration-[4000ms] ${theme.bg} ${theme.scale}`} />
+          <div className={`absolute inset-0 transition-all duration-[4000ms] ${theme.scale} opacity-10 pointer-events-none`}>
+            <SomaticShaderCanvas
+              colorA={theme.shaderColors[0]}
+              colorB={theme.shaderColors[1]}
+              intensity={0.4}
+            />
+          </div>
+
+          <div className={`absolute w-40 h-40 rounded-full blur-[100px] transition-all duration-[4000ms] ${theme.bg} ${theme.scale} opacity-30`} />
 
           <img
             src="/reset-art/lungs.png"
             alt=""
             aria-hidden="true"
-            className={`relative z-10 max-h-[205px] w-auto object-contain saturate-125 contrast-110 drop-shadow-[0_0_38px_rgba(45,212,191,0.72)] transition-all duration-[4000ms] ${
-              cycle === 'inhale'
-                ? 'scale-[1.20] opacity-100 brightness-125'
-                : cycle === 'hold'
-                  ? 'scale-[1.04] opacity-95 brightness-105'
-                  : cycle === 'exhale'
-                    ? 'scale-[0.82] opacity-72 brightness-85'
-                    : 'scale-[0.88] opacity-72 brightness-85'
-            }`}
+            className={`relative z-10 max-h-[205px] w-auto object-contain saturate-150 contrast-125 drop-shadow-[0_0_45px_rgba(45,212,191,0.8)] transition-all duration-[4000ms] ${cycle === 'inhale'
+              ? 'scale-[1.25] opacity-100 brightness-125'
+              : cycle === 'hold'
+                ? 'scale-[1.10] opacity-95 brightness-110'
+                : cycle === 'exhale'
+                  ? 'scale-[0.85] opacity-75 brightness-90'
+                  : 'scale-[0.90] opacity-75 brightness-90'
+              }`}
           />
 
           <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-950/25 px-3 py-1">
-            <span className={`h-2 w-2 rounded-full ${
-              cycle === 'inhale' ? 'bg-cyan-300' :
+            <span className={`h-2 w-2 rounded-full ${cycle === 'inhale' ? 'bg-cyan-300' :
               cycle === 'hold' ? 'bg-purple-300' :
-              cycle === 'exhale' ? 'bg-emerald-300' : 'bg-slate-400'
-            } animate-pulse`} />
+                cycle === 'exhale' ? 'bg-emerald-300' : 'bg-slate-400'
+              } animate-pulse`} />
             <span className={`text-[10px] font-mono tracking-widest font-black uppercase ${theme.color}`}>{seconds}s</span>
           </div>
         </div>

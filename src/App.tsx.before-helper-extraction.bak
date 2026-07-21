@@ -1,17 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
-import {
-  Search,
-  Sparkles,
-  Activity,
-  Flame,
-  HelpCircle,
-  Check,
-  RotateCcw,
-  AlertCircle,
-  ChevronRight,
-  User,
-  BookOpen,
-  Compass,
+import { 
+  Search, 
+  Sparkles, 
+  Activity, 
+  Flame, 
+  HelpCircle, 
+  Check, 
+  RotateCcw, 
+  AlertCircle, 
+  ChevronRight, 
+  User, 
+  BookOpen, 
+  Compass, 
   Feather,
   Dumbbell,
   Heart,
@@ -34,31 +34,10 @@ import {
 } from 'lucide-react';
 import { AILMENTS } from './data/dictionary';
 import { Ailment, SymptomAnalysisResponse } from './types';
-import {
-  getEnrichedAilment,
-  getHeroPrimaryPattern,
-  getHeroCascade,
-  getHeroTags,
-  shouldShowSafetyBadges,
-  getTonePreviews,
-  triggerHapticPattern,
-  getSymptomHapticPattern,
-  formatParagraphText,
-  getStructuredMedicalMechanismText,
-  getStructuredClinicalText,
-  getStructuredWittyText,
-  getStructuredBrutalText,
-  getStructuredResetText,
-  getStructuredInfluenceText,
-  getStructuredBiologyPath,
-  getCardPatterns
-} from './lib/ailmentHelpers';
 import DailyPromptsPanel from './components/DailyPromptsPanel';
 import SomaticJournalPanel from './components/SomaticJournalPanel';
 import AilmentAccordionItem from './components/ailments/AilmentAccordionItem';
-import { CATEGORY_META, renderCategoryIcon } from './components/ailments/ailmentCategoryMeta';
 import { CategoryBackground } from './components/CategoryBackground';
-import { TruncatedText } from './components/ailments/TruncatedText';
 import { authFetch, isSupabaseConfigured, supabase } from './lib/supabaseClient';
 import { motion, AnimatePresence } from 'motion/react';
 import { renderOrganIllustration } from './components/visuals/OrganIllustration';
@@ -70,18 +49,591 @@ import {
   renderHolographicFace,
   renderSarcasticusAvatar
 } from './components/visuals/HolographicAvatars';
-import { AnatomicalSilhouette } from './components/visuals/AnatomicalSilhouette';
 
 
 // Helper to render beautiful glowing 3D-effect organ vector illustrations
-const SEARCH_ONLY_AILMENT_IDS = new Set<string>([]);
-
-const isSearchOnlyAilment = (ailment: Ailment) => SEARCH_ONLY_AILMENT_IDS.has(ailment.id);
-
 // Compact High-tech Avatars for Three Tones
 // Helper to soften aggressive/uncontrolled medical claims with cautious wording
+const softenMedicalClaims = (text: string): string => {
+  if (!text) return "";
+  let softened = text;
+  
+  // Replace direct causality assertions with subtle/guarded associations
+  softened = softened.replace(/directly causes/gi, "may contribute to");
+  softened = softened.replace(/causes sustained/gi, "may interact with sustained");
+  softened = softened.replace(/causes/gi, "may contribute to");
+  softened = softened.replace(/is caused by/gi, "may be influenced by");
+  softened = softened.replace(/is the direct result of/gi, "can be amplified by");
+  softened = softened.replace(/strictly results from/gi, "can interact with");
+  softened = softened.replace(/brain shunts/gi, "brain can adjust");
+  softened = softened.replace(/shunts oxygenated/gi, "can adjust oxygenated");
+  softened = softened.replace(/shunts microcirculation/gi, "may alter microcirculation");
+  softened = softened.replace(/forces mental/gi, "encourages mental");
+  softened = softened.replace(/fascia hardening/gi, "protective guarding in fascia");
+  softened = softened.replace(/oxygen shunting/gi, "circulation adjustments");
+  
+  return softened;
+};
+
+// Helper to fill in interactive details for symptoms lacking customized tones/paths
 
 
+
+
+const paragraphPreview = (value: unknown, max = 260) => {
+  const text = formatParagraphText(value);
+  if (text.length <= max) return text;
+  return text.slice(0, max).trimEnd() + '...';
+};
+
+const getHeroPrimaryPattern = (ailment: any) => {
+  if (ailment?.id === 'asthma') {
+    return 'Airway inflammation, bronchospasm, mucus load, air trapping, and panic feedback may amplify this symptom.';
+  }
+
+  return 'Stress, protective bracing, posture strain, and poor recovery may amplify this symptom.';
+};
+
+const getHeroCascade = (ailment: any) => {
+  if (ailment?.id === 'asthma') {
+    return ['Trigger Recognition', 'Immune Alarm', 'Bronchospasm'];
+  }
+
+  return ['Mental Tension', 'Autonomic Clamp', 'Myofascial Lock'];
+};
+
+const getHeroTags = (ailment: any) => {
+  if (ailment?.id === 'asthma') {
+    return ['#airway check', '#rescue plan', '#unspoken grief'];
+  }
+
+  return ['{getHeroTags(enriched)[0]}', '{getHeroTags(enriched)[1]}', '{getHeroTags(enriched)[2]}'];
+};
+
+const shouldShowSafetyBadges = (ailment: any) => {
+  return false;
+};
+
+const formatLongText = (value: unknown) => {
+  return String(value ?? '')
+    .replace(/\\n/g, '\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+};
+
+const longTextParagraphs = (value: unknown) => {
+  return formatLongText(value)
+    .split(/\n\s*\n/g)
+    .map((part) => part.trim())
+    .filter(Boolean);
+};
+
+
+const shortPreview = (value: unknown, max = 260) => {
+  const text = String(value ?? '')
+    .replace(/\\n/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  if (text.length <= max) return text;
+  return text.slice(0, max).trimEnd() + '...';
+};
+
+const getTonePreviews = (ailment: any) => {
+  if (ailment?.id === 'asthma') {
+    return {
+      clinical:
+        'Asthma involves airway inflammation, bronchospasm, mucus hypersecretion, air trapping, and a panic feedback loop. The full airway cascade belongs in the Biology tab.',
+      witty:
+        'Your lungs are an underfunded tech-support call center where every dust bunny gets flagged as biological warfare and the phone lines clamp shut.',
+      brutal:
+        'This is the swallowed-voice pattern: grief, panic, and unspoken need loading the chest until the body starts saying no through the airway.'
+    };
+  }
+
+  return {
+    clinical: shortPreview(ailment?.physiologicalDescription),
+    witty: shortPreview(ailment?.metaphor),
+    brutal: shortPreview(ailment?.sarcasticAdvice)
+  };
+};
+
+
+
+const triggerHapticPattern = (pattern?: number[]) => {
+  if (typeof navigator === 'undefined' || !('vibrate' in navigator)) return false;
+
+  const sequence = Array.isArray(pattern) && pattern.length > 0
+    ? pattern
+    : [20, 40, 20];
+
+  try {
+    navigator.vibrate(sequence);
+    return true;
+  } catch {
+    return false;
+  }
+};
+
+const getSymptomHapticPattern = (ailment: any): number[] => {
+  const pattern = ailment?.structuredContent?.hardware?.hapticPattern;
+  if (Array.isArray(pattern)) return pattern;
+
+  return [20, 40, 20];
+};
+
+
+const formatParagraphText = (value: unknown) => {
+  return String(value ?? '')
+    .replace(/\\n/g, '\n')
+    .replace(/\r\n/g, '\n')
+    .replace(/\r/g, '\n')
+    .replace(/[ \t]+\n/g, '\n')
+    .replace(/\n[ \t]+/g, '\n')
+    .replace(/([.!?])\s+(\d+\.\s+)/g, '$1\n\n$2')
+    .replace(/\s+(Stage\s+\d+\s+[—-])/gi, '\n\n$1')
+    .replace(/\s+(Pathway\s+\d+\.\s+)/gi, '\n\n$1')
+    .replace(/\s+(Trigger Recognition|Immune Alarm|Bronchospasm|Mucus Load|Air Trapping|Panic Feedback Loop)(\s+[—-])/g, '\n\n$1$2')
+    .replace(/\s+(STRICTLY SERIOUS|COMEDIC & WITTY|BRUTALLY HONEST|BIOLOGICAL BREAKDOWN PATHWAY|ANATOMICAL SYSTEM MECHANISM|INTERVENTION CHECKLIST|CRITICAL CHECKPOINT)/g, '\n\n$1')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+};
+
+
+const getStructuredMedicalMechanismText = (ailment: any) => {
+  const pathway = ailment?.structuredContent?.biologyPathway;
+
+  if (Array.isArray(pathway) && pathway.length > 0) {
+    return [
+      'BIOLOGICAL BREAKDOWN PATHWAY',
+      ...pathway.map((node: any, index: number) => {
+        const title = node?.title || `Pathway ${index + 1}`;
+        const detail = node?.detail || node?.expandedDetails || node?.description || '';
+        return `${index + 1}. ${title} — ${detail}`;
+      })
+    ].filter(Boolean).join('\n\n');
+  }
+
+  return ailment?.physiologicalDescription || '';
+};
+
+const getStructuredClinicalText = (ailment: any) => {
+  const sections = ailment?.structuredContent?.interpretations?.clinical?.sections;
+  if (!Array.isArray(sections)) return '';
+
+  return sections
+    .flatMap((section: any) => [
+      section.heading,
+      ...(Array.isArray(section.body) ? section.body : [])
+    ])
+    .filter(Boolean)
+    .join('\n\n');
+};
+
+const getStructuredWittyText = (ailment: any) => {
+  const paragraphs = ailment?.structuredContent?.interpretations?.witty?.paragraphs;
+  return Array.isArray(paragraphs) ? paragraphs.filter(Boolean).join('\n\n') : '';
+};
+
+const getStructuredBrutalText = (ailment: any) => {
+  const paragraphs = ailment?.structuredContent?.interpretations?.brutal?.paragraphs;
+  return Array.isArray(paragraphs) ? paragraphs.filter(Boolean).join('\n\n') : '';
+};
+
+const getStructuredResetText = (ailment: any) => {
+  const reset = ailment?.structuredContent?.reset;
+  if (!reset) return ailment?.physicalTherapyTip || '';
+
+  const title = [reset.title, reset.modality].filter(Boolean).join(' — ');
+  const steps = Array.isArray(reset.steps)
+    ? reset.steps.map((step: string, index: number) => `${index + 1}. ${step}`).join('\n\n')
+    : '';
+
+  return [title, steps].filter(Boolean).join('\n\n');
+};
+
+
+const joinParagraphs = (value: unknown): string => {
+  if (value == null) return '';
+
+  if (typeof value === 'string') return value;
+
+  if (Array.isArray(value)) {
+    return value
+      .map((item) => joinParagraphs(item))
+      .filter(Boolean)
+      .join('\n\n');
+  }
+
+  if (typeof value === 'object') {
+    const data = value as any;
+    return [
+      data.title,
+      data.heading,
+      data.short,
+      data.description,
+      data.detail,
+      data.details,
+      data.expandedDetails,
+      data.body,
+      data.paragraphs,
+      data.steps,
+      data.text,
+    ]
+      .map((item) => joinParagraphs(item))
+      .filter(Boolean)
+      .join('\n\n');
+  }
+
+  return String(value);
+};
+
+const getStructuredInfluenceText = (ailment: any, layerNumber: number, fallback: unknown): string => {
+  const layers = ailment?.structuredContent?.influenceLayers;
+  if (!Array.isArray(layers)) return joinParagraphs(fallback);
+
+  const layer = layers.find((item: any) => Number(item?.layer) === layerNumber) || layers[layerNumber - 1];
+  const structuredText = joinParagraphs(layer?.paragraphs || layer?.body || layer?.text || layer?.description);
+
+  return structuredText || joinParagraphs(fallback);
+};
+
+const getStructuredBiologyPath = (ailment: any) => {
+  const pathway = ailment?.structuredContent?.biologyPathway;
+  if (!Array.isArray(pathway) || pathway.length === 0) return null;
+
+  return pathway.map((node: any) => ({
+    title: node?.title || 'Pathway Stage',
+    description: node?.short || node?.description || '',
+    expandedDetails: joinParagraphs(node?.detail || node?.details || node?.expandedDetails || node?.description || ''),
+  }));
+};
+
+
+const getEnrichedAilment = (ailment: Ailment): Required<Ailment> => {
+  let defaultPath = [
+    {
+      title: "Mental Tension",
+      description: "Chronic overthinking creates a subconscious alert wave.",
+      expandedDetails: "Under persistent work deadlines or relationship friction, your nervous system triggers sustained minor muscle guarding."
+    },
+    {
+      title: "Autonomic Clamp",
+      description: "Localized sympathetic signal shunts microcirculation.",
+      expandedDetails: "Your brain shunts oxygenated blood flow away from non-critical tissues, creating localized minor muscle fatigue and tight connective fascia."
+    },
+    {
+      title: "Myofascial Lock",
+      description: "Targeted muscles contract stubbornly to protect bones.",
+      expandedDetails: "Subconscious holding patterns shorten muscle fibers, creating sensitive trigger points that refer dull pain outward."
+    },
+    {
+      title: "Connective Splint",
+      description: "Fascia hardens around joints to restrict motion.",
+      expandedDetails: "The surrounding connective tissue thickens and hardens to split-guard the affected joint, leading to localized popping and stiff aches."
+    },
+    {
+      title: "Somatic Alarm",
+      description: "Physical discomfort flares up to force mental reflection.",
+      expandedDetails: "The somatic feedback loop becomes too loud to ignore, signaling that it is time to drink water, stretch, and establish strong boundaries."
+    }
+  ];
+
+  // Specific override for asthma: airway biology, not muscle/joint guarding.
+  if (ailment.id === 'asthma') {
+    defaultPath = [
+      {
+        title: "Trigger Recognition",
+        description: "Trigger hits a sensitive airway system.",
+        expandedDetails: "Asthma begins when the airway system interprets a trigger as a threat. The trigger can be physical, environmental, infectious, or stress-amplified. The point is not that it is imaginary. The point is that the threshold is low and the airway is primed to react."
+      },
+      {
+        title: "Immune Alarm",
+        description: "Inflammatory mediators activate.",
+        expandedDetails: "The airway lining becomes irritated, swollen, and reactive. Inflammation makes the bronchial tubes more sensitive, so the next trigger hits harder and faster. This is the medical reality underneath the metaphor."
+      },
+      {
+        title: "Bronchospasm",
+        description: "Bronchial smooth muscle tightens.",
+        expandedDetails: "The airway clamps down. Airflow becomes turbulent, breathing becomes effortful, and wheezing may appear. This is not bones or joints. This is airway smooth muscle tightening around the breathing tubes."
+      },
+      {
+        title: "Mucus Load",
+        description: "Thicker mucus adds resistance.",
+        expandedDetails: "Mucus makes the airway feel clogged and heavy. It can increase coughing and make the chest feel like air is moving through a narrow wet straw, because apparently the body enjoys turning basic oxygen exchange into a plumbing crisis."
+      },
+      {
+        title: "Air Trapping",
+        description: "Exhale gets blocked; air traps.",
+        expandedDetails: "Asthma often feels like you cannot get air in, but a major part of the problem can be getting air out. The lungs struggle to empty. That trapped air creates pressure, tightness, and the feeling that the next breath has nowhere to go."
+      },
+      {
+        title: "Panic Feedback Loop",
+        description: "Alarm increases effort and tightness.",
+        expandedDetails: "The sensation of restricted breathing tells the brain something is wrong. The brain increases alarm. Alarm increases effort, tension, and sympathetic arousal. That can worsen the breathing experience. Rescue medication and medical care matter first; calming the nervous system is support, not a replacement."
+      }
+    ];
+  }
+
+  // Specific override for lower back / back problems lower as requested by user
+  if (ailment.id === 'back-problems-lower' || ailment.id === 'lower-back' || ailment.id === 'back-problems-middle') {
+    defaultPath = [
+      {
+        title: "Mental Tension",
+        description: "Chronic worry, conflict, or pressure can keep the nervous system scanning for threat.",
+        expandedDetails: "Persistent mental pressure alters central nervous system gain, increasing general vigilance and setting the stage for defensive neuromuscular response."
+      },
+      {
+        title: "Autonomic Clamp",
+        description: "Stress arousal may increase baseline muscle tone and reduce recovery quality.",
+        expandedDetails: "Under high load, elevated sympathetic discharge may maintain static activity in lumbar stabilizer groups, limiting physical restoration."
+      },
+      {
+        title: "Myofascial Guarding",
+        description: "The body may brace the hips, lumbar spine, and surrounding tissue to protect against perceived strain.",
+        expandedDetails: "To protect structural regions, the motor cortex may increase protective muscle guarding across the hips, sacrum, and lower back."
+      },
+      {
+        title: "Movement Restriction",
+        description: "Guarding can change posture, breathing, gait, and loading patterns.",
+        expandedDetails: "Persistent neuromuscular bracing alters natural mechanical patterns, changing weight distribution, breathing rhythms, and gait cycles."
+      },
+      {
+        title: "Pain Amplification",
+        description: "When tissue irritation and nervous-system sensitivity overlap, pain can become louder and more persistent.",
+        expandedDetails: "When peripheral sensory signals from tired fascia combine with a sensitized spinal cord, pain transmission can become significantly amplified."
+      }
+    ];
+  }
+
+  const defaultTones = {
+    clinical: {
+      mechanism: getStructuredMedicalMechanismText(ailment),
+      protocol: [
+        ailment.physicalTherapyTip,
+        "Implement progressive muscle relaxation (PMR) starting from head to toe twice daily.",
+        "Assess sitting and screen arrangements, ensuring ergonomic elbow-rest levels."
+      ],
+      citations: [
+        "Somatic Medicine & Biofeedback Journal (Vol 14, Issue 2)",
+        "Review of Psychosomatic Fascial Guarding Patterns (2023)"
+      ]
+    },
+    witty: {
+      metaphorTitle: "The Internal Defense Guard",
+      metaphorText: getStructuredWittyText(ailment) || ailment.metaphor,
+      wittyAdvice: ailment.tones?.witty?.wittyAdvice || ailment.sarcasticAdvice
+    },
+    brutal: {
+      realityCheck: getStructuredBrutalText(ailment) || "You are attempting to solve every external problem while your physical engine is literally grinding its gears to dust. Your body didn't break down; it staged an intervention.",
+      protocolTitle: "STOP FEEDING THE FIRE DRILL",
+      protocolSteps: ailment.id === 'asthma'
+        ? [
+            "Name the sentence you are swallowing. Write it in one line. Do not send it. Just stop making your lungs carry it.",
+            "Check your rescue inhaler and asthma action plan. Reflection is cute, breathing is mandatory.",
+            "If symptoms are mild and stable, exhale longer than you inhale for two minutes. If symptoms are serious, stop playing philosopher and follow the medical plan.",
+            "Tell one safe person what you have been minimizing instead of letting your chest carry the whole performance."
+          ]
+        : [
+            ailment.physicalTherapyTip,
+            "Name the sentence you are swallowing. Write it in one line. Do not send it. Just stop making your lungs carry it.",
+            "Check your rescue inhaler and asthma action plan. Reflection is cute, breathing is mandatory.",
+            "Exhale longer than you inhale for two minutes, only if symptoms are mild and stable."
+          ]
+    }
+  };
+
+  const defaultMedicalSafety = {
+    critical_alerts: [
+      "Sudden, severe, or excruciating pain with no obvious cause",
+      "Pain that begins after a major physical injury or trauma",
+      "Pain accompanied by fever, chills, night sweats, or unexplained weight loss",
+      "Pain with new neurological deficits like weakness, numbness, or loss of coordination",
+      "Pain that steadily worsens despite rest, splinting, or gentle care",
+      "New pain in a patient with a personal history of cancer"
+    ],
+    seek_immediate_care_if: [
+      "You experience sudden, unbearable pain or pain following a major injury",
+      "Your pain is accompanied by high fever, confusion, or a cold, pale limb",
+      "You experience sudden weakness, numbness, or loss of bowel or bladder control"
+    ],
+    schedule_care_if: [
+      "Your pain is persistent, gradually worsening, or lasts longer than 2-3 weeks",
+      "You have pain with unexplained weight loss, night sweats, or a history of cancer",
+      "Your joint or muscle pain is accompanied by persistent morning stiffness or visible swelling"
+    ],
+    self_care_allowed_if: "Gentle movement, thermal therapy (ice/heat), and rest are reasonable for managing mild, transient muscular strains or familiar joint stiffness.",
+    do_not_ignore: "Chronic or severe pain should not be masked with analgesics without a professional diagnosis of the underlying physical cause.",
+    disclaimer: "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease. Seek professional medical care for diagnosis, treatment, medication decisions, or urgent symptoms."
+  };
+
+  return {
+    ...ailment,
+    structuredContent: ailment.structuredContent || null,
+    tags: ailment.tags || ["somatic tension", "posture check", "unspoken stress"],
+    riskLevel: ailment.riskLevel || "Moderate",
+    biologyPath: getStructuredBiologyPath(ailment) || (ailment.id === 'back-problems-lower' || ailment.id === 'lower-back' || ailment.id === 'back-problems-middle' ? defaultPath : (ailment.biologyPath || defaultPath)),
+    tones: ailment.structuredContent ? defaultTones : (ailment.tones || defaultTones),
+    medical_safety: ailment.medical_safety || defaultMedicalSafety
+  };
+};
+
+interface AilmentAccordionItemProps {
+  key?: string | number;
+  ailment: Ailment;
+  isSelected: boolean;
+  onSelect: () => void;
+  globalTone: 'clinical' | 'witty' | 'brutal';
+  onJournalRedirect: () => void;
+}
+
+const getCardPatterns = (name: string, id: string, enriched: any) => {
+  const normName = name.toLowerCase();
+  const normId = id.toLowerCase();
+  
+  if (normId === 'lower-back-pain' || normName === 'lower back pain') {
+    return {
+      pattern: "Lumbar guarding, support strain, posture load, and pain sensitization may interact.",
+      safety: "Bowel/bladder changes • saddle numbness • leg weakness"
+    };
+  }
+  if (normId === 'shoulder-tension' || normName.includes('frozen shoulder') || normName === 'shoulder problems' || normName.includes('shoulder-tension')) {
+    return {
+      pattern: "Shoulder guarding, reduced range of motion, stress bracing, and inflammation may interact.",
+      safety: "Major injury • fever/swelling • sudden severe weakness"
+    };
+  }
+  if (normName.includes('upper back pain') || normName.includes('back problems (upper)')) {
+    return {
+      pattern: "Neck/shoulder tension, thoracic stiffness, breath restriction, and stress bracing may interact.",
+      safety: "Chest pain • shortness of breath • arm weakness"
+    };
+  }
+  if (normName.includes('middle back pain') || normName.includes('back problems (middle)')) {
+    return {
+      pattern: "Thoracic guarding, rib restriction, posture strain, and protective bracing may interact.",
+      safety: "Fever • trauma • severe unrelenting pain"
+    };
+  }
+  if (normId === 'back-problems-lower' || normName.includes('lower back problems') || normName.includes('back problems (lower)')) {
+    return {
+      pattern: "Lumbar load, psoas/hip guarding, poor recovery, and nerve sensitivity may interact.",
+      safety: "Saddle numbness • bowel/bladder changes • progressive weakness"
+    };
+  }
+  
+  // Fallbacks
+  const fallbackPattern = getHeroPrimaryPattern(enriched);
+  
+  let fallbackSafety = "";
+  if (enriched.medical_safety) {
+    const alerts = enriched.medical_safety.critical_alerts || enriched.medical_safety.seek_immediate_care_if || [];
+    if (alerts.length > 0) {
+      fallbackSafety = alerts.slice(0, 3).join(" • ");
+    } else if (enriched.medical_safety.do_not_ignore) {
+      fallbackSafety = enriched.medical_safety.do_not_ignore;
+    } else {
+      fallbackSafety = "Sudden severe worsening • high fever • sensory loss";
+    }
+  }
+  
+  return {
+    pattern: fallbackPattern,
+    safety: fallbackSafety
+  };
+};
+
+function TruncatedText({ text, maxLen = 520 }: { text: string; maxLen?: number }) {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const normalizedText = formatParagraphText(text);
+  const shouldTruncate = normalizedText.length > maxLen;
+
+  const displayText = isExpanded || !shouldTruncate
+    ? normalizedText
+    : normalizedText.slice(0, maxLen).trimEnd() + '...';
+
+  const paragraphs = displayText
+    .split(/\n\s*\n/g)
+    .map((part) => part.trim())
+    .filter(Boolean);
+
+  return (
+    <div className="space-y-4 leading-7 whitespace-pre-line">
+      {paragraphs.map((part, index) => (
+        <p key={index}>{part}</p>
+      ))}
+
+      {shouldTruncate && (
+        <button
+          type="button"
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="mt-3 text-[10px] font-mono font-black text-indigo-300 hover:text-indigo-200 underline underline-offset-4 uppercase tracking-widest"
+        >
+          {isExpanded ? 'Show Less' : 'Read Full Interpretation'}
+        </button>
+      )}
+    </div>
+  );
+}
+
+const renderAnatomicalSilhouette = (category: string, color: string) => {
+  const strokeColor = color;
+  
+  if (category === "Back & Shoulders") {
+    return (
+      <svg className="absolute right-0 bottom-0 w-80 h-80 opacity-15 pointer-events-none select-none z-0 translate-x-12 translate-y-12" viewBox="0 0 100 100" fill="none">
+        <path d="M50 5 V95" stroke={strokeColor} strokeWidth="1.5" strokeDasharray="3 3" />
+        {[15, 25, 35, 45, 55, 65, 75, 85].map((y, i) => (
+          <g key={i}>
+            <path d={`M35 ${y} C42 ${y-4} 58 ${y-4} 65 ${y}`} stroke={strokeColor} strokeWidth="2" strokeLinecap="round" />
+            <path d={`M40 ${y+3} C45 ${y+1} 55 ${y+1} 60 ${y+3}`} stroke={strokeColor} strokeWidth="1" strokeLinecap="round" />
+            <circle cx="50" cy={y} r="3" fill="#000" stroke={strokeColor} strokeWidth="1.5" />
+          </g>
+        ))}
+      </svg>
+    );
+  }
+
+  if (category === "Head & Neck") {
+    return (
+      <svg className="absolute right-0 bottom-0 w-80 h-80 opacity-15 pointer-events-none select-none z-0 translate-x-12 translate-y-12" viewBox="0 0 100 100" fill="none">
+        <path d="M50 50 C40 30, 40 10, 60 10 C80 10, 90 25, 80 45 C75 55, 65 60, 60 70 C55 80, 50 90, 50 95" stroke={strokeColor} strokeWidth="1.5" />
+        <path d="M50 50 C60 30, 60 10, 40 10 C20 10, 10 25, 20 45 C25 55, 35 60, 40 70 C45 80, 50 90, 50 95" stroke={strokeColor} strokeWidth="1.5" />
+        <circle cx="50" cy="30" r="15" stroke={strokeColor} strokeWidth="1" strokeDasharray="2 2" />
+        <circle cx="50" cy="30" r="5" stroke={strokeColor} strokeWidth="1.5" />
+      </svg>
+    );
+  }
+
+  if (category === "Chest & Breathing") {
+    return (
+      <svg className="absolute right-0 bottom-0 w-80 h-80 opacity-15 pointer-events-none select-none z-0 translate-x-12 translate-y-12" viewBox="0 0 100 100" fill="none">
+        <path d="M45 25 C30 20, 15 35, 20 60 C25 80, 40 85, 45 75 Z" stroke={strokeColor} strokeWidth="1.5" />
+        <path d="M55 25 C70 20, 85 35, 80 60 C75 80, 60 85, 55 75 Z" stroke={strokeColor} strokeWidth="1.5" />
+        <path d="M50 10 V30" stroke={strokeColor} strokeWidth="2" />
+        <path d="M50 55 C46 50, 42 55, 50 65 C58 55, 54 50, 50 55 Z" fill={strokeColor} opacity="0.4" />
+      </svg>
+    );
+  }
+
+  if (category === "Stomach & Gut") {
+    return (
+      <svg className="absolute right-0 bottom-0 w-80 h-80 opacity-15 pointer-events-none select-none z-0 translate-x-12 translate-y-12" viewBox="0 0 100 100" fill="none">
+        <path d="M30 35 H70 V45 H30 V55 H70 V65 H30 V75 H70" stroke={strokeColor} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M50 20 V35" stroke={strokeColor} strokeWidth="2" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg className="absolute right-0 bottom-0 w-80 h-80 opacity-15 pointer-events-none select-none z-0 translate-x-12 translate-y-12" viewBox="0 0 100 100" fill="none">
+      <path d="M10 50 Q30 30 50 50 T90 50" stroke={strokeColor} strokeWidth="1" />
+      <path d="M10 60 Q30 40 50 60 T90 60" stroke={strokeColor} strokeWidth="1" />
+      <path d="M10 40 Q30 20 50 40 T90 40" stroke={strokeColor} strokeWidth="1.5" />
+    </svg>
+  );
+};
 
 
 
@@ -92,7 +644,7 @@ export default function App() {
   const [selectedAilment, setSelectedAilment] = useState<Ailment | null>(null);
   const [globalTone, setGlobalTone] = useState<'clinical' | 'witty' | 'brutal'>('witty');
   const [isDisclaimerExpanded, setIsDisclaimerExpanded] = useState(false);
-
+  
   // Premium & Monetization State
   // Server is the source of truth. localStorage is not trusted for premium access.
   const [isPremium, setIsPremium] = useState(false);
@@ -108,7 +660,7 @@ export default function App() {
   const [authUser, setAuthUser] = useState<any>(null);
   const [authMessage, setAuthMessage] = useState<string | null>(null);
   const [authLoading, setAuthLoading] = useState(false);
-
+  
   // Custom Decoder State
   const [customSymptom, setCustomSymptom] = useState('');
   const [customHabits, setCustomHabits] = useState('');
@@ -176,8 +728,8 @@ export default function App() {
     }
 
     const matchesSearch = ailment.name.toLowerCase().includes(normalizedSearchQuery) ||
-      ailment.emotionalRoot.toLowerCase().includes(normalizedSearchQuery) ||
-      ailment.physiologicalDescription.toLowerCase().includes(normalizedSearchQuery);
+                          ailment.emotionalRoot.toLowerCase().includes(normalizedSearchQuery) ||
+                          ailment.physiologicalDescription.toLowerCase().includes(normalizedSearchQuery);
 
     const matchesCategory = isSearching || selectedCategory === 'All' || ailment.category === selectedCategory;
 
@@ -242,7 +794,7 @@ export default function App() {
     }
 
 
-    return ailment?.primaryPattern || ailment?.pattern || ailment?.metaphor || ailment?.emotionalRoot || '';
+return ailment?.primaryPattern || ailment?.pattern || ailment?.metaphor || ailment?.emotionalRoot || '';
   };
 
   const LongTextBlock = ({ value, className = '' }: { value: unknown; className?: string }) => {
@@ -370,8 +922,8 @@ export default function App() {
 
       {/* Header Navigation with Real Glassmorphism */}
       <nav className="h-20 border-b border-white/10 flex items-center justify-between px-6 md:px-10 flex-shrink-0 bg-[#07080d]/60 backdrop-blur-xl sticky top-0 z-50 relative">
-        <div
-          onClick={() => setActiveTab('dictionary')}
+        <div 
+          onClick={() => setActiveTab('dictionary')} 
           className="text-2xl font-black tracking-tighter not-italic cursor-pointer hover:opacity-95 transition-opacity flex items-center gap-2 font-display"
         >
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-indigo-100 to-indigo-300 drop-shadow-[0_0_15px_rgba(99,102,241,0.5)]">Cure Your Life</span>
@@ -379,27 +931,27 @@ export default function App() {
             +
           </span>
         </div>
-
+        
         <div className="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-[0.2em] text-slate-400 font-display">
-          <button
+          <button 
             onClick={() => setActiveTab('dictionary')}
             className={`cursor-pointer hover:text-white transition-all pb-1 ${activeTab === 'dictionary' ? 'text-indigo-400 border-b-2 border-indigo-500' : ''}`}
           >
             Psychosomatic Dictionary
           </button>
-          <button
+          <button 
             onClick={openDecoder}
             className={`cursor-pointer hover:text-white transition-all pb-1 ${activeTab === 'decoder' ? 'text-indigo-400 border-b-2 border-indigo-500' : ''}`}
           >
             AI Somatic Decoder
           </button>
-          <button
+          <button 
             onClick={() => setActiveTab('daily')}
             className={`cursor-pointer hover:text-white transition-all pb-1 ${activeTab === 'daily' ? 'text-indigo-400 border-b-2 border-indigo-500' : ''}`}
           >
             Somatic Reflections
           </button>
-          <button
+          <button 
             onClick={() => setActiveTab('journal')}
             className={`cursor-pointer hover:text-white transition-all pb-1 ${activeTab === 'journal' ? 'text-indigo-400 border-b-2 border-indigo-500' : ''}`}
           >
@@ -410,10 +962,11 @@ export default function App() {
         <div className="flex items-center space-x-3">
           <button
             onClick={() => setShowPaywall(true)}
-            className={`px-4 py-2 font-bold uppercase text-[11px] tracking-widest transition-all rounded-xl cursor-pointer ${isPremium
-              ? 'bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 text-black shadow-[0_0_20px_rgba(245,158,11,0.4)] hover:scale-105'
-              : 'border border-amber-500/30 text-amber-400 hover:bg-amber-500/10 hover:border-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.08)] backdrop-blur-md'
-              }`}
+            className={`px-4 py-2 font-bold uppercase text-[11px] tracking-widest transition-all rounded-xl cursor-pointer ${
+              isPremium 
+                ? 'bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 text-black shadow-[0_0_20px_rgba(245,158,11,0.4)] hover:scale-105'
+                : 'border border-amber-500/30 text-amber-400 hover:bg-amber-500/10 hover:border-amber-400 shadow-[0_0_15px_rgba(245,158,11,0.08)] backdrop-blur-md'
+            }`}
           >
             {isPremium ? '✦ Premium Active' : '✦ Unlock Premium'}
           </button>
@@ -499,25 +1052,25 @@ export default function App() {
 
       {/* Mobile Nav Bar with Glassmorphism */}
       <div className="md:hidden flex border-b border-white/10 bg-[#07080d]/80 backdrop-blur-xl justify-around py-3.5 text-[11px] font-bold uppercase tracking-wider text-slate-400 relative z-40 font-display">
-        <button
+        <button 
           onClick={() => setActiveTab('dictionary')}
           className={`${activeTab === 'dictionary' ? 'text-indigo-400 font-extrabold' : ''}`}
         >
           Dictionary
         </button>
-        <button
+        <button 
           onClick={openDecoder}
           className={`${activeTab === 'decoder' ? 'text-indigo-400 font-extrabold' : ''}`}
         >
           AI Decoder
         </button>
-        <button
+        <button 
           onClick={() => setActiveTab('daily')}
           className={`${activeTab === 'daily' ? 'text-indigo-400 font-extrabold' : ''}`}
         >
           Reflections
         </button>
-        <button
+        <button 
           onClick={() => setActiveTab('journal')}
           className={`${activeTab === 'journal' ? 'text-indigo-400 font-extrabold' : ''}`}
         >
@@ -527,11 +1080,11 @@ export default function App() {
 
       {/* Main Framework Content */}
       <div className="flex-1 flex flex-col md:flex-row overflow-hidden relative z-10">
-
+        
         {/* Dictionary Tab: Contains side-by-side Body Map and glowing Symptom Explorer */}
         {activeTab === 'dictionary' && (
           <main className="flex-1 flex flex-col p-6 md:p-10 overflow-y-auto w-full space-y-8">
-
+            
             {/* Global Disclaimer Banner */}
             <div className="bg-red-950/20 border border-red-500/25 p-5 md:px-6 rounded-2xl text-xs text-red-200 shadow-lg relative overflow-hidden backdrop-blur-md mb-2 shrink-0 w-full">
               <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-red-500" />
@@ -564,7 +1117,7 @@ export default function App() {
 
             {/* Big Central Command Bar */}
             <div className={`${selectedCategory ? "hidden" : ""} w-full max-w-4xl mx-auto mt-4 mb-6`}>
-              <form
+              <form 
                 onSubmit={(e) => {
                   e.preventDefault();
                   setActiveTab('decoder');
@@ -573,14 +1126,14 @@ export default function App() {
               >
                 {/* Background ambient pulse glow behind the command bar */}
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500/5 to-purple-500/5 -z-10  group-hover:opacity-100 opacity-60 transition-opacity duration-500" />
-
+                
                 {/* Glowing Sparkles Icon */}
                 <div className="flex items-center justify-center pl-4 pr-2.5 shrink-0">
                   <Sparkles className="w-5 h-5 text-indigo-400 animate-[pulse_2s_infinite]" />
                 </div>
 
                 {/* Input Field */}
-                <input
+                <input 
                   type="text"
                   value={customSymptom}
                   onChange={(e) => setCustomSymptom(e.target.value)}
@@ -608,7 +1161,7 @@ export default function App() {
                   <Compass className="w-4 h-4 text-indigo-400 animate-pulse" />
                   <span>1. Choose Somatic Region Grouping</span>
                 </div>
-
+                
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
                   {categories.map(cat => {
                     const meta = CATEGORY_META[cat] || {
@@ -623,8 +1176,8 @@ export default function App() {
                       badge: "Priority"
                     };
                     const isSelected = selectedCategory === cat;
-                    const count = cat === 'All'
-                      ? browsableAilments.length
+                    const count = cat === 'All' 
+                      ? browsableAilments.length 
                       : browsableAilments.filter(a => a.category === cat).length;
 
                     // Get top 3 example symptoms in this category
@@ -642,10 +1195,11 @@ export default function App() {
                             setSelectedAilment(null);
                           }
                         }}
-                        className={`category-card text-left p-5 rounded-[1.6rem] transition-all duration-500 relative overflow-hidden group cursor-pointer flex flex-col justify-between min-h-[220px] ${isSelected
-                          ? '-translate-y-1.5 border-[var(--system-color)] bg-black/75 shadow-[0_0_50px_var(--system-glow),inset_0_0_20px_rgba(255,255,255,0.02)] scale-[1.03]'
-                          : 'border-white/5 bg-black/40 hover:bg-black/50 hover:-translate-y-1 hover:border-[var(--system-color)]/40'
-                          }`}
+                        className={`category-card text-left p-5 rounded-[1.6rem] transition-all duration-500 relative overflow-hidden group cursor-pointer flex flex-col justify-between min-h-[220px] ${
+                          isSelected 
+                            ? '-translate-y-1.5 border-[var(--system-color)] bg-black/75 shadow-[0_0_50px_var(--system-glow),inset_0_0_20px_rgba(255,255,255,0.02)] scale-[1.03]' 
+                            : 'border-white/5 bg-black/40 hover:bg-black/50 hover:-translate-y-1 hover:border-[var(--system-color)]/40'
+                        }`}
                         style={{
                           '--system-color': meta.color,
                           '--system-glow': meta.glowColor,
@@ -656,8 +1210,8 @@ export default function App() {
 
                         {/* Animated pulse line */}
                         <div className="absolute left-0 right-0 h-[1.5px] top-[40%] -translate-y-1/2 pointer-events-none overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                          <div
-                            className="w-full h-full animate-pulse"
+                          <div 
+                            className="w-full h-full animate-pulse" 
                             style={{
                               background: `linear-gradient(90deg, transparent, ${meta.color}60, transparent)`
                             }}
@@ -682,8 +1236,9 @@ export default function App() {
                         {/* Card Body: Title & Description */}
                         <div className="space-y-3 relative z-10 w-full mt-4">
                           <div>
-                            <h3 className={`text-base font-black uppercase tracking-tight font-display transition-colors ${isSelected ? 'text-[var(--system-color)]' : 'text-white group-hover:text-[var(--system-color)]'
-                              }`}>
+                            <h3 className={`text-base font-black uppercase tracking-tight font-display transition-colors ${
+                              isSelected ? 'text-[var(--system-color)]' : 'text-white group-hover:text-[var(--system-color)]'
+                            }`}>
                               {cat}
                             </h3>
                             <p className="text-[11px] text-[#8A94A6] line-clamp-3 leading-7 font-sans font-light mt-1.5 group-hover:text-slate-300 transition-colors">
@@ -694,11 +1249,12 @@ export default function App() {
 
                         {/* Bottom Bar: Action/Enter Arrow */}
                         <div className="flex items-center justify-end w-full relative z-10 mt-3 pt-2.5 border-t border-white/[0.03]">
-                          <div
-                            className={`w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300 shrink-0 ${isSelected
-                              ? 'bg-[var(--system-color)]/20 text-[var(--system-color)] border border-[var(--system-color)]/30 shadow-[0_0_12px_var(--system-glow)]'
-                              : 'bg-white/5 border border-white/5 text-slate-500 group-hover:text-white group-hover:bg-[var(--system-color)]/20 group-hover:border-[var(--system-color)]/40 group-hover:shadow-[0_0_12px_var(--system-glow)] group-hover:translate-x-1'
-                              }`}
+                          <div 
+                            className={`w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300 shrink-0 ${
+                              isSelected 
+                                ? 'bg-[var(--system-color)]/20 text-[var(--system-color)] border border-[var(--system-color)]/30 shadow-[0_0_12px_var(--system-glow)]' 
+                                : 'bg-white/5 border border-white/5 text-slate-500 group-hover:text-white group-hover:bg-[var(--system-color)]/20 group-hover:border-[var(--system-color)]/40 group-hover:shadow-[0_0_12px_var(--system-glow)] group-hover:translate-x-1'
+                            }`}
                           >
                             <ChevronRight className="w-3.5 h-3.5" />
                           </div>
@@ -726,16 +1282,16 @@ export default function App() {
                     const meta = CATEGORY_META[selectedCategory] || { color: '#7C7CFF', desc: '' };
                     const activeColor = meta.color;
                     return (
-                      <div
+                      <div 
                         className="relative rounded-[2.5rem] p-6 mb-4 overflow-hidden border transition-all duration-500 backdrop-blur-xl"
-                        style={{
+                        style={{ 
                           backgroundColor: 'rgba(5, 7, 11, 0.55)',
                           borderColor: `${activeColor}25`,
                           boxShadow: `0 0 35px ${activeColor}12`
                         }}
                       >
                         {/* High-intensity centered radial gradient glow that fades into the dark glass panel */}
-                        <div
+                        <div 
                           className="absolute inset-0 pointer-events-none opacity-20 z-0"
                           style={{
                             background: `radial-gradient(circle at 50% 50%, ${activeColor} 0%, transparent 60%)`
@@ -743,7 +1299,7 @@ export default function App() {
                         />
 
                         {/* Extra subtle overall ambient soft backdrop */}
-                        <div
+                        <div 
                           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full blur-3xl opacity-[0.15] pointer-events-none"
                           style={{ backgroundColor: activeColor }}
                         />
@@ -751,9 +1307,9 @@ export default function App() {
                         <div className="relative z-10 flex flex-col items-center justify-center gap-6 text-center w-full">
                           <div className="space-y-3.5 flex flex-col items-center w-full">
                             <div className="flex items-center justify-center gap-3">
-                              <span
+                              <span 
                                 className="text-[11px] font-mono tracking-widest uppercase px-3 py-1 rounded-full font-black border transition-all duration-300"
-                                style={{
+                                style={{ 
                                   color: activeColor,
                                   borderColor: `${activeColor}40`,
                                   backgroundColor: `${activeColor}15`
@@ -765,9 +1321,9 @@ export default function App() {
                                 {filteredAilments.length} {filteredAilments.length === 1 ? 'Symptom' : 'Symptoms'} Found
                               </span>
                             </div>
-                            <h2
+                            <h2 
                               className="text-4xl md:text-6xl font-black uppercase tracking-tighter font-display bg-clip-text text-transparent drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]"
-                              style={{
+                              style={{ 
                                 backgroundImage: `linear-gradient(to top, transparent -20%, #ffffff 80%)`,
                                 WebkitTextStroke: `1.5px ${activeColor}80`
                               }}
@@ -778,30 +1334,30 @@ export default function App() {
                               {meta.desc}
                             </p>
                           </div>
-
+                          
                           {/* Current Active Lens indicator */}
-
+                          
 
                         </div>
                       </div>
                     );
                   })()}
-
+                  
                   {/* Search, Global Tone, Category Toggles Header Bar */}
                   <div className={`${selectedCategory ? "hidden" : ""} glass-panel p-6 md:p-8 rounded-[2.5rem] space-y-6 relative z-10`}>
-
+                    
                     {/* Search Input */}
                     <div className="relative font-mono">
                       <Search className="w-4 h-4 text-indigo-400 absolute left-4 top-4" />
-                      <input
-                        type="text"
+                      <input 
+                        type="text" 
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
-                        placeholder="Search symptoms (e.g. diabetes, fatigue, IBS, tightness, headaches, eczema)..."
+                        placeholder="Search symptoms (e.g. diabetes, fatigue, IBS, tightness, headaches, eczema)..." 
                         className="w-full bg-black/40 text-white placeholder-slate-500 text-xs px-11 py-4 rounded-xl border border-white/10 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 transition-all font-mono shadow-inner"
                       />
                       {searchQuery && (
-                        <button
+                        <button 
                           type="button"
                           onClick={() => setSearchQuery('')}
                           className="absolute right-4 top-3.5 text-slate-500 hover:text-white text-[11px] font-bold"
@@ -820,10 +1376,11 @@ export default function App() {
                         <button
                           key={cat}
                           onClick={() => setSelectedCategory(cat)}
-                          className={`text-[10px] font-mono tracking-widest uppercase px-3.5 py-2 rounded-xl border transition-all cursor-pointer ${selectedCategory === cat
-                            ? 'bg-gradient-to-r from-indigo-500/20 to-purple-500/20 border-indigo-500/50 text-indigo-200 font-extrabold shadow-[0_0_15px_rgba(99,102,241,0.25)]'
-                            : 'bg-black/30 border-white/5 text-slate-400 hover:text-white hover:border-white/15'
-                            }`}
+                          className={`text-[10px] font-mono tracking-widest uppercase px-3.5 py-2 rounded-xl border transition-all cursor-pointer ${
+                            selectedCategory === cat 
+                              ? 'bg-gradient-to-r from-indigo-500/20 to-purple-500/20 border-indigo-500/50 text-indigo-200 font-extrabold shadow-[0_0_15px_rgba(99,102,241,0.25)]' 
+                              : 'bg-black/30 border-white/5 text-slate-400 hover:text-white hover:border-white/15'
+                          }`}
                         >
                           {cat}
                         </button>
@@ -886,12 +1443,12 @@ export default function App() {
               {/* Left Column: Form */}
               <div className="lg:col-span-5 bg-[#07090E] p-6 rounded-[2rem] border border-white/10 relative overflow-hidden shadow-2xl space-y-6">
                 <div className="absolute top-0 left-1/4 w-48 h-32 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
-
+                
                 <h3 className="text-xs font-mono text-cyan-400 uppercase tracking-widest pb-3 border-b border-[#1E2430] flex items-center gap-2">
                   <Activity className="w-4 h-4 text-cyan-400" />
                   <span>Input Lab Specimen</span>
                 </h3>
-
+                
                 <form onSubmit={handleDecodeSymptom} className="space-y-5">
                   <div className="space-y-2">
                     <label htmlFor="custom-symptom-input" className="block text-[11px] font-mono text-slate-400 uppercase tracking-wider">
@@ -963,10 +1520,10 @@ export default function App() {
                       <div className="relative w-40 h-40 border border-indigo-500/20 rounded-2xl bg-black/40 p-4 flex items-center justify-center overflow-hidden">
                         {/* Laser line moving up and down */}
                         <div className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent shadow-[0_0_8px_#22d3ee] animate-[bounce_2.5s_infinite] top-0 z-20" />
-
+                        
                         {/* Dynamic Grid Background */}
                         <div className="absolute inset-0 bg-[linear-gradient(to_right,#00d2ff08_1px,transparent_1px),linear-gradient(to_bottom,#00d2ff08_1px,transparent_1px)] bg-[size:10px_10px]" />
-
+                        
                         {/* Wireframe Silhouette */}
                         <svg viewBox="0 0 100 100" className="w-24 h-24 opacity-30 text-indigo-400">
                           <circle cx="50" cy="22" r="10" fill="none" stroke="currentColor" strokeWidth="1" />
@@ -976,7 +1533,7 @@ export default function App() {
                           <line x1="50" y1="70" x2="38" y2="92" stroke="currentColor" strokeWidth="1" />
                           <line x1="50" y1="70" x2="62" y2="92" stroke="currentColor" strokeWidth="1" />
                         </svg>
-
+                        
                         {/* Pulsing Core */}
                         <div className="absolute w-6 h-6 rounded-full bg-cyan-500/20 border border-cyan-400 animate-ping" />
                       </div>
@@ -1035,7 +1592,7 @@ export default function App() {
                       {/* High-fidelity lab-report-style banner */}
                       <div className="p-6 bg-gradient-to-b from-[#0A0D14] to-[#040609] border border-indigo-500/20 rounded-[2rem] space-y-4 shadow-2xl relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-48 h-32 bg-indigo-500/5 rounded-full blur-3xl pointer-events-none" />
-
+                        
                         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-white/5 pb-3">
                           <div className="flex items-center gap-2">
                             <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
@@ -1043,7 +1600,7 @@ export default function App() {
                               SOMATIC LAB REPORT COMPLETED
                             </span>
                           </div>
-
+                          
                           {/* Biometric Stats bar */}
                           <div className="flex gap-4 font-mono text-[8px] text-slate-500 uppercase tracking-wider">
                             <span>COEFF: 0.96</span>
@@ -1054,7 +1611,7 @@ export default function App() {
 
                         <div className="flex flex-col md:flex-row items-start gap-4 pt-1">
                           {renderHolographicFace()}
-
+                          
                           <div className="space-y-1.5 flex-1">
                             <span className="text-[11px] font-mono text-indigo-400 uppercase tracking-wider block font-black">
                               CORE SUBCONSCIOUS EMOTIONAL MATRIX
@@ -1074,16 +1631,16 @@ export default function App() {
                         {/* Clinical */}
                         <div className="bg-[#07090E] p-5 border border-indigo-500/20 rounded-2xl relative overflow-hidden flex flex-col justify-between min-h-[180px] space-y-3">
                           <div className="absolute top-0 right-0 w-16 h-16 bg-indigo-500/5 rounded-full blur-xl pointer-events-none" />
-
+                          
                           <div className="flex items-center gap-2 border-b border-white/5 pb-2">
                             <div className="w-1.5 h-1.5 rounded-full bg-indigo-400" />
                             <span className="text-[11px] font-mono uppercase tracking-widest text-indigo-400 font-black">PHYSIOLOGICAL MECHANISM</span>
                           </div>
-
+                          
                           <p className="text-xs text-slate-300 leading-7 font-sans font-light flex-1">
                             {decodedResult.physiologicalDescription}
                           </p>
-
+                          
                           <div className="text-[8px] font-mono text-slate-500 uppercase">
                             DIAGNOSTICS: PROFESSIONAL / MEDICAL TRUTH
                           </div>
@@ -1092,7 +1649,7 @@ export default function App() {
                         {/* Dr. Sarcasticus verdict speech bubble card */}
                         <div className="bg-gradient-to-br from-[#110B03] to-[#040609] p-5 border border-amber-500/20 rounded-2xl relative overflow-hidden flex flex-col justify-between min-h-[180px] space-y-3">
                           <div className="absolute top-0 right-0 w-16 h-16 bg-amber-500/5 rounded-full blur-xl pointer-events-none" />
-
+                          
                           <div className="flex items-center justify-between border-b border-amber-500/10 pb-2">
                             <div className="flex items-center gap-2">
                               <div className="w-1.5 h-1.5 rounded-full bg-amber-400" />
@@ -1137,7 +1694,7 @@ export default function App() {
                           <ul className="space-y-2">
                             {decodedResult.practicalTips.map((t, idx) => (
                               <li key={idx} className="text-xs text-slate-300 flex items-start gap-2 leading-7 font-sans font-light">
-                                <span className="text-indigo-400 font-mono font-bold shrink-0">[{idx + 1}]</span>
+                                <span className="text-indigo-400 font-mono font-bold shrink-0">[{idx+1}]</span>
                                 <span>{t}</span>
                               </li>
                             ))}
@@ -1149,7 +1706,7 @@ export default function App() {
                         <span className="text-[10px] font-mono text-slate-500">
                           CYL-SCANNER VERSION: v4.12 | CALIBRATION SECURE
                         </span>
-
+                        
                         <button
                           onClick={() => {
                             setDecodedResult(null);
@@ -1185,7 +1742,7 @@ export default function App() {
                 Write, process, and release the tension. Every symptom is a message your body is tired of whispering.
               </p>
             </div>
-
+            
             <div className="pt-4">
               <DailyPromptsPanel />
             </div>
@@ -1207,7 +1764,7 @@ export default function App() {
                 Log physical symptoms, note down daily stressors, and instantly decode your psychosomatic connections.
               </p>
             </div>
-
+            
             <div className="pt-4">
               <SomaticJournalPanel />
             </div>
@@ -1228,7 +1785,7 @@ export default function App() {
             >
               {/* Gold Top Light bar */}
               <div className="h-1.5 w-full bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600" />
-
+              
               {/* Close Button */}
               <button
                 onClick={() => setShowPaywall(false)}
@@ -1238,7 +1795,7 @@ export default function App() {
               </button>
 
               <div className="p-6 md:p-8 space-y-6">
-
+                
                 {/* Header */}
                 <div className="space-y-1.5 text-left">
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-500/10 border border-amber-500/20 rounded-full text-[11px] font-mono text-amber-400 uppercase tracking-widest font-black mb-2">
