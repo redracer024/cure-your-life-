@@ -1,10 +1,11 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { PremiumProvider, usePremium } from './context/PremiumContext';
 import { AppLayout } from './components/layout/AppLayout';
 import { Navigation } from './components/Navigation';
 import { AuthSection } from './components/AuthSection';
 import { PremiumPaywall } from './components/PremiumPaywall';
+import { PersonalityQuiz } from './components/PersonalityQuiz';
 import { AppFooter } from './components/AppFooter';
 import { TabContentRouter } from './components/layout/TabContentRouter';
 import { useDecoderState } from './hooks/useDecoderState';
@@ -16,6 +17,7 @@ function AppInner() {
   const premium = usePremium();
   const decoder = useDecoderState(premium.isPremium, premium.setShowPaywall);
   const dict = useDictionaryNavigation();
+  const [showQuiz, setShowQuiz] = useState(false);
 
   const openDecoder = useCallback(() => {
     if (!premium.isPremium) {
@@ -57,8 +59,20 @@ function AppInner() {
           setDecodedResult={decoder.setDecodedResult}
           onJournalRedirect={() => dict.setActiveTab('journal')}
           openDecoder={openDecoder}
+          onOpenQuiz={() => setShowQuiz(true)}
+          highlightPatternId={dict.highlightPatternId}
+          onClearHighlightPattern={() => dict.setHighlightPatternId(null)}
         />
       </div>
+      <PersonalityQuiz
+        isOpen={showQuiz}
+        onClose={() => setShowQuiz(false)}
+        onNavigateToPattern={(patternId) => {
+          setShowQuiz(false);
+          dict.setHighlightPatternId(patternId);
+          dict.setActiveTab('patterns');
+        }}
+      />
       <PremiumPaywall authFetch={authFetch} />
       <AppFooter />
     </AppLayout>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Compass, ChevronRight } from 'lucide-react';
+import { Compass, ChevronRight, Sparkles } from 'lucide-react';
 import { CATEGORY_META, renderCategoryIcon } from './ailmentCategoryMeta';
 import { CategoryBackground } from '../CategoryBackground';
 import type { AilmentCore } from '../../types/dictionary';
@@ -9,8 +9,10 @@ interface CategoryGridProps {
     selectedCategory: string | null;
     setSelectedCategory: (cat: string) => void;
     browsableAilments: AilmentCore[];
+    allAilments: AilmentCore[];
     selectedAilment: AilmentCore | null;
     setSelectedAilment: (ailment: AilmentCore | null) => void;
+    onOpenQuiz: () => void;
 }
 
 export const CategoryGrid: React.FC<CategoryGridProps> = ({
@@ -18,8 +20,10 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
     selectedCategory,
     setSelectedCategory,
     browsableAilments,
+    allAilments,
     selectedAilment,
-    setSelectedAilment
+    setSelectedAilment,
+    onOpenQuiz
 }) => {
     return (
         <div className="space-y-3.5 relative">
@@ -33,8 +37,8 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
                     const meta = CATEGORY_META[cat] || CATEGORY_META['All'];
                     const isSelected = selectedCategory === cat;
                     const count = cat === 'All'
-                        ? browsableAilments.length
-                        : browsableAilments.filter(a => a.category === cat).length;
+                        ? allAilments.length
+                        : allAilments.filter(a => a.category === cat).length;
 
                     return (
                         <button
@@ -85,6 +89,28 @@ export const CategoryGrid: React.FC<CategoryGridProps> = ({
                     );
                 })}
             </div>
+
+            <button
+                onClick={onOpenQuiz}
+                className="w-full p-4 rounded-2xl border border-indigo-500/20 bg-gradient-to-r from-indigo-950/40 via-purple-950/30 to-pink-950/20 hover:from-indigo-900/40 hover:via-purple-900/30 hover:to-pink-900/20 hover:border-indigo-500/40 transition-all cursor-pointer group flex items-center justify-between gap-3"
+            >
+                <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-indigo-500/10 border border-indigo-500/20 group-hover:bg-indigo-500/20 transition-colors shrink-0">
+                        <Sparkles className="w-5 h-5 text-indigo-400" />
+                    </div>
+                    <div className="text-left">
+                        <h3 className="text-sm font-black uppercase tracking-tight text-white group-hover:text-indigo-300 transition-colors font-display">
+                            Personality Pattern Quiz
+                        </h3>
+                        <p className="text-[11px] text-slate-500 font-sans font-light">
+                            Which hidden pattern is your body living?
+                        </p>
+                    </div>
+                </div>
+                <div className="w-7 h-7 rounded-full flex items-center justify-center bg-indigo-500/10 border border-indigo-500/20 group-hover:bg-indigo-500/20 group-hover:border-indigo-500/40 transition-all shrink-0">
+                    <ChevronRight className="w-3.5 h-3.5 text-indigo-400" />
+                </div>
+            </button>
         </div>
     );
 };

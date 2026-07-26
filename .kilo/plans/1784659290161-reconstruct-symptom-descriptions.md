@@ -1,90 +1,72 @@
-# Plan: Reconstruct Symptom Descriptions from influences.pdf
+# Plan: Fix Influence Tab & Reconstruct Symptom Descriptions from influences.pdf
 
 ## Goal
-Enrich the app's symptom descriptions by reintegrating comprehensive information from `public/influences.pdf` into the existing data layer, while preserving strict medical caution (no cures, treatments, or medical certainties).
+Fix the Influence tab rendering to display full PDF text verbatim across 2 cards, then populate all 130 ailments with comprehensive descriptions from `influences.pdf` while preserving strict medical caution.
 
 ## Current State
-- `src/data/ailments-core.json` holds 130 `AilmentCore` records. The `physiologicalDescription` fields are short summaries (1–3 sentences).
-- 8 category detail files (`src/data/ailments/*-detail.json`) hold extended `AilmentDetail` records. ~112 ailments already have `structuredContent` (biologyPathway, interpretations, influenceLayers, reset, hardware, etc.). ~18 ailments have **no structuredContent**.
-- `influences.pdf` (1367 lines) provides deep content for each condition: haptic/UI configs, 4-stage translations (TCM framework, Jungian shadow, physiological loop, clinical cascade), and reset instructions.
+- `influences.pdf`: 1367 lines, 4-stage content per condition (TCM Framework, Jungian Shadow, Physiological Loop, Clinical Cascade) plus reset instructions.
+- `AilmentInfluencePanel.tsx:46`: falls back to core fields (`physiologicalDescription`, `emotionalRoot`, `sarcasticAdvice`, `metaphor`) when `influenceLayers` is missing — creates mismatched content.
+- 108/130 ailments have 5 abbreviated `influenceLayers` (~100–250 chars each). 22 ailments have 0 layers.
+- `physiologicalDescription` in `ailments-core.json` is short (1–3 sentences) for all 130 ailments.
 
-## Scope
-1. **Populate missing structuredContent** for the 18 ailments that currently have empty `structuredContent`.
-2. **Expand `physiologicalDescription`** in `ailments-core.json` for all 130 ailments, using the PDF's Stage 4 Clinical Cascade detail while keeping the existing clinical-cautious tone.
-3. **Align existing structuredContent** in detail files where it diverges from the PDF source.
-
-## Design Decisions
-
-### Medical Caution Rules
-- **Never** claim a cure, treatment, or medical certainty.
-- Use tentative language: "can involve", "may contribute to", "is associated with", "can be influenced by".
-- Keep TCM/Jungian/mind-body content strictly in `influenceLayers`, `interpretations`, and `emotionalRoot`. Do not place speculative frameworks inside `physiologicalDescription`, `biologyPathway.detail`, or any safety-critical field.
-- All red flags, emergency signs, and "seek care" guidance must be preserved verbatim from existing data or enhanced, never reduced.
-- Every `naturalSupport.disclaimer` and `medical_safety.disclaimer` must remain or be inherited.
-
-### Data Mapping (PDF → App Schema)
-| PDF Section | App Field(s) | Notes |
-|---|---|---|
-| HARDWARE CONFIG (haptic, UI accent) | `structuredContent.hardware.*` | Directly mappable; some already exist |
-| Stage 1 — TCM Framework | `influenceLayers[0-1]` | Label as TCM in title/tag |
-| Stage 2 — Jungian Shadow | `influenceLayers[1-2]` | Label as shadow archetype in tag |
-| Stage 3 — Physiological Loop | `biologyPathway[*]` entries | Rewrite in clinical tone |
-| Stage 4 — Clinical Cascade | `physiologicalDescription` (core.json) + final `biologyPathway` step | This is the medically-grounded portion; safe to surface as primary description |
-| Reset Title/Modality/Steps | `structuredContent.reset.*` | Directly mappable |
-| `sarcasticAdvice` / `mindfulnessPrompts` | Already exist in core.json; match against PDF and update where too short |
-| `physicalTherapyTip` | Already exist in core.json; update where overly brief vs PDF |
-
-### Ailments Requiring New structuredContent (18 total)
-- **Back & Shoulders**: `lower-back-pain`, `shoulder-tension`, `back-upper`, `back-middle`, `back-lower`
-- **Chest & Breathing**: `heart-palpitations`, `lung-problems`, `pneumonia`
-- **General & Energy**: `chronic-fatigue`, `balance-loss`, `stroke`
-- **Head & Neck**: `headache`, `migraine-headache`, `wisdom-tooth-impacted`
-- **Limbs & Joints**: `finger-thumb`, `finger-index`
-- **Metabolic & Endocrine**: `appetite-loss`
-- **Skin & Sleep**: `chronic-insomnia`
-- **Stomach & Gut**: `bed-wetting` (childhood), `stomach-intestinal-problems`
-
-### Align Existing Content
-- For ailments already having `structuredContent`, compare `biologyPathway` and `influenceLayers` against the PDF. Where the PDF expands with additional clinical mechanisms (e.g., specific hormones, nerves, receptors), append those details as new `biologyPathway` entries or expand existing `detail` fields.
-- Expand `physiologicalDescription` in core.json using the PDF's Stage 4 text, rewritten to be concise yet comprehensive (target: 2–4 sentences).
+## Render Decision (User Confirmed: Option A)
+- **2-section items** (TCM + Jungian only): render **1 card** titled *"The Deeper Context"* with subheadings.
+- **4-section items**: render **2 cards**:
+  - Card 1: *"Mind & Symbolism"* (TCM Framework + Jungian Shadow)
+  - Card 2: *"Somatic Mechanics"* (Physiological Loop + Clinical Cascade)
+- **No fallback padding**: display actual PDF text verbatim; if layers are missing, show nothing or a single placeholder. Do not append core fields.
 
 ## Implementation Steps
 
-1. **Parse PDF into structured JSON** (`/tmp/pdf-parsed.json`)
-   - Extract ailment entries keyed by ID/slug.
-   - Preserve haptic, Stage 1–4, reset, and any ad-hoc sections (e.g., "INFLUENCE — The Deeper Context").
-   - Output a deterministic JSON file for consumption by the enrichment agent.
+### Step 1: Fix Influence Tab Rendering
+**File:** `src/components/ailments/panels/AilmentInfluencePanel.tsx`
 
-2. **Generate missing structuredContent**
-   - For each of the 18 missing ailments, write a script/agent that reads the parsed PDF entry and produces a `structuredContent` object conforming to `src/types/dictionary.ts`.
-   - Populate: `hardware`, `hero`, `biologyPathway`, `interpretations` (clinical/witty/brutal), `influenceLayers`, `reset`, `naturalSupport`, `brutalActions`.
-   - Ensure medical-cautious language is applied (tentative phrasing, no cure claims).
+1. Replace the `[1,2,3,4,5].map(...)` loop with conditional rendering based on `influenceLayers` length:
+   - If 2 layers: render 1 card with both sections and subheadings.
+   - If 4+ layers: render 2 cards as specified above.
+   - If 0 layers: render nothing or placeholder text.
+2. Remove the core-field fallback mapping from line 46. Pass only `enriched` to `getStructuredInfluenceText`.
 
-3. **Expand core.json physiologicalDescription**
-   - For all 130 ailments, read current `physiologicalDescription` and the corresponding PDF Stage 4 text.
-   - Rewrite/expand so the description covers: possible causes/mechanisms, symptom range, and necessary red flags — without adding cure/treatment language.
-   - Preserve existing safety phrasing.
+### Step 2: Populate influenceLayers in Detail JSONs
+**Files:** All 8 files under `src/data/ailments/*-detail.json`
 
-4. **Enrich existing detail files**
-   - Diff current `biologyPathway` and `influenceLayers` against parsed PDF.
-   - Insert missing stages/entires where length or detail is lacking.
-   - Do not overwrite tone-specific `interpretations` unless the existing text is clearly truncated relative to the PDF.
+For each of the 130 ailments:
 
-5. **Typecheck & lint**
-   - Run `npx tsc --noEmit` (or repo-equivalent) to validate all new/updated JSON against TypeScript interfaces.
-   - Re-run any existing JSON schema or lint checks.
+1. Extract PDF text by matching condition title/ID (case-insensitive).
+2. Parse into 4 `influenceLayers` entries with title, tag, and full multi-paragraph text from the PDF.
+3. For 22 ailments missing `influenceLayers`: add `structuredContent` with `influenceLayers` + `reset`, preserving existing `tones`, `biologyPath`, and `medical_safety`.
+4. For 108 ailments with abbreviated layers: replace short paragraphs with full PDF text verbatim.
 
-6. **Validation**
-   - Spot-check 10 ailments across categories for completeness: core description expanded, detail structuredContent present, medical caution preserved.
-   - Ensure no PDF content was injected into `medical_safety` fields that would create liability.
+Data mapping:
+- PDF Stage 1 → `influenceLayers[0]` (TCM Framework)
+- PDF Stage 2 → `influenceLayers[1]` (Jungian Shadow)
+- PDF Stage 3 → `influenceLayers[2]` (Physiological Loop)
+- PDF Stage 4 → `influenceLayers[3]` (Clinical Cascade)
 
-## Risk Assessment
-- **Speculative content leakage**: TCM/Jungian text must stay in `influenceLayers`/`emotionalRoot`/`interpretations`, never in `physiologicalDescription` or safety fields. Mitigation: code-review checklist + automated grep for TCM terms in core `physiologicalDescription`.
-- **Over-expansion**: Expanded descriptions could bloat the UI. Mitigation: expand core descriptions by ~2x max; reserve full 4-stage depth for the detail panel (`AilmentTonePanel`, `AilmentInfluencePanel`, `ilmentSafetyPanel`).
-- **PDF coverage mismatch**: Not all ailments in the app have PDF entries. Mitigation: leave those untouched except for minor tightening where possible.
-- **Medical liability**: Any language that sounds like a prescription or guarantee must be caught. Mitigation: maintain the existing `medical_safety.disclaimer` and `naturalSupport.disclaimer` on every item.
+### Step 3: Expand physiologicalDescription in core.json
+**File:** `src/data/ailments-core.json`
+
+- Expand each `physiologicalDescription` to 2–4 sentences using existing core text + PDF Stage 4 mechanisms.
+- Use cautious phrasing: "can involve", "may contribute to", "can be influenced by".
+- **Boundary**: Do not inject TCM, Jungian, or symbolic content into `physiologicalDescription`.
+
+### Step 4: Expand biologyPathway and interpretations.clinical
+**Files:** All 8 detail JSONs
+
+- Expand `biologyPathway[*].detail` with Stage 3 mechanisms (nerves, receptors, hormones) where currently too brief.
+- Append missing Stage 4 associations to `interpretations.clinical.sections[*].body` as additional bullets.
+- Preserve `interpretations.witty` and `interpretations.brutal` unchanged.
+
+### Step 5: Validation
+1. Typecheck: `npx tsc --noEmit`.
+2. Spot-check 10 ailments across categories:
+   - `influenceLayers` renders as 1–2 cards with full verbatim text.
+   - No core field fallbacks appear in Influence tab.
+   - `physiologicalDescription` is expanded and contains no speculative/TCM content.
+   - `medical_safety` and `naturalSupport` are untouched.
+3. Grep `influenceLayers` JSON to confirm TCM/Jungian terms are not in `physiologicalDescription` or `medical_safety`.
 
 ## Out of Scope
-- Changing the UI layout or component behavior (e.g., how detail panels render).
-- Adding new ailments not present in `ailments-core.json`.
-- Modifying search indexing or routing.
+- Changing tab navigation or component layout beyond `AilmentInfluencePanel.tsx`.
+- Adding new ailments or categories.
+- Modifying `hapticProfile` or `uiBackgroundAccent` (not rendered in UI).

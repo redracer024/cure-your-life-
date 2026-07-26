@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
 import { SomaticShaderCanvas } from '../SomaticShaderCanvas';
-import { triggerHapticPattern, getSymptomHapticPattern } from '../../lib/ailmentHelpers';
+import { triggerHapticPattern, getSymptomHapticPattern, shiftHue } from '../../lib/ailmentHelpers';
 import { getCategoryImage } from './ailmentCardImages';
 
 interface AilmentHeroCardProps {
@@ -10,9 +10,10 @@ interface AilmentHeroCardProps {
     onSelect: () => void;
     categoryMeta: any;
     hexToRgbNormalized: (hex: string, darken?: number) => [number, number, number];
+    index?: number;
 }
 
-export function AilmentHeroCard({ enriched, isSelected, onSelect, categoryMeta, hexToRgbNormalized }: AilmentHeroCardProps) {
+export function AilmentHeroCard({ enriched, isSelected, onSelect, categoryMeta, hexToRgbNormalized, index = 0 }: AilmentHeroCardProps) {
     return (
         <button
             type="button"
@@ -50,7 +51,7 @@ export function AilmentHeroCard({ enriched, isSelected, onSelect, categoryMeta, 
                     className={`text-2xl md:text-4xl font-black uppercase tracking-tight transition-all leading-tight bg-clip-text text-transparent ${isSelected ? '' : 'group-hover:opacity-100 opacity-90'
                         }`}
                     style={{
-                        backgroundImage: `linear-gradient(90deg, ${categoryMeta.color} 0%, transparent 120%)`
+                        backgroundImage: `linear-gradient(90deg, ${shiftHue(categoryMeta.color, index * 8)} 0%, ${categoryMeta.color}88 80%, transparent 120%)`
                     }}
                 >
                     {enriched.name}

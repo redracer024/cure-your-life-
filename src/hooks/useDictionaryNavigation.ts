@@ -9,9 +9,11 @@ import {
 } from '../data';
 import { isSearchOnlyAilment } from '../lib/ailments/constants';
 
+export type TabType = 'dictionary' | 'decoder' | 'daily' | 'journal' | 'patterns';
+
 export interface DictionaryNavigation {
-  activeTab: 'dictionary' | 'decoder' | 'daily' | 'journal';
-  setActiveTab: (tab: 'dictionary' | 'decoder' | 'daily' | 'journal') => void;
+  activeTab: TabType;
+  setActiveTab: (tab: TabType) => void;
   searchQuery: string;
   setSearchQuery: (query: string) => void;
   selectedCategory: string | null;
@@ -20,13 +22,16 @@ export interface DictionaryNavigation {
   setSelectedAilment: (ailment: Ailment | null) => void;
   filteredAilments: AilmentCore[];
   categories: string[];
+  highlightPatternId: string | null;
+  setHighlightPatternId: (id: string | null) => void;
 }
 
 export function useDictionaryNavigation(): DictionaryNavigation {
-  const [activeTab, setActiveTab] = useState<'dictionary' | 'decoder' | 'daily' | 'journal'>('dictionary');
+  const [activeTab, setActiveTab] = useState<TabType>('dictionary');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedAilment, setSelectedAilment] = useState<Ailment | null>(null);
+  const [highlightPatternId, setHighlightPatternId] = useState<string | null>(null);
 
   const categories = useMemo(() => {
     return getCategories();
@@ -62,5 +67,6 @@ export function useDictionaryNavigation(): DictionaryNavigation {
     selectedCategory, setSelectedCategory,
     selectedAilment, setSelectedAilment,
     filteredAilments, categories,
+    highlightPatternId, setHighlightPatternId,
   };
 }

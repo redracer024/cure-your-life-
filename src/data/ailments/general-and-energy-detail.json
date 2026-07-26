@@ -167,28 +167,28 @@
           "title": "Low Blood Pressure, Orthostatic Symptoms & Shock Screen",
           "sections": [
             {
-              "heading": "Stage 1 — Low Is Not Always Bad",
+              "heading": "Stage 1 \u2014 Low Is Not Always Bad",
               "body": [
                 "Low blood pressure can be normal in some people if there are no symptoms.",
                 "The problem starts when flow is not enough for the brain and organs. Very inconsiderate of gravity."
               ]
             },
             {
-              "heading": "Stage 2 — Symptoms and Causes",
+              "heading": "Stage 2 \u2014 Symptoms and Causes",
               "body": [
                 "Symptoms can include dizziness, fainting, fatigue, blurred vision, nausea, cold clammy skin, weakness, confusion, or falls.",
                 "Causes include dehydration, bleeding, infection, medications, heart problems, endocrine disorders, autonomic dysfunction, and posture-related drops."
               ]
             },
             {
-              "heading": "Stage 3 — Treatment Direction",
+              "heading": "Stage 3 \u2014 Treatment Direction",
               "body": [
                 "Care may include hydration, salt adjustment if medically appropriate, compression, medication review, treating infection/bleeding/endocrine/heart causes, and positional strategies.",
                 "Do not increase salt or fluids aggressively if you have heart/kidney issues without clinician guidance. Bodies love exceptions, because why be simple."
               ]
             },
             {
-              "heading": "Stage 4 — Safety Check",
+              "heading": "Stage 4 \u2014 Safety Check",
               "body": [
                 "Seek urgent care for fainting, shock signs, chest pain, shortness of breath, confusion, severe weakness, bleeding, dehydration, fever/infection, or injury from falls.",
                 "Passing out is not a productivity strategy."
@@ -415,28 +415,28 @@
           "title": "Cancer Diagnosis, Staging & Treatment Planning",
           "sections": [
             {
-              "heading": "Stage 1 — Not One Disease",
+              "heading": "Stage 1 \u2014 Not One Disease",
               "body": [
                 "Cancer is many diseases, not one monster with one rulebook.",
                 "Type, stage, grade, biomarkers, location, and overall health guide treatment."
               ]
             },
             {
-              "heading": "Stage 2 — Diagnosis and Staging",
+              "heading": "Stage 2 \u2014 Diagnosis and Staging",
               "body": [
                 "Workup may include exam, labs, imaging, biopsy, pathology, and staging.",
                 "Guessing is not diagnosis. The microscope gets a vote."
               ]
             },
             {
-              "heading": "Stage 3 — Treatment Options",
+              "heading": "Stage 3 \u2014 Treatment Options",
               "body": [
                 "Treatment may include surgery, radiation, chemotherapy, immunotherapy, targeted therapy, hormone therapy, surveillance, palliative care, or combinations.",
                 "Modern oncology is complicated, because apparently cell biology signed up for law school."
               ]
             },
             {
-              "heading": "Stage 4 — Support and Safety",
+              "heading": "Stage 4 \u2014 Support and Safety",
               "body": [
                 "Seek care for suspicious symptoms or urgent treatment side effects.",
                 "Emotional support, counseling, practical help, and second opinions can be part of good care."
@@ -459,7 +459,7 @@
           "label": "Brutally Honest",
           "title": "The Medical Reality Check",
           "paragraphs": [
-            "You may have Cancer — General Diagnosis or a cancer concern. You may also have a shock-and-meaning pattern.",
+            "You may have Cancer \u2014 General Diagnosis or a cancer concern. You may also have a shock-and-meaning pattern.",
             "Medical first: suspected cancer needs prompt evaluation. Diagnosed cancer needs an oncology plan.",
             "Screening, biopsy, imaging, staging, and treatment decisions belong with qualified clinicians.",
             "Symbolically, ask what this diagnosis forces you to face, but do not blame yourself for cellular disease.",
@@ -527,7 +527,7 @@
       },
       "naturalSupport": {
         "title": "Supportive Care",
-        "disclaimer": "Supportive care is not a cure. Cancer — General Diagnosis may require medical evaluation, diagnosis, and condition-specific treatment.",
+        "disclaimer": "Supportive care is not a cure. Cancer \u2014 General Diagnosis may require medical evaluation, diagnosis, and condition-specific treatment.",
         "items": [
           {
             "label": "Medical evaluation",
@@ -561,7 +561,7 @@
     },
     "tones": {
       "clinical": {
-        "mechanism": "Cancer is not one disease. It is a group of diseases involving abnormal cell growth with potential invasion or spread. Diagnosis and treatment depend on cancer type, location, stage, biology, and the person’s health.",
+        "mechanism": "Cancer is not one disease. It is a group of diseases involving abnormal cell growth with potential invasion or spread. Diagnosis and treatment depend on cancer type, location, stage, biology, and the person\u2019s health.",
         "protocol": [
           "Track symptoms, screening history, family history, diagnosis stage if known, treatment plan, side effects, weight loss, pain, bleeding, fatigue, fever, infection signs, and urgent changes. Follow oncology guidance.",
           "Use medical evaluation when symptoms are new, severe, progressive, persistent, recurrent, or paired with red flags.",
@@ -577,7 +577,7 @@
         "wittyAdvice": "Treat the garden medically and support the person emotionally, or keep pretending weeds respect denial. Your choice."
       },
       "brutal": {
-        "realityCheck": "You may have Cancer — General Diagnosis or a cancer concern. You may also have a shock-and-meaning pattern.",
+        "realityCheck": "You may have Cancer \u2014 General Diagnosis or a cancer concern. You may also have a shock-and-meaning pattern.",
         "protocolTitle": "MEDICAL CARE FIRST",
         "protocolSteps": [
           "Evaluate symptoms.",
@@ -656,7 +656,7 @@
         {
           "title": "Medical and Stress Contributors",
           "short": "Look for physical and emotional drivers.",
-          "detail": "Constipation, UTI, diabetes symptoms, sleep apnea, stress, new home changes, or family history can contribute."
+          "detail": "Constipation, UTI, diabetes symptoms, sleep apnea, stress, new home changes, or family history can contribute.\n\nDuring deep sleep (NREM stages 3-4), the brainstem normally inhibits the micturition reflex while the hypothalamus releases ADH (antidiuretic hormone) to\nconcentrate urine. Chronic hypervigilance fragments this architecture. The brainstem never fully \"trusts\" the quiet. Sympathetic tone remains elevated, which\nparadoxically increases detrusor irritability while suppressing sphincter coordination.\nThe bed is wet not because the bladder is full. The bed is wet because the nervous system has never "
         }
       ],
       "interpretations": {
@@ -665,28 +665,28 @@
           "title": "Childhood Sleep-Bladder Coordination",
           "sections": [
             {
-              "heading": "Stage 1 — Developmental Timing",
+              "heading": "Stage 1 \u2014 Developmental Timing",
               "body": [
                 "Childhood bedwetting is common and often relates to sleep depth, bladder capacity, nighttime urine production, and development of bladder-brain signaling.",
                 "It is not laziness, spite, or a child plotting against your laundry basket."
               ]
             },
             {
-              "heading": "Stage 2 — Physical Contributors",
+              "heading": "Stage 2 \u2014 Physical Contributors",
               "body": [
                 "Constipation, urinary tract infection, sleep issues, family history, and high nighttime urine production can contribute.",
                 "Excessive thirst, weight loss, fever, pain with urination, or new daytime accidents need medical attention."
               ]
             },
             {
-              "heading": "Stage 3 — Stress and Safety",
+              "heading": "Stage 3 \u2014 Stress and Safety",
               "body": [
                 "Stress and family disruption can make bedwetting worse for some children.",
                 "Shame increases distress and does not teach the nervous system safety."
               ]
             },
             {
-              "heading": "Stage 4 — Parent Response",
+              "heading": "Stage 4 \u2014 Parent Response",
               "body": [
                 "The adult's job is calm consistency: clean up, reassure, track patterns, address constipation or sleep issues, and involve a clinician when symptoms are new, persistent, painful, or concerning.",
                 "You cannot shame a sleeping bladder into maturity. Grim discovery for people who think yelling is a treatment plan."
@@ -723,47 +723,34 @@
       "influenceLayers": [
         {
           "layer": 1,
-          "title": "Kidney-Bladder Security System",
-          "tag": "Water Element",
+          "title": "TCM Framework",
+          "tag": "Mind & Symbolism",
           "paragraphs": [
-            "In Chinese medicine, the Kidney and Bladder are linked with water regulation and fear.",
-            "Symbolically, nighttime wetting can mirror a system that does not yet feel safe enough to rest and hold."
+            "In Traditional Chinese Medicine, the Kidney (Shen) stores fear and governs water metabolism. The Bladder (Pangguang) is the \"official of the reservoir\"\u2014it stores and\nreleases urine when the timing is safe. The emotion of the Kidney is fear: specifically, fear of not being safe enough to let go.\nWhen a child lives in a state of chronic alert\u2014an unpredictable home, a parent with addiction, a household where anything could happen\u2014the Bladder never receives\nthe \"all clear\" signal to hold until morning. The child's nervous system is waiting. Always waiting. Waiting for the next blow, the next fight, the next moment of\nabandonment. The bedwetting is not a bladder problem. It is the body's midnight announcement: \"I cannot rest because I do not feel safe.\""
           ]
         },
         {
           "layer": 2,
-          "title": "The Unslept Sentinel",
-          "tag": "Childhood Watcher",
+          "title": "Jungian Shadow",
+          "tag": "Mind & Symbolism",
           "paragraphs": [
-            "The Sentinel is the part that stays alert even when the child sleeps.",
-            "The healing pattern is consistency, calm, and repeated proof that night is safe."
+            "Somewhere in development, the child learned that sleep is not safe. That letting go is dangerous. That the moment they fully relax, something bad will happen. The\nshadow here is the Vignette\u2014the part that knows how to rest without vigilance. But that part has been overridden by the Sentinel, who stays awake even when the\neyes are closed.\nThe child's body does not know the difference between a real threat and a memory of threat. The nervous system is still back there, in the house that wasn't safe,\nwaiting for the door to slam. The bedwetting is the body's way of saying \"I cannot let go because letting go was never safe.\""
           ]
         },
         {
           "layer": 3,
-          "title": "Shame Release",
-          "tag": "Protection",
+          "title": "The Hyperarousal-Sphincter Disconnect",
+          "tag": "Somatic Mechanics",
           "paragraphs": [
-            "A child cannot relax under shame.",
-            "The adult response becomes part of the child's nervous system training."
+            "During deep sleep (NREM stages 3-4), the brainstem normally inhibits the micturition reflex while the hypothalamus releases ADH (antidiuretic hormone) to\nconcentrate urine. Chronic hypervigilance fragments this architecture. The brainstem never fully \"trusts\" the quiet. Sympathetic tone remains elevated, which\nparadoxically increases detrusor irritability while suppressing sphincter coordination.\nThe bed is wet not because the bladder is full. The bed is wet because the nervous system has never learned that night is not a threat. The shame the child feels is\nnot theirs. It is the shame of a nervous system that never learned it was allowed to rest."
           ]
         },
         {
           "layer": 4,
-          "title": "Safe Night Ritual",
-          "tag": "Regulation",
+          "title": "Clinical Cascade (Hypervigilance \u2192 ADH Suppression \u2192 Arousal Dysfunction)",
+          "tag": "Somatic Mechanics",
           "paragraphs": [
-            "Predictable bedtime routines can support the body.",
-            "The goal is not control through fear. It is trust through repetition."
-          ]
-        },
-        {
-          "layer": 5,
-          "title": "Blame-Free Repair",
-          "tag": "Attachment",
-          "paragraphs": [
-            "Cleanup can become a safety ritual instead of a punishment.",
-            "Calm repair tells the child: your body had an accident, not a moral collapse."
+            "Chronic stress and hypervigilance suppress antidiuretic hormone (ADH) release from the posterior pituitary, increasing nighttime urine production (per NIDDK).\nAdditionally, sympathetic dominance during sleep prevents the brainstem from registering bladder fullness signals. The American Urological Association confirms that\nchildren with adverse childhood experiences (ACEs) have 3x higher rates of nocturnal enuresis independent of organic pathology."
           ]
         }
       ],
@@ -921,28 +908,28 @@
           "title": "Adult Nocturnal Enuresis Evaluation Pattern",
           "sections": [
             {
-              "heading": "Stage 1 — Adult Bedwetting Needs Evaluation",
+              "heading": "Stage 1 \u2014 Adult Bedwetting Needs Evaluation",
               "body": [
                 "Adult bedwetting is not something to dismiss as laziness or moral failure.",
                 "Recurring or new adult bedwetting deserves medical evaluation because many treatable physical causes are possible."
               ]
             },
             {
-              "heading": "Stage 2 — Possible Physical Contributors",
+              "heading": "Stage 2 \u2014 Possible Physical Contributors",
               "body": [
                 "Possible contributors include urinary tract infection, diabetes, sleep apnea, alcohol, medication effects, prostate or bladder problems, neurologic conditions, seizures, severe constipation, or hormonal/urine production issues.",
                 "Daytime urgency, pain, excessive thirst, fever, snoring, medication changes, or neurologic symptoms make evaluation more important."
               ]
             },
             {
-              "heading": "Stage 3 — Stress, Trauma, and Sleep",
+              "heading": "Stage 3 \u2014 Stress, Trauma, and Sleep",
               "body": [
                 "Stress and trauma history can contribute for some people by fragmenting sleep, increasing hyperarousal, or changing the body's nighttime safety signals.",
                 "But trauma should not be assumed as the only cause. The adult body deserves actual medical checking, not a dramatic monologue with no lab work."
               ]
             },
             {
-              "heading": "Stage 4 — Shame Reduction",
+              "heading": "Stage 4 \u2014 Shame Reduction",
               "body": [
                 "Shame is common and deeply unhelpful.",
                 "Track the pattern, protect sleep, get evaluated, and treat the body like it is sending a signal rather than betraying you."
@@ -1176,28 +1163,28 @@
           "title": "Cyst Type, Location, Complication & Evaluation Pathway",
           "sections": [
             {
-              "heading": "Stage 1 — Cyst Is a Structure, Not a Single Diagnosis",
+              "heading": "Stage 1 \u2014 Cyst Is a Structure, Not a Single Diagnosis",
               "body": [
                 "A cyst is a closed sac-like structure that may contain fluid, air, or semi-solid material.",
                 "The meaning and risk depend heavily on where it is and what type it is."
               ]
             },
             {
-              "heading": "Stage 2 — Common Types",
+              "heading": "Stage 2 \u2014 Common Types",
               "body": [
-                "Common types include epidermoid/skin cysts, ovarian cysts, breast cysts, ganglion cysts, pilonidal cysts, Baker’s cysts, renal cysts, and PCOS-related ovarian findings.",
+                "Common types include epidermoid/skin cysts, ovarian cysts, breast cysts, ganglion cysts, pilonidal cysts, Baker\u2019s cysts, renal cysts, and PCOS-related ovarian findings.",
                 "This is why 'I have a cyst' is not enough information. The cyst apparently wants a zip code."
               ]
             },
             {
-              "heading": "Stage 3 — Treatment Direction",
+              "heading": "Stage 3 \u2014 Treatment Direction",
               "body": [
                 "Treatment may include monitoring, imaging, drainage, antibiotics if infected, hormonal management, aspiration, biopsy, or surgical removal.",
                 "Do not squeeze or cut cysts at home, unless your goal is turning a bump into a medical regret."
               ]
             },
             {
-              "heading": "Stage 4 — Safety Check",
+              "heading": "Stage 4 \u2014 Safety Check",
               "body": [
                 "Seek urgent care for fever, spreading redness/warmth, severe pain, rapid swelling, pus, sudden severe pelvic pain, nausea/vomiting/faintness, or neurologic symptoms.",
                 "Any new breast lump needs medical evaluation, even if you suspect a cyst."
@@ -1424,28 +1411,28 @@
           "title": "Depressive Mood, Anhedonia, Function & Safety Pathway",
           "sections": [
             {
-              "heading": "Stage 1 — Depression Is Medical",
+              "heading": "Stage 1 \u2014 Depression Is Medical",
               "body": [
                 "Depression is a serious mood disorder, not weakness, laziness, or a bad attitude.",
                 "Symptoms can affect mood, sleep, appetite, energy, thinking, movement, pain, and functioning."
               ]
             },
             {
-              "heading": "Stage 2 — Causes and Contributors",
+              "heading": "Stage 2 \u2014 Causes and Contributors",
               "body": [
                 "Depression can involve genetic, biological, trauma-related, medication-related, medical, substance-related, sleep-related, and social contributors.",
                 "A single cause explanation is usually too small for a disorder this obnoxiously layered."
               ]
             },
             {
-              "heading": "Stage 3 — Treatment Options",
+              "heading": "Stage 3 \u2014 Treatment Options",
               "body": [
                 "Treatment may include therapy, medication, support groups, exercise as tolerated, sleep treatment, medical review, substance care, and structured daily support.",
                 "Severe or treatment-resistant depression may require specialist care and other treatments."
               ]
             },
             {
-              "heading": "Stage 4 — Safety Check",
+              "heading": "Stage 4 \u2014 Safety Check",
               "body": [
                 "If there are thoughts of suicide or self-harm, plan/intent, inability to stay safe, psychosis, mania, severe neglect, or danger to self/others, seek immediate emergency/crisis help.",
                 "Depression can lie. Safety gets priority over the lie."
@@ -1675,28 +1662,28 @@
           "title": "Left-Sided Symptom Triage, Referred Pain & Red-Flag Screening",
           "sections": [
             {
-              "heading": "Stage 1 — Side Is a Clue, Not a Diagnosis",
+              "heading": "Stage 1 \u2014 Side Is a Clue, Not a Diagnosis",
               "body": [
                 "Left-sided symptoms can come from many systems.",
                 "The side matters, but it does not magically diagnose the problem. If only anatomy were that merciful."
               ]
             },
             {
-              "heading": "Stage 2 — Emergency Screens",
+              "heading": "Stage 2 \u2014 Emergency Screens",
               "body": [
                 "Sudden weakness, numbness, face droop, speech trouble, vision changes, balance loss, severe headache, chest pain, shortness of breath, or fainting needs urgent/emergency care.",
                 "Stroke and heart symptoms do not get processed as metaphors first."
               ]
             },
             {
-              "heading": "Stage 3 — Common Non-Emergency Causes",
+              "heading": "Stage 3 \u2014 Common Non-Emergency Causes",
               "body": [
                 "Gradual or recurring left-sided pain may involve posture, muscle strain, nerve compression, sciatica, spine issues, joint problems, shingles, or organ-related referred pain.",
                 "Evaluation depends on location, onset, severity, and associated symptoms."
               ]
             },
             {
-              "heading": "Stage 4 — Meaning Layer",
+              "heading": "Stage 4 \u2014 Meaning Layer",
               "body": [
                 "Symbolically, the left side is often described as receptive, emotional, or yin/feminine in some traditions.",
                 "That can be useful for reflection only after medical triage has had the microphone."
@@ -1923,28 +1910,28 @@
           "title": "Weight Issues (Arms) Distribution & Metabolic Context",
           "sections": [
             {
-              "heading": "Stage 1 — Body Area Is a Clue, Not a Verdict",
+              "heading": "Stage 1 \u2014 Body Area Is a Clue, Not a Verdict",
               "body": [
                 "Weight around the arms can reflect body composition, hormones, age, genetics, activity, and overall metabolic health.",
                 "It is not a moral scorecard. Humanity keeps trying that. It remains stupid."
               ]
             },
             {
-              "heading": "Stage 2 — Medical Contributors",
+              "heading": "Stage 2 \u2014 Medical Contributors",
               "body": [
                 "Medications, thyroid disease, insulin resistance, PCOS, menopause, pregnancy, sleep apnea, chronic pain, disability, depression, trauma, and food access can all matter.",
                 "BMI is only a screening tool and does not tell the whole story."
               ]
             },
             {
-              "heading": "Stage 3 — Health-Focused Plan",
+              "heading": "Stage 3 \u2014 Health-Focused Plan",
               "body": [
                 "A useful plan may include labs, blood pressure, glucose/A1c, lipids, sleep, movement, food structure, medication review, mental health support, and obesity medicine options.",
                 "The goal is sustainable health, not punishment cosplay."
               ]
             },
             {
-              "heading": "Stage 4 — Safety Check",
+              "heading": "Stage 4 \u2014 Safety Check",
               "body": [
                 "Sudden weight gain, swelling, shortness of breath, chest pain, severe fatigue, rapid unexplained change, pregnancy possibility, or eating disorder behaviors need medical care.",
                 "Do not turn fluid retention into a motivational quote."
@@ -2168,7 +2155,7 @@
         {
           "title": "Medical Review",
           "short": "Sudden change matters.",
-          "detail": "Fluid retention, heart/kidney/liver disease, thyroid issues, meds, pregnancy, and hormonal changes can change body shape."
+          "detail": "Fluid retention, heart/kidney/liver disease, thyroid issues, meds, pregnancy, and hormonal changes can change body shape.\n\nChronic emotional suppression creates sustained cortisol elevation. Cortisol tells the body: \"Store energy. You might need it. There's a threat.\" The threat is not real\u2014it\nis the memory of threat. But the body doesn't know the difference. It stores. It holds. It accumulates. The more you suppress, the more cortisol you produce. The more\ncortisol, the more storage. The more storage, the more weight. The more weight, the more shame. The more shame, the more suppression."
         }
       ],
       "interpretations": {
@@ -2177,28 +2164,28 @@
           "title": "Weight Issues (Belly) Distribution & Metabolic Context",
           "sections": [
             {
-              "heading": "Stage 1 — Body Area Is a Clue, Not a Verdict",
+              "heading": "Stage 1 \u2014 Body Area Is a Clue, Not a Verdict",
               "body": [
                 "Weight around the belly can reflect body composition, hormones, age, genetics, activity, and overall metabolic health.",
                 "It is not a moral scorecard. Humanity keeps trying that. It remains stupid."
               ]
             },
             {
-              "heading": "Stage 2 — Medical Contributors",
+              "heading": "Stage 2 \u2014 Medical Contributors",
               "body": [
                 "Medications, thyroid disease, insulin resistance, PCOS, menopause, pregnancy, sleep apnea, chronic pain, disability, depression, trauma, and food access can all matter.",
                 "BMI is only a screening tool and does not tell the whole story."
               ]
             },
             {
-              "heading": "Stage 3 — Health-Focused Plan",
+              "heading": "Stage 3 \u2014 Health-Focused Plan",
               "body": [
                 "A useful plan may include labs, blood pressure, glucose/A1c, lipids, sleep, movement, food structure, medication review, mental health support, and obesity medicine options.",
                 "The goal is sustainable health, not punishment cosplay."
               ]
             },
             {
-              "heading": "Stage 4 — Safety Check",
+              "heading": "Stage 4 \u2014 Safety Check",
               "body": [
                 "Sudden weight gain, swelling, shortness of breath, chest pain, severe fatigue, rapid unexplained change, pregnancy possibility, or eating disorder behaviors need medical care.",
                 "Do not turn fluid retention into a motivational quote."
@@ -2233,47 +2220,34 @@
       "influenceLayers": [
         {
           "layer": 1,
-          "title": "Spleen Dampness",
-          "tag": "Accumulation",
+          "title": "TCM Framework",
+          "tag": "Mind & Symbolism",
           "paragraphs": [
-            "In TCM imagery, dampness can symbolize heaviness and accumulation.",
-            "Medically, weight distribution still involves biology and health context."
+            "In Traditional Chinese Medicine, the Spleen (Pi) governs transportation and transformation\u2014the ability to process food, experiences, and emotions into usable energy\nand waste. The Kidney (Shen) stores Jing\u2014the deep reserve that metabolizes essence. The emotion of the Spleen is worry\u2014the endless loop of \"what if,\" \"should\nhave,\" \"if only.\" The emotion of the Kidney is fear\u2014the terror of not being supported, of collapse, of not being held.\nWhen you chronically worry and live in fear, Spleen Qi becomes deficient. The Spleen fails to \"lift\" the Qi and transform fluids into energy. Instead, fluids congeal into\n\"dampness.\" Dampness sinks. It accumulates in the lower belly. This is not fat. This is stagnation. It is the physical manifestation of emotions that never got processed,\nweight that was never released."
           ]
         },
         {
           "layer": 2,
-          "title": "Liver Stagnation",
-          "tag": "Blocked Flow",
+          "title": "Jungian Shadow",
+          "tag": "Mind & Symbolism",
           "paragraphs": [
-            "Stagnation imagery asks where movement or expression has stopped.",
-            "Real movement plans still need pain, ability, and safety accounted for."
+            "You have suppressed the archetype of the Vulnerable One\u2014the part that knows how to be seen, to be felt, to be held. Somewhere early, you learned that being visible\nwas dangerous. That being soft meant being hurt. That being small meant being safe. Your shadow self\u2014the one who wants to be seen, to be held, to take up space\n\u2014has been locked in the basement.\nBut the body does not forget. The body builds a fortress. The fortress is the belly. The belly is the armor. The weight is not laziness. It is protection. It is the physical\nmanifestation of the belief that if you take up less space, you will be safer. The belly is not the enemy. The belly is the body's way of saying \"I need a buffer. I need a\nwall. I need to be protected from the things that hurt me.\""
           ]
         },
         {
           "layer": 3,
-          "title": "The Accumulator",
-          "tag": "Storage",
+          "title": "The Metabolism-Emotion Loop",
+          "tag": "Somatic Mechanics",
           "paragraphs": [
-            "The Accumulator keeps boxes because letting go once felt unsafe.",
-            "The Releaser removes one box at a time."
+            "Chronic emotional suppression creates sustained cortisol elevation. Cortisol tells the body: \"Store energy. You might need it. There's a threat.\" The threat is not real\u2014it\nis the memory of threat. But the body doesn't know the difference. It stores. It holds. It accumulates. The more you suppress, the more cortisol you produce. The more\ncortisol, the more storage. The more storage, the more weight. The more weight, the more shame. The more shame, the more suppression."
           ]
         },
         {
           "layer": 4,
-          "title": "Protective Buffer",
-          "tag": "Armor",
+          "title": "Clinical Cascade (Chronic Cortisol \u2192 Insulin Resistance \u2192 Visceral Fat Accumulation)",
+          "tag": "Somatic Mechanics",
           "paragraphs": [
-            "Weight can feel symbolically protective.",
-            "That meaning can be explored without pretending it is the only cause."
-          ]
-        },
-        {
-          "layer": 5,
-          "title": "One Box Out",
-          "tag": "Reset Practice",
-          "paragraphs": [
-            "The reset is one sustainable action, not a shame ritual.",
-            "The house gets sorted room by room."
+            "Chronic stress and emotional suppression elevate cortisol, which promotes visceral fat accumulation\u2014the deep abdominal fat that wraps around organs. Cortisol\nincreases insulin resistance, making it harder for cells to take up glucose. The body stores the excess as fat. The CDC confirms that chronic stress is a primary risk\nfactor for central obesity, with cortisol-mediated fat storage accounting for 40-60% of cases."
           ]
         }
       ],
@@ -2431,28 +2405,28 @@
           "title": "Weight Issues (Hips) Distribution & Metabolic Context",
           "sections": [
             {
-              "heading": "Stage 1 — Body Area Is a Clue, Not a Verdict",
+              "heading": "Stage 1 \u2014 Body Area Is a Clue, Not a Verdict",
               "body": [
                 "Weight around the hips can reflect body composition, hormones, age, genetics, activity, and overall metabolic health.",
                 "It is not a moral scorecard. Humanity keeps trying that. It remains stupid."
               ]
             },
             {
-              "heading": "Stage 2 — Medical Contributors",
+              "heading": "Stage 2 \u2014 Medical Contributors",
               "body": [
                 "Medications, thyroid disease, insulin resistance, PCOS, menopause, pregnancy, sleep apnea, chronic pain, disability, depression, trauma, and food access can all matter.",
                 "BMI is only a screening tool and does not tell the whole story."
               ]
             },
             {
-              "heading": "Stage 3 — Health-Focused Plan",
+              "heading": "Stage 3 \u2014 Health-Focused Plan",
               "body": [
                 "A useful plan may include labs, blood pressure, glucose/A1c, lipids, sleep, movement, food structure, medication review, mental health support, and obesity medicine options.",
                 "The goal is sustainable health, not punishment cosplay."
               ]
             },
             {
-              "heading": "Stage 4 — Safety Check",
+              "heading": "Stage 4 \u2014 Safety Check",
               "body": [
                 "Sudden weight gain, swelling, shortness of breath, chest pain, severe fatigue, rapid unexplained change, pregnancy possibility, or eating disorder behaviors need medical care.",
                 "Do not turn fluid retention into a motivational quote."
@@ -2685,28 +2659,28 @@
           "title": "Weight Issues (Thighs) Distribution & Metabolic Context",
           "sections": [
             {
-              "heading": "Stage 1 — Body Area Is a Clue, Not a Verdict",
+              "heading": "Stage 1 \u2014 Body Area Is a Clue, Not a Verdict",
               "body": [
                 "Weight around the thighs can reflect body composition, hormones, age, genetics, activity, and overall metabolic health.",
                 "It is not a moral scorecard. Humanity keeps trying that. It remains stupid."
               ]
             },
             {
-              "heading": "Stage 2 — Medical Contributors",
+              "heading": "Stage 2 \u2014 Medical Contributors",
               "body": [
                 "Medications, thyroid disease, insulin resistance, PCOS, menopause, pregnancy, sleep apnea, chronic pain, disability, depression, trauma, and food access can all matter.",
                 "BMI is only a screening tool and does not tell the whole story."
               ]
             },
             {
-              "heading": "Stage 3 — Health-Focused Plan",
+              "heading": "Stage 3 \u2014 Health-Focused Plan",
               "body": [
                 "A useful plan may include labs, blood pressure, glucose/A1c, lipids, sleep, movement, food structure, medication review, mental health support, and obesity medicine options.",
                 "The goal is sustainable health, not punishment cosplay."
               ]
             },
             {
-              "heading": "Stage 4 — Safety Check",
+              "heading": "Stage 4 \u2014 Safety Check",
               "body": [
                 "Sudden weight gain, swelling, shortness of breath, chest pain, severe fatigue, rapid unexplained change, pregnancy possibility, or eating disorder behaviors need medical care.",
                 "Do not turn fluid retention into a motivational quote."
@@ -2722,7 +2696,7 @@
             "Some boxes are genetics. Some are hormones. Some are meds. Some are sleep debt. Some are pain. Some are food patterns. Some are emotional junk mail from a decade nobody wanted.",
             "The fix is not yelling at the room.",
             "The fix is sorting the house with labs, routines, support, movement, nutrition, and less shame from people whose medical training came from comment sections.",
-            "Unload the freight or keep making your thighs haul everyone else’s furniture upstairs. Your choice."
+            "Unload the freight or keep making your thighs haul everyone else\u2019s furniture upstairs. Your choice."
           ]
         },
         "brutal": {
@@ -2734,7 +2708,7 @@
             "Symbolically, ask what you keep carrying.",
             "What load is yours? What load got dumped on you? What need are you trying to store instead of meet?",
             "Build the medical plan. Build the emotional release. Do both, because bodies are obnoxiously real.",
-            "Unload the freight or keep making your thighs haul everyone else’s furniture upstairs. Your choice."
+            "Unload the freight or keep making your thighs haul everyone else\u2019s furniture upstairs. Your choice."
           ]
         }
       },
@@ -2939,28 +2913,28 @@
           "title": "Right-Sided Symptom Triage, Organ Screens & Red Flags",
           "sections": [
             {
-              "heading": "Stage 1 — Side Is a Clue, Not a Diagnosis",
+              "heading": "Stage 1 \u2014 Side Is a Clue, Not a Diagnosis",
               "body": [
                 "Right-sided symptoms can come from many body systems.",
                 "The side tells you where to look. It does not hand you a diagnosis in a gift bag."
               ]
             },
             {
-              "heading": "Stage 2 — Emergency Screens",
+              "heading": "Stage 2 \u2014 Emergency Screens",
               "body": [
                 "Sudden weakness, numbness, face droop, speech trouble, vision changes, balance loss, severe headache, chest pain, shortness of breath, fainting, or severe sudden pain needs urgent care.",
                 "Severe right lower abdominal pain with fever/vomiting can be appendicitis-type territory. Gallbladder and kidney issues can also live on the right-side complaint board."
               ]
             },
             {
-              "heading": "Stage 3 — Common Non-Emergency Causes",
+              "heading": "Stage 3 \u2014 Common Non-Emergency Causes",
               "body": [
                 "Gradual or recurring right-sided pain may involve posture, muscle strain, nerve compression, sciatica, spine issues, joint problems, shingles, or organ-related referred pain.",
                 "Evaluation depends on location, onset, severity, and associated symptoms."
               ]
             },
             {
-              "heading": "Stage 4 — Meaning Layer",
+              "heading": "Stage 4 \u2014 Meaning Layer",
               "body": [
                 "Symbolically, the right side is often described as action, expression, or yang/active principle in some traditions.",
                 "That layer is for reflection after medical triage. The appendix does not care about archetypes."
@@ -3213,28 +3187,28 @@
           "title": "Tetanus Toxin & Loss of Nervous-System Brakes",
           "sections": [
             {
-              "heading": "Stage 1 — Emergency Infection",
+              "heading": "Stage 1 \u2014 Emergency Infection",
               "body": [
                 "Tetanus is a potentially fatal bacterial toxin disease.",
                 "It is not a stress cramp and not a mind-body pattern."
               ]
             },
             {
-              "heading": "Stage 2 — Brake Failure",
+              "heading": "Stage 2 \u2014 Brake Failure",
               "body": [
                 "The toxin blocks inhibitory nerve signals, causing severe spasms and rigidity.",
                 "Jaw stiffness, trouble swallowing, and painful spasms are major warning signs."
               ]
             },
             {
-              "heading": "Stage 3 — Hospital Treatment",
+              "heading": "Stage 3 \u2014 Hospital Treatment",
               "body": [
                 "Treatment can require hospitalization, wound care, tetanus immune globulin, antibiotics, sedating/muscle-relaxing medications, and breathing support.",
                 "This is not backyard medicine unless the backyard contains an ICU, which it does not."
               ]
             },
             {
-              "heading": "Stage 4 — Prevention",
+              "heading": "Stage 4 \u2014 Prevention",
               "body": [
                 "Vaccination boosters and proper wound care prevent tetanus.",
                 "Dirty, deep, puncture, crush, burn, or animal-bite wounds may require medical review."
@@ -3468,28 +3442,28 @@
           "title": "PSA Screening, Urinary Symptoms & Prostate Cancer Planning",
           "sections": [
             {
-              "heading": "Stage 1 — Often Silent Early",
+              "heading": "Stage 1 \u2014 Often Silent Early",
               "body": [
                 "Prostate cancer may cause no symptoms at first.",
                 "That is rude, but common. Screening decisions matter."
               ]
             },
             {
-              "heading": "Stage 2 — Warning Signs",
+              "heading": "Stage 2 \u2014 Warning Signs",
               "body": [
                 "Urinary difficulty, weak stream, blood in urine/semen, pelvic pain, bone pain, or abnormal PSA needs medical review.",
                 "Many urinary symptoms are from non-cancer causes, but guessing is not a urology degree."
               ]
             },
             {
-              "heading": "Stage 3 — Diagnosis",
+              "heading": "Stage 3 \u2014 Diagnosis",
               "body": [
                 "Evaluation may include PSA, digital rectal exam, MRI, biopsy, staging imaging, and risk stratification.",
                 "Not every prostate cancer is treated the same. Some are monitored; some are treated aggressively."
               ]
             },
             {
-              "heading": "Stage 4 — Treatment Choices",
+              "heading": "Stage 4 \u2014 Treatment Choices",
               "body": [
                 "Options may include active surveillance, surgery, radiation, hormone therapy, chemotherapy, targeted therapy, immunotherapy, or palliative care depending on risk and stage.",
                 "Shared decision-making matters because side effects matter."
@@ -3717,28 +3691,28 @@
           "title": "Over-Giving, Boundary Collapse & Burnout Risk",
           "sections": [
             {
-              "heading": "Stage 1 — Pattern, Not Diagnosis",
+              "heading": "Stage 1 \u2014 Pattern, Not Diagnosis",
               "body": [
                 "Martyr complex is not a clinical diagnosis.",
                 "It describes a pattern of chronic self-sacrifice, over-giving, guilt around needs, and identity tied to being useful."
               ]
             },
             {
-              "heading": "Stage 2 — Burnout Pathway",
+              "heading": "Stage 2 \u2014 Burnout Pathway",
               "body": [
                 "Over-giving without reciprocity can fuel exhaustion, resentment, anxiety, depression, sleep disruption, and stress-related symptoms.",
                 "The body eventually notices the unpaid labor. Rude, but fair."
               ]
             },
             {
-              "heading": "Stage 3 — Boundary Repair",
+              "heading": "Stage 3 \u2014 Boundary Repair",
               "body": [
                 "Treatment direction may include therapy, assertiveness practice, trauma work, caregiver support, practical delegation, and tiny repeatable boundaries.",
                 "A small no is not a felony, despite what guilt keeps testifying."
               ]
             },
             {
-              "heading": "Stage 4 — Safety Check",
+              "heading": "Stage 4 \u2014 Safety Check",
               "body": [
                 "Seek urgent support for self-harm thoughts, suicidal thoughts, severe depression, domestic violence, caregiver collapse, or inability to function.",
                 "If there is nothing left to give, the next task is safety, not more giving."
@@ -3751,7 +3725,7 @@
           "title": "The Overworked Donkey",
           "paragraphs": [
             "You are the donkey and everyone keeps adding luggage.",
-            "One bag is guilt. One is duty. One is someone else’s crisis. One is a suitcase labeled but I’m the only reliable one, which is always how the trap gets dressed for church.",
+            "One bag is guilt. One is duty. One is someone else\u2019s crisis. One is a suitcase labeled but I\u2019m the only reliable one, which is always how the trap gets dressed for church.",
             "The donkey is not noble because it is collapsing.",
             "Unload the bags, build boundaries, get help, and let someone else carry their own emotional camping gear.",
             "Unload the donkey or keep letting every suitcase prove you exist. Your choice."
@@ -3759,7 +3733,7 @@
         },
         "brutal": {
           "label": "Brutally Honest",
-          "title": "The Martyr’s Invoice",
+          "title": "The Martyr\u2019s Invoice",
           "paragraphs": [
             "You may have a martyr pattern. You may also have a worth-through-usefulness pattern.",
             "This is not sainthood. It is often fear wearing a halo.",
@@ -3857,7 +3831,7 @@
         "Say one clean no.",
         "Ask one person for help.",
         "Return one task to its owner.",
-        "Stop turning exhaustion into your personality résumé."
+        "Stop turning exhaustion into your personality r\u00e9sum\u00e9."
       ]
     },
     "tones": {

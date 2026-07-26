@@ -8,6 +8,7 @@ import {
   getCardPatterns,
   triggerHapticPattern,
   getSymptomHapticPattern,
+  shiftHue,
 } from '../../lib/ailmentHelpers';
 import { CATEGORY_META } from './ailmentCategoryMeta';
 import { CATEGORY_SLUGS } from '../../data';
@@ -26,9 +27,10 @@ interface AilmentAccordionItemProps {
   onSelect: () => void;
   globalTone: 'clinical' | 'witty' | 'brutal';
   onJournalRedirect: () => void;
+  index?: number;
 }
 
-function AilmentAccordionItem({ ailment, isSelected, onSelect, globalTone, onJournalRedirect }: AilmentAccordionItemProps) {
+function AilmentAccordionItem({ ailment, isSelected, onSelect, globalTone, onJournalRedirect, index = 0 }: AilmentAccordionItemProps) {
   const [detail, setDetail] = useState<Ailment | null>(null);
   const [isLoadingDetail, setIsLoadingDetail] = useState(false);
 
@@ -51,9 +53,6 @@ function AilmentAccordionItem({ ailment, isSelected, onSelect, globalTone, onJou
 
   const goToTab = (tab: VisibleInnerTab) => {
     setInnerTab(tab);
-    window.setTimeout(() => {
-      optionsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 40);
   };
 
   const goNextTab = () => {
@@ -125,10 +124,15 @@ function AilmentAccordionItem({ ailment, isSelected, onSelect, globalTone, onJou
     }
   }, [isSelected]);
 
+  const staggerDelay = index * 0.06;
+
   return (
-    <div
+    <motion.div
       ref={containerRef}
-      className={`scroll-mt-36 rounded-2xl transition-all duration-500 overflow-hidden relative z-10 border group ${isSelected
+      initial={{ opacity: 0, y: 14 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, ease: 'easeOut', delay: staggerDelay }}
+      className={`scroll-mt-36 rounded-2xl overflow-hidden relative z-10 border group ${isSelected
         ? 'glass-panel-heavy -translate-y-1'
         : 'glass-panel-interactive border-transparent'
         }`}
@@ -137,12 +141,12 @@ function AilmentAccordionItem({ ailment, isSelected, onSelect, globalTone, onJou
         boxShadow: isSelected ? `0 0 30px ${categoryMeta.color}15` : undefined,
       } as React.CSSProperties}
     >
-      {/* Dynamic soft left category color fade/glow overlay */}
+      {/* Dynamic soft left category color fade/glow overlay — hue-shifted per card */}
       <div
-        className={`absolute inset-y-0 left-0 w-64 pointer-events-none transition-all duration-500 z-0 ${isSelected ? 'opacity-[0.24]' : 'opacity-[0.18] group-hover:opacity-[0.24]'
+        className={`absolute inset-y-0 left-0 w-64 pointer-events-none transition-all duration-500 z-0 ${isSelected ? 'opacity-[0.28]' : 'opacity-[0.18] group-hover:opacity-[0.28]'
           }`}
         style={{
-          background: `linear-gradient(to right, ${categoryMeta.color}35, transparent)`
+          background: `linear-gradient(to right, ${shiftHue(categoryMeta.color, index * 10)}, transparent)`
         }}
       />
 
@@ -152,6 +156,7 @@ function AilmentAccordionItem({ ailment, isSelected, onSelect, globalTone, onJou
         onSelect={onSelect}
         categoryMeta={categoryMeta}
         hexToRgbNormalized={hexToRgbNormalized}
+        index={index}
       />
 
       {/* Accordion Expanded Content */}
@@ -251,7 +256,7 @@ function AilmentAccordionItem({ ailment, isSelected, onSelect, globalTone, onJou
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 }
 

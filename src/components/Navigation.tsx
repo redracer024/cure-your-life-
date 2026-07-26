@@ -2,8 +2,8 @@ import React from 'react';
 import { usePremium } from '../context/PremiumContext';
 
 interface NavigationProps {
-    activeTab: 'dictionary' | 'decoder' | 'daily' | 'journal';
-    setActiveTab: (tab: 'dictionary' | 'decoder' | 'daily' | 'journal') => void;
+    activeTab: 'dictionary' | 'decoder' | 'daily' | 'journal' | 'patterns';
+    setActiveTab: (tab: 'dictionary' | 'decoder' | 'daily' | 'journal' | 'patterns') => void;
     openDecoder: () => void;
 }
 
@@ -33,6 +33,12 @@ export const Navigation: React.FC<NavigationProps> = ({
                         className={`cursor-pointer hover:text-white transition-all pb-1 ${activeTab === 'dictionary' ? 'text-indigo-400 border-b-2 border-indigo-500' : ''}`}
                     >
                         Psychosomatic Dictionary
+                    </button>
+                    <button
+                        onClick={() => setActiveTab('patterns')}
+                        className={`cursor-pointer hover:text-white transition-all pb-1 ${activeTab === 'patterns' ? 'text-indigo-400 border-b-2 border-indigo-500' : ''}`}
+                    >
+                        Pattern Dictionary
                     </button>
                     <button
                         onClick={openDecoder}
@@ -80,6 +86,12 @@ export const Navigation: React.FC<NavigationProps> = ({
                     className={`${activeTab === 'dictionary' ? 'text-indigo-400 font-extrabold' : ''}`}
                 >
                     Dictionary
+                </button>
+                <button
+                    onClick={() => setActiveTab('patterns')}
+                    className={`${activeTab === 'patterns' ? 'text-indigo-400 font-extrabold' : ''}`}
+                >
+                    Patterns
                 </button>
                 <button
                     onClick={openDecoder}

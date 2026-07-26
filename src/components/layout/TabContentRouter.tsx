@@ -8,11 +8,14 @@ import AilmentAccordionItem from '../ailments/AilmentAccordionItem';
 import { SymptomDecoder } from '../SymptomDecoder';
 import DailyPromptsPanel from '../DailyPromptsPanel';
 import SomaticJournalPanel from '../SomaticJournalPanel';
+import { PatternDictionary } from '../patterns/PatternDictionary';
 import type { Ailment } from '../../types';
 import type { AilmentCore } from '../../types/dictionary';
+import { getCoreAilments } from '../../data';
+import type { TabType } from '../../hooks/useDictionaryNavigation';
 
 interface TabContentRouterProps {
-  activeTab: 'dictionary' | 'decoder' | 'daily' | 'journal';
+  activeTab: TabType;
   searchQuery: string;
   setSearchQuery: (query: string) => void;
   selectedCategory: string | null;
@@ -33,6 +36,9 @@ interface TabContentRouterProps {
   setDecodedResult: (result: any) => void;
   onJournalRedirect: () => void;
   openDecoder: () => void;
+  onOpenQuiz: () => void;
+  highlightPatternId: string | null;
+  onClearHighlightPattern: () => void;
 }
 
 export const TabContentRouter: React.FC<TabContentRouterProps> = ({
@@ -46,7 +52,8 @@ export const TabContentRouter: React.FC<TabContentRouterProps> = ({
   customHabits, setCustomHabits,
   isDecoding, decodedResult, decodeError,
   handleDecodeSymptom, setDecodedResult,
-  onJournalRedirect, openDecoder,
+  onJournalRedirect, openDecoder, onOpenQuiz,
+  highlightPatternId, onClearHighlightPattern,
 }) => {
   if (activeTab === 'dictionary') {
     return (
@@ -65,8 +72,10 @@ export const TabContentRouter: React.FC<TabContentRouterProps> = ({
             selectedCategory={selectedCategory}
             setSelectedCategory={setSelectedCategory}
             browsableAilments={filteredAilments}
+            allAilments={getCoreAilments()}
             selectedAilment={selectedAilment}
             setSelectedAilment={setSelectedAilment}
+            onOpenQuiz={onOpenQuiz}
           />
 
           {selectedCategory === null ? (
@@ -97,7 +106,7 @@ export const TabContentRouter: React.FC<TabContentRouterProps> = ({
                     <h3 className="text-sm font-mono text-slate-400 uppercase tracking-widest">No matching ailments found</h3>
                   </div>
                 ) : (
-                  filteredAilments.map(ailment => (
+                  filteredAilments.map((ailment, idx) => (
                     <AilmentAccordionItem
                       key={ailment.id}
                       ailment={ailment}
@@ -105,6 +114,7 @@ export const TabContentRouter: React.FC<TabContentRouterProps> = ({
                       onSelect={() => setSelectedAilment(selectedAilment?.id === ailment.id ? null : ailment)}
                       globalTone={globalTone}
                       onJournalRedirect={onJournalRedirect}
+                      index={idx}
                     />
                   ))
                 )}
@@ -113,6 +123,16 @@ export const TabContentRouter: React.FC<TabContentRouterProps> = ({
           )}
         </div>
       </main>
+    );
+  }
+
+  if (activeTab === 'patterns') {
+    return (
+      <PatternDictionary
+        onOpenQuiz={onOpenQuiz}
+        highlightPatternId={highlightPatternId}
+        onClearHighlight={onClearHighlightPattern}
+      />
     );
   }
 

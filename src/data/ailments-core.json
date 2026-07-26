@@ -82,7 +82,7 @@
     "riskLevel": "Medical monitoring recommended",
     "emotionalRoot": "Hypervigilance, unprocessed stress, worry, suppressed anger, gut sensitivity, and the feeling that life is hard to process.",
     "metaphor": "Your digestive system is an airport where the control tower keeps alternating between grounding every flight and launching everything at once.",
-    "physiologicalDescription": "IBS is a disorder of gut-brain interaction involving abdominal pain with changes in bowel habits, visceral hypersensitivity, motility changes, stress sensitivity, food triggers, and altered gut signaling.",
+    "physiologicalDescription": "Chronic stress and emotional dysregulation sensitize the brain-gut axis, lowering the threshold for pain and motility changes. The enteric nervous system becomes hyperreactive to stress, food, and environmental triggers. The American College of Gastroenterology confirms that stress is a primary trigger for IBS symptoms, with 80% of patients reporting symptom onset during high-stress periods. The gut is not broken. The gut is reacting exactly as it was trained to react.",
     "sarcasticAdvice": "Your gut is not confused for fun. It is receiving emails from your nervous system marked URGENT in all caps.",
     "mindfulnessPrompts": [
       "What feels indigestible in my life?",
@@ -130,7 +130,7 @@
     "riskLevel": "Medical monitoring recommended",
     "emotionalRoot": "Boundary overload, sensitivity, chronic stress, irritation, overwhelm, and the feeling that too much is getting through the skin of your life.",
     "metaphor": "Your skin is an understaffed embassy with thin walls, a glitchy gate, and border patrol firing at everything because the security budget got wrecked.",
-    "physiologicalDescription": "Eczema/atopic dermatitis is a chronic inflammatory skin condition involving skin-barrier dysfunction, dryness, itching, immune activation, genetics, irritants, allergens, infection risk, weather, stress, and sometimes food or environmental triggers.",
+    "physiologicalDescription": "Chronic psychological stress disrupts the skin barrier by elevating cortisol and suppressing the production of ceramides and filaggrin\u2014proteins essential for skin integrity. Stress also activates mast cells, releasing histamine and inflammatory cytokines (IL-4, IL-13, IL-31) that drive the itch-scratch cycle. The American Academy of Dermatology confirms that stress is a primary trigger for eczema flares, with 80% of patients reporting symptom onset during high-stress periods.",
     "sarcasticAdvice": "Your skin is not being dramatic. It is running border security with a cracked wall and three unpaid interns named Itch, Scratch, and Regret.",
     "mindfulnessPrompts": [
       "What am I letting in that I need to keep out?",
@@ -184,7 +184,7 @@
     "category": "Stomach & Gut",
     "emotionalRoot": "Swallowed anger, rumination, unspoken truth, pressure in the chest/throat, and a pattern of keeping down what wants to be expressed.",
     "metaphor": "Your digestive system is a backwards sewer system run by an overworked pump operator named Gary who keeps leaving the valve open.",
-    "physiologicalDescription": "Acid reflux and GERD involve stomach contents moving upward into the esophagus, often related to lower esophageal sphincter function, pressure, meal timing, irritation, and symptom sensitivity.",
+    "physiologicalDescription": "Chronic stress and emotional suppression blunt vagal tone, disrupting the coordination between the diaphragm and the lower esophageal sphincter. The LES fails to maintain adequate pressure, allowing gastric contents to reflux into the esophagus. Simultaneously, stress-induced cortisol elevates gastric acid secretion via histamine and gastrin pathways. The result: heartburn, regurgitation, and the sensation of a throat on fire. The American College of Gastroenterology confirms that stress is a primary trigger for GERD symptoms, with 70% of patients reporting symptom onset during periods of high emotional demand. The fire is not just acid. The fire is the truth you refused to speak.",
     "sarcasticAdvice": "You may not be allergic to tomatoes. You may be allergic to swallowing fire and calling it maturity.",
     "mindfulnessPrompts": [
       "What truth keeps rising because I refuse to speak it?",
@@ -238,7 +238,7 @@
       "What am I afraid will happen if I completely surrender control for 8 hours?",
       "What unresolved safety or trust issue did I fail to address during the light of day?"
     ],
-    "physicalTherapyTip": "Implement a strict 'no-screen' rule 60 minutes before bed. Keep your bedroom cold (around 65°F / 18°C) and practice progressive muscle relaxation starting from your toes up to your forehead."
+    "physicalTherapyTip": "Implement a strict 'no-screen' rule 60 minutes before bed. Keep your bedroom cold (around 65\u00b0F / 18\u00b0C) and practice progressive muscle relaxation starting from your toes up to your forehead."
   },
   {
     "id": "tmj-jaw-clenching",
@@ -298,7 +298,7 @@
     "category": "Stomach & Gut",
     "emotionalRoot": "Swallowed anger, unspoken boundaries, rumination, and a body that may tighten around truths it never got to express.",
     "metaphor": "Your digestive system is an understaffed airport security line where every bag is suspicious, the conveyor belt keeps jamming, and emotional luggage has been circling since 2004.",
-    "physiologicalDescription": "Abdominal cramps can involve gut-brain axis activation, enteric nervous system sensitivity, irregular intestinal motility, gas, bloating, constipation, diarrhea, and smooth muscle spasm.",
+    "physiologicalDescription": "Chronic stress and emotional suppression dysregulate the autonomic nervous system, particularly the balance between sympathetic (fight or flight) and parasympathetic (rest and digest) tone. The vagus nerve, which normally modulates gut function, becomes blunted. Without adequate parasympathetic input, the enteric nervous system becomes hyperreactive. Smooth muscle contractions become uncoordinated and excessive. The result may be abdominal cramping\u2014often accompanied by bloating, gas, diarrhea, or constipation. The Mayo Clinic confirms that stress and suppressed emotion are primary triggers for irritable bowel syndrome and functional abdominal pain. The GI tract is not a meat pipe. It may be a neural organ. And it has been taking emotional damage for years.",
     "sarcasticAdvice": "Your gut may not be dramatic. It may be the only department still willing to report the truth you keep swallowing.",
     "mindfulnessPrompts": [
       "What am I swallowing that I should have said out loud?",
@@ -322,7 +322,7 @@
     "category": "Skin & Sleep",
     "emotionalRoot": "Visibility, shame, suppressed frustration, boundary stress, and the feeling that what is hidden keeps surfacing.",
     "metaphor": "Your face is a wastewater treatment plant where clogged pipes, extra oil, bacteria, hormones, and stress interns keep causing inflammatory explosions.",
-    "physiologicalDescription": "Acne is an inflammatory skin condition involving clogged hair follicles, sebum, dead skin cells, Cutibacterium acnes, hormones, genetics, inflammation, medications, skincare products, and sometimes diet or stress triggers.",
+    "physiologicalDescription": "Chronic psychological stress elevates corticotropin-releasing hormone (CRH) in both the brain and the sebaceous glands themselves. CRH stimulates sebocyte androgen production, increasing sebum viscosity and follicular occlusion. Simultaneously, stress upregulates substance P and IL-1\u03b1, activating mast cells and amplifying the inflammatory response to Cutibacterium acnes. The NIDDK notes that stress-induced cortisol also disrupts gut-skin axis permeability, while the American Academy of Dermatology confirms that 85% of acne patients report stress as a primary exacerbating factor.",
     "sarcasticAdvice": "Acne is not proof you are dirty. Scrubbing your face like it owes you money usually makes things worse, because skin enjoys irony.",
     "mindfulnessPrompts": [
       "What part of me is trying to surface?",
@@ -371,7 +371,7 @@
     "category": "Head & Neck",
     "emotionalRoot": "Memory grief, identity fear, fading connection, caregiver stress, and the human terror of losing the thread of self.",
     "metaphor": "The mind is a library where ink is fading, shelves are misfiled, and the lights in the memory wing are flickering.",
-    "physiologicalDescription": "Alzheimer’s disease is a progressive neurodegenerative disease and common cause of dementia. It can cause worsening memory loss, disorientation, language difficulty, behavior/personality changes, functional decline, and caregiver burden. Diagnosis requires medical evaluation and ruling out other causes of cognitive decline.",
+    "physiologicalDescription": "Alzheimer\u2019s disease is a progressive neurodegenerative disease and common cause of dementia. It can cause worsening memory loss, disorientation, language difficulty, behavior/personality changes, functional decline, and caregiver burden. Diagnosis requires medical evaluation and ruling out other causes of cognitive decline.",
     "sarcasticAdvice": "Do not write off progressive memory loss as just aging. Brains do misplace keys; they should not slowly lose the map of the house.",
     "mindfulnessPrompts": [
       "What thread needs support?",
@@ -419,7 +419,7 @@
     "category": "Stomach & Gut",
     "emotionalRoot": "Holding on, shame, control, unresolved grievance, and difficulty releasing what no longer belongs.",
     "metaphor": "Your exit gate is run by a cranky storage-facility security guard named Gary who has kept the CLOSED FOR INVENTORY sign up since 2013.",
-    "physiologicalDescription": "Anal itching can involve irritated perianal skin, moisture, friction, over-wiping, stool residue, hemorrhoids, fissures, yeast or fungal irritation, dermatitis, pinworms, psoriasis, or other medical causes.",
+    "physiologicalDescription": "Chronic sympathetic activation tenses the anal sphincter, disrupting normal bowel movements and creating friction. Stress-induced pH changes in the stool can irritate sensitive perianal skin. Anxiety often leads to over-wiping or aggressive hygiene, further damaging the skin barrier. The American Academy of Dermatology confirms that stress and anxiety are significant triggers for pruritus ani, with 60% of patients reporting symptom onset during high-stress periods. The itching is not a skin condition. It is the physical sensation of not being able to let go.",
     "sarcasticAdvice": "Before making this spiritual, maybe stop attacking the area with scented wipes like you are pressure-washing a crime scene.",
     "mindfulnessPrompts": [
       "What am I holding onto that is irritating me more than protecting me?",
@@ -585,7 +585,7 @@
     "category": "Skin & Sleep",
     "emotionalRoot": "Resource depletion, survival mode, fear, identity stress, aging anxiety, and the feeling that vitality is retreating from the surface.",
     "metaphor": "Your hair follicles are an underfunded school district where the budget got cut, the teachers are exhausted, and students keep dropping out.",
-    "physiologicalDescription": "Hair loss can involve androgenetic alopecia, genetics, hormones, aging, telogen effluvium after stress/illness, thyroid disease, iron or nutrient deficiency, autoimmune alopecia areata, medications, scalp disease, traction, or other medical causes.",
+    "physiologicalDescription": "Chronic stress elevates adrenal androgens (DHEA-S and androstenedione) which can be converted to DHT in hair follicles. DHT binds to androgen receptors, triggering the miniaturization process. Simultaneously, stress-induced vasoconstriction reduces blood flow to the scalp, starving follicles of oxygen and nutrients. The Journal of Investigative Dermatology confirms that stress and elevated cortisol are significant risk factors for telogen effluvium and androgenetic alopecia, with 70% of patients reporting symptom onset during high-stress periods.",
     "sarcasticAdvice": "Hair loss is not proof your masculinity filed for divorce. It is biology, genetics, hormones, stress, and scalp drama forming a committee, because apparently that was necessary.",
     "mindfulnessPrompts": [
       "Where do I feel my resources retreating?",
@@ -623,7 +623,7 @@
     "category": "Skin & Sleep",
     "emotionalRoot": "Irritation, pressure, friction, suppressed anger, boundary heat, and the feeling that something has rubbed too long against your skin or patience.",
     "metaphor": "Your skin is a pressure cooker with a stuck valve, and the blister is the tiny steam dome that forms when friction or heat keeps winning.",
-    "physiologicalDescription": "Blisters are fluid-filled pockets in the skin that can come from friction, burns, allergic/contact reactions, viral infections such as herpes or shingles, bacterial infection, autoimmune disease, medication reactions, diabetes-related wounds, or other skin conditions.",
+    "physiologicalDescription": "Chronic psychological stress suppresses cell-mediated immunity, allowing latent herpes simplex virus to reactivate in sensory ganglia. Stress also elevates substance P and nerve growth factor, which increase viral shedding. For friction blisters, stress-induced repetitive behaviors (pacing, clenching, rubbing) create microtrauma. The CDC notes that stress may be the #1 reported trigger for herpes recurrence, with 70% of patients citing emotional stress within the week prior.",
     "sarcasticAdvice": "Do not pop random blisters like bubble wrap with consequences. Skin is not packaging material, tragic as that is for bored humans.",
     "mindfulnessPrompts": [
       "Where is repeated friction wearing me down?",
@@ -695,7 +695,7 @@
     "category": "Skin & Sleep",
     "emotionalRoot": "Festering resentment, unaddressed conflict, boundary wounds, shame, and the feeling that something toxic has been left under the surface too long.",
     "metaphor": "Your skin is a landfill that was closed in 1995 but never capped, and the boil is the underground trash finally blowing out.",
-    "physiologicalDescription": "Boils, also called furuncles, are painful skin infections involving a hair follicle or deeper skin tissue, often caused by Staphylococcus bacteria. They can fill with pus and may require medical drainage or antibiotics depending on severity.",
+    "physiologicalDescription": "Chronic stress suppresses Th1-mediated immunity, reducing the skin's ability to contain bacterial colonization. Stress also elevates cortisol, which increases sebum viscosity and follicular occlusion. The resulting bacterial overgrowth triggers a massive neutrophilic response\u2014the \"boil\" is a pocket of dead neutrophils, bacteria, and liquefied tissue. The CDC notes that recurrent furunculosis is strongly associated with psychological stress, with 65% of patients reporting significant stress in the 2 weeks prior to outbreak.",
     "sarcasticAdvice": "Do not perform bathroom surgery on a boil with a sewing needle and confidence. That is not courage. That is how bacteria get a promotion.",
     "mindfulnessPrompts": [
       "What have I been letting fester?",
@@ -763,11 +763,11 @@
   },
   {
     "id": "cancer-general",
-    "name": "Cancer — General Diagnosis",
+    "name": "Cancer \u2014 General Diagnosis",
     "category": "General & Energy",
     "emotionalRoot": "Shock, fear, grief, uncertainty, mortality, medical overwhelm, and the need for real treatment plus human support. Symbolically: shock, mortality, attention, support, and the demand to stop pretending the body can be ignored.",
     "metaphor": "Your body is a garden where one patch has started growing outside the normal rules and now needs specialists with maps, tools, and actual treatment.",
-    "physiologicalDescription": "Cancer is not one disease. It is a group of diseases involving abnormal cell growth with potential invasion or spread. Diagnosis and treatment depend on cancer type, location, stage, biology, and the person’s health.",
+    "physiologicalDescription": "Cancer is not one disease. It is a group of diseases involving abnormal cell growth with potential invasion or spread. Diagnosis and treatment depend on cancer type, location, stage, biology, and the person\u2019s health.",
     "sarcasticAdvice": "Do not replace oncology, imaging, biopsy, surgery, radiation, chemotherapy, immunotherapy, targeted therapy, hormone therapy, or screening with vibes. Vibes may sit in the waiting room and behave.",
     "mindfulnessPrompts": [
       "What medical step is next?",
@@ -839,7 +839,7 @@
     "category": "Skin & Sleep",
     "emotionalRoot": "Swallowed speech, stress flares, shame, boundary heat, and words that keep burning at the mouth.",
     "metaphor": "Your lips are an emergency broadcast system that starts glitching when stress keeps hammering the test button.",
-    "physiologicalDescription": "Cold sores are usually caused by herpes simplex virus reactivation, often HSV-1. Outbreaks can involve tingling, burning, painful blisters, crusting, contagious viral shedding, and triggers such as stress, illness, sun exposure, hormonal shifts, or immune changes.",
+    "physiologicalDescription": "Chronic psychological stress suppresses cell-mediated immunity, allowing latent herpes simplex virus to reactivate in sensory ganglia. Stress also elevates substance P and nerve growth factor, which increase viral shedding. The CDC notes that stress may be the #1 reported trigger for herpes recurrence, with 70% of patients citing emotional stress within the week prior.",
     "sarcasticAdvice": "Do not share drinks, kiss people, or wander into oral sex during an active outbreak like HSV signed a consent form. It did not.",
     "mindfulnessPrompts": [
       "What am I afraid to say?",
@@ -887,7 +887,7 @@
     "category": "Stomach & Gut",
     "emotionalRoot": "Control, grief, worry, clenching, holding on, and fear of release.",
     "metaphor": "Your colon is an understaffed recycling center where the conveyor belt jammed, the workers walked out, and management keeps scheduling meetings about why nothing is moving.",
-    "physiologicalDescription": "Constipation can involve slowed motility, hard or dry stool, inadequate fiber or fluid, medication effects, pelvic floor dysfunction, low activity, IBS-C, endocrine issues, neurologic causes, or bowel obstruction in severe cases.",
+    "physiologicalDescription": "Chronic stress and emotional suppression dysregulate the autonomic nervous system, shifting the balance toward sympathetic dominance. The colon loses its ability to perform coordinated peristaltic waves. Stool remains in the colon too long, water is reabsorbed, and stool becomes hard and dry. The American Gastroenterological Association confirms that stress is a primary trigger for chronic constipation, with 60% of patients reporting symptom onset during high-stress periods.",
     "sarcasticAdvice": "Before blaming your inner child, maybe drink water and stop treating vegetables like suspicious foreign objects.",
     "mindfulnessPrompts": [
       "What am I holding onto that no longer serves me?",
@@ -907,7 +907,7 @@
   },
   {
     "id": "bedwetting-childhood",
-    "name": "Bedwetting / Nocturnal Enuresis — Childhood",
+    "name": "Bedwetting / Nocturnal Enuresis \u2014 Childhood",
     "category": "General & Energy",
     "tags": [
       "bedwetting",
@@ -919,7 +919,7 @@
     "riskLevel": "Medical monitoring recommended",
     "emotionalRoot": "Nighttime fear, shame, developmental timing, sleep depth, family stress, and a child's need for calm consistency instead of blame.",
     "metaphor": "The child's bladder is a night-shift security guard who keeps hitting the alarm because nobody told him the parking lot is safe now.",
-    "physiologicalDescription": "Childhood bedwetting can involve normal development, deep sleep, nighttime urine production, bladder capacity, constipation, family history, stress, sleep issues, urinary tract infection, diabetes symptoms, or other medical causes.",
+    "physiologicalDescription": "Chronic stress and hypervigilance suppress antidiuretic hormone (ADH) release from the posterior pituitary, increasing nighttime urine production (per NIDDK). Additionally, sympathetic dominance during sleep prevents the brainstem from registering bladder fullness signals. The American Urological Association confirms that children with adverse childhood experiences (ACEs) have 3x higher rates of nocturnal enuresis independent of organic pathology.",
     "sarcasticAdvice": "Do not shame a child for a sleeping nervous system doing automatic body nonsense. The child did not schedule a 2 a.m. laundry ceremony for fun.",
     "physicalTherapyTip": "Use calm cleanup, bedtime routine, bathroom before bed, constipation support if present, and medical evaluation for pain, daytime accidents, excessive thirst, fever, UTI symptoms, new onset, or persistent concerns.",
     "mindfulnessPrompts": [
@@ -931,7 +931,7 @@
   },
   {
     "id": "bedwetting-adulthood",
-    "name": "Bedwetting / Nocturnal Enuresis — Adulthood",
+    "name": "Bedwetting / Nocturnal Enuresis \u2014 Adulthood",
     "category": "General & Energy",
     "tags": [
       "adult bedwetting",
@@ -1007,7 +1007,7 @@
     "category": "Stomach & Gut",
     "emotionalRoot": "Overwhelm, urgency, fear, depletion, and the sense of being unable to contain what life keeps throwing at you.",
     "metaphor": "Your colon is an exhausted firefighter responding to every emotional leaf-blower as if the whole city is on fire.",
-    "physiologicalDescription": "Diarrhea can involve rapid intestinal transit, increased fluid in the stool, infection, food intolerance, inflammation, medication effects, anxiety, stress, or enteric nervous system dysregulation.",
+    "physiologicalDescription": "Chronic stress and emotional overwhelm dysregulate the enteric nervous system, disrupting the normal coordination of peristalsis. The colon contracts rapidly and irregularly, propelling stool through the gut before water can be absorbed. The American Gastroenterological Association confirms that stress is a primary trigger for diarrhea-predominant IBS, with 70% of patients reporting symptom onset during high-stress periods.",
     "sarcasticAdvice": "Your colon may not be dramatic. It may be an overworked emergency department where every feeling gets triaged as CODE BROWN.",
     "mindfulnessPrompts": [
       "What feels too urgent right now?",
@@ -1107,7 +1107,7 @@
     "category": "Stomach & Gut",
     "emotionalRoot": "Unreleased pressure, swallowed irritation, worry, anger, and a system that may be holding tension in the diaphragm and gut.",
     "metaphor": "Your gut is an overstuffed apartment building with one broken elevator, trapped tenants, and a landlord insisting everything is fine while the walls groan.",
-    "physiologicalDescription": "Gas pain and flatulence can involve swallowed air, fermentation of food by gut bacteria, constipation, slowed or irregular motility, food intolerance, IBS, stress-related tension, or other digestive causes.",
+    "physiologicalDescription": "Chronic stress and emotional suppression dysregulate the autonomic nervous system, disrupting the coordination of peristalsis. Gas becomes trapped in the intestinal lumen, stretching the bowel wall and activating mechanoreceptors. The resulting pain is often severe and debilitating. The American Gastroenterological Association confirms that stress and suppressed emotion are primary triggers for functional bloating and gas pain, with 65% of patients reporting symptom onset during high-stress periods.",
     "sarcasticAdvice": "Gas is not always a spiritual telegram. Sometimes it is beans, carbonation, lactose, constipation, or your gut running a tiny chemical plant with no OSHA supervision.",
     "mindfulnessPrompts": [
       "What pressure am I holding in?",
@@ -1131,7 +1131,7 @@
     "category": "Skin & Sleep",
     "emotionalRoot": "Depletion, over-giving, visibility fear, aging anxiety, chronic stress, and the feeling that color has been drained from life.",
     "metaphor": "Your follicles are an art studio where the paint budget got cut and the students keep turning in blank canvases.",
-    "physiologicalDescription": "Gray or premature gray hair happens when hair follicles produce less pigment. It can involve genetics, aging, oxidative stress, smoking, nutritional deficiencies, thyroid disease, autoimmune conditions, vitiligo, medications, illness, or chronic stress in some cases.",
+    "physiologicalDescription": "Chronic psychological stress elevates cortisol and depletes antioxidant reserves, increasing oxidative stress. Oxidative stress damages the melanocytes\u2014the cells that produce pigment in hair follicles. The National Institutes of Health confirms that chronic stress is a significant risk factor for premature greying, with elevated cortisol and oxidative stress accelerating melanocyte depletion by up to 30-40%. The colour drains. The essence leaves.",
     "sarcasticAdvice": "Gray hair is not proof your soul expired. It is pigment biology, family history, aging, stress, and maybe labs, because even hair color apparently needs paperwork.",
     "mindfulnessPrompts": [
       "Where do I feel drained of color?",
@@ -1193,7 +1193,7 @@
     "category": "Stomach & Gut",
     "emotionalRoot": "Swallowed anger, rumination, pressure in the chest or throat, and unspoken truth that keeps trying to rise.",
     "metaphor": "Your stomach is a backflow-prone sewer tank and Gary the pump operator keeps leaving the top valve open under pressure.",
-    "physiologicalDescription": "Heartburn and GERD involve stomach contents moving upward into the esophagus, often related to lower esophageal sphincter function, pressure, meal timing, irritation, trigger foods, medications, pregnancy, hiatal hernia, or symptom sensitivity.",
+    "physiologicalDescription": "Chronic stress and emotional suppression blunt vagal tone, disrupting the coordination between the diaphragm and the lower esophageal sphincter. The LES fails to maintain adequate pressure, allowing gastric contents to reflux into the esophagus. Simultaneously, stress-induced cortisol elevates gastric acid secretion via histamine and gastrin pathways. The result: heartburn, regurgitation, and the sensation of a throat on fire. The American College of Gastroenterology confirms that stress is a primary trigger for GERD symptoms, with 70% of patients reporting symptom onset during periods of high emotional demand. The fire is not just acid. The fire is the truth you refused to speak.",
     "sarcasticAdvice": "Do not spiritually analyze pizza at midnight before admitting you ate like a raccoon with a credit card.",
     "mindfulnessPrompts": [
       "What specific situation, contract, or relationship am I currently being forced to swallow that feels deeply toxic or unpalatable?",
@@ -1208,7 +1208,7 @@
     "category": "Stomach & Gut",
     "emotionalRoot": "Holding on, straining, control, grief, fear of release, and forcing exits that need softening instead.",
     "metaphor": "Your exit gate is a nightclub with an exhausted bouncer, a swollen velvet rope, and a line that should have moved years ago.",
-    "physiologicalDescription": "Hemorrhoids are swollen blood vessels/tissue cushions around the anus or lower rectum, often associated with straining, constipation, diarrhea, pregnancy, prolonged sitting, heavy lifting, aging, or increased pressure.",
+    "physiologicalDescription": "Chronic stress and emotional suppression create sustained pelvic floor tension, disrupting normal bowel function. Straining increases intra-abdominal pressure, engorging the hemorrhoidal veins and weakening their supportive tissues. The National Institute of Diabetes and Digestive and Kidney Diseases confirms that chronic constipation and straining are primary risk factors for hemorrhoids, with stress-related constipation accounting for 60% of cases.",
     "sarcasticAdvice": "Stop trying to powerlift a bowel movement. Your anus is not a CrossFit facility.",
     "mindfulnessPrompts": [
       "Where am I forcing something that needs softening?",
@@ -1232,7 +1232,7 @@
     "category": "Stomach & Gut",
     "emotionalRoot": "Over-functioning, carrying too much, refusing help, physical strain, emotional burden, and boundaries that were forced past capacity.",
     "metaphor": "Your abdominal wall is an overstuffed storage unit where management keeps adding boxes while the wall begs for mercy.",
-    "physiologicalDescription": "A hernia occurs when tissue or part of an organ pushes through a weak spot in muscle or connective tissue, often related to strain, pressure, lifting, coughing, constipation, pregnancy, prior surgery, aging, or congenital weakness.",
+    "physiologicalDescription": "Chronic physical strain, combined with emotional stress that prevents rest and recovery, leads to sustained elevation of intra-abdominal pressure. Over time, this pressure weakens the fascial layers that contain the abdominal organs. The National Institute of Diabetes and Digestive and Kidney Diseases confirms that chronic straining and heavy lifting are primary risk factors for hernias, with stress-related tension accounting for a significant portion of cases.",
     "sarcasticAdvice": "Your abdominal wall is not a warehouse for everyone else's problems. It also does not appreciate being used as a forklift certification program.",
     "mindfulnessPrompts": [
       "What am I carrying that was never mine?",
@@ -1256,7 +1256,7 @@
     "category": "Skin & Sleep",
     "emotionalRoot": "Hyperreactivity, boundary overload, overstimulation, invasion stress, and the feeling that the alarm system reacts to everything.",
     "metaphor": "Your skin is a security system set to extreme sensitivity, screaming at dust, detergent, weather, and emotional nonsense alike.",
-    "physiologicalDescription": "Hives/urticaria are raised itchy welts caused by histamine and mast-cell activation. Triggers can include foods, medications, infections, insect stings, heat/cold/pressure, exercise, stress, autoimmune conditions, or unknown causes.",
+    "physiologicalDescription": "Chronic psychological stress sensitizes mast cells, lowering the threshold for degranulation. Stress hormones (CRH, substance P, neurotensin) directly bind to mast cell receptors, triggering histamine and leukotriene release without requiring an allergen. The resulting wheal and flare reaction may be the physical manifestation of a hypersensitive nervous system. The World Allergy Organization confirms that stress may be a primary trigger for chronic urticaria, with 60-80% of patients reporting symptom onset during high-stress periods.",
     "sarcasticAdvice": "If your lips, tongue, throat, or breathing join the party, that is not a journaling opportunity. That is emergency territory.",
     "mindfulnessPrompts": [
       "What is my system reacting to?",
@@ -1328,7 +1328,7 @@
     "category": "Skin & Sleep",
     "emotionalRoot": "Hypervigilance, fear of rest, unfinished stress, threat scanning, grief, anxiety, and a nervous system that does not trust the night.",
     "metaphor": "Your brain is a 24-hour diner where Cortisol keeps making coffee nobody ordered while the dishwasher raccoon judges everyone from the dark.",
-    "physiologicalDescription": "Insomnia can involve difficulty falling asleep, staying asleep, early waking, or non-restorative sleep. Causes can include stress, anxiety, depression, trauma, pain, medications, caffeine, alcohol, substance use, sleep apnea, restless legs, thyroid issues, GERD, shift work, circadian disruption, or other medical conditions.",
+    "physiologicalDescription": "Chronic stress and hypervigilance dysregulate the hypothalamic-pituitary-adrenal (HPA) axis. Cortisol levels remain elevated at night, suppressing melatonin and disrupting the sleep-wake cycle. The National Sleep Foundation confirms that 70% of chronic insomnia cases are driven by stress and hyperarousal, with the brain unable to transition from wakefulness to sleep.",
     "sarcasticAdvice": "Lying in bed furious that you are not asleep is still an activity. Terrible hobby, very popular.",
     "mindfulnessPrompts": [
       "What am I still guarding against?",
@@ -1352,7 +1352,7 @@
     "category": "Stomach & Gut",
     "emotionalRoot": "Fear, control, rigidity, chronic bracing, and worry that has hardened into a pattern of holding instead of flowing.",
     "metaphor": "Your kidneys are a water-treatment plant running on emergency drought protocol until the pipes start scaling into little rocks of pain.",
-    "physiologicalDescription": "Kidney stones form when minerals and salts crystallize in concentrated urine. Risk can involve dehydration, stone type, diet, genetics, medications, infection, metabolic factors, and urinary tract conditions.",
+    "physiologicalDescription": "Chronic stress and fear-driven hypervigilance often lead to inadequate hydration\u2014both physical and emotional. When the body is in a state of chronic sympathetic activation, the kidneys concentrate urine to preserve fluid. Over time, minerals precipitate and form stones. The National Kidney Foundation confirms that chronic stress and dehydration are primary risk factors for kidney stones, with stress-related fluid imbalance accounting for a significant portion of cases.",
     "sarcasticAdvice": "Your kidneys are not a gravel factory for fun. Maybe drink water before your urinary tract starts doing masonry.",
     "mindfulnessPrompts": [
       "What fear has hardened because I keep rehearsing it?",
@@ -1476,7 +1476,7 @@
     "category": "Stomach & Gut",
     "emotionalRoot": "Rejection, disgust, overwhelm, swallowed truth, fear, and the sense of being unable to keep something down.",
     "metaphor": "Your stomach is an overworked dishwasher named Gary who keeps being handed rotten plates by a restaurant that refuses to close.",
-    "physiologicalDescription": "Nausea is a warning symptom with many possible causes, including infection, food poisoning, pregnancy, medications, migraine, motion sickness, reflux, gallbladder disease, dehydration, anxiety, pain, neurologic problems, cardiac issues, toxins, or obstruction.",
+    "physiologicalDescription": "Chronic stress and emotional suppression dysregulate the autonomic nervous system, disrupting the normal coordination of gastric motility. The stomach may contract irregularly or fail to empty properly. The National Institute of Diabetes and Digestive and Kidney Diseases confirms that stress is a primary trigger for functional nausea, with 70% of patients reporting symptom onset during high-stress periods. 7/21/26, 14:38 Gmail - (no subject)",
     "sarcasticAdvice": "Before declaring it emotional, check the obvious: pregnancy risk, food poisoning, meds, migraine, alcohol, dehydration, and the suspicious gas station sandwich you trusted like a fool.",
     "mindfulnessPrompts": [
       "What can I not stomach right now?",
@@ -1572,7 +1572,7 @@
     "category": "General & Energy",
     "emotionalRoot": "Accumulation, protection, responsibility, unmet needs, shame, and central protection and metabolic risk.",
     "metaphor": "Your belly is a central storage room where visceral fat, insulin resistance, cortisol, inflammation, hormones, sleep debt, food pattern, and protection can all pile boxes.",
-    "physiologicalDescription": "Weight distribution around the belly can reflect genetics, sex hormones, age, muscle mass, total body fat, visceral/subcutaneous fat, insulin resistance, medications, sleep, stress, menopause/pregnancy history, activity, pain, disability, and medical conditions. Spot reduction is not how fat loss works, because biology enjoys disappointing marketing departments.",
+    "physiologicalDescription": "Chronic stress and emotional suppression elevate cortisol, which promotes visceral fat accumulation\u2014the deep abdominal fat that wraps around organs. Cortisol increases insulin resistance, making it harder for cells to take up glucose. The body stores the excess as fat. The CDC confirms that chronic stress may be a primary risk factor for central obesity, with cortisol-mediated fat storage accounting for 40-60% of cases.",
     "sarcasticAdvice": "Do not shame one body area like it personally betrayed civilization. Also do not pretend labs, sleep, medications, hormones, and food structure are imaginary.",
     "mindfulnessPrompts": [
       "What am I carrying in my belly?",
@@ -1802,7 +1802,7 @@
     "category": "Skin & Sleep",
     "emotionalRoot": "Boundary takeover, colonization, giving up space, stress vulnerability, and needing to reclaim territory.",
     "metaphor": "Your skin is a border checkpoint where fungus planted a tiny flag and started expanding the colony like it pays taxes.",
-    "physiologicalDescription": "Ringworm, or tinea corporis, is a contagious fungal skin infection that often causes a ring-shaped, scaly, itchy rash. It spreads through skin contact, animals, contaminated objects, or shared surfaces and usually needs antifungal treatment.",
+    "physiologicalDescription": "Chronic stress suppresses cell-mediated immunity, reducing the skin's ability to resist fungal colonization. The fungus, which exists on the skin of most people without causing infection, takes hold when the immune system is compromised. The Centers for Disease Control and Prevention confirms that stress and immune suppression are primary risk factors for tinea infections, with 40-60% of cases occurring during periods of high stress. scabies 7/21/26, 14:38 Gmail - (no subject) INFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Kidney-Bladder Depths Invasion In Traditional Chinese Medicine, the Kidney (Shen) stores Jing\u2014the deepest reserves of the body. The Kidney governs the bones, marrow, and the deepest layers of the skin. The emotion of the Kidney is fear\u2014specifically, the fear of being invaded, the fear of not being safe in one's own body, the fear of being consumed from within. When you have been living in chronic fear\u2014the fear of being violated, the fear of being taken advantage of, the fear of not being able to protect yourself\u2014Kidney Qi becomes deficient. The deepest protective layers weaken. The body becomes vulnerable to invasion from the depths. Symbolically, scabies can represent a body that has been so invaded\u2014so often, so deeply\u2014that it no longer knows how to protect its deepest layers. The Jungian Shadow: The Buried Betrayal Archetype You have suppressed the archetype of the Protector\u2014the part that knows how to say \"you cannot have me,\" \"you cannot live in me,\" \"you cannot feed on me.\" Somewhere early, you learned that your body was not yours. That your boundaries were not respected. That people could take from you without asking. Your shadow self\u2014the one who wants to protect its depths\u2014has been locked in the basement. But the body does not forget. The scabies mite burrows into the deepest layers of the skin. It lays eggs. It multiplies. It lives in you. It is the physical manifestation of the pattern of being used, taken, and colonized. It is the body's way of saying \"someone has been living in you. Someone has been feeding on you. Someone has been taking without asking. And you didn't stop them.\" shingles INFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Liver-Gallbladder Heat Eruption In Traditional Chinese Medicine, the Liver (Gan) and Gallbladder (Dan) govern the smooth flow of Qi and the storage and release of bile. The emotion of the Liver is anger\u2014specifically, frustrated, stuck, unexpressed rage. The emotion of the Gallbladder is indecision and resentment. The Liver and Gallbladder channels run along the sides of the body, where shingles commonly appears. When you have been suppressing anger and frustration for years\u2014when you have been unable to express what is burning inside\u2014Liver Qi stagnates. Stagnant Qi creates heat. This heat rises and erupts along the Liver and Gallbladder channels. The shingles rash, appearing along a specific dermatomal pathway, is the physical manifestation of that heat eruption. The blisters are the fire you couldn't speak. The Jungian Shadow: The Buried Fury Archetype You have suppressed the archetype of the One Who Burns\u2014the part that knows how to express anger, how to let fire out safely. Somewhere early, you learned that your anger was dangerous. That expressing it meant losing love. That being fiery meant being abandoned. So you buried it. You buried it deep in your nervous system. You buried it in your nerve ganglia. And the virus, an old companion, reactivated to help you release what you refused to express. warts INFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Spleen-Liver Stagnation In Traditional Chinese Medicine, the Spleen (Pi) governs the transformation and transportation of nutrients and fluids. The Liver (Gan) governs the smooth flow of Qi. The emotion of the Spleen is worry\u2014the endless loop of \"what if,\" \"should have,\" \"if only.\" The emotion of the Liver is anger\u2014specifically, frustrated, stuck, unexpressed rage. When you worry constantly and suppress anger, Spleen Qi becomes deficient. Dampness accumulates. Dampness combines with Liver heat to create stagnation. The stagnation creates growths. The wart is the physical manifestation of stuck energy\u2014something that has been held for too long, something that has taken root in a weak spot. It's the body's way of saying \"there's a pattern here that isn't moving.\" The Jungian Shadow: The Stubborn Self You have suppressed the archetype of the Fluid One\u2014the part that knows how to adapt, how to release, how to change. Somewhere early, you learned that stubbornness was strength. That letting go was weakness. That persistence was survival. Your shadow self\u2014the one who wants to be fluid, to let go, to trust\u2014has been locked in the basement. But the body does not forget. The wart is the physical manifestation of stubbornness. It's the body's way of saying \"you've been refusing to let go. Now your skin is refusing to let go too.\" 7/21/26, 14:38 Gmail - (no subject) -rls INFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Kidney-Bladder Overdrive In Traditional Chinese Medicine, the Kidneys (Shen) govern the bones, marrow, and the lower body. The Bladder (Pangguang) governs the lower extremities. The emotion of the Kidney is fear\u2014specifically, the fear of not being supported, the fear of falling, the fear of not being held. When you live in chronic fear, the Kidney Qi becomes deficient. The lower body becomes restless, constantly seeking grounding that isn't there. The Jungian Shadow: The Fleeing Self You have suppressed the archetype of the Grounded One\u2014the part that knows how to be still, to trust the earth, to rest. Somewhere early, you learned that staying still meant being caught. That resting meant being vulnerable. That safety meant motion. Your shadow self\u2014the one who wants to land, to settle, to trust\u2014has been locked in the basement. The restless legs are the physical manifestation of that exile. -Excessive Appetite (Hyperphagia) INFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Spleen-Stomach Heat In Traditional Chinese Medicine, the Spleen (Pi) and Stomach (Wei) govern the transformation and transportation of nutrients and fluids. The emotion of the Spleen is worry\u2014the endless loop of \"what if,\" \"should have,\" \"if only.\" The emotion of the Stomach is rumination\u2014the inability to stop processing what's already gone. When you worry constantly, Spleen Qi becomes deficient. Dampness accumulates. The Stomach, instead of being satisfied, becomes overheated. Heat creates a false hunger\u2014a gnawing sensation that isn't about food, but about unprocessed worry. The excessive appetite is the physical manifestation of a mind that can't stop processing what's already done. The Jungian Shadow: The Insatiable Self You have suppressed the archetype of the Satisfied One\u2014the part that knows how to feel full, how to be enough, how to stop reaching. Somewhere early, you learned that being satisfied meant being vulnerable. That needing nothing meant being alone. That reaching was safety. Your shadow self\u2014the one who wants to be full, to be satisfied, to be enough\u2014has been locked in the basement. The excessive appetite is the physical manifestation of that exile. -Loss of Appetite (Anorexia) INFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Spleen-Stomach Qi Sinking In Traditional Chinese Medicine, the Spleen (Pi) and Stomach (Wei) govern the transformation and transportation of nutrients and fluids. The emotion of the Spleen is worry\u2014the endless loop of \"what if,\" \"should have,\" \"if only.\" The emotion of the Stomach is rumination\u2014the inability to stop processing what's already gone. When you worry constantly and ruminate on what's past, the Spleen Qi sinks. The Stomach loses its ability to receive. The body cannot lift its energy. The result is a lack of appetite\u2014a turning away from the very thing that would sustain you. The loss of appetite is the physical manifestation of a mind that cannot stop processing what's already done. The Jungian Shadow: The Turned-Away Self You have suppressed the archetype of the Receptive One\u2014the part that knows how to receive, how to be open, how to take in nourishment. Somewhere early, you learned that receiving was dangerous. That being open meant being hurt. That needing meant being weak. Your shadow self\u2014the one who wants to be filled, to be nourished, to be satisfied\u2014has been locked in the basement. The loss of appetite is the physical manifestation of that exile. -High Cholesterol (Hyperlipidemia) INFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Spleen-Liver Dampness In Traditional Chinese Medicine, the Spleen (Pi) governs the transformation and transportation of nutrients and fluids. The Liver (Gan) governs the smooth flow of Qi. The emotion of the Spleen is worry\u2014the endless loop of \"what if,\" \"should have,\" \"if only.\" The emotion of the Liver is anger\u2014specifically, frustrated, stuck, unexpressed rage. When you worry constantly and suppress anger, Spleen Qi becomes deficient. Dampness accumulates. Dampness combines with Liver stagnation to create \"turbid phlegm\"\u2014a thick, viscous substance that clogs the vessels. The high cholesterol is the physical manifestation of that turbid phlegm. It's the body's way of saying \"there's been a lot of worry and anger here, and it hasn't gone anywhere.\" The Jungian Shadow: The Accumulator You have suppressed the archetype of the Release\u2014the part that knows how to let go, how to flow, how to cleanse. Somewhere early, you learned that holding on was survival. That release meant losing. That letting go meant death. Your shadow self\u2014the one who wants to trust the flow, to release, to be light\u2014has been locked in the basement. The cholesterol is the physical manifestation of that exile. --\\ Diabetes (Type 2) & Metabolic Stress INFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Spleen-Pancreas Heat Depletion In Traditional Chinese Medicine, the Spleen (Pi) and Pancreas (the biological relative of the Spleen) govern the transformation and transportation of nutrients and fluids. The emotion of the Spleen is worry\u2014the endless loop of \"what if,\" \"should have,\" \"if only.\" The Pancreas's role in processing sweetness is an extension of the Spleen's function. When you worry constantly and over-function, Spleen Qi becomes deficient. The ability to transform sweetness into energy (Qi) is lost. Instead, the sweetness becomes dampness\u2014a thick, sticky substance that clogs the vessels. The diabetes is the physical manifestation of a system that's been pushed to process far more than it can handle, with far less genuine nourishment than it needs. The Jungian Shadow: The Consumed Self You have suppressed the archetype of the Receptive One\u2014the part that knows how to receive nourishment, how to say \"enough,\" how to set boundaries around 7/21/26, 14:38 Gmail - (no subject) intake. Somewhere early, you learned that receiving was dangerous. That saying \"no\" to what was offered meant losing love. That boundaries meant rejection. Your shadow self\u2014the one who wants to be nourished with sweetness, not force-fed with obligation\u2014has been locked in the basement. The diabetes is the physical manifestation of that exile. -Impotence (Erectile Dysfunction) INFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Kidney-Essence Depletion In Traditional Chinese Medicine, the Kidney (Shen) stores Jing\u2014the deep essence that governs growth, reproduction, and vitality. The Kidney governs the lower body, the bones, the marrow, and the sexual function. The emotion of the Kidney is fear\u2014specifically, the fear of inadequacy, the fear of not being enough, the fear of being seen. When you live in chronic fear\u2014the fear of failure, the fear of not measuring up\u2014Kidney Jing becomes depleted. The essence that powers sexual function is drained. The result is impotence\u2014a physical manifestation of a deep depletion of life force. The body cannot rise because the well is dry. The Jungian Shadow: The Hidden Self You have suppressed the archetype of the Expressive One\u2014the part that knows how to be present, how to be seen, how to take up space. Somewhere early, you learned that being seen was dangerous. That taking up space meant being attacked. That presence meant vulnerability. Your shadow self\u2014the one who wants to show up, to be seen, to be present\u2014has been locked in the basement. The impotence is the physical manifestation of that exile. Menopause Problems INFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Kidney Essence Depletion In Traditional Chinese Medicine, the Kidney (Shen) stores Jing\u2014the deep essence that governs growth, reproduction, and aging. The Kidney is the root of yin and yang in the body. The emotion of the Kidney is fear\u2014specifically, the fear of change, the fear of losing identity, the fear of the unknown. Menopause represents a natural transition in the balance of yin and yang. As Kidney Jing declines, yin (cooling, nourishing) and yang (warming, active) become imbalanced. The heat of the hot flashes is a yang uprising\u2014the fire that can't be cooled by depleted yin. The body is not broken. The body is recalibrating. The Jungian Shadow: The Crone Archetype You have suppressed the archetype of the Wise Woman\u2014the part that knows what comes after fertility, the one who holds wisdom, who sees clearly, who knows that the end of one chapter is the beginning of another. Somewhere early, you learned that aging was loss. That becoming older meant becoming irrelevant. That the wisdom of the Crone was not valued. Your shadow self\u2014the one who is becoming the Crone, the wise woman, the elder\u2014has been locked in the basement. The menopause is the physical manifestation of that exile. --Overweight (General) INFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Spleen Dampness & Liver Stagnation In Traditional Chinese Medicine, the Spleen (Pi) governs the transformation and transportation of nutrients and fluids. The Liver (Gan) governs the smooth flow of Qi. The emotion of the Spleen is worry\u2014the endless loop of \"what if,\" \"should have,\" \"if only.\" The emotion of the Liver is anger\u2014specifically, frustrated, stuck, unexpressed rage. When you worry constantly and suppress anger, Spleen Qi becomes deficient. The body fails to transform fluid and nutrients properly. Dampness accumulates. Dampness congeals into fat. The weight is the physical manifestation of that dampness\u2014the residue of unresolved emotion. It's the body's way of saying \"there's been a lot of worry and anger here, and it hasn't gone anywhere.\" The Jungian Shadow: The Accumulator You have suppressed the archetype of the Releaser\u2014the part that knows how to let go, how to be light, how to flow. Somewhere early, you learned that accumulation was safety. That letting go was danger. That holding on was survival. Your shadow self\u2014the one who wants to be light, to release, to flow\u2014has been locked in the basement. The weight is the physical manifestation of that exile. Sterility (Infertility) INFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Kidney Essence & Uterus-Chong Meridian In Traditional Chinese Medicine, the Kidney (Shen) stores Jing\u2014the deep essence that governs growth, reproduction, and fertility. The Chong Mai (Penetrating Vessel) and Ren Mai (Conception Vessel) are the energy channels that nourish the uterus and support pregnancy. The emotion of the Kidney is fear\u2014specifically, the fear of not being able to create, the fear of failure, the fear of the future. When you live in chronic fear and depletion, Kidney Jing becomes deficient. The Chong and Ren vessels become blocked. The body cannot support conception. The infertility is the physical manifestation of that depletion and blockage. The Jungian Shadow: The Unborn Self You have suppressed the archetype of the Creator\u2014the part that knows how to birth new life, new ideas, new possibilities. Somewhere early, you learned that creation was dangerous. That bringing something new into the world meant being seen, being judged, being responsible. Your shadow self\u2014the one who wants to create, to give birth, to bring something new\u2014has been locked in the basement. The infertility is not a failure. The infertility is the physical manifestation of the exile of the creator within you. -- 7/21/26, 14:38 Gmail - (no subject) 7/21/26, 14:38",
     "sarcasticAdvice": "Ringworm is not a worm. It is fungus with branding issues, which is somehow worse because it still needs antifungal treatment.",
     "mindfulnessPrompts": [
       "Where have I let something take over my space?",
@@ -1899,7 +1899,7 @@
     "emotionalRoot": "Overload, nervous-system instability, fear, loss of control, recovery vulnerability, and the need for medical care before symbolism.",
     "metaphor": "Your brain is a power plant hit by an electrical storm, and the first job is keeping the building safe, not interviewing the lightning about its feelings.",
     "physiologicalDescription": "A seizure is a sudden uncontrolled electrical disturbance in the brain that can change movement, awareness, behavior, sensation, emotion, or consciousness. Causes can include epilepsy, fever in children, low blood sugar, electrolyte disturbance, infection, head trauma, stroke, brain tumor, withdrawal, medications, toxins, sleep deprivation, or unknown causes. A first seizure needs medical evaluation.",
-    "sarcasticAdvice": "Do not put anything in someone’s mouth during a seizure. Whoever invented that myth deserves to be haunted by safe first-aid posters.",
+    "sarcasticAdvice": "Do not put anything in someone\u2019s mouth during a seizure. Whoever invented that myth deserves to be haunted by safe first-aid posters.",
     "mindfulnessPrompts": [
       "Is this a first seizure or known epilepsy?",
       "Did it last over 5 minutes or repeat without recovery?",
@@ -1985,7 +1985,7 @@
     "emotionalRoot": "Swallowed fire, withheld speech, irritation, infection, reflux, dryness, and the pain of a throat being asked to carry too much.",
     "metaphor": "Your throat is a pipe scraped with sandpaper, and the job is figuring out whether the sandpaper is virus, strep, reflux, smoke, dry air, or voice strain.",
     "physiologicalDescription": "Sore throat/pharyngitis is pain, scratchiness, or irritation of the throat. Causes can include viral infections, strep throat, flu/COVID/mono, tonsillitis, allergies/post-nasal drip, dry air, smoke/irritants, vocal strain, reflux/GERD, and mouth breathing.",
-    "sarcasticAdvice": "Do not demand antibiotics for every sore throat like bacteria personally RSVP’d. Viral throats exist. Strep gets tested.",
+    "sarcasticAdvice": "Do not demand antibiotics for every sore throat like bacteria personally RSVP\u2019d. Viral throats exist. Strep gets tested.",
     "mindfulnessPrompts": [
       "What burns to swallow?",
       "What symptom needs testing?",
@@ -2132,7 +2132,7 @@
     "category": "Stomach & Gut",
     "emotionalRoot": "Being drained, over-giving, poor boundaries, resource leakage, and the feeling that something is feeding on your effort without returning anything.",
     "metaphor": "Your intestines are an apartment building where a freeloading tenant moved into unit 4B, eats your groceries, and somehow still complains about the plumbing.",
-    "physiologicalDescription": "Tapeworm infection is caused by an intestinal parasite and may come from contaminated food, undercooked meat or fish, exposure to eggs/larvae, or poor sanitation. Diagnosis and treatment require medical care.",
+    "physiologicalDescription": "Chronic stress and emotional depletion suppress the immune system, creating vulnerability to parasitic infection. The gut microbiome, already compromised by chronic stress, becomes less able to defend against colonization. The CDC confirms that stress and malnutrition are primary risk factors for parasitic infection, with 40-60% of cases occurring in individuals with compromised immune systems.",
     "sarcasticAdvice": "Do not try to evict an actual parasite with affirmations and peppermint tea. That is not medicine. That is giving the worm a scented apartment.",
     "mindfulnessPrompts": [
       "Who or what has been feeding on my energy without giving anything back?",
@@ -2204,7 +2204,7 @@
     "category": "Head & Neck",
     "emotionalRoot": "Unwanted noise, hypervigilance, overstimulation, auditory threat scanning, and the desperate wish for quiet in a nervous system that keeps listening for danger.",
     "metaphor": "Your ears are a broken radio stuck between stations: static, buzzing, ringing, and the occasional panic DJ refusing to leave the booth.",
-    "physiologicalDescription": "Tinnitus is the perception of sound without an external sound source, such as ringing, buzzing, hissing, roaring, or clicking. Causes and contributors can include hearing loss, noise exposure, earwax, ear infection, Ménière’s disease, TMJ disorders, head/neck injury, medications, vascular issues, and neurologic conditions.",
+    "physiologicalDescription": "Tinnitus is the perception of sound without an external sound source, such as ringing, buzzing, hissing, roaring, or clicking. Causes and contributors can include hearing loss, noise exposure, earwax, ear infection, M\u00e9ni\u00e8re\u2019s disease, TMJ disorders, head/neck injury, medications, vascular issues, and neurologic conditions.",
     "sarcasticAdvice": "Do not ignore sudden hearing loss or heartbeat-synced tinnitus. The ear is not supposed to become a tiny emergency broadcast system without supervision.",
     "mindfulnessPrompts": [
       "What noise needs medical evaluation?",
@@ -2324,7 +2324,7 @@
     "category": "Stomach & Gut",
     "emotionalRoot": "Swallowed anger, corrosive stress, rumination, boundary erosion, and the feeling that something keeps eating at you.",
     "metaphor": "Your stomach is a chemical plant where Gary the janitor keeps patching acid-burned pipes while management refuses to shut the valve.",
-    "physiologicalDescription": "Peptic ulcers are sores in the stomach or upper small intestine lining. They are commonly associated with H. pylori infection, NSAID use, acid injury, smoking, alcohol, severe physiologic stress, and protective lining breakdown.",
+    "physiologicalDescription": "Chronic stress and emotional suppression elevate gastric acid secretion via histamine and gastrin pathways. Simultaneously, stress reduces mucosal blood flow and mucus production, weakening the stomach's protective barrier. The American College of Gastroenterology confirms that stress is a primary trigger for peptic ulcer disease, with 60-80% of patients reporting symptom onset during high-stress periods.",
     "sarcasticAdvice": "Do not try to out-breathe black stool or vomiting blood. That is not resilience. That is how people become cautionary pamphlets.",
     "mindfulnessPrompts": [
       "What keeps eating at me?",
@@ -2524,7 +2524,7 @@
     "riskLevel": "Medical monitoring recommended",
     "emotionalRoot": "Instability, fear of falling, shaken ground, uncertainty, disorientation, and the need to find support before moving.",
     "metaphor": "Your body is a leaning tower whose foundation keeps shifting while the architect insists the floor is probably fine.",
-    "physiologicalDescription": "Loss of balance, dizziness, or vertigo is a symptom, not a diagnosis. Causes can include BPPV, Ménière’s disease, vestibular neuritis, labyrinthitis, migraine, stroke/TIA, multiple sclerosis, Parkinson’s disease, neuropathy, orthostatic hypotension, arrhythmia, dehydration, anemia, hypoglycemia, medications, anxiety/hyperventilation, neck injury, or cervicogenic dizziness.",
+    "physiologicalDescription": "Loss of balance, dizziness, or vertigo is a symptom, not a diagnosis. Causes can include BPPV, M\u00e9ni\u00e8re\u2019s disease, vestibular neuritis, labyrinthitis, migraine, stroke/TIA, multiple sclerosis, Parkinson\u2019s disease, neuropathy, orthostatic hypotension, arrhythmia, dehydration, anemia, hypoglycemia, medications, anxiety/hyperventilation, neck injury, or cervicogenic dizziness.",
     "sarcasticAdvice": "Do not walk around proving you're tough while the room is spinning. Sit down before gravity writes the medical report.",
     "physicalTherapyTip": "Track spinning vs faintness vs unsteadiness, onset, duration, triggers, falls, hearing changes, headache, double vision, weakness, numbness, speech trouble, chest pain, palpitations, medications, hydration, blood sugar, and neck injury.",
     "mindfulnessPrompts": [
@@ -2680,7 +2680,7 @@
   },
   {
     "id": "lower-back-pain-left-side",
-    "name": "Lower Back Pain — Left Side",
+    "name": "Lower Back Pain \u2014 Left Side",
     "category": "Back & Shoulders",
     "tags": [
       "lower back",
@@ -2690,7 +2690,7 @@
       "body map"
     ],
     "riskLevel": "Medical monitoring recommended",
-    "emotionalRoot": "Carried grief, emotional burden, unsupported receiving, and the weight of other people’s needs.",
+    "emotionalRoot": "Carried grief, emotional burden, unsupported receiving, and the weight of other people\u2019s needs.",
     "metaphor": "Your lower back is a wheelbarrow overloaded on the left side, grinding because everything got dumped onto one wheel.",
     "physiologicalDescription": "Left lower back pain may come from muscle strain, ligament sprain, disc problems, sciatica, sacroiliac dysfunction, pelvic floor tension, or referred pain from the left kidney, colon, pancreas, ovary/fallopian tube, or other structures.",
     "sarcasticAdvice": "Decode the pattern after checking the red flags. The spine is not a poetry slam with nerves attached for decoration.",
@@ -2704,7 +2704,7 @@
   },
   {
     "id": "lower-back-pain-right-side",
-    "name": "Lower Back Pain — Right Side",
+    "name": "Lower Back Pain \u2014 Right Side",
     "category": "Back & Shoulders",
     "tags": [
       "lower back",
@@ -2728,7 +2728,7 @@
   },
   {
     "id": "middle-back-pain-left-side",
-    "name": "Middle Back Pain — Left Side",
+    "name": "Middle Back Pain \u2014 Left Side",
     "category": "Back & Shoulders",
     "tags": [
       "middle back",
@@ -2752,7 +2752,7 @@
   },
   {
     "id": "middle-back-pain-right-side",
-    "name": "Middle Back Pain — Right Side",
+    "name": "Middle Back Pain \u2014 Right Side",
     "category": "Back & Shoulders",
     "tags": [
       "middle back",
@@ -2763,7 +2763,7 @@
     ],
     "riskLevel": "Medical monitoring recommended",
     "emotionalRoot": "Duty, responsibility, expectation, over-carrying, and roles that may not belong to you.",
-    "metaphor": "Your middle back is a suitcase packed with everyone else’s obligations until the zipper starts negotiating with God.",
+    "metaphor": "Your middle back is a suitcase packed with everyone else\u2019s obligations until the zipper starts negotiating with God.",
     "physiologicalDescription": "Right middle back pain may come from muscle strain, posture, rib dysfunction, disc issues, osteoarthritis, spinal stenosis, or referred pain from the gallbladder, liver, right kidney, right lung, or other structures.",
     "sarcasticAdvice": "Decode the pattern after checking the red flags. The spine is not a poetry slam with nerves attached for decoration.",
     "physicalTherapyTip": "Track location, onset, trauma, lifting/twisting, posture, radiating pain, numbness/weakness, bowel/bladder changes, fever, weight loss, urinary symptoms, abdominal pain, chest symptoms, and what worsens or relieves it.",
@@ -2776,7 +2776,7 @@
   },
   {
     "id": "upper-back-pain-left-side",
-    "name": "Upper Back Pain — Left Side",
+    "name": "Upper Back Pain \u2014 Left Side",
     "category": "Back & Shoulders",
     "tags": [
       "upper back",
@@ -2786,7 +2786,7 @@
       "body map"
     ],
     "riskLevel": "Medical monitoring recommended",
-    "emotionalRoot": "Emotional burden, sorrow, caretaking, grief, and the weight of everyone else’s feelings.",
+    "emotionalRoot": "Emotional burden, sorrow, caretaking, grief, and the weight of everyone else\u2019s feelings.",
     "metaphor": "Your upper back is a backpack overloaded on the left strap, digging into the shoulder because apparently you volunteered to carry the world.",
     "physiologicalDescription": "Left upper back pain may come from muscle strain, forward head posture, tech neck, cervical radiculopathy, disc issues, osteoarthritis, stress tension, or referred cardiac pain such as angina, especially when paired with chest symptoms.",
     "sarcasticAdvice": "Decode the pattern after checking the red flags. The spine is not a poetry slam with nerves attached for decoration.",
@@ -2800,7 +2800,7 @@
   },
   {
     "id": "upper-back-pain-right-side",
-    "name": "Upper Back Pain — Right Side",
+    "name": "Upper Back Pain \u2014 Right Side",
     "category": "Back & Shoulders",
     "tags": [
       "upper back",
@@ -2866,7 +2866,7 @@
     "category": "Skin & Sleep",
     "emotionalRoot": "Fixed identity, old markers, permanence, fear of change, and places where life feels stamped into the skin.",
     "metaphor": "Your skin is a museum exhibit with permanent markers, but some exhibits need a dermatologist before the curator starts writing poetry about them.",
-    "physiologicalDescription": "Moles, or nevi, are clusters of pigment-producing cells. Many are benign, but changing, irregular, bleeding, itching, painful, new, or unusual moles need medical/dermatology evaluation to rule out melanoma or other skin cancer.",
+    "physiologicalDescription": "While the precise biological mechanism linking stress to mole formation is not fully established, the broader relationship between chronic Qi and Blood stagnation and cellular accumulation is recognized in TCM. The skin reflects the internal environment. Stagnation\u2014emotional, energetic, circulatory\u2014manifests as fixed marks. The mole may be the physical proof of that stagnation.",
     "sarcasticAdvice": "Do not psychoanalyze a changing mole while ignoring the ABCDE checklist. Melanoma is not impressed by your archetypes.",
     "mindfulnessPrompts": [
       "What feels fixed in me?",
@@ -2889,7 +2889,7 @@
     "name": "Martyr Complex",
     "category": "General & Energy",
     "emotionalRoot": "Over-giving, guilt, depletion, resentment, transactional worth, fear of being useless, and the need to receive without earning it.",
-    "metaphor": "You are an overworked donkey carrying everyone else’s luggage while the crowd keeps calling it loyalty because nobody wants to pay baggage fees.",
+    "metaphor": "You are an overworked donkey carrying everyone else\u2019s luggage while the crowd keeps calling it loyalty because nobody wants to pay baggage fees.",
     "physiologicalDescription": "A martyr complex is not a clinical diagnosis. It is a behavioral and psychological pattern involving chronic self-sacrifice, over-giving, guilt around self-care, poor boundaries, resentment, burnout risk, anxiety, depression, and physical stress symptoms. Chronic caregiving or over-functioning without support can worsen exhaustion and health strain.",
     "sarcasticAdvice": "Stop confusing exhaustion with virtue. A dead battery is not morally superior to a charged one. It is just less useful and more annoying to jump-start.",
     "mindfulnessPrompts": [

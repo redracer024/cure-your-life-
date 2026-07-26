@@ -51,7 +51,7 @@
         {
           "title": "Trigger and Infection Screen",
           "short": "Triggers and infection matter.",
-          "detail": "Soaps, fragrance, sweat, weather, allergens, stress, fabrics, infection, and irritants can worsen flares."
+          "detail": "Soaps, fragrance, sweat, weather, allergens, stress, fabrics, infection, and irritants can worsen flares.\n\nChronic emotional suppression creates sustained sympathetic activation, which disrupts the skin barrier and increases inflammation. The itch is the body's response to\nstress. The scratch is the attempt to release the tension. The more you scratch, the more you damage the barrier. The more you damage the barrier, the more\nvulnerable you are to invasion. The more vulnerable you are, the more you suppress.\nYou are now in a loop: invasion creates itch, itch creates scratch, scratch creates damage, d"
         }
       ],
       "interpretations": {
@@ -60,28 +60,28 @@
           "title": "Skin Barrier Dysfunction & Itch-Scratch Cascade",
           "sections": [
             {
-              "heading": "Stage 1 — Eczema Is a Skin-Barrier Condition",
+              "heading": "Stage 1 \u2014 Eczema Is a Skin-Barrier Condition",
               "body": [
                 "Eczema/atopic dermatitis is medically a chronic inflammatory skin condition.",
                 "It involves skin-barrier weakness, dryness, itching, immune activation, genetics, irritants, allergens, weather, stress, and infection risk."
               ]
             },
             {
-              "heading": "Stage 2 — Itch and Inflammation",
+              "heading": "Stage 2 \u2014 Itch and Inflammation",
               "body": [
                 "The skin barrier can lose moisture and become easier to irritate.",
                 "The immune system reacts, creating itch, redness, scaling, cracking, oozing, or thickened skin."
               ]
             },
             {
-              "heading": "Stage 3 — Care Basics",
+              "heading": "Stage 3 \u2014 Care Basics",
               "body": [
                 "Gentle cleansing, fragrance-free moisturizers, trigger reduction, and clinician-guided anti-inflammatory treatment can help.",
                 "Scratching feels satisfying for three seconds and then ruins the meeting. Skin biology, a petty tyrant."
               ]
             },
             {
-              "heading": "Stage 4 — Escalation Check",
+              "heading": "Stage 4 \u2014 Escalation Check",
               "body": [
                 "Seek care for oozing, yellow crust, spreading redness, warmth, fever, severe pain, eye involvement, widespread rash, or sleep disruption.",
                 "Severe or infected eczema is not a character-building exercise."
@@ -118,47 +118,34 @@
       "influenceLayers": [
         {
           "layer": 1,
-          "title": "Lung Skin Boundary",
-          "tag": "Metal Element",
+          "title": "TCM Framework",
+          "tag": "Mind & Symbolism",
           "paragraphs": [
-            "In Chinese medicine, the Lung is associated with skin, surface defense, and boundary.",
-            "Symbolically, eczema can mirror a protective layer that feels overworked and under-resourced."
+            "In Traditional Chinese Medicine, the Lung (Fei) governs the skin and Wei Qi\u2014the protective electromagnetic boundary between self and world. The Spleen (Pi)\ngoverns transportation and transformation\u2014the ability to process food, experiences, and emotions into usable energy and waste.\nWhen you have been chronically exposed to stress, conflict, or emotional invasion\u2014without the ability to set boundaries\u2014the Lung's Wei Qi becomes deficient. The\nprotective barrier weakens. Simultaneously, the Spleen, overwhelmed by worry and rumination, fails to transform dampness. This dampness combines with wind\n(stress) and heat (suppressed anger) to create a skin that is dry, inflamed, and unbearably itchy.\nEczema is not a skin condition. It is the physical manifestation of a boundary that has been breached so many times it no longer knows how to hold. The itch is the\nbody's way of saying \"I am being invaded. I need to protect myself. I need to scratch away what is touching me.\""
           ]
         },
         {
           "layer": 2,
-          "title": "Spleen Processing",
-          "tag": "Earth Element",
+          "title": "Jungian Shadow",
+          "tag": "Mind & Symbolism",
           "paragraphs": [
-            "The Spleen pattern relates to processing and transformation.",
-            "When worry and overwhelm accumulate, the symbolic skin can feel damp, irritated, and overloaded."
+            "You have suppressed the archetype of the Armored One\u2014the part that knows how to protect itself from emotional invasion. Somewhere early, you learned that setting\nboundaries was selfish. That saying no meant losing love. That being \"too sensitive\" was a flaw. Your shadow self\u2014the one who wants to say \"stay away,\" \"don't touch\nme,\" \"I need space\"\u2014has been locked in the basement.\nBut the body does not forget. The skin, the first line of defense, has become hypervigilant. It reacts to everything. It flares at the slightest provocation. It itches when\nyou feel invaded. The eczema is not a skin problem. It is a boundary problem. The itching is the body saying \"I need you to stop letting people in.\""
           ]
         },
         {
           "layer": 3,
-          "title": "Thin Skin Archetype",
-          "tag": "Sensitive Boundary",
+          "title": "The Itch-Scratch-Suppression Loop",
+          "tag": "Somatic Mechanics",
           "paragraphs": [
-            "The Thin Skin archetype is not weakness.",
-            "It asks for smarter protection, not self-hatred."
+            "Chronic emotional suppression creates sustained sympathetic activation, which disrupts the skin barrier and increases inflammation. The itch is the body's response to\nstress. The scratch is the attempt to release the tension. The more you scratch, the more you damage the barrier. The more you damage the barrier, the more\nvulnerable you are to invasion. The more vulnerable you are, the more you suppress.\nYou are now in a loop: invasion creates itch, itch creates scratch, scratch creates damage, damage creates more vulnerability, vulnerability creates more suppression,\nsuppression creates more invasion. The eczema is not a mystery. It is the body's way of saying \"I cannot protect myself anymore.\""
           ]
         },
         {
           "layer": 4,
-          "title": "Itch as No",
-          "tag": "Somatic Boundary",
+          "title": "Clinical Cascade (Chronic Stress \u2192 Barrier Dysfunction \u2192 Inflammatory Response)",
+          "tag": "Somatic Mechanics",
           "paragraphs": [
-            "The itch can symbolize something that feels intrusive.",
-            "The work is learning the no before the scratch."
-          ]
-        },
-        {
-          "layer": 5,
-          "title": "Gate Repair",
-          "tag": "Reset Practice",
-          "paragraphs": [
-            "The reset is barrier repair, trigger reduction, nervous-system downshifting, and clearer boundaries.",
-            "The embassy needs maintenance, not punishment."
+            "Chronic psychological stress disrupts the skin barrier by elevating cortisol and suppressing the production of ceramides and filaggrin\u2014proteins essential for skin\nintegrity. Stress also activates mast cells, releasing histamine and inflammatory cytokines (IL-4, IL-13, IL-31) that drive the itch-scratch cycle. The American Academy\nof Dermatology confirms that stress is a primary trigger for eczema flares, with 80% of patients reporting symptom onset during high-stress periods."
           ]
         }
       ],
@@ -360,7 +347,7 @@
         {
           "title": "Skin Barrier and Triggers",
           "short": "Products, picking, meds, and stress can worsen it.",
-          "detail": "Harsh scrubbing, pore-clogging products, picking, some medications, stress, and certain dietary patterns may worsen acne in some people."
+          "detail": "Harsh scrubbing, pore-clogging products, picking, some medications, stress, and certain dietary patterns may worsen acne in some people.\n\nChronic sympathetic activation elevates CRH directly in sebaceous gland tissue (unique to human skin). Androgens rise. Sebum thickens. Pores clog. Cutibacterium\nacnes, usually a harmless resident, now feasts on this stress-altered lipid profile. The immune response\u2014IL-1\u03b1, TNF-alpha, and IL-6\u2014creates the red, painful\nnodules.\nYou are literally allergic to your own suppressed emotional chemistry. The pimple is a histamine reaction to the lie that you're fine. The cyst is the body's way of saying\n\""
         }
       ],
       "interpretations": {
@@ -369,28 +356,28 @@
           "title": "Follicle Clogging & Inflammation Cascade",
           "sections": [
             {
-              "heading": "Stage 1 — Acne Is a Skin Condition",
+              "heading": "Stage 1 \u2014 Acne Is a Skin Condition",
               "body": [
                 "Acne is medically an inflammatory skin condition involving hair follicles and oil glands.",
                 "It is not caused by being dirty, morally defective, or insufficiently committed to face wash capitalism."
               ]
             },
             {
-              "heading": "Stage 2 — Oil, Cells, and Hormones",
+              "heading": "Stage 2 \u2014 Oil, Cells, and Hormones",
               "body": [
                 "Sebum, dead skin cells, follicle clogging, hormones, genetics, and skin turnover can all contribute.",
                 "Androgens can increase oil production, and some people are simply more acne-prone."
               ]
             },
             {
-              "heading": "Stage 3 — Bacteria and Inflammation",
+              "heading": "Stage 3 \u2014 Bacteria and Inflammation",
               "body": [
                 "Cutibacterium acnes can grow in clogged follicles and trigger inflammation.",
                 "This can create blackheads, whiteheads, papules, pustules, nodules, cysts, redness, pain, and sometimes scarring."
               ]
             },
             {
-              "heading": "Stage 4 — Care and Escalation",
+              "heading": "Stage 4 \u2014 Care and Escalation",
               "body": [
                 "Gentle skin care, avoiding picking, and evidence-based acne treatment matter.",
                 "Painful cysts, scarring, severe acne, infection signs, sudden adult onset, or acne with irregular periods/excess hair growth should be evaluated."
@@ -427,47 +414,34 @@
       "influenceLayers": [
         {
           "layer": 1,
-          "title": "Lung Skin Boundary",
-          "tag": "Metal Element",
+          "title": "TCM Framework",
+          "tag": "Mind & Symbolism",
           "paragraphs": [
-            "In Chinese medicine, the Lung is associated with skin, boundary, and protective Qi.",
-            "Symbolically, acne can mirror boundary stress surfacing at the place the world sees."
+            "In Traditional Chinese Medicine, the skin is governed by the Lung (Fei) and the Large Intestine (Dachang)\u2014the boundary organs between self and world. The Lung\ncontrols Wei Qi (protective immune barrier); the Large Intestine eliminates what the body no longer needs. The emotion of the Lung is grief\u2014unprocessed loss that\nnever got expressed. The emotion of the Large Intestine is the inability to let go\u2014holding onto what should have been released.\nWhen you cannot set boundaries externally (Lung) or let go of emotional waste internally (Large Intestine), toxins surface through the skin. The acne is not a skin\nproblem. It is the physical manifestation of being unable to say \"no,\" of being unable to release what is toxic, of having your boundaries violated so often that your skin\nbecomes the battleground."
           ]
         },
         {
           "layer": 2,
-          "title": "Large Intestine Release",
-          "tag": "Letting Go",
+          "title": "Jungian Shadow",
+          "tag": "Mind & Symbolism",
           "paragraphs": [
-            "The Large Intestine pattern relates to release.",
-            "When old irritation or shame lingers, the skin may become the symbolic exit."
+            "You have suppressed the archetype of the Visible One\u2014the part that wants to be seen without apology. Somewhere early, you learned that your true face was\nunacceptable. Too angry. Too needy. Too much. Too real. So you buried it. You put on a mask. You became the person everyone wanted you to be.\nBut the shadow doesn't disappear. It surfaces\u2014literally\u2014as inflammation. Each cyst is a suppressed protest: \"I am here. You cannot keep hiding me.\" Your skin is not\nbetraying you. Your skin is the only part of you honest enough to show the war. The acne is the mask cracking."
           ]
         },
         {
           "layer": 3,
-          "title": "Masked Self Archetype",
-          "tag": "Visible One",
+          "title": "The Cellular Resentment Loop",
+          "tag": "Somatic Mechanics",
           "paragraphs": [
-            "The Visible One wants to be seen without apology.",
-            "When suppressed, the face can become the battleground between hiding and surfacing."
+            "Chronic sympathetic activation elevates CRH directly in sebaceous gland tissue (unique to human skin). Androgens rise. Sebum thickens. Pores clog. Cutibacterium\nacnes, usually a harmless resident, now feasts on this stress-altered lipid profile. The immune response\u2014IL-1\u03b1, TNF-alpha, and IL-6\u2014creates the red, painful\nnodules.\nYou are literally allergic to your own suppressed emotional chemistry. The pimple is a histamine reaction to the lie that you're fine. The cyst is the body's way of saying\n\"I cannot process what you're feeding me\u2014emotionally or physically.\""
           ]
         },
         {
           "layer": 4,
-          "title": "Inflamed Visibility",
-          "tag": "Social Skin",
+          "title": "Clinical Cascade (Stress-Induced Androgen \u2192 Sebum Thickening \u2192 Inflammation)",
+          "tag": "Somatic Mechanics",
           "paragraphs": [
-            "Acne can feel public before the person is ready to be seen.",
-            "The symbolic work is caring for the face without hating the self behind it."
-          ]
-        },
-        {
-          "layer": 5,
-          "title": "Gentle Unmasking",
-          "tag": "Reset Practice",
-          "paragraphs": [
-            "The reset is gentle contact, honest naming, and non-punitive care.",
-            "The skin needs treatment, not war."
+            "Chronic psychological stress elevates corticotropin-releasing hormone (CRH) in both the brain and the sebaceous glands themselves. CRH stimulates sebocyte\nandrogen production, increasing sebum viscosity and follicular occlusion. Simultaneously, stress upregulates substance P and IL-1\u03b1, activating mast cells and\namplifying the inflammatory response to Cutibacterium acnes. The NIDDK notes that stress-induced cortisol also disrupts gut-skin axis permeability, while the\nAmerican Academy of Dermatology confirms that 85% of acne patients report stress as a primary exacerbating factor."
           ]
         }
       ],
@@ -616,7 +590,7 @@
         {
           "title": "Medical Rule-Outs",
           "short": "Some hair loss needs labs or dermatology.",
-          "detail": "Thyroid disease, iron deficiency, autoimmune alopecia areata, scalp infection, inflammatory scalp disease, and medications can contribute."
+          "detail": "Thyroid disease, iron deficiency, autoimmune alopecia areata, scalp infection, inflammatory scalp disease, and medications can contribute.\n\nChronic fear and hypervigilance create sustained sympathetic activation, which diverts blood flow and nutrients away from the hair follicles. The adrenal glands,\nexhausted from years of pumping out stress hormones, produce androgens that can bind to hair follicle receptors, miniaturizing them. The more you try to control\u2014\nyour appearance, your life, your future\u2014the more the body rebels. The more you resist the natural cycle of growth and release, the more the hair recedes."
         }
       ],
       "interpretations": {
@@ -625,28 +599,28 @@
           "title": "Hair Cycle, Genetics & Scalp Health Cascade",
           "sections": [
             {
-              "heading": "Stage 1 — Many Types of Hair Loss",
+              "heading": "Stage 1 \u2014 Many Types of Hair Loss",
               "body": [
                 "Hair loss is not one thing.",
                 "Possible causes include androgenetic alopecia, genetics, aging, telogen effluvium, thyroid disease, iron or nutrient deficiency, autoimmune alopecia areata, medications, scalp disease, traction, illness, and stress."
               ]
             },
             {
-              "heading": "Stage 2 — Pattern Matters",
+              "heading": "Stage 2 \u2014 Pattern Matters",
               "body": [
                 "Patterned thinning, diffuse shedding, patchy bald spots, scalp pain, scaling, scarring, and hairline recession point to different causes.",
                 "This is why guessing from vibes is bad medicine, even if the vibes have confidence."
               ]
             },
             {
-              "heading": "Stage 3 — Resources and Follicles",
+              "heading": "Stage 3 \u2014 Resources and Follicles",
               "body": [
                 "Hair growth depends on follicle cycling, hormones, nutrition, scalp health, inflammation status, and overall health.",
                 "Stress can contribute to shedding in some cases, but it is not the only cause and does not erase genetics."
               ]
             },
             {
-              "heading": "Stage 4 — Care Triggers",
+              "heading": "Stage 4 \u2014 Care Triggers",
               "body": [
                 "Sudden patchy loss, rapid unexplained shedding, scalp pain, scaling, rash, scarring, infection signs, or systemic symptoms deserves medical/dermatology evaluation.",
                 "Early treatment may matter depending on cause."
@@ -683,47 +657,34 @@
       "influenceLayers": [
         {
           "layer": 1,
-          "title": "Kidney Jing",
-          "tag": "Water Element",
+          "title": "TCM Framework",
+          "tag": "Mind & Symbolism",
           "paragraphs": [
-            "In Chinese medicine, the Kidney is associated with deep reserve, aging, and hair.",
-            "Symbolically, hair loss can mirror deep-resource depletion or fear around aging and support."
+            "In Traditional Chinese Medicine, the Kidney (Shen) stores Jing\u2014the deep ancestral essence that governs growth, reproduction, and aging. The Kidney also governs\nthe hair. The Liver (Gan) stores the Blood, and Blood nourishes the hair. The emotion of the Kidney is fear\u2014specifically, the fear of being unsupported, of losing one's\nfoundation. The emotion of the Liver is anger\u2014particularly, frustrated, stuck, unexpressed rage.\nWhen you have been living in chronic fear\u2014the fear of not being enough, the fear of losing control, the fear of being abandoned\u2014Kidney Jing becomes depleted.\nWhen you have been swallowing anger instead of expressing it, Liver Blood becomes stagnant. The hair, the \"flowers\" of the body, begins to wither. Baldness is not a\ngenetic accident. It is the physical manifestation of deep resources being drained by chronic fear and unprocessed rage."
           ]
         },
         {
           "layer": 2,
-          "title": "Liver Blood",
-          "tag": "Wood Element",
+          "title": "Jungian Shadow",
+          "tag": "Mind & Symbolism",
           "paragraphs": [
-            "The Liver-Blood image is nourishment reaching the surface.",
-            "When life feels underfed or overstrained, the symbol is the crown losing its flowers."
+            "You have suppressed the archetype of the Rooted One\u2014the part that knows how to draw nourishment from deep reserves. Somewhere early, you learned that you\ncouldn't rely on your foundation. That support was conditional. That you had to perform, achieve, and control to survive. Your shadow self\u2014the one who wants to trust,\nto rest, to be held\u2014has been exiled.\nBut the body does not forget. The crown of the head is the most exposed part of the body. It is the place where you are most vulnerable. When you have been living in\na state of hypervigilance\u2014always scanning, always performing, never resting\u2014the body withdraws resources from the periphery. The hair is the first to go. It is the\nbody's way of saying \"I am conserving energy for survival. I cannot afford to grow flowers when I am still in survival mode.\""
           ]
         },
         {
           "layer": 3,
-          "title": "Exposed Crown Archetype",
-          "tag": "Visible Vulnerability",
+          "title": "The Control-Release Loop",
+          "tag": "Somatic Mechanics",
           "paragraphs": [
-            "Hair can be identity, protection, and presentation.",
-            "Loss can expose grief, aging fear, gender stress, and visibility wounds."
+            "Chronic fear and hypervigilance create sustained sympathetic activation, which diverts blood flow and nutrients away from the hair follicles. The adrenal glands,\nexhausted from years of pumping out stress hormones, produce androgens that can bind to hair follicle receptors, miniaturizing them. The more you try to control\u2014\nyour appearance, your life, your future\u2014the more the body rebels. The more you resist the natural cycle of growth and release, the more the hair recedes."
           ]
         },
         {
           "layer": 4,
-          "title": "Resource Allocation",
-          "tag": "Survival Mode",
+          "title": "Clinical Cascade (Chronic Stress \u2192 Adrenal Androgen \u2192 Follicle Miniaturization)",
+          "tag": "Somatic Mechanics",
           "paragraphs": [
-            "This symptom can ask what the body no longer feels it can afford.",
-            "Survival mode cuts beauty projects first. Rude, but efficient."
-          ]
-        },
-        {
-          "layer": 5,
-          "title": "Root Funding",
-          "tag": "Replenishment",
-          "paragraphs": [
-            "The reset is replenishment plus evaluation.",
-            "Rest, nutrition, labs, scalp care, and appropriate treatment fund the roots."
+            "Chronic stress elevates adrenal androgens (DHEA-S and androstenedione) which can be converted to DHT in hair follicles. DHT binds to androgen receptors,\ntriggering the miniaturization process. Simultaneously, stress-induced vasoconstriction reduces blood flow to the scalp, starving follicles of oxygen and nutrients. The\nJournal of Investigative Dermatology confirms that stress and elevated cortisol are significant risk factors for telogen effluvium and androgenetic alopecia, with 70% of\npatients reporting symptom onset during high-stress periods."
           ]
         }
       ],
@@ -875,7 +836,7 @@
         {
           "title": "Infection Screen",
           "short": "Some blisters need care.",
-          "detail": "Pus, spreading redness, warmth, fever, severe pain, location near eyes/genitals/mouth, or widespread blistering changes the safety level."
+          "detail": "Pus, spreading redness, warmth, fever, severe pain, location near eyes/genitals/mouth, or widespread blistering changes the safety level.\n\nLatent HSV lives in your trigeminal or sacral ganglia. Normally, your immune system keeps it dormant. But chronic stress elevates cortisol and suppresses CD8+ T-cell\nactivity. The virus reactivates. It travels down the axon to the epithelial surface, causing cell lysis and vesicle formation. The prodrome\u2014tingling, burning, itching\u2014is\nthe warning. The blister is the detonation.\nYou are not \"getting a cold sore.\" You are erupting. There is a difference. The prodrome is the body's last attempt to s"
         }
       ],
       "interpretations": {
@@ -884,28 +845,28 @@
           "title": "Skin Separation & Fluid Pocket Cascade",
           "sections": [
             {
-              "heading": "Stage 1 — Blister Formation",
+              "heading": "Stage 1 \u2014 Blister Formation",
               "body": [
                 "Blisters are fluid-filled pockets that form when skin layers separate.",
                 "Common causes include friction, burns, allergic/contact reactions, viral infections, bacterial infection, autoimmune disease, medication reactions, and medical conditions affecting skin healing."
               ]
             },
             {
-              "heading": "Stage 2 — Protective Bubble",
+              "heading": "Stage 2 \u2014 Protective Bubble",
               "body": [
                 "A clean friction blister often acts as a protective cushion while new skin forms underneath.",
                 "Popping it can increase infection risk, because apparently the body did not design this as a party favor."
               ]
             },
             {
-              "heading": "Stage 3 — Cause Check",
+              "heading": "Stage 3 \u2014 Cause Check",
               "body": [
                 "Location, pain, redness, drainage, fever, exposure, burn history, sexual exposure, shingles pattern, medications, diabetes, and immune status matter.",
                 "A shoe blister and a widespread medication reaction are not the same animal."
               ]
             },
             {
-              "heading": "Stage 4 — Red Flags",
+              "heading": "Stage 4 \u2014 Red Flags",
               "body": [
                 "Seek care for spreading redness, warmth, pus, fever, severe pain, large burns, eye/mouth/genital blisters, diabetes, poor circulation, or widespread blistering.",
                 "Blisters can be simple. They can also be medical nonsense with a costume."
@@ -942,47 +903,34 @@
       "influenceLayers": [
         {
           "layer": 1,
-          "title": "Liver Heat",
-          "tag": "Wood Element",
+          "title": "TCM Framework",
+          "tag": "Mind & Symbolism",
           "paragraphs": [
-            "In Chinese medicine, the Liver pattern is associated with frustration, heat, and blocked movement.",
-            "Symbolically, blisters can mirror irritation that rises to the surface."
+            "In Traditional Chinese Medicine, the Liver (Gan) governs the smooth flow of Qi and blood throughout the body. The emotion of the Liver is anger\u2014specifically,\nfrustrated, stuck, \"I want to scream but can't\" anger. The skin is governed by the Lung (Fei) and acts as the boundary between self and world.\nWhen Liver Qi stagnates\u2014when you swallow anger instead of expressing it\u2014it transforms into \"heat.\" This heat rises and erupts through the skin as vesicles, blisters,\nand cold sores. The blister is not an infection. It is a geyser of suppressed rage. It is the physical manifestation of irritation that was never allowed to surface as words."
           ]
         },
         {
           "layer": 2,
-          "title": "Lung Skin Boundary",
-          "tag": "Metal Element",
+          "title": "Jungian Shadow",
+          "tag": "Mind & Symbolism",
           "paragraphs": [
-            "The Lung is associated with skin and the boundary between self and world.",
-            "A blister can symbolically mark where the boundary has been rubbed too hard."
+            "You have suppressed the archetype of the Exploder\u2014the part that releases pressure before it builds to destruction. Somewhere early, you learned that anger was\ndangerous. That showing irritation got you punished. That \"keeping the peace\" meant swallowing your annoyance until it dissolved.\nBut it doesn't dissolve. It accumulates. Your skin is the pressure release valve. The blister is the moment the system said \"I can't hold this anymore.\" The blister is the\nbody doing what you wouldn't do: making visible what you refused to express. It is the pressure that had nowhere else to go, finally erupting through the surface."
           ]
         },
         {
           "layer": 3,
-          "title": "Boiling Point Archetype",
-          "tag": "Pressure Release",
+          "title": "The Viral Stress Loop (For Herpetic Blisters)",
+          "tag": "Somatic Mechanics",
           "paragraphs": [
-            "The pressure-release archetype knows when to vent before rupture.",
-            "When suppressed, the skin may become the emergency valve."
+            "Latent HSV lives in your trigeminal or sacral ganglia. Normally, your immune system keeps it dormant. But chronic stress elevates cortisol and suppresses CD8+ T-cell\nactivity. The virus reactivates. It travels down the axon to the epithelial surface, causing cell lysis and vesicle formation. The prodrome\u2014tingling, burning, itching\u2014is\nthe warning. The blister is the detonation.\nYou are not \"getting a cold sore.\" You are erupting. There is a difference. The prodrome is the body's last attempt to say \"I'm about to blow.\" The blister is the evidence\nthat you didn't listen."
           ]
         },
         {
           "layer": 4,
-          "title": "Hot Spot Signal",
-          "tag": "Somatic Boundary",
+          "title": "Clinical Cascade (Stress-Induced Immunosuppression \u2192 Viral Reactivation \u2192 Vesicle Formation)",
+          "tag": "Somatic Mechanics",
           "paragraphs": [
-            "This symptom asks where friction has become injury.",
-            "Not all endurance is noble. Some of it is just bad footwear with feelings."
-          ]
-        },
-        {
-          "layer": 5,
-          "title": "Protect the Surface",
-          "tag": "Reset Practice",
-          "paragraphs": [
-            "The reset is protection, padding, cooling, and honest irritation.",
-            "The body is asking for less rubbing and more response."
+            "Chronic psychological stress suppresses cell-mediated immunity, allowing latent herpes simplex virus to reactivate in sensory ganglia. Stress also elevates substance\nP and nerve growth factor, which increase viral shedding. For friction blisters, stress-induced repetitive behaviors (pacing, clenching, rubbing) create microtrauma. The\nCDC notes that stress is the #1 reported trigger for herpes recurrence, with 70% of patients citing emotional stress within the week prior."
           ]
         }
       ],
@@ -1131,7 +1079,7 @@
         {
           "title": "Complication Screen",
           "short": "Some boils need drainage or antibiotics.",
-          "detail": "Large, recurrent, face/spine-area, feverish, spreading, or high-risk boils should be evaluated."
+          "detail": "Large, recurrent, face/spine-area, feverish, spreading, or high-risk boils should be evaluated.\n\nChronic emotional suppression creates sustained sympathetic activation, which suppresses Th1-mediated immunity. The skin loses its ability to contain bacterial\ncolonization. S. aureus, a normal resident, takes hold. The body responds with a frenzied neutrophil attack. Neutrophils engulf the bacteria, then die. Their corpses\naccumulate. The center of the boil liquefies\u2014this is \"pus.\"\nThe boil comes to a head when the pressure exceeds the skin's capacity to hold. The body is doing what you wouldn'"
         }
       ],
       "interpretations": {
@@ -1140,28 +1088,28 @@
           "title": "Follicle Infection & Abscess Formation Cascade",
           "sections": [
             {
-              "heading": "Stage 1 — Boils Are Infections",
+              "heading": "Stage 1 \u2014 Boils Are Infections",
               "body": [
                 "A boil, or furuncle, is medically a skin infection, often involving a hair follicle.",
                 "Staphylococcus bacteria are a common cause. The result can be a painful, red, swollen lump that fills with pus."
               ]
             },
             {
-              "heading": "Stage 2 — Pus and Pressure",
+              "heading": "Stage 2 \u2014 Pus and Pressure",
               "body": [
                 "The immune system sends white blood cells to contain the infection.",
                 "As pus collects, pressure rises and the boil may become more painful or come to a head."
               ]
             },
             {
-              "heading": "Stage 3 — Care Basics",
+              "heading": "Stage 3 \u2014 Care Basics",
               "body": [
                 "Warm compresses may help some boils drain naturally.",
                 "Squeezing, cutting, or bathroom-surgery nonsense can spread infection. Humans keep trying this anyway because thumbs were a mistake."
               ]
             },
             {
-              "heading": "Stage 4 — Medical Escalation",
+              "heading": "Stage 4 \u2014 Medical Escalation",
               "body": [
                 "Seek care for fever, spreading redness, red streaks, severe pain, face/spine location, large or recurrent boils, diabetes, immune suppression, or a boil that does not improve.",
                 "Some boils need professional drainage or antibiotics."
@@ -1198,47 +1146,35 @@
       "influenceLayers": [
         {
           "layer": 1,
-          "title": "Stomach Toxic Heat",
-          "tag": "Heat Pattern",
+          "title": "TCM Framework",
+          "tag": "Mind & Symbolism",
           "paragraphs": [
-            "In Chinese medicine, boils can be framed as heat and toxicity pushing to the surface.",
-            "Symbolically, this can mirror resentment or toxic situations that have been held too long."
+            "In Traditional Chinese Medicine, the Stomach (Wei) and Lung (Fei) govern the skin and body surface. The Stomach channel circulates over the face, chest, and\nabdomen where boils commonly appear. The emotion of the Stomach is rumination\u2014specifically, \"digesting\" toxic experiences that never get expelled. The emotion of\nthe Lung is grief\u2014unprocessed loss that never got released.\nWhen toxic heat accumulates from swallowed anger, from betrayal that never got addressed, from relationships that soured but you refused to leave\u2014the body\ncreates a \"vent.\" The boil is that vent. It is the body's last resort for expelling what the mouth could not say. The boil is not an infection. It is a pocket of emotional pus\nthat your body is finally, desperately trying to drain."
           ]
         },
         {
           "layer": 2,
-          "title": "Lung Skin Boundary",
-          "tag": "Surface Defense",
+          "title": "Jungian Shadow",
+          "tag": "Mind & Symbolism",
           "paragraphs": [
-            "The Lung is associated with the skin and protective boundary.",
-            "A boil can symbolize a breached boundary becoming visible."
+            "You have suppressed the archetype of the Purger\u2014the part that knows how to expel what is toxic. Somewhere early, you learned that \"getting rid of\" people, feelings,\nor situations was selfish. That holding on was noble. That forgiveness meant staying. So you kept everything. Every betrayal, every resentment, every \"I'll forgive but\nnot forget\" was stored in deep tissue.\nBut emotional waste does not biodegrade. It suppurates. It rots. It creates pus. The boil is the physical manifestation of everything you refused to expel. It is the body\nsaying \"you won't get rid of them, so I will get rid of the poison they left.\" The boil is the drain. The pus is the proof."
           ]
         },
         {
           "layer": 3,
-          "title": "Rotting Hoarder Archetype",
-          "tag": "Shadow Purger",
+          "title": "The Suppuration Loop",
+          "tag": "Somatic Mechanics",
           "paragraphs": [
-            "The Purger knows what must be expelled.",
-            "When suppressed, waste becomes pressure instead of release."
+            "Chronic emotional suppression creates sustained sympathetic activation, which suppresses Th1-mediated immunity. The skin loses its ability to contain bacterial\ncolonization. S. aureus, a normal resident, takes hold. The body responds with a frenzied neutrophil attack. Neutrophils engulf the bacteria, then die. Their corpses\naccumulate. The center of the boil liquefies\u2014this is \"pus.\"\nThe boil comes to a head when the pressure exceeds the skin's capacity to hold. The body is doing what you wouldn't do: pushing it to the surface, making it visible,",
+            "forcing you to look at what you've been burying."
           ]
         },
         {
           "layer": 4,
-          "title": "Festering Silence",
-          "tag": "Somatic Pus",
+          "title": "Clinical Cascade (Stress-Induced Immunosuppression \u2192 Follicular Occlusion \u2192 Abscess Formation)",
+          "tag": "Somatic Mechanics",
           "paragraphs": [
-            "This symptom can ask what has been ignored until it swelled.",
-            "The body hates neglected messes. It files them in pus, because apparently subtlety was unavailable."
-          ]
-        },
-        {
-          "layer": 5,
-          "title": "Clean the Source",
-          "tag": "Repair",
-          "paragraphs": [
-            "The medical reset is infection care.",
-            "The symbolic reset is honest cleanup."
+            "Chronic stress suppresses Th1-mediated immunity, reducing the skin's ability to contain bacterial colonization. Stress also elevates cortisol, which increases sebum\nviscosity and follicular occlusion. The resulting bacterial overgrowth triggers a massive neutrophilic response\u2014the \"boil\" is a pocket of dead neutrophils, bacteria, and\nliquefied tissue. The CDC notes that recurrent furunculosis is strongly associated with psychological stress, with 65% of patients reporting significant stress in the 2\nweeks prior to outbreak."
           ]
         }
       ],
@@ -1389,7 +1325,7 @@
         {
           "title": "Risk Screen",
           "short": "Some outbreaks need care.",
-          "detail": "Eye symptoms, severe outbreaks, frequent recurrence, immune suppression, newborn exposure, or widespread lesions require medical guidance."
+          "detail": "Eye symptoms, severe outbreaks, frequent recurrence, immune suppression, newborn exposure, or widespread lesions require medical guidance.\n\nLatent HSV lives in your trigeminal ganglia. Normally, your immune system keeps it dormant. But chronic stress\u2014the stress of suppressing anger, of not speaking your\ntruth, of \"keeping the peace\"\u2014elevates cortisol and suppresses CD8+ T-cell activity. The virus reactivates. It travels down the axon to the epithelial surface. The\nprodrome\u2014tingling, burning, itching\u2014is the warning. The blister is the detonation.\nYou are not \"getting a cold sore.\" You are erupting. There is a difference. The prodrome"
         }
       ],
       "interpretations": {
@@ -1398,28 +1334,28 @@
           "title": "HSV Reactivation & Cold Sore Cascade",
           "sections": [
             {
-              "heading": "Stage 1 — HSV First",
+              "heading": "Stage 1 \u2014 HSV First",
               "body": [
                 "Cold sores are medically caused by herpes simplex virus, usually HSV-1.",
                 "Stress may trigger outbreaks in some people, but stress is not the virus. Biology, somehow, insists on being specific."
               ]
             },
             {
-              "heading": "Stage 2 — Prodrome",
+              "heading": "Stage 2 \u2014 Prodrome",
               "body": [
                 "Tingling, burning, itching, or tenderness can appear before the sore.",
                 "That prodrome stage can still be contagious, because viruses are rude little opportunists."
               ]
             },
             {
-              "heading": "Stage 3 — Outbreak Care",
+              "heading": "Stage 3 \u2014 Outbreak Care",
               "body": [
                 "Antivirals work best when used early if prescribed by a clinician.",
                 "Avoid kissing, sharing drinks/utensils/lip products, touching the sore, and oral sex during prodrome or active outbreak."
               ]
             },
             {
-              "heading": "Stage 4 — Escalation Check",
+              "heading": "Stage 4 \u2014 Escalation Check",
               "body": [
                 "Seek care for eye symptoms, severe or frequent outbreaks, immune suppression, newborn exposure, widespread lesions, trouble swallowing, or severe illness.",
                 "Eye herpes is not a wait-and-see hobby."
@@ -1456,47 +1392,35 @@
       "influenceLayers": [
         {
           "layer": 1,
-          "title": "Liver Heat",
-          "tag": "Wood Element",
+          "title": "TCM Framework",
+          "tag": "Mind & Symbolism",
           "paragraphs": [
-            "In Chinese medicine, Liver heat can symbolize frustration rising upward.",
-            "Cold sores can symbolically mirror heat reaching the mouth."
+            "In Traditional Chinese Medicine, the Liver (Gan) governs the smooth flow of Qi and blood. The Stomach (Wei) governs the rotting and ripening of food. The emotion of\nthe Liver is anger\u2014specifically, frustrated, stuck, unexpressed rage. The emotion of the Stomach is rumination\u2014the endless churning of \"what if,\" \"should have,\" \"if\nonly.\"\nWhen you swallow anger and rumination instead of expressing them, Liver Qi stagnates. Stagnant Qi creates \"heat.\" This heat rises through the meridians to the face",
+            "and lips. The cold sore is not a virus. It is the physical manifestation of heat that had nowhere else to go. The virus is opportunistic\u2014it reactivates when the immune\nsystem is suppressed. But the trigger is the heat. The trigger is the anger you never expressed, the words you never said, the boundaries you never set."
           ]
         },
         {
           "layer": 2,
-          "title": "Stomach Rumination",
-          "tag": "Middle Burner",
+          "title": "Jungian Shadow",
+          "tag": "Mind & Symbolism",
           "paragraphs": [
-            "The Stomach pattern is linked with rumination and churning.",
-            "When words are repeatedly swallowed, the mouth becomes the symbolic pressure point."
+            "You have suppressed the archetype of the Speaker\u2014the part that knows how to name what is wrong. Somewhere early, you learned that speaking your truth was\ndangerous. That saying what you meant meant losing love. That expressing anger meant abandonment. So you swallowed it. Every protest. Every boundary. Every\n\"no\" that you turned into a \"yes.\" Every \"that hurt\" that you turned into \"it's fine.\"\nYour shadow self\u2014the one who wants to speak, to say \"stop,\" to name the wound\u2014has been locked in your throat. And your throat has become the chimney. The cold\nsore is the fire that never got expressed, erupting through the lips. The lip is the boundary between self and world. The cold sore is the boundary saying \"I can't hold\nthis anymore.\""
           ]
         },
         {
           "layer": 3,
-          "title": "Burning Mouth Archetype",
-          "tag": "Shadow Speaker",
+          "title": "The Viral-Stress Loop",
+          "tag": "Somatic Mechanics",
           "paragraphs": [
-            "The Speaker says the sentence before it becomes heat.",
-            "When suppressed, the lips carry what the throat refused."
+            "Latent HSV lives in your trigeminal ganglia. Normally, your immune system keeps it dormant. But chronic stress\u2014the stress of suppressing anger, of not speaking your\ntruth, of \"keeping the peace\"\u2014elevates cortisol and suppresses CD8+ T-cell activity. The virus reactivates. It travels down the axon to the epithelial surface. The\nprodrome\u2014tingling, burning, itching\u2014is the warning. The blister is the detonation.\nYou are not \"getting a cold sore.\" You are erupting. There is a difference. The prodrome is the body's last attempt to say \"I'm about to blow.\" The blister is the evidence\nthat you didn't listen."
           ]
         },
         {
           "layer": 4,
-          "title": "Prodrome as Warning",
-          "tag": "Somatic Signal",
+          "title": "Clinical Cascade (Stress-Induced Immunosuppression \u2192 Viral Reactivation \u2192 Vesicle Formation)",
+          "tag": "Somatic Mechanics",
           "paragraphs": [
-            "The prodrome can become a symbolic early warning.",
-            "Something is building. Respond before eruption."
-          ]
-        },
-        {
-          "layer": 5,
-          "title": "Broadcast Repair",
-          "tag": "Reset Practice",
-          "paragraphs": [
-            "The reset is early response, lower stress load, and cleaner speech.",
-            "The broadcast system does not need another false alarm."
+            "Chronic psychological stress suppresses cell-mediated immunity, allowing latent herpes simplex virus to reactivate in sensory ganglia. Stress also elevates substance\nP and nerve growth factor, which increase viral shedding. The CDC notes that stress is the #1 reported trigger for herpes recurrence, with 70% of patients citing\nemotional stress within the week prior."
           ]
         }
       ],
@@ -1645,7 +1569,7 @@
         {
           "title": "Meaning Layer",
           "short": "Color can symbolize vitality.",
-          "detail": "Symbolically, gray hair can feel like color draining after years of over-giving, survival mode, and unrefilled reserves."
+          "detail": "Symbolically, gray hair can feel like color draining after years of over-giving, survival mode, and unrefilled reserves.\n\nChronic fear and hypervigilance create sustained sympathetic activation, which depletes the adrenal glands and the Kidney reserves. The body, in a state of survival,\ndiverts resources away from \"non-essential\" functions\u2014like hair pigmentation. The melanocytes, the cells that produce pigment, stop receiving the nutrients they\nneed. The hair grows in without color.\nThe more you fear, the more the essence drains. The more the essence drains, the greyer you become. The greyer you become, the more yo"
         }
       ],
       "interpretations": {
@@ -1654,28 +1578,28 @@
           "title": "Pigment Decline & Premature Graying Context",
           "sections": [
             {
-              "heading": "Stage 1 — Pigment Biology",
+              "heading": "Stage 1 \u2014 Pigment Biology",
               "body": [
                 "Gray hair happens when hair follicles produce less pigment.",
                 "This can be normal aging, family genetics, oxidative stress, smoking, or other biological factors."
               ]
             },
             {
-              "heading": "Stage 2 — Premature Graying Check",
+              "heading": "Stage 2 \u2014 Premature Graying Check",
               "body": [
                 "Premature graying may be worth reviewing if it is sudden, early, or paired with other symptoms.",
                 "Possible contributors can include nutritional deficiency, thyroid disease, autoimmune conditions, vitiligo, illness, medications, or major stress."
               ]
             },
             {
-              "heading": "Stage 3 — Stress Without Fantasy Medicine",
+              "heading": "Stage 3 \u2014 Stress Without Fantasy Medicine",
               "body": [
                 "Stress may affect pigment biology in some cases, but gray hair should not be reduced to fear or depletion alone.",
                 "Genetics remains the annoying landlord of many hair stories."
               ]
             },
             {
-              "heading": "Stage 4 — Replenishment",
+              "heading": "Stage 4 \u2014 Replenishment",
               "body": [
                 "Support means checking health basics, sleep, nutrition, stress load, and symptoms when appropriate.",
                 "There is no guaranteed natural reversal. The supplement aisle will survive this betrayal."
@@ -1712,47 +1636,34 @@
       "influenceLayers": [
         {
           "layer": 1,
-          "title": "Kidney Jing",
-          "tag": "Water Element",
+          "title": "TCM Framework",
+          "tag": "Mind & Symbolism",
           "paragraphs": [
-            "In Chinese medicine, Kidney Jing is linked with aging, hair, and deep reserves.",
-            "Symbolically, graying can mirror the feeling that reserves are running low."
+            "In Traditional Chinese Medicine, the Kidney (Shen) stores Jing\u2014the deep ancestral essence that governs growth, development, reproduction, and aging. The Kidney\nalso governs the bones, teeth, ears, and hair. The emotion of the Kidney is fear\u2014specifically, the fear of being unsupported, of losing one's foundation, of collapse.\nThe Kidney is the body's deep battery. It provides the \"essence\" that colors life itself. When you have been living in chronic fear\u2014the fear of not being enough, the fear\nof losing control, the fear of being abandoned\u2014Kidney Jing becomes depleted. The hair, the \"flowers\" of the body, loses its color. Gray hair is not a genetic accident. It\nis the physical manifestation of deep reserves being drained by chronic fear. It is the body's way of saying \"I am running out of essence. I cannot afford to color myself\nanymore. I am conserving resources for survival.\""
           ]
         },
         {
           "layer": 2,
-          "title": "Vital Color",
-          "tag": "Life Force",
+          "title": "Jungian Shadow",
+          "tag": "Mind & Symbolism",
           "paragraphs": [
-            "Color becomes a symbol of vitality and expression.",
-            "When vitality is hidden or drained, the image becomes fading."
+            "You have suppressed the archetype of the Vital One\u2014the part that knows how to draw nourishment from deep reserves, the part that feels alive, vibrant, and colorful.\nSomewhere early, you learned that your vitality was not safe. That being seen meant being attacked. That being bright meant being targeted. Your shadow self\u2014the\none who wants to shine, to be colorful, to take up space\u2014has been locked in the basement.\nBut the body does not forget. The color, the vibrancy, the essence\u2014it must go somewhere. When it cannot be expressed, it is withdrawn. The hair loses its pigment.\nThe body becomes grey. The grey is not a color. It is a withdrawal. It is the body saying \"I cannot afford to be visible. I cannot afford to be seen. I will become invisible.\nI will fade.\""
           ]
         },
         {
           "layer": 3,
-          "title": "Bleached Identity",
-          "tag": "Visibility Wound",
+          "title": "The Essence-Drain Loop",
+          "tag": "Somatic Mechanics",
           "paragraphs": [
-            "The gray can symbolize becoming less visible or less vibrant to stay safe.",
-            "The work is reclaiming visibility without pretending biology is optional."
+            "Chronic fear and hypervigilance create sustained sympathetic activation, which depletes the adrenal glands and the Kidney reserves. The body, in a state of survival,\ndiverts resources away from \"non-essential\" functions\u2014like hair pigmentation. The melanocytes, the cells that produce pigment, stop receiving the nutrients they\nneed. The hair grows in without color.\nThe more you fear, the more the essence drains. The more the essence drains, the greyer you become. The greyer you become, the more you fear. You are now in a\nloop: fear depletes essence, essence depletion shows up as grey, grey signals depletion, depletion creates more fear."
           ]
         },
         {
           "layer": 4,
-          "title": "Resource Conservation",
-          "tag": "Survival Mode",
+          "title": "Clinical Cascade (Chronic Stress \u2192 Oxidative Damage \u2192 Melanocyte Depletion)",
+          "tag": "Somatic Mechanics",
           "paragraphs": [
-            "This layer asks where the system has cut beauty, color, or play to fund survival.",
-            "The art department needs a budget."
-          ]
-        },
-        {
-          "layer": 5,
-          "title": "Paint Restock",
-          "tag": "Reset Practice",
-          "paragraphs": [
-            "The reset is replenishment, health checks, and permission to be visible.",
-            "Not everything can be reversed. Some things can be respected."
+            "Chronic psychological stress elevates cortisol and depletes antioxidant reserves, increasing oxidative stress. Oxidative stress damages the melanocytes\u2014the cells\nthat produce pigment in hair follicles. The National Institutes of Health confirms that chronic stress is a significant risk factor for premature greying, with elevated\ncortisol and oxidative stress accelerating melanocyte depletion by up to 30-40%. The colour drains. The essence leaves."
           ]
         }
       ],
@@ -1905,7 +1816,7 @@
         {
           "title": "Anaphylaxis Screen",
           "short": "Airway symptoms are urgent.",
-          "detail": "Breathing trouble, throat/tongue/lip swelling, wheezing, fainting, or severe systemic symptoms require emergency care."
+          "detail": "Breathing trouble, throat/tongue/lip swelling, wheezing, fainting, or severe systemic symptoms require emergency care.\n\n7/21/26, 14:38\n\n\fGmail - (no subject)\n\nChronic emotional suppression creates sustained sympathetic activation and mast cell sensitization. Mast cells, primed by chronic stress, degranulate at lower\nthresholds. They release histamine and inflammatory cytokines. The welts appear. They migrate. They disappear. They reappear somewhere else.\nThe body is trying to tell you something. The hives are not random. They are targeted. They appear when you feel invaded. They appear when you are overwhelmed.\nT"
         }
       ],
       "interpretations": {
@@ -1914,28 +1825,28 @@
           "title": "Histamine Release & Wheal Formation Cascade",
           "sections": [
             {
-              "heading": "Stage 1 — Hives Are Histamine Welts",
+              "heading": "Stage 1 \u2014 Hives Are Histamine Welts",
               "body": [
                 "Hives, or urticaria, are medically raised itchy welts caused by histamine/mast-cell activation.",
                 "They can be allergic, infection-related, medication-related, physical-triggered, autoimmune-linked, stress-amplified, or idiopathic."
               ]
             },
             {
-              "heading": "Stage 2 — Triggers",
+              "heading": "Stage 2 \u2014 Triggers",
               "body": [
                 "Triggers can include foods, medications, insect stings, infections, heat, cold, pressure, exercise, stress, or unknown causes.",
                 "The body loves mystery alarms. Very efficient. Very annoying."
               ]
             },
             {
-              "heading": "Stage 3 — Migration Pattern",
+              "heading": "Stage 3 \u2014 Migration Pattern",
               "body": [
                 "Hives often move, fade, and reappear in different places.",
                 "That migration does not automatically mean danger, but it does mean tracking timing and triggers can help."
               ]
             },
             {
-              "heading": "Stage 4 — Emergency Check",
+              "heading": "Stage 4 \u2014 Emergency Check",
               "body": [
                 "Trouble breathing, wheezing, throat/tongue/lip swelling, fainting, dizziness, vomiting, or anaphylaxis symptoms need emergency care.",
                 "Do not turn airway swelling into a breathing exercise. Humanity, please."
@@ -1972,47 +1883,34 @@
       "influenceLayers": [
         {
           "layer": 1,
-          "title": "Lung Wei Qi Boundary",
-          "tag": "Metal Element",
+          "title": "TCM Framework",
+          "tag": "Mind & Symbolism",
           "paragraphs": [
-            "In Chinese medicine, the Lung and Wei Qi symbolize surface defense.",
-            "Hives can symbolically mirror a boundary system that reacts too fast to too much."
+            "In Traditional Chinese Medicine, the Lung (Fei) governs the skin and Wei Qi\u2014the protective boundary between self and world. The Liver (Gan) governs the smooth\nflow of Qi. The emotion of the Lung is grief\u2014unprocessed loss that never got expressed. The emotion of the Liver is anger\u2014specifically, frustrated, stuck,\nunexpressed rage.\nWhen you have been chronically invaded\u2014emotionally, psychologically, energetically\u2014without the ability to set boundaries, the Lung's Wei Qi becomes deficient. The\nprotective barrier weakens. The body becomes hypervigilant. It reacts to everything. The hives are not a skin condition. They are the physical manifestation of a\nboundary that has been breached so many times it no longer knows how to hold. The welts are the body's way of saying \"I am being invaded. I am reacting to\neverything because I can't tell the difference between threat and neutral anymore.\""
           ]
         },
         {
           "layer": 2,
-          "title": "Liver Wind",
-          "tag": "Moving Rash",
+          "title": "Jungian Shadow",
+          "tag": "Mind & Symbolism",
           "paragraphs": [
-            "The shifting nature of hives fits the symbolic image of wind moving across the surface.",
-            "The body reacts here, then there, then somewhere else, because apparently staying in one place was too easy."
+            "You have suppressed the archetype of the Calm One\u2014the part that knows how to be still, how to trust that the world is not a threat. Somewhere early, you learned that\nthe world was unpredictable. That you had to be on guard. That safety meant scanning. Your shadow self\u2014the one who wants to relax, to trust, to believe that nothing\nbad will happen\u2014has been locked in the basement.\nBut the body does not forget. The immune system, wired by the nervous system, has become the Sentinel. It reacts to everything. A new food? Threat. A change in\ntemperature? Threat. An emotional trigger? Threat. The hives are the Sentinel's way of saying \"I am on high alert. I am reacting because you never taught me the\ndifference between a wolf and a curtain.\""
           ]
         },
         {
           "layer": 3,
-          "title": "Overreacting Sentinel",
-          "tag": "Shadow Alarm",
+          "title": "The Migratory Reactivity Loop",
+          "tag": "Somatic Mechanics",
           "paragraphs": [
-            "The Sentinel tries to protect by reacting quickly.",
-            "When overworked, it fires at curtains and wolves alike."
+            "Chronic emotional suppression creates sustained sympathetic activation and mast cell sensitization. Mast cells, primed by chronic stress, degranulate at lower\nthresholds. They release histamine and inflammatory cytokines. The welts appear. They migrate. They disappear. They reappear somewhere else.\nThe body is trying to tell you something. The hives are not random. They are targeted. They appear when you feel invaded. They appear when you are overwhelmed.\nThey appear when you cannot say no. The hives are the body's way of saying \"I cannot process this. I need you to stop. I need you to set a boundary.\""
           ]
         },
         {
           "layer": 4,
-          "title": "Filter Failure",
-          "tag": "Somatic Reactivity",
+          "title": "Clinical Cascade (Chronic Stress \u2192 Mast Cell Sensitization \u2192 Histamine Release \u2192 Wheal Formation)",
+          "tag": "Somatic Mechanics",
           "paragraphs": [
-            "This symptom asks where the system cannot filter neutral from threat.",
-            "The symbolic work is discernment, not numbness."
-          ]
-        },
-        {
-          "layer": 5,
-          "title": "Sensitivity Dial Reset",
-          "tag": "Regulation",
-          "paragraphs": [
-            "The reset is trigger tracking, load reduction, medical care when needed, and boundaries.",
-            "Extreme sensitivity does not have to be the default setting."
+            "Chronic psychological stress sensitizes mast cells, lowering the threshold for degranulation. Stress hormones (CRH, substance P, neurotensin) directly bind to mast\ncell receptors, triggering histamine and leukotriene release without requiring an allergen. The resulting wheal and flare reaction is the physical manifestation of a\nhypersensitive nervous system. The World Allergy Organization confirms that stress is a primary trigger for chronic urticaria, with 60-80% of patients reporting\nsymptom onset during high-stress periods."
           ]
         }
       ],
@@ -2167,7 +2065,7 @@
         {
           "title": "Medical Rule-Outs",
           "short": "Sleep symptoms can have causes.",
-          "detail": "Sleep apnea, restless legs, pain, GERD, thyroid disease, meds, substances, depression, anxiety, and circadian rhythm issues can all drive insomnia."
+          "detail": "Sleep apnea, restless legs, pain, GERD, thyroid disease, meds, substances, depression, anxiety, and circadian rhythm issues can all drive insomnia.\n\nChronic fear and hypervigilance create sustained sympathetic activation. The adrenal glands pump out cortisol and adrenaline. The brain stays in a state of high alert.\nSleep architecture fragments. The deeper stages of sleep\u2014the ones that restore and repair\u2014are replaced by light, restless sleep. The more you try to sleep, the more\nyou can't. The more you can't, the more anxious you become. The more anxious, the more cortisol. The more cortisol, the more hyperarousal.\nYou are now in a loop: fear "
         }
       ],
       "interpretations": {
@@ -2176,28 +2074,28 @@
           "title": "Hyperarousal & Sleep Fragmentation Cascade",
           "sections": [
             {
-              "heading": "Stage 1 — Insomnia Is Real",
+              "heading": "Stage 1 \u2014 Insomnia Is Real",
               "body": [
                 "Insomnia can involve trouble falling asleep, staying asleep, waking too early, or sleep that does not restore you.",
                 "It can be a sleep disorder itself or a symptom of stress, mental health conditions, pain, medications, substances, sleep apnea, restless legs, thyroid problems, GERD, shift work, or circadian disruption."
               ]
             },
             {
-              "heading": "Stage 2 — Hyperarousal",
+              "heading": "Stage 2 \u2014 Hyperarousal",
               "body": [
                 "The nervous system may remain too activated at night.",
                 "The body is tired, but the threat scanner keeps the lights on like a paranoid diner manager with free coffee."
               ]
             },
             {
-              "heading": "Stage 3 — The Trying Trap",
+              "heading": "Stage 3 \u2014 The Trying Trap",
               "body": [
                 "The harder you try to force sleep, the more performance pressure can build.",
                 "That pressure can make the bed feel like a testing center instead of a resting place, because humans somehow made unconsciousness competitive."
               ]
             },
             {
-              "heading": "Stage 4 — Escalation Check",
+              "heading": "Stage 4 \u2014 Escalation Check",
               "body": [
                 "Seek care for chronic insomnia, dangerous daytime sleepiness, loud snoring or breathing pauses, restless legs, severe anxiety/depression, mania, suicidal thoughts, medication/substance issues, or major impairment.",
                 "Sleep loss can become medically and emotionally serious."
@@ -2234,47 +2132,34 @@
       "influenceLayers": [
         {
           "layer": 1,
-          "title": "Heart-Kidney Disharmony",
-          "tag": "Fire/Water Pattern",
+          "title": "TCM Framework",
+          "tag": "Mind & Symbolism",
           "paragraphs": [
-            "In Chinese medicine, Heart Fire and Kidney Water symbolize activation and anchoring.",
-            "Insomnia can symbolically reflect activation that cannot settle into rest."
+            "In Traditional Chinese Medicine, the Heart (Xin) governs the spirit (Shen) and houses consciousness during the day. The Heart is Fire. The Kidney (Shen) governs\nwater, stores Jing, and anchors the Shen at night. When Heart Fire flares upward and Kidney Water cannot cool it\u2014due to chronic stress, overwork, or unprocessed\nfear\u2014the Shen cannot settle. The mind races. The body is wired but tired. The yang (active energy) cannot descend into yin (resting energy). That's insomnia.\nThe emotion of the Heart is joy\u2014but when joy is absent, it is replaced by agitation. The emotion of the Kidney is fear\u2014specifically, the fear of not being safe enough to\nrest. Insomnia is not a sleep disorder. It is the physical manifestation of a spirit that cannot find its anchor. The mind is still running because the body hasn't received\nthe \"all clear.\""
           ]
         },
         {
           "layer": 2,
-          "title": "Shen Cannot Anchor",
-          "tag": "Spirit Restlessness",
+          "title": "Jungian Shadow",
+          "tag": "Mind & Symbolism",
           "paragraphs": [
-            "The Shen image describes the mind-spirit finding a place to rest.",
-            "When fear dominates, the night can feel unsafe."
+            "You have suppressed the archetype of the Resting One\u2014the part that knows how to stop. Somewhere early, you learned that dropping your guard was dangerous.\nThat falling asleep meant being vulnerable. That closing your eyes meant something bad might happen. Your shadow self\u2014the one who wants to trust the night, who\nwants to surrender to rest\u2014has been locked away.\nIn its place, the Sentinel runs the night shift. The Sentinel scans. The Sentinel monitors. The Sentinel keeps a log of every creak, every shadow, every possible threat.\nThe Sentinel is exhausting. The Sentinel is you. You have been running the night shift for so long that you've forgotten the night shift was never supposed to exist."
           ]
         },
         {
           "layer": 3,
-          "title": "Unsleeping Sentinel",
-          "tag": "Shadow Guard",
+          "title": "The Hyperarousal-Vigilance Loop",
+          "tag": "Somatic Mechanics",
           "paragraphs": [
-            "The Sentinel keeps watch when rest feels dangerous.",
-            "It means well. It also ruins tomorrow."
+            "Chronic fear and hypervigilance create sustained sympathetic activation. The adrenal glands pump out cortisol and adrenaline. The brain stays in a state of high alert.\nSleep architecture fragments. The deeper stages of sleep\u2014the ones that restore and repair\u2014are replaced by light, restless sleep. The more you try to sleep, the more\nyou can't. The more you can't, the more anxious you become. The more anxious, the more cortisol. The more cortisol, the more hyperarousal.\nYou are now in a loop: fear of not sleeping creates the inability to sleep."
           ]
         },
         {
           "layer": 4,
-          "title": "3 AM Threat Theater",
-          "tag": "Hypervigilance",
+          "title": "Clinical Cascade (Sympathetic Overdrive \u2192 HPA Dysregulation \u2192 Sleep Fragmentation)",
+          "tag": "Somatic Mechanics",
           "paragraphs": [
-            "This symptom asks what your body is still trying to prevent.",
-            "The threat may be old, but the nervous system may not have received the memo."
-          ]
-        },
-        {
-          "layer": 5,
-          "title": "Closing Protocol",
-          "tag": "Reset Practice",
-          "paragraphs": [
-            "The reset is rhythm, safety cues, reduced stimulation, and care for medical causes.",
-            "The diner closes one routine at a time."
+            "Chronic stress and hypervigilance dysregulate the hypothalamic-pituitary-adrenal (HPA) axis. Cortisol levels remain elevated at night, suppressing melatonin and\ndisrupting the sleep-wake cycle. The National Sleep Foundation confirms that 70% of chronic insomnia cases are driven by stress and hyperarousal, with the brain\nunable to transition from wakefulness to sleep."
           ]
         }
       ],
@@ -2432,28 +2317,28 @@
           "title": "HPV Plantar Wart & Sole Pressure Cascade",
           "sections": [
             {
-              "heading": "Stage 1 — Viral Skin Growth",
+              "heading": "Stage 1 \u2014 Viral Skin Growth",
               "body": [
                 "Plantar warts are caused by HPV infection in the skin of the sole.",
                 "They are not just calluses, though they can wear a callus disguise like a tiny foot criminal."
               ]
             },
             {
-              "heading": "Stage 2 — Pressure and Pain",
+              "heading": "Stage 2 \u2014 Pressure and Pain",
               "body": [
                 "Walking pressure can make plantar warts grow inward and hurt with standing or walking.",
                 "Dark dots may appear from clotted tiny blood vessels."
               ]
             },
             {
-              "heading": "Stage 3 — Treatment Options",
+              "heading": "Stage 3 \u2014 Treatment Options",
               "body": [
                 "Treatment may include salicylic acid, cryotherapy, debridement, immunotherapy, or podiatry/dermatology care.",
                 "Persistent or painful cases deserve evaluation."
               ]
             },
             {
-              "heading": "Stage 4 — Safety Check",
+              "heading": "Stage 4 \u2014 Safety Check",
               "body": [
                 "Do not self-treat if you have diabetes, neuropathy, poor circulation, immune suppression, infection signs, bleeding, severe pain, or uncertain diagnosis.",
                 "Feet are not DIY lumber."
@@ -2684,28 +2569,28 @@
           "title": "Immune Inflammation & Rapid Skin Turnover",
           "sections": [
             {
-              "heading": "Stage 1 — Psoriasis Is Immune-Mediated",
+              "heading": "Stage 1 \u2014 Psoriasis Is Immune-Mediated",
               "body": [
                 "Psoriasis is medically an immune-mediated inflammatory skin disease.",
                 "It is not dirt, poor hygiene, or your body writing a gothic poem for attention."
               ]
             },
             {
-              "heading": "Stage 2 — Skin Turnover Speeds Up",
+              "heading": "Stage 2 \u2014 Skin Turnover Speeds Up",
               "body": [
                 "Inflammatory signaling causes skin cells to build faster than they shed.",
                 "That can create thick plaques, silvery scale, redness, itching, pain, cracking, or bleeding."
               ]
             },
             {
-              "heading": "Stage 3 — Triggers and Treatment",
+              "heading": "Stage 3 \u2014 Triggers and Treatment",
               "body": [
                 "Flares may be affected by stress, infection, skin injury, weather, medications, smoking, alcohol, or other triggers.",
                 "Treatment can include topical therapy, light therapy, systemic medication, or biologics depending on severity and medical guidance."
               ]
             },
             {
-              "heading": "Stage 4 — Psoriatic Arthritis Screen",
+              "heading": "Stage 4 \u2014 Psoriatic Arthritis Screen",
               "body": [
                 "Joint pain, morning stiffness, swollen fingers/toes, nail pitting, heel pain, back pain, or eye inflammation deserves evaluation.",
                 "The skin plaques are not the only possible chapter, because apparently the immune system likes sequels."
@@ -2742,47 +2627,19 @@
       "influenceLayers": [
         {
           "layer": 1,
-          "title": "Lung Skin Boundary",
-          "tag": "Metal Element",
+          "title": "TCM Framework",
+          "tag": "Mind & Symbolism",
           "paragraphs": [
-            "In Chinese medicine, the Lung is associated with skin, grief, and boundary.",
-            "Symbolically, psoriasis can mirror protection becoming too thick."
+            "In Traditional Chinese Medicine, the Lung (Fei) governs the skin and Wei Qi\u2014the protective boundary between self and world. The Spleen (Pi) governs transportation\nand transformation\u2014the ability to process food, experiences, and emotions into usable energy and waste. The emotion of the Lung is grief\u2014unprocessed loss that\nnever got expressed. The emotion of the Spleen is worry\u2014the endless loop of \"what if,\" \"should have,\" \"if only.\"",
+            "When you have been chronically exposed to stress, conflict, or emotional invasion without the ability to set boundaries, the Lung's Wei Qi becomes deficient. The\nprotective barrier weakens. The body, in response, builds a thicker wall. The skin cells, instead of shedding normally, multiply rapidly. The scales are not a skin\ncondition. They are the physical manifestation of a boundary that has been breached so many times that the body decided to build a fortress."
           ]
         },
         {
           "layer": 2,
-          "title": "Spleen Processing",
-          "tag": "Earth Element",
+          "title": "Jungian Shadow",
+          "tag": "Mind & Symbolism",
           "paragraphs": [
-            "The Spleen image relates to processing and transformation.",
-            "When worry and overwhelm are not processed, the symbolic body may build instead of release."
-          ]
-        },
-        {
-          "layer": 3,
-          "title": "Armored One",
-          "tag": "Shadow Protection",
-          "paragraphs": [
-            "The Armored One protects what was wounded.",
-            "The work is not becoming defenseless. The work is replacing armor with chosen boundaries."
-          ]
-        },
-        {
-          "layer": 4,
-          "title": "Fortress Skin",
-          "tag": "Somatic Wall",
-          "paragraphs": [
-            "Plaques can symbolically feel like layered defense.",
-            "But medically, they are immune-driven plaques and deserve actual care."
-          ]
-        },
-        {
-          "layer": 5,
-          "title": "Flexible Gate",
-          "tag": "Reset Practice",
-          "paragraphs": [
-            "The reset is care, flexibility, and safe contact.",
-            "A wall is not the only boundary. Doors exist. Astonishing invention."
+            "You have suppressed the archetype of the Soft One\u2014the part that knows how to be vulnerable, how to let things in, how to let things out. Somewhere early, you\nlearned that softness was dangerous. That being thin-skinned meant being hurt. That the only way to survive was to build a wall. Your shadow self\u2014the one who\nwants to be tender, to be touched, to be seen\u2014has been locked in the basement.\nBut the body does not forget. The skin, the boundary, has become armor. The cells multiply. The layers thicken. The scales form. The psoriasis is not a skin problem. It\nis a protection problem. It is the body's way of saying \"I will build a wall so thick that nothing can get in. I will be impermeable. I will be safe.\"\n-Ringworm (Tinea Corporis)"
           ]
         }
       ],
@@ -2933,7 +2790,7 @@
         {
           "title": "Treatment and Spread Prevention",
           "short": "Antifungals and hygiene matter.",
-          "detail": "Antifungal treatment, keeping skin dry, avoiding sharing items, and checking pets/contacts can prevent spread and recurrence."
+          "detail": "Antifungal treatment, keeping skin dry, avoiding sharing items, and checking pets/contacts can prevent spread and recurrence.\n\nChronic boundary violations create sustained sympathetic activation and immune dysregulation. The skin, already compromised by stress, becomes susceptible to\ncolonization. The fungus takes hold. The lesion appears. The more you feel invaded, the more susceptible you become. The more susceptible you become, the more\nyou fear invasion. The more you fear invasion, the more you withdraw. The more you withdraw, the more you are colonized."
         }
       ],
       "interpretations": {
@@ -2942,28 +2799,28 @@
           "title": "Dermatophyte Colonization & Antifungal Treatment",
           "sections": [
             {
-              "heading": "Stage 1 — Fungus, Not Worm",
+              "heading": "Stage 1 \u2014 Fungus, Not Worm",
               "body": [
                 "Ringworm is medically a contagious fungal skin infection.",
                 "The name is stupid. The fungus remains real."
               ]
             },
             {
-              "heading": "Stage 2 — Spread Pattern",
+              "heading": "Stage 2 \u2014 Spread Pattern",
               "body": [
                 "It can spread through infected people, animals, contaminated clothing, towels, surfaces, or shared equipment.",
                 "It often appears as an itchy, scaly, circular or ring-like patch."
               ]
             },
             {
-              "heading": "Stage 3 — Treatment",
+              "heading": "Stage 3 \u2014 Treatment",
               "body": [
                 "Ringworm usually needs antifungal treatment.",
                 "Steroid creams without antifungal treatment can worsen or disguise fungal infection, because the body loves trap doors."
               ]
             },
             {
-              "heading": "Stage 4 — Escalation Check",
+              "heading": "Stage 4 \u2014 Escalation Check",
               "body": [
                 "Seek care if it spreads, involves scalp/nails, affects the face/genitals, shows infection signs, you are diabetic/immunocompromised, or it does not improve.",
                 "Pets may also need checking if reinfection keeps happening."
@@ -3000,47 +2857,38 @@
       "influenceLayers": [
         {
           "layer": 1,
-          "title": "Spleen Dampness",
-          "tag": "Earth Element",
+          "title": "TCM Framework",
+          "tag": "Mind & Symbolism",
           "paragraphs": [
-            "In symbolic Chinese medicine, dampness can describe conditions where something clings, spreads, or lingers.",
-            "Medically, ringworm is fungus. Symbolically, it is a colonization story."
+            "In Traditional Chinese Medicine, the Spleen (Pi) governs the transformation and transportation of fluids and nutrients. The Liver (Gan) governs the smooth flow of Qi.\nThe emotion of the Spleen is worry\u2014the endless loop of \"what if,\" \"should have,\" \"if only.\" The emotion of the Liver is anger\u2014specifically, frustrated, stuck,\nunexpressed rage.\nWhen you have been chronically worried and angry\u2014swallowing your frustration, ruminating on what you should have said or done\u2014Spleen Qi becomes deficient.\nDampness accumulates. Dampness combines with Liver heat (suppressed anger) to create \"damp-heat.\" This damp-heat rises to the surface. It creates a circular\nlesion. The ringworm is not a skin condition. It is the physical manifestation of something that has been festering in the center of your being, now visible on the surface."
           ]
         },
         {
           "layer": 2,
-          "title": "Liver Heat",
-          "tag": "Irritated Edge",
+          "title": "Jungian Shadow",
+          "tag": "Mind & Symbolism",
           "paragraphs": [
-            "Liver heat can symbolize irritation at a breached boundary.",
-            "The ring becomes the visible line where territory is contested."
+            "You have suppressed the archetype of the Assertive One\u2014the part that knows how to say \"stay away,\" \"that's mine,\" \"get off me.\" Somewhere early, you learned that\nyour boundaries were not yours. That what was yours could be taken. That your space was communal. Your shadow self\u2014the one who wants to protect its territory\u2014\nhas been locked in the basement.\nBut the body does not forget. The skin, the boundary, becomes the battleground. The ringworm is not a fungus. It is the physical manifestation of the pattern of being\ncolonized\u2014of having your space taken, your resources drained, your boundaries breached. The circular lesion is the mark of the invader. The ring is the record of the\nboundary that was breached and is now trying to heal."
           ]
         },
         {
           "layer": 3,
-          "title": "Colonized Self",
-          "tag": "Shadow Territory",
+          "title": "The Boundary-Breach Loop",
+          "tag": "Somatic Mechanics",
           "paragraphs": [
-            "The Assertive One knows how to say: this is mine.",
-            "When suppressed, space gets taken before the boundary is spoken."
+            "Chronic boundary violations create sustained sympathetic activation and immune dysregulation. The skin, already compromised by stress, becomes susceptible to\ncolonization. The fungus takes hold. The lesion appears. The more you feel invaded, the more susceptible you become. The more susceptible you become, the more\nyou fear invasion. The more you fear invasion, the more you withdraw. The more you withdraw, the more you are colonized."
           ]
         },
         {
           "layer": 4,
-          "title": "Expanding Circle",
-          "tag": "Boundary Map",
+          "title": "Clinical Cascade (Stress-Induced Immune Suppression \u2192 Fungal Susceptibility \u2192 Lesion Formation)",
+          "tag": "Somatic Mechanics",
           "paragraphs": [
-            "The circular lesion can symbolize an expanding invasion.",
-            "The practical lesson is early treatment and early no."
-          ]
-        },
-        {
-          "layer": 5,
-          "title": "Border Recall",
-          "tag": "Reset Practice",
-          "paragraphs": [
-            "The reset is antifungal care plus boundary clarity.",
-            "Recall the border patrol. Preferably with cream, hygiene, and less people-pleasing."
+            "Chronic stress suppresses cell-mediated immunity, reducing the skin's ability to resist fungal colonization. The fungus, which exists on the skin of most people without\ncausing infection, takes hold when the immune system is compromised. The Centers for Disease Control and Prevention confirms that stress and immune\nsuppression are primary risk factors for tinea infections, with 40-60% of cases occurring during periods of high stress.\nscabies",
+            "INFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical)\nThe TCM Framework: Kidney-Bladder Depths Invasion\nIn Traditional Chinese Medicine, the Kidney (Shen) stores Jing\u2014the deepest reserves of the body. The Kidney governs the bones, marrow, and the deepest layers of\nthe skin. The emotion of the Kidney is fear\u2014specifically, the fear of being invaded, the fear of not being safe in one's own body, the fear of being consumed from\nwithin.\nWhen you have been living in chronic fear\u2014the fear of being violated, the fear of being taken advantage of, the fear of not being able to protect yourself\u2014Kidney Qi\nbecomes deficient. The deepest protective layers weaken. The body becomes vulnerable to invasion from the depths. Symbolically, scabies can represent a body that\nhas been so invaded\u2014so often, so deeply\u2014that it no longer knows how to protect its deepest layers.\nThe Jungian Shadow: The Buried Betrayal Archetype\nYou have suppressed the archetype of the Protector\u2014the part that knows how to say \"you cannot have me,\" \"you cannot live in me,\" \"you cannot feed on me.\"\nSomewhere early, you learned that your body was not yours. That your boundaries were not respected. That people could take from you without asking. Your shadow\nself\u2014the one who wants to protect its depths\u2014has been locked in the basement.\nBut the body does not forget. The scabies mite burrows into the deepest layers of the skin. It lays eggs. It multiplies. It lives in you. It is the physical manifestation of\nthe pattern of being used, taken, and colonized. It is the body's way of saying \"someone has been living in you. Someone has been feeding on you. Someone has\nbeen taking without asking. And you didn't stop them.\"\nshingles\nINFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical)\nThe TCM Framework: Liver-Gallbladder Heat Eruption\nIn Traditional Chinese Medicine, the Liver (Gan) and Gallbladder (Dan) govern the smooth flow of Qi and the storage and release of bile. The emotion of the Liver is\nanger\u2014specifically, frustrated, stuck, unexpressed rage. The emotion of the Gallbladder is indecision and resentment. The Liver and Gallbladder channels run along\nthe sides of the body, where shingles commonly appears.\nWhen you have been suppressing anger and frustration for years\u2014when you have been unable to express what is burning inside\u2014Liver Qi stagnates. Stagnant Qi\ncreates heat. This heat rises and erupts along the Liver and Gallbladder channels. The shingles rash, appearing along a specific dermatomal pathway, is the physical\nmanifestation of that heat eruption. The blisters are the fire you couldn't speak.\nThe Jungian Shadow: The Buried Fury Archetype\nYou have suppressed the archetype of the One Who Burns\u2014the part that knows how to express anger, how to let fire out safely. Somewhere early, you learned that\nyour anger was dangerous. That expressing it meant losing love. That being fiery meant being abandoned. So you buried it. You buried it deep in your nervous\nsystem. You buried it in your nerve ganglia. And the virus, an old companion, reactivated to help you release what you refused to express.\nwarts\nINFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical)\nThe TCM Framework: Spleen-Liver Stagnation\nIn Traditional Chinese Medicine, the Spleen (Pi) governs the transformation and transportation of nutrients and fluids. The Liver (Gan) governs the smooth flow of Qi.\nThe emotion of the Spleen is worry\u2014the endless loop of \"what if,\" \"should have,\" \"if only.\" The emotion of the Liver is anger\u2014specifically, frustrated, stuck,\nunexpressed rage.\nWhen you worry constantly and suppress anger, Spleen Qi becomes deficient. Dampness accumulates. Dampness combines with Liver heat to create stagnation. The\nstagnation creates growths. The wart is the physical manifestation of stuck energy\u2014something that has been held for too long, something that has taken root in a\nweak spot. It's the body's way of saying \"there's a pattern here that isn't moving.\"\nThe Jungian Shadow: The Stubborn Self\nYou have suppressed the archetype of the Fluid One\u2014the part that knows how to adapt, how to release, how to change. Somewhere early, you learned that\nstubbornness was strength. That letting go was weakness. That persistence was survival. Your shadow self\u2014the one who wants to be fluid, to let go, to trust\u2014has\nbeen locked in the basement.\nBut the body does not forget. The wart is the physical manifestation of stubbornness. It's the body's way of saying \"you've been refusing to let go. Now your skin is\nrefusing to let go too.\"",
+            "-rls\nINFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical)\nThe TCM Framework: Kidney-Bladder Overdrive\nIn Traditional Chinese Medicine, the Kidneys (Shen) govern the bones, marrow, and the lower body. The Bladder (Pangguang) governs the lower extremities. The\nemotion of the Kidney is fear\u2014specifically, the fear of not being supported, the fear of falling, the fear of not being held. When you live in chronic fear, the Kidney Qi\nbecomes deficient. The lower body becomes restless, constantly seeking grounding that isn't there.\nThe Jungian Shadow: The Fleeing Self\nYou have suppressed the archetype of the Grounded One\u2014the part that knows how to be still, to trust the earth, to rest. Somewhere early, you learned that staying\nstill meant being caught. That resting meant being vulnerable. That safety meant motion. Your shadow self\u2014the one who wants to land, to settle, to trust\u2014has been\nlocked in the basement. The restless legs are the physical manifestation of that exile.\n-Excessive Appetite (Hyperphagia)\nINFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical)\nThe TCM Framework: Spleen-Stomach Heat\nIn Traditional Chinese Medicine, the Spleen (Pi) and Stomach (Wei) govern the transformation and transportation of nutrients and fluids. The emotion of the Spleen is\nworry\u2014the endless loop of \"what if,\" \"should have,\" \"if only.\" The emotion of the Stomach is rumination\u2014the inability to stop processing what's already gone.\nWhen you worry constantly, Spleen Qi becomes deficient. Dampness accumulates. The Stomach, instead of being satisfied, becomes overheated. Heat creates a\nfalse hunger\u2014a gnawing sensation that isn't about food, but about unprocessed worry. The excessive appetite is the physical manifestation of a mind that can't stop\nprocessing what's already done.\nThe Jungian Shadow: The Insatiable Self\nYou have suppressed the archetype of the Satisfied One\u2014the part that knows how to feel full, how to be enough, how to stop reaching. Somewhere early, you learned\nthat being satisfied meant being vulnerable. That needing nothing meant being alone. That reaching was safety. Your shadow self\u2014the one who wants to be full, to be\nsatisfied, to be enough\u2014has been locked in the basement. The excessive appetite is the physical manifestation of that exile.\n-Loss of Appetite (Anorexia)\nINFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical)\nThe TCM Framework: Spleen-Stomach Qi Sinking\nIn Traditional Chinese Medicine, the Spleen (Pi) and Stomach (Wei) govern the transformation and transportation of nutrients and fluids. The emotion of the Spleen is\nworry\u2014the endless loop of \"what if,\" \"should have,\" \"if only.\" The emotion of the Stomach is rumination\u2014the inability to stop processing what's already gone.\nWhen you worry constantly and ruminate on what's past, the Spleen Qi sinks. The Stomach loses its ability to receive. The body cannot lift its energy. The result is a\nlack of appetite\u2014a turning away from the very thing that would sustain you. The loss of appetite is the physical manifestation of a mind that cannot stop processing\nwhat's already done.\nThe Jungian Shadow: The Turned-Away Self\nYou have suppressed the archetype of the Receptive One\u2014the part that knows how to receive, how to be open, how to take in nourishment. Somewhere early, you\nlearned that receiving was dangerous. That being open meant being hurt. That needing meant being weak. Your shadow self\u2014the one who wants to be filled, to be\nnourished, to be satisfied\u2014has been locked in the basement. The loss of appetite is the physical manifestation of that exile.\n-High Cholesterol (Hyperlipidemia)\nINFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical)\nThe TCM Framework: Spleen-Liver Dampness\nIn Traditional Chinese Medicine, the Spleen (Pi) governs the transformation and transportation of nutrients and fluids. The Liver (Gan) governs the smooth flow of Qi.\nThe emotion of the Spleen is worry\u2014the endless loop of \"what if,\" \"should have,\" \"if only.\" The emotion of the Liver is anger\u2014specifically, frustrated, stuck,\nunexpressed rage.\nWhen you worry constantly and suppress anger, Spleen Qi becomes deficient. Dampness accumulates. Dampness combines with Liver stagnation to create \"turbid\nphlegm\"\u2014a thick, viscous substance that clogs the vessels. The high cholesterol is the physical manifestation of that turbid phlegm. It's the body's way of saying\n\"there's been a lot of worry and anger here, and it hasn't gone anywhere.\"\nThe Jungian Shadow: The Accumulator\nYou have suppressed the archetype of the Release\u2014the part that knows how to let go, how to flow, how to cleanse. Somewhere early, you learned that holding on\nwas survival. That release meant losing. That letting go meant death. Your shadow self\u2014the one who wants to trust the flow, to release, to be light\u2014has been locked\nin the basement. The cholesterol is the physical manifestation of that exile.\n--\\\nDiabetes (Type 2) & Metabolic Stress\nINFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical)\nThe TCM Framework: Spleen-Pancreas Heat Depletion\nIn Traditional Chinese Medicine, the Spleen (Pi) and Pancreas (the biological relative of the Spleen) govern the transformation and transportation of nutrients and\nfluids. The emotion of the Spleen is worry\u2014the endless loop of \"what if,\" \"should have,\" \"if only.\" The Pancreas's role in processing sweetness is an extension of the\nSpleen's function.\nWhen you worry constantly and over-function, Spleen Qi becomes deficient. The ability to transform sweetness into energy (Qi) is lost. Instead, the sweetness\nbecomes dampness\u2014a thick, sticky substance that clogs the vessels. The diabetes is the physical manifestation of a system that's been pushed to process far more\nthan it can handle, with far less genuine nourishment than it needs.\nThe Jungian Shadow: The Consumed Self\nYou have suppressed the archetype of the Receptive One\u2014the part that knows how to receive nourishment, how to say \"enough,\" how to set boundaries around",
+            "intake. Somewhere early, you learned that receiving was dangerous. That saying \"no\" to what was offered meant losing love. That boundaries meant rejection. Your\nshadow self\u2014the one who wants to be nourished with sweetness, not force-fed with obligation\u2014has been locked in the basement. The diabetes is the physical\nmanifestation of that exile.\n-Impotence (Erectile Dysfunction)\nINFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical)\nThe TCM Framework: Kidney-Essence Depletion\nIn Traditional Chinese Medicine, the Kidney (Shen) stores Jing\u2014the deep essence that governs growth, reproduction, and vitality. The Kidney governs the lower body,\nthe bones, the marrow, and the sexual function. The emotion of the Kidney is fear\u2014specifically, the fear of inadequacy, the fear of not being enough, the fear of being\nseen.\nWhen you live in chronic fear\u2014the fear of failure, the fear of not measuring up\u2014Kidney Jing becomes depleted. The essence that powers sexual function is drained.\nThe result is impotence\u2014a physical manifestation of a deep depletion of life force. The body cannot rise because the well is dry.\nThe Jungian Shadow: The Hidden Self\nYou have suppressed the archetype of the Expressive One\u2014the part that knows how to be present, how to be seen, how to take up space. Somewhere early, you\nlearned that being seen was dangerous. That taking up space meant being attacked. That presence meant vulnerability. Your shadow self\u2014the one who wants to\nshow up, to be seen, to be present\u2014has been locked in the basement. The impotence is the physical manifestation of that exile.\nMenopause Problems\nINFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical)\nThe TCM Framework: Kidney Essence Depletion\nIn Traditional Chinese Medicine, the Kidney (Shen) stores Jing\u2014the deep essence that governs growth, reproduction, and aging. The Kidney is the root of yin and\nyang in the body. The emotion of the Kidney is fear\u2014specifically, the fear of change, the fear of losing identity, the fear of the unknown.\nMenopause represents a natural transition in the balance of yin and yang. As Kidney Jing declines, yin (cooling, nourishing) and yang (warming, active) become\nimbalanced. The heat of the hot flashes is a yang uprising\u2014the fire that can't be cooled by depleted yin. The body is not broken. The body is recalibrating.\nThe Jungian Shadow: The Crone Archetype\nYou have suppressed the archetype of the Wise Woman\u2014the part that knows what comes after fertility, the one who holds wisdom, who sees clearly, who knows that\nthe end of one chapter is the beginning of another. Somewhere early, you learned that aging was loss. That becoming older meant becoming irrelevant. That the\nwisdom of the Crone was not valued.\nYour shadow self\u2014the one who is becoming the Crone, the wise woman, the elder\u2014has been locked in the basement. The menopause is the physical manifestation\nof that exile.\n--Overweight (General)\nINFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical)\nThe TCM Framework: Spleen Dampness & Liver Stagnation\nIn Traditional Chinese Medicine, the Spleen (Pi) governs the transformation and transportation of nutrients and fluids. The Liver (Gan) governs the smooth flow of Qi.\nThe emotion of the Spleen is worry\u2014the endless loop of \"what if,\" \"should have,\" \"if only.\" The emotion of the Liver is anger\u2014specifically, frustrated, stuck,\nunexpressed rage.\nWhen you worry constantly and suppress anger, Spleen Qi becomes deficient. The body fails to transform fluid and nutrients properly. Dampness accumulates.\nDampness congeals into fat. The weight is the physical manifestation of that dampness\u2014the residue of unresolved emotion. It's the body's way of saying \"there's been\na lot of worry and anger here, and it hasn't gone anywhere.\"\nThe Jungian Shadow: The Accumulator\nYou have suppressed the archetype of the Releaser\u2014the part that knows how to let go, how to be light, how to flow. Somewhere early, you learned that accumulation\nwas safety. That letting go was danger. That holding on was survival. Your shadow self\u2014the one who wants to be light, to release, to flow\u2014has been locked in the\nbasement. The weight is the physical manifestation of that exile.\nSterility (Infertility)\nINFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical)\nThe TCM Framework: Kidney Essence & Uterus-Chong Meridian\nIn Traditional Chinese Medicine, the Kidney (Shen) stores Jing\u2014the deep essence that governs growth, reproduction, and fertility. The Chong Mai (Penetrating\nVessel) and Ren Mai (Conception Vessel) are the energy channels that nourish the uterus and support pregnancy. The emotion of the Kidney is fear\u2014specifically, the\nfear of not being able to create, the fear of failure, the fear of the future.\nWhen you live in chronic fear and depletion, Kidney Jing becomes deficient. The Chong and Ren vessels become blocked. The body cannot support conception. The\ninfertility is the physical manifestation of that depletion and blockage.\nThe Jungian Shadow: The Unborn Self\nYou have suppressed the archetype of the Creator\u2014the part that knows how to birth new life, new ideas, new possibilities. Somewhere early, you learned that creation\nwas dangerous. That bringing something new into the world meant being seen, being judged, being responsible. Your shadow self\u2014the one who wants to create, to\ngive birth, to bring something new\u2014has been locked in the basement.\nThe infertility is not a failure. The infertility is the physical manifestation of the exile of the creator within you.\n--",
+            "7/21/26, 14:38"
           ]
         }
       ],
@@ -3198,28 +3046,28 @@
           "title": "Scabies Infestation & Contact Treatment Pattern",
           "sections": [
             {
-              "heading": "Stage 1 — Actual Mites",
+              "heading": "Stage 1 \u2014 Actual Mites",
               "body": [
                 "Scabies is medically a contagious infestation caused by microscopic mites.",
                 "This is not just stress, not just dry skin, and definitely not a spiritual roommate."
               ]
             },
             {
-              "heading": "Stage 2 — Itch and Rash",
+              "heading": "Stage 2 \u2014 Itch and Rash",
               "body": [
                 "The intense itching, often worse at night, comes from immune reaction to mites, eggs, and waste.",
                 "Burrows, papules, scratching, and secondary infection can appear."
               ]
             },
             {
-              "heading": "Stage 3 — Treatment and Contacts",
+              "heading": "Stage 3 \u2014 Treatment and Contacts",
               "body": [
                 "Scabies requires medical treatment, often prescription scabicide.",
                 "Close contacts commonly need treatment too, because mites love family plans."
               ]
             },
             {
-              "heading": "Stage 4 — Follow-Up",
+              "heading": "Stage 4 \u2014 Follow-Up",
               "body": [
                 "Itching can continue after treatment, but worsening symptoms, infection signs, or treatment failure need follow-up.",
                 "Bedding, clothing, towels, and close-contact handling matter to prevent reinfestation."
@@ -3415,7 +3263,7 @@
       ],
       "schedule_care_if": [
         "You have a chronic skin condition (like eczema or psoriasis) that is flaring or not responding to treatment",
-        "You notice changes in a mole’s size, shape, color, or borders (ABCDE melanoma check)",
+        "You notice changes in a mole\u2019s size, shape, color, or borders (ABCDE melanoma check)",
         "You experience a persistent, unexplained rash or skin itching that interferes with sleep"
       ],
       "self_care_allowed_if": "Gentle, fragrance-free moisturizers and cool compresses can help calm minor, non-infectious skin irritation or stress flares.",
@@ -3480,28 +3328,28 @@
           "title": "Airway Narrowing, Vibration & Sleep Apnea Screening",
           "sections": [
             {
-              "heading": "Stage 1 — Vibration Through a Narrowed Airway",
+              "heading": "Stage 1 \u2014 Vibration Through a Narrowed Airway",
               "body": [
                 "Snoring is noise from turbulent airflow through relaxed or narrowed upper airway tissue.",
                 "The airway becomes a cheap kazoo, which is funny until oxygen gets involved."
               ]
             },
             {
-              "heading": "Stage 2 — Causes",
+              "heading": "Stage 2 \u2014 Causes",
               "body": [
                 "Causes include nasal congestion, enlarged tonsils/adenoids, deviated septum, small jaw, large tongue, alcohol/sedatives, back sleeping, weight, and aging.",
                 "Anatomy and sleep position can both be rude."
               ]
             },
             {
-              "heading": "Stage 3 — OSA Risk",
+              "heading": "Stage 3 \u2014 OSA Risk",
               "body": [
                 "Loud snoring with gasping, choking, witnessed breathing pauses, daytime sleepiness, morning headaches, or high blood pressure should be evaluated for obstructive sleep apnea.",
                 "A sleep study may be needed. Yes, more wires. Civilization loves wires."
               ]
             },
             {
-              "heading": "Stage 4 — Treatment",
+              "heading": "Stage 4 \u2014 Treatment",
               "body": [
                 "Treatment can include positional therapy, avoiding alcohol/sedatives near bedtime, nasal treatment, oral appliances, CPAP, weight support, or surgery.",
                 "The goal is airflow, sleep quality, and fewer midnight freight-train impressions."
@@ -3729,28 +3577,28 @@
           "title": "HPV Skin Growth & Persistence Pattern",
           "sections": [
             {
-              "heading": "Stage 1 — HPV-Related Growth",
+              "heading": "Stage 1 \u2014 HPV-Related Growth",
               "body": [
                 "Warts are medically caused by HPV-related infection of skin cells.",
                 "They can appear as common, plantar, flat, filiform, or genital warts, and type/location changes the care plan."
               ]
             },
             {
-              "heading": "Stage 2 — Spread and Persistence",
+              "heading": "Stage 2 \u2014 Spread and Persistence",
               "body": [
                 "Warts can spread by skin contact, shared surfaces, tiny skin breaks, and picking or shaving over lesions.",
                 "They may go away on their own, persist, recur, or multiply, because HPV apparently enjoys tenancy law."
               ]
             },
             {
-              "heading": "Stage 3 — Treatment Options",
+              "heading": "Stage 3 \u2014 Treatment Options",
               "body": [
                 "Common wart treatments may include salicylic acid, cryotherapy, or medical removal depending on type and location.",
                 "Do not use over-the-counter wart removers on the face, genitals, or suspicious lesions unless a clinician directs it."
               ]
             },
             {
-              "heading": "Stage 4 — Escalation Check",
+              "heading": "Stage 4 \u2014 Escalation Check",
               "body": [
                 "Seek care for genital warts, face/neck lesions, painful or bleeding warts, rapid growth, many warts, immune suppression, diabetes, or uncertainty about diagnosis.",
                 "Not every bump is a wart. Skin likes disguises because skin is a menace."
@@ -3976,7 +3824,7 @@
         {
           "title": "Ugly Duckling",
           "short": "Different-looking lesions matter.",
-          "detail": "A mole that looks unlike your others, bleeds, itches, hurts, or changes deserves evaluation."
+          "detail": "A mole that looks unlike your others, bleeds, itches, hurts, or changes deserves evaluation.\n\nChronic emotional suppression creates sustained Qi and Blood stagnation. The liver, overwhelmed by unprocessed anger and frustration, cannot move Blood\nsmoothly. Stagnation solidifies into masses. The more you suppress, the more you stagnate. The more you stagnate, the more you fix. The more you fix, the more you\nfear change. The more you fear change, the more you suppress. The mole is the pattern, made visible."
         }
       ],
       "interpretations": {
@@ -3985,28 +3833,28 @@
           "title": "Nevus Formation & Skin Cancer Screening",
           "sections": [
             {
-              "heading": "Stage 1 — Moles Are Pigment-Cell Clusters",
+              "heading": "Stage 1 \u2014 Moles Are Pigment-Cell Clusters",
               "body": [
                 "Moles, or nevi, are medically clusters of pigment-producing cells.",
                 "Many moles are benign, common, and stable."
               ]
             },
             {
-              "heading": "Stage 2 — Change Is the Point",
+              "heading": "Stage 2 \u2014 Change Is the Point",
               "body": [
                 "A stable mole is different from a changing mole.",
                 "Watch for asymmetry, irregular borders, multiple or changing colors, growth, evolution, bleeding, itching, pain, or a lesion that looks different from your other spots."
               ]
             },
             {
-              "heading": "Stage 3 — Dermatology Beats Guessing",
+              "heading": "Stage 3 \u2014 Dermatology Beats Guessing",
               "body": [
                 "Suspicious lesions need professional skin evaluation, sometimes dermoscopy or biopsy.",
                 "Your phone camera and confidence are not a dermatology residency, devastating as that may be."
               ]
             },
             {
-              "heading": "Stage 4 — Meaning Comes After Safety",
+              "heading": "Stage 4 \u2014 Meaning Comes After Safety",
               "body": [
                 "Symbolic reflection can be useful after medical safety is respected.",
                 "Do not turn a changing mole into a museum exhibit while ignoring possible melanoma."
@@ -4043,47 +3891,34 @@
       "influenceLayers": [
         {
           "layer": 1,
-          "title": "Liver Blood Marker",
-          "tag": "Wood/Blood Pattern",
+          "title": "TCM Framework",
+          "tag": "Mind & Symbolism",
           "paragraphs": [
-            "In symbolic Chinese medicine language, fixed marks can be read as stagnation or memory.",
-            "Medically, they are pigment-cell clusters. The symbol does not replace the skin check."
+            "In Traditional Chinese Medicine, the Liver (Gan) stores the Blood and governs the smooth flow of Qi. The Liver's emotion is anger\u2014specifically, frustrated, stuck,\nunexpressed rage. The Spleen (Pi) governs the transformation and transportation of nutrients and Blood. When Qi stagnates, Blood congeals. When Blood congeals,\nit forms masses.\nThe mole is not a random collection of pigment cells. It is the physical manifestation of stuck emotional material. It is the body's way of saying \"something got stuck\nhere. Something wasn't processed. Something wasn't released.\" The mole is the record. It is the proof of the moment when energy stopped flowing. It is the bookmark\nin the book of your life, marking the chapter where something didn't move through."
           ]
         },
         {
           "layer": 2,
-          "title": "Permanent Marker Archetype",
-          "tag": "Identity Mark",
+          "title": "Jungian Shadow",
+          "tag": "Mind & Symbolism",
           "paragraphs": [
-            "The mole can symbolize an old marker of identity.",
-            "The question is whether the mark is stable, changing, or asking for attention."
+            "You have suppressed the archetype of the Movable One\u2014the part that knows how to adapt, how to shift, how to change. Somewhere early, you learned that change\nwas dangerous. That letting go meant losing. That staying the same was safety. Your shadow self\u2014the one who wants to move, to grow, to transform\u2014has been\nlocked in the basement.\nBut the body does not forget. The cells that should have moved, shifted, and transformed have stayed. They have become fixed. They have become marks. The mole\nis the permanent reminder of the moment you decided it was safer to stay than to grow. It is the marker of the choice to remain the same."
           ]
         },
         {
           "layer": 3,
-          "title": "The Museum Exhibit",
-          "tag": "Fixed Story",
+          "title": "The Fixity-Stagnation Loop",
+          "tag": "Somatic Mechanics",
           "paragraphs": [
-            "Some exhibits belong in the permanent collection.",
-            "Some need updated labels. Some need a dermatologist with a dermatoscope."
+            "Chronic emotional suppression creates sustained Qi and Blood stagnation. The liver, overwhelmed by unprocessed anger and frustration, cannot move Blood\nsmoothly. Stagnation solidifies into masses. The more you suppress, the more you stagnate. The more you stagnate, the more you fix. The more you fix, the more you\nfear change. The more you fear change, the more you suppress. The mole is the pattern, made visible."
           ]
         },
         {
           "layer": 4,
-          "title": "Ugly Duckling Signal",
-          "tag": "Safety Symbol",
+          "title": "Clinical Cascade (Chronic Stagnation \u2192 Melanocyte Clustering \u2192 Nevi Formation)",
+          "tag": "Somatic Mechanics",
           "paragraphs": [
-            "A mark that stands out from the rest deserves respect.",
-            "Different can be meaningful. It can also be medical."
-          ]
-        },
-        {
-          "layer": 5,
-          "title": "Inspection Before Interpretation",
-          "tag": "Reset Practice",
-          "paragraphs": [
-            "The reset is observe, photograph if useful, compare, and get checked when suspicious.",
-            "Then process the meaning without ignoring the body."
+            "While the precise biological mechanism linking stress to mole formation is not fully established, the broader relationship between chronic Qi and Blood stagnation and\ncellular accumulation is recognized in TCM. The skin reflects the internal environment. Stagnation\u2014emotional, energetic, circulatory\u2014manifests as fixed marks. The\nmole is the physical proof of that stagnation."
           ]
         }
       ],
