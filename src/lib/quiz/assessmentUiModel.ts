@@ -78,15 +78,18 @@ export function getAssessmentStageLabel(stage: AssessmentStage): string {
   return STAGE_LABELS[stage] ?? 'Assessment';
 }
 
+export interface AssessmentStageProgress {
+  remaining: number;
+  hasItems: boolean;
+}
+
 export function getAssessmentStageProgress(
   session: AssessmentSession,
-): { current: number; total: number; percent: number } {
-  const total = session.currentItemIds.length;
-  const current = total > 0 ? 1 : 0;
+): AssessmentStageProgress {
+  const remaining = session.currentItemIds.length;
   return {
-    current,
-    total,
-    percent: total > 0 ? (current / total) * 100 : 0,
+    remaining,
+    hasItems: remaining > 0,
   };
 }
 

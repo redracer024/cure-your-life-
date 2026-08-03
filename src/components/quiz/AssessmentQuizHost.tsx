@@ -14,6 +14,7 @@ import {
   saveAssessmentSession,
   clearAssessmentSession,
   type AssessmentSessionSaveResult,
+  type AssessmentSessionLoadResult,
   type AssessmentSessionClearResult,
 } from '../../lib/quiz/assessmentSessionStorage';
 import {
@@ -51,17 +52,32 @@ function uiPhaseForStage(stage: AssessmentStage): AssessmentQuizUiPhase {
 
 const MAX_STAGE_TRANSITIONS = 10;
 
+const PREMIUM_LOAD_TIMEOUT_MS = 8000;
+
 function storageNoticeForSave(status: AssessmentSessionSaveResult['status']): string | null {
   switch (status) {
     case 'saved':
       return null;
     case 'unavailable':
-      return 'Progress cannot be saved in this browser — results will be lost when you close.';
+      return 'You can continue, but progress may not survive closing or reloading in this browser.';
     case 'invalid-session':
     case 'serialization-failed':
-      return 'Progress could not be saved in this browser.';
+      return 'The latest progress could not be saved in this browser.';
     case 'write-failed':
-      return 'Progress could not be saved in this browser — results will be lost when you close.';
+      return 'The latest progress could not be saved — you can continue, but it may not survive closing or reloading.';
+  }
+}
+
+function storageNoticeForLoad(status: AssessmentSessionLoadResult['status']): string | null {
+  switch (status) {
+    case 'loaded':
+    case 'missing':
+      return null;
+    case 'unavailable':
+    case 'read-failed':
+      return 'You can continue, but progress may not survive closing or reloading in this browser.';
+    case 'invalid-session':
+      return 'The latest progress could not be restored — starting a new assessment.';
   }
 }
 
@@ -71,7 +87,7 @@ function storageNoticeForClear(status: AssessmentSessionClearResult['status']): 
     case 'unavailable':
       return null;
     case 'remove-failed':
-      return 'Your previous assessment could not be cleared, but a new assessment is ready.';
+      return 'Old saved progress could not be cleared — continuing with a new assessment.';
   }
 }
 
@@ -83,28 +99,75 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
   const premium = usePremium();
   const [session, setSession] = useState<AssessmentSession | null>(null);
   const [uiPhase, setUiPhase] = useState<AssessmentQuizUiPhase>('preparing');
-  const [storageNotice, setStorageNotice] = useState<string | null>(null);
+  const [notice, setNotice] = useState<string | null>(null);
   const [message, setMessage] = useState('');
   const [blockedSession, setBlockedSession] = useState<AssessmentSession | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const dialogRef = useRef<HTMLDivElement | null>(null);
   const onCloseRef = useRef(onClose);
   const previouslyFocusedRef = useRef<HTMLElement | null>(null);
+  const launchGenerationRef = useRef(0);
+  const premiumTimeoutRef = useRef<number | null>(null);
+  const didTimeoutLaunchRef = useRef(false);
+  const navigationIntentRef = useRef(false);
 
   useEffect(() => {
     onCloseRef.current = onClose;
   }, [onClose]);
 
+  const clearPremiumTimeout = useCallback(() => {
+    if (premiumTimeoutRef.current !== null) {
+      window.clearTimeout(premiumTimeoutRef.current);
+      premiumTimeoutRef.current = null;
+    }
+  }, []);
+
   useEffect(() => {
-    if (
-      !isOpen ||
-      (setUiPhase('preparing'),
-      setSession(null),
-      setBlockedSession(null),
-      setStorageNotice(null),
-      setMessage('Preparing your assessment'),
-      premium.isPremiumLoading)
-    ) {
+    if (!isOpen) {
+      launchGenerationRef.current++;
+      didTimeoutLaunchRef.current = false;
       return;
+    }
+    if (didTimeoutLaunchRef.current) return;
+    const generation = ++launchGenerationRef.current;
+    setSession(null);
+    setBlockedSession(null);
+    setNotice(null);
+    setMessage('Preparing your assessment');
+    setUiPhase('preparing');
+
+    if (premium.isPremiumLoading) {
+      premiumTimeoutRef.current = window.setTimeout(() => {
+        if (launchGenerationRef.current !== generation) return;
+        premiumTimeoutRef.current = null;
+        didTimeoutLaunchRef.current = true;
+        const loaded = loadAssessmentSession();
+        if (loaded.status === 'loaded' && loaded.session) {
+          const decision = decideAssessmentLaunch(loaded.session, false);
+          if (decision.type === 'blocked-pro-session') {
+            setBlockedSession(decision.session);
+            setUiPhase('blocked');
+            setMessage('Your saved assessment requires Pro access');
+            return;
+          }
+          if (decision.type === 'resume') {
+            setSession(decision.session);
+            setUiPhase('resume');
+            setMessage('A saved assessment is available');
+            return;
+          }
+        }
+        const freshSession = startAssessmentSession('free');
+        setSession(freshSession);
+        setUiPhase('question');
+        setMessage('Assessment started with free access');
+        setNotice('Pro access could not be verified — continuing with free access.');
+        const saveResult = saveAssessmentSession(freshSession);
+        if (saveResult.status !== 'saved') {
+          setNotice(storageNoticeForSave(saveResult.status));
+        }
+      }, PREMIUM_LOAD_TIMEOUT_MS);
+      return () => clearPremiumTimeout();
     }
 
     const loaded = loadAssessmentSession();
@@ -130,9 +193,12 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
     setSession(freshSession);
     setUiPhase('question');
     setMessage('Assessment started');
-    const saveResult = saveAssessmentSession(freshSession);
-    setStorageNotice(storageNoticeForSave(saveResult.status));
-  }, [isOpen, premium.isPremiumLoading]);
+    setNotice(
+      storageNoticeForLoad(loaded.status) ??
+        storageNoticeForSave(saveAssessmentSession(freshSession).status),
+    );
+    return () => clearPremiumTimeout();
+  }, [isOpen, premium.isPremiumLoading, clearPremiumTimeout]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -157,7 +223,15 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
       }
       if (event.key !== 'Tab') return;
       const focusable = getFocusable();
-      if (focusable.length === 0) return;
+      if (focusable.length === 0) {
+        event.preventDefault();
+        return;
+      }
+      if (focusable.length === 1) {
+        event.preventDefault();
+        focusable[0].focus();
+        return;
+      }
       const first = focusable[0];
       const last = focusable[focusable.length - 1];
       if (event.shiftKey && document.activeElement === first) {
@@ -172,7 +246,10 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
     dialog?.addEventListener('keydown', handleKeyDown);
     return () => {
       dialog?.removeEventListener('keydown', handleKeyDown);
-      previouslyFocusedRef.current?.focus?.();
+      if (!navigationIntentRef.current) {
+        previouslyFocusedRef.current?.focus?.();
+      }
+      navigationIntentRef.current = false;
       previouslyFocusedRef.current = null;
     };
   }, [isOpen]);
@@ -182,14 +259,7 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
     const focusTimer = window.setTimeout(() => {
       const dialog = dialogRef.current;
       if (!dialog) return;
-      const focusable: HTMLElement[] = [];
-      dialog
-        .querySelectorAll('button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])')
-        .forEach(el => {
-          if (el instanceof HTMLElement) focusable.push(el);
-        });
-      const firstFocusable = focusable.find(el => el.offsetParent !== null) ?? dialog;
-      firstFocusable?.focus?.();
+      dialog.focus?.();
     }, 0);
     return () => window.clearTimeout(focusTimer);
   }, [isOpen, uiPhase]);
@@ -234,7 +304,7 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
         setMessage('One more chance to answer a previously skipped question');
       }
       const saveResult = saveAssessmentSession(result);
-      setStorageNotice(storageNoticeForSave(saveResult.status));
+      setNotice(storageNoticeForSave(saveResult.status));
       return result;
     },
     [session],
@@ -242,27 +312,37 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
 
   const handleAnswer = useCallback(
     (value: AssessmentResponseValue) => {
-      if (!session) return;
-      const currentItemId = getCurrentStageItems(session)[0];
-      if (currentItemId) {
-        applySessionUpdate(prev => recordAssessmentResponse(prev, currentItemId, value));
+      if (!session || isSubmitting) return;
+      setIsSubmitting(true);
+      try {
+        const currentItemId = getCurrentStageItems(session)[0];
+        if (currentItemId) {
+          applySessionUpdate(prev => recordAssessmentResponse(prev, currentItemId, value));
+        }
+      } finally {
+        setIsSubmitting(false);
       }
     },
-    [session, applySessionUpdate],
+    [session, isSubmitting, applySessionUpdate],
   );
 
   const handleSkip = useCallback(() => {
-    if (!session) return;
-    const currentItemId = getCurrentStageItems(session)[0];
-    if (!currentItemId) return;
-    const nextSession = applySessionUpdate(prev => skipAssessmentItem(prev, currentItemId));
-    const nextCurrentItem = nextSession ? (nextSession.currentItemIds[0] ?? null) : null;
-    if (nextSession && nextCurrentItem !== null && isAssessmentRetryItem(nextSession, nextCurrentItem)) {
-      setMessage('Question skipped — one more chance to answer it later');
-    } else {
-      setMessage('Question skipped');
+    if (!session || isSubmitting) return;
+    setIsSubmitting(true);
+    try {
+      const currentItemId = getCurrentStageItems(session)[0];
+      if (!currentItemId) return;
+      const nextSession = applySessionUpdate(prev => skipAssessmentItem(prev, currentItemId));
+      const nextCurrentItem = nextSession ? (nextSession.currentItemIds[0] ?? null) : null;
+      if (nextSession && nextCurrentItem !== null && isAssessmentRetryItem(nextSession, nextCurrentItem)) {
+        setMessage('Question skipped — one more chance to answer it later');
+      } else {
+        setMessage('Question skipped');
+      }
+    } finally {
+      setIsSubmitting(false);
     }
-  }, [session, applySessionUpdate]);
+  }, [session, isSubmitting, applySessionUpdate]);
 
   const handleResume = useCallback(() => {
     if (!session) return;
@@ -278,12 +358,20 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
     setBlockedSession(null);
     setUiPhase('question');
     setMessage('Started a new assessment');
-    setStorageNotice(storageNoticeForClear(clearResult.status));
+    setNotice(storageNoticeForClear(clearResult.status));
     const saveResult = saveAssessmentSession(freshSession);
     if (saveResult.status !== 'saved') {
-      setStorageNotice(storageNoticeForSave(saveResult.status));
+      setNotice(storageNoticeForSave(saveResult.status));
     }
   }, [premium.isPremium]);
+
+  const handleNavigateToPattern = useCallback(
+    (patternId: string) => {
+      navigationIntentRef.current = true;
+      onNavigateToPattern(patternId);
+    },
+    [onNavigateToPattern],
+  );
 
   const handleClose = useCallback(() => {
     onCloseRef.current();
@@ -302,7 +390,8 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
               role="dialog"
               aria-modal="true"
               aria-labelledby="assessment-dialog-title"
-              className="relative w-full max-w-2xl mx-4 my-8 bg-[#07090E] border border-indigo-500/20 rounded-3xl overflow-hidden shadow-[0_0_60px_rgba(99,102,241,0.12)]"
+              tabIndex={-1}
+              className="relative w-full max-w-2xl mx-4 my-8 bg-[#07090E] border border-indigo-500/20 rounded-3xl overflow-hidden shadow-[0_0_60px_rgba(99,102,241,0.12)] outline-none"
             >
               <div className="h-1.5 w-full bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-500" />
               <button
@@ -315,9 +404,9 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
               <div aria-live="polite" className="sr-only">
                 {message}
               </div>
-              {storageNotice && (
+              {notice && (
                 <div role="status" className="px-8 pt-6 -mb-2 text-[11px] font-mono text-amber-400/90">
-                  {storageNotice}
+                  {notice}
                 </div>
               )}
               <AnimatePresence mode="wait">
@@ -372,7 +461,7 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                   >
-                    <QuestionStageBody session={session} onAnswer={handleAnswer} onSkip={handleSkip} />
+                    <QuestionStageBody session={session} onAnswer={handleAnswer} onSkip={handleSkip} disabled={isSubmitting} />
                   </motion.div>
                 )}
                 {uiPhase === 'results' && session && (
@@ -383,7 +472,7 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
                   >
                     <AssessmentResultsPanel
                       session={session}
-                      onNavigateToPattern={onNavigateToPattern}
+                      onNavigateToPattern={handleNavigateToPattern}
                       onRestart={handleRestart}
                       onClose={handleClose}
                     />
@@ -439,9 +528,10 @@ interface QuestionStageBodyProps {
   session: AssessmentSession;
   onAnswer: (value: AssessmentResponseValue) => void;
   onSkip: () => void;
+  disabled: boolean;
 }
 
-const QuestionStageBody: React.FC<QuestionStageBodyProps> = ({ session, onAnswer, onSkip }) => {
+const QuestionStageBody: React.FC<QuestionStageBodyProps> = ({ session, onAnswer, onSkip, disabled }) => {
   const itemId = getCurrentStageItems(session)[0];
   const item = itemId ? resolveAssessmentItem(itemId) : null;
 
@@ -456,7 +546,8 @@ const QuestionStageBody: React.FC<QuestionStageBodyProps> = ({ session, onAnswer
         </p>
         <button
           onClick={onSkip}
-          className="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-mono uppercase text-[11px] tracking-widest rounded-xl transition-all cursor-pointer"
+          disabled={disabled}
+          className="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-mono uppercase text-[11px] tracking-widest rounded-xl transition-all cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
         >
           Skip this question
         </button>
@@ -482,8 +573,8 @@ const QuestionStageBody: React.FC<QuestionStageBodyProps> = ({ session, onAnswer
       item={item}
       stageLabel={getAssessmentStageLabel(session.stage)}
       isRetry={isAssessmentRetryItem(session, item.id)}
-      current={progress.current}
-      total={progress.total}
+      remaining={progress.remaining}
+      disabled={disabled}
       onAnswer={onAnswer}
       onSkip={onSkip}
     />

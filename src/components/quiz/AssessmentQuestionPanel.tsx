@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'motion/react';
 import { SkipForward } from 'lucide-react';
 import { FREQUENCY_SCALE } from '../../types/quiz';
 import type { AssessmentResponseValue } from '../../types/assessmentSession';
@@ -9,8 +8,8 @@ interface AssessmentQuestionPanelProps {
   item: AssessmentRenderableItem;
   stageLabel: string;
   isRetry: boolean;
-  current: number;
-  total: number;
+  remaining: number;
+  disabled: boolean;
   onAnswer: (value: AssessmentResponseValue) => void;
   onSkip: () => void;
 }
@@ -19,13 +18,20 @@ export const AssessmentQuestionPanel: React.FC<AssessmentQuestionPanelProps> = (
   item,
   stageLabel,
   isRetry,
-  current,
-  total,
+  remaining,
+  disabled,
   onAnswer,
   onSkip,
 }) => {
   const prompt = item.bank === 'approved' ? item.text : item.prompt;
-  const progressMax = Math.max(total, 1);
+  const remainingLabel =
+    remaining === 1
+      ? isRetry
+        ? '1 question to revisit'
+        : '1 question remaining'
+      : isRetry
+        ? `${remaining} questions to revisit`
+        : `${remaining} questions remaining`;
 
   return (
     <div className="p-8 md:p-10 space-y-6">
@@ -34,24 +40,9 @@ export const AssessmentQuestionPanel: React.FC<AssessmentQuestionPanelProps> = (
           <span className="text-[11px] font-mono text-indigo-400 uppercase tracking-widest font-bold">
             {stageLabel}
           </span>
-          <span className="text-[11px] font-mono text-slate-500">
-            {current} of {total}
+          <span role="status" className="text-[11px] font-mono text-slate-500">
+            {remainingLabel}
           </span>
-        </div>
-        <div
-          role="progressbar"
-          aria-valuemin={0}
-          aria-valuemax={progressMax}
-          aria-valuenow={current}
-          aria-label={stageLabel}
-          className="w-full h-1 bg-white/5 rounded-full overflow-hidden"
-        >
-          <motion.div
-            className="h-full bg-gradient-to-r from-indigo-600 to-purple-500 rounded-full"
-            initial={{ width: 0 }}
-            animate={{ width: `${Math.min(100, (current / progressMax) * 100)}%` }}
-            transition={{ duration: 0.3 }}
-          />
         </div>
       </div>
 
@@ -68,7 +59,8 @@ export const AssessmentQuestionPanel: React.FC<AssessmentQuestionPanelProps> = (
           <button
             key={option.value}
             onClick={() => onAnswer(option.value)}
-            className="w-full min-h-11 text-left p-4 bg-black/40 border border-white/5 rounded-2xl hover:border-indigo-500/40 hover:bg-indigo-500/5 transition-all cursor-pointer group"
+            disabled={disabled}
+            className="w-full min-h-11 text-left p-4 bg-black/40 border border-white/5 rounded-2xl hover:border-indigo-500/40 hover:bg-indigo-500/5 transition-all cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:border-white/5 disabled:hover:bg-black/40 group"
           >
             <div className="flex items-center gap-3">
               <span
@@ -86,7 +78,8 @@ export const AssessmentQuestionPanel: React.FC<AssessmentQuestionPanelProps> = (
 
       <button
         onClick={onSkip}
-        className="flex items-center gap-1.5 text-[11px] font-mono text-slate-500 hover:text-slate-300 transition-colors cursor-pointer"
+        disabled={disabled}
+        className="flex items-center gap-1.5 text-[11px] font-mono text-slate-500 hover:text-slate-300 transition-colors cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:text-slate-500"
       >
         <SkipForward className="w-3.5 h-3.5" />
         Skip this question

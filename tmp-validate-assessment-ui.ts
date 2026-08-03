@@ -1,5 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
+import { createHash } from 'crypto';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import {
@@ -171,7 +172,7 @@ function escHtml(value: string): string {
 }
 
 /* ==================================================================
- *  C. Progress model (1 of N, anchored to stage queue)
+ *  C. Progress model (remaining-queue wording, no 1-of-N)
  * ================================================================*/
 
 {
@@ -183,14 +184,15 @@ function escHtml(value: string): string {
   const p1 = getAssessmentStageProgress(oneItemSession);
   const p0 = getAssessmentStageProgress(zeroItemSession);
 
-  assert('C: progress 5 items -> {current:1,total:5,percent:20}', p5.current === 1 && p5.total === 5 && p5.percent === 20);
-  assert('C: progress 1 item -> {current:1,total:1,percent:100}', p1.current === 1 && p1.total === 1 && p1.percent === 100);
-  assert('C: progress 0 items -> {current:0,total:0,percent:0}', p0.current === 0 && p0.total === 0 && p0.percent === 0);
+  assert('C: progress 5 items -> {remaining:5,hasItems:true}', p5.remaining === 5 && p5.hasItems === true);
+  assert('C: progress 1 item -> {remaining:1,hasItems:true}', p1.remaining === 1 && p1.hasItems === true);
+  assert('C: progress 0 items -> {remaining:0,hasItems:false}', p0.remaining === 0 && p0.hasItems === false);
 
-  // Verify the 1-of-N progress contract is exposed
-  assert('C: progress exposes current property', 'current' in p5);
-  assert('C: progress exposes total property', 'total' in p5);
-  assert('C: progress exposes percent property', 'percent' in p5);
+  // Verify the remaining-queue progress contract is exposed
+  assert('C: progress exposes remaining property', 'remaining' in p5);
+  assert('C: progress exposes hasItems property', 'hasItems' in p5);
+  assert('C: progress no longer exposes current/total/percent', !('current' in p5) && !('total' in p5) && !('percent' in p5));
+  assert('C: progress model has no shrinking-queue percent anywhere', !uiModelSource.includes('percent') && !uiModelSource.includes('current:'));
 
   const retrySession = fixtureSession({ retryState: { skippedItemIds: ['x'], retriedItemIds: [], unresolvedItemIds: [] } });
   const nonRetrySession = fixtureSession({});
@@ -257,31 +259,72 @@ function escHtml(value: string): string {
         item: renderable,
         stageLabel: 'Core Patterns',
         isRetry: false,
-        current: 1,
-        total: 5,
+        remaining: 5,
+        disabled: false,
         onAnswer: () => {},
         onSkip: () => {},
       }),
     );
     assert('E: question panel renders the approved text', qhtml.includes(approved.text));
     assert('E: question panel renders all FREQUENCY_SCALE labels', ['Never', 'Rarely', 'Sometimes', 'Often', 'Almost always'].every(label => qhtml.includes(label)));
-    assert('E: question panel shows 1 of N progress text', qhtml.replace(/<!-- -->/g, '').includes('1 of 5'));
-    assert('E: question panel renders progressbar semantics', qhtml.includes('role="progressbar"') && qhtml.includes('aria-valuenow="1"') && qhtml.includes('aria-valuemax="5"'));
+    assert('E: question panel shows remaining wording, not 1 of N', qhtml.replace(/<!-- -->/g, '').includes('5 questions remaining') && !qhtml.includes('1 of'));
+    assert('E: question panel renders status semantics without progressbar', qhtml.includes('role="status"') && !qhtml.includes('role="progressbar"') && !qhtml.includes('aria-valuenow') && !qhtml.includes('aria-valuemax'));
     assert('E: question panel renders skip control', qhtml.includes('Skip this question'));
     assert('E: question panel hides item ids', !qhtml.includes(approved.id));
+
+    const singularHtml = renderToString(
+      React.createElement(AssessmentQuestionPanel, {
+        item: renderable,
+        stageLabel: 'Core Patterns',
+        isRetry: false,
+        remaining: 1,
+        disabled: false,
+        onAnswer: () => {},
+        onSkip: () => {},
+      }),
+    );
+    assert('E: singular remaining uses singular copy', singularHtml.includes('1 question remaining'));
 
     const retryHtml = renderToString(
       React.createElement(AssessmentQuestionPanel, {
         item: renderable,
         stageLabel: 'Core Patterns',
         isRetry: true,
-        current: 3,
-        total: 5,
+        remaining: 3,
+        disabled: false,
         onAnswer: () => {},
         onSkip: () => {},
       }),
     );
+    assert('E: retry pass uses revisit wording', retryHtml.includes('3 questions to revisit'));
     assert('E: retry indicator is visible without engine internals', retryHtml.includes('one more chance') && !retryHtml.includes('retryState') && !retryHtml.includes('unresolved'));
+
+    const retrySingularHtml = renderToString(
+      React.createElement(AssessmentQuestionPanel, {
+        item: renderable,
+        stageLabel: 'Core Patterns',
+        isRetry: true,
+        remaining: 1,
+        disabled: false,
+        onAnswer: () => {},
+        onSkip: () => {},
+      }),
+    );
+    assert('E: singular retry uses singular revisit copy', retrySingularHtml.includes('1 question to revisit'));
+
+    const disabledHtml = renderToString(
+      React.createElement(AssessmentQuestionPanel, {
+        item: renderable,
+        stageLabel: 'Core Patterns',
+        isRetry: false,
+        remaining: 5,
+        disabled: true,
+        onAnswer: () => {},
+        onSkip: () => {},
+      }),
+    );
+    const disabledButtons = (disabledHtml.match(/disabled=""/g) ?? []).length;
+    assert('E: disabled render disables all five answer buttons and skip', disabledButtons === 6, `disabled buttons: ${disabledButtons}`);
   }
 
   const group = EXPRESSION_GROUP_SCREENING_ITEMS[0];
@@ -292,13 +335,14 @@ function escHtml(value: string): string {
         item: groupRenderable,
         stageLabel: 'Expression Groups',
         isRetry: false,
-        current: 1,
-        total: 2,
+        remaining: 2,
+        disabled: false,
         onAnswer: () => {},
         onSkip: () => {},
       }),
     );
     assert('E: question panel renders expression prompt', ghtml.includes(group.prompt));
+    assert('E: group panel shows plural remaining copy', ghtml.includes('2 questions remaining'));
   }
 
   const registryEntry = EXPRESSION_REGISTRY[0];
@@ -494,10 +538,17 @@ function escHtml(value: string): string {
   assert('H: aria-live polite region', hostSource.includes('aria-live="polite"') && hostSource.includes('sr-only'));
   assert('H: escape closes', hostSource.includes("event.key === 'Escape'"));
   assert('H: tab wrap trap implemented', hostSource.includes('event.shiftKey && document.activeElement === first') && hostSource.includes('!event.shiftKey && document.activeElement === last'));
-  assert('H: focus moved into modal on open', hostSource.includes('focus?.()'));
+  assert('H: zero-focusable dialog traps tab', hostSource.includes('focusable.length === 0') && hostSource.includes('event.preventDefault()'));
+  assert('H: single-focusable dialog keeps tab on the control', hostSource.includes('focusable.length === 1') && hostSource.includes('focusable[0].focus()'));
+  assert('H: focus moved to dialog container on open', hostSource.includes('dialog.focus?.()') && hostSource.includes('tabIndex={-1}'));
+  assert('H: focus managed per phase change only', hostSource.includes('}, [isOpen, uiPhase]);'));
   assert('H: focus restored on close', hostSource.includes('previouslyFocusedRef.current?.focus?.()'));
+  assert('H: profile navigation suppresses focus restore', hostSource.includes('navigationIntentRef.current') && hostSource.includes('if (!navigationIntentRef.current)'));
   assert('H: reduced motion respected', hostSource.includes('reducedMotion="user"'));
-  assert('H: question panel shows 1 of N progress, not remaining count', questionPanelSource.includes('{current}') && questionPanelSource.includes('{total}') && questionPanelSource.includes('role="progressbar"') && !questionPanelSource.includes('{remaining}') && !questionPanelSource.includes('isSubmitting'));
+  assert('H: question panel shows remaining count, not 1 of N', questionPanelSource.includes('{remaining}') && !questionPanelSource.includes('{current}') && !questionPanelSource.includes('{total}') && !questionPanelSource.includes('1 of'));
+  assert('H: question panel uses status semantics', questionPanelSource.includes('role="status"') && !questionPanelSource.includes('role="progressbar"'));
+  assert('H: question panel has no inaccurate progressbar aria', !questionPanelSource.includes('aria-valuenow') && !questionPanelSource.includes('aria-valuemax') && !questionPanelSource.includes('aria-valuemin'));
+  assert('H: answer scale and skip both honor disabled', (questionPanelSource.match(/disabled={disabled}/g) ?? []).length === 2, `count ${(questionPanelSource.match(/disabled={disabled}/g) ?? []).length}`);
   assert('H: frequency scale buttons are large enough', questionPanelSource.includes('min-h-11'));
   assert('H: no item id rendered in question panel', !questionPanelSource.includes('{item.id}') && !questionPanelSource.includes('{renderable.id}'));
   assert('H: question panel uses native buttons', questionPanelSource.includes('<button'));
@@ -527,7 +578,7 @@ function escHtml(value: string): string {
   const restartStart = hostSource.indexOf('const handleRestart');
   const restartEnd = hostSource.indexOf('const handleClose');
   const openStart = hostSource.indexOf("setUiPhase('preparing')");
-  const openEnd = hostSource.indexOf('}, [isOpen, premium.isPremiumLoading]);');
+  const openEnd = hostSource.indexOf('}, [isOpen, premium.isPremiumLoading, clearPremiumTimeout]);');
   const inRange = (index: number, start: number, end: number) => start !== -1 && end !== -1 && index > start && index < end;
   const allInMutationHandlers =
     saveOccurrences.length > 0 &&
@@ -538,9 +589,10 @@ function escHtml(value: string): string {
         inRange(index, openStart, openEnd),
     );
   assert('I: saves occur only inside mutation handlers or the open lifecycle', allInMutationHandlers, `locations: ${saveOccurrences.join(', ')}`);
-  assert('I: save count matches the three allowed call sites', saveOccurrences.length === 3, `count ${saveOccurrences.length}`);
-  const notices = ['cannot be saved', 'cannot be saved in this browser', 'will be lost when you close'];
-  assert('I: storage notices are non-blocking copy', notices.some(n => hostSource.includes(n)));
+  assert('I: save count matches the four allowed call sites', saveOccurrences.length === 4, `count ${saveOccurrences.length}`);
+  assert('I: storage notices are non-blocking copy', hostSource.includes('You can continue, but progress may not survive closing or reloading in this browser.'));
+  assert('I: failure notices say latest progress was not saved', hostSource.includes('The latest progress could not be saved'));
+  assert('I: notices never claim all prior progress is lost', !hostSource.includes('will be lost') && !hostSource.includes('all prior progress lost') && !hostSource.includes('results will be lost'));
 }
 
 /* ==================================================================
@@ -550,9 +602,92 @@ function escHtml(value: string): string {
 {
   assert('J: results panel navigates with primary pattern id', resultsPanelSource.includes('onNavigateToPattern(primaryEntry.id)'));
   assert('J: no expression navigation surface', !resultsPanelSource.includes('onNavigateToExpression') && !resultsPanelSource.includes('resolveAssessmentItem'));
-  assert('J: host passes navigation callback through', hostSource.includes('onNavigateToPattern={onNavigateToPattern}'));
+  assert('J: host passes navigation callback through', hostSource.includes('onNavigateToPattern={handleNavigateToPattern}'));
   assert('J: app keeps navigation body with highlight + active tab', appSource.includes('dict.setHighlightPatternId(patternId)') && appSource.includes("dict.setActiveTab('patterns')"));
   assert('J: app keeps showQuiz state and open props', appSource.includes('isOpen={showQuiz}') && appSource.includes('onClose={() => setShowQuiz(false)}'));
+}
+
+/* ==================================================================
+ *  L. Premium load timeout model (source-level contract)
+ * ================================================================*/
+
+{
+  assert('L: premium timeout constant is 8 seconds', hostSource.includes('PREMIUM_LOAD_TIMEOUT_MS = 8000'));
+  assert('L: timeout is only scheduled while premium is loading', hostSource.includes('premium.isPremiumLoading'));
+  assert('L: timeout callback is generation-guarded against stale opens', hostSource.includes('launchGenerationRef.current !== generation'));
+  assert('L: closing invalidates pending launch work', hostSource.includes('launchGenerationRef.current++'));
+  assert('L: timeout is cleared on resolve, close, or unmount', hostSource.includes('clearPremiumTimeout') && hostSource.includes('window.clearTimeout'));
+  assert('L: late premium resolve cannot re-run or convert the fallback', hostSource.includes('didTimeoutLaunchRef.current'));
+
+  const timeoutStart = hostSource.indexOf('premiumTimeoutRef.current = window.setTimeout');
+  const timeoutEnd = hostSource.indexOf('}, PREMIUM_LOAD_TIMEOUT_MS);');
+  const timeoutRegion = hostSource.slice(timeoutStart, timeoutEnd);
+  assert('L: timeout fallback is conservative — never Pro', timeoutRegion.includes("startAssessmentSession('free')") && !timeoutRegion.includes("startAssessmentSession('pro')"));
+  assert('L: timeout consults saved session with premium=false', timeoutRegion.includes('decideAssessmentLaunch(loaded.session, false)'));
+  assert('L: timeout with saved pro session -> blocked screen', timeoutRegion.includes('blocked-pro-session'));
+  assert('L: timeout with saved free session -> resume screen', timeoutRegion.includes("setUiPhase('resume')"));
+  assert('L: timeout fresh launch shows single verification notice', timeoutRegion.includes('Pro access could not be verified'));
+  assert('L: timeout fallback still saves the fresh session', timeoutRegion.includes('saveAssessmentSession(freshSession)'));
+  assert('L: storage failure overrides the verification notice', timeoutRegion.includes('setNotice(storageNoticeForSave(saveResult.status))'));
+}
+
+/* ==================================================================
+ *  M. Submission guard (synchronous, no double mutation)
+ * ================================================================*/
+
+{
+  assert('M: host has an isSubmitting state', hostSource.includes('const [isSubmitting, setIsSubmitting] = useState(false)'));
+  assert('M: both answer and skip guard on isSubmitting', (hostSource.match(/if \(!session \|\| isSubmitting\) return;/g) ?? []).length === 2);
+  assert('M: submission flag is reset after processing', (hostSource.match(/setIsSubmitting\(false\)/g) ?? []).length >= 2);
+
+  const answerStart = hostSource.indexOf('const handleAnswer');
+  const answerEnd = hostSource.indexOf('const handleSkip');
+  const answerRegion = hostSource.slice(answerStart, answerEnd);
+  assert('M: answer path has no debounce or delay', !answerRegion.includes('setTimeout') && !answerRegion.includes('debounce'));
+
+  const skipStart = hostSource.indexOf('const handleSkip');
+  const skipEnd = hostSource.indexOf('const handleRestart');
+  const skipRegion = hostSource.slice(skipStart, skipEnd);
+  assert('M: skip path has no debounce or delay', !skipRegion.includes('setTimeout') && !skipRegion.includes('debounce'));
+
+  assert('M: panel receives the disabled flag from the host', hostSource.includes('disabled={isSubmitting}'));
+  assert('M: no second response mutation can run while submitting', hostSource.includes('setIsSubmitting(true)') && hostSource.includes('setIsSubmitting(false)'));
+}
+
+/* ==================================================================
+ *  N. Focus management (trap, phase focus, restore rules)
+ * ================================================================*/
+
+{
+  assert('N: exactly one keydown listener while open', (hostSource.match(/addEventListener\('keydown'/g) ?? []).length === 1 && (hostSource.match(/removeEventListener\('keydown'/g) ?? []).length === 1);
+  assert('N: dialog container is focusable for programmatic focus', hostSource.includes('tabIndex={-1}'));
+  assert('N: initial and phase-change focus targets the dialog', hostSource.includes('dialog.focus?.()') && hostSource.includes('}, [isOpen, uiPhase]);'));
+  assert('N: escape closes once with preventDefault', hostSource.includes("event.key === 'Escape'") && hostSource.includes('event.preventDefault()') && hostSource.includes('onCloseRef.current()'));
+  assert('N: zero-focusable dialog prevents tab escape', hostSource.includes('focusable.length === 0'));
+  assert('N: single-focusable dialog traps tab', hostSource.includes('focusable.length === 1'));
+  assert('N: default close restores the launcher', hostSource.includes('previouslyFocusedRef.current?.focus?.()'));
+  assert('N: profile navigation suppresses restore', hostSource.includes('if (!navigationIntentRef.current)'));
+  assert('N: navigation intent is set before navigating', hostSource.includes('navigationIntentRef.current = true'));
+  assert('N: trap is removed on close', hostSource.includes("dialog?.removeEventListener('keydown', handleKeyDown)"));
+}
+
+/* ==================================================================
+ *  O. Storage notice channel (single, current, non-blocking)
+ * ================================================================*/
+
+{
+  assert('O: host uses a single notice channel', hostSource.includes('const [notice, setNotice] = useState') && !hostSource.includes('setStorageNotice'));
+  assert('O: opening the dialog clears stale notices', hostSource.includes('setNotice(null)'));
+  assert('O: unavailable/read-failed copy permits continuing', hostSource.includes('You can continue, but progress may not survive closing or reloading in this browser.'));
+  assert('O: write/serialization failures say latest progress not saved', hostSource.includes('The latest progress could not be saved in this browser.'));
+  assert('O: invalid saved session copy avoids total-loss claims', hostSource.includes('The latest progress could not be restored'));
+  assert('O: remove-failed copy continues in memory', hostSource.includes('Old saved progress could not be cleared'));
+  assert('O: successful save clears the notice', hostSource.includes("case 'saved':") && hostSource.includes('return null;'));
+  assert('O: no raw exceptions surface from storage', !hostSource.includes('throw new Error'));
+  assert('O: host never touches the storage key directly', !hostSource.includes('cure-life-assessment-session'));
+  assert('O: notices are never concatenated or appended', !hostSource.includes('setNotice(notice') && !hostSource.includes('notice + ') && !hostSource.includes('setNotice(notice ='));
+  assert('O: single live region announces only messages', (hostSource.match(/aria-live="polite"/g) ?? []).length === 1);
+  assert('O: no response data is logged', !hostSource.includes('console.'));
 }
 
 /* ==================================================================
@@ -632,6 +767,43 @@ function escHtml(value: string): string {
 }
 
 /* ==================================================================
+ *  P. Preservation vs the accepted Batch 3 checkpoint
+ * ================================================================*/
+
+{
+  const sha256sum = (filePath: string): string => {
+    const content = fs.readFileSync(filePath, 'utf8');
+    return createHash('sha256').update(content).digest('hex');
+  };
+
+  assert(
+    'P: App.tsx preserved (checkpoint sha256)',
+    sha256sum(path.join(import.meta.dirname, 'src/App.tsx')) === '77ae38ad735172eb0e9c87437938896240dfe34a2ee8efbd0fcedaa44d8240a8',
+  );
+  assert(
+    'P: AssessmentResultsPanel preserved (checkpoint sha256)',
+    sha256sum(path.join(import.meta.dirname, 'src/components/quiz/AssessmentResultsPanel.tsx')) === 'f30e7872045cb6135863bb7dbded3618a772e34954c12482a811a234340a1b8b',
+  );
+
+  const storageSource = fs.readFileSync(path.join(import.meta.dirname, 'src/lib/quiz/assessmentSessionStorage.ts'), 'utf8');
+  assert('P: storage key contract preserved', storageSource.includes("ASSESSMENT_SESSION_STORAGE_KEY = 'cure-life-assessment-session'"));
+  assert('P: storage result unions preserved', storageSource.includes("type AssessmentSessionSaveStatus") && storageSource.includes("type AssessmentSessionLoadStatus") && storageSource.includes("type AssessmentSessionClearStatus"));
+
+  const orchestratorSource = fs.readFileSync(path.join(import.meta.dirname, 'src/lib/quiz/assessmentSession.ts'), 'utf8');
+  assert('P: session version contract preserved', orchestratorSource.includes('ASSESSMENT_SESSION_VERSION') && orchestratorSource.includes('strategy-1.0'));
+  assert('P: serialization contract preserved', orchestratorSource.includes('export function serializeAssessmentSession') && orchestratorSource.includes('export function deserializeAssessmentSession'));
+
+  assert('P: guarded advance loop preserved in host', hostSource.includes('MAX_STAGE_TRANSITIONS = 10') && hostSource.includes("while (result.stage !== 'results' && result.currentItemIds.length === 0 && guard < MAX_STAGE_TRANSITIONS)"));
+  assert('P: one save per mutation — no intermediate saves', (hostSource.match(/saveAssessmentSession\(/g) ?? []).length === 4);
+  assert('P: advance loop stops at results and presentable items', hostSource.includes("result.stage !== 'results' && result.currentItemIds.length === 0"));
+  assert('P: retry pass stays engine-controlled', orchestratorSource.includes('pendingRetry.length > 0'));
+
+  const quizTypesSource = fs.readFileSync(path.join(import.meta.dirname, 'src/types/quiz.ts'), 'utf8');
+  assert('P: frequency scale contract preserved', quizTypesSource.includes('export const FREQUENCY_SCALE'));
+  assert('P: response value type preserved', quizTypesSource.includes("type QuizScale = 'frequency'"));
+}
+
+/* ==================================================================
  *  Summary + manual smoke matrix
  * ================================================================*/
 
@@ -656,7 +828,7 @@ const smokeItems: { id: number; label: string; status: string; note?: string }[]
   { id: 3, label: 'Escape closes the modal and restores focus', status: 'pending', note: 'requires browser' },
   { id: 4, label: 'Free session starts at first core item', status: 'pending', note: 'requires browser' },
   { id: 5, label: 'Answer all 45 core items, stage advances to strategy', status: 'pending', note: 'requires browser' },
-  { id: 6, label: 'Progress bar advances per stage, hidden at results', status: 'pending', note: 'requires browser' },
+  { id: 6, label: 'Remaining-queue wording updates per stage, hidden at results', status: 'pending', note: 'requires browser' },
   { id: 7, label: 'Skip schedules retry pass with retry indicator', status: 'pending', note: 'requires browser' },
   { id: 8, label: 'Results show core + eligible strategy, profile navigation works', status: 'pending', note: 'requires browser' },
   { id: 9, label: 'Reopen resumes saved free session via resume screen', status: 'pending', note: 'requires browser' },
