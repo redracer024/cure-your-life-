@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles, ChevronRight, Search } from 'lucide-react';
 import { PATTERNS_DATA } from '../../data/patterns';
@@ -9,6 +9,7 @@ interface PatternDictionaryProps {
   onOpenQuiz: () => void;
   highlightPatternId?: string | null;
   onClearHighlight?: () => void;
+  onOpenJournal?: (data: { sourcePatternId: string; sourcePatternName: string; prompt: string }) => void;
 }
 
 type CategoryFilter = 'all' | 'core' | 'sub';
@@ -17,10 +18,13 @@ export const PatternDictionary: React.FC<PatternDictionaryProps> = ({
   onOpenQuiz,
   highlightPatternId,
   onClearHighlight,
+  onOpenJournal,
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<CategoryFilter>('all');
   const [selectedPattern, setSelectedPattern] = useState<PatternEntry | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const [restoreSection, setRestoreSection] = useState<string | null>(null);
+  const navStackRef = useRef<{ fromPatternId: string; restoreSection: string }[]>([]);
 
   const filteredPatterns = useMemo(() => {
     let patterns = PATTERNS_DATA;
@@ -43,7 +47,7 @@ export const PatternDictionary: React.FC<PatternDictionaryProps> = ({
   const subCount = PATTERNS_DATA.filter(p => p.category === 'sub').length;
 
   // Auto-select highlighted pattern from quiz results
-  React.useEffect(() => {
+  useEffect(() => {
     if (highlightPatternId) {
       const found = PATTERNS_DATA.find(p => p.id === highlightPatternId);
       if (found) {
@@ -54,22 +58,72 @@ export const PatternDictionary: React.FC<PatternDictionaryProps> = ({
     }
   }, [highlightPatternId]);
 
-  const handleCloseDetail = () => {
+  const handleNavigateToPattern = useCallback((patternId: string) => {
+    const found = PATTERNS_DATA.find(p => p.id === patternId);
+    if (!found) return;
+
+    if (selectedPattern) {
+      navStackRef.current.push({ fromPatternId: selectedPattern.id, restoreSection: 'pairings' });
+      window.history.pushState(
+        { patternNav: true, fromPatternId: selectedPattern.id, restoreSection: 'pairings' },
+        ''
+      );
+    }
+
+    setRestoreSection(null);
+    setSelectedPattern(found);
+  }, [selectedPattern]);
+
+  const handleCloseDetail = useCallback(() => {
     setSelectedPattern(null);
     onClearHighlight?.();
-  };
+  }, []);
+
+  // Handle browser back/forward for pattern-to-pattern navigation
+  useEffect(() => {
+    const handlePopState = (e: PopStateEvent) => {
+      const state = e.state;
+      if (state?.patternNav && state?.fromPatternId) {
+        const found = PATTERNS_DATA.find(p => p.id === state.fromPatternId);
+        if (found) {
+          setSelectedPattern(found);
+          setRestoreSection(state.restoreSection || null);
+          return;
+        }
+      }
+      // If no managed state, close detail view
+      setSelectedPattern(null);
+      onClearHighlight?.();
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  // Navigate back to previous pattern when browser back is pressed
+  const handlePatternBack = useCallback(() => {
+    if (navStackRef.current.length > 0) {
+      const prev = navStackRef.current.pop()!;
+      window.history.back();
+    } else {
+      handleCloseDetail();
+    }
+  }, [handleCloseDetail]);
 
   if (selectedPattern) {
     return (
       <PatternDetailPanel
+        key={selectedPattern.id}
         pattern={selectedPattern}
-        onClose={handleCloseDetail}
+        onClose={handlePatternBack}
+        onNavigateToPattern={handleNavigateToPattern}
+        onOpenJournal={onOpenJournal}
+        restoreSection={restoreSection}
       />
     );
   }
 
   return (
-    <main className="flex-1 flex flex-col p-6 md:p-10 overflow-y-auto w-full space-y-8">
+    <main className="flex-1 min-h-0 flex flex-col p-6 md:p-10 overflow-y-auto w-full space-y-8">
       <div className="w-full max-w-4xl mx-auto space-y-6">
         {/* Header */}
         <div className="space-y-2">

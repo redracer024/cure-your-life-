@@ -111,7 +111,10 @@ export const PatternMindMap: React.FC<PatternMindMapProps> = ({ pattern }) => {
       const subLabel = labels.subPatterns || labels.behavioralSubPatterns || 'Sub-Patterns';
       branchMap['subPatterns'] = {
         label: subLabel,
-        items: pattern.subPatterns.map(sp => `${sp.name}: ${sp.description}`),
+        items: pattern.subPatterns.map(sp => {
+          const desc = sp.summary ?? sp.description ?? '';
+          return desc ? `${sp.name}: ${desc}` : sp.name;
+        }),
       };
     }
 

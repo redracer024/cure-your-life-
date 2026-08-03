@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { SomaticJournalEntry } from '../types';
 import { searchCoreAilments } from '../data';
 import { 
@@ -14,7 +14,9 @@ import {
   Clock,
   Heart,
   ChevronRight,
-  Brain
+  Brain,
+  PenLine,
+  X
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
@@ -27,8 +29,13 @@ import {
   Legend, 
   Tooltip 
 } from 'recharts';
+import type { JournalPromptData } from '../hooks/useDictionaryNavigation';
 
-export default function SomaticJournalPanel() {
+interface SomaticJournalPanelProps {
+  initialPromptData?: JournalPromptData | null;
+}
+
+export default function SomaticJournalPanel({ initialPromptData }: SomaticJournalPanelProps) {
   const [entries, setEntries] = useState<SomaticJournalEntry[]>([]);
   const [physicalSymptom, setPhysicalSymptom] = useState('');
   const [emotionalState, setEmotionalState] = useState('');
@@ -38,6 +45,23 @@ export default function SomaticJournalPanel() {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [filterEmotion, setFilterEmotion] = useState('All');
+  const [activePrompt, setActivePrompt] = useState<JournalPromptData | null>(null);
+  const [reflectionResponse, setReflectionResponse] = useState('');
+
+  // Handle incoming journal prompt from pattern detail
+  useEffect(() => {
+    if (initialPromptData) {
+      if (activePrompt?.prompt === initialPromptData.prompt && activePrompt?.sourcePatternId === initialPromptData.sourcePatternId) return;
+      setActivePrompt(initialPromptData);
+      setReflectionResponse('');
+    }
+  }, [initialPromptData]);
+
+  const dismissPrompt = useCallback(() => {
+    if (reflectionResponse.trim() && !confirm("You have an unsaved reflection response. Discard it?")) return;
+    setActivePrompt(null);
+    setReflectionResponse('');
+  }, [reflectionResponse]);
   
   // Suggested emotions for quick selection
   const suggestedEmotions = [
@@ -224,7 +248,11 @@ export default function SomaticJournalPanel() {
       descriptionOfDay: descriptionOfDay.trim() || "No specific daily notes provided.",
       potentialConnection: connectionText,
       sarcasticReview: roastText,
-      intensity: intensity
+      intensity: intensity,
+      reflectionPrompt: activePrompt?.prompt,
+      reflectionResponse: reflectionResponse.trim() || undefined,
+      sourcePatternId: activePrompt?.sourcePatternId,
+      sourcePatternName: activePrompt?.sourcePatternName,
     };
 
     const updated = [newEntry, ...entries];
@@ -236,6 +264,7 @@ export default function SomaticJournalPanel() {
     setEmotionalState('');
     setDescriptionOfDay('');
     setIntensity(5);
+    setReflectionResponse('');
     setIsAnalyzing(false);
   };
 
@@ -524,6 +553,49 @@ export default function SomaticJournalPanel() {
           </div>
 
           <form onSubmit={handleLogSymptom} className="space-y-5">
+            {/* Active Prompt Banner */}
+            {activePrompt && (
+              <div className="p-4 rounded-xl border border-indigo-500/30 bg-indigo-500/10 space-y-3">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex items-center gap-2 min-w-0">
+                    <PenLine className="w-3.5 h-3.5 text-indigo-400 shrink-0 mt-0.5" />
+                    <div className="min-w-0">
+                      <span className="text-[9px] font-mono text-indigo-400 uppercase tracking-widest font-black block">
+                        Reflection Prompt
+                      </span>
+                      <span className="text-[10px] font-mono text-indigo-300/70">
+                        from {activePrompt.sourcePatternName}
+                      </span>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={dismissPrompt}
+                    className="text-slate-500 hover:text-slate-300 transition-colors cursor-pointer shrink-0"
+                    aria-label="Dismiss prompt"
+                  >
+                    <X className="w-3.5 h-3.5" />
+                  </button>
+                </div>
+                <p className="text-xs text-slate-200 font-sans font-light leading-6 italic">
+                  &ldquo;{activePrompt.prompt}&rdquo;
+                </p>
+                <div className="space-y-1.5">
+                  <label htmlFor="journal-reflection-response" className="block text-[10px] font-mono text-indigo-300 uppercase tracking-wider">
+                    My Response
+                  </label>
+                  <textarea
+                    id="journal-reflection-response"
+                    rows={3}
+                    value={reflectionResponse}
+                    onChange={(e) => setReflectionResponse(e.target.value)}
+                    placeholder="Write your reflection here..."
+                    className="w-full bg-black/40 border border-indigo-500/20 rounded-xl p-3 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 transition-colors font-sans resize-none"
+                  />
+                </div>
+              </div>
+            )}
+
             {/* Symptom Input */}
             <div className="space-y-1.5">
               <label htmlFor="journal-physical-symptom" className="block text-xs font-mono text-slate-400 uppercase tracking-wider">
@@ -781,6 +853,13 @@ export default function SomaticJournalPanel() {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* How the chart works note */}
+          <div className="p-3 rounded-xl border border-white/5 bg-white/[0.02]">
+            <p className="text-[9px] font-mono text-slate-500 leading-relaxed">
+              <strong className="text-slate-400">How this chart works:</strong> The amber shape shows average intensity (1&ndash;10 scale) per body region. The indigo shape shows how many entries each region has. Both use all logged journal entries. This is not a medical diagnosis.
+            </p>
           </div>
 
           {/* Header & Filter workspace */}

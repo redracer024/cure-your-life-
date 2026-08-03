@@ -11,6 +11,13 @@ import { isSearchOnlyAilment } from '../lib/ailments/constants';
 
 export type TabType = 'dictionary' | 'decoder' | 'daily' | 'journal' | 'patterns';
 
+export interface JournalPromptData {
+  sourceType: 'pattern-journal-prompt';
+  sourcePatternId: string;
+  sourcePatternName: string;
+  prompt: string;
+}
+
 export interface DictionaryNavigation {
   activeTab: TabType;
   setActiveTab: (tab: TabType) => void;
@@ -24,6 +31,8 @@ export interface DictionaryNavigation {
   categories: string[];
   highlightPatternId: string | null;
   setHighlightPatternId: (id: string | null) => void;
+  journalPromptData: JournalPromptData | null;
+  setJournalPromptData: (data: JournalPromptData | null) => void;
 }
 
 export function useDictionaryNavigation(): DictionaryNavigation {
@@ -32,6 +41,7 @@ export function useDictionaryNavigation(): DictionaryNavigation {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedAilment, setSelectedAilment] = useState<Ailment | null>(null);
   const [highlightPatternId, setHighlightPatternId] = useState<string | null>(null);
+  const [journalPromptData, setJournalPromptData] = useState<JournalPromptData | null>(null);
 
   const categories = useMemo(() => {
     return getCategories();
@@ -68,5 +78,6 @@ export function useDictionaryNavigation(): DictionaryNavigation {
     selectedAilment, setSelectedAilment,
     filteredAilments, categories,
     highlightPatternId, setHighlightPatternId,
+    journalPromptData, setJournalPromptData,
   };
 }

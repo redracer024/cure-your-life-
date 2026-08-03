@@ -12,7 +12,7 @@ import { PatternDictionary } from '../patterns/PatternDictionary';
 import type { Ailment } from '../../types';
 import type { AilmentCore } from '../../types/dictionary';
 import { getCoreAilments } from '../../data';
-import type { TabType } from '../../hooks/useDictionaryNavigation';
+import type { TabType, JournalPromptData } from '../../hooks/useDictionaryNavigation';
 
 interface TabContentRouterProps {
   activeTab: TabType;
@@ -39,6 +39,8 @@ interface TabContentRouterProps {
   onOpenQuiz: () => void;
   highlightPatternId: string | null;
   onClearHighlightPattern: () => void;
+  onOpenJournal: (data: { sourcePatternId: string; sourcePatternName: string; prompt: string }) => void;
+  journalPromptData: JournalPromptData | null;
 }
 
 export const TabContentRouter: React.FC<TabContentRouterProps> = ({
@@ -54,10 +56,11 @@ export const TabContentRouter: React.FC<TabContentRouterProps> = ({
   handleDecodeSymptom, setDecodedResult,
   onJournalRedirect, openDecoder, onOpenQuiz,
   highlightPatternId, onClearHighlightPattern,
+  onOpenJournal, journalPromptData,
 }) => {
   if (activeTab === 'dictionary') {
     return (
-      <main className="flex-1 flex flex-col p-6 md:p-10 overflow-y-auto w-full space-y-8">
+      <main className="flex-1 min-h-0 flex flex-col p-6 md:p-10 overflow-y-auto w-full space-y-8">
         <AppHeader />
         <SearchCommandBar
           customSymptom={customSymptom}
@@ -132,6 +135,7 @@ export const TabContentRouter: React.FC<TabContentRouterProps> = ({
         onOpenQuiz={onOpenQuiz}
         highlightPatternId={highlightPatternId}
         onClearHighlight={onClearHighlightPattern}
+        onOpenJournal={onOpenJournal}
       />
     );
   }
@@ -154,7 +158,7 @@ export const TabContentRouter: React.FC<TabContentRouterProps> = ({
 
   if (activeTab === 'daily') {
     return (
-      <main className="flex-1 flex flex-col p-6 md:p-12 overflow-y-auto max-w-5xl mx-auto w-full space-y-6">
+      <main className="flex-1 min-h-0 flex flex-col p-6 md:p-12 overflow-y-auto max-w-5xl mx-auto w-full space-y-6">
         <div className="space-y-2">
           <span className="text-xs font-mono text-indigo-400 uppercase tracking-widest">SUBCONSCIOUS TRACE RECORDS</span>
           <h1 className="text-4xl md:text-7xl font-black uppercase tracking-tighter">Somatic<br /><span className="text-indigo-500">Reflections</span></h1>
@@ -166,13 +170,13 @@ export const TabContentRouter: React.FC<TabContentRouterProps> = ({
   }
 
   return (
-    <main className="flex-1 flex flex-col p-6 md:p-12 overflow-y-auto w-full space-y-6">
+    <main className="flex-1 min-h-0 flex flex-col p-6 md:p-12 overflow-y-auto w-full space-y-6">
       <div className="space-y-2 max-w-6xl mx-auto w-full">
         <span className="text-xs font-mono text-indigo-400 uppercase tracking-widest">SOMATIC TRACE LEDGER</span>
         <h1 className="text-4xl md:text-7xl font-black uppercase tracking-tighter">Somatic<br /><span className="text-indigo-500">Journal</span></h1>
         <p className="text-base text-slate-400 max-w-xl font-light">Log physical symptoms and decode connections.</p>
       </div>
-      <div className="pt-4"><SomaticJournalPanel /></div>
+      <div className="pt-4"><SomaticJournalPanel initialPromptData={journalPromptData} /></div>
     </main>
   );
 };

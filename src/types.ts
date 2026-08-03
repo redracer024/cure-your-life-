@@ -83,5 +83,9 @@ export interface SomaticJournalEntry {
   potentialConnection?: string;
   sarcasticReview?: string;
   intensity: number;
+  reflectionPrompt?: string;
+  reflectionResponse?: string;
+  sourcePatternId?: string;
+  sourcePatternName?: string;
 }
 

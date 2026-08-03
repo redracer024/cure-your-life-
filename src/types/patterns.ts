@@ -1,9 +1,22 @@
 export interface PatternSubPattern {
+  id?: string;
   name: string;
-  description: string;
+  description?: string;
+  summary?: string;
+  coreMechanism?: string;
+  commonSigns?: string[];
+  commonTriggers?: string[];
+  protectivePurpose?: string;
+  currentCost?: string;
+  whatItIsNot?: string[];
+  reflectionPrompts?: string[];
+  relatedPatternIds?: string[];
+  relatedResponseIds?: string[];
+  safetyNote?: string;
 }
 
 export interface PatternPairing {
+  pairedPatternId: string;
   pairsWith: string;
   looksLike: string;
 }
@@ -126,6 +139,20 @@ export interface RecoveryStage {
   practice: string;
 }
 
+export interface PatternVisualAsset {
+  src: string;
+  title: string;
+  description?: string;
+}
+
+export interface PatternAudioOverview {
+  src: string;
+  title?: string;
+  duration?: string;
+}
+
+export type PatternAudioOverviews = PatternAudioOverview[];
+
 export interface PatternEntry {
   id: string;
   name: string;
@@ -173,4 +200,8 @@ export interface PatternEntry {
   // Body map split fields
   stressAndBody?: string[];
   symbolicBodyMap?: { area: string; meaning: string }[];
+  // Visual assets (infographics, diagrams, etc.)
+  visualAssets?: PatternVisualAsset[];
+  // Audio overviews (narrated pattern summaries)
+  audioOverviews?: PatternAudioOverviews;
 }

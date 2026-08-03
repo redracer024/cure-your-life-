@@ -5,11 +5,12 @@ import { AppLayout } from './components/layout/AppLayout';
 import { Navigation } from './components/Navigation';
 import { AuthSection } from './components/AuthSection';
 import { PremiumPaywall } from './components/PremiumPaywall';
-import { PersonalityQuiz } from './components/PersonalityQuiz';
+import { AssessmentQuizHost } from './components/quiz/AssessmentQuizHost';
 import { AppFooter } from './components/AppFooter';
 import { TabContentRouter } from './components/layout/TabContentRouter';
 import { useDecoderState } from './hooks/useDecoderState';
 import { useDictionaryNavigation } from './hooks/useDictionaryNavigation';
+import type { JournalPromptData } from './hooks/useDictionaryNavigation';
 import { authFetch } from './lib/supabaseClient';
 
 function AppInner() {
@@ -28,6 +29,17 @@ function AppInner() {
     dict.setActiveTab('decoder');
   }, [premium.isPremium, premium.setShowPaywall, premium.setBillingMessage, dict.setActiveTab]);
 
+  const handleOpenJournal = useCallback((data: { sourcePatternId: string; sourcePatternName: string; prompt: string }) => {
+    const journalData: JournalPromptData = {
+      sourceType: 'pattern-journal-prompt',
+      sourcePatternId: data.sourcePatternId,
+      sourcePatternName: data.sourcePatternName,
+      prompt: data.prompt,
+    };
+    dict.setJournalPromptData(journalData);
+    dict.setActiveTab('journal');
+  }, [dict]);
+
   return (
     <AppLayout>
       <Navigation
@@ -36,7 +48,7 @@ function AppInner() {
         openDecoder={openDecoder}
       />
       <AuthSection />
-      <div className="flex-1 flex flex-col md:flex-row overflow-hidden relative z-10">
+      <div className="flex-1 min-h-0 flex flex-col md:flex-row overflow-hidden relative z-10">
         <TabContentRouter
           activeTab={dict.activeTab}
           searchQuery={dict.searchQuery}
@@ -62,9 +74,11 @@ function AppInner() {
           onOpenQuiz={() => setShowQuiz(true)}
           highlightPatternId={dict.highlightPatternId}
           onClearHighlightPattern={() => dict.setHighlightPatternId(null)}
+          onOpenJournal={handleOpenJournal}
+          journalPromptData={dict.journalPromptData}
         />
       </div>
-      <PersonalityQuiz
+      <AssessmentQuizHost
         isOpen={showQuiz}
         onClose={() => setShowQuiz(false)}
         onNavigateToPattern={(patternId) => {
