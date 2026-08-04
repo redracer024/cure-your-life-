@@ -33,7 +33,11 @@ import {
   ASSESSMENT_CLEAR_CONFIRM_ACTION,
   ASSESSMENT_CLEAR_CANCEL_ACTION,
   ASSESSMENT_CLEAR_FAILURE_NOTICE,
+  ASSESSMENT_CONSENT_LABEL,
+  ASSESSMENT_CONSENT_LEGAL_LINK_LABEL,
+  ASSESSMENT_CONSENT_REQUIRED_NOTICE,
 } from '../../lib/quiz/assessmentUiModel';
+import { openLegalDoc } from '../../lib/legal/legalPagesStore';
 import { AssessmentQuestionPanel } from './AssessmentQuestionPanel';
 import { AssessmentResultsPanel } from './AssessmentResultsPanel';
 import type {
@@ -115,6 +119,8 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
   const [blockedSession, setBlockedSession] = useState<AssessmentSession | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [clearConfirming, setClearConfirming] = useState(false);
+  const [consentAccepted, setConsentAccepted] = useState(false);
+  const consentAcceptedRef = useRef(false);
   const clearOpenerRef = useRef<HTMLElement | null>(null);
   const clearConfirmingRef = useRef(false);
   const cancelClearRef = useRef<() => void>(() => {});
@@ -144,6 +150,8 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
       didTimeoutLaunchRef.current = false;
       setClearConfirming(false);
       clearConfirmingRef.current = false;
+      setConsentAccepted(false);
+      consentAcceptedRef.current = false;
       return;
     }
     if (didTimeoutLaunchRef.current) return;
@@ -316,6 +324,10 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
   }, [isOpen, clearConfirming]);
 
   useEffect(() => {
+    consentAcceptedRef.current = consentAccepted;
+  }, [consentAccepted]);
+
+  useEffect(() => {
     if (!clearConfirmingRef.current) return;
     setClearConfirming(false);
     clearConfirmingRef.current = false;
@@ -440,6 +452,10 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
 
   const handleStartIntro = useCallback(() => {
     if (!session) return;
+    if (!consentAcceptedRef.current) {
+      setNotice(ASSESSMENT_CONSENT_REQUIRED_NOTICE);
+      return;
+    }
     setClearConfirming(false);
     clearConfirmingRef.current = false;
     setUiPhase(uiPhaseForStage(session.stage));
@@ -475,6 +491,8 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
       return;
     }
     setNotice(null);
+    setConsentAccepted(false);
+    consentAcceptedRef.current = false;
     const mode: AssessmentMode = premium.isPremium ? 'pro' : 'free';
     const freshSession = startAssessmentSession(mode);
     setSession(freshSession);
@@ -547,9 +565,29 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
                     <p className="text-sm text-slate-400 max-w-lg mx-auto font-sans font-light leading-7">
                       {ASSESSMENT_PRIVACY_DISCLOSURE}
                     </p>
+                    <div className="w-full max-w-lg mx-auto flex flex-col items-start gap-3 text-left">
+                      <label className="flex items-start gap-3 cursor-pointer select-none">
+                        <input
+                          type="checkbox"
+                          checked={consentAccepted}
+                          onChange={(e) => setConsentAccepted(e.target.checked)}
+                          className="mt-0.5 w-4 h-4 accent-indigo-500 cursor-pointer"
+                        />
+                        <span className="text-xs text-slate-400 font-sans font-light leading-6">
+                          {ASSESSMENT_CONSENT_LABEL}
+                        </span>
+                      </label>
+                      <button
+                        onClick={() => openLegalDoc('privacy')}
+                        className="text-[11px] font-mono text-indigo-400 hover:text-indigo-300 uppercase tracking-widest underline underline-offset-4 transition-colors cursor-pointer"
+                      >
+                        {ASSESSMENT_CONSENT_LEGAL_LINK_LABEL}
+                      </button>
+                    </div>
                     <button
                       onClick={handleStartIntro}
-                      className="px-8 py-3.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-black uppercase text-[11px] tracking-widest rounded-xl transition-all shadow-[0_0_20px_rgba(99,102,241,0.3)] cursor-pointer flex items-center gap-2"
+                      disabled={!consentAccepted}
+                      className="px-8 py-3.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-black uppercase text-[11px] tracking-widest rounded-xl transition-all shadow-[0_0_20px_rgba(99,102,241,0.3)] cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-2"
                     >
                       Start Assessment
                       <ChevronRight className="w-4 h-4" />

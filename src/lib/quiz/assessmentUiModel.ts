@@ -150,3 +150,11 @@ export const ASSESSMENT_CLEAR_CANCEL_ACTION = 'Cancel';
 
 export const ASSESSMENT_CLEAR_FAILURE_NOTICE =
   'Saved assessment could not be cleared. You can continue using the current session.';
+
+export const ASSESSMENT_CONSENT_LABEL =
+  'I have read the privacy disclosure above and consent to my answers and results being stored only in this browser on this device.';
+
+export const ASSESSMENT_CONSENT_LEGAL_LINK_LABEL = 'View full Privacy Policy';
+
+export const ASSESSMENT_CONSENT_REQUIRED_NOTICE =
+  'You must consent to the privacy disclosure before starting the assessment.';

@@ -23,6 +23,7 @@ import {
 import { AssessmentQuestionPanel } from './src/components/quiz/AssessmentQuestionPanel';
 import { AssessmentResultsPanel } from './src/components/quiz/AssessmentResultsPanel';
 import { AssessmentQuizHost } from './src/components/quiz/AssessmentQuizHost';
+import type { LegalDocId } from './src/lib/legal/legalDocs';
 import { AuthProvider } from './src/context/AuthContext';
 import { PremiumProvider } from './src/context/PremiumContext';
 import { APPROVED_QUIZ_ITEMS } from './src/data/quiz/approvedQuestions';
@@ -872,6 +873,63 @@ function escHtml(value: string): string {
   assert('R17: clear preserves the current session on failure', confirmRegion.includes('opener?.focus?.()'));
   assert('R18: Start Over and Retake are preserved', hostSource.includes('Start Over') && resultsPanelSource.includes('Retake'));
   assert('R18: resume screen still offers Resume and Start Over', hostSource.includes('onClick={handleResume}') && hostSource.includes('onClick={handleRestart}'));
+}
+
+/* ==================================================================
+ *  S. Legal pages + assessment consent
+ * ================================================================*/
+
+{
+  const footerSource = fs.readFileSync(path.join(import.meta.dirname, 'src/components/AppFooter.tsx'), 'utf8');
+  const modalSource = fs.readFileSync(path.join(import.meta.dirname, 'src/components/legal/LegalPagesModal.tsx'), 'utf8');
+  const docsSource = fs.readFileSync(path.join(import.meta.dirname, 'src/lib/legal/legalDocs.ts'), 'utf8');
+  const storeSource = fs.readFileSync(path.join(import.meta.dirname, 'src/lib/legal/legalPagesStore.ts'), 'utf8');
+  const LEGAL_DOCS_MODULE = await import('./src/lib/legal/legalDocs');
+  const LEGAL_STORE_MODULE = await import('./src/lib/legal/legalPagesStore');
+
+  const docIds = ['privacy', 'terms', 'disclaimer', 'cookies'];
+  assert('S1: all four legal documents exist in the registry', docIds.every((id) => LEGAL_DOCS_MODULE.LEGAL_DOCS[id as LegalDocId]));
+  assert('S1: doc order matches the four ids', LEGAL_DOCS_MODULE.LEGAL_DOC_ORDER.join(',') === docIds.join(','));
+  for (const id of docIds) {
+    const doc = LEGAL_DOCS_MODULE.LEGAL_DOCS[id as LegalDocId];
+    assert(`S2: ${id} has title, intro, and sections`, Boolean(doc.title) && Boolean(doc.intro) && doc.sections.length >= 5);
+    assert(`S2: ${id} sections have heading and body`, doc.sections.every((s: { heading: string; body: string }) => s.heading && s.body));
+  }
+  assert('S3: privacy doc covers device-local storage', LEGAL_DOCS_MODULE.LEGAL_DOCS.privacy.sections.some((s: { body: string }) => s.body.includes('stored only in this browser')));
+  assert('S3: privacy doc covers not-sent-to-servers', LEGAL_DOCS_MODULE.LEGAL_DOCS.privacy.sections.some((s: { body: string }) => s.body.includes('not sent to our servers')));
+  assert('S3: privacy doc covers deletion', LEGAL_DOCS_MODULE.LEGAL_DOCS.privacy.sections.some((s: { body: string }) => s.body.toLowerCase().includes('clear') && s.body.toLowerCase().includes('delet')));
+  assert('S3: disclaimer doc covers no-diagnosis', LEGAL_DOCS_MODULE.LEGAL_DOCS.disclaimer.sections.some((s: { heading: string; body: string }) => s.heading.toLowerCase().includes('diagnos') || s.body.toLowerCase().includes('diagnos')));
+  assert('S3: disclaimer doc covers do-not-stop-medications', LEGAL_DOCS_MODULE.LEGAL_DOCS.disclaimer.sections.some((s: { body: string }) => s.body.includes('Do not stop insulin') || s.body.includes('Do not start, stop, or change')));
+  assert('S3: terms doc covers no-medical-advice', LEGAL_DOCS_MODULE.LEGAL_DOCS.terms.sections.some((s: { heading: string; body: string }) => s.heading.toLowerCase().includes('medical advice') || s.body.toLowerCase().includes('is medical advice')));
+  assert('S3: cookie doc covers browser storage consent', LEGAL_DOCS_MODULE.LEGAL_DOCS.cookies.sections.some((s: { body: string }) => s.body.toLowerCase().includes('local storage')));
+
+  assert('S4: store exposes open/close/get/subscribe', Boolean(LEGAL_STORE_MODULE.openLegalDoc) && Boolean(LEGAL_STORE_MODULE.closeLegalDocs) && Boolean(LEGAL_STORE_MODULE.getOpenLegalDoc) && Boolean(LEGAL_STORE_MODULE.subscribeLegalDocs));
+  assert('S4: store defaults to closed', LEGAL_STORE_MODULE.getOpenLegalDoc() === null);
+  assert('S4: store open/close round-trips', (() => {
+    LEGAL_STORE_MODULE.openLegalDoc('privacy');
+    const opened = LEGAL_STORE_MODULE.getOpenLegalDoc();
+    LEGAL_STORE_MODULE.closeLegalDocs();
+    return opened === 'privacy' && LEGAL_STORE_MODULE.getOpenLegalDoc() === null;
+  })());
+
+  assert('S5: modal subscribes to the store', modalSource.includes('subscribeLegalDocs'));
+  assert('S5: modal renders a role=dialog', modalSource.includes('role="dialog"'));
+  assert('S5: modal renders all four doc switcher buttons', (modalSource.match(/LEGAL_DOC_ORDER\.map/g) ?? []).length === 1);
+  assert('S5: modal has Escape close', modalSource.includes("event.key === 'Escape'"));
+  assert('S5: modal focuses its heading', modalSource.includes('#legal-dialog-title') && modalSource.includes('title?.focus?.()'));
+  assert('S5: modal has exactly one role=dialog', (modalSource.match(/role="dialog"/g) ?? []).length === 1);
+
+  assert('S6: footer renders the legal modal', footerSource.includes('<LegalPagesModal />'));
+  assert('S6: footer maps each legal doc into a link', (footerSource.match(/LEGAL_DOC_ORDER\.map/g) ?? []).length === 1 && footerSource.includes('onClick={() => openLegalDoc(docId)}'));
+  assert('S6: footer link label comes from the doc registry', footerSource.includes('.shortLabel'));
+
+  assert('S7: intro gates Start on consent', hostSource.includes('ASSESSMENT_CONSENT_LABEL') && hostSource.includes('consentAccepted') && hostSource.includes('disabled={!consentAccepted}'));
+  assert('S7: intro links to the full privacy policy', hostSource.includes("openLegalDoc('privacy')"));
+  assert('S7: consent is reset when the dialog opens', hostSource.includes('setConsentAccepted(false)'));
+  assert('S7: consent resets after a successful clear', hostSource.includes('consentAcceptedRef.current = false'));
+  assert('S7: required-consent notice exists in copy', uiModelSource.includes('ASSESSMENT_CONSENT_REQUIRED_NOTICE'));
+  assert('S7: assessment host still has exactly one role=dialog', (hostSource.match(/role="dialog"/g) ?? []).length === 1);
+  assert('S7: disclosure still appears exactly once', (hostSource.match(/\{ASSESSMENT_PRIVACY_DISCLOSURE\}/g) ?? []).length === 1);
 }
 
 /* ==================================================================
