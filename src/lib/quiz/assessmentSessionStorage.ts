@@ -7,6 +7,7 @@ import type { AssessmentSession } from '../../types/assessmentSession';
 
 export const ASSESSMENT_SESSION_STORAGE_KEY = 'cure-life-assessment-session';
 export const ASSESSMENT_SESSION_STORAGE_NAMESPACE_VERSION = 'v2';
+export const ASSESSMENT_IN_PROGRESS_EXPIRY_MS = 30 * 24 * 60 * 60 * 1000;
 
 export type AssessmentStorageOwner =
   | { kind: 'anonymous' }
@@ -44,6 +45,7 @@ export type AssessmentSessionLoadResult =
   | {
       status: 'missing' | 'unavailable' | 'invalid-session' | 'read-failed';
       session: null;
+      expiry?: 'expired-removed' | 'expired-remove-failed';
     };
 
 export type AssessmentSessionClearStatus =
@@ -68,6 +70,12 @@ interface LegacyMigrationResult {
   session: AssessmentSession | null;
 }
 
+export type AssessmentSessionExpiryState =
+  | 'valid'
+  | 'expired'
+  | 'completed'
+  | 'invalid-timestamp';
+
 function resolveBrowserStorage(): AssessmentSessionStorageLike | null {
   if (typeof window === 'undefined') return null;
   try {
@@ -88,6 +96,54 @@ function resolveOwner(owner: AssessmentStorageOwner): AssessmentStorageOwner | n
   const userId = owner.userId.trim();
   if (userId.length === 0) return null;
   return { kind: 'user', userId };
+}
+
+export function getAssessmentSessionExpiryState(
+  session: AssessmentSession,
+  nowMs: number,
+): AssessmentSessionExpiryState {
+  if (session.completionState === 'complete') {
+    return 'completed';
+  }
+
+  const updatedAtMs = Date.parse(session.updatedAt);
+  if (!Number.isFinite(updatedAtMs)) {
+    return 'invalid-timestamp';
+  }
+
+  if (nowMs - updatedAtMs > ASSESSMENT_IN_PROGRESS_EXPIRY_MS) {
+    return 'expired';
+  }
+
+  return 'valid';
+}
+
+function handleLoadedSessionExpiry(
+  target: AssessmentSessionStorageLike,
+  ownerKey: string,
+  session: AssessmentSession,
+  nowMs: number,
+): AssessmentSessionLoadResult {
+  const expiryState = getAssessmentSessionExpiryState(session, nowMs);
+
+  if (expiryState === 'valid' || expiryState === 'completed') {
+    return { status: 'loaded', session };
+  }
+
+  try {
+    target.removeItem(ownerKey);
+  } catch {
+    if (expiryState === 'expired') {
+      return { status: 'missing', session: null, expiry: 'expired-remove-failed' };
+    }
+    return { status: 'invalid-session', session: null };
+  }
+
+  if (expiryState === 'expired') {
+    return { status: 'missing', session: null, expiry: 'expired-removed' };
+  }
+
+  return { status: 'invalid-session', session: null };
 }
 
 function toUtf8Bytes(value: string): Uint8Array {
@@ -255,6 +311,7 @@ export function saveAssessmentSession(
 export function loadAssessmentSession(
   owner: AssessmentStorageOwner,
   storage?: AssessmentSessionStorageLike,
+  nowMs: number = Date.now(),
 ): AssessmentSessionLoadResult {
   const target = resolveStorage(storage);
   if (target === null) return { status: 'unavailable', session: null };
@@ -265,7 +322,7 @@ export function loadAssessmentSession(
   const ownerKey = getAssessmentSessionStorageKey(normalizedOwner);
   const ownerLoad = readKeyedSession(target, ownerKey, true);
   if (ownerLoad.status === 'loaded') {
-    return { status: 'loaded', session: ownerLoad.session };
+    return handleLoadedSessionExpiry(target, ownerKey, ownerLoad.session, nowMs);
   }
   if (ownerLoad.status === 'invalid-session') {
     return { status: 'invalid-session', session: null };
@@ -286,13 +343,13 @@ export function loadAssessmentSession(
   }
 
   if (normalizedOwner.kind === 'anonymous' && migration.status === 'loaded' && migration.session) {
-    return { status: 'loaded', session: migration.session };
+    return handleLoadedSessionExpiry(target, ownerKey, migration.session, nowMs);
   }
 
   if (normalizedOwner.kind === 'anonymous') {
     const migratedLoad = readKeyedSession(target, ownerKey, true);
     if (migratedLoad.status === 'loaded') {
-      return { status: 'loaded', session: migratedLoad.session };
+      return handleLoadedSessionExpiry(target, ownerKey, migratedLoad.session, nowMs);
     }
     if (migratedLoad.status === 'invalid-session') {
       return { status: 'invalid-session', session: null };
