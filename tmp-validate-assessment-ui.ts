@@ -752,12 +752,21 @@ function escHtml(value: string): string {
   const quizDirFiles = fs.readdirSync(quizDir).filter(f => f.endsWith('.ts') || f.endsWith('.tsx'));
   assert('K: components/quiz contains exactly the 3 allowed files', quizDirFiles.length === 3, quizDirFiles.join(', '));
 
+  const excludedDirs = new Set([
+    'node_modules',
+    'dist',
+    'mind',
+    'tests',
+    'playwright-report',
+    'test-results',
+  ]);
+
   const walk = (dir: string): string[] => {
     const out: string[] = [];
     for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
       const full = path.join(dir, entry.name);
       if (entry.isDirectory()) {
-        if (entry.name === 'node_modules' || entry.name === 'dist' || entry.name === 'mind') continue;
+        if (excludedDirs.has(entry.name)) continue;
         out.push(...walk(full));
       } else if (entry.name.endsWith('.ts') || entry.name.endsWith('.tsx')) {
         out.push(full);
@@ -765,13 +774,33 @@ function escHtml(value: string): string {
     }
     return out;
   };
+
+  const toRepoRelative = (file: string): string => path.relative(import.meta.dirname, file).replaceAll('\\', '/');
+
+  const shouldScanAsProductionSource = (repoRelative: string): boolean =>
+    repoRelative.startsWith('src/') || repoRelative === 'server.ts';
+
+  const referencesNewModules = (content: string): boolean =>
+    content.includes('AssessmentQuizHost') || content.includes('assessmentUiModel');
+
+  assert(
+    'K: guard catches forbidden production reference signatures',
+    shouldScanAsProductionSource('src/example.ts') && referencesNewModules("import { AssessmentQuizHost } from './x';"),
+  );
+  assert(
+    'K: test fixtures are excluded from production leakage scan',
+    !shouldScanAsProductionSource('tests/assessment/helpers/assessment.ts'),
+  );
+
   const repoRoot = import.meta.dirname;
   const violators: string[] = [];
   for (const file of walk(repoRoot)) {
-    if (file.includes('src/components/quiz/') || file.endsWith('assessmentUiModel.ts') || file.endsWith('src/App.tsx') || file.endsWith('tmp-validate-assessment-ui.ts') || file.endsWith('tmp-validate-assessment-session.ts') || file.endsWith('tmp-validate-assessment-session-storage.ts')) continue;
+    const relative = toRepoRelative(file);
+    if (!shouldScanAsProductionSource(relative)) continue;
+    if (relative.startsWith('src/components/quiz/') || relative === 'src/lib/quiz/assessmentUiModel.ts' || relative === 'src/App.tsx') continue;
     const content = fs.readFileSync(file, 'utf8');
-    if (content.includes('AssessmentQuizHost') || content.includes('assessmentUiModel')) {
-      violators.push(file);
+    if (referencesNewModules(content)) {
+      violators.push(relative);
     }
   }
   assert('K: no other source file references the new modules', violators.length === 0, violators.join(', '));
