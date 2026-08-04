@@ -589,7 +589,7 @@ function escHtml(value: string): string {
   const restartStart = hostSource.indexOf('const handleRestart');
   const restartEnd = hostSource.indexOf('const handleClose');
   const openStart = hostSource.indexOf("setUiPhase('preparing')");
-  const openEnd = hostSource.indexOf('}, [isOpen, premium.isPremiumLoading, clearPremiumTimeout]);');
+  const openEnd = hostSource.indexOf('  useEffect(() => {\n    if (!isOpen) return;', openStart);
   const inRange = (index: number, start: number, end: number) => start !== -1 && end !== -1 && index > start && index < end;
   const allInMutationHandlers =
     saveOccurrences.length > 0 &&
@@ -638,7 +638,7 @@ function escHtml(value: string): string {
   assert('L: timeout with saved pro session -> blocked screen', timeoutRegion.includes('blocked-pro-session'));
   assert('L: timeout with saved free session -> resume screen', timeoutRegion.includes("setUiPhase('resume')"));
   assert('L: timeout fresh launch shows single verification notice', timeoutRegion.includes('Pro access could not be verified'));
-  assert('L: timeout fallback still saves the fresh session', timeoutRegion.includes('saveAssessmentSession(freshSession)'));
+  assert('L: timeout fallback still saves the fresh session', timeoutRegion.includes('saveAssessmentSession(freshSession, storageOwner)'));
   assert('L: storage failure overrides the verification notice', timeoutRegion.includes('setNotice(storageNoticeForSave(saveResult.status))'));
 }
 
@@ -897,11 +897,45 @@ function escHtml(value: string): string {
   assert('R14: fresh intro focuses the intro heading', hostSource.includes("uiPhase !== 'intro'") && hostSource.includes('#assessment-dialog-title') && hostSource.includes('title?.focus?.()'));
   assert('R15: failure shows exactly the one notice and never throws', confirmRegion.includes('ASSESSMENT_CLEAR_FAILURE_NOTICE') && !hostSource.includes('throw new Error') && !confirmRegion.includes('console.'));
   assert('R15: failure notice copy is exact and key-free', ASSESSMENT_CLEAR_FAILURE_NOTICE === 'Saved assessment could not be cleared. You can continue using the current session.' && !hostSource.includes('cure-life-assessment-session'));
-  assert('R16: clear only touches the storage adapter, never the key', confirmRegion.includes('clearAssessmentSession()') && !confirmRegion.includes('saveAssessmentSession') && !confirmRegion.includes('.setItem') && !confirmRegion.includes('localStorage'));
+  assert('R16: clear only touches the storage adapter, never the key', confirmRegion.includes('clearAssessmentSession(storageOwner)') && !confirmRegion.includes('saveAssessmentSession') && !confirmRegion.includes('.setItem') && !confirmRegion.includes('localStorage'));
   assert('R17: clear never closes the assessment automatically', confirmRegion.length > 0 && !confirmRegion.includes('onCloseRef.current'));
   assert('R17: clear preserves the current session on failure', confirmRegion.includes('opener?.focus?.()'));
   assert('R18: Start Over and Retake are preserved', hostSource.includes('Start Over') && resultsPanelSource.includes('Retake'));
   assert('R18: resume screen still offers Resume and Start Over', hostSource.includes('onClick={handleResume}') && hostSource.includes('onClick={handleRestart}'));
+}
+
+/* ==================================================================
+ *  T. Batch 8 owner-scoped persistence and auth-resolution guards
+ * ================================================================*/
+
+{
+  assert('T1: host derives storage owner from auth state', hostSource.includes('resolveStorageOwner') && hostSource.includes('auth.authResolved') && hostSource.includes('auth.authUser'));
+  assert('T1: auth unresolved keeps owner null', hostSource.includes('if (!authResolved) return null;'));
+  assert('T2: owner key is centrally derived from storage helper', hostSource.includes('getAssessmentSessionStorageKey(storageOwner)'));
+  assert('T2: owner key is memoized and tracked', hostSource.includes('const storageOwnerKey = useMemo('));
+  assert('T3: open lifecycle waits for owner resolution before any load/migration/start', hostSource.includes('if (storageOwner === null)') && hostSource.includes('setUiPhase(\'preparing\')'));
+  assert('T3: no anonymous load happens before owner resolution', !hostSource.includes('loadAssessmentSession({ kind: \'anonymous\' })'));
+
+  const explicitOwnerCalls = [
+    'loadAssessmentSession(storageOwner)',
+    'saveAssessmentSession(freshSession, storageOwner)',
+    'saveAssessmentSession(result, storageOwner)',
+    'clearAssessmentSession(storageOwner)',
+  ];
+  for (const call of explicitOwnerCalls) {
+    assert(`T4: explicit owner call present - ${call}`, hostSource.includes(call));
+  }
+  assert('T4: no ambiguous owner-less storage calls remain', !hostSource.includes('loadAssessmentSession()') && !hostSource.includes('saveAssessmentSession(freshSession)') && !hostSource.includes('saveAssessmentSession(result)') && !hostSource.includes('clearAssessmentSession()'));
+
+  assert('T5: owner generation resets launch state when account owner changes', hostSource.includes('setSession(null);') && hostSource.includes('setBlockedSession(null);') && hostSource.includes('setUiPhase(\'preparing\')'));
+  assert('T5: account switch guard blocks cross-owner mutation saves', hostSource.includes('sessionOwnerKeyRef.current !== storageOwnerKey'));
+  assert('T5: close path clears active owner binding', hostSource.includes('sessionOwnerKeyRef.current = null;'));
+  assert('T5: owner change clears transient submission and clear state', hostSource.includes('setIsSubmitting(false);') && hostSource.includes('setClearConfirming(false);') && hostSource.includes('clearOpenerRef.current = null;'));
+
+  assert('T6: clear and restart are owner-scoped', hostSource.includes('const clearResult = clearAssessmentSession(storageOwner);'));
+  assert('T6: sign-out/account switch does not delete user namespace by default', !hostSource.includes('clearAssessmentSession({ kind: \'anonymous\' })') && !hostSource.includes('clearAssessmentSession({ kind: \'user\''));
+
+  assert('T7: premium timeout and focus guards remain intact', hostSource.includes('PREMIUM_LOAD_TIMEOUT_MS = 8000') && hostSource.includes('clearPremiumTimeout') && hostSource.includes('navigationIntentRef.current'));
 }
 
 /* ==================================================================

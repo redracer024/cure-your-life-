@@ -1,7 +1,8 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { motion, AnimatePresence, MotionConfig } from 'motion/react';
 import { X, RotateCcw, Lock, Sparkles, Loader2, ChevronRight, Trash2 } from 'lucide-react';
 import { usePremium } from '../../context/PremiumContext';
+import { useAuth } from '../../context/AuthContext';
 import {
   startAssessmentSession,
   recordAssessmentResponse,
@@ -13,6 +14,8 @@ import {
   loadAssessmentSession,
   saveAssessmentSession,
   clearAssessmentSession,
+  getAssessmentSessionStorageKey,
+  type AssessmentStorageOwner,
   type AssessmentSessionSaveResult,
   type AssessmentSessionLoadResult,
   type AssessmentSessionClearResult,
@@ -69,6 +72,15 @@ const MAX_STAGE_TRANSITIONS = 10;
 
 const PREMIUM_LOAD_TIMEOUT_MS = 8000;
 
+function resolveStorageOwner(authResolved: boolean, authUser: unknown): AssessmentStorageOwner | null {
+  if (!authResolved) return null;
+  const candidate = authUser as { id?: unknown } | null;
+  if (candidate && typeof candidate.id === 'string' && candidate.id.trim().length > 0) {
+    return { kind: 'user', userId: candidate.id };
+  }
+  return { kind: 'anonymous' };
+}
+
 function storageNoticeForSave(status: AssessmentSessionSaveResult['status']): string | null {
   switch (status) {
     case 'saved':
@@ -111,7 +123,16 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
   onClose,
   onNavigateToPattern,
 }) => {
+  const auth = useAuth();
   const premium = usePremium();
+  const storageOwner = useMemo(
+    () => resolveStorageOwner(auth.authResolved, auth.authUser),
+    [auth.authResolved, auth.authUser],
+  );
+  const storageOwnerKey = useMemo(
+    () => (storageOwner ? getAssessmentSessionStorageKey(storageOwner) : null),
+    [storageOwner],
+  );
   const [session, setSession] = useState<AssessmentSession | null>(null);
   const [uiPhase, setUiPhase] = useState<AssessmentQuizUiPhase>('preparing');
   const [notice, setNotice] = useState<string | null>(null);
@@ -132,6 +153,7 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
   const premiumTimeoutRef = useRef<number | null>(null);
   const didTimeoutLaunchRef = useRef(false);
   const navigationIntentRef = useRef(false);
+  const sessionOwnerKeyRef = useRef<string | null>(null);
 
   useEffect(() => {
     onCloseRef.current = onClose;
@@ -148,6 +170,7 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
     if (!isOpen) {
       launchGenerationRef.current++;
       didTimeoutLaunchRef.current = false;
+      sessionOwnerKeyRef.current = null;
       setClearConfirming(false);
       clearConfirmingRef.current = false;
       setConsentAccepted(false);
@@ -159,15 +182,24 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
     setSession(null);
     setBlockedSession(null);
     setNotice(null);
+    setIsSubmitting(false);
     setMessage('Preparing your assessment');
     setUiPhase('preparing');
+    clearOpenerRef.current = null;
+    cancelRestoreFocusRef.current = false;
+
+    if (storageOwner === null) {
+      return () => clearPremiumTimeout();
+    }
+
+    sessionOwnerKeyRef.current = storageOwnerKey;
 
     if (premium.isPremiumLoading) {
       premiumTimeoutRef.current = window.setTimeout(() => {
         if (launchGenerationRef.current !== generation) return;
         premiumTimeoutRef.current = null;
         didTimeoutLaunchRef.current = true;
-        const loaded = loadAssessmentSession();
+        const loaded = loadAssessmentSession(storageOwner);
         if (loaded.status === 'loaded' && loaded.session) {
           const decision = decideAssessmentLaunch(loaded.session, false);
           if (decision.type === 'blocked-pro-session') {
@@ -185,10 +217,11 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
         }
         const freshSession = startAssessmentSession('free');
         setSession(freshSession);
+        sessionOwnerKeyRef.current = storageOwnerKey;
         setUiPhase('intro');
         setMessage('Your assessment is ready to start');
         setNotice('Pro access could not be verified — continuing with free access.');
-        const saveResult = saveAssessmentSession(freshSession);
+        const saveResult = saveAssessmentSession(freshSession, storageOwner);
         if (saveResult.status !== 'saved') {
           setNotice(storageNoticeForSave(saveResult.status));
         }
@@ -196,7 +229,7 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
       return () => clearPremiumTimeout();
     }
 
-    const loaded = loadAssessmentSession();
+    const loaded = loadAssessmentSession(storageOwner);
     if (loaded.status === 'loaded' && loaded.session) {
       const decision = decideAssessmentLaunch(loaded.session, premium.isPremium);
       if (decision.type === 'blocked-pro-session') {
@@ -217,14 +250,22 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
     const mode: AssessmentMode = premium.isPremium ? 'pro' : 'free';
     const freshSession = startAssessmentSession(mode);
     setSession(freshSession);
+    sessionOwnerKeyRef.current = storageOwnerKey;
     setUiPhase('intro');
     setMessage('Your assessment is ready to start');
     setNotice(
       storageNoticeForLoad(loaded.status) ??
-        storageNoticeForSave(saveAssessmentSession(freshSession).status),
+        storageNoticeForSave(saveAssessmentSession(freshSession, storageOwner).status),
     );
     return () => clearPremiumTimeout();
-  }, [isOpen, premium.isPremiumLoading, clearPremiumTimeout]);
+  }, [
+    isOpen,
+    premium.isPremiumLoading,
+    premium.isPremium,
+    storageOwner,
+    storageOwnerKey,
+    clearPremiumTimeout,
+  ]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -343,7 +384,7 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
 
   const applySessionUpdate = useCallback(
     (updater: (current: AssessmentSession) => AssessmentSession): AssessmentSession | null => {
-      if (!session) return null;
+      if (!session || !storageOwner || sessionOwnerKeyRef.current !== storageOwnerKey) return null;
       const prevStage = session.stage;
       const prevCurrentItem = getCurrentStageItems(session)[0] ?? null;
       const nextSession = updater(session);
@@ -372,11 +413,11 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
       if (currentItemId !== null && currentItemId !== prevCurrentItem && isAssessmentRetryItem(result, currentItemId)) {
         setMessage('One more chance to answer a previously skipped question');
       }
-      const saveResult = saveAssessmentSession(result);
+      const saveResult = saveAssessmentSession(result, storageOwner);
       setNotice(storageNoticeForSave(saveResult.status));
       return result;
     },
-    [session],
+    [session, storageOwner, storageOwnerKey],
   );
 
   const handleAnswer = useCallback(
@@ -422,21 +463,23 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
   }, [session]);
 
   const handleRestart = useCallback(() => {
+    if (!storageOwner || sessionOwnerKeyRef.current !== storageOwnerKey) return;
     setClearConfirming(false);
     clearConfirmingRef.current = false;
-    const clearResult = clearAssessmentSession();
+    const clearResult = clearAssessmentSession(storageOwner);
     const mode: AssessmentMode = premium.isPremium ? 'pro' : 'free';
     const freshSession = startAssessmentSession(mode);
     setSession(freshSession);
+    sessionOwnerKeyRef.current = storageOwnerKey;
     setBlockedSession(null);
     setUiPhase('question');
     setMessage('Started a new assessment');
     setNotice(storageNoticeForClear(clearResult.status));
-    const saveResult = saveAssessmentSession(freshSession);
+    const saveResult = saveAssessmentSession(freshSession, storageOwner);
     if (saveResult.status !== 'saved') {
       setNotice(storageNoticeForSave(saveResult.status));
     }
-  }, [premium.isPremium]);
+  }, [premium.isPremium, storageOwner, storageOwnerKey]);
 
   const handleNavigateToPattern = useCallback(
     (patternId: string) => {
@@ -479,7 +522,8 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
   }, []);
 
   const handleClearConfirm = useCallback(() => {
-    const clearResult = clearAssessmentSession();
+    if (!storageOwner || sessionOwnerKeyRef.current !== storageOwnerKey) return;
+    const clearResult = clearAssessmentSession(storageOwner);
     const opener = clearOpenerRef.current;
     clearOpenerRef.current = null;
     setClearConfirming(false);
@@ -496,10 +540,11 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
     const mode: AssessmentMode = premium.isPremium ? 'pro' : 'free';
     const freshSession = startAssessmentSession(mode);
     setSession(freshSession);
+    sessionOwnerKeyRef.current = storageOwnerKey;
     setBlockedSession(null);
     setUiPhase('intro');
     setMessage('Your assessment is ready to start');
-  }, [premium.isPremium]);
+  }, [premium.isPremium, storageOwner, storageOwnerKey]);
 
   useEffect(() => {
     cancelClearRef.current = handleClearCancel;
