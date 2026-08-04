@@ -117,3 +117,36 @@ export function decideAssessmentLaunch(
   }
   return { type: 'blocked-pro-session', session: savedSession };
 }
+
+export const ASSESSMENT_PRIVACY_DISCLOSURE =
+  'Your progress and answers are stored only in this browser on this device. ' +
+  'They are not sent to our servers. Another person using this same browser profile may be ' +
+  'able to resume your saved assessment. Clearing your browser data, or using the clear or ' +
+  'start-over control, removes the saved assessment. Closing the assessment does not ' +
+  'automatically remove it, so completed results may still be here when you reopen it. ' +
+  'A saved Pro assessment may be blocked if Pro access is no longer available.';
+
+export const ASSESSMENT_RESUME_REMINDER =
+  'Saved progress belongs to this browser on this device. Another person using this browser ' +
+  'profile may be able to resume it.';
+
+export const ASSESSMENT_RESULTS_REMINDER =
+  'Your results stay stored in this browser until you clear them.';
+
+export const ASSESSMENT_BLOCKED_REMINDER =
+  'Your saved Pro assessment remains stored in this browser until cleared or resumed after ' +
+  'Pro access returns.';
+
+export const ASSESSMENT_CLEAR_LABEL = 'Clear saved assessment';
+
+export const ASSESSMENT_CLEAR_CONFIRM_TITLE = 'Clear saved assessment?';
+
+export const ASSESSMENT_CLEAR_CONFIRM_BODY =
+  'Your saved answers and results will be removed from this browser.';
+
+export const ASSESSMENT_CLEAR_CONFIRM_ACTION = 'Clear assessment';
+
+export const ASSESSMENT_CLEAR_CANCEL_ACTION = 'Cancel';
+
+export const ASSESSMENT_CLEAR_FAILURE_NOTICE =
+  'Saved assessment could not be cleared. You can continue using the current session.';

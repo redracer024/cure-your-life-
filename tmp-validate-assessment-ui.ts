@@ -9,6 +9,16 @@ import {
   getAssessmentStageProgress,
   isAssessmentRetryItem,
   decideAssessmentLaunch,
+  ASSESSMENT_PRIVACY_DISCLOSURE,
+  ASSESSMENT_RESUME_REMINDER,
+  ASSESSMENT_RESULTS_REMINDER,
+  ASSESSMENT_BLOCKED_REMINDER,
+  ASSESSMENT_CLEAR_LABEL,
+  ASSESSMENT_CLEAR_CONFIRM_TITLE,
+  ASSESSMENT_CLEAR_CONFIRM_BODY,
+  ASSESSMENT_CLEAR_CONFIRM_ACTION,
+  ASSESSMENT_CLEAR_CANCEL_ACTION,
+  ASSESSMENT_CLEAR_FAILURE_NOTICE,
 } from './src/lib/quiz/assessmentUiModel';
 import { AssessmentQuestionPanel } from './src/components/quiz/AssessmentQuestionPanel';
 import { AssessmentResultsPanel } from './src/components/quiz/AssessmentResultsPanel';
@@ -804,6 +814,67 @@ function escHtml(value: string): string {
 }
 
 /* ==================================================================
+ *  R. Batch 6 — privacy disclosure + explicit clear control
+ * ================================================================*/
+
+{
+  const wordCount = (s: string): number => s.trim().split(/\s+/).length;
+
+  const facts = [
+    'stored only in this browser',
+    'this device',
+    'not sent to our servers',
+    'same browser profile',
+    'browser data',
+    'does not',
+    'automatically remove',
+    'reopen',
+    'Pro assessment',
+  ];
+  for (const fact of facts) {
+    assert(`R1: disclosure covers fact — ${fact}`, ASSESSMENT_PRIVACY_DISCLOSURE.includes(fact));
+  }
+  const disclosureWords = wordCount(ASSESSMENT_PRIVACY_DISCLOSURE);
+  assert('R1: full disclosure is under 90 words', disclosureWords < 90, `words ${disclosureWords}`);
+  assert('R2: disclosure appears only on the intro screen', (hostSource.match(/\{ASSESSMENT_PRIVACY_DISCLOSURE\}/g) ?? []).length === 1 && hostSource.includes("uiPhase === 'intro'"));
+  const introStart = hostSource.indexOf("uiPhase === 'intro'");
+  const resumeStart = hostSource.indexOf("uiPhase === 'resume'");
+  const introRegion = hostSource.slice(introStart, resumeStart);
+  assert('R2: intro is in-flow content, not a nested modal', !introRegion.includes('role="dialog"') && (hostSource.match(/role="dialog"/g) ?? []).length === 1);
+  assert('R2: intro has no inline disclosure elsewhere', !hostSource.replace(introRegion, '').includes('{ASSESSMENT_PRIVACY_DISCLOSURE}'));
+  assert('R3: no window.confirm anywhere in the clear flow', !hostSource.includes('window.confirm') && !hostSource.includes('confirm('));
+  assert('R3: no nested dialog role added for confirmation', (hostSource.match(/role="dialog"/g) ?? []).length === 1);
+  assert('R4: resume reminder rendered and under 35 words', hostSource.includes('{ASSESSMENT_RESUME_REMINDER}') && wordCount(ASSESSMENT_RESUME_REMINDER) < 35, `words ${wordCount(ASSESSMENT_RESUME_REMINDER)}`);
+  assert('R5: results reminder rendered and under 35 words', hostSource.includes('{ASSESSMENT_RESULTS_REMINDER}') && wordCount(ASSESSMENT_RESULTS_REMINDER) < 35, `words ${wordCount(ASSESSMENT_RESULTS_REMINDER)}`);
+  assert('R6: blocked reminder rendered and under 35 words', hostSource.includes('{ASSESSMENT_BLOCKED_REMINDER}') && wordCount(ASSESSMENT_BLOCKED_REMINDER) < 35, `words ${wordCount(ASSESSMENT_BLOCKED_REMINDER)}`);
+  assert('R7: clear label rendered on resume, results, and blocked screens', (hostSource.match(/\{ASSESSMENT_CLEAR_LABEL\}/g) ?? []).length === 3);
+  assert('R7: clear control is wired on all three screens', (hostSource.match(/onClick=\{handleClearAssessmentClick\}/g) ?? []).length === 3);
+  assert('R8: no settings page exists for clearing', !hostSource.toLowerCase().includes('settings'));
+  assert('R8: no other clear surface (clear on one channel only)', !hostSource.includes('clearAll') && !hostSource.includes('clearSavedAssessment()'));
+  assert('R9: confirmation flow has heading + body + cancel + action', hostSource.includes('ASSESSMENT_CLEAR_CONFIRM_TITLE') && hostSource.includes('ASSESSMENT_CLEAR_CONFIRM_BODY') && hostSource.includes('ASSESSMENT_CLEAR_CANCEL_ACTION') && hostSource.includes('ASSESSMENT_CLEAR_CONFIRM_ACTION'));
+  assert('R9: confirmation action is a button, not window.confirm', (hostSource.match(/ASSESSMENT_CLEAR_CONFIRM_ACTION/g) ?? []).length === 2 && hostSource.includes('<button'));
+  assert('R9: confirmation provides two explicit actions', (hostSource.match(/onClick=\{onCancel\}/g) ?? []).length === 1 && (hostSource.match(/onClick=\{onConfirm\}/g) ?? []).length === 1);
+  assert('R10: escape cancels the confirmation before closing', hostSource.includes('clearConfirmingRef.current') && hostSource.includes('cancelClearRef.current()') && hostSource.includes('onCloseRef.current()'));
+  assert('R11: focus moves to the confirmation heading or first action', hostSource.includes('#assessment-clear-confirm-title') && hostSource.includes('title?.focus?.()'));
+  assert('R12: focus is restored to the opener on cancel', hostSource.includes('clearOpenerRef.current') && hostSource.includes('opener?.focus?.()'));
+  assert('R13: confirmation is reset on success', (hostSource.match(/setClearConfirming\(false\)/g) ?? []).length >= 3);
+  assert('R13: confirmation is reset on close', hostSource.includes('clearConfirmingRef.current = false'));
+  assert('R13: confirmation is reset on restart and phase transition', hostSource.includes("}, [uiPhase]);") && hostSource.includes('setClearConfirming(false);'));
+  const confirmStart = hostSource.indexOf('const handleClearConfirm');
+  const confirmEnd = hostSource.indexOf('cancelClearRef.current = handleClearCancel');
+  const confirmRegion = confirmStart !== -1 && confirmEnd !== -1 ? hostSource.slice(confirmStart, confirmEnd) : '';
+  assert('R14: clear success starts a fresh in-memory session with a single null notice', confirmRegion.includes('setNotice(null)') && confirmRegion.includes('startAssessmentSession(mode)') && confirmRegion.includes("setUiPhase('intro')"));
+  assert('R14: fresh intro focuses the intro heading', hostSource.includes("uiPhase !== 'intro'") && hostSource.includes('#assessment-dialog-title') && hostSource.includes('title?.focus?.()'));
+  assert('R15: failure shows exactly the one notice and never throws', confirmRegion.includes('ASSESSMENT_CLEAR_FAILURE_NOTICE') && !hostSource.includes('throw new Error') && !confirmRegion.includes('console.'));
+  assert('R15: failure notice copy is exact and key-free', ASSESSMENT_CLEAR_FAILURE_NOTICE === 'Saved assessment could not be cleared. You can continue using the current session.' && !hostSource.includes('cure-life-assessment-session'));
+  assert('R16: clear only touches the storage adapter, never the key', confirmRegion.includes('clearAssessmentSession()') && !confirmRegion.includes('saveAssessmentSession') && !confirmRegion.includes('.setItem') && !confirmRegion.includes('localStorage'));
+  assert('R17: clear never closes the assessment automatically', confirmRegion.length > 0 && !confirmRegion.includes('onCloseRef.current'));
+  assert('R17: clear preserves the current session on failure', confirmRegion.includes('opener?.focus?.()'));
+  assert('R18: Start Over and Retake are preserved', hostSource.includes('Start Over') && resultsPanelSource.includes('Retake'));
+  assert('R18: resume screen still offers Resume and Start Over', hostSource.includes('onClick={handleResume}') && hostSource.includes('onClick={handleRestart}'));
+}
+
+/* ==================================================================
  *  Summary + manual smoke matrix
  * ================================================================*/
 
@@ -843,6 +914,18 @@ const smokeItems: { id: number; label: string; status: string; note?: string }[]
   { id: 18, label: 'Close never clears saved progress', status: 'pending', note: 'requires browser' },
   { id: 19, label: 'Missing item shows neutral card and skip works', status: 'pending', note: 'requires browser' },
   { id: 20, label: 'Reduced motion preference respected', status: 'pending', note: 'requires browser' },
+  { id: 21, label: 'Fresh start shows intro with full privacy disclosure', status: 'pending', note: 'requires browser' },
+  { id: 22, label: 'Disclosure fits at desktop height with no scrolling', status: 'pending', note: 'requires browser' },
+  { id: 23, label: 'Resume screen shows browser-device reminder + Clear saved assessment', status: 'pending', note: 'requires browser' },
+  { id: 24, label: 'Results screen shows reminder + Clear saved assessment', status: 'pending', note: 'requires browser' },
+  { id: 25, label: 'Blocked-Pro screen shows reminder + Clear saved assessment', status: 'pending', note: 'requires browser' },
+  { id: 26, label: 'Clear opens in-flow confirmation (heading + Cancel/Clear), no window.confirm', status: 'pending', note: 'requires browser' },
+  { id: 27, label: 'Escape cancels confirmation first and restores focus to opener', status: 'pending', note: 'requires browser' },
+  { id: 28, label: 'Confirm clears saved state, returns to fresh intro, focuses intro heading', status: 'pending', note: 'requires browser' },
+  { id: 29, label: 'Confirm failure keeps screen with exactly one notice, no raw errors', status: 'pending', note: 'requires browser' },
+  { id: 30, label: 'Clear removes only the assessment storage key', status: 'pending', note: 'requires browser' },
+  { id: 31, label: 'Clear does not close the assessment; Start Over/Retake still work', status: 'pending', note: 'requires browser' },
+  { id: 32, label: 'Keyboard-only clear flow works (Tab, Enter, Escape)', status: 'pending', note: 'requires browser' },
 ];
 for (const item of smokeItems) {
   console.log(`  ${item.id}. ${item.label} — ${item.status}${item.note ? ` (${item.note})` : ''}`);
