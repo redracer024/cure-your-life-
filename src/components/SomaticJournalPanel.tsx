@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { SomaticJournalEntry } from '../types';
 import { searchCoreAilments } from '../data';
+import { authFetch } from '../lib/supabaseClient';
 import { 
   Plus, 
   BookOpen, 
@@ -214,7 +215,7 @@ export default function SomaticJournalPanel({ initialPromptData }: SomaticJourna
 
     // Step 2: Try to get real-time customized AI analysis from our endpoint
     try {
-      const response = await fetch('/api/analyze-symptom', {
+      const response = await authFetch('/api/analyze-symptom', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

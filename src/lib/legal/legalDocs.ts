@@ -40,7 +40,7 @@ export const LEGAL_DOCS: Record<LegalDocId, LegalDocument> = {
       {
         heading: 'Account and premium data',
         body:
-          'If you create an account, your email address and password are handled by our authentication provider and stored by that provider to let you sign in. Your premium status is checked by our server. Billing is not yet live; when payments launch, payment details would be handled by a payment processor, never stored by us.',
+          'If you create an account, your email address and password are handled by our authentication provider and stored by that provider to let you sign in. Your premium status is checked by our server. Billing for premium subscriptions is handled by a payment processor, which stores your payment details under its own terms; we never receive or store your full card number. Our server records which subscriptions are active so premium features can be unlocked.',
       },
       {
         heading: 'Third-party services',
@@ -60,7 +60,7 @@ export const LEGAL_DOCS: Record<LegalDocId, LegalDocument> = {
       {
         heading: 'Children',
         body:
-          'This app is not directed at children under 13 and is not intended to collect personal information from them. If you believe a child has provided personal information, contact us and we will address it.',
+          'This app is not directed at children under 13 and is not intended to collect personal information from them. If you believe a child has provided personal information, contact the operator of the app you are using and we will address it.',
       },
       {
         heading: 'Security',
@@ -75,7 +75,7 @@ export const LEGAL_DOCS: Record<LegalDocId, LegalDocument> = {
       {
         heading: 'Contact',
         body:
-          'If you have questions about this Privacy Policy or your data, you can reach us through the contact details provided in the app. We will respond as soon as reasonably possible.',
+          'If you have questions about this Privacy Policy or your data, contact the operator of the app you are using (for example, through the store listing or the platform where you found it). We will respond as soon as reasonably possible.',
       },
     ],
   },
@@ -117,7 +117,7 @@ export const LEGAL_DOCS: Record<LegalDocId, LegalDocument> = {
       {
         heading: 'Premium subscription',
         body:
-          'Some features require a premium subscription. Premium status, pricing, and billing may be introduced over time. Current premium placeholders are for testing only. When billing becomes available, applicable terms will govern your purchase, and you authorize charges for the plan you select.',
+          'Some features, including the AI Somatic Decoder, require a premium subscription. When you purchase a subscription, payment is processed by our payment processor and you authorize charges for the plan you select. Active subscriptions unlock premium features; canceling, downgrading, or payment failure may remove premium access. In development and testing environments, premium access may be granted without payment for testing purposes only.',
       },
       {
         heading: 'Intellectual property',
@@ -157,7 +157,7 @@ export const LEGAL_DOCS: Record<LegalDocId, LegalDocument> = {
       {
         heading: 'Contact',
         body:
-          'Questions about these terms can be directed to the contact details provided in the app.',
+          'Questions about these terms can be directed to the operator of the app you are using.',
       },
     ],
   },
@@ -231,7 +231,7 @@ export const LEGAL_DOCS: Record<LegalDocId, LegalDocument> = {
       {
         heading: 'Data stored in your browser',
         body:
-          'Assessment answers and results, journal entries, daily reflections, and decoder history are saved in your browser on this device. This data is not transmitted to our servers. Clearing browser data or using in-app clear controls removes it.',
+          'Assessment answers and results, journal entries, and daily reflections are saved in your browser on this device. Decoder analyses are shown to you and then kept in memory for the current session; any that you save as journal entries are stored locally. This data is not transmitted to our servers. Clearing browser data or using in-app clear controls removes it.',
       },
       {
         heading: 'Data sent to servers',
