@@ -32,7 +32,7 @@ app.post("/api/billing/webhook", express.raw({ type: "application/json" }), asyn
     event = stripe.webhooks.constructEvent(req.body, signature, STRIPE_WEBHOOK_SECRET);
   } catch (error: any) {
     console.error("Stripe webhook signature verification failed:", error.message);
-    return res.status(400).json({ error: `Webhook Error: ${error.message}` });
+    return res.status(400).json({ error: "Webhook signature verification failed." });
   }
 
   try {
@@ -112,9 +112,11 @@ const getBearerToken = (req: express.Request) => {
   return scheme?.toLowerCase() === "bearer" ? token || "" : "";
 };
 
-const getRequestUserId = (req: express.Request) => {
-  // Fallback only for non-authenticated dev/demo testing.
-  return String(req.headers["x-cyl-user-id"] || "demo-user");
+const getRequestUserId = (_req: express.Request) => {
+  // Fallback id for non-authenticated dev/demo paths. Never derived from a
+  // client-supplied header; the only trustworthy source is a verified
+  // Supabase token (see getSupabaseUserFromRequest).
+  return "demo-user";
 };
 
 const getSupabaseUserFromRequest = async (req: express.Request) => {
@@ -446,6 +448,37 @@ if (apiKey) {
   console.warn("Warning: GEMINI_API_KEY is not defined. The custom AI features will return a key setup prompt.");
 }
 
+// Rate limiting for the Gemini-backed analyzer. In-memory token bucket,
+// keyed per verified user id (or IP fallback for dev/demo paths). A fixed
+// per-process window is adequate for this app's single-instance deployment.
+const ANALYSIS_RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour
+const ANALYSIS_RATE_LIMIT_MAX = 30;
+
+const analysisRateBuckets = new Map<string, { count: number; resetAt: number }>();
+
+const getAnalysisRateLimitKey = (req: express.Request, userId: string | null) => {
+  if (userId && userId !== "demo-user") return `user:${userId}`;
+  const ip = req.ip || req.socket.remoteAddress || "unknown";
+  return `ip:${ip}`;
+};
+
+const checkAnalysisRateLimit = (key: string): boolean => {
+  const now = Date.now();
+  const bucket = analysisRateBuckets.get(key);
+
+  if (!bucket || bucket.resetAt <= now) {
+    analysisRateBuckets.set(key, { count: 1, resetAt: now + ANALYSIS_RATE_LIMIT_WINDOW_MS });
+    return true;
+  }
+
+  if (bucket.count >= ANALYSIS_RATE_LIMIT_MAX) {
+    return false;
+  }
+
+  bucket.count += 1;
+  return true;
+};
+
 // Custom symptom analysis API endpoint. This is now server-gated for premium access.
 app.post("/api/analyze-symptom", async (req: express.Request, res: express.Response) => {
   try {
@@ -455,6 +488,15 @@ app.post("/api/analyze-symptom", async (req: express.Request, res: express.Respo
         error: "AI Somatic Decoder is a premium feature.",
         requiresPremium: true,
         premium
+      });
+    }
+
+    const rateLimitKey = getAnalysisRateLimitKey(req, premium.userId);
+    if (!checkAnalysisRateLimit(rateLimitKey)) {
+      res.setHeader("Retry-After", String(Math.ceil(ANALYSIS_RATE_LIMIT_WINDOW_MS / 1000)));
+      return res.status(429).json({
+        error: "Too many decoding requests. Please try again in about an hour.",
+        retryAfterMs: ANALYSIS_RATE_LIMIT_WINDOW_MS
       });
     }
 
