@@ -1,0 +1,56 @@
+name: Playwright (Assessment)
+
+on:
+  push:
+    branches: [main, master, traycer/stellar-tiger]
+    paths:
+      - 'playwright.config.ts'
+      - 'tests/assessment/**'
+      - 'src/components/quiz/**'
+      - 'src/lib/quiz/**'
+      - 'src/types/assessmentSession.ts'
+      - 'src/data/quiz/**'
+      - 'package.json'
+      - 'package-lock.json'
+  pull_request:
+    branches: [main, master, traycer/stellar-tiger]
+    paths:
+      - 'playwright.config.ts'
+      - 'tests/assessment/**'
+      - 'src/components/quiz/**'
+      - 'src/lib/quiz/**'
+      - 'src/types/assessmentSession.ts'
+      - 'src/data/quiz/**'
+      - 'package.json'
+      - 'package-lock.json'
+
+jobs:
+  assessment:
+    timeout-minutes: 45
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Type-check
+        run: npm run lint
+
+      - name: Run assessment Playwright tests
+        run: npx playwright test
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
