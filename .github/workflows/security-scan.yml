@@ -1,0 +1,54 @@
+name: Automated Security Pipeline
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  # 1. SECRET SCANNING: Blocks committed API keys, JWT secrets, & tokens
+  secret-scan:
+    name: Secret & Credential Leak Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Gitleaks Secret Scan
+        uses: gitleaks/gitleaks-action@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # 2. SAST (Static Application Security Testing): Scans for injection, BOLA/IDOR, & logic flaws
+  sast-scan:
+    name: SAST Code Analysis (Semgrep)
+    runs-on: ubuntu-latest
+    container:
+      image: returntocorp/semgrep
+    if: (github.actor != 'dependabot[bot]')
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v6
+
+      - name: Run Semgrep Security Rules
+        run: semgrep scan --config p/security-audit --config p/owasp-top-10 --error
+
+  # 3. DEPENDENCY SCANNING: Catches hallucinated or vulnerable dependencies
+  dependency-scan:
+    name: Supply Chain & Dependency Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v6
+
+      - name: Run Trivy Vulnerability Scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          exit-code: '1' # Fails the build if HIGH or CRITICAL vulns are found
+          severity: 'HIGH,CRITICAL'
