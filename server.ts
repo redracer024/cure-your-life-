@@ -4,6 +4,7 @@ import { createServer as createViteServer } from "vite";
 import {
   isDevelopmentEnvironment,
   isDevelopmentPremiumEnabled,
+  isProductionServingMode,
 } from "./serverEnv";
 import { GoogleGenAI, Type } from "@google/genai";
 import { createClient } from "@supabase/supabase-js";
@@ -146,7 +147,15 @@ const STRIPE_PRICE_ID = process.env.STRIPE_PRICE_ID || "";
 const STRIPE_PRICE_ID_MONTHLY = process.env.STRIPE_PRICE_ID_MONTHLY || "";
 const STRIPE_PRICE_ID_ANNUAL = process.env.STRIPE_PRICE_ID_ANNUAL || "";
 const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET || "";
-const APP_URL = process.env.APP_URL || `http://localhost:${PORT}`;
+
+const _isProd = isProductionServingMode(process.env.NODE_ENV);
+const APP_URL: string = (() => {
+  if (process.env.APP_URL) return process.env.APP_URL;
+  if (_isProd) {
+    throw new Error("APP_URL is required in production. Set APP_URL to your production origin (e.g. https://your-app.com).");
+  }
+  return `http://localhost:${PORT}`;
+})();
 const SUPABASE_URL = process.env.SUPABASE_URL || "";
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
 

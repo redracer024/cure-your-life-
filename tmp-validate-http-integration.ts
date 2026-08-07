@@ -10,6 +10,7 @@ process.env.SUPABASE_SERVICE_ROLE_KEY = "mock-service-role";
 process.env.GEMINI_API_KEY = "mock-gemini-key";
 process.env.DEV_PREMIUM = "false";
 process.env.PORT = "0";
+process.env.APP_URL = "http://127.0.0.1:3000";
 
 const { app, setStripeClient, setSupabaseAdminClient, setGeminiClient, resetRateLimiters } = await import("./server.ts");
 
