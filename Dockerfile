@@ -11,7 +11,7 @@
 # Hosting note: APP_URL, SUPABASE_*, STRIPE_*, GEMINI_API_KEY, NODE_ENV, PORT,
 # DEV_PREMIUM must be supplied at runtime by the orchestration platform.
 
-FROM node:20-alpine AS base
+FROM node:22-alpine AS base
 WORKDIR /app
 
 # Install dependencies (cached layer). Uses npm ci for reproducible installs
@@ -30,7 +30,7 @@ RUN npm run build
 
 # Runtime stage: minimal image with only production deps + built artifacts.
 # Runs as a non-root user for defense in depth.
-FROM node:20-alpine AS runtime
+FROM node:22-alpine AS runtime
 WORKDIR /app
 
 ENV NODE_ENV=production
