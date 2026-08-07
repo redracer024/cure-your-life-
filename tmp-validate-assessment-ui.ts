@@ -709,14 +709,11 @@ function escHtml(value: string): string {
   assert('K: App imports AssessmentQuizHost', appSource.includes("import { AssessmentQuizHost } from './components/quiz/AssessmentQuizHost';"));
   assert('K: App renders AssessmentQuizHost', appSource.includes('<AssessmentQuizHost'));
   assert('K: App no longer imports PersonalityQuiz', !appSource.includes('PersonalityQuiz'));
-  assert('K: rollback surface intact — legacy quiz file unchanged', fs.existsSync(path.join(import.meta.dirname, 'src/components/PersonalityQuiz.tsx')));
-
-  const legacySource = fs.readFileSync(path.join(import.meta.dirname, 'src/components/PersonalityQuiz.tsx'), 'utf8');
-  assert('K: legacy quiz has no references to new modules', !legacySource.includes('AssessmentQuizHost') && !legacySource.includes('assessmentUiModel') && !legacySource.includes('assessmentSession'));
+  assert('Batch 10: legacy PersonalityQuiz component removed', !fs.existsSync(path.join(import.meta.dirname, 'src/components/PersonalityQuiz.tsx')));
+  assert('Batch 10: legacy personalityQuiz data removed', !fs.existsSync(path.join(import.meta.dirname, 'src/data/personalityQuiz.ts')));
+  assert('Batch 10: legacy legacyAdapter removed', !fs.existsSync(path.join(import.meta.dirname, 'src/lib/quiz/legacyAdapter.ts')));
 
   const protectedFiles = [
-    'src/components/PersonalityQuiz.tsx',
-    'src/data/personalityQuiz.ts',
     'src/components/patterns/PatternDictionary.tsx',
     'src/components/ailments/CategoryGrid.tsx',
     'src/components/layout/TabContentRouter.tsx',

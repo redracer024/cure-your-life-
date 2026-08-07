@@ -2462,11 +2462,12 @@ const wiringHits = scanForWiring(
   [path.join(process.cwd(), 'src/components')],
   [
     path.join(process.cwd(), 'src/App.tsx'),
-    path.join(process.cwd(), 'src/data/personalityQuiz.ts'),
   ],
 );
-assert('K no live quiz wiring in components/App/personalityQuiz.ts', wiringHits.length === 0,
+assert('K no live quiz wiring in components/App', wiringHits.length === 0,
   wiringHits.join(', '));
+assert('Batch 10: legacy personalityQuiz data removed',
+  !fs.existsSync(path.join(process.cwd(), 'src/data/personalityQuiz.ts')));
 
 /* ==================================================================
  *  Summary

@@ -989,10 +989,11 @@ assert('deserialize: not-started stage accepted', (() => {
 
   const appSource = fs.readFileSync(path.join(import.meta.dirname, 'src/App.tsx'), 'utf8');
   assert('preservation: App.tsx does not import the new module', !appSource.includes('assessmentSession'));
-  const quizSource = fs.readFileSync(path.join(import.meta.dirname, 'src/components/PersonalityQuiz.tsx'), 'utf8');
-  assert('preservation: PersonalityQuiz.tsx does not import the new module', !quizSource.includes('assessmentSession'));
-  const legacySource = fs.readFileSync(path.join(import.meta.dirname, 'src/data/personalityQuiz.ts'), 'utf8');
-  assert('preservation: legacy personalityQuiz data untouched', !legacySource.includes('assessmentSession'));
+
+  const legacyQuizPath = path.join(import.meta.dirname, 'src/components/PersonalityQuiz.tsx');
+  const legacyDataPath = path.join(import.meta.dirname, 'src/data/personalityQuiz.ts');
+  assert('Batch 10: legacy PersonalityQuiz component removed', !fs.existsSync(legacyQuizPath));
+  assert('Batch 10: legacy personalityQuiz data removed', !fs.existsSync(legacyDataPath));
 }
 
 /* ==================================================================
