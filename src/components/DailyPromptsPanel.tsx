@@ -1,4 +1,13 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { useAuth } from '../context/AuthContext';
+import {
+  loadReflectionLogs,
+  saveReflectionLogs,
+  clearReflectionLogs,
+  getReflectionOwnerKey,
+} from '../lib/storage/reflectionStorage';
+import { resolveListOwner } from '../lib/storage/ownerScopedStorage';
+import type { StorageOwner } from '../lib/storage/ownerScopedStorage';
 
 type SomaticPrompt = {
   title: string;
@@ -427,8 +436,6 @@ const SYMPTOM_FALLBACKS: Record<string, string> = {
   tired: "Fatigue is not a personality flaw. What has been spending your energy without permission?"
 };
 
-const STORAGE_KEY = "cure-life-reflection-logs";
-
 function getRandomFrom<T>(items: T[]): T {
   return items[Math.floor(Math.random() * items.length)];
 }
@@ -476,24 +483,57 @@ export default function DailyPromptsPanel() {
   const [isInspecting, setIsInspecting] = useState(false);
   const [reflections, setReflections] = useState<ReflectionLog[]>([]);
 
-  useEffect(() => {
-    try {
-      const saved = window.localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        setReflections(JSON.parse(saved));
-      }
-    } catch {
-      setReflections([]);
-    }
-  }, []);
+  const auth = useAuth();
+  const ownerRef = useRef<StorageOwner | null>(null);
+  const ownerKeyRef = useRef<string | null>(null);
+  const loadedForKeyRef = useRef<string | null>(null);
+  const ownerEpochRef = useRef(0);
+
+  // Resolve the explicit owner only once auth ownership is settled. While auth
+  // loads, no storage is read and no anonymous/previous data is assumed.
+  const owner = resolveListOwner(auth.authResolved, auth.authUser);
 
   useEffect(() => {
-    try {
-      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(reflections.slice(0, 25)));
-    } catch {
-      // localStorage can fail in private mode. Naturally.
+    if (!auth.authResolved) {
+      ownerRef.current = null;
+      ownerKeyRef.current = null;
+      loadedForKeyRef.current = null;
+      ownerEpochRef.current += 1;
+      setReflections([]);
+      return;
     }
-  }, [reflections]);
+    if (!owner) {
+      setReflections([]);
+      return;
+    }
+    const key = getReflectionOwnerKey(owner);
+    if (ownerKeyRef.current === key) return;
+
+    ownerKeyRef.current = key;
+    ownerRef.current = owner;
+    ownerEpochRef.current += 1;
+    const epoch = ownerEpochRef.current;
+    // Invalidate prior owner's in-memory reflections immediately on switch and
+    // withhold persistence until fresh data has been loaded for the new owner.
+    loadedForKeyRef.current = null;
+    setReflections([]);
+
+    const loaded = loadReflectionLogs(owner);
+    if (epoch !== ownerEpochRef.current) return;
+    loadedForKeyRef.current = key;
+    if (loaded.status === 'loaded') {
+      setReflections(loaded.items as ReflectionLog[]);
+    }
+  }, [auth.authResolved, owner]);
+
+  // Persist only for the current explicit owner and only after that owner's
+  // data has actually been loaded for this key. This prevents the previous
+  // owner's in-memory array from being written into a newly switched owner.
+  useEffect(() => {
+    if (!ownerRef.current) return;
+    if (ownerKeyRef.current !== loadedForKeyRef.current) return;
+    saveReflectionLogs(reflections, ownerRef.current);
+  });
 
   const promptCountLabel = useMemo(() => `${SOMATIC_REFLECTION_PROMPTS.length} reflection prompts loaded`, []);
 
@@ -512,8 +552,18 @@ export default function DailyPromptsPanel() {
     const cleaned = entryText.trim();
     if (!cleaned) return;
 
+    // Capture ownership so a late timeout cannot write into a new owner.
+    const startEpoch = ownerEpochRef.current;
+    const startOwner = ownerRef.current;
+
     setIsInspecting(true);
     window.setTimeout(() => {
+      // Account may have switched while the "inspecting" delay elapsed.
+      if (ownerEpochRef.current !== startEpoch || !startOwner) {
+        setIsInspecting(false);
+        return;
+      }
+
       const response = getJournalResponse(cleaned);
       const log: ReflectionLog = {
         id: `${Date.now()}-${Math.random().toString(16).slice(2)}`,
@@ -533,8 +583,13 @@ export default function DailyPromptsPanel() {
   };
 
   const clearLogs = () => {
+    const activeOwner = ownerRef.current;
     setReflections([]);
     setDoctorResponse("");
+    if (activeOwner) {
+      // Only the active owner's namespace is cleared.
+      clearReflectionLogs(activeOwner);
+    }
   };
 
   return (
