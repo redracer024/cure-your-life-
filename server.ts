@@ -26,6 +26,7 @@ import { buildContentSecurityPolicy } from "./src/lib/server/securityHeaders";
 dotenv.config();
 
 const app = express();
+export { app };
 const PORT = Number(process.env.PORT || 3000);
 app.set("trust proxy", false);
 
@@ -155,9 +156,13 @@ const RECONCILE_RATE_LIMIT_MAX = 20;
 const ACCOUNT_DELETE_RATE_LIMIT_MAX = 5;
 const SECURITY_RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000;
 
-const stripe = STRIPE_SECRET_KEY ? new Stripe(STRIPE_SECRET_KEY) : null;
+let stripe = STRIPE_SECRET_KEY ? new Stripe(STRIPE_SECRET_KEY) : null;
 
-const supabaseAdmin = SUPABASE_URL && SUPABASE_SERVICE_ROLE_KEY
+export function setStripeClient(client: Stripe | null) {
+  stripe = client;
+}
+
+let supabaseAdmin = SUPABASE_URL && SUPABASE_SERVICE_ROLE_KEY
   ? createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, {
       auth: {
         autoRefreshToken: false,
@@ -165,6 +170,31 @@ const supabaseAdmin = SUPABASE_URL && SUPABASE_SERVICE_ROLE_KEY
       },
     })
   : null;
+
+export function setSupabaseAdminClient(client: ReturnType<typeof createClient> | null) {
+  supabaseAdmin = client;
+}
+
+const apiKey = process.env.GEMINI_API_KEY;
+let ai: GoogleGenAI | null = null;
+
+if (apiKey) {
+  ai = new GoogleGenAI({
+    apiKey: apiKey,
+    httpOptions: {
+      headers: {
+        'User-Agent': 'aistudio-build',
+      }
+    }
+  });
+  console.log("Gemini API client initialized successfully on server.");
+} else {
+  console.warn("Warning: GEMINI_API_KEY is not defined. The custom AI features will return a key setup prompt.");
+}
+
+export function setGeminiClient(client: GoogleGenAI | null) {
+  ai = client;
+}
 
 type StripeWebhookLedgerRow = {
   id: string;
@@ -1101,24 +1131,6 @@ app.post("/api/me/subscription/reconcile", async (req: express.Request, res: exp
 });
 
 
-// Initialize Gemini Client
-const apiKey = process.env.GEMINI_API_KEY;
-let ai: GoogleGenAI | null = null;
-
-if (apiKey) {
-  ai = new GoogleGenAI({
-    apiKey: apiKey,
-    httpOptions: {
-      headers: {
-        'User-Agent': 'aistudio-build',
-      }
-    }
-  });
-  console.log("Gemini API client initialized successfully on server.");
-} else {
-  console.warn("Warning: GEMINI_API_KEY is not defined. The custom AI features will return a key setup prompt.");
-}
-
 // Rate limiting for the Gemini-backed analyzer. In-memory token bucket,
 // keyed per verified user id (or IP fallback for dev/demo paths). A fixed
 // per-process window is adequate for this app's single-instance deployment.
@@ -1264,6 +1276,14 @@ app.use((error: any, _req: express.Request, res: express.Response, _next: expres
   });
 });
 
+export function resetRateLimiters(): void {
+  checkoutRateLimiter.reset();
+  portalRateLimiter.reset();
+  reconcileRateLimiter.reset();
+  accountDeleteRateLimiter.reset();
+  analysisRateLimiter.reset();
+}
+
 // Serve static assets in production; Vite dev middleware ONLY for an explicit
 // development environment. Absent NODE_ENV must never trigger dev middleware.
 async function startServer() {
@@ -1290,4 +1310,7 @@ async function startServer() {
   });
 }
 
-startServer();
+const currentFile = typeof __filename !== "undefined" ? __filename : new URL(import.meta.url).pathname;
+if (process.argv[1] === currentFile) {
+  startServer();
+}

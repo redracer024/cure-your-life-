@@ -56,4 +56,8 @@ export class InMemoryRateLimiter {
       retryAfterSec: Math.max(1, Math.ceil(retryAfterMs / 1000)),
     };
   }
+
+  reset(): void {
+    this.buckets.clear();
+  }
 }
