@@ -19,14 +19,22 @@ import {
   isTerminalStripeSubscriptionStatus,
   normalizeStripeSubscriptionStatus,
 } from "./src/lib/billing/stripeBillingState";
+import { InMemoryRateLimiter } from "./src/lib/server/inMemoryRateLimit";
+import { getRateLimitActorKey } from "./src/lib/server/rateLimitKey";
+import { buildContentSecurityPolicy } from "./src/lib/server/securityHeaders";
 
 dotenv.config();
 
 const app = express();
 const PORT = Number(process.env.PORT || 3000);
+app.set("trust proxy", false);
+
+const GENERAL_JSON_BODY_LIMIT = "128kb";
+const FORM_URLENCODED_BODY_LIMIT = "32kb";
+const STRIPE_WEBHOOK_BODY_LIMIT = "1mb";
 
 // Stripe webhooks need raw body. This must be registered before express.json().
-app.post("/api/billing/webhook", express.raw({ type: "application/json" }), async (req: express.Request, res: express.Response) => {
+app.post("/api/billing/webhook", express.raw({ type: "application/json", limit: STRIPE_WEBHOOK_BODY_LIMIT }), async (req: express.Request, res: express.Response) => {
   if (!stripe || !STRIPE_WEBHOOK_SECRET || !supabaseAdmin) {
     return res.status(501).json({
       error: "Stripe webhook is not configured.",
@@ -87,7 +95,29 @@ app.post("/api/billing/webhook", express.raw({ type: "application/json" }), asyn
 });
 
 
-app.use(express.json());
+app.use((req: express.Request, res: express.Response, next: express.NextFunction) => {
+  const isDevelopment = isDevelopmentEnvironment(process.env.NODE_ENV);
+  const csp = buildContentSecurityPolicy({
+    isDevelopment,
+    supabaseUrl: process.env.VITE_SUPABASE_URL,
+  });
+
+  res.setHeader("Content-Security-Policy", csp);
+  res.setHeader("X-Content-Type-Options", "nosniff");
+  res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
+  res.setHeader("X-Frame-Options", "DENY");
+  res.setHeader("Permissions-Policy", "camera=(), microphone=(), geolocation=(), payment=(), usb=(), accelerometer=(), gyroscope=()");
+  res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
+
+  if (!isDevelopment && req.secure) {
+    res.setHeader("Strict-Transport-Security", "max-age=15552000; includeSubDomains");
+  }
+
+  next();
+});
+
+app.use(express.json({ limit: GENERAL_JSON_BODY_LIMIT, type: ["application/json", "application/*+json"] }));
+app.use(express.urlencoded({ extended: false, limit: FORM_URLENCODED_BODY_LIMIT }));
 
 type PremiumSource = "dev" | "token" | "supabase" | "none";
 
@@ -119,6 +149,12 @@ const APP_URL = process.env.APP_URL || `http://localhost:${PORT}`;
 const SUPABASE_URL = process.env.SUPABASE_URL || "";
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
 
+const CHECKOUT_RATE_LIMIT_MAX = 10;
+const PORTAL_RATE_LIMIT_MAX = 10;
+const RECONCILE_RATE_LIMIT_MAX = 20;
+const ACCOUNT_DELETE_RATE_LIMIT_MAX = 5;
+const SECURITY_RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000;
+
 const stripe = STRIPE_SECRET_KEY ? new Stripe(STRIPE_SECRET_KEY) : null;
 
 const supabaseAdmin = SUPABASE_URL && SUPABASE_SERVICE_ROLE_KEY
@@ -147,6 +183,65 @@ const getBearerToken = (req: express.Request) => {
   const header = req.headers.authorization || "";
   const [scheme, token] = header.split(" ");
   return scheme?.toLowerCase() === "bearer" ? token || "" : "";
+};
+
+const checkoutRateLimiter = new InMemoryRateLimiter({
+  max: CHECKOUT_RATE_LIMIT_MAX,
+  windowMs: SECURITY_RATE_LIMIT_WINDOW_MS,
+});
+
+const portalRateLimiter = new InMemoryRateLimiter({
+  max: PORTAL_RATE_LIMIT_MAX,
+  windowMs: SECURITY_RATE_LIMIT_WINDOW_MS,
+});
+
+const reconcileRateLimiter = new InMemoryRateLimiter({
+  max: RECONCILE_RATE_LIMIT_MAX,
+  windowMs: SECURITY_RATE_LIMIT_WINDOW_MS,
+});
+
+const accountDeleteRateLimiter = new InMemoryRateLimiter({
+  max: ACCOUNT_DELETE_RATE_LIMIT_MAX,
+  windowMs: SECURITY_RATE_LIMIT_WINDOW_MS,
+});
+
+const setNoStore = (res: express.Response) => {
+  res.setHeader("Cache-Control", "no-store");
+};
+
+const getRequestIp = (req: express.Request) => req.ip || req.socket.remoteAddress || "unknown";
+
+const getRateLimitKey = (req: express.Request, userId: string | null) =>
+  getRateLimitActorKey(userId, getRequestIp(req));
+
+const enforceRateLimit = (
+  req: express.Request,
+  res: express.Response,
+  limiter: InMemoryRateLimiter,
+  userId: string | null,
+  message: string,
+) => {
+  const result = limiter.consume(getRateLimitKey(req, userId));
+  if (result.allowed) return true;
+
+  res.setHeader("Retry-After", String(result.retryAfterSec));
+  return res.status(429).json({
+    error: message,
+  });
+};
+
+const requireJsonContentType = (req: express.Request, res: express.Response, next: express.NextFunction) => {
+  if (req.method !== "POST" && req.method !== "PUT" && req.method !== "PATCH") {
+    return next();
+  }
+
+  if (req.is("application/json") || req.is("application/*+json")) {
+    return next();
+  }
+
+  return res.status(415).json({
+    error: "Content-Type must be application/json.",
+  });
 };
 
 const BILLING_PLAN_PRICE_MAP: Record<string, string> = {
@@ -754,6 +849,7 @@ const getPremiumStatus = async (req: express.Request): Promise<PremiumStatus> =>
 // Server-side premium status. The frontend should use this as source of truth.
 // localStorage can remember UI hints, but it must never be trusted for premium access.
 app.get("/api/me/premium", async (req: express.Request, res: express.Response) => {
+  setNoStore(res);
   const { user } = await getAuthenticatedSupabaseUser(req);
   if (!user) {
     return res.status(401).json({
@@ -769,6 +865,7 @@ app.get("/api/me/premium", async (req: express.Request, res: express.Response) =
 // subscriptions first, then deletes the auth user and relies on DB-level ON
 // DELETE CASCADE for app-owned rows. No automatic refund behavior is applied.
 app.delete("/api/me/account", async (req: express.Request, res: express.Response) => {
+  setNoStore(res);
   if (!supabaseAdmin) {
     return res.status(503).json({
       error: "Account deletion is not available right now."
@@ -776,6 +873,19 @@ app.delete("/api/me/account", async (req: express.Request, res: express.Response
   }
 
   const { user } = await getAuthenticatedSupabaseUser(req);
+
+  const accountDeleteUserId = user?.id ?? null;
+  const accountDeleteRateDecision = enforceRateLimit(
+    req,
+    res,
+    accountDeleteRateLimiter,
+    accountDeleteUserId,
+    "Too many account deletion requests. Please try again later.",
+  );
+  if (accountDeleteRateDecision !== true) {
+    return accountDeleteRateDecision;
+  }
+
   if (!user) {
     return res.status(401).json({
       error: "Authentication is required."
@@ -812,8 +922,21 @@ app.delete("/api/me/account", async (req: express.Request, res: express.Response
 // Placeholder checkout endpoint. This intentionally does not create a live Stripe session yet.
 // Next Stripe step: install stripe, create a real checkout session here using STRIPE_SECRET_KEY
 // and STRIPE_PRICE_ID, then return session.url.
-app.post("/api/billing/create-checkout-session", async (req: express.Request, res: express.Response) => {
+app.post("/api/billing/create-checkout-session", requireJsonContentType, async (req: express.Request, res: express.Response) => {
   const { user } = await getAuthenticatedSupabaseUser(req);
+
+  const checkoutUserId = user?.id ?? null;
+  const checkoutRateDecision = enforceRateLimit(
+    req,
+    res,
+    checkoutRateLimiter,
+    checkoutUserId,
+    "Too many checkout requests. Please try again later.",
+  );
+  if (checkoutRateDecision !== true) {
+    return checkoutRateDecision;
+  }
+
   if (!user) {
     return res.status(401).json({
       error: "Authentication is required."
@@ -880,6 +1003,19 @@ app.post("/api/billing/create-checkout-session", async (req: express.Request, re
 // for the authenticated customer id saved in your database.
 app.post("/api/billing/create-portal-session", async (req: express.Request, res: express.Response) => {
   const { user } = await getAuthenticatedSupabaseUser(req);
+
+  const portalUserId = user?.id ?? null;
+  const portalRateDecision = enforceRateLimit(
+    req,
+    res,
+    portalRateLimiter,
+    portalUserId,
+    "Too many billing portal requests. Please try again later.",
+  );
+  if (portalRateDecision !== true) {
+    return portalRateDecision;
+  }
+
   if (!user) {
     return res.status(401).json({
       error: "Authentication is required."
@@ -931,7 +1067,21 @@ app.post("/api/billing/create-portal-session", async (req: express.Request, res:
 });
 
 app.post("/api/me/subscription/reconcile", async (req: express.Request, res: express.Response) => {
+  setNoStore(res);
   const { user } = await getAuthenticatedSupabaseUser(req);
+
+  const reconcileUserId = user?.id ?? null;
+  const reconcileRateDecision = enforceRateLimit(
+    req,
+    res,
+    reconcileRateLimiter,
+    reconcileUserId,
+    "Too many reconciliation requests. Please try again later.",
+  );
+  if (reconcileRateDecision !== true) {
+    return reconcileRateDecision;
+  }
+
   if (!user) {
     return res.status(401).json({
       error: "Authentication is required."
@@ -975,33 +1125,13 @@ if (apiKey) {
 const ANALYSIS_RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour
 const ANALYSIS_RATE_LIMIT_MAX = 30;
 
-const analysisRateBuckets = new Map<string, { count: number; resetAt: number }>();
-
-const getAnalysisRateLimitKey = (req: express.Request, userId: string | null) => {
-  if (userId && userId !== "demo-user") return `user:${userId}`;
-  const ip = req.ip || req.socket.remoteAddress || "unknown";
-  return `ip:${ip}`;
-};
-
-const checkAnalysisRateLimit = (key: string): boolean => {
-  const now = Date.now();
-  const bucket = analysisRateBuckets.get(key);
-
-  if (!bucket || bucket.resetAt <= now) {
-    analysisRateBuckets.set(key, { count: 1, resetAt: now + ANALYSIS_RATE_LIMIT_WINDOW_MS });
-    return true;
-  }
-
-  if (bucket.count >= ANALYSIS_RATE_LIMIT_MAX) {
-    return false;
-  }
-
-  bucket.count += 1;
-  return true;
-};
+const analysisRateLimiter = new InMemoryRateLimiter({
+  max: ANALYSIS_RATE_LIMIT_MAX,
+  windowMs: ANALYSIS_RATE_LIMIT_WINDOW_MS,
+});
 
 // Custom symptom analysis API endpoint. This is now server-gated for premium access.
-app.post("/api/analyze-symptom", async (req: express.Request, res: express.Response) => {
+app.post("/api/analyze-symptom", requireJsonContentType, async (req: express.Request, res: express.Response) => {
   try {
     const premium = await getPremiumStatus(req);
     if (!premium.isPremium) {
@@ -1012,13 +1142,15 @@ app.post("/api/analyze-symptom", async (req: express.Request, res: express.Respo
       });
     }
 
-    const rateLimitKey = getAnalysisRateLimitKey(req, premium.userId);
-    if (!checkAnalysisRateLimit(rateLimitKey)) {
-      res.setHeader("Retry-After", String(Math.ceil(ANALYSIS_RATE_LIMIT_WINDOW_MS / 1000)));
-      return res.status(429).json({
-        error: "Too many decoding requests. Please try again in about an hour.",
-        retryAfterMs: ANALYSIS_RATE_LIMIT_WINDOW_MS
-      });
+    const analysisRateDecision = enforceRateLimit(
+      req,
+      res,
+      analysisRateLimiter,
+      premium.userId,
+      "Too many decoding requests. Please try again in about an hour.",
+    );
+    if (analysisRateDecision !== true) {
+      return analysisRateDecision;
     }
 
     const { symptom, habits } = req.body;
@@ -1111,6 +1243,25 @@ User's self-reported lifestyle habits/context: "${habits || 'Not provided'}"`;
       error: error.message || "An error occurred during symptom analysis."
     });
   }
+});
+
+app.use((error: any, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
+  if (error?.type === "entity.too.large") {
+    return res.status(413).json({
+      error: "Request payload is too large.",
+    });
+  }
+
+  if (error instanceof SyntaxError && "body" in error) {
+    return res.status(400).json({
+      error: "Invalid JSON payload.",
+    });
+  }
+
+  console.error("Unhandled server error:", error);
+  return res.status(500).json({
+    error: "Internal server error.",
+  });
 });
 
 // Serve static assets in production; Vite dev middleware ONLY for an explicit
