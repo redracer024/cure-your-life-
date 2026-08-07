@@ -11,35 +11,59 @@
 ### Build
 - `npm run lint` (tsc --noEmit) — must be green
 - `npm run build` — must succeed, no warnings about missing env vars
+- `npx tsx tmp-validate-auth-recovery.ts` — all assertions pass
+- `npx tsx tmp-validate-production-config.ts` — all assertions pass
 - `npx tsx tmp-validate-billing-lifecycle.ts` — 89/89 assertions pass
 - `npx tsx tmp-validate-http-integration.ts` — all assertions pass
 - `npx tsx tmp-validate-http-security.ts` — all assertions pass
-- `npx tsx tmp-validate-production-config.ts` — all assertions pass
 
 ### Environment Variables
 - `NODE_ENV=production`
 - `DEV_PREMIUM` is **false or unset** (dev bypass must never fire in production)
-- `APP_URL` is set to the production origin (https://your-app.com). Missing APP_URL must fail server startup.
+- `APP_URL` is set to the production origin (https://your-app.com). Missing APP_URL fails server startup.
 - `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` (or `VITE_SUPABASE_PUBLISHABLE_KEY`) are set for the browser bundle
 - `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` are set server-side only
 - `STRIPE_SECRET_KEY` is set (live or test, server-side only)
 - `STRIPE_WEBHOOK_SECRET` is set
 - `STRIPE_PRICE_ID_MONTHLY` and `STRIPE_PRICE_ID_ANNUAL` are set to live price IDs
 - `GEMINI_API_KEY` is set (server-side only)
-- No server-only env var is referenced in frontend/source code that gets bundled to the browser (see Step 11 scan)
+- No server-only env var is referenced in frontend/source code that gets bundled to the browser
 
 ### Supabase Auth Configuration
-- **Site URL** in Supabase Dashboard — set to `https://<production-domain>`
-- **Redirect URLs** — add only the exact URLs the app uses:
-  - `https://<production-domain>/?`
-  - `https://<production-domain>/?billing=success`
-  - `https://<production-domain>/?billing=cancelled`
-  - `https://<production-domain>/?billing=portal-return`
+
+#### Site URL
+- Set to `https://<production-domain>`
+
+#### Redirect URLs — STORAGE (Stripe billing returns)
+These are separate from Supabase auth redirects. Do not mix.
+
+| URL | Purpose |
+|-----|---------|
+| `https://<production-domain>/?billing=success` | Stripe Checkout success |
+| `https://<production-domain>/?billing=cancelled` | Stripe Checkout cancel |
+| `https://<production-domain>/?billing=portal-return` | Stripe portal return |
+
+#### Redirect URLs — SUPABASE AUTH (password recovery + email confirmation)
+
+| URL | Purpose |
+|-----|---------|
+| `https://<production-domain>/?auth=recovery` | Password reset link redirect target |
+| `https://<production-domain>/?auth=confirm` | Email confirmation link redirect target (future, when autoconffirm is disabled) |
+
 - Do NOT use wildcards (e.g., `https://*.example.com/*`) unless technically unavoidable
 - OAuth providers — leave **disabled** (app does not use OAuth)
-- Email confirmation / autoconfirm:
-  - `mailer_autoconfirm` is currently `true` — do NOT disable until SMTP and confirmation UX are ready
-  - If disabling autofirm: configure SMTP, add a confirmation callback page, and handle "unconfirmed" state in `useAuthState.ts` before flipping this toggle
+
+#### Email Confirmation / Autoconfirm
+- `mailer_autoconfirm` is currently `true` — do NOT disable until SMTP and confirmation UX are ready
+- The app has confirmation callback handling ready (`?auth=confirm` with `exchangeCodeForSession`)
+- But SMTP must be configured before disabling autoconfirm, or signups will be broken
+- If disabling autofirm: configure SMTP, verify email templates, then test the `/?auth=confirm` flow
+
+#### Password Reset
+- Implemented client-side via `supabase.auth.resetPasswordForEmail`
+- Redirect target is `APP_URL/?auth=recovery`
+- Requires Supabase email delivery to be configured in the Supabase dashboard ("Enable email" / "Secure email change")
+- If email delivery is not configured, password reset links will not send — document as blocker
 
 ### Stripe Configuration
 - Webhook endpoint in Stripe Dashboard — set to `https://<production-domain>/api/billing/webhook`
@@ -68,6 +92,8 @@
 
 - Homepage loads at `https://<production-domain>`
 - Auth: signup + signin works with a real email/password
+- Auth: password reset ("Forgot password?") sends email and the recovery callback (?auth=recovery + code) exchanges for a session
+- Auth: new password form sets password via `supabase.auth.updateUser` and clears URL params
 - Auth: account deletion flow cancels Stripe subscription before deleting Supabase user
 - Premium endpoint (`/api/me/premium`) requires a valid bearer token
 - Checkout (`/api/billing/create-checkout-session`) uses server-side price allowlist only
@@ -94,6 +120,5 @@ If deployment is broken and must be reverted:
 ## REMAINING PRODUCTION BLOCKERS
 
 1. **Credential rotation** — the service-role key was exposed in a dev chat and must be manually rotated
-2. **Email confirmation** — `mailer_autoconfirm` is still `true`; disabling it requires SMTP config + confirmation UX (not yet implemented)
-3. **Password reset** — no password-reset flow exists; users cannot recover a forgotten password
-4. **Live domain** — `APP_URL` must be set to the real production domain before deployment; no domain is hardcoded
+2. **Email delivery** — Supabase must have email delivery configured (SMTP or built-in) for password reset and confirmation links to work. Currently `mailer_autoconfirm=true` with no SMTP.
+3. **Live domain** — `APP_URL` must be set to the real production domain before deployment; no domain is hardcoded. The server now fails closed if `APP_URL` is missing in production mode.
