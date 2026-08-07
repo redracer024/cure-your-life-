@@ -1,0 +1,56 @@
+# Render Blueprint for BodySignal
+#
+# This Blueprint is deliberately SECRET-FREE. All secret values are injected
+# through the Render Dashboard (or Render CLI) as environment variables.
+# See docs/render-deployment.md for the full configuration checklist.
+#
+# Deploy:   render.com > New > Blueprint > Connect this repo > Select branch
+# Runtime:  Docker (uses the repo's Dockerfile)
+#
+# Do NOT commit real secrets here. Only names are declared below.
+
+services:
+  - type: web
+    name: bodysignal
+    runtime: docker
+    # Branch to deploy from. The production candidate currently lives on the
+    # experiment branch. Merge to main first per your branch policy if required.
+    branch: experiment/3d-medical-ui
+    # Build & start are driven entirely by the Dockerfile.
+    # No explicit build/start commands are needed here.
+    healthCheckPath: /healthz
+    autoDeploy: true
+    # Environment variables are declared by NAME only.
+    # Render will prompt you to supply values during provisioning.
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DEV_PREMIUM
+        value: "false"
+      - key: APP_URL
+        # REQUIRED: set to your production origin, e.g. https://your-domain.com
+        # The server fails closed (startup throws) if this is unset in production.
+        # Declare here as a placeholder that MUST be overridden before first deploy.
+        sync: wait_for_input
+      - key: VITE_SUPABASE_URL
+        sync: wait_for_input
+      - key: VITE_SUPABASE_ANON_KEY
+        sync: wait_for_input
+      - key: VITE_SUPABASE_PUBLISHABLE_KEY
+        sync: wait_for_input
+      - key: SUPABASE_URL
+        sync: wait_for_input
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: wait_for_input
+      - key: STRIPE_SECRET_KEY
+        sync: wait_for_input
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: wait_for_input
+      - key: STRIPE_PRICE_ID_MONTHLY
+        sync: wait_for_input
+      - key: STRIPE_PRICE_ID_ANNUAL
+        sync: wait_for_input
+      - key: STRIPE_PRICE_ID
+        sync: wait_for_input
+      - key: GEMINI_API_KEY
+        sync: wait_for_input

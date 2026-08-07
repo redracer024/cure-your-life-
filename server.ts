@@ -899,6 +899,13 @@ app.get("/api/me/premium", async (req: express.Request, res: express.Response) =
   return res.json(await getPremiumStatus(req));
 });
 
+// Unauthenticated health check for platform health probes (e.g. Render).
+// Intentionally reveals no configuration, calls no external service, and is
+// registered before the SPA catch-all so it is never shadowed by index.html.
+app.get("/healthz", (_req: express.Request, res: express.Response) => {
+  res.status(200).json({ ok: true });
+});
+
 // Deletes the currently authenticated Supabase account.
 // For Stripe-backed subscriptions, this endpoint cancels externally billable
 // subscriptions first, then deletes the auth user and relies on DB-level ON
