@@ -26,13 +26,13 @@
 | Variable | Browser/Server | Required Production? | Current Status | Where Configured | Notes |
 |---|---|---|---|---|---|
 | `NODE_ENV` | Server | Required | READY | Deployment platform env | Must be `production`. Absent or non-`development` → static serving mode. Never `development` in prod. |
-| `APP_URL` | Server | Required | PLACEHOLDER | `.env` (local), deployment platform env | `.env.example` shows `https://example.com` (placeholder). Local `.env` has `http://localhost:3000`. Server **throws on startup** if missing in production. Must be set to exact production origin: `https://<chosen-production-domain>`. |
+| `APP_URL` | Server | Required | LIVE ORIGIN SET | `.env` (local), deployment platform env | **CURRENT LIVE RENDER ORIGIN:** `https://bodysignal-xa18.onrender.com`. `.env.example` shows `https://example.com` (non-production placeholder). Local `.env` has `http://localhost:3000`. Server **throws on startup** if missing in production. Render must be configured with the live origin. A future custom domain would replace this value. |
 | `DEV_PREMIUM` | Server | Prohibited | PLACEHOLDER | `.env` (local), `.env.example` | `.env` has `false`. `.env.local` has `true` (local only — must be `false`/unset in production). Bypass only engages when `NODE_ENV=development` **and** `DEV_PREMIUM=true` (exact literal). |
 | `PORT` | Server | Optional | READY | Deployment platform env | Defaults to `3000` if unset. Server binds `0.0.0.0`. |
-| `VITE_SUPABASE_URL` | Browser | Required | PLACEHOLDER | `.env` | `.env.example` shows `https://your-project.supabase.co` (placeholder). Must point to production Supabase project. |
-| `VITE_SUPABASE_ANON_KEY` | Browser | Required | PLACEHOLDER | `.env` | `.env.example` shows `env-anon-key-from-supabase-dashboard` (placeholder). Browser-safe publishable/anon key. |
+| `VITE_SUPABASE_URL` | Browser | Required | LIVE ORIGIN SET | `.env` | **CURRENT LIVE RENDER ORIGIN:** `https://psurstxfufkqqtpuaxel.supabase.co` (Supabase project `psurstxfufkqqtpuaxel`). `.env.example` shows `https://your-project.supabase.co` (placeholder). Must point to production Supabase project. |
+| `VITE_SUPABASE_ANON_KEY` | Browser | Required | PLACEHOLDER — **MUST BE ROTATED** | `.env` | `.env.example` shows `env-anon-key-from-supabase-dashboard` (placeholder). Browser-safe publishable/anon key. The current anon key may need rotation if it was exposed alongside the compromised service-role key. |
 | `VITE_SUPABASE_PUBLISHABLE_KEY` | Browser | Conditional | PLACEHOLDER | `.env` | Alternative to `VITE_SUPABASE_ANON_KEY` (Supabase dashboard naming varies). Both checked in `supabaseClient.ts`. |
-| `SUPABASE_URL` | Server | Required | PLACEHOLDER | `.env` | Same origin as `VITE_SUPABASE_URL`. Used by server-side admin client only. |
+| `SUPABASE_URL` | Server | Required | LIVE ORIGIN SET | `.env` | **CURRENT LIVE SUPABASE ORIGIN:** `https://psurstxfufkqqtpuaxel.supabase.co` (same project). Used by server-side admin client only. A future custom domain would replace this value. |
 | `SUPABASE_SERVICE_ROLE_KEY` | Server | Required | **ROTATION REQUIRED** | `.env`, deployment platform secret store | **COMPROMISED** — was exposed in a development chat. Local `.env` still contains the old key. A new key must be generated in the Supabase Dashboard, stored server-side only, and the old key revoked. Until done, treat as compromised. |
 | `STRIPE_SECRET_KEY` | Server | Required | **VERIFY LIVE/TEST MODE** | `.env`, deployment platform secret store | Local `.env` contains both `sk_live_...` and `sk_test_...` (duplicate key — last value wins: `sk_test_...`). Production must use a **live** server key. |
 | `STRIPE_WEBHOOK_SECRET` | Server | Required | **VERIFY LIVE/TEST MODE** | `.env`, deployment platform secret store | Local `.env` has `whsec_c6fb9d90...` — verify this matches the **production** webhook endpoint registered in Stripe Dashboard. |
@@ -77,9 +77,9 @@
 
 | Setting | Required Value | Current Status |
 |---|---|---|
-| Site URL | `https://<production-domain>` | NOT SET — requires domain selection |
-| Auth redirect: password recovery | `https://<production-domain>/?auth=recovery` | Documented in code (`useAuthState.ts:35`); not configured in dashboard |
-| Auth redirect: email confirmation | `https://<production-domain>/?auth=confirm` | Documented in code (`useAuthState.ts:80-84`); not configured in dashboard |
+| Site URL | `https://bodysignal-xa18.onrender.com` (CURRENT LIVE RENDER ORIGIN) | **NOT CONFIGURED** — requires setting in Supabase Dashboard. A future custom domain would replace this value. |
+| Auth redirect: password recovery | `https://bodysignal-xa18.onrender.com/?auth=recovery` | Documented in code (`useAuthState.ts:35`); not configured in dashboard |
+| Auth redirect: email confirmation | `https://bodysignal-xa18.onrender.com/?auth=confirm` | Documented in code (`useAuthState.ts:80-84`); not configured in dashboard |
 | Email confirmation / autoconfirm | Should be `false` once SMTP is live | Currently `true` (autoconfirm enabled) — do NOT flip until SMTP + templates verified |
 | OAuth providers | Disabled (not used) | Not applicable |
 

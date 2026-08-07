@@ -26,10 +26,12 @@
 ### Environment Variables
 - `NODE_ENV=production`
 - `DEV_PREMIUM` is **false or unset** (dev bypass must never fire in production)
-- `APP_URL` is set to the production origin (https://your-app.com). Missing APP_URL fails server startup.
-- `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` (or `VITE_SUPABASE_PUBLISHABLE_KEY`) are set for the browser bundle
-- `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` are set server-side only
-- `STRIPE_SECRET_KEY` is set (live or test, server-side only)
+- `APP_URL=https://bodysignal-xa18.onrender.com` (CURRENT LIVE RENDER ORIGIN)
+- `VITE_SUPABASE_URL=https://psurstxfufkqqtpuaxel.supabase.co` (production Supabase project)
+- `VITE_SUPABASE_ANON_KEY` and/or `VITE_SUPABASE_PUBLISHABLE_KEY` are set for the browser bundle (rotate if previously exposed)
+- `SUPABASE_URL=https://psurstxfufkqqtpuaxel.supabase.co` (server-side only)
+- `SUPABASE_SERVICE_ROLE_KEY` is set server-side only — **ROTATED** (old key was exposed in a dev chat; see Step 3)
+- `STRIPE_SECRET_KEY` is set (live mode, server-side only)
 - `STRIPE_WEBHOOK_SECRET` is set
 - `STRIPE_PRICE_ID_MONTHLY` and `STRIPE_PRICE_ID_ANNUAL` are set to live price IDs
 - `GEMINI_API_KEY` is set (server-side only)
@@ -37,24 +39,36 @@
 
 ### Supabase Auth Configuration
 
+#### Production origin
+
+The current live Render origin is:
+
+```
+https://bodysignal-xa18.onrender.com
+```
+
+This is the **CURRENT LIVE RENDER ORIGIN**. When a custom domain is attached in
+the future, update all URLs below. A future custom domain would replace this
+origin.
+
 #### Site URL
-- Set to `https://<production-domain>`
+- Set to `https://bodysignal-xa18.onrender.com` (CURRENT LIVE RENDER ORIGIN)
 
 #### Redirect URLs — STORAGE (Stripe billing returns)
 These are separate from Supabase auth redirects. Do not mix.
 
 | URL | Purpose |
 |-----|---------|
-| `https://<production-domain>/?billing=success` | Stripe Checkout success |
-| `https://<production-domain>/?billing=cancelled` | Stripe Checkout cancel |
-| `https://<production-domain>/?billing=portal-return` | Stripe portal return |
+| `https://bodysignal-xa18.onrender.com/?billing=success` | Stripe Checkout success |
+| `https://bodysignal-xa18.onrender.com/?billing=cancelled` | Stripe Checkout cancel |
+| `https://bodysignal-xa18.onrender.com/?billing=portal-return` | Stripe portal return |
 
 #### Redirect URLs — SUPABASE AUTH (password recovery + email confirmation)
 
 | URL | Purpose |
 |-----|---------|
-| `https://<production-domain>/?auth=recovery` | Password reset link redirect target |
-| `https://<production-domain>/?auth=confirm` | Email confirmation link redirect target (future, when autoconffirm is disabled) |
+| `https://bodysignal-xa18.onrender.com/?auth=recovery` | Password reset link redirect target |
+| `https://bodysignal-xa18.onrender.com/?auth=confirm` | Email confirmation link redirect target (future, when autoconffirm is disabled) |
 
 - Do NOT use wildcards (e.g., `https://*.example.com/*`) unless technically unavoidable
 - OAuth providers — leave **disabled** (app does not use OAuth)
@@ -72,14 +86,15 @@ These are separate from Supabase auth redirects. Do not mix.
 - If email delivery is not configured, password reset links will not send — document as blocker
 
 ### Stripe Configuration
-- Webhook endpoint in Stripe Dashboard — set to `https://<production-domain>/api/billing/webhook`
+- Webhook endpoint in Stripe Dashboard — set to `https://bodysignal-xa18.onrender.com/api/billing/webhook` (CURRENT LIVE RENDER ORIGIN)
 - Webhook endpoint is configured with the correct `STRIPE_WEBHOOK_SECRET`
 - Price IDs in `STRIPE_PRICE_ID_MONTHLY` and `STRIPE_PRICE_ID_ANNUAL` match live prices in Stripe Dashboard
 - No test-mode prices are used in production `APP_URL`
 
 ### Credential Rotation
 - The Supabase `service_role` key previously exposed in a development chat **must be rotated** before deployment
-- After rotation, remove the old key from all local `.env` files
+- Supabase project: **`psurstxfufkqqtpuaxel`**
+- After rotation, remove the old key from all local `.env` / `.env.local` files
 - Verify the server boots with the new key (Stripe and Supabase admin calls succeed)
 - Verify the browser receives only the anon/publishable key (inspect Network tab)
 - Run git history secret scan: `git log -p --all | grep -iE 'service_role|sk_live|whsec_'`
@@ -96,14 +111,14 @@ These are separate from Supabase auth redirects. Do not mix.
 
 ## POST-DEPLOY
 
-- Homepage loads at `https://<production-domain>`
+- Homepage loads at `https://bodysignal-xa18.onrender.com` (CURRENT LIVE RENDER ORIGIN)
 - Auth: signup + signin works with a real email/password
 - Auth: password reset ("Forgot password?") sends email and the recovery callback (?auth=recovery + code) exchanges for a session
 - Auth: new password form sets password via `supabase.auth.updateUser` and clears URL params
 - Auth: account deletion flow cancels Stripe subscription before deleting Supabase user
 - Premium endpoint (`/api/me/premium`) requires a valid bearer token
 - Checkout (`/api/billing/create-checkout-session`) uses server-side price allowlist only
-- Webhook delivers successfully to `https://<production-domain>/api/billing/webhook`
+- Webhook delivers successfully to `https://bodysignal-xa18.onrender.com/api/billing/webhook`
 - Premium reconciliation (`/api/me/subscription/reconcile`) repairs stale subscription state
 - CSP/security headers present on all responses
 - No secrets visible in browser DevTools Network tab or Sources

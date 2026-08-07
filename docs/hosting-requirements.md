@@ -114,7 +114,7 @@ suitable based on the requirements above:
 
 ## 7. Domain Decision Contract
 
-Once a domain is chosen, **ONE canonical origin** drives all of the following:
+Once a domain is chosen, **ONE canonical origin** drives all of the following.
 
 | Setting | Format |
 |---|---|
@@ -128,6 +128,38 @@ Once a domain is chosen, **ONE canonical origin** drives all of the following:
 | Stripe webhook URL | `https://<domain>/api/billing/webhook` |
 | Password-reset redirect | `https://<domain>/?auth=recovery` |
 | Confirmation redirect | `https://<domain>/?auth=confirm` |
+
+### Current live Render origin (in use)
+
+The application is currently deployed and live at:
+
+```
+https://bodysignal-xa18.onrender.com
+```
+
+This is the **CURRENT LIVE RENDER ORIGIN**. All production-configurable redirects
+should use this exact origin until a future custom domain is attached.
+
+**Important:** Render assigns an `onrender.com` URL to every Web Service before
+a custom domain is attached. Do NOT configure Supabase Site URL, auth redirects,
+Stripe URLs, or webhook endpoints against a *different* temporary hostname —
+use the canonical origin consistently. See `docs/render-deployment.md` §5
+(Preview URL Warning) for details.
+
+### Future custom domain (not yet in use)
+
+When a custom domain is attached to the Render service, Render replaces the
+`onrender.com` hostname. At that time, ALL of the following must be updated
+to the new canonical domain:
+
+- `APP_URL` (server env)
+- Supabase Site URL
+- Supabase auth redirect URLs
+- Stripe return URLs (success, cancel, portal-return)
+- Stripe webhook endpoint URL + signing secret
+
+Do not register redirects against the temporary Render hostname when a custom
+domain is planned — they will break silently and require manual re-entry.
 
 ### Placeholder examples only
 

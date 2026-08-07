@@ -28,9 +28,10 @@ services:
       - key: DEV_PREMIUM
         value: "false"
       - key: APP_URL
-        # REQUIRED: set to your production origin, e.g. https://your-domain.com
+        # REQUIRED: set to the production origin.
+        # CURRENT LIVE RENDER ORIGIN: https://bodysignal-xa18.onrender.com
         # The server fails closed (startup throws) if this is unset in production.
-        # Declare here as a placeholder that MUST be overridden before first deploy.
+        # When a future custom domain is attached, update this value to the new domain.
         sync: wait_for_input
       - key: VITE_SUPABASE_URL
         sync: wait_for_input

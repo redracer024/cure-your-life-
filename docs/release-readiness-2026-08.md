@@ -23,9 +23,10 @@
 | Name | BodySignal |
 | Tagline | Explore the whole pattern. |
 | Branch | `experiment/3d-medical-ui` |
-| HEAD commit | `53b5f104d159da82304836a1259803c513e8274b` |
+| HEAD commit | `dc0e3f0165976e079e6e957522a69f2917c50cd8` |
 | Deployment target | Web (single-page React app behind Express server) |
 | Google Play / Android | Not implemented — web-only |
+| Current live Render origin | `https://bodysignal-xa18.onrender.com` (CURRENT LIVE RENDER ORIGIN) |
 
 ---
 
@@ -38,9 +39,10 @@ All areas verified green as of this report.
 | Name | BodySignal |
 | Tagline | Explore the whole pattern. |
 | Branch | `experiment/3d-medical-ui` |
-| HEAD commit | `be49576412a337ef58f1ac6a22eccd6525f45d97` |
+| HEAD commit | `dc0e3f0165976e079e6e957522a69f2917c50cd8` |
 | Deployment target | Web (single-page React app behind Express server) |
 | Google Play / Android | Not implemented — web-only |
+| Current live Render origin | `https://bodysignal-xa18.onrender.com` (CURRENT LIVE RENDER ORIGIN) |
 
 ---
 
@@ -62,24 +64,26 @@ the repository:
 
 1. **Supabase service-role credential rotation** — the previous key was exposed
    in a development chat and must be manually rotated in the Supabase Dashboard
-   before production use. The local `.env` still contains the old key.
+   before production use. The local `.env` and `.env.local` files still contain
+   the old key. Supabase project: **`psurstxfufkqqtpuaxel`**.
 2. **Production domain / APP_URL** — `APP_URL` is set to
    `https://example.com` (placeholder in `.env.example`) and
    `http://localhost:3000` (in local `.env`). No production `.env` file exists.
+   The **CURRENT LIVE RENDER ORIGIN** is `https://bodysignal-xa18.onrender.com`.
    The server fails closed (throws on startup) if `APP_URL` is missing in
    production mode.
-3. **Supabase Site URL** — must be set to `https://<production-domain>` in the
-   Supabase Dashboard.
+3. **Supabase Site URL** — must be set to `https://bodysignal-xa18.onrender.com`
+   (CURRENT LIVE RENDER ORIGIN) in the Supabase Dashboard.
 4. **Supabase auth redirect allowlist** — exact routes
-   `https://<production-domain>/?auth=recovery` and
-   `https://<production-domain>/?auth=confirm` must be registered in the
-   Supabase Dashboard redirect URLs. No wildcards.
+   `https://bodysignal-xa18.onrender.com/?auth=recovery` and
+   `https://bodysignal-xa18.onrender.com/?auth=confirm` must be registered in
+   the Supabase Dashboard redirect URLs. No wildcards.
 5. **Production email delivery** — Supabase `mailer_autoconfirm=true` with no
    SMTP configured. Password reset and confirmation emails will not send until
    SMTP or built-in email delivery is configured.
 6. **Production Stripe webhook endpoint/secret** — must be registered as
-   `https://<production-domain>/api/billing/webhook` in the Stripe Dashboard
-   with the matching `STRIPE_WEBHOOK_SECRET`.
+   `https://bodysignal-xa18.onrender.com/api/billing/webhook` in the
+   Stripe Dashboard with the matching `STRIPE_WEBHOOK_SECRET`.
 7. **Live Stripe price IDs** — `STRIPE_PRICE_ID_MONTHLY` and
    `STRIPE_PRICE_ID_ANNUAL` are not set in the local `.env`. Must point to live
    (not test) prices.
@@ -90,14 +94,15 @@ the repository:
 
 | # | Dashboard/System | Action Required |
 |---|---|---|
-| 1 | Supabase Dashboard | Generate a new `service_role` key; revoke the old one; store the new key in the deployment platform's secret store (server-side only). |
-| 2 | Operator | Choose a production domain; set `APP_URL=https://<production-domain>` in the deployment environment. |
-| 3 | Supabase Dashboard | Set Site URL to `https://<production-domain>`. |
-| 4 | Supabase Dashboard | Add redirect URLs: `https://<production-domain>/?auth=recovery` and `https://<production-domain>/?auth=confirm`. |
+| 1 | Supabase Dashboard | Generate a new `service_role` key for project `psurstxfufkqqtpuaxel`; revoke the old one; store the new key in the deployment platform's secret store (server-side only). |
+| 2 | Operator | Set `APP_URL=https://bodysignal-xa18.onrender.com` (CURRENT LIVE RENDER ORIGIN) in the deployment environment. |
+| 3 | Supabase Dashboard | Set Site URL to `https://bodysignal-xa18.onrender.com` (CURRENT LIVE RENDER ORIGIN). |
+| 4 | Supabase Dashboard | Add redirect URLs: `https://bodysignal-xa18.onrender.com/?auth=recovery` and `https://bodysignal-xa18.onrender.com/?auth=confirm`. |
 | 5 | Supabase Dashboard | Configure SMTP (or built-in email); verify sender identity and templates. Do NOT disable `mailer_autoconfirm` until email delivery is verified. |
-| 6 | Stripe Dashboard | Register webhook endpoint `https://<production-domain>/api/billing/webhook`; copy the signing secret to `STRIPE_WEBHOOK_SECRET` in the deployment environment. |
+| 6 | Stripe Dashboard | Register webhook endpoint `https://bodysignal-xa18.onrender.com/api/billing/webhook`; copy the signing secret to `STRIPE_WEBHOOK_SECRET` in the deployment environment. |
 | 7 | Stripe Dashboard | Create or identify live products/prices; set `STRIPE_PRICE_ID_MONTHLY` and `STRIPE_PRICE_ID_ANNUAL` to live price IDs in the deployment environment. |
 | 8 | Operator | After deployment, run browser smoke tests against the live domain. |
+| 9 | Operator | When a future custom domain is attached, update `APP_URL` and all Supabase/Stripe dashboard URLs to the new domain. |
 
 ---
 
@@ -115,9 +120,9 @@ process.
 | Start command | `node dist/server.cjs` |
 | PORT behavior | `process.env.PORT` (defaults to `3000`). Binds `0.0.0.0`. |
 | Runtime mode | `NODE_ENV=development` → Vite dev middleware (HMR). `NODE_ENV=production` or absent → serves static `dist/` with SPA fallback. |
-| APP_URL | Server-only runtime env var. Read at module load in `server.ts`. Used for Stripe redirect URLs (`success_url`, `cancel_url`, `return_url`). Server **throws on startup** if missing in production mode. |
-| Hosting provider | **None configured** — no Dockerfile, no platform configs, no deploy workflows in repository. Operator must select and configure a provider. |
-| Health endpoint | None exists. Server startup is indicated by console log: `Server running on http://localhost:${PORT}`. |
+ | APP_URL | Server-only runtime env var. Read at module load in `server.ts`. Used for Stripe redirect URLs (`success_url`, `cancel_url`, `return_url`). Server **throws on startup** if missing in production mode. **CURRENT LIVE RENDER ORIGIN:** `https://bodysignal-xa18.onrender.com`. |
+| Hosting provider | **Render** — Docker runtime (Node 22). `Dockerfile` at repo root. `render.yaml` declares env vars by name only (no secrets committed). |
+| Health endpoint | `GET /healthz` — returns `{ "ok": true }` (see `server.ts`). |
 
 Full environment matrix: see `docs/production-env-matrix.md`.
 
@@ -215,8 +220,8 @@ Targeted smoke tests were run. Full browser suite was **not** run. See §5.
 | Full browser validation (all assessment specs) | Not run in this batch — targeted smoke tests only. See §6. |
 | `tmp-validate-assessment-ui.ts` | Browser-dependent; 32 tests pending in this headless CLI environment. Pre-existing, unrelated to BodySignal auth/billing/security. |
 | SMTP / email delivery | Supabase `mailer_autoconfirm=true`, no SMTP configured. Password reset and confirmation emails will not send until configured. |
-| Production domain | `APP_URL` is set to `https://example.com` placeholder in `.env.example`. Must be set to the real domain before deployment. Server fails closed if missing. |
-| Service-role rotation | The Supabase `service_role` key was previously referenced in a development chat and must be rotated before production deployment. |
+| Production domain | `APP_URL` is set to `https://example.com` placeholder in `.env.example`. The **CURRENT LIVE RENDER ORIGIN** is `https://bodysignal-xa18.onrender.com`. Server fails closed if `APP_URL` is missing. |
+| Service-role rotation | The Supabase `service_role` key was previously referenced in a development chat (Supabase project: `psurstxfufkqqtpuaxel`) and must be rotated before production deployment. Local `.env` and `.env.local` contain the old key. |
 | Google Play / Android | Not implemented. Web-only deployment. |
 | Separate dev / prod Supabase projects | May still share a single Supabase project between environments. |
 | Leaked-password protection | Unavailable on the current Supabase plan tier. |
@@ -227,12 +232,12 @@ Targeted smoke tests were run. Full browser suite was **not** run. See §5.
 
 These are external to the repository and must be completed by an operator before going live. They are **not** claimed as complete in this report. See §3 for the full blocker list and exact manual actions required.
 
-1. **Rotate the Supabase `service_role` credential** — the previous key was exposed in a development chat.
-2. **Configure `APP_URL`** — set to the exact production origin (https://...).
-3. **Configure Supabase Site URL** — set to `https://<production-domain>`.
-4. **Configure exact auth redirect URLs** — `https://<production-domain>/?auth=recovery` and `https://<production-domain>/?auth=confirm`. No wildcards unless unavoidable.
+1. **Rotate the Supabase `service_role` credential** — the previous key was exposed in a development chat. Supabase project: **`psurstxfufkqqtpuaxel`**.
+2. **Configure `APP_URL`** — set to `https://bodysignal-xa18.onrender.com` (CURRENT LIVE RENDER ORIGIN).
+3. **Configure Supabase Site URL** — set to `https://bodysignal-xa18.onrender.com` (CURRENT LIVE RENDER ORIGIN).
+4. **Configure exact auth redirect URLs** — `https://bodysignal-xa18.onrender.com/?auth=recovery` and `https://bodysignal-xa18.onrender.com/?auth=confirm`. No wildcards unless unavoidable.
 5. **Configure email delivery** — Supabase SMTP or built-in email for password reset and confirmation links.
-6. **Configure Stripe webhook production endpoint** — `https://<production-domain>/api/billing/webhook` with the matching `STRIPE_WEBHOOK_SECRET`.
+6. **Configure Stripe webhook production endpoint** — `https://bodysignal-xa18.onrender.com/api/billing/webhook` with the matching `STRIPE_WEBHOOK_SECRET`.
 7. **Verify live Stripe price IDs** — `STRIPE_PRICE_ID_MONTHLY` and `STRIPE_PRICE_ID_ANNUAL` must point to live prices, not test prices.
 8. **Run final browser smoke test** — verify auth, premium checkout, webhook delivery, and security headers in a live browser.
 9. **Run secret scan** — `git log -p --all | grep -iE 'service_role|sk_live|whsec_'` to confirm no leaked credentials remain.
@@ -410,11 +415,11 @@ Both are **DELETE CANDIDATES**. They will not be tracked in this batch. The asse
 **Do NOT deploy blindly.**
 
 The following remain **unknown** or **unverified**:
-- Production domain (only `https://example.com` placeholder in `.env.example`)
-- Hosting provider (none configured in repository)
+- Production domain (only `https://example.com` placeholder in `.env.example`; **CURRENT LIVE RENDER ORIGIN**: `https://bodysignal-xa18.onrender.com`)
+- Hosting provider (Render configured via `Dockerfile` + `render.yaml`)
 - Live Stripe IDs (local `.env` has duplicate `sk_live_`/`sk_test_` — mode unverified)
 - Email provider (no SMTP configured)
-- Rotated service-role key (current key was exposed in a dev chat)
+- Rotated service-role key (current key was exposed in a dev chat; Supabase project `psurstxfufkqqtpuaxel`)
 
 **Decision: STOP before performing an actual production deployment.**
 
@@ -422,6 +427,9 @@ All code-level validation is green. The repository is **CODE READY FOR
 DEPLOYMENT CONFIGURATION** but is **NOT production-deployable** until the 8
 external prerequisites in §3 are completed manually. No actual production
 deployment was attempted in this batch.
+
+> **Batch 38 update:** This report will be updated with Batch 38 results. See
+> `docs/supabase-production-setup.md` for the consolidated Batch 38 checklist.
 
 ---
 

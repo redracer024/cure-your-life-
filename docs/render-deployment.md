@@ -44,6 +44,7 @@
 | Auto-deploy | Recommended `true` for the experiment branch, or `false` for stricter production control |
 | Persistent disk | Not required |
 | Health check path | `/healthz` (see Section 6) |
+| **Current live origin** | **https://bodysignal-xa18.onrender.com** (CURRENT LIVE RENDER ORIGIN) |
 
 ### Dashboard configuration summary
 
@@ -73,7 +74,7 @@ If you prefer to configure manually instead of using `render.yaml`:
 | `VITE_SUPABASE_ANON_KEY` | Public Config | Required |
 | `VITE_SUPABASE_PUBLISHABLE_KEY` | Public Config | Conditional |
 | `SUPABASE_URL` | Server Config | Required |
-| `SUPABASE_SERVICE_ROLE_KEY` | Server Secret | Required (must be rotated — see Section 8) |
+| `SUPABASE_SERVICE_ROLE_KEY` | Server Secret | Required — **ROTATION REQUIRED** — old key was exposed in a dev chat. Supabase project: `psurstxfufkqqtpuaxel`. See Section 7. |
 | `STRIPE_SECRET_KEY` | Server Secret | Required (live mode) |
 | `STRIPE_WEBHOOK_SECRET` | Server Secret | Required |
 | `STRIPE_PRICE_ID_MONTHLY` | Server Config | Required |
@@ -94,19 +95,24 @@ In the Render Dashboard, **Environment** → **Environment Variables**:
 | Key | Type | Value |
 |---|---|---|
 | `NODE_ENV` | Plain | `production` |
-| `APP_URL` | Plain | `https://<your-production-domain>` — **MUST be set before first deploy** |
+| `APP_URL` | Plain | **`https://bodysignal-xa18.onrender.com`** (CURRENT LIVE RENDER ORIGIN — set before first deploy) |
 | `DEV_PREMIUM` | Plain | `false` |
-| `VITE_SUPABASE_URL` | Plain | Your production Supabase project URL |
-| `VITE_SUPABASE_ANON_KEY` | Plain | Your production Supabase anon key |
+| `VITE_SUPABASE_URL` | Plain | `https://psurstxfufkqqtpuaxel.supabase.co` (production Supabase project) |
+| `VITE_SUPABASE_ANON_KEY` | Plain | Your production Supabase anon key (rotate if previously exposed) |
 | `VITE_SUPABASE_PUBLISHABLE_KEY` | Plain | Your production Supabase publishable key (if used) |
-| `SUPABASE_URL` | Plain | Same origin as `VITE_SUPABASE_URL` |
-| `SUPABASE_SERVICE_ROLE_KEY` | Secret | **NEW** rotated service-role key |
+| `SUPABASE_URL` | Plain | `https://psurstxfufkqqtpuaxel.supabase.co` (same as VITE_SUPABASE_URL) |
+| `SUPABASE_SERVICE_ROLE_KEY` | Secret | **NEW** rotated service-role key (see Section 8) |
 | `STRIPE_SECRET_KEY` | Secret | Live mode `sk_live_...` |
 | `STRIPE_WEBHOOK_SECRET` | Secret | Webhook signing secret from Stripe Dashboard |
 | `STRIPE_PRICE_ID_MONTHLY` | Plain | Live monthly price ID |
 | `STRIPE_PRICE_ID_ANNUAL` | Plain | Live annual price ID |
 | `STRIPE_PRICE_ID` | Plain | Legacy/fallback price ID (optional) |
 | `GEMINI_API_KEY` | Secret | Google Cloud API key |
+
+> **Note on origin:** The current live Render origin is
+> `https://bodysignal-xa18.onrender.com`. When a custom domain is attached,
+> update `APP_URL` and all Supabase/Stripe URLs to the new domain. Until then,
+> use the live Render origin consistently across all dashboard configs.
 
 ---
 
@@ -157,49 +163,57 @@ The canonical production origin must be selected first wherever practical.
 
 ## 6. Domain Requirements
 
-**The user must decide on one canonical production domain.** Do NOT register or choose one automatically.
+**The current live Render origin is:**
 
-Suggested naming patterns (choose one):
+```
+https://bodysignal-xa18.onrender.com
+```
 
-- `bodysignal.<TLD>`
-- `getbodysignal.<TLD>`
-- `usebodysignal.<TLD>`
+This **CURRENT LIVE RENDER ORIGIN** is the canonical production origin that
+must populate all dashboard URL fields. A **FUTURE CUSTOM DOMAIN** would
+replace this origin when attached to the Render service.
 
-Once chosen, the **same origin** must populate:
+Once the domain is chosen, the **same origin** must populate:
 
 | Setting | Value |
 |---|---|
-| `APP_URL` (server env) | `https://<domain>` |
-| Supabase Site URL | `https://<domain>` |
-| Supabase auth redirect: password recovery | `https://<domain>/?auth=recovery` |
-| Supabase auth redirect: email confirmation | `https://<domain>/?auth=confirm` |
-| Stripe success URL | `https://<domain>/?billing=success` |
-| Stripe cancel URL | `https://<domain>/?billing=cancelled` |
-| Stripe portal return URL | `https://<domain>/?billing=portal-return` |
-| Stripe webhook URL | `https://<domain>/api/billing/webhook` |
+| `APP_URL` (server env) | `https://bodysignal-xa18.onrender.com` |
+| Supabase Site URL | `https://bodysignal-xa18.onrender.com` |
+| Supabase auth redirect: password recovery | `https://bodysignal-xa18.onrender.com/?auth=recovery` |
+| Supabase auth redirect: email confirmation | `https://bodysignal-xa18.onrender.com/?auth=confirm` |
+| Stripe success URL | `https://bodysignal-xa18.onrender.com/?billing=success` |
+| Stripe cancel URL | `https://bodysignal-xa18.onrender.com/?billing=cancelled` |
+| Stripe portal return URL | `https://bodysignal-xa18.onrender.com/?billing=portal-return` |
+| Stripe webhook URL | `https://bodysignal-xa18.onrender.com/api/billing/webhook` |
 
 ---
 
 ## 7. Supabase Service-Role Rotation Checklist
 
-The `SUPABASE_SERVICE_ROLE_KEY` was previously exposed in a development chat. It must be rotated before production deployment.
+The `SUPABASE_SERVICE_ROLE_KEY` was previously exposed in a development chat
+(confirmed present in the local `.env` file as a real `service_role` JWT).
+It must be rotated before production deployment.
 
 **Do NOT perform rotation automatically.** Follow this manual sequence:
 
-1. Open the Supabase Dashboard → your project → **Settings** → **API**.
+1. Open the Supabase Dashboard → project **`psurstxfufkqqtpuaxel`** → **Settings** → **API**.
 2. Locate the service-role key in the **service_role** section.
 3. Click **Rotate** (or **Regenerate**) to generate a new key.
 4. Copy the **NEW** service-role credential immediately (it is only shown once).
 5. Store the NEW value only in the Render secret env (`SUPABASE_SERVICE_ROLE_KEY`).
-6. Update your local `.env` with the NEW value if needed for local testing.
-7. On the Supabase Dashboard, **revoke** the old service-role key.
+   - In the Render Dashboard: **Environment** → **Environment Variables** → set
+     `SUPABASE_SERVICE_ROLE_KEY` to the new value (type: Secret).
+6. Update your local `.env` with the NEW value if still needed for local testing.
+7. On the Supabase Dashboard, **revoke/disable** the old service-role key.
 8. Click **Redeploy** (or restart) the Render service so it picks up the new key.
 9. Verify server-side routes that use the admin client work:
    - `POST /api/billing/create-checkout-session`
    - `POST /api/billing/create-portal-session`
    - `DELETE /api/me/account`
    - `POST /api/billing/webhook` (Stripe webhook)
-10. If practical, verify the old credential no longer works (attempt a Supabase admin call with it).
+10. If practical, verify the old credential no longer works (attempt a Supabase
+    admin call with it — it should fail).
+11. Never paste the new secret into logs, docs, commits, prompts, or frontend env.
 
 ---
 
@@ -257,7 +271,7 @@ The production candidate currently lives on `experiment/3d-medical-ui`.
 As of this batch:
 
 - **Commit distance from main to experiment branch:** 49 commits ahead
-- **Current HEAD:** `2232e3c96ef9aa3755df7ea5a523dc6278fcd0ae` on `experiment/3d-medical-ui`
+- **Current HEAD:** `dc0e3f0165976e079e6e957522a69f2917c50cd8` on `experiment/3d-medical-ui`
 - **main HEAD:** `3d6f64e Wire Stripe checkout and webhook premium sync`
 
 **Recommendation:** This is a USER DECISION. Consider:
@@ -276,7 +290,16 @@ A repository-wide secret scan was performed to verify no real secrets are commit
 - `.gitignore` excludes `.env*` (except `.env.example`) — confirmed
 - `.gitignore` excludes `tmp-validate/` — confirmed
 - `.dockerignore` excludes `.env*` — confirmed
-- No `sk_live_`, `sk_test_`, `whsec_`, or `service_role` values found in tracked files
-- The local `.env` file (with placeholder/old values) is NOT tracked by git
+- No `sk_live_`, `sk_test_`, `whsec_`, or `service_role` values found in **tracked files**
+- The local `.env` and `.env.local` files (with real-looking credentials) are **NOT tracked** by git — confirmed
+- Git history scan: all historical `SUPABASE_SERVICE_ROLE_KEY`, `sk_live_`, `sk_test_`, `whsec_` references are mock/placeholder values — no real secrets in history
 
-**No actual deployment attempted.** No real domain invented. No live external services called. No live Supabase or Stripe modifications made.
+**Tracked-file secret scan: CLEAN (no real secrets).**
+**Git-history secret scan: CLEAN (placeholders only).**
+**Local env-file scan: REAL SECRET FOUND in `.env.local`** — the `.env.local` file
+contains a real `service_role` JWT and anon JWT that were exposed in a development
+chat. This file is gitignored and not tracked. The service-role key must be
+rotated per Section 7 and the values removed/replaced.
+
+No actual production deployment attempted. No real domain invented. No live external
+services called. No live Supabase or Stripe modifications made.

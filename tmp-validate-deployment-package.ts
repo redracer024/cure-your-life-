@@ -144,7 +144,7 @@ assert("16. .env files are not tracked by git", !envTracked, envTracked ? "track
 
 // 8. Dockerfile checks (if it exists)
 if (dockerfileSrc) {
-  assert("17. Dockerfile uses Node LTS base", /node:20-alpine|node:lts/i.test(dockerfileSrc));
+  assert("17. Dockerfile uses Node LTS base", /node:20-alpine|node:22-alpine|node:lts/i.test(dockerfileSrc));
   assert("18. Dockerfile runs npm ci", /npm ci/i.test(dockerfileSrc));
   assert("19. Dockerfile runs build", /npm run build/i.test(dockerfileSrc));
   assert("20. Dockerfile runs node dist/server.cjs", /node[\s,\"]+dist\/server\.cjs/i.test(dockerfileSrc), "");
