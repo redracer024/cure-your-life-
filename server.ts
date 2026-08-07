@@ -9,6 +9,7 @@ import { GoogleGenAI, Type } from "@google/genai";
 import { createClient } from "@supabase/supabase-js";
 import Stripe from "stripe";
 import dotenv from "dotenv";
+import { isPremiumEntitled } from "./src/lib/billing/entitlement";
 
 dotenv.config();
 
@@ -40,26 +41,34 @@ app.post("/api/billing/webhook", express.raw({ type: "application/json" }), asyn
   }
 
   try {
-    if (event.type === "checkout.session.completed") {
-      const session = event.data.object as Stripe.Checkout.Session;
-      await syncStripeCheckoutSession(session);
-    }
-
-    if (
-      event.type === "customer.subscription.created" ||
-      event.type === "customer.subscription.updated" ||
-      event.type === "customer.subscription.deleted"
-    ) {
-      const subscription = event.data.object as Stripe.Subscription;
-      await syncStripeSubscription(subscription);
+    switch (event.type) {
+      case "checkout.session.completed": {
+        const session = event.data.object as Stripe.Checkout.Session;
+        await syncStripeCheckoutSession(session);
+        break;
+      }
+      case "customer.subscription.created":
+      case "customer.subscription.updated":
+      case "customer.subscription.deleted": {
+        const subscription = event.data.object as Stripe.Subscription;
+        await syncStripeSubscription(subscription);
+        break;
+      }
+      case "invoice.paid":
+      case "invoice.payment_failed": {
+        const invoice = event.data.object as Stripe.Invoice;
+        await syncStripeInvoice(invoice);
+        break;
+      }
+      default:
+        break;
     }
 
     return res.json({ received: true });
   } catch (error: any) {
     console.error("Stripe webhook processing failed:", error);
     return res.status(500).json({
-      error: "Webhook processing failed.",
-      message: error.message || "Unknown webhook error"
+      error: "Webhook processing failed."
     });
   }
 });
@@ -88,9 +97,10 @@ const DEV_PREMIUM = isDevelopmentPremiumEnabled(
   process.env.DEV_PREMIUM
 );
 
-const PREMIUM_ACCESS_TOKEN = process.env.PREMIUM_ACCESS_TOKEN || "";
 const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY || "";
 const STRIPE_PRICE_ID = process.env.STRIPE_PRICE_ID || "";
+const STRIPE_PRICE_ID_MONTHLY = process.env.STRIPE_PRICE_ID_MONTHLY || "";
+const STRIPE_PRICE_ID_ANNUAL = process.env.STRIPE_PRICE_ID_ANNUAL || "";
 const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET || "";
 const APP_URL = process.env.APP_URL || `http://localhost:${PORT}`;
 const SUPABASE_URL = process.env.SUPABASE_URL || "";
@@ -113,6 +123,38 @@ const getBearerToken = (req: express.Request) => {
   return scheme?.toLowerCase() === "bearer" ? token || "" : "";
 };
 
+const BILLING_PLAN_PRICE_MAP: Record<string, string> = {
+  ...(STRIPE_PRICE_ID_MONTHLY ? { monthly: STRIPE_PRICE_ID_MONTHLY } : {}),
+  ...(STRIPE_PRICE_ID_ANNUAL ? { annual: STRIPE_PRICE_ID_ANNUAL } : {}),
+  ...(STRIPE_PRICE_ID ? { default: STRIPE_PRICE_ID } : {}),
+};
+
+const resolveCheckoutPrice = (planInput: unknown): { planKey: string; priceId: string } | null => {
+  const normalizedPlan = typeof planInput === "string" ? planInput.trim().toLowerCase() : "";
+  if (normalizedPlan && BILLING_PLAN_PRICE_MAP[normalizedPlan]) {
+    return {
+      planKey: normalizedPlan,
+      priceId: BILLING_PLAN_PRICE_MAP[normalizedPlan],
+    };
+  }
+
+  if (!normalizedPlan && BILLING_PLAN_PRICE_MAP.monthly) {
+    return {
+      planKey: "monthly",
+      priceId: BILLING_PLAN_PRICE_MAP.monthly,
+    };
+  }
+
+  if (!normalizedPlan && BILLING_PLAN_PRICE_MAP.default) {
+    return {
+      planKey: "default",
+      priceId: BILLING_PLAN_PRICE_MAP.default,
+    };
+  }
+
+  return null;
+};
+
 const getRequestUserId = (_req: express.Request) => {
   // Fallback id for non-authenticated dev/demo paths. Never derived from a
   // client-supplied header; the only trustworthy source is a verified
@@ -130,17 +172,18 @@ const getSupabaseUserFromRequest = async (req: express.Request) => {
   return { user: data.user ?? null, error };
 };
 
-const isSubscriptionActive = (subscription: any) => {
-  if (!subscription) return false;
-  const status = String(subscription.status || "").toLowerCase();
-  if (["active", "trialing", "manual"].includes(status)) return true;
-
-  if (subscription.current_period_end) {
-    const periodEnd = new Date(subscription.current_period_end).getTime();
-    return Number.isFinite(periodEnd) && periodEnd > Date.now();
+const getAuthenticatedSupabaseUser = async (req: express.Request) => {
+  const token = getBearerToken(req);
+  if (!token || !supabaseAdmin) {
+    return { user: null, error: "missing-auth" as const };
   }
 
-  return false;
+  const { data, error } = await supabaseAdmin.auth.getUser(token);
+  if (error || !data.user) {
+    return { user: null, error: "invalid-auth" as const };
+  }
+
+  return { user: data.user, error: null };
 };
 
 
@@ -184,6 +227,53 @@ const upsertStripeSubscription = async (params: {
   }
 };
 
+const getUserIdForStripeSubscription = async (stripeSubscriptionId: string) => {
+  if (!supabaseAdmin) return null;
+
+  const { data, error } = await supabaseAdmin
+    .from("subscriptions")
+    .select("user_id")
+    .eq("stripe_subscription_id", stripeSubscriptionId)
+    .limit(1)
+    .maybeSingle();
+
+  if (error) {
+    console.warn("Failed to map Stripe subscription to user.");
+    return null;
+  }
+
+  return data?.user_id || null;
+};
+
+const syncStripeSubscriptionById = async (subscriptionId: string, fallbackUserId?: string | null) => {
+  if (!stripe) {
+    throw new Error("Stripe client is not configured.");
+  }
+
+  const subscription = await stripe.subscriptions.retrieve(subscriptionId);
+  const mappedUserId =
+    subscription.metadata?.supabase_user_id ||
+    fallbackUserId ||
+    (await getUserIdForStripeSubscription(subscription.id)) ||
+    "";
+
+  if (!mappedUserId) {
+    console.warn("Stripe subscription sync skipped because no user mapping was found.");
+    return;
+  }
+
+  await upsertStripeSubscription({
+    userId: mappedUserId,
+    status: subscription.status,
+    stripeCustomerId:
+      typeof subscription.customer === "string"
+        ? subscription.customer
+        : subscription.customer?.id || null,
+    stripeSubscriptionId: subscription.id,
+    currentPeriodEnd: getSubscriptionPeriodEnd(subscription)
+  });
+};
+
 const syncStripeCheckoutSession = async (session: Stripe.Checkout.Session) => {
   const userId =
     session.metadata?.supabase_user_id ||
@@ -199,25 +289,11 @@ const syncStripeCheckoutSession = async (session: Stripe.Checkout.Session) => {
       ? session.subscription
       : session.subscription?.id;
 
-  let status = "active";
-  let currentPeriodEnd: string | null = null;
-
-  if (subscriptionId && stripe) {
-    const subscription = await stripe.subscriptions.retrieve(subscriptionId);
-    status = subscription.status;
-    currentPeriodEnd = getSubscriptionPeriodEnd(subscription);
+  if (!subscriptionId) {
+    throw new Error("Checkout session did not include a subscription id.");
   }
 
-  await upsertStripeSubscription({
-    userId,
-    status,
-    stripeCustomerId:
-      typeof session.customer === "string"
-        ? session.customer
-        : session.customer?.id || null,
-    stripeSubscriptionId: subscriptionId || null,
-    currentPeriodEnd
-  });
+  await syncStripeSubscriptionById(subscriptionId, userId);
 };
 
 const syncStripeSubscription = async (subscription: Stripe.Subscription) => {
@@ -228,16 +304,20 @@ const syncStripeSubscription = async (subscription: Stripe.Subscription) => {
     return;
   }
 
-  await upsertStripeSubscription({
-    userId,
-    status: subscription.status,
-    stripeCustomerId:
-      typeof subscription.customer === "string"
-        ? subscription.customer
-        : subscription.customer?.id || null,
-    stripeSubscriptionId: subscription.id,
-    currentPeriodEnd: getSubscriptionPeriodEnd(subscription)
-  });
+  await syncStripeSubscriptionById(subscription.id, userId);
+};
+
+const syncStripeInvoice = async (invoice: Stripe.Invoice) => {
+  const rawInvoice = invoice as any;
+  const subscriptionId = typeof rawInvoice.subscription === "string"
+    ? rawInvoice.subscription
+    : rawInvoice.subscription?.id;
+
+  if (!subscriptionId) {
+    return;
+  }
+
+  await syncStripeSubscriptionById(subscriptionId, null);
 };
 
 
@@ -269,7 +349,7 @@ const getPremiumStatus = async (req: express.Request): Promise<PremiumStatus> =>
 
   if (user) {
     const subscription = await getLatestSubscriptionForUser(user.id);
-    const active = isSubscriptionActive(subscription);
+    const active = isPremiumEntitled(subscription);
 
     return {
       isPremium: active || DEV_PREMIUM,
@@ -296,17 +376,6 @@ const getPremiumStatus = async (req: express.Request): Promise<PremiumStatus> =>
     };
   }
 
-  const bearerToken = getBearerToken(req);
-  if (PREMIUM_ACCESS_TOKEN && bearerToken === PREMIUM_ACCESS_TOKEN) {
-    return {
-      isPremium: true,
-      source: "token",
-      userId: getRequestUserId(req),
-      devMode: false,
-      message: "Premium access granted by server-side token placeholder."
-    };
-  }
-
   return {
     isPremium: false,
     source: "none",
@@ -321,12 +390,22 @@ const getPremiumStatus = async (req: express.Request): Promise<PremiumStatus> =>
 // Server-side premium status. The frontend should use this as source of truth.
 // localStorage can remember UI hints, but it must never be trusted for premium access.
 app.get("/api/me/premium", async (req: express.Request, res: express.Response) => {
+  const { user } = await getAuthenticatedSupabaseUser(req);
+  if (!user) {
+    return res.status(401).json({
+      error: "Authentication is required."
+    });
+  }
+
   return res.json(await getPremiumStatus(req));
 });
 
 // Deletes the currently authenticated Supabase account and relies on DB-level
 // ON DELETE CASCADE for app-owned rows. This does not cancel external billing
-// subscriptions.
+// subscriptions. Release blocker before paid launch: define and enforce one
+// explicit policy for active paid users (cancel first, block deletion, or
+// explicit billing-retention flow) so account deletion cannot leave recurring
+// Stripe charges unmanaged.
 app.delete("/api/me/account", async (req: express.Request, res: express.Response) => {
   if (!supabaseAdmin) {
     return res.status(503).json({
@@ -367,6 +446,13 @@ app.delete("/api/me/account", async (req: express.Request, res: express.Response
 // Next Stripe step: install stripe, create a real checkout session here using STRIPE_SECRET_KEY
 // and STRIPE_PRICE_ID, then return session.url.
 app.post("/api/billing/create-checkout-session", async (req: express.Request, res: express.Response) => {
+  const { user } = await getAuthenticatedSupabaseUser(req);
+  if (!user) {
+    return res.status(401).json({
+      error: "Authentication is required."
+    });
+  }
+
   const premium = await getPremiumStatus(req);
 
   if (!premium.userId || premium.userId === "demo-user") {
@@ -377,32 +463,35 @@ app.post("/api/billing/create-checkout-session", async (req: express.Request, re
     });
   }
 
-  if (!stripe || !STRIPE_PRICE_ID) {
+  const resolvedPlan = resolveCheckoutPrice(req.body?.plan);
+
+  if (!stripe || !resolvedPlan) {
     return res.status(501).json({
       error: "Stripe checkout is not configured yet.",
-      requiredEnv: ["STRIPE_SECRET_KEY", "STRIPE_PRICE_ID", "APP_URL"],
-      message: "Add Stripe secret key and price ID on the server. The checkout button exists, but the cash register is still a cardboard box."
+      requiredEnv: ["STRIPE_SECRET_KEY", "STRIPE_PRICE_ID_MONTHLY or STRIPE_PRICE_ID", "APP_URL"],
+      message: "Billing plans are not configured on the server."
     });
   }
 
   try {
     const session = await stripe.checkout.sessions.create({
       mode: "subscription",
-      payment_method_types: ["card"],
       customer_email: premium.email || undefined,
       client_reference_id: premium.userId,
       line_items: [
         {
-          price: STRIPE_PRICE_ID,
+          price: resolvedPlan.priceId,
           quantity: 1
         }
       ],
       metadata: {
-        supabase_user_id: premium.userId
+        supabase_user_id: premium.userId,
+        plan_key: resolvedPlan.planKey,
       },
       subscription_data: {
         metadata: {
-          supabase_user_id: premium.userId
+          supabase_user_id: premium.userId,
+          plan_key: resolvedPlan.planKey,
         }
       },
       success_url: `${APP_URL}/?billing=success`,
@@ -415,8 +504,7 @@ app.post("/api/billing/create-checkout-session", async (req: express.Request, re
   } catch (error: any) {
     console.error("Stripe checkout creation failed:", error);
     return res.status(500).json({
-      error: "Stripe checkout creation failed.",
-      message: error.message || "Unknown Stripe error"
+      error: "Stripe checkout creation failed."
     });
   }
 });
@@ -424,6 +512,13 @@ app.post("/api/billing/create-checkout-session", async (req: express.Request, re
 // Placeholder customer portal endpoint. Later this should create a Stripe billing portal session
 // for the authenticated customer id saved in your database.
 app.post("/api/billing/create-portal-session", async (req: express.Request, res: express.Response) => {
+  const { user } = await getAuthenticatedSupabaseUser(req);
+  if (!user) {
+    return res.status(401).json({
+      error: "Authentication is required."
+    });
+  }
+
   const premium = await getPremiumStatus(req);
 
   if (!premium.userId || premium.userId === "demo-user") {
@@ -463,8 +558,32 @@ app.post("/api/billing/create-portal-session", async (req: express.Request, res:
   } catch (error: any) {
     console.error("Stripe billing portal creation failed:", error);
     return res.status(500).json({
-      error: "Stripe billing portal creation failed.",
-      message: error.message || "Unknown Stripe error"
+      error: "Stripe billing portal creation failed."
+    });
+  }
+});
+
+app.post("/api/me/subscription/reconcile", async (req: express.Request, res: express.Response) => {
+  const { user } = await getAuthenticatedSupabaseUser(req);
+  if (!user) {
+    return res.status(401).json({
+      error: "Authentication is required."
+    });
+  }
+
+  try {
+    const subscription = await getLatestSubscriptionForUser(user.id);
+    const stripeSubscriptionId = subscription?.stripe_subscription_id || null;
+
+    if (subscription?.source === "stripe" && stripeSubscriptionId) {
+      await syncStripeSubscriptionById(stripeSubscriptionId, user.id);
+    }
+
+    return res.json(await getPremiumStatus(req));
+  } catch (error) {
+    console.error("Subscription reconciliation failed.");
+    return res.status(500).json({
+      error: "Subscription reconciliation failed."
     });
   }
 });
