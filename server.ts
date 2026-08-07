@@ -1306,17 +1306,39 @@ async function startServer() {
   } else {
     const distPath = path.join(process.cwd(), "dist");
     app.use(express.static(distPath));
+
+    // API 404: any unmatched /api/** route must return JSON 404, NOT the SPA
+    // HTML shell. This must be registered BEFORE the SPA fallback below.
+    app.use("/api", (req: express.Request, res: express.Response) => {
+      res.status(404).json({ error: "Not found" });
+    });
+
+    // SPA fallback: all non-API routes serve the app shell.
     app.get("*", (req, res) => {
       res.sendFile(path.join(distPath, "index.html"));
     });
     console.log("Serving static production assets from dist/.");
   }
 
-  app.listen(PORT, "0.0.0.0", () => {
+  const server = app.listen(PORT, "0.0.0.0", () => {
     console.log(`Server running on http://localhost:${PORT}`);
     console.log(`Premium dev mode: ${DEV_PREMIUM ? "ON" : "OFF"}`);
     console.log(`Supabase server auth: ${supabaseAdmin ? "configured" : "not configured"}`);
   });
+
+  // Graceful shutdown: allow in-flight requests to finish on SIGTERM/SIGINT
+  // (useful for container/platform deploys). Do not hang if force-quit.
+  const shutdown = (signal: string) => {
+    console.log(`Received ${signal}. Shutting down...`);
+    server.close(() => {
+      console.log("HTTP server closed.");
+      process.exit(0);
+    });
+    setTimeout(() => process.exit(0), 10000).unref();
+  };
+
+  process.on("SIGTERM", () => shutdown("SIGTERM"));
+  process.on("SIGINT", () => shutdown("SIGINT"));
 }
 
 const currentFile = typeof __filename !== "undefined" ? __filename : new URL(import.meta.url).pathname;

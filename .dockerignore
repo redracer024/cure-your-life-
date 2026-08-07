@@ -1,0 +1,37 @@
+# Node modules are rebuilt via npm ci in the image; never copy host copies.
+node_modules/
+
+# Git metadata — not needed in the runtime image.
+.git/
+.git
+
+# Build output is rebuilt inside the image.
+dist/
+build/
+
+# Local environment files — MUST NOT be baked into images.
+# All secrets are injected at runtime by the hosting platform.
+.env
+.env.local
+.env.production
+.env.staging
+.env.development
+
+# Test results and scratch validation artifacts.
+test-results/
+playwright-report/
+coverage/
+
+# Workspace / tool scratch directories.
+mind/
+tmp-validate/
+supabase/.temp/
+
+# Editor / OS artifacts.
+.idea/
+.vscode/
+.antigravity/
+.codebuddy/
+.opencode/
+.DS_Store
+*.log
