@@ -1,5 +1,6 @@
 import React from 'react';
 import { usePremium } from '../context/PremiumContext';
+import { PRODUCT_NAME } from '../lib/brand';
 
 interface NavigationProps {
     activeTab: 'dictionary' | 'decoder' | 'daily' | 'journal' | 'patterns';
@@ -21,7 +22,7 @@ export const Navigation: React.FC<NavigationProps> = ({
                     onClick={() => setActiveTab('dictionary')}
                     className="text-2xl font-black tracking-tighter not-italic cursor-pointer hover:opacity-95 transition-opacity flex items-center gap-2 font-display"
                 >
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-indigo-100 to-indigo-300 drop-shadow-[0_0_15px_rgba(99,102,241,0.5)]">Cure Your Life</span>
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-indigo-100 to-indigo-300 drop-shadow-[0_0_15px_rgba(99,102,241,0.5)]">{PRODUCT_NAME}</span>
                     <span className="bg-gradient-to-br from-red-500 to-rose-600 border border-red-400/30 text-white text-[11px] font-mono tracking-widest font-black uppercase px-2 py-0.5 rounded shadow-[0_0_15px_rgba(239,68,68,0.6)]">
                         +
                     </span>

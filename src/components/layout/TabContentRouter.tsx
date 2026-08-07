@@ -86,7 +86,7 @@ export const TabContentRouter: React.FC<TabContentRouterProps> = ({
               <Compass className="w-10 h-10 mx-auto text-indigo-400 animate-pulse mb-2" />
               <h3 className="text-sm font-mono text-indigo-300 uppercase tracking-widest font-black">Select a somatic region center</h3>
               <p className="text-xs text-[#8A94A6] max-w-md mx-auto leading-7 font-light font-sans">
-                Choose one of the somatic groupings above to start decoding its psychosomatic mechanisms.
+                Choose one of the somatic groupings above to start exploring its patterns.
               </p>
             </div>
           ) : (

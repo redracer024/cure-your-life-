@@ -1,8 +1,14 @@
-# Production Deployment Checklist
+# Production Deployment Checklist — BodySignal
 
+> **Product:** BodySignal
+> **Tagline:** Explore the whole pattern.
+>
 > Last updated: 2026-08-07
 > Applies to: web deployment to a production domain.
 > Does NOT apply to: Google Play / Android. This app is web-only.
+>
+> Final production domain, SMTP sender name, email templates, and app-store identity
+> should all use **BodySignal** after domain selection.
 
 ---
 

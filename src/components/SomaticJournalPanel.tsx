@@ -481,7 +481,7 @@ export default function SomaticJournalPanel({ initialPromptData }: SomaticJourna
     };
   });
 
-  // Generate active diagnostic report based on radar data
+  // Generate insight report based on radar data
   const getRadarInsights = () => {
     if (entries.length === 0) {
       return {
@@ -771,7 +771,7 @@ export default function SomaticJournalPanel({ initialPromptData }: SomaticJourna
               <span>HOW IT WORKS</span>
             </div>
             <p className="text-[11px] text-slate-400 leading-relaxed font-sans">
-              Logging a symptom links your emotional state to biological reflexes. The decoder automatically maps your inputs to psychosomatic nerve triggers, giving you a customized diagnostic verdict.
+              Logging a symptom links your emotional state to biological reflexes. The decoder automatically maps your inputs to somatic patterns, giving you a customized reflection.
             </p>
           </div>
         </div>

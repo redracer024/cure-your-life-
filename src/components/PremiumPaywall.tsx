@@ -2,6 +2,7 @@ import React from 'react';
 import { X, Sparkles, Check, Shield, CreditCard } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { usePremium } from '../context/PremiumContext';
+import { PRODUCT_NAME } from '../lib/brand';
 
 interface PremiumPaywallProps {
   authFetch: (url: string, options?: RequestInit) => Promise<Response>;
@@ -33,7 +34,7 @@ export const PremiumPaywall: React.FC<PremiumPaywallProps> = ({ authFetch }) => 
               <div className="space-y-1.5 text-left">
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-500/10 border border-amber-500/20 rounded-full text-[11px] font-mono text-amber-400 uppercase tracking-widest font-black mb-2">
                   <Sparkles className="w-3.5 h-3.5" />
-                  <span>Cure Your Life+ Premium Elite</span>
+                  <span>{PRODUCT_NAME} Premium</span>
                 </div>
                 <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-white leading-none">
                   Unlock Premium <span className="text-amber-400">Homeostasis</span>

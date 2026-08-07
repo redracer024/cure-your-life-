@@ -1,5 +1,6 @@
 import React from 'react';
 import { AlertOctagon, ChevronRight } from 'lucide-react';
+import { PRODUCT_NAME, PRODUCT_TAGLINE } from '../lib/brand';
 
 export const AppHeader: React.FC = () => {
     return (
@@ -19,11 +20,11 @@ export const AppHeader: React.FC = () => {
             <div className="space-y-2">
                 <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter font-display leading-none">
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-300">
-                        CURE YOUR LIFE
+                        {PRODUCT_NAME}
                     </span>
                 </h1>
                 <p className="text-sm text-slate-500 max-w-lg font-light leading-7">
-                    Decode the emotional patterns, somatic metaphors, and physical signals behind your chronic symptoms.
+                    {PRODUCT_TAGLINE}
                 </p>
             </div>
         </>

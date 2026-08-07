@@ -2,6 +2,7 @@ import React from 'react';
 import { LegalPagesModal } from './legal/LegalPagesModal';
 import { LEGAL_DOC_ORDER, LEGAL_DOCS } from '../lib/legal/legalDocs';
 import { openLegalDoc } from '../lib/legal/legalPagesStore';
+import { PRODUCT_NAME } from '../lib/brand';
 
 export const AppFooter: React.FC = () => {
     return (
@@ -19,7 +20,7 @@ export const AppFooter: React.FC = () => {
                     </p>
                 </div>
                 <div className="shrink-0 text-slate-600 text-[10px] md:text-right">
-                    <span>© {new Date().getFullYear()} Cure Your Life+. Educational Reflection Protocol.</span>
+                    <span>© {new Date().getFullYear()} {PRODUCT_NAME}. Educational Reflection Protocol.</span>
                     <br />
                     <span>Not a substitute for medical diagnostics or therapeutics.</span>
                 </div>

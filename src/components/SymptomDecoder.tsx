@@ -39,7 +39,7 @@ export const SymptomDecoder: React.FC<SymptomDecoderProps> = ({
                     <span className="text-indigo-500">Decoder</span>
                 </h1>
                 <p className="text-base text-slate-400 max-w-2xl leading-7 font-light">
-                    Can't find your specific aches in our dictionary? Enter your customized physical misery and let Dr. Sarcasticus diagnose your subconscious fears and poor ergonomic life choices in real-time.
+                    Can't find your specific aches in our dictionary? Enter your customized physical misery and let Dr. Sarcasticus explore possible subconscious fears and poor ergonomic life choices in real-time.
                 </p>
             </div>
 
@@ -105,7 +105,7 @@ export const SymptomDecoder: React.FC<SymptomDecoderProps> = ({
                     <div className="p-4 bg-amber-500/5 rounded-xl border border-amber-500/20 flex gap-3 items-start">
                         <HelpCircle className="w-4 h-4 text-amber-500 shrink-0 mt-0.5 animate-pulse" />
                         <p className="text-[11px] text-amber-400/90 leading-7 font-mono">
-                            DISCLAIMER: Dr. Sarcasticus is an AI assistant model. His insights are psychosomatically deep and medically accurate, but do not replace your actual real-life doctor if your body is actively complaining of emergency malfunctions.
+                            DISCLAIMER: Dr. Sarcasticus is an AI assistant model. His insights are for exploratory reflection only and are not medically accurate. Do not replace your actual real-life doctor if your body is actively complaining of emergency malfunctions.
                         </p>
                     </div>
                 </div>

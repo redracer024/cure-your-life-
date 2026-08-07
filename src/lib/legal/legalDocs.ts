@@ -25,7 +25,7 @@ export const LEGAL_DOCS: Record<LegalDocId, LegalDocument> = {
     title: 'Privacy Policy',
     updated: 'Last updated: August 3, 2026',
     intro:
-      'This Privacy Policy explains what information Cure Your Life+ collects, where it is stored, how it is used, and the choices you have. By using the app you agree to the practices described here and in the Terms of Service.',
+      'This Privacy Policy explains what information BodySignal collects, where it is stored, how it is used, and the choices you have. By using the app you agree to the practices described here and in the Terms of Service.',
     sections: [
       {
         heading: 'Data stored only on your device',
@@ -87,7 +87,7 @@ export const LEGAL_DOCS: Record<LegalDocId, LegalDocument> = {
     title: 'Terms of Service',
     updated: 'Last updated: August 3, 2026',
     intro:
-      'These Terms of Service govern your use of Cure Your Life+. Please read them carefully. By accessing or using the app, you agree to be bound by these terms and the Privacy Policy.',
+      'These Terms of Service govern your use of BodySignal. Please read them carefully. By accessing or using the app, you agree to be bound by these terms and the Privacy Policy.',
     sections: [
       {
         heading: 'Acceptance of terms',
@@ -97,7 +97,7 @@ export const LEGAL_DOCS: Record<LegalDocId, LegalDocument> = {
       {
         heading: 'Educational purpose',
         body:
-          'Cure Your Life+ provides educational content, reflections, and exploratory assessments about possible mind-body and lifestyle connections. It does not diagnose, treat, cure, or prevent any disease and is not a substitute for professional medical care.',
+          'BodySignal provides educational content, reflections, and exploratory assessments about possible mind-body and lifestyle connections. It does not diagnose, treat, cure, or prevent any disease and is not a substitute for professional medical care.',
       },
       {
         heading: 'Not medical advice',
@@ -122,7 +122,7 @@ export const LEGAL_DOCS: Record<LegalDocId, LegalDocument> = {
       {
         heading: 'Intellectual property',
         body:
-          'The app, its content, design, text, and graphics are owned by or licensed to Cure Your Life+ and are protected by applicable intellectual property laws. You may not copy, modify, distribute, or create derivative works without permission.',
+          'The app, its content, design, text, and graphics are owned by or licensed to BodySignal and are protected by applicable intellectual property laws. You may not copy, modify, distribute, or create derivative works without permission.',
       },
       {
         heading: 'Disclaimers of warranties',
@@ -132,12 +132,12 @@ export const LEGAL_DOCS: Record<LegalDocId, LegalDocument> = {
       {
         heading: 'Limitation of liability',
         body:
-          'To the maximum extent permitted by law, Cure Your Life+ and its operators shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or for any loss of data or profits, arising out of or related to your use of the app. Because the app is educational and not medical, you use it at your own discretion and risk.',
+          'To the maximum extent permitted by law, BodySignal and its operators shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or for any loss of data or profits, arising out of or related to your use of the app. Because the app is educational and not medical, you use it at your own discretion and risk.',
       },
       {
         heading: 'Indemnification',
         body:
-          'You agree to indemnify and hold harmless Cure Your Life+ and its operators from any claims, losses, or expenses arising out of your misuse of the app or your violation of these terms.',
+          'You agree to indemnify and hold harmless BodySignal and its operators from any claims, losses, or expenses arising out of your misuse of the app or your violation of these terms.',
       },
       {
         heading: 'Termination',
@@ -174,7 +174,7 @@ export const LEGAL_DOCS: Record<LegalDocId, LegalDocument> = {
       {
         heading: 'Educational reflection only',
         body:
-          'Cure Your Life+ is an educational reflection tool. It explains possible mind-body patterns and lifestyle-related mechanisms for reflection and awareness. It is not a medical device, not a diagnostic instrument, and not a treatment.',
+          'BodySignal is an educational reflection tool. It explains possible mind-body patterns and lifestyle-related mechanisms for reflection and awareness. It is not a medical device, not a diagnostic instrument, and not a treatment.',
       },
       {
         heading: 'Not a diagnosis',
