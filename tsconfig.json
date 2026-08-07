@@ -22,5 +22,12 @@
     },
     "allowImportingTsExtensions": true,
     "noEmit": true
-  }
+  },
+  "exclude": [
+    "mind/",
+    "tmp-validate/",
+    "node_modules/",
+    "dist/",
+    "supabase/.temp/"
+  ]
 }
