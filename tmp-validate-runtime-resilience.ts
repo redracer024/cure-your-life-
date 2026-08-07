@@ -98,9 +98,9 @@ assert("47. Flaky connection not treated as logout", !useAuthSrc.includes("SIGNE
 // ─── PREMIUM REFRESH ─────────────────────────────────────────────────────
 
 assert("48. Premium fetched from /api/me/premium", usePremiumSrc.includes("/api/me/premium"));
-assert("49. Premium refreshed on SIGNED_IN", useAuthSrc.includes("SIGNED_IN") && useAuthSrc.includes("refreshPremium"));
-assert("50. Premium refreshed on TOKEN_REFRESHED", useAuthSrc.includes("TOKEN_REFRESHED") && useAuthSrc.includes("refreshPremium"));
-assert("51. Premium cleared on SIGNED_OUT", useAuthSrc.includes("SIGNED_OUT") && (useAuthSrc.includes("refreshPremiumStatus") || usePremiumSrc.includes("setIsPremium(false)")));
+assert("49. Premium refreshed on SIGNED_IN (via authStatus transition to PremiumProvider)", usePremiumSrc.includes("authStatus === 'authenticated'") && usePremiumSrc.includes("refreshPremiumStatus"));
+assert("50. Premium refreshed on TOKEN_REFRESHED (via authStatus transition to PremiumProvider)", useAuthSrc.includes("case 'TOKEN_REFRESHED':") && usePremiumSrc.includes("authStatus === 'authenticated'"));
+assert("51. Premium cleared on SIGNED_OUT (via authStatus transition to PremiumProvider)", useAuthSrc.includes("case 'SIGNED_OUT':") && useAuthSrc.includes("'anonymous'") && usePremiumSrc.includes("isClearStatus") && usePremiumSrc.includes("setIsPremium(false)"));
 assert("52. /api/me/premium uses no-store (server-authoritative)", serverSrc.includes('app.get("/api/me/premium"') && serverSrc.includes("setNoStore(res)"));
 assert("53. /api/me/premium returns 401 for unauthenticated", serverSrc.includes('app.get("/api/me/premium"') && serverSrc.includes("401"));
 assert("54. localStorage not trusted for premium (no localStorage set)", !usePremiumSrc.includes("localStorage.setItem") || !usePremiumSrc.includes("isPremium"));
@@ -138,8 +138,8 @@ assert("72. Recovery mode survives authResolved=true", useAuthSrc.includes("mode
 
 // ─── AUTH EVENTS → PREMIUM ───────────────────────────────────────────────
 
-assert("73. PremiumContext passes authUser to usePremiumState", premiumCtxSrc.includes("usePremiumState(auth.authUser)"));
-assert("74. usePremiumState uses authUser as effect dependency", usePremiumSrc.includes("authUser") && usePremiumSrc.includes("refreshPremiumStatus") && usePremiumSrc.includes("useEffect(() => {"));
+assert("73. PremiumContext passes authUser/authStatus/authMode to usePremiumState", premiumCtxSrc.includes("usePremiumState({") && premiumCtxSrc.includes("authUser: auth.authUser") && premiumCtxSrc.includes("authStatus: auth.authStatus"));
+assert("74. usePremiumState uses authUser and authStatus as effect dependencies", usePremiumSrc.includes("authUser") && usePremiumSrc.includes("authStatus") && usePremiumSrc.includes("refreshPremiumStatus") && usePremiumSrc.includes("useEffect(() => {"));
 assert("75. refreshPremiumStatus exposed on PremiumState", usePremiumSrc.includes("refreshPremiumStatus: () => Promise<void>"));
 assert("76. refreshPremiumStatus is stable (useCallback)", usePremiumSrc.includes("useCallback"));
 
@@ -195,7 +195,7 @@ assert("93. build script exists", typeof scripts.build === "string");
 // ─── IMPORT CHECKS ───────────────────────────────────────────────────────
 
 assert("94. AppErrorBoundary imports PRODUCT_NAME from brand", boundarySrc.includes("from '../lib/brand'"));
-assert("95. useAuthState imports usePremium from PremiumContext", useAuthSrc.includes("from '../context/PremiumContext'"));
+assert("95. useAuthState does NOT import usePremium from PremiumContext (circular dependency removed)", !useAuthSrc.includes("from '../context/PremiumContext'") && !useAuthSrc.includes("usePremium"));
 assert("96. usePremiumState imports authFetch", usePremiumSrc.includes("from '../lib/supabaseClient'"));
 
 // ─── MESSAGE SAFETY ──────────────────────────────────────────────────────

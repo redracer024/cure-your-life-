@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback, type FormEvent } from 'react';
 import { supabase } from '../lib/supabaseClient';
 import { getAuthMode, getRecoveryCode, clearAuthParams, type AuthMode } from '../lib/auth/authRedirect';
 import { sanitizeAuthError } from '../lib/auth/authErrorMessages';
-import { usePremium } from '../context/PremiumContext';
 
 export type AuthStatus = 'resolving' | 'authenticated' | 'anonymous' | 'session-expired' | 'temporary-error' | 'recovery' | 'confirm';
 
@@ -44,7 +43,6 @@ function resolveAuthStatus(user: AuthUser | null, resolved: boolean, mode: AuthM
 }
 
 export function useAuthState(): AuthState {
-  const premium = usePremium();
   const [authEmail, setAuthEmail] = useState('');
   const [authPassword, setAuthPassword] = useState('');
   const [authUser, setAuthUser] = useState<AuthUser | null>(null);
@@ -59,14 +57,6 @@ export function useAuthState(): AuthState {
   const [confirmPassword, setConfirmPassword] = useState('');
 
   const [codeExchanged, setCodeExchanged] = useState(false);
-
-  const refreshPremium = useCallback(() => {
-    try {
-      premium.refreshPremiumStatus();
-    } catch {
-      // PremiumProvider may not be mounted yet during initial render.
-    }
-  }, [premium]);
 
   useEffect(() => {
     const search = new URLSearchParams(window.location.search);
@@ -145,19 +135,17 @@ export function useAuthState(): AuthState {
       setAuthUser(user);
       setAuthResolved(true);
 
-      switch (event) {
+        switch (event) {
         case 'SIGNED_IN':
         case 'TOKEN_REFRESHED':
           setAuthStatus('authenticated');
           setAuthMessage(null);
-          refreshPremium();
           break;
         case 'SIGNED_OUT':
           setAuthStatus('anonymous');
           setAuthMessage('Signed out.');
           setAuthMode(null);
           clearAuthParams();
-          try { premium.refreshPremiumStatus(); } catch {}
           break;
         default:
           setAuthStatus(resolveAuthStatus(user, true, null));
@@ -168,7 +156,7 @@ export function useAuthState(): AuthState {
       alive = false;
       listener.subscription.unsubscribe();
     };
-  }, [refreshPremium, premium]);
+  }, []);
 
   async function requestPasswordReset(email: string): Promise<void> {
     if (!supabase) {

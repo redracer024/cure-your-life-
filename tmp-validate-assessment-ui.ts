@@ -462,16 +462,15 @@ function escHtml(value: string): string {
   assert('E: terminal category card renders neutral copy', terminalHtml.includes('No clear expression'));
 
   // Host-level renderToString assertions (open/closed render, dialog semantics,
-  // aria attributes, live region) are omitted here because AuthProvider wraps
-  // PremiumProvider and useAuthState calls usePremium(), creating a circular
-  // context dependency that cannot be resolved in a plain Node/TSX environment.
-  // useAuthState also calls window.location and supabase.auth, which require a
-  // browser runtime. These invariants are verified at the source level in
-  // sections H (accessibility) and O (storage notice channel), and at the
-  // browser level in Playwright tests:
+  // aria attributes, live region) are omitted here because useAuthState calls
+  // window.location and supabase.auth, which require a browser runtime. These
+  // invariants are verified at the source level in sections H (accessibility)
+  // and O (storage notice channel), and at the browser level in Playwright tests:
   //   - tests/assessment/keyboard-focus.spec.ts
   //   - tests/assessment/launch-resume.spec.ts
   //   - tests/assessment/storage-failure.spec.ts
+  // The Auth ↔ Premium circular provider dependency is resolved: useAuthState no
+  // longer imports PremiumContext; PremiumProvider consumes AuthContext below it.
 }
 
 /* ==================================================================

@@ -6,7 +6,11 @@ const PremiumContext = createContext<PremiumState | undefined>(undefined);
 
 export function PremiumProvider({ children }: { children: React.ReactNode }) {
   const auth = useAuth();
-  const premium = usePremiumState(auth.authUser);
+  const premium = usePremiumState({
+    authUser: auth.authUser,
+    authStatus: auth.authStatus,
+    authMode: auth.authMode,
+  });
   return <PremiumContext.Provider value={premium}>{children}</PremiumContext.Provider>;
 }
 

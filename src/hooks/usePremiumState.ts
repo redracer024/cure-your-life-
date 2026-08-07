@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { authFetch } from '../lib/supabaseClient';
+import type { AuthStatus } from './useAuthState';
+import type { AuthMode } from '../lib/auth/authRedirect';
 
 export interface PremiumState {
   isPremium: boolean;
@@ -14,15 +16,29 @@ export interface PremiumState {
   refreshPremiumStatus: () => Promise<void>;
 }
 
-export function usePremiumState(authUser: any): PremiumState {
+interface UsePremiumStateDeps {
+  authUser: { id: string; email?: string } | null;
+  authStatus: AuthStatus;
+  authMode: AuthMode;
+}
+
+export function usePremiumState(deps: UsePremiumStateDeps): PremiumState {
+  const { authUser, authStatus, authMode } = deps;
+
   const [isPremium, setIsPremium] = useState(false);
   const [premiumStatus, setPremiumStatus] = useState<any>(null);
-  const [isPremiumLoading, setIsPremiumLoading] = useState(true);
+  const [isPremiumLoading, setIsPremiumLoading] = useState(false);
   const [billingMessage, setBillingMessage] = useState<string | null>(null);
   const [showPaywall, setShowPaywall] = useState(false);
   const [showBillingInfo, setShowBillingInfo] = useState(false);
 
   const generationRef = useRef(0);
+  const lastAuthenticatedUserIdRef = useRef<string | null>(null);
+
+  const isClearStatus =
+    authStatus === 'anonymous' ||
+    authStatus === 'session-expired';
+
   const refreshPremiumStatus = useCallback(async () => {
     const generation = ++generationRef.current;
     setIsPremiumLoading(true);
@@ -37,7 +53,7 @@ export function usePremiumState(authUser: any): PremiumState {
       const data = await response.json();
       if (generationRef.current !== generation) return;
       setPremiumStatus(data);
-      setIsPremium(Boolean(data.isPremium));
+      setIsPremium(Boolean(data?.isPremium));
     } catch (error) {
       if (generationRef.current !== generation) return;
       console.error('Failed to load premium status:', error);
@@ -51,8 +67,32 @@ export function usePremiumState(authUser: any): PremiumState {
   }, []);
 
   useEffect(() => {
-    refreshPremiumStatus();
-  }, [authUser, refreshPremiumStatus]);
+    if (authStatus === 'authenticated' && authUser) {
+      if (authMode === 'recovery' || authMode === 'confirm') return;
+
+      if (lastAuthenticatedUserIdRef.current === authUser.id) {
+        return;
+      }
+      lastAuthenticatedUserIdRef.current = authUser.id;
+
+      generationRef.current += 1;
+      refreshPremiumStatus();
+      return;
+    }
+
+    if (isClearStatus) {
+      generationRef.current += 1;
+      setPremiumStatus(null);
+      setIsPremium(false);
+      setIsPremiumLoading(false);
+    }
+  }, [authUser, authStatus, authMode, refreshPremiumStatus, isClearStatus]);
+
+  useEffect(() => {
+    if (authStatus === 'authenticated') {
+      lastAuthenticatedUserIdRef.current = authUser?.id ?? null;
+    }
+  }, [authStatus, authUser]);
 
   return {
     isPremium, premiumStatus, isPremiumLoading,
