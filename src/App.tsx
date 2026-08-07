@@ -8,6 +8,7 @@ import { PremiumPaywall } from './components/PremiumPaywall';
 import { AssessmentQuizHost } from './components/quiz/AssessmentQuizHost';
 import { AppFooter } from './components/AppFooter';
 import { TabContentRouter } from './components/layout/TabContentRouter';
+import { AppErrorBoundary } from './components/AppErrorBoundary';
 import { useDecoderState } from './hooks/useDecoderState';
 import { useDictionaryNavigation } from './hooks/useDictionaryNavigation';
 import type { JournalPromptData } from './hooks/useDictionaryNavigation';
@@ -97,7 +98,9 @@ export default function App() {
   return (
     <AuthProvider>
       <PremiumProvider>
-        <AppInner />
+        <AppErrorBoundary>
+          <AppInner />
+        </AppErrorBoundary>
       </PremiumProvider>
     </AuthProvider>
   );

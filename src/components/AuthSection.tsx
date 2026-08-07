@@ -109,9 +109,13 @@ export const AuthSection: React.FC = () => {
           </span>
           <span className="text-[11px] text-slate-400 font-mono">
             {isSupabaseConfigured
-              ? auth.authUser
+              ? auth.authStatus === 'authenticated' && auth.authUser
                 ? `Signed in as ${auth.authUser.email || 'Supabase user'}`
-                : 'Not signed in. Premium can still run in DEV_PREMIUM mode.'
+                : auth.authStatus === 'session-expired'
+                  ? 'Your session has expired. Sign in again to continue account features.'
+                  : auth.authStatus === 'temporary-error'
+                    ? 'Unable to verify your session right now. Premium features may be unavailable.'
+                    : 'Not signed in. Premium can still run in DEV_PREMIUM mode.'
               : 'Frontend Supabase env missing.'}
           </span>
           {premium.premiumStatus?.message && (

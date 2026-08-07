@@ -1,7 +1,10 @@
-import { useState, useEffect, type FormEvent } from 'react';
+import { useState, useEffect, useCallback, type FormEvent } from 'react';
 import { supabase } from '../lib/supabaseClient';
 import { getAuthMode, getRecoveryCode, clearAuthParams, type AuthMode } from '../lib/auth/authRedirect';
 import { sanitizeAuthError } from '../lib/auth/authErrorMessages';
+import { usePremium } from '../context/PremiumContext';
+
+export type AuthStatus = 'resolving' | 'authenticated' | 'anonymous' | 'session-expired' | 'temporary-error' | 'recovery' | 'confirm';
 
 interface AuthUser {
   id: string;
@@ -15,6 +18,7 @@ export interface AuthState {
   setAuthPassword: (password: string) => void;
   authUser: AuthUser | null;
   authResolved: boolean;
+  authStatus: AuthStatus;
   authMessage: string | null;
   authLoading: boolean;
   authMode: AuthMode;
@@ -32,11 +36,20 @@ function getRedirectTo(): string {
   return `${origin}/?auth=recovery`;
 }
 
+function resolveAuthStatus(user: AuthUser | null, resolved: boolean, mode: AuthMode | null): AuthStatus {
+  if (!resolved) return 'resolving';
+  if (user) return 'authenticated';
+  if (mode === 'recovery' || mode === 'confirm') return mode;
+  return 'anonymous';
+}
+
 export function useAuthState(): AuthState {
+  const premium = usePremium();
   const [authEmail, setAuthEmail] = useState('');
   const [authPassword, setAuthPassword] = useState('');
   const [authUser, setAuthUser] = useState<AuthUser | null>(null);
   const [authResolved, setAuthResolved] = useState(false);
+  const [authStatus, setAuthStatus] = useState<AuthStatus>('resolving');
   const [authMessage, setAuthMessage] = useState<string | null>(null);
   const [authLoading, setAuthLoading] = useState(false);
   const [authMode, setAuthMode] = useState<AuthMode>(null);
@@ -46,6 +59,14 @@ export function useAuthState(): AuthState {
   const [confirmPassword, setConfirmPassword] = useState('');
 
   const [codeExchanged, setCodeExchanged] = useState(false);
+
+  const refreshPremium = useCallback(() => {
+    try {
+      premium.refreshPremiumStatus();
+    } catch {
+      // PremiumProvider may not be mounted yet during initial render.
+    }
+  }, [premium]);
 
   useEffect(() => {
     const search = new URLSearchParams(window.location.search);
@@ -82,23 +103,32 @@ export function useAuthState(): AuthState {
 
   useEffect(() => {
     if (!supabase) {
+      setAuthStatus('temporary-error');
       setAuthMessage('Supabase frontend env is missing. Check VITE_SUPABASE_URL and VITE_SUPABASE_PUBLISHABLE_KEY.');
       setAuthResolved(true);
       return;
     }
 
     let alive = true;
+    setAuthStatus('resolving');
+
     supabase.auth
       .getSession()
       .then(({ data }) => {
         if (!alive) return;
-        setAuthUser((data.session?.user as AuthUser | null) ?? null);
+        const user = (data.session?.user as AuthUser | null) ?? null;
+        setAuthUser(user);
         setAuthResolved(true);
+        setAuthStatus(resolveAuthStatus(user, true, null));
       })
-      .catch(() => {
+      .catch((err) => {
         if (!alive) return;
         setAuthUser(null);
         setAuthResolved(true);
+        setAuthStatus('temporary-error');
+        setAuthMessage(err?.message?.includes('Network')
+          ? 'Network error while checking session. Your data is safe.'
+          : 'Could not verify session. Your data is safe.');
       });
 
     const { data: listener } = supabase.auth.onAuthStateChange((event, session) => {
@@ -107,18 +137,38 @@ export function useAuthState(): AuthState {
       if (event === 'PASSWORD_RECOVERY') {
         setAuthMode('recovery');
         setAuthMessage(null);
+        setAuthStatus('recovery');
         return;
       }
 
-      setAuthUser((session?.user as AuthUser | null) ?? null);
+      const user = (session?.user as AuthUser | null) ?? null;
+      setAuthUser(user);
       setAuthResolved(true);
+
+      switch (event) {
+        case 'SIGNED_IN':
+        case 'TOKEN_REFRESHED':
+          setAuthStatus('authenticated');
+          setAuthMessage(null);
+          refreshPremium();
+          break;
+        case 'SIGNED_OUT':
+          setAuthStatus('anonymous');
+          setAuthMessage('Signed out.');
+          setAuthMode(null);
+          clearAuthParams();
+          try { premium.refreshPremiumStatus(); } catch {}
+          break;
+        default:
+          setAuthStatus(resolveAuthStatus(user, true, null));
+      }
     });
 
     return () => {
       alive = false;
       listener.subscription.unsubscribe();
     };
-  }, []);
+  }, [refreshPremium, premium]);
 
   async function requestPasswordReset(email: string): Promise<void> {
     if (!supabase) {
@@ -196,6 +246,7 @@ export function useAuthState(): AuthState {
       if (!login.error) {
         setAuthUser((login.data.user as AuthUser | null) ?? null);
         setAuthResolved(true);
+        setAuthStatus('authenticated');
         setAuthMessage('Signed in.');
         return;
       }
@@ -210,6 +261,7 @@ export function useAuthState(): AuthState {
 
       setAuthUser((signup.data.user as AuthUser | null) ?? null);
       setAuthResolved(true);
+      setAuthStatus('authenticated');
       setAuthMessage(signup.data.session ? 'Account created and signed in.' : 'Account created. Check email.');
     } catch (error: any) {
       setAuthMessage(error.message || 'Supabase auth failed.');
@@ -225,6 +277,7 @@ export function useAuthState(): AuthState {
       await supabase.auth.signOut();
       setAuthUser(null);
       setAuthResolved(true);
+      setAuthStatus('anonymous');
       setAuthMessage('Signed out.');
       setAuthMode(null);
       clearAuthParams();
@@ -238,7 +291,7 @@ export function useAuthState(): AuthState {
   return {
     authEmail, setAuthEmail,
     authPassword, setAuthPassword,
-    authUser, authResolved, authMessage, authLoading,
+    authUser, authResolved, authStatus, authMessage, authLoading,
     authMode,
     recoveryEmail, setRecoveryEmail,
     resetPasswordLoading,
