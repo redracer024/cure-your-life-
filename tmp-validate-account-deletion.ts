@@ -32,18 +32,18 @@ const endpointSrc = endpointMatch ? endpointMatch[0] : '';
 
 console.log('Static endpoint checks');
 assert('1. DELETE /api/me/account exists', endpointSrc.includes('app.delete("/api/me/account"'));
-assert('2. endpoint requires verified JWT', endpointSrc.includes('supabaseAdmin.auth.getUser(token)'));
-assert('3. target derives from verified auth user', endpointSrc.includes('const verifiedUserId = data.user.id'));
+assert('2. endpoint requires verified JWT', endpointSrc.includes('getAuthenticatedSupabaseUser(req)'));
+assert('3. target derives from verified auth user', endpointSrc.includes('const verifiedUserId = user.id'));
 assert('4. body userId cannot control target', !endpointSrc.includes('req.body'));
 assert('5. query userId cannot control target', !endpointSrc.includes('req.query'));
 assert('6. header user ID cannot control target', !endpointSrc.includes('x-user-id'));
-assert('7. missing auth denied', endpointSrc.includes('if (!token)') && endpointSrc.includes('status(401)'));
-assert('8. invalid auth denied', endpointSrc.includes('if (authError || !data.user)') && endpointSrc.includes('status(401)'));
+assert('7. missing auth denied', endpointSrc.includes('if (!user)') && endpointSrc.includes('status(401)'));
+assert('8. invalid auth denied', endpointSrc.includes('getAuthenticatedSupabaseUser(req)') && endpointSrc.includes('status(401)'));
 assert(
   '9. admin.deleteUser only after auth verification',
-  endpointSrc.indexOf('supabaseAdmin.auth.getUser(token)') !== -1 &&
+  endpointSrc.indexOf('getAuthenticatedSupabaseUser(req)') !== -1 &&
     endpointSrc.indexOf('supabaseAdmin.auth.admin.deleteUser(verifiedUserId)') !== -1 &&
-    endpointSrc.indexOf('supabaseAdmin.auth.getUser(token)') < endpointSrc.indexOf('supabaseAdmin.auth.admin.deleteUser(verifiedUserId)'),
+    endpointSrc.indexOf('getAuthenticatedSupabaseUser(req)') < endpointSrc.indexOf('supabaseAdmin.auth.admin.deleteUser(verifiedUserId)'),
 );
 assert('10. raw admin errors not exposed', endpointSrc.includes('Account deletion failed. Please try again.') && !endpointSrc.includes('deleteError.message'));
 assert('11. no explicit table DELETE statements added', !endpointSrc.includes('.from("profiles").delete(') && !endpointSrc.includes('.from("subscriptions").delete(') && !endpointSrc.includes('.from("decoder_reports").delete(') && !endpointSrc.includes('.from("journal_entries").delete('));
@@ -196,8 +196,8 @@ await runFailureCases();
 await runRaceCase();
 await runCleanupFailureCase();
 
-console.log('Scope and unchanged areas checks');
-assert('25. Stripe logic unchanged', !endpointSrc.includes('stripe.') && !endpointSrc.includes('billing'));
+console.log('Scope and billing safety checks');
+assert('25. Stripe cancellation logic added for billing safety', endpointSrc.includes('cancelStripeBillingBeforeAccountDeletion') && endpointSrc.includes('billingResult.status'));
 assert('26. RLS/schema unchanged', fs.existsSync(schemaPath) && fs.existsSync(migrationsPath));
 
 console.log(`\nPassed: ${passed}`);

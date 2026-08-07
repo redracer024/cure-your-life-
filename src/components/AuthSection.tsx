@@ -154,7 +154,7 @@ export const AuthSection: React.FC = () => {
       {auth.authUser && deleteConfirmOpen && (
         <div className="max-w-7xl mx-auto mt-3 rounded-xl border border-red-500/25 bg-red-500/10 px-3 py-3 text-[11px] font-mono text-red-100">
           <p className="leading-relaxed">
-            Account deletion is permanent. Your account and associated account data will be deleted. Browser-local data for this account will be cleared after server confirmation.
+            Account deletion is permanent. Your account and associated account data will be deleted. Any active subscription for this account will be cancelled during deletion. Browser-local data for this account will be cleared after server confirmation.
           </p>
           <label className="block mt-3 text-red-200 uppercase tracking-[0.18em] text-[10px]">Type DELETE to confirm</label>
           <input

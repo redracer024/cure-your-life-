@@ -57,7 +57,7 @@ assert('17. DEV_PREMIUM remains development-only', serverSrc.includes('isDevelop
 
 console.log('Security and scope checks');
 assert('18. raw Stripe errors sanitized', !serverSrc.includes('message: error.message') && !serverSrc.includes('deleteError.message'));
-assert('19. account-deletion billing caveat documented', serverSrc.includes('Release blocker before paid launch') && serverSrc.includes('does not cancel external billing'));
+assert('19. account deletion billing safety documented', serverSrc.includes('cancels externally billable') || serverSrc.includes('cancelStripeBillingBeforeAccountDeletion'));
 assert('20. no Google Play implementation added', !serverSrc.includes('/api/billing/google-play') && !serverSrc.includes('billingclient'));
 assert('21. no RLS weakening in app server code', !serverSrc.includes('alter table public.subscriptions disable row level security'));
 assert('22. no Playwright', !serverSrc.includes('playwright'));

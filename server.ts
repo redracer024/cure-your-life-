@@ -10,6 +10,15 @@ import { createClient } from "@supabase/supabase-js";
 import Stripe from "stripe";
 import dotenv from "dotenv";
 import { isPremiumEntitled } from "./src/lib/billing/entitlement";
+import {
+  getWebhookLedgerClaimDecision,
+  type WebhookLedgerStatus,
+} from "./src/lib/billing/webhookLedger";
+import {
+  isExternallyBillableStripeStatus,
+  isTerminalStripeSubscriptionStatus,
+  normalizeStripeSubscriptionStatus,
+} from "./src/lib/billing/stripeBillingState";
 
 dotenv.config();
 
@@ -49,8 +58,11 @@ app.post("/api/billing/webhook", express.raw({ type: "application/json" }), asyn
 
     switch (claim.outcome) {
       case "already-processed":
-      case "already-processing":
         return res.status(200).json({ received: true });
+      case "active-processing":
+        return res.status(409).json({
+          error: "Webhook event is already being processed."
+        });
       case "claim-failed":
         return res.status(500).json({
           error: "Webhook processing failed."
@@ -118,18 +130,17 @@ const supabaseAdmin = SUPABASE_URL && SUPABASE_SERVICE_ROLE_KEY
     })
   : null;
 
-type StripeWebhookLedgerStatus = "processing" | "processed" | "failed";
-
 type StripeWebhookLedgerRow = {
   id: string;
   stripe_event_id: string;
   event_type: string;
-  status: StripeWebhookLedgerStatus;
+  status: WebhookLedgerStatus;
   created_at: string;
   processed_at: string | null;
   last_error: string | null;
   retry_count: number;
   stripe_created_at: string | null;
+  processing_started_at: string | null;
 };
 
 const getBearerToken = (req: express.Request) => {
@@ -212,7 +223,7 @@ const getStripeWebhookLedgerRow = async (eventId: string): Promise<StripeWebhook
 
   const { data, error } = await supabaseAdmin
     .from("stripe_webhook_events")
-    .select("id,stripe_event_id,event_type,status,created_at,processed_at,last_error,retry_count,stripe_created_at")
+    .select("id,stripe_event_id,event_type,status,created_at,processed_at,last_error,retry_count,stripe_created_at,processing_started_at")
     .eq("stripe_event_id", eventId)
     .limit(1)
     .maybeSingle<StripeWebhookLedgerRow>();
@@ -231,12 +242,14 @@ const claimStripeWebhookEvent = async (params: {
   stripeCreatedAtUnix: number;
 }): Promise<
   | { outcome: "claimed" | "retry-claimed"; ledgerId: string }
-  | { outcome: "already-processed" | "already-processing" | "claim-failed" }
+  | { outcome: "already-processed" | "active-processing" | "claim-failed" }
 > => {
   if (!supabaseAdmin) {
     return { outcome: "claim-failed" };
   }
 
+  const nowIso = new Date().toISOString();
+  const nowMs = Date.parse(nowIso);
   const stripeCreatedAtIso = new Date(params.stripeCreatedAtUnix * 1000).toISOString();
 
   const { data: insertData, error: insertError } = await supabaseAdmin
@@ -246,6 +259,7 @@ const claimStripeWebhookEvent = async (params: {
       event_type: params.eventType,
       status: "processing",
       stripe_created_at: stripeCreatedAtIso,
+      processing_started_at: nowIso,
     })
     .select("id")
     .single<{ id: string }>();
@@ -267,28 +281,57 @@ const claimStripeWebhookEvent = async (params: {
     return { outcome: "claim-failed" };
   }
 
-  if (existing.status === "processed") {
+  const decision = getWebhookLedgerClaimDecision(existing, nowMs);
+
+  if (decision === "already-processed") {
     return { outcome: "already-processed" };
   }
 
-  if (existing.status === "processing") {
-    return { outcome: "already-processing" };
+  if (decision === "active-processing") {
+    return { outcome: "active-processing" };
   }
 
-  const { data: retryData, error: retryError } = await supabaseAdmin
-    .from("stripe_webhook_events")
-    .update({
-      status: "processing",
-      last_error: null,
-      processed_at: null,
-      retry_count: existing.retry_count + 1,
-      event_type: params.eventType,
-      stripe_created_at: stripeCreatedAtIso,
-    })
-    .eq("stripe_event_id", params.eventId)
-    .eq("status", "failed")
-    .select("id")
-    .single<{ id: string }>();
+  const retryPayload = {
+    status: "processing",
+    last_error: null,
+    processed_at: null,
+    retry_count: existing.retry_count + 1,
+    event_type: params.eventType,
+    stripe_created_at: stripeCreatedAtIso,
+    processing_started_at: nowIso,
+  };
+
+  let retryData: { id: string } | null = null;
+  let retryError: any = null;
+
+  if (decision === "reclaim-failed") {
+    const result = await supabaseAdmin
+      .from("stripe_webhook_events")
+      .update(retryPayload)
+      .eq("stripe_event_id", params.eventId)
+      .eq("status", "failed")
+      .select("id")
+      .single<{ id: string }>();
+    retryData = result.data;
+    retryError = result.error;
+  } else {
+    let query = supabaseAdmin
+      .from("stripe_webhook_events")
+      .update(retryPayload)
+      .eq("stripe_event_id", params.eventId)
+      .eq("status", "processing")
+      .eq("retry_count", existing.retry_count);
+
+    query = existing.processing_started_at === null
+      ? query.is("processing_started_at", null)
+      : query.eq("processing_started_at", existing.processing_started_at);
+
+    const result = await query
+      .select("id")
+      .single<{ id: string }>();
+    retryData = result.data;
+    retryError = result.error;
+  }
 
   if (!retryError && retryData?.id) {
     return {
@@ -307,7 +350,7 @@ const claimStripeWebhookEvent = async (params: {
   }
 
   if (refreshed.status === "processing") {
-    return { outcome: "already-processing" };
+    return { outcome: "active-processing" };
   }
 
   return { outcome: "claim-failed" };
@@ -322,6 +365,7 @@ const markStripeWebhookEventProcessed = async (ledgerId: string) => {
       status: "processed",
       processed_at: new Date().toISOString(),
       last_error: null,
+      processing_started_at: null,
     })
     .eq("id", ledgerId);
 
@@ -339,6 +383,7 @@ const markStripeWebhookEventFailed = async (eventId: string, error: unknown) => 
       status: "failed",
       last_error: stripeWebhookErrorSummary(error),
       processed_at: null,
+      processing_started_at: null,
     })
     .eq("stripe_event_id", eventId)
     .eq("status", "processing");
@@ -538,6 +583,127 @@ const reconcileStripeSubscriptionForUser = async (userId: string) => {
   return getLatestSubscriptionForUser(userId);
 };
 
+const markSubscriptionMappingAsCanceled = async (
+  rowId: string,
+  stripeCustomerId: string | null,
+) => {
+  if (!supabaseAdmin) return;
+  await supabaseAdmin
+    .from("subscriptions")
+    .update({
+      status: "canceled",
+      stripe_subscription_id: null,
+      stripe_customer_id: stripeCustomerId,
+      current_period_end: null,
+      updated_at: new Date().toISOString(),
+    })
+    .eq("id", rowId);
+};
+
+const safelyRetrieveStripeSubscription = async (subscriptionId: string) => {
+  if (!stripe) {
+    throw new Error("Stripe client is not configured.");
+  }
+
+  try {
+    const subscription = await stripe.subscriptions.retrieve(subscriptionId);
+    return {
+      state: "found" as const,
+      subscription,
+    };
+  } catch (error: any) {
+    if (error?.code === "resource_missing" || error?.statusCode === 404) {
+      return {
+        state: "missing" as const,
+      };
+    }
+
+    return {
+      state: "error" as const,
+    };
+  }
+};
+
+const cancelStripeBillingBeforeAccountDeletion = async (userId: string) => {
+  const subscriptionRow = await getLatestSubscriptionForUser(userId);
+  if (!subscriptionRow || subscriptionRow.source !== "stripe" || !subscriptionRow.stripe_subscription_id) {
+    return { status: "not-applicable" as const };
+  }
+
+  const canonical = await safelyRetrieveStripeSubscription(subscriptionRow.stripe_subscription_id);
+
+  if (canonical.state === "missing") {
+    await markSubscriptionMappingAsCanceled(subscriptionRow.id, subscriptionRow.stripe_customer_id);
+    return {
+      status: "stale-mapping-cleared" as const,
+    };
+  }
+
+  if (canonical.state === "error") {
+    return {
+      status: "cancel-failed" as const,
+    };
+  }
+
+  const stripeStatus = normalizeStripeSubscriptionStatus(canonical.subscription.status);
+
+  if (isTerminalStripeSubscriptionStatus(stripeStatus)) {
+    await upsertStripeSubscription({
+      userId,
+      status: stripeStatus,
+      stripeCustomerId:
+        typeof canonical.subscription.customer === "string"
+          ? canonical.subscription.customer
+          : canonical.subscription.customer?.id || null,
+      stripeSubscriptionId: canonical.subscription.id,
+      currentPeriodEnd: getSubscriptionPeriodEnd(canonical.subscription),
+    });
+    return {
+      status: "already-terminal" as const,
+    };
+  }
+
+  if (!isExternallyBillableStripeStatus(stripeStatus)) {
+    return {
+      status: "unknown-billing-risk" as const,
+    };
+  }
+
+  if (!stripe) {
+    return {
+      status: "cancel-failed" as const,
+    };
+  }
+
+  try {
+    const canceled = await stripe.subscriptions.cancel(canonical.subscription.id);
+    await upsertStripeSubscription({
+      userId,
+      status: canceled.status,
+      stripeCustomerId:
+        typeof canceled.customer === "string"
+          ? canceled.customer
+          : canceled.customer?.id || null,
+      stripeSubscriptionId: canceled.id,
+      currentPeriodEnd: getSubscriptionPeriodEnd(canceled),
+    });
+    return {
+      status: "canceled-now" as const,
+    };
+  } catch (error: any) {
+    if (error?.code === "resource_missing" || error?.statusCode === 404) {
+      await markSubscriptionMappingAsCanceled(subscriptionRow.id, subscriptionRow.stripe_customer_id);
+      return {
+        status: "stale-mapping-cleared" as const,
+      };
+    }
+
+    return {
+      status: "cancel-failed" as const,
+    };
+  }
+};
+
 const getPremiumStatus = async (req: express.Request): Promise<PremiumStatus> => {
   const { user, error } = await getSupabaseUserFromRequest(req);
 
@@ -598,12 +764,10 @@ app.get("/api/me/premium", async (req: express.Request, res: express.Response) =
   return res.json(await getPremiumStatus(req));
 });
 
-// Deletes the currently authenticated Supabase account and relies on DB-level
-// ON DELETE CASCADE for app-owned rows. This does not cancel external billing
-// subscriptions. Release blocker before paid launch: define and enforce one
-// explicit policy for active paid users (cancel first, block deletion, or
-// explicit billing-retention flow) so account deletion cannot leave recurring
-// Stripe charges unmanaged.
+// Deletes the currently authenticated Supabase account.
+// For Stripe-backed subscriptions, this endpoint cancels externally billable
+// subscriptions first, then deletes the auth user and relies on DB-level ON
+// DELETE CASCADE for app-owned rows. No automatic refund behavior is applied.
 app.delete("/api/me/account", async (req: express.Request, res: express.Response) => {
   if (!supabaseAdmin) {
     return res.status(503).json({
@@ -611,22 +775,27 @@ app.delete("/api/me/account", async (req: express.Request, res: express.Response
     });
   }
 
-  const token = getBearerToken(req);
-  if (!token) {
+  const { user } = await getAuthenticatedSupabaseUser(req);
+  if (!user) {
     return res.status(401).json({
       error: "Authentication is required."
     });
   }
 
-  const { data, error: authError } = await supabaseAdmin.auth.getUser(token);
+  const verifiedUserId = user.id;
 
-  if (authError || !data.user) {
-    return res.status(401).json({
-      error: "Authentication is required."
+  const billingResult = await cancelStripeBillingBeforeAccountDeletion(verifiedUserId);
+  if (billingResult.status === "cancel-failed") {
+    return res.status(502).json({
+      error: "Account deletion could not be completed right now. Please try again."
     });
   }
 
-  const verifiedUserId = data.user.id;
+  if (billingResult.status === "unknown-billing-risk") {
+    return res.status(409).json({
+      error: "Account deletion requires billing review before it can continue."
+    });
+  }
 
   const { error: deleteError } = await supabaseAdmin.auth.admin.deleteUser(verifiedUserId);
 

@@ -21,10 +21,15 @@ const migrationPath = path.join(
   root,
   'supabase/migrations/20260807065356_add_stripe_webhook_event_ledger.sql',
 );
+const leaseMigrationPath = path.join(
+  root,
+  'supabase/migrations/20260807072156_add_stripe_webhook_processing_lease.sql',
+);
 
 const serverSrc = fs.readFileSync(serverPath, 'utf8');
 const serverEnvSrc = fs.readFileSync(serverEnvPath, 'utf8');
 const migrationSql = fs.readFileSync(migrationPath, 'utf8');
+const leaseMigrationSql = fs.readFileSync(leaseMigrationPath, 'utf8');
 
 console.log('Webhook signature and claim lifecycle checks');
 assert(
@@ -36,7 +41,7 @@ assert(
 );
 assert('2. stripe_event_id uniquely persisted', migrationSql.includes('stripe_event_id text not null unique'));
 assert('3. duplicate processed event skips business mutation', serverSrc.includes('case "already-processed":') && serverSrc.includes('return res.status(200).json({ received: true });'));
-assert('4. concurrent duplicate claim is conflict-safe', serverSrc.includes('insertError?.code !== "23505"') && serverSrc.includes('if (existing.status === "processing")'));
+assert('4. concurrent duplicate claim is conflict-safe', serverSrc.includes('insertError?.code !== "23505"') && serverSrc.includes('.eq("retry_count", existing.retry_count)') && serverSrc.includes('.eq("processing_started_at", existing.processing_started_at)'));
 assert('5. failed event may retry', serverSrc.includes('.eq("status", "failed")') && serverSrc.includes('outcome: "retry-claimed"'));
 assert('6. event marked processed only after successful reconciliation', serverSrc.includes('await processStripeWebhookEvent(event);') && serverSrc.includes('await markStripeWebhookEventProcessed(claim.ledgerId);') && serverSrc.indexOf('await processStripeWebhookEvent(event);') < serverSrc.indexOf('await markStripeWebhookEventProcessed(claim.ledgerId);'));
 assert('7. raw webhook payload not persisted', !migrationSql.includes('payload json') && !migrationSql.includes('payload jsonb') && !serverSrc.includes('from("stripe_webhook_events").insert({ payload'));
@@ -46,6 +51,8 @@ assert('8. ledger RLS enabled', migrationSql.includes('alter table public.stripe
 assert('9. no anon ledger policy', !migrationSql.includes('to anon') && !migrationSql.includes('for select using (true)'));
 assert('10. no authenticated ledger policy', !migrationSql.includes('to authenticated'));
 assert('11. service-role/server path used', serverSrc.includes('supabaseAdmin') && serverSrc.includes('from("stripe_webhook_events")'));
+assert('lease column exists for stale recovery', leaseMigrationSql.includes('add column if not exists processing_started_at timestamptz'));
+assert('fresh processing duplicate is retryable (non-2xx)', serverSrc.includes('case "active-processing":') && serverSrc.includes('return res.status(409).json'));
 
 console.log('Canonical reconciliation and event coverage checks');
 assert('12. subscription reconciliation remains canonical', serverSrc.includes('await syncStripeSubscriptionById(') && serverSrc.includes('stripe.subscriptions.retrieve(subscriptionId)'));
@@ -60,7 +67,7 @@ assert('18. reconcile endpoint remains JWT-derived', serverSrc.includes('app.pos
 assert('19. arbitrary customer/subscription IDs rejected', !serverSrc.includes('req.body.customer') && !serverSrc.includes('req.body.subscription'));
 assert('20. DEV_PREMIUM unchanged', serverSrc.includes('isDevelopmentPremiumEnabled(') && serverEnvSrc.includes('devPremium === "true"'));
 assert('21. Stripe secrets not exposed', !serverSrc.includes('service_role_key') && !serverSrc.includes('res.json({ STRIPE_SECRET_KEY') && !serverSrc.includes('res.json({ STRIPE_WEBHOOK_SECRET'));
-assert('22. account deletion caveat retained', serverSrc.includes('Release blocker before paid launch'));
+assert('22. account deletion billing safety retained', serverSrc.includes('cancels externally billable') || serverSrc.includes('cancelStripeBillingBeforeAccountDeletion'));
 assert('23. no Google Play implementation', !serverSrc.includes('/api/billing/google-play') && !serverSrc.includes('googleplay'));
 assert('24. no Playwright', !serverSrc.includes('playwright'));
 
