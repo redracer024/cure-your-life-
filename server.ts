@@ -1,6 +1,10 @@
 import express from "express";
 import path from "path";
 import { createServer as createViteServer } from "vite";
+import {
+  isDevelopmentEnvironment,
+  isDevelopmentPremiumEnabled,
+} from "./serverEnv";
 import { GoogleGenAI, Type } from "@google/genai";
 import { createClient } from "@supabase/supabase-js";
 import Stripe from "stripe";
@@ -75,16 +79,13 @@ type PremiumStatus = {
   message?: string;
 };
 
-const parseBooleanEnv = (value: string | undefined, fallback = false) => {
-  if (value === undefined) return fallback;
-  return ["1", "true", "yes", "on"].includes(value.trim().toLowerCase());
-};
-
-// Development stays usable by default. Production requires a real premium source.
-// Set DEV_PREMIUM=false locally if you want to test the locked/free state.
-const DEV_PREMIUM = parseBooleanEnv(
-  process.env.DEV_PREMIUM,
-  process.env.NODE_ENV !== "production"
+// Fail-closed premium authorization.
+//
+// Dev premium bypass requires BOTH NODE_ENV=development AND DEV_PREMIUM=true
+// (exact lowercase literal). Any unset or unexpected value never grants Pro.
+const DEV_PREMIUM = isDevelopmentPremiumEnabled(
+  process.env.NODE_ENV,
+  process.env.DEV_PREMIUM
 );
 
 const PREMIUM_ACCESS_TOKEN = process.env.PREMIUM_ACCESS_TOKEN || "";
@@ -592,9 +593,10 @@ User's self-reported lifestyle habits/context: "${habits || 'Not provided'}"`;
   }
 });
 
-// Serve static assets in development or production
+// Serve static assets in production; Vite dev middleware ONLY for an explicit
+// development environment. Absent NODE_ENV must never trigger dev middleware.
 async function startServer() {
-  if (process.env.NODE_ENV !== "production") {
+  if (isDevelopmentEnvironment(process.env.NODE_ENV)) {
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",
