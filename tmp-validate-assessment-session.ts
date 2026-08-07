@@ -978,6 +978,7 @@ assert('deserialize: not-started stage accepted', (() => {
   for (const file of walk(srcDir)) {
     if (file.endsWith('assessmentSession.ts')) continue;
     if (file.endsWith('assessmentSessionStorage.ts')) continue;
+    if (file.endsWith('assessmentOwnerCleanup.ts')) continue;
     if (file.includes('src/components/quiz/')) continue;
     if (file.endsWith('assessmentUiModel.ts')) continue;
     const content = fs.readFileSync(file, 'utf8');
@@ -986,6 +987,13 @@ assert('deserialize: not-started stage accepted', (() => {
     }
   }
   assert('preservation: no other src file references the assessment session module', violators.length === 0, violators.join(', '));
+
+  const deleteAccountSource = fs.readFileSync(
+    path.join(import.meta.dirname, 'src/lib/account/deleteAccount.ts'),
+    'utf8',
+  );
+  assert('preservation: deleteAccount.ts does not import assessmentSessionStorage', !deleteAccountSource.includes("from '../quiz/assessmentSessionStorage'"));
+  assert('preservation: deleteAccount.ts imports assessmentOwnerCleanup', deleteAccountSource.includes("from '../quiz/assessmentOwnerCleanup'"));
 
   const appSource = fs.readFileSync(path.join(import.meta.dirname, 'src/App.tsx'), 'utf8');
   assert('preservation: App.tsx does not import the new module', !appSource.includes('assessmentSession'));

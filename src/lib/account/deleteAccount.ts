@@ -1,8 +1,8 @@
 import {
-  clearAssessmentSession,
+  clearAssessmentOwnerData,
   type AssessmentStorageOwner,
   type AssessmentSessionClearResult,
-} from '../quiz/assessmentSessionStorage';
+} from '../quiz/assessmentOwnerCleanup';
 import { clearJournalEntries } from '../storage/journalStorage';
 import { clearReflectionLogs } from '../storage/reflectionStorage';
 import type { OwnerListClearStatus, StorageOwner } from '../storage/ownerScopedStorage';
@@ -27,13 +27,13 @@ export interface DeleteAccountDependencies {
   clearReflection: (owner: StorageOwner) => OwnerListClearStatus;
   signOut: () => Promise<void>;
   getCurrentUserId: () => string | null;
-}
+};
 
 const defaultDependencies: DeleteAccountDependencies = {
   requestDelete: async () => {
     throw new Error('requestDelete dependency is required');
   },
-  clearAssessment: clearAssessmentSession,
+  clearAssessment: clearAssessmentOwnerData,
   clearJournal: clearJournalEntries,
   clearReflection: clearReflectionLogs,
   signOut: async () => {},

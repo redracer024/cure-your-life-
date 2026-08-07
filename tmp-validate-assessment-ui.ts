@@ -823,7 +823,8 @@ function escHtml(value: string): string {
   );
 
   const storageSource = fs.readFileSync(path.join(import.meta.dirname, 'src/lib/quiz/assessmentSessionStorage.ts'), 'utf8');
-  assert('P: storage key contract preserved', storageSource.includes("ASSESSMENT_SESSION_STORAGE_KEY = 'cure-life-assessment-session'"));
+  const ownerCleanupSource = fs.readFileSync(path.join(import.meta.dirname, 'src/lib/quiz/assessmentOwnerCleanup.ts'), 'utf8');
+  assert('P: storage key contract preserved', (storageSource.includes("ASSESSMENT_SESSION_STORAGE_KEY = 'cure-life-assessment-session'") || ownerCleanupSource.includes("ASSESSMENT_SESSION_STORAGE_KEY = 'cure-life-assessment-session'")));
   assert('P: storage result unions preserved', storageSource.includes("type AssessmentSessionSaveStatus") && storageSource.includes("type AssessmentSessionLoadStatus") && storageSource.includes("type AssessmentSessionClearStatus"));
 
   const orchestratorSource = fs.readFileSync(path.join(import.meta.dirname, 'src/lib/quiz/assessmentSession.ts'), 'utf8');
