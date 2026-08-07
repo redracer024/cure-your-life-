@@ -41,31 +41,32 @@ app.post("/api/billing/webhook", express.raw({ type: "application/json" }), asyn
   }
 
   try {
-    switch (event.type) {
-      case "checkout.session.completed": {
-        const session = event.data.object as Stripe.Checkout.Session;
-        await syncStripeCheckoutSession(session);
-        break;
-      }
-      case "customer.subscription.created":
-      case "customer.subscription.updated":
-      case "customer.subscription.deleted": {
-        const subscription = event.data.object as Stripe.Subscription;
-        await syncStripeSubscription(subscription);
-        break;
-      }
-      case "invoice.paid":
-      case "invoice.payment_failed": {
-        const invoice = event.data.object as Stripe.Invoice;
-        await syncStripeInvoice(invoice);
-        break;
-      }
-      default:
-        break;
-    }
+    const claim = await claimStripeWebhookEvent({
+      eventId: event.id,
+      eventType: event.type,
+      stripeCreatedAtUnix: event.created,
+    });
 
-    return res.json({ received: true });
-  } catch (error: any) {
+    switch (claim.outcome) {
+      case "already-processed":
+      case "already-processing":
+        return res.status(200).json({ received: true });
+      case "claim-failed":
+        return res.status(500).json({
+          error: "Webhook processing failed."
+        });
+      case "claimed":
+      case "retry-claimed":
+        await processStripeWebhookEvent(event);
+        await markStripeWebhookEventProcessed(claim.ledgerId);
+        return res.json({ received: true });
+      default:
+        return res.status(500).json({
+          error: "Webhook processing failed."
+        });
+    }
+  } catch (error: unknown) {
+    await markStripeWebhookEventFailed(event.id, error);
     console.error("Stripe webhook processing failed:", error);
     return res.status(500).json({
       error: "Webhook processing failed."
@@ -116,6 +117,20 @@ const supabaseAdmin = SUPABASE_URL && SUPABASE_SERVICE_ROLE_KEY
       },
     })
   : null;
+
+type StripeWebhookLedgerStatus = "processing" | "processed" | "failed";
+
+type StripeWebhookLedgerRow = {
+  id: string;
+  stripe_event_id: string;
+  event_type: string;
+  status: StripeWebhookLedgerStatus;
+  created_at: string;
+  processed_at: string | null;
+  last_error: string | null;
+  retry_count: number;
+  stripe_created_at: string | null;
+};
 
 const getBearerToken = (req: express.Request) => {
   const header = req.headers.authorization || "";
@@ -184,6 +199,153 @@ const getAuthenticatedSupabaseUser = async (req: express.Request) => {
   }
 
   return { user: data.user, error: null };
+};
+
+const stripeWebhookErrorSummary = (error: unknown): string => {
+  if (!error) return "Unknown processing error.";
+  if (error instanceof Error) return `${error.name}: ${error.message}`.slice(0, 500);
+  return String(error).slice(0, 500);
+};
+
+const getStripeWebhookLedgerRow = async (eventId: string): Promise<StripeWebhookLedgerRow | null> => {
+  if (!supabaseAdmin) return null;
+
+  const { data, error } = await supabaseAdmin
+    .from("stripe_webhook_events")
+    .select("id,stripe_event_id,event_type,status,created_at,processed_at,last_error,retry_count,stripe_created_at")
+    .eq("stripe_event_id", eventId)
+    .limit(1)
+    .maybeSingle<StripeWebhookLedgerRow>();
+
+  if (error) {
+    console.error("Stripe webhook ledger read failed.");
+    return null;
+  }
+
+  return data ?? null;
+};
+
+const claimStripeWebhookEvent = async (params: {
+  eventId: string;
+  eventType: string;
+  stripeCreatedAtUnix: number;
+}): Promise<
+  | { outcome: "claimed" | "retry-claimed"; ledgerId: string }
+  | { outcome: "already-processed" | "already-processing" | "claim-failed" }
+> => {
+  if (!supabaseAdmin) {
+    return { outcome: "claim-failed" };
+  }
+
+  const stripeCreatedAtIso = new Date(params.stripeCreatedAtUnix * 1000).toISOString();
+
+  const { data: insertData, error: insertError } = await supabaseAdmin
+    .from("stripe_webhook_events")
+    .insert({
+      stripe_event_id: params.eventId,
+      event_type: params.eventType,
+      status: "processing",
+      stripe_created_at: stripeCreatedAtIso,
+    })
+    .select("id")
+    .single<{ id: string }>();
+
+  if (!insertError && insertData?.id) {
+    return {
+      outcome: "claimed",
+      ledgerId: insertData.id,
+    };
+  }
+
+  if (insertError?.code !== "23505") {
+    console.error("Stripe webhook ledger insert failed.");
+    return { outcome: "claim-failed" };
+  }
+
+  const existing = await getStripeWebhookLedgerRow(params.eventId);
+  if (!existing) {
+    return { outcome: "claim-failed" };
+  }
+
+  if (existing.status === "processed") {
+    return { outcome: "already-processed" };
+  }
+
+  if (existing.status === "processing") {
+    return { outcome: "already-processing" };
+  }
+
+  const { data: retryData, error: retryError } = await supabaseAdmin
+    .from("stripe_webhook_events")
+    .update({
+      status: "processing",
+      last_error: null,
+      processed_at: null,
+      retry_count: existing.retry_count + 1,
+      event_type: params.eventType,
+      stripe_created_at: stripeCreatedAtIso,
+    })
+    .eq("stripe_event_id", params.eventId)
+    .eq("status", "failed")
+    .select("id")
+    .single<{ id: string }>();
+
+  if (!retryError && retryData?.id) {
+    return {
+      outcome: "retry-claimed",
+      ledgerId: retryData.id,
+    };
+  }
+
+  const refreshed = await getStripeWebhookLedgerRow(params.eventId);
+  if (!refreshed) {
+    return { outcome: "claim-failed" };
+  }
+
+  if (refreshed.status === "processed") {
+    return { outcome: "already-processed" };
+  }
+
+  if (refreshed.status === "processing") {
+    return { outcome: "already-processing" };
+  }
+
+  return { outcome: "claim-failed" };
+};
+
+const markStripeWebhookEventProcessed = async (ledgerId: string) => {
+  if (!supabaseAdmin) return;
+
+  const { error } = await supabaseAdmin
+    .from("stripe_webhook_events")
+    .update({
+      status: "processed",
+      processed_at: new Date().toISOString(),
+      last_error: null,
+    })
+    .eq("id", ledgerId);
+
+  if (error) {
+    console.error("Stripe webhook ledger mark-processed failed.");
+  }
+};
+
+const markStripeWebhookEventFailed = async (eventId: string, error: unknown) => {
+  if (!supabaseAdmin) return;
+
+  const { error: updateError } = await supabaseAdmin
+    .from("stripe_webhook_events")
+    .update({
+      status: "failed",
+      last_error: stripeWebhookErrorSummary(error),
+      processed_at: null,
+    })
+    .eq("stripe_event_id", eventId)
+    .eq("status", "processing");
+
+  if (updateError) {
+    console.error("Stripe webhook ledger mark-failed failed.");
+  }
 };
 
 
@@ -320,6 +482,31 @@ const syncStripeInvoice = async (invoice: Stripe.Invoice) => {
   await syncStripeSubscriptionById(subscriptionId, null);
 };
 
+const processStripeWebhookEvent = async (event: Stripe.Event) => {
+  switch (event.type) {
+    case "checkout.session.completed": {
+      const session = event.data.object as Stripe.Checkout.Session;
+      await syncStripeCheckoutSession(session);
+      return;
+    }
+    case "customer.subscription.created":
+    case "customer.subscription.updated":
+    case "customer.subscription.deleted": {
+      const subscription = event.data.object as Stripe.Subscription;
+      await syncStripeSubscription(subscription);
+      return;
+    }
+    case "invoice.paid":
+    case "invoice.payment_failed": {
+      const invoice = event.data.object as Stripe.Invoice;
+      await syncStripeInvoice(invoice);
+      return;
+    }
+    default:
+      return;
+  }
+};
+
 
 const getLatestSubscriptionForUser = async (userId: string) => {
   if (!supabaseAdmin) return null;
@@ -338,6 +525,17 @@ const getLatestSubscriptionForUser = async (userId: string) => {
   }
 
   return data;
+};
+
+const reconcileStripeSubscriptionForUser = async (userId: string) => {
+  const subscription = await getLatestSubscriptionForUser(userId);
+  const stripeSubscriptionId = subscription?.stripe_subscription_id || null;
+
+  if (subscription?.source === "stripe" && stripeSubscriptionId) {
+    await syncStripeSubscriptionById(stripeSubscriptionId, userId);
+  }
+
+  return getLatestSubscriptionForUser(userId);
 };
 
 const getPremiumStatus = async (req: express.Request): Promise<PremiumStatus> => {
@@ -572,12 +770,7 @@ app.post("/api/me/subscription/reconcile", async (req: express.Request, res: exp
   }
 
   try {
-    const subscription = await getLatestSubscriptionForUser(user.id);
-    const stripeSubscriptionId = subscription?.stripe_subscription_id || null;
-
-    if (subscription?.source === "stripe" && stripeSubscriptionId) {
-      await syncStripeSubscriptionById(stripeSubscriptionId, user.id);
-    }
+    await reconcileStripeSubscriptionForUser(user.id);
 
     return res.json(await getPremiumStatus(req));
   } catch (error) {
