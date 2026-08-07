@@ -324,6 +324,45 @@ app.get("/api/me/premium", async (req: express.Request, res: express.Response) =
   return res.json(await getPremiumStatus(req));
 });
 
+// Deletes the currently authenticated Supabase account and relies on DB-level
+// ON DELETE CASCADE for app-owned rows. This does not cancel external billing
+// subscriptions.
+app.delete("/api/me/account", async (req: express.Request, res: express.Response) => {
+  if (!supabaseAdmin) {
+    return res.status(503).json({
+      error: "Account deletion is not available right now."
+    });
+  }
+
+  const token = getBearerToken(req);
+  if (!token) {
+    return res.status(401).json({
+      error: "Authentication is required."
+    });
+  }
+
+  const { data, error: authError } = await supabaseAdmin.auth.getUser(token);
+
+  if (authError || !data.user) {
+    return res.status(401).json({
+      error: "Authentication is required."
+    });
+  }
+
+  const verifiedUserId = data.user.id;
+
+  const { error: deleteError } = await supabaseAdmin.auth.admin.deleteUser(verifiedUserId);
+
+  if (deleteError) {
+    console.error("Account deletion failed.");
+    return res.status(500).json({
+      error: "Account deletion failed. Please try again."
+    });
+  }
+
+  return res.status(200).json({ deleted: true });
+});
+
 // Placeholder checkout endpoint. This intentionally does not create a live Stripe session yet.
 // Next Stripe step: install stripe, create a real checkout session here using STRIPE_SECRET_KEY
 // and STRIPE_PRICE_ID, then return session.url.
