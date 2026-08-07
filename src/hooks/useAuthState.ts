@@ -1,12 +1,18 @@
 import { useState, useEffect, type FormEvent } from 'react';
 import { supabase } from '../lib/supabaseClient';
 
+interface AuthUser {
+  id: string;
+  email?: string;
+}
+
 export interface AuthState {
   authEmail: string;
   setAuthEmail: (email: string) => void;
   authPassword: string;
   setAuthPassword: (password: string) => void;
-  authUser: any;
+  authUser: AuthUser | null;
+  authResolved: boolean;
   authMessage: string | null;
   authLoading: boolean;
   handleAuthSubmit: (e: FormEvent) => Promise<void>;
@@ -16,24 +22,36 @@ export interface AuthState {
 export function useAuthState(): AuthState {
   const [authEmail, setAuthEmail] = useState('');
   const [authPassword, setAuthPassword] = useState('');
-  const [authUser, setAuthUser] = useState<any>(null);
+  const [authUser, setAuthUser] = useState<AuthUser | null>(null);
+  const [authResolved, setAuthResolved] = useState(false);
   const [authMessage, setAuthMessage] = useState<string | null>(null);
   const [authLoading, setAuthLoading] = useState(false);
 
   useEffect(() => {
     if (!supabase) {
       setAuthMessage('Supabase frontend env is missing. Check VITE_SUPABASE_URL and VITE_SUPABASE_PUBLISHABLE_KEY.');
+      setAuthResolved(true);
       return;
     }
 
     let alive = true;
-    supabase.auth.getSession().then(({ data }) => {
-      if (!alive) return;
-      setAuthUser(data.session?.user ?? null);
-    });
+    supabase.auth
+      .getSession()
+      .then(({ data }) => {
+        if (!alive) return;
+        setAuthUser((data.session?.user as AuthUser | null) ?? null);
+        setAuthResolved(true);
+      })
+      .catch(() => {
+        if (!alive) return;
+        setAuthUser(null);
+        setAuthResolved(true);
+      });
 
     const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
-      setAuthUser(session?.user ?? null);
+      if (!alive) return;
+      setAuthUser((session?.user as AuthUser | null) ?? null);
+      setAuthResolved(true);
     });
 
     return () => {
@@ -61,7 +79,8 @@ export function useAuthState(): AuthState {
       const login = await supabase.auth.signInWithPassword({ email, password: authPassword });
 
       if (!login.error) {
-        setAuthUser(login.data.user);
+        setAuthUser((login.data.user as AuthUser | null) ?? null);
+        setAuthResolved(true);
         setAuthMessage('Signed in.');
         return;
       }
@@ -74,7 +93,8 @@ export function useAuthState(): AuthState {
 
       if (signup.error) throw signup.error;
 
-      setAuthUser(signup.data.user);
+      setAuthUser((signup.data.user as AuthUser | null) ?? null);
+      setAuthResolved(true);
       setAuthMessage(signup.data.session ? 'Account created and signed in.' : 'Account created. Check email.');
     } catch (error: any) {
       setAuthMessage(error.message || 'Supabase auth failed.');
@@ -89,6 +109,7 @@ export function useAuthState(): AuthState {
     try {
       await supabase.auth.signOut();
       setAuthUser(null);
+      setAuthResolved(true);
       setAuthMessage('Signed out.');
     } catch (error: any) {
       setAuthMessage(error.message || 'Logout failed.');
@@ -100,7 +121,7 @@ export function useAuthState(): AuthState {
   return {
     authEmail, setAuthEmail,
     authPassword, setAuthPassword,
-    authUser, authMessage, authLoading,
+    authUser, authResolved, authMessage, authLoading,
     handleAuthSubmit, handleLogout,
   };
 }

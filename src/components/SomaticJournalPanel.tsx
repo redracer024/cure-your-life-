@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { SomaticJournalEntry } from '../types';
 import { searchCoreAilments } from '../data';
+import { authFetch } from '../lib/supabaseClient';
 import { 
   Plus, 
   BookOpen, 
@@ -30,6 +31,14 @@ import {
   Tooltip 
 } from 'recharts';
 import type { JournalPromptData } from '../hooks/useDictionaryNavigation';
+import { useAuth } from '../context/AuthContext';
+import {
+  loadJournalEntries,
+  saveJournalEntries,
+  getJournalOwnerKey,
+} from '../lib/storage/journalStorage';
+import { resolveListOwner } from '../lib/storage/ownerScopedStorage';
+import type { StorageOwner } from '../lib/storage/ownerScopedStorage';
 
 interface SomaticJournalPanelProps {
   initialPromptData?: JournalPromptData | null;
@@ -47,6 +56,53 @@ export default function SomaticJournalPanel({ initialPromptData }: SomaticJourna
   const [filterEmotion, setFilterEmotion] = useState('All');
   const [activePrompt, setActivePrompt] = useState<JournalPromptData | null>(null);
   const [reflectionResponse, setReflectionResponse] = useState('');
+
+  const auth = useAuth();
+  const ownerRef = useRef<StorageOwner | null>(null);
+  const ownerKeyRef = useRef<string | null>(null);
+  const ownerEpochRef = useRef(0);
+
+  // Resolve the explicit owner only once auth ownership is settled.
+  const owner = resolveListOwner(auth.authResolved, auth.authUser);
+
+  // Track the owner the in-memory state belongs to. Any ownership change must
+  // invalidate prior in-memory data immediately.
+  useEffect(() => {
+    if (!auth.authResolved) {
+      ownerRef.current = null;
+      ownerKeyRef.current = null;
+      ownerEpochRef.current += 1;
+      setEntries([]);
+      return;
+    }
+    if (!owner) {
+      setEntries([]);
+      return;
+    }
+    const key = getJournalOwnerKey(owner);
+    if (ownerKeyRef.current === key) return;
+
+    ownerKeyRef.current = key;
+    ownerRef.current = owner;
+    ownerEpochRef.current += 1;
+    const epoch = ownerEpochRef.current;
+    // Invalidate prior owner's in-memory entries immediately on switch.
+    setEntries([]);
+
+    const loaded = loadJournalEntries(owner);
+    if (epoch !== ownerEpochRef.current) return;
+    if (loaded.status === 'loaded') {
+      setEntries(loaded.items as SomaticJournalEntry[]);
+      return;
+    }
+    // Anonymous owner with no data receives the demo seed, persisted to their
+    // own anonymous namespace. Signed-in owners get an empty journal.
+    if (owner.kind === 'anonymous') {
+      const seeded = [...DEMO_SEED];
+      setEntries(seeded);
+      saveJournalEntries(seeded, owner);
+    }
+  }, [auth.authResolved, owner]);
 
   // Handle incoming journal prompt from pattern detail
   useEffect(() => {
@@ -69,18 +125,9 @@ export default function SomaticJournalPanel({ initialPromptData }: SomaticJourna
     "Micro-managing", "Stubborn", "Guilty", "Grieving", "Numb"
   ];
 
-  // Load entries from localStorage on mount
-  useEffect(() => {
-    const saved = localStorage.getItem('somatic_journal_logs');
-    if (saved) {
-      try {
-        setEntries(JSON.parse(saved));
-      } catch (e) {
-        console.error("Failed to parse journal logs", e);
-      }
-    } else {
-      // Preseed with more than 8 (9 entries) beautiful, humorous records
-      const preseeded: SomaticJournalEntry[] = [
+  // Seeded demo journal entries, shown only to an anonymous owner with no
+  // saved data yet. Stored per-owner in the anonymous namespace.
+  const DEMO_SEED: SomaticJournalEntry[] = [
         {
           id: "sje-pre-1",
           date: "Jul 3, 2026, 05:45 PM",
@@ -172,16 +219,18 @@ export default function SomaticJournalPanel({ initialPromptData }: SomaticJourna
           intensity: 8
         }
       ];
-      setEntries(preseeded);
-      localStorage.setItem('somatic_journal_logs', JSON.stringify(preseeded));
-    }
-  }, []);
 
   const handleLogSymptom = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!physicalSymptom.trim() || !emotionalState.trim()) return;
 
     setIsAnalyzing(true);
+
+    // Capture ownership at request start. The AI fetch below is async; if the
+    // owner switches before it resolves, the stale response must never be
+    // appended to the new owner's journal.
+    const startEpoch = ownerEpochRef.current;
+    const startOwner = ownerRef.current;
 
     let connectionText = "No clear correlation found in immediate records.";
     let roastText = "You didn't specify enough bad habits, but I'm sure you have plenty. Drink water.";
@@ -214,7 +263,7 @@ export default function SomaticJournalPanel({ initialPromptData }: SomaticJourna
 
     // Step 2: Try to get real-time customized AI analysis from our endpoint
     try {
-      const response = await fetch('/api/analyze-symptom', {
+      const response = await authFetch('/api/analyze-symptom', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -255,9 +304,17 @@ export default function SomaticJournalPanel({ initialPromptData }: SomaticJourna
       sourcePatternName: activePrompt?.sourcePatternName,
     };
 
+    // Ownership must be unchanged across the async AI fetch. If the user
+    // switched accounts, discard the stale result instead of cross-appending.
+    if (ownerEpochRef.current !== startEpoch || !startOwner) {
+      setIsAnalyzing(false);
+      setReflectionResponse('');
+      return;
+    }
+
     const updated = [newEntry, ...entries];
     setEntries(updated);
-    localStorage.setItem('somatic_journal_logs', JSON.stringify(updated));
+    saveJournalEntries(updated, startOwner);
 
     // Reset inputs
     setPhysicalSymptom('');
@@ -271,8 +328,13 @@ export default function SomaticJournalPanel({ initialPromptData }: SomaticJourna
   const deleteEntry = (id: string) => {
     if (confirm("Are you sure you want to delete this somatic record? Your physical tissues will remember, but this interface will forget.")) {
       const updated = entries.filter(e => e.id !== id);
+      const activeOwner = ownerRef.current;
+      if (!activeOwner) {
+        setEntries(updated);
+        return;
+      }
       setEntries(updated);
-      localStorage.setItem('somatic_journal_logs', JSON.stringify(updated));
+      saveJournalEntries(updated, activeOwner);
     }
   };
 

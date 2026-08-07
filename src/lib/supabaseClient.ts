@@ -1,11 +1,16 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL as string | undefined;
+const viteEnv =
+  (((import.meta as ImportMeta & {
+    env?: Record<string, string | undefined>;
+  }).env ?? {}) as Record<string, string | undefined>);
+
+const supabaseUrl = viteEnv.VITE_SUPABASE_URL as string | undefined;
 
 // Supabase docs may call this either ANON_KEY or PUBLISHABLE_KEY depending on the dashboard/docs version.
 const supabasePublicKey = (
-  import.meta.env.VITE_SUPABASE_ANON_KEY ||
-  import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
+  viteEnv.VITE_SUPABASE_ANON_KEY ||
+  viteEnv.VITE_SUPABASE_PUBLISHABLE_KEY
 ) as string | undefined;
 
 export const isSupabaseConfigured = Boolean(supabaseUrl && supabasePublicKey);

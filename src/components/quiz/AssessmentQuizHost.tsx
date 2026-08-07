@@ -1,7 +1,8 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { motion, AnimatePresence, MotionConfig } from 'motion/react';
-import { X, RotateCcw, Lock, Sparkles, Loader2, ChevronRight } from 'lucide-react';
+import { X, RotateCcw, Lock, Sparkles, Loader2, ChevronRight, Trash2 } from 'lucide-react';
 import { usePremium } from '../../context/PremiumContext';
+import { useAuth } from '../../context/AuthContext';
 import {
   startAssessmentSession,
   recordAssessmentResponse,
@@ -13,6 +14,8 @@ import {
   loadAssessmentSession,
   saveAssessmentSession,
   clearAssessmentSession,
+  getAssessmentSessionStorageKey,
+  type AssessmentStorageOwner,
   type AssessmentSessionSaveResult,
   type AssessmentSessionLoadResult,
   type AssessmentSessionClearResult,
@@ -23,7 +26,21 @@ import {
   getAssessmentStageProgress,
   isAssessmentRetryItem,
   decideAssessmentLaunch,
+  ASSESSMENT_PRIVACY_DISCLOSURE,
+  ASSESSMENT_RESUME_REMINDER,
+  ASSESSMENT_RESULTS_REMINDER,
+  ASSESSMENT_BLOCKED_REMINDER,
+  ASSESSMENT_CLEAR_LABEL,
+  ASSESSMENT_CLEAR_CONFIRM_TITLE,
+  ASSESSMENT_CLEAR_CONFIRM_BODY,
+  ASSESSMENT_CLEAR_CONFIRM_ACTION,
+  ASSESSMENT_CLEAR_CANCEL_ACTION,
+  ASSESSMENT_CLEAR_FAILURE_NOTICE,
+  ASSESSMENT_CONSENT_LABEL,
+  ASSESSMENT_CONSENT_LEGAL_LINK_LABEL,
+  ASSESSMENT_CONSENT_REQUIRED_NOTICE,
 } from '../../lib/quiz/assessmentUiModel';
+import { openLegalDoc } from '../../lib/legal/legalPagesStore';
 import { AssessmentQuestionPanel } from './AssessmentQuestionPanel';
 import { AssessmentResultsPanel } from './AssessmentResultsPanel';
 import type {
@@ -41,6 +58,7 @@ export interface AssessmentQuizHostProps {
 
 type AssessmentQuizUiPhase =
   | 'preparing'
+  | 'intro'
   | 'resume'
   | 'question'
   | 'results'
@@ -53,6 +71,15 @@ function uiPhaseForStage(stage: AssessmentStage): AssessmentQuizUiPhase {
 const MAX_STAGE_TRANSITIONS = 10;
 
 const PREMIUM_LOAD_TIMEOUT_MS = 8000;
+
+function resolveStorageOwner(authResolved: boolean, authUser: unknown): AssessmentStorageOwner | null {
+  if (!authResolved) return null;
+  const candidate = authUser as { id?: unknown } | null;
+  if (candidate && typeof candidate.id === 'string' && candidate.id.trim().length > 0) {
+    return { kind: 'user', userId: candidate.id };
+  }
+  return { kind: 'anonymous' };
+}
 
 function storageNoticeForSave(status: AssessmentSessionSaveResult['status']): string | null {
   switch (status) {
@@ -96,13 +123,29 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
   onClose,
   onNavigateToPattern,
 }) => {
+  const auth = useAuth();
   const premium = usePremium();
+  const storageOwner = useMemo(
+    () => resolveStorageOwner(auth.authResolved, auth.authUser),
+    [auth.authResolved, auth.authUser],
+  );
+  const storageOwnerKey = useMemo(
+    () => (storageOwner ? getAssessmentSessionStorageKey(storageOwner) : null),
+    [storageOwner],
+  );
   const [session, setSession] = useState<AssessmentSession | null>(null);
   const [uiPhase, setUiPhase] = useState<AssessmentQuizUiPhase>('preparing');
   const [notice, setNotice] = useState<string | null>(null);
   const [message, setMessage] = useState('');
   const [blockedSession, setBlockedSession] = useState<AssessmentSession | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [clearConfirming, setClearConfirming] = useState(false);
+  const [consentAccepted, setConsentAccepted] = useState(false);
+  const consentAcceptedRef = useRef(false);
+  const clearOpenerRef = useRef<HTMLElement | null>(null);
+  const clearConfirmingRef = useRef(false);
+  const cancelClearRef = useRef<() => void>(() => {});
+  const cancelRestoreFocusRef = useRef(false);
   const dialogRef = useRef<HTMLDivElement | null>(null);
   const onCloseRef = useRef(onClose);
   const previouslyFocusedRef = useRef<HTMLElement | null>(null);
@@ -110,6 +153,7 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
   const premiumTimeoutRef = useRef<number | null>(null);
   const didTimeoutLaunchRef = useRef(false);
   const navigationIntentRef = useRef(false);
+  const sessionOwnerKeyRef = useRef<string | null>(null);
 
   useEffect(() => {
     onCloseRef.current = onClose;
@@ -126,6 +170,11 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
     if (!isOpen) {
       launchGenerationRef.current++;
       didTimeoutLaunchRef.current = false;
+      sessionOwnerKeyRef.current = null;
+      setClearConfirming(false);
+      clearConfirmingRef.current = false;
+      setConsentAccepted(false);
+      consentAcceptedRef.current = false;
       return;
     }
     if (didTimeoutLaunchRef.current) return;
@@ -133,15 +182,24 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
     setSession(null);
     setBlockedSession(null);
     setNotice(null);
+    setIsSubmitting(false);
     setMessage('Preparing your assessment');
     setUiPhase('preparing');
+    clearOpenerRef.current = null;
+    cancelRestoreFocusRef.current = false;
+
+    if (storageOwner === null) {
+      return () => clearPremiumTimeout();
+    }
+
+    sessionOwnerKeyRef.current = storageOwnerKey;
 
     if (premium.isPremiumLoading) {
       premiumTimeoutRef.current = window.setTimeout(() => {
         if (launchGenerationRef.current !== generation) return;
         premiumTimeoutRef.current = null;
         didTimeoutLaunchRef.current = true;
-        const loaded = loadAssessmentSession();
+        const loaded = loadAssessmentSession(storageOwner);
         if (loaded.status === 'loaded' && loaded.session) {
           const decision = decideAssessmentLaunch(loaded.session, false);
           if (decision.type === 'blocked-pro-session') {
@@ -159,10 +217,11 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
         }
         const freshSession = startAssessmentSession('free');
         setSession(freshSession);
-        setUiPhase('question');
-        setMessage('Assessment started with free access');
+        sessionOwnerKeyRef.current = storageOwnerKey;
+        setUiPhase('intro');
+        setMessage('Your assessment is ready to start');
         setNotice('Pro access could not be verified — continuing with free access.');
-        const saveResult = saveAssessmentSession(freshSession);
+        const saveResult = saveAssessmentSession(freshSession, storageOwner);
         if (saveResult.status !== 'saved') {
           setNotice(storageNoticeForSave(saveResult.status));
         }
@@ -170,7 +229,7 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
       return () => clearPremiumTimeout();
     }
 
-    const loaded = loadAssessmentSession();
+    const loaded = loadAssessmentSession(storageOwner);
     if (loaded.status === 'loaded' && loaded.session) {
       const decision = decideAssessmentLaunch(loaded.session, premium.isPremium);
       if (decision.type === 'blocked-pro-session') {
@@ -191,14 +250,22 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
     const mode: AssessmentMode = premium.isPremium ? 'pro' : 'free';
     const freshSession = startAssessmentSession(mode);
     setSession(freshSession);
-    setUiPhase('question');
-    setMessage('Assessment started');
+    sessionOwnerKeyRef.current = storageOwnerKey;
+    setUiPhase('intro');
+    setMessage('Your assessment is ready to start');
     setNotice(
       storageNoticeForLoad(loaded.status) ??
-        storageNoticeForSave(saveAssessmentSession(freshSession).status),
+        storageNoticeForSave(saveAssessmentSession(freshSession, storageOwner).status),
     );
     return () => clearPremiumTimeout();
-  }, [isOpen, premium.isPremiumLoading, clearPremiumTimeout]);
+  }, [
+    isOpen,
+    premium.isPremiumLoading,
+    premium.isPremium,
+    storageOwner,
+    storageOwnerKey,
+    clearPremiumTimeout,
+  ]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -218,6 +285,10 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         event.preventDefault();
+        if (clearConfirmingRef.current) {
+          cancelClearRef.current();
+          return;
+        }
         onCloseRef.current();
         return;
       }
@@ -265,6 +336,45 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
   }, [isOpen, uiPhase]);
 
   useEffect(() => {
+    if (!isOpen || uiPhase !== 'intro') return;
+    const focusTimer = window.setTimeout(() => {
+      const title = dialogRef.current?.querySelector<HTMLElement>('#assessment-dialog-title');
+      title?.focus?.();
+    }, 0);
+    return () => window.clearTimeout(focusTimer);
+  }, [isOpen, uiPhase]);
+
+  useEffect(() => {
+    if (!isOpen || !clearConfirming) return;
+    const focusTimer = window.setTimeout(() => {
+      const title = dialogRef.current?.querySelector<HTMLElement>('#assessment-clear-confirm-title');
+      title?.focus?.();
+    }, 0);
+    return () => window.clearTimeout(focusTimer);
+  }, [isOpen, clearConfirming]);
+
+  useEffect(() => {
+    if (!isOpen || clearConfirming) return;
+    if (!cancelRestoreFocusRef.current) return;
+    cancelRestoreFocusRef.current = false;
+    const focusTimer = window.setTimeout(() => {
+      const opener = dialogRef.current?.querySelector<HTMLElement>('[data-clear-opener]');
+      opener?.focus?.();
+    }, 0);
+    return () => window.clearTimeout(focusTimer);
+  }, [isOpen, clearConfirming]);
+
+  useEffect(() => {
+    consentAcceptedRef.current = consentAccepted;
+  }, [consentAccepted]);
+
+  useEffect(() => {
+    if (!clearConfirmingRef.current) return;
+    setClearConfirming(false);
+    clearConfirmingRef.current = false;
+  }, [uiPhase]);
+
+  useEffect(() => {
     if (!isOpen || uiPhase !== 'question' || !session) return;
     const currentItemId = getCurrentStageItems(session)[0];
     if (currentItemId && !resolveAssessmentItem(currentItemId)) {
@@ -274,7 +384,7 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
 
   const applySessionUpdate = useCallback(
     (updater: (current: AssessmentSession) => AssessmentSession): AssessmentSession | null => {
-      if (!session) return null;
+      if (!session || !storageOwner || sessionOwnerKeyRef.current !== storageOwnerKey) return null;
       const prevStage = session.stage;
       const prevCurrentItem = getCurrentStageItems(session)[0] ?? null;
       const nextSession = updater(session);
@@ -303,11 +413,11 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
       if (currentItemId !== null && currentItemId !== prevCurrentItem && isAssessmentRetryItem(result, currentItemId)) {
         setMessage('One more chance to answer a previously skipped question');
       }
-      const saveResult = saveAssessmentSession(result);
+      const saveResult = saveAssessmentSession(result, storageOwner);
       setNotice(storageNoticeForSave(saveResult.status));
       return result;
     },
-    [session],
+    [session, storageOwner, storageOwnerKey],
   );
 
   const handleAnswer = useCallback(
@@ -346,24 +456,30 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
 
   const handleResume = useCallback(() => {
     if (!session) return;
+    setClearConfirming(false);
+    clearConfirmingRef.current = false;
     setUiPhase(uiPhaseForStage(session.stage));
     setMessage('Continuing your assessment');
   }, [session]);
 
   const handleRestart = useCallback(() => {
-    const clearResult = clearAssessmentSession();
+    if (!storageOwner || sessionOwnerKeyRef.current !== storageOwnerKey) return;
+    setClearConfirming(false);
+    clearConfirmingRef.current = false;
+    const clearResult = clearAssessmentSession(storageOwner);
     const mode: AssessmentMode = premium.isPremium ? 'pro' : 'free';
     const freshSession = startAssessmentSession(mode);
     setSession(freshSession);
+    sessionOwnerKeyRef.current = storageOwnerKey;
     setBlockedSession(null);
     setUiPhase('question');
     setMessage('Started a new assessment');
     setNotice(storageNoticeForClear(clearResult.status));
-    const saveResult = saveAssessmentSession(freshSession);
+    const saveResult = saveAssessmentSession(freshSession, storageOwner);
     if (saveResult.status !== 'saved') {
       setNotice(storageNoticeForSave(saveResult.status));
     }
-  }, [premium.isPremium]);
+  }, [premium.isPremium, storageOwner, storageOwnerKey]);
 
   const handleNavigateToPattern = useCallback(
     (patternId: string) => {
@@ -376,6 +492,63 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
   const handleClose = useCallback(() => {
     onCloseRef.current();
   }, []);
+
+  const handleStartIntro = useCallback(() => {
+    if (!session) return;
+    if (!consentAcceptedRef.current) {
+      setNotice(ASSESSMENT_CONSENT_REQUIRED_NOTICE);
+      return;
+    }
+    setClearConfirming(false);
+    clearConfirmingRef.current = false;
+    setUiPhase(uiPhaseForStage(session.stage));
+    setMessage('Assessment started');
+  }, [session]);
+
+  const handleClearAssessmentClick = useCallback(() => {
+    if (clearConfirming) return;
+    clearOpenerRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    setClearConfirming(true);
+    clearConfirmingRef.current = true;
+  }, [clearConfirming]);
+
+  const handleClearCancel = useCallback(() => {
+    setClearConfirming(false);
+    clearConfirmingRef.current = false;
+    const opener = clearOpenerRef.current;
+    clearOpenerRef.current = null;
+    opener?.focus?.();
+    cancelRestoreFocusRef.current = true;
+  }, []);
+
+  const handleClearConfirm = useCallback(() => {
+    if (!storageOwner || sessionOwnerKeyRef.current !== storageOwnerKey) return;
+    const clearResult = clearAssessmentSession(storageOwner);
+    const opener = clearOpenerRef.current;
+    clearOpenerRef.current = null;
+    setClearConfirming(false);
+    clearConfirmingRef.current = false;
+    if (clearResult.status === 'remove-failed') {
+      setNotice(ASSESSMENT_CLEAR_FAILURE_NOTICE);
+      opener?.focus?.();
+      cancelRestoreFocusRef.current = true;
+      return;
+    }
+    setNotice(null);
+    setConsentAccepted(false);
+    consentAcceptedRef.current = false;
+    const mode: AssessmentMode = premium.isPremium ? 'pro' : 'free';
+    const freshSession = startAssessmentSession(mode);
+    setSession(freshSession);
+    sessionOwnerKeyRef.current = storageOwnerKey;
+    setBlockedSession(null);
+    setUiPhase('intro');
+    setMessage('Your assessment is ready to start');
+  }, [premium.isPremium, storageOwner, storageOwnerKey]);
+
+  useEffect(() => {
+    cancelClearRef.current = handleClearCancel;
+  }, [handleClearCancel]);
 
   return (
     <MotionConfig reducedMotion="user">
@@ -424,6 +597,48 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
                     <p className="text-sm text-slate-400 font-sans font-light">Preparing your assessment…</p>
                   </motion.div>
                 )}
+                {uiPhase === 'intro' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="p-8 md:p-10 flex flex-col items-center gap-5 text-center"
+                  >
+                    <h2 id="assessment-dialog-title" tabIndex={-1} className="text-2xl md:text-3xl font-black uppercase tracking-tight text-white leading-none outline-none">
+                      Somatic Pattern Assessment
+                    </h2>
+                    <p className="text-sm text-slate-400 max-w-lg mx-auto font-sans font-light leading-7">
+                      {ASSESSMENT_PRIVACY_DISCLOSURE}
+                    </p>
+                    <div className="w-full max-w-lg mx-auto flex flex-col items-start gap-3 text-left">
+                      <label className="flex items-start gap-3 cursor-pointer select-none">
+                        <input
+                          type="checkbox"
+                          checked={consentAccepted}
+                          onChange={(e) => setConsentAccepted(e.target.checked)}
+                          className="mt-0.5 w-4 h-4 accent-indigo-500 cursor-pointer"
+                        />
+                        <span className="text-xs text-slate-400 font-sans font-light leading-6">
+                          {ASSESSMENT_CONSENT_LABEL}
+                        </span>
+                      </label>
+                      <button
+                        onClick={() => openLegalDoc('privacy')}
+                        className="text-[11px] font-mono text-indigo-400 hover:text-indigo-300 uppercase tracking-widest underline underline-offset-4 transition-colors cursor-pointer"
+                      >
+                        {ASSESSMENT_CONSENT_LEGAL_LINK_LABEL}
+                      </button>
+                    </div>
+                    <button
+                      onClick={handleStartIntro}
+                      disabled={!consentAccepted}
+                      className="px-8 py-3.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-black uppercase text-[11px] tracking-widest rounded-xl transition-all shadow-[0_0_20px_rgba(99,102,241,0.3)] cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-2"
+                    >
+                      Start Assessment
+                      <ChevronRight className="w-4 h-4" />
+                    </button>
+                  </motion.div>
+                )}
                 {uiPhase === 'resume' && session && (
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
@@ -437,22 +652,39 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
                     <p className="text-sm text-slate-400 max-w-md mx-auto font-sans font-light leading-7">
                       You have a saved assessment in progress. Pick up where you left off, or start over with a fresh assessment.
                     </p>
-                    <div className="flex flex-col items-center gap-3 pt-2">
-                      <button
-                        onClick={handleResume}
-                        className="px-8 py-3.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-black uppercase text-[11px] tracking-widest rounded-xl transition-all shadow-[0_0_20px_rgba(99,102,241,0.3)] cursor-pointer flex items-center gap-2"
-                      >
-                        Resume
-                        <ChevronRight className="w-4 h-4" />
-                      </button>
-                      <button
-                        onClick={handleRestart}
-                        className="px-5 py-2.5 border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10 text-slate-300 font-mono uppercase text-[11px] tracking-widest rounded-xl transition-all cursor-pointer flex items-center gap-2"
-                      >
-                        <RotateCcw className="w-3.5 h-3.5" />
-                        Start Over
-                      </button>
-                    </div>
+                    {clearConfirming ? (
+                      <ClearAssessmentConfirmation onConfirm={handleClearConfirm} onCancel={handleClearCancel} />
+                    ) : (
+                      <div className="space-y-5">
+                        <p className="text-xs text-slate-500 font-sans font-light leading-6 max-w-md mx-auto">
+                          {ASSESSMENT_RESUME_REMINDER}
+                        </p>
+                        <div className="flex flex-col items-center gap-3 pt-2">
+                          <button
+                            onClick={handleResume}
+                            className="px-8 py-3.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-black uppercase text-[11px] tracking-widest rounded-xl transition-all shadow-[0_0_20px_rgba(99,102,241,0.3)] cursor-pointer flex items-center gap-2"
+                          >
+                            Resume
+                            <ChevronRight className="w-4 h-4" />
+                          </button>
+                          <button
+                            onClick={handleRestart}
+                            className="px-5 py-2.5 border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10 text-slate-300 font-mono uppercase text-[11px] tracking-widest rounded-xl transition-all cursor-pointer flex items-center gap-2"
+                          >
+                            <RotateCcw className="w-3.5 h-3.5" />
+                            Start Over
+                          </button>
+                          <button
+                            onClick={handleClearAssessmentClick}
+                            data-clear-opener
+                            className="px-5 py-2.5 border border-red-500/30 hover:border-red-500/50 bg-red-500/5 hover:bg-red-500/10 text-red-300 font-mono uppercase text-[11px] tracking-widest rounded-xl transition-all cursor-pointer flex items-center gap-2"
+                          >
+                            <Trash2 className="w-3.5 h-3.5" />
+                            {ASSESSMENT_CLEAR_LABEL}
+                          </button>
+                        </div>
+                      </div>
+                    )}
                   </motion.div>
                 )}
                 {uiPhase === 'question' && session && (
@@ -470,12 +702,33 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                   >
-                    <AssessmentResultsPanel
-                      session={session}
-                      onNavigateToPattern={handleNavigateToPattern}
-                      onRestart={handleRestart}
-                      onClose={handleClose}
-                    />
+                    {clearConfirming ? (
+                      <div className="p-8 md:p-10">
+                        <ClearAssessmentConfirmation onConfirm={handleClearConfirm} onCancel={handleClearCancel} />
+                      </div>
+                    ) : (
+                      <div>
+                        <AssessmentResultsPanel
+                          session={session}
+                          onNavigateToPattern={handleNavigateToPattern}
+                          onRestart={handleRestart}
+                          onClose={handleClose}
+                        />
+                        <div className="px-8 pb-8 -mt-4 flex flex-col items-center gap-3">
+                          <p className="text-xs text-slate-500 font-sans font-light leading-6 text-center max-w-md mx-auto">
+                            {ASSESSMENT_RESULTS_REMINDER}
+                          </p>
+                          <button
+                            onClick={handleClearAssessmentClick}
+                            data-clear-opener
+                            className="px-5 py-2.5 border border-red-500/30 hover:border-red-500/50 bg-red-500/5 hover:bg-red-500/10 text-red-300 font-mono uppercase text-[11px] tracking-widest rounded-xl transition-all cursor-pointer flex items-center gap-2"
+                          >
+                            <Trash2 className="w-3.5 h-3.5" />
+                            {ASSESSMENT_CLEAR_LABEL}
+                          </button>
+                        </div>
+                      </div>
+                    )}
                   </motion.div>
                 )}
                 {uiPhase === 'blocked' && (
@@ -485,34 +738,50 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
                     exit={{ opacity: 0, y: -10 }}
                     className="p-8 md:p-10 space-y-6 text-center"
                   >
-                    <div className="space-y-3">
-                      <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-500/10 border border-amber-500/20 rounded-full text-[11px] font-mono text-amber-400 uppercase tracking-widest font-black">
-                        <Lock className="w-3.5 h-3.5" />
-                        <span>Premium Assessment</span>
-                      </div>
-                      <h2 id="assessment-dialog-title" className="text-2xl md:text-3xl font-black uppercase tracking-tight text-white leading-none">
-                        Your Saved Assessment Requires Pro Access
-                      </h2>
-                      <p className="text-sm text-slate-400 max-w-md mx-auto font-sans font-light leading-7">
-                        This assessment was created with Pro access. Upgrade to continue it, or start a new free assessment.
-                      </p>
-                    </div>
-                    <div className="flex flex-col items-center gap-3 pt-2">
-                      <button
-                        onClick={() => premium.setShowPaywall(true)}
-                        className="px-8 py-3.5 bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-600 hover:to-yellow-500 text-black font-black uppercase text-[11px] tracking-widest rounded-xl transition-all shadow-[0_0_20px_rgba(245,158,11,0.3)] cursor-pointer flex items-center gap-2"
-                      >
-                        <Sparkles className="w-4 h-4" />
-                        Upgrade to Pro
-                      </button>
-                      <button
-                        onClick={handleRestart}
-                        className="px-5 py-2.5 border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10 text-slate-300 font-mono uppercase text-[11px] tracking-widest rounded-xl transition-all cursor-pointer flex items-center gap-2"
-                      >
-                        <RotateCcw className="w-3.5 h-3.5" />
-                        Start a Free Assessment
-                      </button>
-                    </div>
+                    {clearConfirming ? (
+                      <ClearAssessmentConfirmation onConfirm={handleClearConfirm} onCancel={handleClearCancel} />
+                    ) : (
+                      <div className="space-y-6">
+                        <div className="space-y-3">
+                          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-500/10 border border-amber-500/20 rounded-full text-[11px] font-mono text-amber-400 uppercase tracking-widest font-black">
+                            <Lock className="w-3.5 h-3.5" />
+                            <span>Premium Assessment</span>
+                          </div>
+                          <h2 id="assessment-dialog-title" className="text-2xl md:text-3xl font-black uppercase tracking-tight text-white leading-none">
+                            Your Saved Assessment Requires Pro Access
+                          </h2>
+                          <p className="text-sm text-slate-400 max-w-md mx-auto font-sans font-light leading-7">
+                            This assessment was created with Pro access. Upgrade to continue it, or start a new free assessment.
+                          </p>
+                          <p className="text-xs text-slate-500 font-sans font-light leading-6 max-w-md mx-auto">
+                            {ASSESSMENT_BLOCKED_REMINDER}
+                          </p>
+                        </div>
+                        <div className="flex flex-col items-center gap-3 pt-2">
+                          <button
+                            onClick={() => premium.setShowPaywall(true)}
+                            className="px-8 py-3.5 bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-600 hover:to-yellow-500 text-black font-black uppercase text-[11px] tracking-widest rounded-xl transition-all shadow-[0_0_20px_rgba(245,158,11,0.3)] cursor-pointer flex items-center gap-2"
+                          >
+                            <Sparkles className="w-4 h-4" />
+                            Upgrade to Pro
+                          </button>
+                          <button
+                            onClick={handleRestart}
+                            className="px-5 py-2.5 border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10 text-slate-300 font-mono uppercase text-[11px] tracking-widest rounded-xl transition-all cursor-pointer flex items-center gap-2"
+                          >
+                            <RotateCcw className="w-3.5 h-3.5" />
+                            Start a Free Assessment
+                          </button>
+                          <button
+                            onClick={handleClearAssessmentClick}
+                            data-clear-opener
+                            className="px-5 py-2.5 border border-red-500/30 hover:border-red-500/50 bg-red-500/5 hover:bg-red-500/10 text-red-300 font-mono uppercase text-[11px] tracking-widest rounded-xl transition-all cursor-pointer flex items-center gap-2"
+                          >
+                            <Trash2 className="w-3.5 h-3.5" />
+                            {ASSESSMENT_CLEAR_LABEL}
+                          </button>
+                        </div>
+                      </div>)}
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -578,5 +847,37 @@ const QuestionStageBody: React.FC<QuestionStageBodyProps> = ({ session, onAnswer
       onAnswer={onAnswer}
       onSkip={onSkip}
     />
+  );
+};
+
+interface ClearAssessmentConfirmationProps {
+  onConfirm: () => void;
+  onCancel: () => void;
+}
+
+const ClearAssessmentConfirmation: React.FC<ClearAssessmentConfirmationProps> = ({ onConfirm, onCancel }) => {
+  return (
+    <div className="flex flex-col items-center gap-4 text-center pt-2">
+      <h3 id="assessment-clear-confirm-title" tabIndex={-1} className="text-xl font-black uppercase tracking-tight text-white leading-none outline-none">
+        {ASSESSMENT_CLEAR_CONFIRM_TITLE}
+      </h3>
+      <p className="text-sm text-slate-400 max-w-md mx-auto font-sans font-light leading-7">
+        {ASSESSMENT_CLEAR_CONFIRM_BODY}
+      </p>
+      <div className="flex items-center justify-center gap-3 pt-1">
+        <button
+          onClick={onCancel}
+          className="px-5 py-2.5 border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10 text-slate-300 font-mono uppercase text-[11px] tracking-widest rounded-xl transition-all cursor-pointer"
+        >
+          {ASSESSMENT_CLEAR_CANCEL_ACTION}
+        </button>
+        <button
+          onClick={onConfirm}
+          className="px-5 py-2.5 bg-red-500/15 border border-red-500/40 hover:bg-red-500/25 text-red-300 font-mono uppercase text-[11px] tracking-widest rounded-xl transition-all cursor-pointer"
+        >
+          {ASSESSMENT_CLEAR_CONFIRM_ACTION}
+        </button>
+      </div>
+    </div>
   );
 };

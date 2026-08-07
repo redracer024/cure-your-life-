@@ -1,4 +1,7 @@
 import React from 'react';
+import { LegalPagesModal } from './legal/LegalPagesModal';
+import { LEGAL_DOC_ORDER, LEGAL_DOCS } from '../lib/legal/legalDocs';
+import { openLegalDoc } from '../lib/legal/legalPagesStore';
 
 export const AppFooter: React.FC = () => {
     return (
@@ -21,6 +24,19 @@ export const AppFooter: React.FC = () => {
                     <span>Not a substitute for medical diagnostics or therapeutics.</span>
                 </div>
             </div>
+            <div className="max-w-7xl mx-auto mt-4 pt-4 border-t border-white/5 flex flex-wrap gap-x-5 gap-y-2 items-center">
+                <span className="text-[10px] text-slate-600 uppercase tracking-wider">Legal & Privacy</span>
+                {LEGAL_DOC_ORDER.map((docId) => (
+                    <button
+                        key={docId}
+                        onClick={() => openLegalDoc(docId)}
+                        className="text-[11px] text-slate-500 hover:text-white transition-colors cursor-pointer uppercase tracking-wider"
+                    >
+                        {LEGAL_DOCS[docId].shortLabel}
+                    </button>
+                ))}
+            </div>
+            <LegalPagesModal />
         </footer>
     );
 };

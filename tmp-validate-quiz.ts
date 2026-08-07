@@ -6,8 +6,7 @@ import {
   EXPRESSION_TO_PARENT,
   STRATEGY_CORE_COMPATIBILITY,
 } from './src/data/quiz/patternTaxonomy';
-import { computeQuizScores, computeQuizResult, emptyQuizScoreState } from './src/lib/quiz/scoringEngine';
-import { computeQuizResultFromLegacyAnswers, getNavigationTarget } from './src/lib/quiz/legacyAdapter';
+import { computeQuizScores, computeQuizResult, emptyQuizScoreState, getNavigationTarget } from './src/lib/quiz/scoringEngine';
 import type { CorePatternId, StrategyPatternId } from './src/types/quiz';
 import { EXPRESSION_CONFIDENCE_THRESHOLD, STRATEGY_COMPATIBILITY_BOOST_FACTOR, NEAR_TIE_FRACTION } from './src/types/quiz';
 
@@ -178,14 +177,12 @@ check(nav2.patternId === 'grief-bearer', `Navigation should go to core (grief-be
 console.log('18. Expression count...');
 check(EXPRESSION_REGISTRY.length === 145, `Expected 145 expressions, got ${EXPRESSION_REGISTRY.length}`);
 
-// 19. Legacy adapter produces valid results
-console.log('19. Legacy adapter test...');
-const legacyAnswers: Array<'A' | 'B' | 'C' | 'D' | 'E' | 'F' | 'G'> = ['A', 'A', 'B', 'C', 'A', 'F', 'G'];
-const legacyResult = computeQuizResultFromLegacyAnswers(legacyAnswers);
-check(legacyResult.strategy !== null, 'Legacy adapter should produce strategy result');
-if (legacyResult.strategy) {
-  check(legacyResult.strategy.id === 'martyr', `Expected martyr from legacy answers (3 A answers), got ${legacyResult.strategy.id}`);
-}
+// 19. Removed legacy adapter is no longer present or imported
+console.log('19. Legacy adapter removal test...');
+import * as fs from 'fs';
+import * as modulePath from 'path';
+const adapterExists = fs.existsSync(modulePath.join(process.cwd(), 'src/lib/quiz/legacyAdapter.ts'));
+check(!adapterExists, 'Removed legacyAdapter.ts should no longer exist');
 
 // 20. No object insertion order dependence
 console.log('20. Order independence test...');

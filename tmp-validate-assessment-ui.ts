@@ -9,10 +9,21 @@ import {
   getAssessmentStageProgress,
   isAssessmentRetryItem,
   decideAssessmentLaunch,
+  ASSESSMENT_PRIVACY_DISCLOSURE,
+  ASSESSMENT_RESUME_REMINDER,
+  ASSESSMENT_RESULTS_REMINDER,
+  ASSESSMENT_BLOCKED_REMINDER,
+  ASSESSMENT_CLEAR_LABEL,
+  ASSESSMENT_CLEAR_CONFIRM_TITLE,
+  ASSESSMENT_CLEAR_CONFIRM_BODY,
+  ASSESSMENT_CLEAR_CONFIRM_ACTION,
+  ASSESSMENT_CLEAR_CANCEL_ACTION,
+  ASSESSMENT_CLEAR_FAILURE_NOTICE,
 } from './src/lib/quiz/assessmentUiModel';
 import { AssessmentQuestionPanel } from './src/components/quiz/AssessmentQuestionPanel';
 import { AssessmentResultsPanel } from './src/components/quiz/AssessmentResultsPanel';
 import { AssessmentQuizHost } from './src/components/quiz/AssessmentQuizHost';
+import type { LegalDocId } from './src/lib/legal/legalDocs';
 import { AuthProvider } from './src/context/AuthContext';
 import { PremiumProvider } from './src/context/PremiumContext';
 import { APPROVED_QUIZ_ITEMS } from './src/data/quiz/approvedQuestions';
@@ -578,7 +589,7 @@ function escHtml(value: string): string {
   const restartStart = hostSource.indexOf('const handleRestart');
   const restartEnd = hostSource.indexOf('const handleClose');
   const openStart = hostSource.indexOf("setUiPhase('preparing')");
-  const openEnd = hostSource.indexOf('}, [isOpen, premium.isPremiumLoading, clearPremiumTimeout]);');
+  const openEnd = hostSource.indexOf('  useEffect(() => {\n    if (!isOpen) return;', openStart);
   const inRange = (index: number, start: number, end: number) => start !== -1 && end !== -1 && index > start && index < end;
   const allInMutationHandlers =
     saveOccurrences.length > 0 &&
@@ -627,7 +638,7 @@ function escHtml(value: string): string {
   assert('L: timeout with saved pro session -> blocked screen', timeoutRegion.includes('blocked-pro-session'));
   assert('L: timeout with saved free session -> resume screen', timeoutRegion.includes("setUiPhase('resume')"));
   assert('L: timeout fresh launch shows single verification notice', timeoutRegion.includes('Pro access could not be verified'));
-  assert('L: timeout fallback still saves the fresh session', timeoutRegion.includes('saveAssessmentSession(freshSession)'));
+  assert('L: timeout fallback still saves the fresh session', timeoutRegion.includes('saveAssessmentSession(freshSession, storageOwner)'));
   assert('L: storage failure overrides the verification notice', timeoutRegion.includes('setNotice(storageNoticeForSave(saveResult.status))'));
 }
 
@@ -698,14 +709,11 @@ function escHtml(value: string): string {
   assert('K: App imports AssessmentQuizHost', appSource.includes("import { AssessmentQuizHost } from './components/quiz/AssessmentQuizHost';"));
   assert('K: App renders AssessmentQuizHost', appSource.includes('<AssessmentQuizHost'));
   assert('K: App no longer imports PersonalityQuiz', !appSource.includes('PersonalityQuiz'));
-  assert('K: rollback surface intact — legacy quiz file unchanged', fs.existsSync(path.join(import.meta.dirname, 'src/components/PersonalityQuiz.tsx')));
-
-  const legacySource = fs.readFileSync(path.join(import.meta.dirname, 'src/components/PersonalityQuiz.tsx'), 'utf8');
-  assert('K: legacy quiz has no references to new modules', !legacySource.includes('AssessmentQuizHost') && !legacySource.includes('assessmentUiModel') && !legacySource.includes('assessmentSession'));
+  assert('Batch 10: legacy PersonalityQuiz component removed', !fs.existsSync(path.join(import.meta.dirname, 'src/components/PersonalityQuiz.tsx')));
+  assert('Batch 10: legacy personalityQuiz data removed', !fs.existsSync(path.join(import.meta.dirname, 'src/data/personalityQuiz.ts')));
+  assert('Batch 10: legacy legacyAdapter removed', !fs.existsSync(path.join(import.meta.dirname, 'src/lib/quiz/legacyAdapter.ts')));
 
   const protectedFiles = [
-    'src/components/PersonalityQuiz.tsx',
-    'src/data/personalityQuiz.ts',
     'src/components/patterns/PatternDictionary.tsx',
     'src/components/ailments/CategoryGrid.tsx',
     'src/components/layout/TabContentRouter.tsx',
@@ -741,12 +749,21 @@ function escHtml(value: string): string {
   const quizDirFiles = fs.readdirSync(quizDir).filter(f => f.endsWith('.ts') || f.endsWith('.tsx'));
   assert('K: components/quiz contains exactly the 3 allowed files', quizDirFiles.length === 3, quizDirFiles.join(', '));
 
+  const excludedDirs = new Set([
+    'node_modules',
+    'dist',
+    'mind',
+    'tests',
+    'playwright-report',
+    'test-results',
+  ]);
+
   const walk = (dir: string): string[] => {
     const out: string[] = [];
     for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
       const full = path.join(dir, entry.name);
       if (entry.isDirectory()) {
-        if (entry.name === 'node_modules' || entry.name === 'dist' || entry.name === 'mind') continue;
+        if (excludedDirs.has(entry.name)) continue;
         out.push(...walk(full));
       } else if (entry.name.endsWith('.ts') || entry.name.endsWith('.tsx')) {
         out.push(full);
@@ -754,13 +771,33 @@ function escHtml(value: string): string {
     }
     return out;
   };
+
+  const toRepoRelative = (file: string): string => path.relative(import.meta.dirname, file).replaceAll('\\', '/');
+
+  const shouldScanAsProductionSource = (repoRelative: string): boolean =>
+    repoRelative.startsWith('src/') || repoRelative === 'server.ts';
+
+  const referencesNewModules = (content: string): boolean =>
+    content.includes('AssessmentQuizHost') || content.includes('assessmentUiModel');
+
+  assert(
+    'K: guard catches forbidden production reference signatures',
+    shouldScanAsProductionSource('src/example.ts') && referencesNewModules("import { AssessmentQuizHost } from './x';"),
+  );
+  assert(
+    'K: test fixtures are excluded from production leakage scan',
+    !shouldScanAsProductionSource('tests/assessment/helpers/assessment.ts'),
+  );
+
   const repoRoot = import.meta.dirname;
   const violators: string[] = [];
   for (const file of walk(repoRoot)) {
-    if (file.includes('src/components/quiz/') || file.endsWith('assessmentUiModel.ts') || file.endsWith('src/App.tsx') || file.endsWith('tmp-validate-assessment-ui.ts') || file.endsWith('tmp-validate-assessment-session.ts') || file.endsWith('tmp-validate-assessment-session-storage.ts')) continue;
+    const relative = toRepoRelative(file);
+    if (!shouldScanAsProductionSource(relative)) continue;
+    if (relative.startsWith('src/components/quiz/') || relative === 'src/lib/quiz/assessmentUiModel.ts' || relative === 'src/App.tsx') continue;
     const content = fs.readFileSync(file, 'utf8');
-    if (content.includes('AssessmentQuizHost') || content.includes('assessmentUiModel')) {
-      violators.push(file);
+    if (referencesNewModules(content)) {
+      violators.push(relative);
     }
   }
   assert('K: no other source file references the new modules', violators.length === 0, violators.join(', '));
@@ -804,6 +841,158 @@ function escHtml(value: string): string {
 }
 
 /* ==================================================================
+ *  R. Batch 6 — privacy disclosure + explicit clear control
+ * ================================================================*/
+
+{
+  const wordCount = (s: string): number => s.trim().split(/\s+/).length;
+
+  const facts = [
+    'stored only in this browser',
+    'this device',
+    'not sent to our servers',
+    'same browser profile',
+    'browser data',
+    'does not',
+    'automatically remove',
+    'reopen',
+    'Pro assessment',
+  ];
+  for (const fact of facts) {
+    assert(`R1: disclosure covers fact — ${fact}`, ASSESSMENT_PRIVACY_DISCLOSURE.includes(fact));
+  }
+  const disclosureWords = wordCount(ASSESSMENT_PRIVACY_DISCLOSURE);
+  assert('R1: full disclosure is under 90 words', disclosureWords < 90, `words ${disclosureWords}`);
+  assert('R2: disclosure appears only on the intro screen', (hostSource.match(/\{ASSESSMENT_PRIVACY_DISCLOSURE\}/g) ?? []).length === 1 && hostSource.includes("uiPhase === 'intro'"));
+  const introStart = hostSource.indexOf("uiPhase === 'intro'");
+  const resumeStart = hostSource.indexOf("uiPhase === 'resume'");
+  const introRegion = hostSource.slice(introStart, resumeStart);
+  assert('R2: intro is in-flow content, not a nested modal', !introRegion.includes('role="dialog"') && (hostSource.match(/role="dialog"/g) ?? []).length === 1);
+  assert('R2: intro has no inline disclosure elsewhere', !hostSource.replace(introRegion, '').includes('{ASSESSMENT_PRIVACY_DISCLOSURE}'));
+  assert('R3: no window.confirm anywhere in the clear flow', !hostSource.includes('window.confirm') && !hostSource.includes('confirm('));
+  assert('R3: no nested dialog role added for confirmation', (hostSource.match(/role="dialog"/g) ?? []).length === 1);
+  assert('R4: resume reminder rendered and under 35 words', hostSource.includes('{ASSESSMENT_RESUME_REMINDER}') && wordCount(ASSESSMENT_RESUME_REMINDER) < 35, `words ${wordCount(ASSESSMENT_RESUME_REMINDER)}`);
+  assert('R5: results reminder rendered and under 35 words', hostSource.includes('{ASSESSMENT_RESULTS_REMINDER}') && wordCount(ASSESSMENT_RESULTS_REMINDER) < 35, `words ${wordCount(ASSESSMENT_RESULTS_REMINDER)}`);
+  assert('R6: blocked reminder rendered and under 35 words', hostSource.includes('{ASSESSMENT_BLOCKED_REMINDER}') && wordCount(ASSESSMENT_BLOCKED_REMINDER) < 35, `words ${wordCount(ASSESSMENT_BLOCKED_REMINDER)}`);
+  assert('R7: clear label rendered on resume, results, and blocked screens', (hostSource.match(/\{ASSESSMENT_CLEAR_LABEL\}/g) ?? []).length === 3);
+  assert('R7: clear control is wired on all three screens', (hostSource.match(/onClick=\{handleClearAssessmentClick\}/g) ?? []).length === 3);
+  assert('R8: no settings page exists for clearing', !hostSource.toLowerCase().includes('settings'));
+  assert('R8: no other clear surface (clear on one channel only)', !hostSource.includes('clearAll') && !hostSource.includes('clearSavedAssessment()'));
+  assert('R9: confirmation flow has heading + body + cancel + action', hostSource.includes('ASSESSMENT_CLEAR_CONFIRM_TITLE') && hostSource.includes('ASSESSMENT_CLEAR_CONFIRM_BODY') && hostSource.includes('ASSESSMENT_CLEAR_CANCEL_ACTION') && hostSource.includes('ASSESSMENT_CLEAR_CONFIRM_ACTION'));
+  assert('R9: confirmation action is a button, not window.confirm', (hostSource.match(/ASSESSMENT_CLEAR_CONFIRM_ACTION/g) ?? []).length === 2 && hostSource.includes('<button'));
+  assert('R9: confirmation provides two explicit actions', (hostSource.match(/onClick=\{onCancel\}/g) ?? []).length === 1 && (hostSource.match(/onClick=\{onConfirm\}/g) ?? []).length === 1);
+  assert('R10: escape cancels the confirmation before closing', hostSource.includes('clearConfirmingRef.current') && hostSource.includes('cancelClearRef.current()') && hostSource.includes('onCloseRef.current()'));
+  assert('R11: focus moves to the confirmation heading or first action', hostSource.includes('#assessment-clear-confirm-title') && hostSource.includes('title?.focus?.()'));
+  assert('R12: focus is restored to the opener on cancel', hostSource.includes('clearOpenerRef.current') && hostSource.includes('opener?.focus?.()'));
+  assert('R13: confirmation is reset on success', (hostSource.match(/setClearConfirming\(false\)/g) ?? []).length >= 3);
+  assert('R13: confirmation is reset on close', hostSource.includes('clearConfirmingRef.current = false'));
+  assert('R13: confirmation is reset on restart and phase transition', hostSource.includes("}, [uiPhase]);") && hostSource.includes('setClearConfirming(false);'));
+  const confirmStart = hostSource.indexOf('const handleClearConfirm');
+  const confirmEnd = hostSource.indexOf('cancelClearRef.current = handleClearCancel');
+  const confirmRegion = confirmStart !== -1 && confirmEnd !== -1 ? hostSource.slice(confirmStart, confirmEnd) : '';
+  assert('R14: clear success starts a fresh in-memory session with a single null notice', confirmRegion.includes('setNotice(null)') && confirmRegion.includes('startAssessmentSession(mode)') && confirmRegion.includes("setUiPhase('intro')"));
+  assert('R14: fresh intro focuses the intro heading', hostSource.includes("uiPhase !== 'intro'") && hostSource.includes('#assessment-dialog-title') && hostSource.includes('title?.focus?.()'));
+  assert('R15: failure shows exactly the one notice and never throws', confirmRegion.includes('ASSESSMENT_CLEAR_FAILURE_NOTICE') && !hostSource.includes('throw new Error') && !confirmRegion.includes('console.'));
+  assert('R15: failure notice copy is exact and key-free', ASSESSMENT_CLEAR_FAILURE_NOTICE === 'Saved assessment could not be cleared. You can continue using the current session.' && !hostSource.includes('cure-life-assessment-session'));
+  assert('R16: clear only touches the storage adapter, never the key', confirmRegion.includes('clearAssessmentSession(storageOwner)') && !confirmRegion.includes('saveAssessmentSession') && !confirmRegion.includes('.setItem') && !confirmRegion.includes('localStorage'));
+  assert('R17: clear never closes the assessment automatically', confirmRegion.length > 0 && !confirmRegion.includes('onCloseRef.current'));
+  assert('R17: clear preserves the current session on failure', confirmRegion.includes('opener?.focus?.()'));
+  assert('R18: Start Over and Retake are preserved', hostSource.includes('Start Over') && resultsPanelSource.includes('Retake'));
+  assert('R18: resume screen still offers Resume and Start Over', hostSource.includes('onClick={handleResume}') && hostSource.includes('onClick={handleRestart}'));
+}
+
+/* ==================================================================
+ *  T. Batch 8 owner-scoped persistence and auth-resolution guards
+ * ================================================================*/
+
+{
+  assert('T1: host derives storage owner from auth state', hostSource.includes('resolveStorageOwner') && hostSource.includes('auth.authResolved') && hostSource.includes('auth.authUser'));
+  assert('T1: auth unresolved keeps owner null', hostSource.includes('if (!authResolved) return null;'));
+  assert('T2: owner key is centrally derived from storage helper', hostSource.includes('getAssessmentSessionStorageKey(storageOwner)'));
+  assert('T2: owner key is memoized and tracked', hostSource.includes('const storageOwnerKey = useMemo('));
+  assert('T3: open lifecycle waits for owner resolution before any load/migration/start', hostSource.includes('if (storageOwner === null)') && hostSource.includes('setUiPhase(\'preparing\')'));
+  assert('T3: no anonymous load happens before owner resolution', !hostSource.includes('loadAssessmentSession({ kind: \'anonymous\' })'));
+
+  const explicitOwnerCalls = [
+    'loadAssessmentSession(storageOwner)',
+    'saveAssessmentSession(freshSession, storageOwner)',
+    'saveAssessmentSession(result, storageOwner)',
+    'clearAssessmentSession(storageOwner)',
+  ];
+  for (const call of explicitOwnerCalls) {
+    assert(`T4: explicit owner call present - ${call}`, hostSource.includes(call));
+  }
+  assert('T4: no ambiguous owner-less storage calls remain', !hostSource.includes('loadAssessmentSession()') && !hostSource.includes('saveAssessmentSession(freshSession)') && !hostSource.includes('saveAssessmentSession(result)') && !hostSource.includes('clearAssessmentSession()'));
+
+  assert('T5: owner generation resets launch state when account owner changes', hostSource.includes('setSession(null);') && hostSource.includes('setBlockedSession(null);') && hostSource.includes('setUiPhase(\'preparing\')'));
+  assert('T5: account switch guard blocks cross-owner mutation saves', hostSource.includes('sessionOwnerKeyRef.current !== storageOwnerKey'));
+  assert('T5: close path clears active owner binding', hostSource.includes('sessionOwnerKeyRef.current = null;'));
+  assert('T5: owner change clears transient submission and clear state', hostSource.includes('setIsSubmitting(false);') && hostSource.includes('setClearConfirming(false);') && hostSource.includes('clearOpenerRef.current = null;'));
+
+  assert('T6: clear and restart are owner-scoped', hostSource.includes('const clearResult = clearAssessmentSession(storageOwner);'));
+  assert('T6: sign-out/account switch does not delete user namespace by default', !hostSource.includes('clearAssessmentSession({ kind: \'anonymous\' })') && !hostSource.includes('clearAssessmentSession({ kind: \'user\''));
+
+  assert('T7: premium timeout and focus guards remain intact', hostSource.includes('PREMIUM_LOAD_TIMEOUT_MS = 8000') && hostSource.includes('clearPremiumTimeout') && hostSource.includes('navigationIntentRef.current'));
+}
+
+/* ==================================================================
+ *  S. Legal pages + assessment consent
+ * ================================================================*/
+
+{
+  const footerSource = fs.readFileSync(path.join(import.meta.dirname, 'src/components/AppFooter.tsx'), 'utf8');
+  const modalSource = fs.readFileSync(path.join(import.meta.dirname, 'src/components/legal/LegalPagesModal.tsx'), 'utf8');
+  const docsSource = fs.readFileSync(path.join(import.meta.dirname, 'src/lib/legal/legalDocs.ts'), 'utf8');
+  const storeSource = fs.readFileSync(path.join(import.meta.dirname, 'src/lib/legal/legalPagesStore.ts'), 'utf8');
+  const LEGAL_DOCS_MODULE = await import('./src/lib/legal/legalDocs');
+  const LEGAL_STORE_MODULE = await import('./src/lib/legal/legalPagesStore');
+
+  const docIds = ['privacy', 'terms', 'disclaimer', 'cookies'];
+  assert('S1: all four legal documents exist in the registry', docIds.every((id) => LEGAL_DOCS_MODULE.LEGAL_DOCS[id as LegalDocId]));
+  assert('S1: doc order matches the four ids', LEGAL_DOCS_MODULE.LEGAL_DOC_ORDER.join(',') === docIds.join(','));
+  for (const id of docIds) {
+    const doc = LEGAL_DOCS_MODULE.LEGAL_DOCS[id as LegalDocId];
+    assert(`S2: ${id} has title, intro, and sections`, Boolean(doc.title) && Boolean(doc.intro) && doc.sections.length >= 5);
+    assert(`S2: ${id} sections have heading and body`, doc.sections.every((s: { heading: string; body: string }) => s.heading && s.body));
+  }
+  assert('S3: privacy doc covers device-local storage', LEGAL_DOCS_MODULE.LEGAL_DOCS.privacy.sections.some((s: { body: string }) => s.body.includes('stored only in this browser')));
+  assert('S3: privacy doc covers not-sent-to-servers', LEGAL_DOCS_MODULE.LEGAL_DOCS.privacy.sections.some((s: { body: string }) => s.body.includes('not sent to our servers')));
+  assert('S3: privacy doc covers deletion', LEGAL_DOCS_MODULE.LEGAL_DOCS.privacy.sections.some((s: { body: string }) => s.body.toLowerCase().includes('clear') && s.body.toLowerCase().includes('delet')));
+  assert('S3: disclaimer doc covers no-diagnosis', LEGAL_DOCS_MODULE.LEGAL_DOCS.disclaimer.sections.some((s: { heading: string; body: string }) => s.heading.toLowerCase().includes('diagnos') || s.body.toLowerCase().includes('diagnos')));
+  assert('S3: disclaimer doc covers do-not-stop-medications', LEGAL_DOCS_MODULE.LEGAL_DOCS.disclaimer.sections.some((s: { body: string }) => s.body.includes('Do not stop insulin') || s.body.includes('Do not start, stop, or change')));
+  assert('S3: terms doc covers no-medical-advice', LEGAL_DOCS_MODULE.LEGAL_DOCS.terms.sections.some((s: { heading: string; body: string }) => s.heading.toLowerCase().includes('medical advice') || s.body.toLowerCase().includes('is medical advice')));
+  assert('S3: cookie doc covers browser storage consent', LEGAL_DOCS_MODULE.LEGAL_DOCS.cookies.sections.some((s: { body: string }) => s.body.toLowerCase().includes('local storage')));
+
+  assert('S4: store exposes open/close/get/subscribe', Boolean(LEGAL_STORE_MODULE.openLegalDoc) && Boolean(LEGAL_STORE_MODULE.closeLegalDocs) && Boolean(LEGAL_STORE_MODULE.getOpenLegalDoc) && Boolean(LEGAL_STORE_MODULE.subscribeLegalDocs));
+  assert('S4: store defaults to closed', LEGAL_STORE_MODULE.getOpenLegalDoc() === null);
+  assert('S4: store open/close round-trips', (() => {
+    LEGAL_STORE_MODULE.openLegalDoc('privacy');
+    const opened = LEGAL_STORE_MODULE.getOpenLegalDoc();
+    LEGAL_STORE_MODULE.closeLegalDocs();
+    return opened === 'privacy' && LEGAL_STORE_MODULE.getOpenLegalDoc() === null;
+  })());
+
+  assert('S5: modal subscribes to the store', modalSource.includes('subscribeLegalDocs'));
+  assert('S5: modal renders a role=dialog', modalSource.includes('role="dialog"'));
+  assert('S5: modal renders all four doc switcher buttons', (modalSource.match(/LEGAL_DOC_ORDER\.map/g) ?? []).length === 1);
+  assert('S5: modal has Escape close', modalSource.includes("event.key === 'Escape'"));
+  assert('S5: modal focuses its heading', modalSource.includes('#legal-dialog-title') && modalSource.includes('title?.focus?.()'));
+  assert('S5: modal has exactly one role=dialog', (modalSource.match(/role="dialog"/g) ?? []).length === 1);
+
+  assert('S6: footer renders the legal modal', footerSource.includes('<LegalPagesModal />'));
+  assert('S6: footer maps each legal doc into a link', (footerSource.match(/LEGAL_DOC_ORDER\.map/g) ?? []).length === 1 && footerSource.includes('onClick={() => openLegalDoc(docId)}'));
+  assert('S6: footer link label comes from the doc registry', footerSource.includes('.shortLabel'));
+
+  assert('S7: intro gates Start on consent', hostSource.includes('ASSESSMENT_CONSENT_LABEL') && hostSource.includes('consentAccepted') && hostSource.includes('disabled={!consentAccepted}'));
+  assert('S7: intro links to the full privacy policy', hostSource.includes("openLegalDoc('privacy')"));
+  assert('S7: consent is reset when the dialog opens', hostSource.includes('setConsentAccepted(false)'));
+  assert('S7: consent resets after a successful clear', hostSource.includes('consentAcceptedRef.current = false'));
+  assert('S7: required-consent notice exists in copy', uiModelSource.includes('ASSESSMENT_CONSENT_REQUIRED_NOTICE'));
+  assert('S7: assessment host still has exactly one role=dialog', (hostSource.match(/role="dialog"/g) ?? []).length === 1);
+  assert('S7: disclosure still appears exactly once', (hostSource.match(/\{ASSESSMENT_PRIVACY_DISCLOSURE\}/g) ?? []).length === 1);
+}
+
+/* ==================================================================
  *  Summary + manual smoke matrix
  * ================================================================*/
 
@@ -843,6 +1032,18 @@ const smokeItems: { id: number; label: string; status: string; note?: string }[]
   { id: 18, label: 'Close never clears saved progress', status: 'pending', note: 'requires browser' },
   { id: 19, label: 'Missing item shows neutral card and skip works', status: 'pending', note: 'requires browser' },
   { id: 20, label: 'Reduced motion preference respected', status: 'pending', note: 'requires browser' },
+  { id: 21, label: 'Fresh start shows intro with full privacy disclosure', status: 'pending', note: 'requires browser' },
+  { id: 22, label: 'Disclosure fits at desktop height with no scrolling', status: 'pending', note: 'requires browser' },
+  { id: 23, label: 'Resume screen shows browser-device reminder + Clear saved assessment', status: 'pending', note: 'requires browser' },
+  { id: 24, label: 'Results screen shows reminder + Clear saved assessment', status: 'pending', note: 'requires browser' },
+  { id: 25, label: 'Blocked-Pro screen shows reminder + Clear saved assessment', status: 'pending', note: 'requires browser' },
+  { id: 26, label: 'Clear opens in-flow confirmation (heading + Cancel/Clear), no window.confirm', status: 'pending', note: 'requires browser' },
+  { id: 27, label: 'Escape cancels confirmation first and restores focus to opener', status: 'pending', note: 'requires browser' },
+  { id: 28, label: 'Confirm clears saved state, returns to fresh intro, focuses intro heading', status: 'pending', note: 'requires browser' },
+  { id: 29, label: 'Confirm failure keeps screen with exactly one notice, no raw errors', status: 'pending', note: 'requires browser' },
+  { id: 30, label: 'Clear removes only the assessment storage key', status: 'pending', note: 'requires browser' },
+  { id: 31, label: 'Clear does not close the assessment; Start Over/Retake still work', status: 'pending', note: 'requires browser' },
+  { id: 32, label: 'Keyboard-only clear flow works (Tab, Enter, Escape)', status: 'pending', note: 'requires browser' },
 ];
 for (const item of smokeItems) {
   console.log(`  ${item.id}. ${item.label} — ${item.status}${item.note ? ` (${item.note})` : ''}`);
