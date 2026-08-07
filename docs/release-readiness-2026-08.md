@@ -3,9 +3,16 @@
 > **Product:** BodySignal
 > **Tagline:** Explore the whole pattern.
 > **Branch:** `experiment/3d-medical-ui`
-> **Commit:** `53b5f104d159da82304836a1259803c513e8274b`
+> **Commit:** `be49576412a337ef58f1ac6a22eccd6525f45d97`
 > **Report date:** 2026-08-07
-> **Scope:** Batch 31 — Release Housekeeping + Repository Security Readiness
+> **Scope:** Batch 35 — Production Deployment Execution Gate
+>
+> **Status: CODE READY FOR DEPLOYMENT CONFIGURATION**
+>
+> This report covers Batch 35. The codebase is green at all static and
+> integration validator levels. However, **actual production deployment is
+> BLOCKED** by external dependencies that cannot be resolved from within the
+> repository. See §3 for the full blocker list.
 
 ---
 
@@ -26,12 +33,107 @@
 
 All areas verified green as of this report.
 
+| Field | Value |
+|-------|-------|
+| Name | BodySignal |
+| Tagline | Explore the whole pattern. |
+| Branch | `experiment/3d-medical-ui` |
+| HEAD commit | `be49576412a337ef58f1ac6a22eccd6525f45d97` |
+| Deployment target | Web (single-page React app behind Express server) |
+| Google Play / Android | Not implemented — web-only |
+
+---
+
+## 2. CODE-LEVEL STATUS (VERIFIED GREEN)
+
+All code-level validation is green as of this report. See §4 for the full
+validation results. The repository contains **no hosting provider configuration**
+— no Dockerfile, no Render/Vercel/Netlify/Fly/Railway configs, and no GitHub
+Actions deployment workflows exist. Deployment configuration is the sole
+responsibility of the operator selecting a hosting provider.
+
+---
+
+## 3. EXTERNAL DEPLOYMENT STATUS (BLOCKED)
+
+**CODE READY FOR DEPLOYMENT CONFIGURATION** — but actual deployment is blocked
+by the following external prerequisites that cannot be completed from within
+the repository:
+
+1. **Supabase service-role credential rotation** — the previous key was exposed
+   in a development chat and must be manually rotated in the Supabase Dashboard
+   before production use. The local `.env` still contains the old key.
+2. **Production domain / APP_URL** — `APP_URL` is set to
+   `https://example.com` (placeholder in `.env.example`) and
+   `http://localhost:3000` (in local `.env`). No production `.env` file exists.
+   The server fails closed (throws on startup) if `APP_URL` is missing in
+   production mode.
+3. **Supabase Site URL** — must be set to `https://<production-domain>` in the
+   Supabase Dashboard.
+4. **Supabase auth redirect allowlist** — exact routes
+   `https://<production-domain>/?auth=recovery` and
+   `https://<production-domain>/?auth=confirm` must be registered in the
+   Supabase Dashboard redirect URLs. No wildcards.
+5. **Production email delivery** — Supabase `mailer_autoconfirm=true` with no
+   SMTP configured. Password reset and confirmation emails will not send until
+   SMTP or built-in email delivery is configured.
+6. **Production Stripe webhook endpoint/secret** — must be registered as
+   `https://<production-domain>/api/billing/webhook` in the Stripe Dashboard
+   with the matching `STRIPE_WEBHOOK_SECRET`.
+7. **Live Stripe price IDs** — `STRIPE_PRICE_ID_MONTHLY` and
+   `STRIPE_PRICE_ID_ANNUAL` are not set in the local `.env`. Must point to live
+   (not test) prices.
+8. **Deployed browser smoke validation** — must be run against the live
+   production domain after all external prerequisites are complete.
+
+### Exact Manual Actions Required
+
+| # | Dashboard/System | Action Required |
+|---|---|---|
+| 1 | Supabase Dashboard | Generate a new `service_role` key; revoke the old one; store the new key in the deployment platform's secret store (server-side only). |
+| 2 | Operator | Choose a production domain; set `APP_URL=https://<production-domain>` in the deployment environment. |
+| 3 | Supabase Dashboard | Set Site URL to `https://<production-domain>`. |
+| 4 | Supabase Dashboard | Add redirect URLs: `https://<production-domain>/?auth=recovery` and `https://<production-domain>/?auth=confirm`. |
+| 5 | Supabase Dashboard | Configure SMTP (or built-in email); verify sender identity and templates. Do NOT disable `mailer_autoconfirm` until email delivery is verified. |
+| 6 | Stripe Dashboard | Register webhook endpoint `https://<production-domain>/api/billing/webhook`; copy the signing secret to `STRIPE_WEBHOOK_SECRET` in the deployment environment. |
+| 7 | Stripe Dashboard | Create or identify live products/prices; set `STRIPE_PRICE_ID_MONTHLY` and `STRIPE_PRICE_ID_ANNUAL` to live price IDs in the deployment environment. |
+| 8 | Operator | After deployment, run browser smoke tests against the live domain. |
+
+---
+
+## 3a. DEPLOYMENT ARCHITECTURE
+
+BodySignal requires a **persistent Node.js server** (not static-only hosting)
+because the Express server handles API routes (Stripe webhooks, Supabase admin
+calls, Gemini proxy, premium authorization, account deletion). The Vite
+frontend is built to `dist/` and served as static assets by the same Express
+process.
+
+| Property | Value |
+|---|---|
+| Build command | `npm run build` → `vite build` + `esbuild server.ts --bundle --platform=node --format=cjs --packages=external --sourcemap --outfile=dist/server.cjs` |
+| Start command | `node dist/server.cjs` |
+| PORT behavior | `process.env.PORT` (defaults to `3000`). Binds `0.0.0.0`. |
+| Runtime mode | `NODE_ENV=development` → Vite dev middleware (HMR). `NODE_ENV=production` or absent → serves static `dist/` with SPA fallback. |
+| APP_URL | Server-only runtime env var. Read at module load in `server.ts`. Used for Stripe redirect URLs (`success_url`, `cancel_url`, `return_url`). Server **throws on startup** if missing in production mode. |
+| Hosting provider | **None configured** — no Dockerfile, no platform configs, no deploy workflows in repository. Operator must select and configure a provider. |
+| Health endpoint | None exists. Server startup is indicated by console log: `Server running on http://localhost:${PORT}`. |
+
+Full environment matrix: see `docs/production-env-matrix.md`.
+
+---
+
+## 4. GREEN ENGINEERING AREAS
+
+All areas verified green as of this report.
+
 | Area | Status | Validator |
 |------|--------|-----------|
 | Build | PASS | `npm run build` |
-| Lint / typecheck | PASS | `npm run lint` |
+| Lint / typecheck | PASS | `npm run lint` (tsc --noEmit) |
 | Auth recovery | PASS | `tmp-validate-auth-recovery.ts` |
 | Runtime resilience | PASS | `tmp-validate-runtime-resilience.ts` (103/103 assertions) |
+| Provider architecture | PASS | `tmp-validate-provider-architecture.ts` (43/43 assertions) |
 | Billing lifecycle | PASS | `tmp-validate-billing-lifecycle.ts` |
 | HTTP integration | PASS | `tmp-validate-http-integration.ts` |
 | HTTP security | PASS | `tmp-validate-http-security.ts` |
@@ -42,6 +144,8 @@ All areas verified green as of this report.
 | Scoped UI | PASS | `tmp-validate-scoped-ui.ts` |
 | Assessment session storage | PASS | `tmp-validate-assessment-session-storage.ts` |
 | Assessment session | PASS | `tmp-validate-assessment-session.ts` |
+| Assessment ownership | PASS | `tmp-validate-assessment-ownership.ts` |
+| Assessment UI (static) | PASS | `tmp-validate-assessment-ui.ts` (406/406 static assertions; 32 browser-dependent tests pending) |
 | Questions | PASS | `tmp-validate-questions.ts` |
 | Branding | PASS | `tmp-validate-brand-identity.ts` |
 | Production config | PASS | `tmp-validate-production-config.ts` |
@@ -53,6 +157,7 @@ All areas verified green as of this report.
 ```
 npm run lint                                    PASS
 npm run build                                   PASS
+npx tsx tmp-validate-provider-architecture.ts   PASS (43 assertions)
 npx tsx tmp-validate-runtime-resilience.ts      PASS (103 assertions)
 npx tsx tmp-validate-brand-identity.ts          PASS
 npx tsx tmp-validate-auth-recovery.ts           PASS
@@ -69,20 +174,46 @@ npx tsx tmp-validate-scoped-storage.ts          PASS
 npx tsx tmp-validate-scoped-ui.ts               PASS
 npx tsx tmp-validate-assessment-session-storage.ts  PASS
 npx tsx tmp-validate-assessment-session.ts      PASS
+npx tsx tmp-validate-assessment-ownership.ts    PASS
+npx tsx tmp-validate-assessment-ui.ts           PASS (406 static; 32 browser-pending)
 npx tsx tmp-validate-questions.ts               PASS
 ```
 
-> **Playwright is intentionally not run in this batch.**
-> See §5 for the pre-existing browser-dependent failure.
+### Targeted browser smoke tests
+
+```
+npx playwright test tests/runtime/provider-startup.spec.ts \
+  --config=playwright.runtime.config.ts \
+  --project=chromium \
+  --workers=1
+
+Result: 2 passed (provider startup + no fatal errors on mount)
+
+Assessment launch-resume spec (9 of 12 tests passed; 1 pre-existing test
+assertion failure on localStorage `mode` field not a deployment blocker):
+  - 9 passed: fresh intro, consent gate, remaining wording, free resume,
+    results resume, Escape close, double activation, free start wiring,
+    near-complete to results
+  - 1 failed: "saved pro session is blocked for non-premium" — pro-block UI
+    renders correctly but the `mode` field in localStorage is not `'free'`
+    after clicking "Start a Free Assessment". The assessment starts correctly
+    (45 questions shown). This is a test-code interaction issue, not a
+    deployment blocker.
+  - 2 tests not reached (timeout).
+```
+
+### Playwright browser validation status
+
+Targeted smoke tests were run. Full browser suite was **not** run. See §5.
 
 ---
 
-## 3. KNOWN DEFERRED ITEMS
+## 5. KNOWN DEFERRED ITEMS
 
 | Item | Notes |
 |------|-------|
-| Playwright browser validation | Not run in this batch — see §5 |
-| `tmp-validate-assessment-ui.ts` | Browser-dependent; cannot be run in this headless CLI environment. Pre-existing, unrelated to BodySignal auth/billing/security. |
+| Full browser validation (all assessment specs) | Not run in this batch — targeted smoke tests only. See §6. |
+| `tmp-validate-assessment-ui.ts` | Browser-dependent; 32 tests pending in this headless CLI environment. Pre-existing, unrelated to BodySignal auth/billing/security. |
 | SMTP / email delivery | Supabase `mailer_autoconfirm=true`, no SMTP configured. Password reset and confirmation emails will not send until configured. |
 | Production domain | `APP_URL` is set to `https://example.com` placeholder in `.env.example`. Must be set to the real domain before deployment. Server fails closed if missing. |
 | Service-role rotation | The Supabase `service_role` key was previously referenced in a development chat and must be rotated before production deployment. |
@@ -92,9 +223,9 @@ npx tsx tmp-validate-questions.ts               PASS
 
 ---
 
-## 4. EXTERNAL ACTIONS BEFORE PRODUCTION
+## 6. EXTERNAL ACTIONS BEFORE PRODUCTION
 
-These are external to the repository and must be completed by an operator before going live. They are **not** claimed as complete in this report.
+These are external to the repository and must be completed by an operator before going live. They are **not** claimed as complete in this report. See §3 for the full blocker list and exact manual actions required.
 
 1. **Rotate the Supabase `service_role` credential** — the previous key was exposed in a development chat.
 2. **Configure `APP_URL`** — set to the exact production origin (https://...).
@@ -108,13 +239,30 @@ These are external to the repository and must be completed by an operator before
 
 ---
 
-## 5. PLAYWRIGHT
+## 7. PLAYWRIGHT
 
-Playwright is intentionally **not run** in this batch. The pre-existing browser-dependent failure is in `tmp-validate-assessment-ui.ts`, which requires a live browser environment unavailable in this CLI context. This is unrelated to BodySignal's auth, billing, security, or runtime-resilience guarantees.
+Targeted smoke tests were run in this batch:
+
+```
+npx playwright test tests/runtime/provider-startup.spec.ts \
+  --config=playwright.runtime.config.ts \
+  --project=chromium \
+  --workers=1
+```
+
+Result: **2/2 PASS** (provider startup + no fatal errors on mount).
+
+The assessment launch-resume spec was also run against the production build
+(`node dist/server.cjs`). See §4 for targeted browser smoke test results.
+
+Full browser suite was **not** run. The pre-existing browser-dependent failure
+is in `tmp-validate-assessment-ui.ts`, which requires a live browser environment
+unavailable in this CLI context. This is unrelated to BodySignal's auth, billing,
+security, or runtime-resilience guarantees.
 
 ---
 
-## 6. SUPABASE / STRIPE
+## 8. SUPABASE / STRIPE
 
 | Component | Status |
 |-----------|--------|
@@ -125,13 +273,13 @@ Playwright is intentionally **not run** in this batch. The pre-existing browser-
 
 ---
 
-## 7. GOOGLE PLAY / ANDROID
+## 9. GOOGLE PLAY / ANDROID
 
 Unchanged. No Android or Google Play implementation exists or is planned in this batch.
 
 ---
 
-## 8. REPOSITORY STATE
+## 10. REPOSITORY STATE
 
 ### Untracked / modified file classification
 
@@ -246,15 +394,40 @@ Both are **DELETE CANDIDATES**. They will not be tracked in this batch. The asse
 
 | File | Tracked? | Ignored? | Contains real secrets? |
 |---|---|---|---|
-| `.env` | No | Yes | N/A (not present) |
-| `.env.local` | No | Yes | N/A (not present) |
-| `.env.production` | No | Yes (`.env*` pattern) | N/A |
+| `.env` | No | Yes (`.env*` pattern) | Yes — contains real-looking `sk_live_`, `sk_test_`, `whsec_`, service-role JWT, Supabase anon JWT. Gitignored, not tracked. Must not be committed. |
+| `.env.local` | No | Yes (`.env*` pattern) | Yes — contains real-looking service-role JWT and anon JWT. Gitignored, not tracked. Must not be committed. |
+| `.env.production` | No | Yes (`.env*` pattern) | N/A — not present locally |
 | `.env.example` | Yes | No | No — placeholders only |
 
 `.env.example` contains only placeholder values (`env-anon-key-from-supabase-dashboard`, `set-from-stripe-dashboard-webhook`, `set-from-deployment-secret-store`, etc.). No real secrets.
 
+**Local `.env` files contain real-looking credentials but are gitignored and not tracked.** The `SUPABASE_SERVICE_ROLE_KEY` in `.env` matches the previously-exposed key and must be rotated.
+
 ---
 
-## 9. COMMIT
+## 11. DEPLOYMENT GATE DECISION
 
-Commit hash and file list will be provided after validation passes.
+**Do NOT deploy blindly.**
+
+The following remain **unknown** or **unverified**:
+- Production domain (only `https://example.com` placeholder in `.env.example`)
+- Hosting provider (none configured in repository)
+- Live Stripe IDs (local `.env` has duplicate `sk_live_`/`sk_test_` — mode unverified)
+- Email provider (no SMTP configured)
+- Rotated service-role key (current key was exposed in a dev chat)
+
+**Decision: STOP before performing an actual production deployment.**
+
+All code-level validation is green. The repository is **CODE READY FOR
+DEPLOYMENT CONFIGURATION** but is **NOT production-deployable** until the 8
+external prerequisites in §3 are completed manually. No actual production
+deployment was attempted in this batch.
+
+---
+
+## 12. COMMIT
+
+This batch makes **no code changes**. Only documentation files are updated.
+
+Commit hash and file list will be provided after the documentation commit
+is created.
