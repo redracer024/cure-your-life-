@@ -12,6 +12,7 @@ export const AuthSection: React.FC = () => {
   const [deleteConfirmText, setDeleteConfirmText] = React.useState('');
   const [deleteInFlight, setDeleteInFlight] = React.useState(false);
   const [deleteMessage, setDeleteMessage] = React.useState<string | null>(null);
+  const [authExpanded, setAuthExpanded] = React.useState(false);
   const currentUserIdRef = React.useRef<string | null>(auth.authUser?.id ?? null);
 
   React.useEffect(() => {
@@ -101,7 +102,7 @@ export const AuthSection: React.FC = () => {
   const isRecoveryMode = auth.authMode === 'recovery' && Boolean(auth.authUser);
 
   return (
-    <div className="border-b border-white/10 bg-black/45 backdrop-blur-xl px-6 md:px-10 py-3 relative z-40">
+    <div className="border-b border-white/10 bg-black/45 backdrop-blur-xl px-6 md:px-10 py-2 md:py-3 relative z-40">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-3 lg:items-center justify-between">
         <div className="flex flex-col gap-1">
           <span className="text-[10px] font-mono uppercase tracking-[0.22em] text-cyan-400 font-black">
@@ -153,29 +154,46 @@ export const AuthSection: React.FC = () => {
             </button>
           </div>
         ) : (
-          <form onSubmit={auth.handleAuthSubmit} className="flex flex-col sm:flex-row gap-2 w-full lg:w-auto">
-            <input
-              type="email"
-              value={auth.authEmail}
-              onChange={(e) => auth.setAuthEmail(e.target.value)}
-              placeholder="email"
-              className="bg-black/50 border border-white/10 rounded-xl px-3 py-2 text-xs text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500/50 w-full sm:min-w-[190px]"
-            />
-            <input
-              type="password"
-              value={auth.authPassword}
-              onChange={(e) => auth.setAuthPassword(e.target.value)}
-              placeholder="password"
-              className="bg-black/50 border border-white/10 rounded-xl px-3 py-2 text-xs text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500/50 w-full sm:min-w-[160px]"
-            />
-            <button
-              type="submit"
-              disabled={auth.authLoading || !isSupabaseConfigured}
-              className="px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black text-[11px] uppercase tracking-widest font-black font-mono disabled:opacity-50 disabled:cursor-not-allowed"
+          <>
+            <div className="sm:hidden">
+              <button
+                type="button"
+                onClick={() => setAuthExpanded((prev) => !prev)}
+                aria-expanded={authExpanded}
+                aria-controls="mobile-auth-form"
+                className="w-full px-4 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black text-[11px] uppercase tracking-widest font-black font-mono"
+              >
+                {authExpanded ? 'HIDE LOGIN' : 'SIGN IN / CREATE'}
+              </button>
+            </div>
+            <form
+              id="mobile-auth-form"
+              onSubmit={auth.handleAuthSubmit}
+              className={`flex flex-col sm:flex-row gap-2 w-full lg:w-auto ${!authExpanded ? 'hidden sm:flex' : ''}`}
             >
-              {auth.authLoading ? 'Working...' : 'Login / Create'}
-            </button>
-          </form>
+              <input
+                type="email"
+                value={auth.authEmail}
+                onChange={(e) => auth.setAuthEmail(e.target.value)}
+                placeholder="email"
+                className="bg-black/50 border border-white/10 rounded-xl px-3 py-2 text-xs text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500/50 w-full sm:min-w-[190px]"
+              />
+              <input
+                type="password"
+                value={auth.authPassword}
+                onChange={(e) => auth.setAuthPassword(e.target.value)}
+                placeholder="password"
+                className="bg-black/50 border border-white/10 rounded-xl px-3 py-2 text-xs text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500/50 w-full sm:min-w-[160px]"
+              />
+              <button
+                type="submit"
+                disabled={auth.authLoading || !isSupabaseConfigured}
+                className="px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black text-[11px] uppercase tracking-widest font-black font-mono disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {auth.authLoading ? 'Working...' : 'Login / Create'}
+              </button>
+            </form>
+          </>
         )}
       </div>
 

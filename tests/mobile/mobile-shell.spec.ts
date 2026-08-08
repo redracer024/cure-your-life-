@@ -46,10 +46,8 @@ test.describe('Mobile Shell', () => {
     await page.goto('/');
     await page.waitForLoadState('networkidle');
 
-    const authSection = page.locator('#auth-section, [class*="AuthSection"], button:has-text("Login / Create")').first();
-    if (await authSection.count() > 0) {
-      await expect(authSection).toBeVisible();
-    }
+    const authToggle = page.locator('button:has-text("SIGN IN / CREATE")').first();
+    await expect(authToggle).toBeVisible();
 
     const overflowX = await page.evaluate(() => {
       const doc = document.documentElement;
@@ -67,5 +65,92 @@ test.describe('Mobile Shell', () => {
 
     const fatalErrors = errors.filter(e => e.includes('SyntaxError') || e.includes('ReferenceError'));
     expect(fatalErrors.length).toBe(0);
+  });
+
+  test('compact SIGN IN / CREATE control is visible on mobile unsigned state', async ({ page }) => {
+    await page.goto('/');
+    await page.waitForLoadState('networkidle');
+
+    const signInButton = page.locator('button:has-text("SIGN IN / CREATE")').first();
+    await expect(signInButton).toBeVisible();
+
+    const emailInput = page.locator('input[type="email"]').first();
+    await expect(emailInput).not.toBeVisible();
+  });
+
+  test('tapping SIGN IN / CREATE reveals auth form fields', async ({ page }) => {
+    await page.goto('/');
+    await page.waitForLoadState('networkidle');
+
+    const signInButton = page.locator('button:has-text("SIGN IN / CREATE")').first();
+    await expect(signInButton).toBeVisible();
+
+    const emailInput = page.locator('input[type="email"]').first();
+    await expect(emailInput).not.toBeVisible();
+
+    await signInButton.click();
+
+    await expect(page.locator('input[type="email"]').first()).toBeVisible();
+    await expect(page.locator('input[type="password"]').first()).toBeVisible();
+    await expect(page.locator('button:has-text("Login / Create")').first()).toBeVisible();
+  });
+
+  test('HIDE LOGIN collapses the auth form again', async ({ page }) => {
+    await page.goto('/');
+    await page.waitForLoadState('networkidle');
+
+    const signInButton = page.locator('button:has-text("SIGN IN / CREATE")').first();
+    await expect(signInButton).toBeVisible();
+
+    await signInButton.click();
+
+    const hideButton = page.locator('button:has-text("HIDE LOGIN")').first();
+    await expect(hideButton).toBeVisible();
+
+    await hideButton.click();
+
+    await expect(page.locator('input[type="email"]').first()).not.toBeVisible();
+  });
+
+  test('footer links remain visible and tappable on mobile', async ({ page }) => {
+    await page.goto('/');
+    await page.waitForLoadState('networkidle');
+
+    const footer = page.locator('footer').first();
+    await expect(footer).toBeVisible();
+
+    const legalButtons = footer.locator('button');
+    const legalCount = await legalButtons.count();
+    expect(legalCount).toBeGreaterThanOrEqual(1);
+
+    await expect(legalButtons.first()).toBeVisible();
+  });
+
+  test('legal modal can open from a footer link', async ({ page }) => {
+    await page.goto('/');
+    await page.waitForLoadState('networkidle');
+
+    const footerButton = page.locator('footer button').first();
+    await expect(footerButton).toBeVisible();
+
+    await footerButton.click();
+
+    const modal = page.locator('[role="dialog"][aria-modal="true"]').first();
+    await expect(modal).toBeVisible();
+  });
+
+  test('normal unsigned auth form is visible without expansion at sm+', async ({ page }) => {
+    await page.goto('/');
+    await page.setViewportSize({ width: 640, height: 900 });
+    await page.waitForLoadState('networkidle');
+
+    await expect(page.locator('input[type="email"]').first()).toBeVisible();
+    await expect(page.locator('input[type="password"]').first()).toBeVisible();
+    await expect(page.locator('button:has-text("Login / Create")').first()).toBeVisible();
+
+    const mobileToggle = page.locator('button:has-text("SIGN IN / CREATE")').first();
+    if (await mobileToggle.count() > 0) {
+      await expect(mobileToggle).not.toBeVisible();
+    }
   });
 });
