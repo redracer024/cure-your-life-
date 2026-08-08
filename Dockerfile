@@ -43,6 +43,8 @@ ENV VITE_SUPABASE_ANON_KEY=${VITE_SUPABASE_ANON_KEY}
 COPY package*.json ./
 RUN npm ci
 COPY . .
+RUN test -n "$VITE_SUPABASE_URL" && echo "VITE_SUPABASE_URL=SET" || echo "VITE_SUPABASE_URL=MISSING"
+RUN test -n "$VITE_SUPABASE_PUBLISHABLE_KEY" && echo "VITE_SUPABASE_PUBLISHABLE_KEY=SET" || echo "VITE_SUPABASE_PUBLISHABLE_KEY=MISSING"
 RUN npm run build
 
 # Runtime stage: minimal image with only production deps + built artifacts.
