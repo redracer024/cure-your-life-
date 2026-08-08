@@ -265,6 +265,20 @@ is in `tmp-validate-assessment-ui.ts`, which requires a live browser environment
 unavailable in this CLI context. This is unrelated to BodySignal's auth, billing,
 security, or runtime-resilience guarantees.
 
+### Playwright harness repair (Batch 41)
+
+**Root cause:** `server.ts` line 1351 used `process.argv[1] === new URL(import.meta.url).pathname` to detect direct execution. Under `tsx` (ESM), `import.meta.url` is URL-encoded (`%20` for spaces), while `process.argv[1]` preserves literal spaces. On this repository path (`/home/ni/cure yourlife/...`), the comparison always failed, so `startServer()` was never called when running `npm run dev` from Playwright's `webServer.command`.
+
+**Repair:** Normalize both paths with `path.resolve()` and decode URL encoding with `decodeURI()` before comparison. The fallback `typeof __filename !== "undefined"` remains for CJS/`node dist/server.cjs`.
+
+**Targeted test results after repair:**
+- `tests/runtime/provider-startup.spec.ts`: 2/2 PASS (Chromium)
+- `tests/mobile/mobile-shell.spec.ts`: 6/6 PASS (Mobile Chrome 375x812 + 390x844)
+- `tests/mobile/mobile-assessment.spec.ts`: 3/3 PASS
+- `tests/mobile/mobile-media.spec.ts`: 4/4 PASS
+
+No production startup behavior changed. `npm start` (`node dist/server.cjs`) and Render deployment remain identical.
+
 ---
 
 ## 8. SUPABASE / STRIPE

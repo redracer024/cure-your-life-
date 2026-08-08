@@ -1348,7 +1348,7 @@ async function startServer() {
   process.on("SIGINT", () => shutdown("SIGINT"));
 }
 
-const currentFile = typeof __filename !== "undefined" ? __filename : new URL(import.meta.url).pathname;
-if (process.argv[1] === currentFile) {
+const currentFile = path.resolve(typeof __filename !== "undefined" ? __filename : decodeURI(new URL(import.meta.url).pathname));
+if (path.resolve(process.argv[1]) === currentFile) {
   startServer();
 }
