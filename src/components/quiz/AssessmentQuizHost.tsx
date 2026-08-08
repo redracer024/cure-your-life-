@@ -564,7 +564,7 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
               aria-modal="true"
               aria-labelledby="assessment-dialog-title"
               tabIndex={-1}
-              className="relative w-full max-w-2xl mx-4 my-8 bg-[#07090E] border border-indigo-500/20 rounded-3xl overflow-hidden shadow-[0_0_60px_rgba(99,102,241,0.12)] outline-none"
+              className="relative w-full max-w-2xl mx-4 my-6 bg-[#07090E] border border-indigo-500/20 rounded-3xl overflow-hidden shadow-[0_0_60px_rgba(99,102,241,0.12)] outline-none"
             >
               <div className="h-1.5 w-full bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-500" />
               <button
@@ -588,7 +588,7 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="p-8 md:p-10 flex flex-col items-center gap-4 text-center"
+                    className="p-6 md:p-8 flex flex-col items-center gap-4 text-center"
                   >
                     <h2 id="assessment-dialog-title" className="text-2xl md:text-3xl font-black uppercase tracking-tight text-white leading-none">
                       Somatic Pattern Assessment
@@ -602,7 +602,7 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="p-8 md:p-10 flex flex-col items-center gap-5 text-center"
+                    className="p-6 md:p-8 flex flex-col items-center gap-5 text-center"
                   >
                     <h2 id="assessment-dialog-title" tabIndex={-1} className="text-2xl md:text-3xl font-black uppercase tracking-tight text-white leading-none outline-none">
                       Somatic Pattern Assessment
@@ -642,9 +642,9 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
                 {uiPhase === 'resume' && session && (
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="p-8 md:p-10 space-y-6 text-center"
+                    className="p-6 md:p-8 space-y-6 text-center"
                   >
                     <h2 id="assessment-dialog-title" className="text-2xl md:text-3xl font-black uppercase tracking-tight text-white leading-none">
                       Continue Your Assessment
@@ -703,7 +703,7 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
                     exit={{ opacity: 0, y: -10 }}
                   >
                     {clearConfirming ? (
-                      <div className="p-8 md:p-10">
+                      <div className="p-6 md:p-8">
                         <ClearAssessmentConfirmation onConfirm={handleClearConfirm} onCancel={handleClearCancel} />
                       </div>
                     ) : (
@@ -714,7 +714,7 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
                           onRestart={handleRestart}
                           onClose={handleClose}
                         />
-                        <div className="px-8 pb-8 -mt-4 flex flex-col items-center gap-3">
+                        <div className="px-6 pb-6 md:px-8 md:pb-8 -mt-4 flex flex-col items-center gap-3">
                           <p className="text-xs text-slate-500 font-sans font-light leading-6 text-center max-w-md mx-auto">
                             {ASSESSMENT_RESULTS_REMINDER}
                           </p>
@@ -734,9 +734,9 @@ export const AssessmentQuizHost: React.FC<AssessmentQuizHostProps> = ({
                 {uiPhase === 'blocked' && (
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="p-8 md:p-10 space-y-6 text-center"
+                    className="p-6 md:p-8 space-y-6 text-center"
                   >
                     {clearConfirming ? (
                       <ClearAssessmentConfirmation onConfirm={handleClearConfirm} onCancel={handleClearCancel} />
@@ -806,7 +806,7 @@ const QuestionStageBody: React.FC<QuestionStageBodyProps> = ({ session, onAnswer
 
   if (itemId && !item) {
     return (
-      <div className="p-8 md:p-10 space-y-6 text-center">
+      <div className="p-6 md:p-8 space-y-6 text-center">
         <h2 id="assessment-dialog-title" className="text-xl font-black uppercase tracking-tight text-white leading-none">
           Question Unavailable
         </h2>
@@ -826,7 +826,7 @@ const QuestionStageBody: React.FC<QuestionStageBodyProps> = ({ session, onAnswer
 
   if (!item) {
     return (
-      <div className="p-8 md:p-10 flex flex-col items-center gap-4 text-center">
+      <div className="p-6 md:p-8 flex flex-col items-center gap-4 text-center">
         <h2 id="assessment-dialog-title" className="text-2xl font-black uppercase tracking-tight text-white leading-none">
           Somatic Pattern Assessment
         </h2>
@@ -864,7 +864,7 @@ const ClearAssessmentConfirmation: React.FC<ClearAssessmentConfirmationProps> = 
       <p className="text-sm text-slate-400 max-w-md mx-auto font-sans font-light leading-7">
         {ASSESSMENT_CLEAR_CONFIRM_BODY}
       </p>
-      <div className="flex items-center justify-center gap-3 pt-1">
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-1">
         <button
           onClick={onCancel}
           className="px-5 py-2.5 border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/10 text-slate-300 font-mono uppercase text-[11px] tracking-widest rounded-xl transition-all cursor-pointer"

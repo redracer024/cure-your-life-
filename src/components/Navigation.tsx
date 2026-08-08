@@ -81,7 +81,7 @@ export const Navigation: React.FC<NavigationProps> = ({
                 </div>
             </nav>
 
-            <div className="md:hidden flex border-b border-white/10 bg-[#07080d]/80 backdrop-blur-xl justify-around py-3.5 text-[11px] font-bold uppercase tracking-wider text-slate-400 relative z-40 font-display">
+            <div className="md:hidden flex border-b border-white/10 bg-[#07080d]/80 backdrop-blur-xl overflow-x-auto scrollbar-hide gap-4 px-4 py-3.5 text-[11px] font-bold uppercase tracking-wider text-slate-400 relative z-40 font-display whitespace-nowrap">
                 <button
                     onClick={() => setActiveTab('dictionary')}
                     className={`${activeTab === 'dictionary' ? 'text-indigo-400 font-extrabold' : ''}`}

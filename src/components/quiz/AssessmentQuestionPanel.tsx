@@ -34,7 +34,7 @@ export const AssessmentQuestionPanel: React.FC<AssessmentQuestionPanelProps> = (
         : `${remaining} questions remaining`;
 
   return (
-    <div className="p-8 md:p-10 space-y-6">
+    <div className="p-6 md:p-8 space-y-6">
       <div className="space-y-2">
         <div className="flex items-center justify-between">
           <span className="text-[11px] font-mono text-indigo-400 uppercase tracking-widest font-bold">

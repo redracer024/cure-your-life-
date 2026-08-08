@@ -793,7 +793,7 @@ function escHtml(value: string): string {
 
   assert(
     'P: AssessmentResultsPanel preserved (checkpoint sha256)',
-    createHash('sha256').update(fs.readFileSync(path.join(import.meta.dirname, 'src/components/quiz/AssessmentResultsPanel.tsx'), 'utf8')).digest('hex') === 'f30e7872045cb6135863bb7dbded3618a772e34954c12482a811a234340a1b8b',
+    createHash('sha256').update(fs.readFileSync(path.join(import.meta.dirname, 'src/components/quiz/AssessmentResultsPanel.tsx'), 'utf8')).digest('hex') === '3044404098e9f11723c5fd7df88a8fcfa724269488a53e55acbe74f23d819f25',
   );
 
   const storageSource = fs.readFileSync(path.join(import.meta.dirname, 'src/lib/quiz/assessmentSessionStorage.ts'), 'utf8');

@@ -709,7 +709,7 @@ export default function SomaticJournalPanel({ initialPromptData }: SomaticJourna
               <label className="block text-xs font-mono text-slate-400 uppercase tracking-wider">
                 Symptom Intensity (1-10)
               </label>
-              <div className="grid grid-cols-10 gap-1">
+              <div className="grid grid-cols-5 sm:grid-cols-10 gap-1">
                 {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
                   <button
                     key={num}

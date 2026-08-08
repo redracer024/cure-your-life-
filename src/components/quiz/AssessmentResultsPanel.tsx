@@ -165,7 +165,7 @@ export const AssessmentResultsPanel: React.FC<AssessmentResultsPanelProps> = ({
   const terminalCopy = terminalCategoryFor(session);
 
   return (
-    <div className="p-8 md:p-10 space-y-6">
+    <div className="p-6 md:p-8 space-y-6">
       <div className="space-y-3 text-center">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-indigo-500/10 border border-indigo-500/20 rounded-full text-[11px] font-mono text-indigo-400 uppercase tracking-widest font-black">
           <BookOpen className="w-3.5 h-3.5" />

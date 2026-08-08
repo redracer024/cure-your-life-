@@ -159,14 +159,14 @@ export const AuthSection: React.FC = () => {
               value={auth.authEmail}
               onChange={(e) => auth.setAuthEmail(e.target.value)}
               placeholder="email"
-              className="bg-black/50 border border-white/10 rounded-xl px-3 py-2 text-xs text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500/50 min-w-[190px]"
+              className="bg-black/50 border border-white/10 rounded-xl px-3 py-2 text-xs text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500/50 w-full sm:min-w-[190px]"
             />
             <input
               type="password"
               value={auth.authPassword}
               onChange={(e) => auth.setAuthPassword(e.target.value)}
               placeholder="password"
-              className="bg-black/50 border border-white/10 rounded-xl px-3 py-2 text-xs text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500/50 min-w-[160px]"
+              className="bg-black/50 border border-white/10 rounded-xl px-3 py-2 text-xs text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500/50 w-full sm:min-w-[160px]"
             />
             <button
               type="submit"

@@ -6,6 +6,18 @@
 .vscode/
 ..env.kate-swp
 
+# Local media / PDF assets (must not be committed)
+*.pdf
+*.mp3
+*.mp4
+*.mov
+*.wav
+*.ogg
+*.webm
+*.key
+*.pptx
+*.ppt
+
 # Workspace artifacts
 mind/
 tmp-validate/

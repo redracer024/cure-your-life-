@@ -13,6 +13,7 @@ import { WisdomPerspectiveTabs } from './WisdomPerspectiveTabs';
 import { RecoveryRoadmap } from './RecoveryRoadmap';
 import { PatternVisualGallery } from './PatternVisualGallery';
 import { PatternAudioPlayer } from './PatternAudioPlayer';
+import { MediaResourceViewer } from '../media/MediaResourceViewer';
 import { usePremium } from '../../context/PremiumContext';
 
 interface PatternDetailPanelProps {
@@ -194,6 +195,12 @@ const openAndScrollToSection = (sectionKey: Section) => {
         />
       )}
 
+      {/* Demo external media resource */}
+      <MediaResourceViewer
+        mediaId="pain-reflects-emotions"
+        fallbackMessage="No external media is currently linked to this pattern."
+      />
+
       {/* Expand/Collapse controls + View Mode Toggle */}
         <div className="flex items-center justify-between gap-4">
           <div className="flex items-center gap-2">
@@ -273,7 +280,7 @@ const openAndScrollToSection = (sectionKey: Section) => {
       </div>
 
       {/* Sticky section navigation */}
-      <div className="fixed bottom-6 right-6 z-50">
+      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
         <AnimatePresence>
           {showSectionNav && (
             <motion.div
