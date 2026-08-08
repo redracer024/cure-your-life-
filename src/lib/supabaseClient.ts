@@ -7,10 +7,12 @@ const viteEnv =
 
 const supabaseUrl = viteEnv.VITE_SUPABASE_URL as string | undefined;
 
-// Supabase docs may call this either ANON_KEY or PUBLISHABLE_KEY depending on the dashboard/docs version.
+// Canonical production key is VITE_SUPABASE_PUBLISHABLE_KEY (modern
+// sb_publishable_ format). VITE_SUPABASE_ANON_KEY is supported as a
+// backward-compatible fallback only.
 const supabasePublicKey = (
-  viteEnv.VITE_SUPABASE_ANON_KEY ||
-  viteEnv.VITE_SUPABASE_PUBLISHABLE_KEY
+  viteEnv.VITE_SUPABASE_PUBLISHABLE_KEY ||
+  viteEnv.VITE_SUPABASE_ANON_KEY
 ) as string | undefined;
 
 export const isSupabaseConfigured = Boolean(supabaseUrl && supabasePublicKey);

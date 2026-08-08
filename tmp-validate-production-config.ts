@@ -139,7 +139,8 @@ for (const file of tsFiles) {
 }
 
 assert("22. DEV_PREMIUM not accessed via process.env/import.meta.env in browser source", !devPremiumLeak);
-assert("23. VITE_ prefix on browser env vars", serverSrc.includes("process.env.VITE_SUPABASE_URL"));
+assert("23. Server uses SUPABASE_URL (not VITE_) for CSP", serverSrc.includes("supabaseUrl: process.env.SUPABASE_URL"));
+assert("23a. Server does not use VITE_SUPABASE_URL for CSP", !serverSrc.includes("supabaseUrl: process.env.VITE_SUPABASE_URL"));
 assert("24. No server-only secrets (process.env.XXX) in .tsx frontend files", !serverSecretLeak);
 
 // 25. Production auth gap: no password reset
@@ -149,7 +150,8 @@ assert("25. Password reset not yet implemented (documented gap)", !serverSrc.inc
 assert("26. DEV_PREMIUM checked against isDevelopmentEnvironment", serverEnvSrc.includes("isDevelopmentEnvironment"));
 
 // 27. .env.example does not expose real-looking anon keys
-assert("27. .env.example VITE_SUPABASE_ANON_KEY is a placeholder", envExampleSrc.includes("env-anon-key-from-supabase-dashboard"));
+assert("27. .env.example VITE_SUPABASE_PUBLISHABLE_KEY is placeholder (not a real sb_publishable_ key)", !/sb_publishable_[a-zA-Z0-9_]{10,}/.test(envExampleSrc));
+assert("27a. .env.example documents VITE_SUPABASE_ANON_KEY as backward-compat fallback", envExampleSrc.includes("VITE_SUPABASE_ANON_KEY=") && /backward.*compat|fallback|deprecated/i.test(envExampleSrc));
 
 console.log(`\nPassed: ${passed}`);
 console.log(`Failed: ${failed}`);

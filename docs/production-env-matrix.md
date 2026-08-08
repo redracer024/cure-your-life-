@@ -12,12 +12,12 @@
 | Property | Value |
 |---|---|
 | Hosting type | Must support a **persistent Node.js server** (not static-only Vite hosting) |
-| Build command | `npm run build` → `vite build` (frontend) + `esbuild server.ts` (backend → `dist/server.cjs`) |
+| Build command | `npm run build` → `vite build` (frontend, inlines `VITE_*` build args) + `esbuild server.ts` (backend → `dist/server.cjs`) |
 | Start command | `node dist/server.cjs` |
 | PORT behavior | `process.env.PORT` (defaults to `3000` if unset). Server binds `0.0.0.0`. |
 | Startup behavior | In production mode (`NODE_ENV !== "development"`), serves static assets from `dist/` and falls back all non-API routes to `dist/index.html`. Dev middleware (Vite HMR) is **only** active when `NODE_ENV=development`. |
 | APP_URL injection | Must be injected at **runtime** as a server-side env var — it is read in `server.ts` at module load and used for Stripe redirect URLs. Server **fails closed** (throws on startup) if `APP_URL` is missing in production mode. |
-| Hosting provider | **None configured** in this repository. No Dockerfile, no Render/Vercel/Netlify/Fly/Railway configs, no GitHub Actions deployment workflows exist. |
+| Hosting provider | Render Web Service (Docker runtime, Node 22 Alpine); Dockerfile at repo root declares `ARG VITE_*` build args for frontend env injection |
 
 ---
 
@@ -30,8 +30,8 @@
 | `DEV_PREMIUM` | Server | Prohibited | PLACEHOLDER | `.env` (local), `.env.example` | `.env` has `false`. `.env.local` has `true` (local only — must be `false`/unset in production). Bypass only engages when `NODE_ENV=development` **and** `DEV_PREMIUM=true` (exact literal). |
 | `PORT` | Server | Optional | READY | Deployment platform env | Defaults to `3000` if unset. Server binds `0.0.0.0`. |
 | `VITE_SUPABASE_URL` | Browser | Required | LIVE ORIGIN SET | `.env` | **CURRENT LIVE RENDER ORIGIN:** `https://psurstxfufkqqtpuaxel.supabase.co` (Supabase project `psurstxfufkqqtpuaxel`). `.env.example` shows `https://your-project.supabase.co` (placeholder). Must point to production Supabase project. |
-| `VITE_SUPABASE_ANON_KEY` | Browser | Required | PLACEHOLDER — **MUST BE ROTATED** | `.env` | `.env.example` shows `env-anon-key-from-supabase-dashboard` (placeholder). Browser-safe publishable/anon key. The current anon key may need rotation if it was exposed alongside the compromised service-role key. |
-| `VITE_SUPABASE_PUBLISHABLE_KEY` | Browser | Conditional | PLACEHOLDER | `.env` | Alternative to `VITE_SUPABASE_ANON_KEY` (Supabase dashboard naming varies). Both checked in `supabaseClient.ts`. |
+| `VITE_SUPABASE_PUBLISHABLE_KEY` | Browser | **Required (canonical)** | PLACEHOLDER | `.env` | **CANONICAL** production frontend key. Modern format: `sb_publishable_...`. Inlined at build time into the Vite bundle. `supabaseClient.ts` checks this BEFORE `VITE_SUPABASE_ANON_KEY`. |
+| `VITE_SUPABASE_ANON_KEY` | Browser | Optional (backward-compat) | PLACEHOLDER — **MUST BE ROTATED** | `.env` | DEPRECATED alias. Ignored if `VITE_SUPABASE_PUBLISHABLE_KEY` is set. |
 | `SUPABASE_URL` | Server | Required | LIVE ORIGIN SET | `.env` | **CURRENT LIVE SUPABASE ORIGIN:** `https://psurstxfufkqqtpuaxel.supabase.co` (same project). Used by server-side admin client only. A future custom domain would replace this value. |
 | `SUPABASE_SERVICE_ROLE_KEY` | Server | Required | **ROTATION REQUIRED** | `.env`, deployment platform secret store | **COMPROMISED** — was exposed in a development chat. Local `.env` still contains the old key. A new key must be generated in the Supabase Dashboard, stored server-side only, and the old key revoked. Until done, treat as compromised. |
 | `STRIPE_SECRET_KEY` | Server | Required | **VERIFY LIVE/TEST MODE** | `.env`, deployment platform secret store | Local `.env` contains both `sk_live_...` and `sk_test_...` (duplicate key — last value wins: `sk_test_...`). Production must use a **live** server key. |
@@ -67,7 +67,8 @@
 | `STRIPE_WEBHOOK_SECRET` | Yes — used only in `server.ts:149, 56` | No — not referenced in any `.tsx` source file |
 | `GEMINI_API_KEY` | Yes — used only in `server.ts:187-206` | No — not referenced in any `.tsx` source file |
 | `VITE_SUPABASE_URL` | N/A — browser-safe | Yes — consumed by `src/lib/supabaseClient.ts:8` via `import.meta.env` |
-| `VITE_SUPABASE_ANON_KEY` | N/A — browser-safe | Yes — consumed by `src/lib/supabaseClient.ts:11-13` via `import.meta.env` |
+| `VITE_SUPABASE_PUBLISHABLE_KEY` | N/A — browser-safe | Yes — consumed by `src/lib/supabaseClient.ts:11-14` via `import.meta.env` (canonical) |
+| `VITE_SUPABASE_ANON_KEY` | N/A — browser-safe | Yes — consumed by `src/lib/supabaseClient.ts:11-14` via `import.meta.env` (backward-compat fallback) |
 
 **Frontend source scan result:** Zero `.tsx` files reference `process.env.SUPABASE_SERVICE_ROLE_KEY`, `process.env.STRIPE_SECRET_KEY`, `process.env.STRIPE_WEBHOOK_SECRET`, or `process.env.GEMINI_API_KEY`. The only frontend reference to `SUPABASE_SERVICE_ROLE_KEY` is a string literal in `AppErrorBoundary.tsx:39` used as a **redaction regex pattern** (not env access). No `VITE_STRIPE*` variables are consumed by frontend source.
 
@@ -80,6 +81,7 @@
 | Site URL | `https://bodysignal-xa18.onrender.com` (CURRENT LIVE RENDER ORIGIN) | **NOT CONFIGURED** — requires setting in Supabase Dashboard. A future custom domain would replace this value. |
 | Auth redirect: password recovery | `https://bodysignal-xa18.onrender.com/?auth=recovery` | Documented in code (`useAuthState.ts:35`); not configured in dashboard |
 | Auth redirect: email confirmation | `https://bodysignal-xa18.onrender.com/?auth=confirm` | Documented in code (`useAuthState.ts:80-84`); not configured in dashboard |
+| Frontend Supabase key (canonical) | `VITE_SUPABASE_PUBLISHABLE_KEY` | `.env` / Render env — checked first in `supabaseClient.ts`; `VITE_SUPABASE_ANON_KEY` is backward-compat fallback |
 | Email confirmation / autoconfirm | Should be `false` once SMTP is live | Currently `true` (autoconfirm enabled) — do NOT flip until SMTP + templates verified |
 | OAuth providers | Disabled (not used) | Not applicable |
 

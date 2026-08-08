@@ -150,7 +150,7 @@ if (dockerfileSrc) {
   assert("20. Dockerfile runs node dist/server.cjs", /node[\s,\"]+dist\/server\.cjs/i.test(dockerfileSrc), "");
   assert("21. Dockerfile uses runtime PORT", /process\.env\.PORT|PORT/i.test(dockerfileSrc));
   assert("22. Dockerfile does not COPY .env", !/COPY\s+\.\s+\.env/i.test(dockerfileSrc));
-  assert("23. Dockerfile does not bake secrets into ENV/ARG", !/ENV.*SUPABASE|ENV.*STRIPE|ENV.*GEMINI|ARG.*KEY/i.test(dockerfileSrc));
+  assert("23. Dockerfile does not bake SERVER secrets into ENV/ARG (VITE_* public vars are allowed)", !/ENV\s+(SUPABASE_SERVICE_ROLE_KEY|STRIPE_|GEMINI_API_KEY)/i.test(dockerfileSrc) && !/ARG\s+(SUPABASE_SERVICE_ROLE_KEY|STRIPE_|GEMINI_API_KEY)/i.test(dockerfileSrc));
   assert("24. Dockerfile runs as non-root user", /USER\s+node/i.test(dockerfileSrc));
   assert("25. Dockerfile exposes port", /EXPOSE/i.test(dockerfileSrc));
 } else {

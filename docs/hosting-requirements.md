@@ -186,9 +186,11 @@ these are external dashboard/runtime actions.
 2. Deploy initial app with production secrets **except** email confirmation changes:
    - `NODE_ENV=production`
    - `APP_URL=https://<domain>`
-   - `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY` (or `VITE_SUPABASE_PUBLISHABLE_KEY`)
+   - `VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY` (canonical frontend key)
    - `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` (server-side only)
    - `STRIPE_SECRET_KEY` (live), `GEMINI_API_KEY`
+   - **Build-time:** ensure `VITE_*` vars are available during Docker build (see
+     `docs/supabase-production-setup.md` §6 or `docs/render-deployment.md` §3b)
 3. **Rotate Supabase service-role credential** (the old key was exposed in a dev chat)
 4. Store the new `SUPABASE_SERVICE_ROLE_KEY` in the host (server-side only)
 5. Configure Supabase **Site URL** → `https://<domain>`

@@ -71,8 +71,8 @@ If you prefer to configure manually instead of using `render.yaml`:
 | `APP_URL` | Server Config | Required (production) |
 | `DEV_PREMIUM` | Server Config | Required (must be `false`) |
 | `VITE_SUPABASE_URL` | Public Config | Required |
-| `VITE_SUPABASE_ANON_KEY` | Public Config | Required |
-| `VITE_SUPABASE_PUBLISHABLE_KEY` | Public Config | Conditional |
+| `VITE_SUPABASE_PUBLISHABLE_KEY` | Public Config | **REQUIRED (canonical)** — modern format `sb_publishable_...` |
+| `VITE_SUPABASE_ANON_KEY` | Public Config | Optional — backward-compat fallback, ignored if PUBLISHABLE_KEY is set |
 | `SUPABASE_URL` | Server Config | Required |
 | `SUPABASE_SERVICE_ROLE_KEY` | Server Secret | Required — **ROTATION REQUIRED** — old key was exposed in a dev chat. Supabase project: `psurstxfufkqqtpuaxel`. See Section 7. |
 | `STRIPE_SECRET_KEY` | Server Secret | Required (live mode) |
@@ -98,8 +98,8 @@ In the Render Dashboard, **Environment** → **Environment Variables**:
 | `APP_URL` | Plain | **`https://bodysignal-xa18.onrender.com`** (CURRENT LIVE RENDER ORIGIN — set before first deploy) |
 | `DEV_PREMIUM` | Plain | `false` |
 | `VITE_SUPABASE_URL` | Plain | `https://psurstxfufkqqtpuaxel.supabase.co` (production Supabase project) |
-| `VITE_SUPABASE_ANON_KEY` | Plain | Your production Supabase anon key (rotate if previously exposed) |
-| `VITE_SUPABASE_PUBLISHABLE_KEY` | Plain | Your production Supabase publishable key (if used) |
+| `VITE_SUPABASE_PUBLISHABLE_KEY` | Plain | Your production Supabase publishable key (canonical; format `sb_publishable_...`) |
+| `VITE_SUPABASE_ANON_KEY` | Plain | Optional backward-compat alias; ignored if PUBLISHABLE_KEY is set |
 | `SUPABASE_URL` | Plain | `https://psurstxfufkqqtpuaxel.supabase.co` (same as VITE_SUPABASE_URL) |
 | `SUPABASE_SERVICE_ROLE_KEY` | Secret | **NEW** rotated service-role key (see Section 8) |
 | `STRIPE_SECRET_KEY` | Secret | Live mode `sk_live_...` |
@@ -133,6 +133,30 @@ app.get("/healthz", (_req, res) => res.status(200).json({ ok: true }));
 - Registered before the SPA catch-all so it is never shadowed
 
 Use `GET /healthz` as the Render health check path.
+
+---
+
+## 3b. Build-Time Environment Injection (Vite frontend)
+
+**Problem:** Vite inlines `VITE_*` variables into the JS bundle at **build time**.
+Render's Docker build does not automatically inject runtime env vars into the
+`RUN npm run build` stage. If `VITE_SUPABASE_URL` / `VITE_SUPABASE_PUBLISHABLE_KEY`
+are only declared as runtime env vars, the compiled bundle will contain empty
+values and the frontend will show "Frontend Supabase env missing."
+
+**Fix applied (Dockerfile):** The builder stage declares `ARG VITE_SUPABASE_URL`,
+`ARG VITE_SUPABASE_PUBLISHABLE_KEY`, and `ARG VITE_SUPABASE_ANON_KEY`, then exports
+them as `ENV` so Vite reads them via `process.env` during `npm run build`. Only
+browser-safe `VITE_*` vars are passed this way. **Server secrets are NOT build args.**
+
+**Operator action after deploy:**
+1. Ensure `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` are set in the
+   Render Dashboard **Environment → Environment Variables** (Plain type).
+2. **Trigger a fresh Deploy** (not just restart) so the Docker build stage
+   receives the build args and Vite re-inlines the values.
+3. After deploy, verify the JS bundle contains the Supabase project ref
+   (`psurstxfufkqqtpuaxel`) — confirm by inspecting
+   `https://bodysignal-xa18.onrender.com/assets/*.js`.
 
 ---
 

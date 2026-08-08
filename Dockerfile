@@ -22,7 +22,24 @@ RUN npm ci --omit=dev
 
 # Build stage: compile frontend + bundle server.
 # Runs as a separate stage so build tooling never ships to the runtime image.
+# Vite inlines VITE_* env vars at build time, so public browser env vars must be
+# available HERE as build args. Only browser-safe (VITE_) vars are passed as
+# build args — server secrets are NEVER baked into the image (see ARG list below).
 FROM base AS builder
+
+# Build-time ARGs for frontend (VITE_*) env vars only.
+# These are PUBLIC/browser-safe and intentionally embedded in the JS bundle.
+# Server secrets (SUPABASE_SERVICE_ROLE_KEY, STRIPE_*, GEMINI_API_KEY) are NOT
+# declared here — they are injected at runtime via the platform secret store.
+ARG VITE_SUPABASE_URL
+ARG VITE_SUPABASE_PUBLISHABLE_KEY
+ARG VITE_SUPABASE_ANON_KEY
+# Export ARGs as ENV so Vite reads them via process.env during "RUN npm run build".
+# Only public VITE_* values are exposed here (never server secrets).
+ENV VITE_SUPABASE_URL=${VITE_SUPABASE_URL}
+ENV VITE_SUPABASE_PUBLISHABLE_KEY=${VITE_SUPABASE_PUBLISHABLE_KEY}
+ENV VITE_SUPABASE_ANON_KEY=${VITE_SUPABASE_ANON_KEY}
+
 COPY package*.json ./
 RUN npm ci
 COPY . .

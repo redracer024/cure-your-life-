@@ -20,6 +20,14 @@ services:
     # No explicit build/start commands are needed here.
     healthCheckPath: /healthz
     autoDeploy: true
+    # ── Build-time env (public VITE_* only) ──────────────────────────────
+    # Vite inlines VITE_* values into the JS bundle at BUILD time. The Dockerfile
+    # declares ARG VITE_* for these PUBLIC frontend values and exports them as ENV
+    # so Vite reads them via process.env during "RUN npm run build".
+    # Render auto-passes declared envVars as Docker build args when they match ARG
+    # names, so the build stage receives these values.
+    # Server secrets (SUPABASE_SERVICE_ROLE_KEY, STRIPE_*, GEMINI_*) are NOT
+    # declared as ARG in the Dockerfile — they are runtime-only and never baked in.
     # Environment variables are declared by NAME only.
     # Render will prompt you to supply values during provisioning.
     envVars:
@@ -34,14 +42,22 @@ services:
         # When a future custom domain is attached, update this value to the new domain.
         sync: wait_for_input
       - key: VITE_SUPABASE_URL
-        sync: wait_for_input
-      - key: VITE_SUPABASE_ANON_KEY
+        # CANONICAL production frontend variable (build-time, public).
         sync: wait_for_input
       - key: VITE_SUPABASE_PUBLISHABLE_KEY
+        # CANONICAL production frontend key (build-time, public).
+        # Modern format: sb_publishable_...  (preferred over VITE_SUPABASE_ANON_KEY)
+        sync: wait_for_input
+      - key: VITE_SUPABASE_ANON_KEY
+        # DEPRECATED alias. Retained for backward compatibility only.
+        # supabaseClient.ts checks PUBLISHABLE_KEY first, then ANON_KEY.
         sync: wait_for_input
       - key: SUPABASE_URL
+        # Server-side origin (runtime). Same value as VITE_SUPABASE_URL.
         sync: wait_for_input
       - key: SUPABASE_SERVICE_ROLE_KEY
+        # Server secret (runtime-only, modern format: sb_secret_...)
+        # NEVER passed as a Docker build arg — not baked into the image.
         sync: wait_for_input
       - key: STRIPE_SECRET_KEY
         sync: wait_for_input

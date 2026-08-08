@@ -51,8 +51,10 @@ a different temporary hostname.
 | Variable | Role | Status |
 |---|---|---|
 | `VITE_SUPABASE_URL` | Browser client origin | MUST BE SET — `https://psurstxfufkqqtpuaxel.supabase.co` |
-| `VITE_SUPABASE_ANON_KEY` | Browser publishable key | MUST BE SET — rotate if previously exposed |
-| `VITE_SUPABASE_PUBLISHABLE_KEY` | Alternative browser key | Conditional — used if `VITE_SUPABASE_ANON_KEY` is absent |
+| `VITE_SUPABASE_PUBLISHABLE_KEY` | Browser publishable key | **CANONICAL** — modern format `sb_publishable_...` |
+| `VITE_SUPABASE_ANON_KEY` | Backward-compatible alias | Optional — ignored if `VITE_SUPABASE_PUBLISHABLE_KEY` is set |
+
+**Reconciliation:** `supabaseClient.ts` checks `VITE_SUPABASE_PUBLISHABLE_KEY` first, then falls back to `VITE_SUPABASE_ANON_KEY`. The canonical production variable is `VITE_SUPABASE_PUBLISHABLE_KEY`.
 
 ### Server-only (never in browser bundle)
 
@@ -160,6 +162,52 @@ references in `src/**/*.ts*`).
 
 **Do NOT add broad wildcard redirects** unless technically required. None are
 required.
+
+---
+
+## 6. Render Build-Time Environment Injection
+
+### Finding
+
+Vite (the frontend bundler) inlines `VITE_*` variables into the JavaScript bundle
+at **build time** via `import.meta.env`. Render's Docker build does **not**
+automatically inject runtime environment variables into the `RUN npm run build`
+stage unless they are declared as Docker `ARG` values.
+
+**Evidence from the live deployment** (`https://bodysignal-xa18.onrender.com`):
+- The server-side CSP response header contained `connect-src 'self' https://psurstxfufkqqtpuaxel.supabase.co`,
+  proving `VITE_SUPABASE_URL` IS set in the Render runtime environment.
+- However, the compiled frontend JS bundle contained `import.meta.env` compiled
+  to an empty object `{}` (`xU={}`), with zero occurrences of the project ref
+  string — proving the `VITE_*` values were **absent during the Vite build**.
+- Result: `supabaseClient.ts` initialized `supabase = null` (env check failed),
+  and the UI surfaced "Frontend Supabase env missing."
+
+### Resolution (applied in this batch)
+
+1. **Dockerfile** — declares `ARG VITE_SUPABASE_URL`, `ARG VITE_SUPABASE_PUBLISHABLE_KEY`,
+   and `ARG VITE_SUPABASE_ANON_KEY` in the builder stage, and exports them as
+   `ENV` so Vite reads them via `process.env` during `npm run build`. These are
+   **public browser-safe** values only.
+2. **Dockerfile** — does **not** declare `ARG` for any server secret
+   (`SUPABASE_SERVICE_ROLE_KEY`, `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`,
+   `GEMINI_API_KEY`). These are runtime-only and never baked into the image.
+3. **render.yaml** — declares the `VITE_*` envVars by name with `sync: wait_for_input`.
+   Render auto-passes declared envVars whose keys match Dockerfile `ARG` names
+   into the Docker build stage.
+4. **render.yaml** — removed the incorrect `buildCommand` override; the
+   Dockerfile is the single source for the build.
+
+### Operator action after this fix lands
+
+- Ensure `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` are set in the
+  Render Dashboard **Environment → Environment Variables** (both Plain type).
+- **Trigger a fresh Deploy** (not just a restart) so the Docker build stage
+  receives the updated build args and Vite re-inlines the `VITE_*` values.
+- After deploy, verify the JS bundle contains the project ref
+  (`psurstxfufkqqtpuaxel`) and the publishable key prefix (`sb_publishable_`).
+- Restart-only is **insufficient** for frontend env changes — the bundle must be
+  rebuilt.
 
 ---
 
@@ -328,7 +376,7 @@ batch.
 | 2 | `APP_URL` set to live origin | PENDING (operator) | Set `APP_URL` in Render env |
 | 3 | `SUPABASE_SERVICE_ROLE_KEY` rotated | PENDING (operator) | See §3 — old key was exposed |
 | 4 | `VITE_SUPABASE_URL` set to production project | PENDING (operator) | `https://psurstxfufkqqtpuaxel.supabase.co` |
-| 5 | `VITE_SUPABASE_ANON_KEY` set (rotated if needed) | PENDING (operator) | Browser-safe |
+| 5 | `VITE_SUPABASE_PUBLISHABLE_KEY` set (canonical key) | PENDING (operator) | Modern format `sb_publishable_...`; `VITE_SUPABASE_ANON_KEY` is backward-compat only |
 | 6 | `SUPABASE_SERVICE_ROLE_KEY` server-only | VERIFIED | Only in `server.ts`; not in `.tsx` files |
 | 7 | Service-role key not VITE-prefixed | VERIFIED | `SUPABASE_SERVICE_ROLE_KEY` (no `VITE_` prefix) |
 | 8 | `.env` ignored by git | VERIFIED | `.gitignore` — `.env*` pattern (except `.env.example`) |

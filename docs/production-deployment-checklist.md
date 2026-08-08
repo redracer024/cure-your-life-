@@ -27,8 +27,9 @@
 - `NODE_ENV=production`
 - `DEV_PREMIUM` is **false or unset** (dev bypass must never fire in production)
 - `APP_URL=https://bodysignal-xa18.onrender.com` (CURRENT LIVE RENDER ORIGIN)
-- `VITE_SUPABASE_URL=https://psurstxfufkqqtpuaxel.supabase.co` (production Supabase project)
-- `VITE_SUPABASE_ANON_KEY` and/or `VITE_SUPABASE_PUBLISHABLE_KEY` are set for the browser bundle (rotate if previously exposed)
+- `VITE_SUPABASE_URL=https://psurstxfufkqqtpuaxel.supabase.co` (production Supabase project — build-time, public)
+- `VITE_SUPABASE_PUBLISHABLE_KEY` is set (canonical frontend key — modern `sb_publishable_` format; build-time, public)
+- `VITE_SUPABASE_ANON_KEY` optional — ignored if `VITE_SUPABASE_PUBLISHABLE_KEY` is set (backward-compat only)
 - `SUPABASE_URL=https://psurstxfufkqqtpuaxel.supabase.co` (server-side only)
 - `SUPABASE_SERVICE_ROLE_KEY` is set server-side only — **ROTATED** (old key was exposed in a dev chat; see Step 3)
 - `STRIPE_SECRET_KEY` is set (live mode, server-side only)
@@ -36,6 +37,7 @@
 - `STRIPE_PRICE_ID_MONTHLY` and `STRIPE_PRICE_ID_ANNUAL` are set to live price IDs
 - `GEMINI_API_KEY` is set (server-side only)
 - No server-only env var is referenced in frontend/source code that gets bundled to the browser
+- `VITE_*` vars are available during Docker build (Dockerfile declares `ARG VITE_*`; Render auto-passes matching envVars as build args). A restart-only deploy is insufficient for frontend env changes — trigger a fresh Deploy. See `docs/supabase-production-setup.md` §6.
 
 ### Supabase Auth Configuration
 

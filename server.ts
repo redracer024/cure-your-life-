@@ -101,7 +101,7 @@ app.use((req: express.Request, res: express.Response, next: express.NextFunction
   const isDevelopment = isDevelopmentEnvironment(process.env.NODE_ENV);
   const csp = buildContentSecurityPolicy({
     isDevelopment,
-    supabaseUrl: process.env.VITE_SUPABASE_URL,
+    supabaseUrl: process.env.SUPABASE_URL,
   });
 
   res.setHeader("Content-Security-Policy", csp);
