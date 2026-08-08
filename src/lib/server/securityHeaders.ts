@@ -24,12 +24,12 @@ export function buildContentSecurityPolicy(config: SecurityHeaderConfig): string
   directives.set('frame-ancestors', ["'none'"]);
   directives.set('form-action', ["'self'"]);
   directives.set('img-src', ["'self'", 'data:', 'blob:']);
-  directives.set('font-src', ["'self'", 'data:']);
+  directives.set('font-src', ["'self'", 'data:', 'https://fonts.gstatic.com']);
   directives.set('media-src', ["'self'", 'data:', 'blob:', 'https://pub-61a6f2a3fc254836a9d34227d4473a6c.r2.dev']);
   directives.set('script-src', config.isDevelopment
     ? ["'self'", "'unsafe-eval'"]
     : ["'self'"]);
-  directives.set('style-src', ["'self'", "'unsafe-inline'"]);
+  directives.set('style-src', ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com']);
 
   const connectSrc = ["'self'"];
   if (supabaseOrigin) {

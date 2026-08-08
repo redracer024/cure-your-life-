@@ -43,28 +43,35 @@ assert('12. permissions policy exists', serverSrc.includes('Permissions-Policy')
 assert('13. HSTS production-only', serverSrc.includes('if (!isDevelopment && req.secure)') && serverSrc.includes('Strict-Transport-Security'));
 assert('14. localhost development not forced into HSTS', !devCsp.includes('Strict-Transport-Security') && serverSrc.includes('if (!isDevelopment && req.secure)'));
 
+assert('15. style-src allows Google Fonts stylesheet origin', prodCsp.includes("https://fonts.googleapis.com"));
+assert('16. font-src allows Google Fonts font file origin', prodCsp.includes("https://fonts.gstatic.com"));
+assert('17. script-src does not gain unsafe-inline', !prodCsp.includes("script-src 'unsafe-inline'") && !prodCsp.includes("script-src 'self' 'unsafe-inline'"));
+assert('18. script-src does not gain unsafe-eval in production', !prodCsp.includes("'unsafe-eval'"));
+assert('19. no bare https: scheme source (wildcard) or * introduced in CSP', !/https:(?!\/\/)/.test(prodCsp) && !prodCsp.includes("default-src *") && !prodCsp.includes("script-src *") && !prodCsp.includes("img-src *") && !prodCsp.includes("media-src *") && !prodCsp.includes("font-src *") && !prodCsp.includes("style-src *") && !prodCsp.includes("connect-src *"));
+assert('20. media-src retains exact R2 origin', prodCsp.includes("https://pub-61a6f2a3fc254836a9d34227d4473a6c.r2.dev"));
+
 console.log('Cache-control and limiter checks');
-assert('15. authenticated sensitive responses use no-store', serverSrc.includes('app.get("/api/me/premium"') && serverSrc.includes('setNoStore(res);') && serverSrc.includes('app.post("/api/me/subscription/reconcile"') && serverSrc.includes('app.delete("/api/me/account"'));
-assert('16. account deletion rate-limited', serverSrc.includes('accountDeleteRateLimiter') && serverSrc.includes('Too many account deletion requests'));
-assert('17. checkout creation rate-limited', serverSrc.includes('checkoutRateLimiter') && serverSrc.includes('Too many checkout requests'));
-assert('18. portal creation rate-limited', serverSrc.includes('portalRateLimiter') && serverSrc.includes('Too many billing portal requests'));
-assert('19. reconcile rate-limited', serverSrc.includes('reconcileRateLimiter') && serverSrc.includes('Too many reconciliation requests'));
-assert('20. Gemini existing limit preserved', serverSrc.includes('const ANALYSIS_RATE_LIMIT_MAX = 30') && serverSrc.includes('analysisRateLimiter'));
+assert('21. authenticated sensitive responses use no-store', serverSrc.includes('app.get("/api/me/premium"') && serverSrc.includes('setNoStore(res);') && serverSrc.includes('app.post("/api/me/subscription/reconcile"') && serverSrc.includes('app.delete("/api/me/account"'));
+assert('22. account deletion rate-limited', serverSrc.includes('accountDeleteRateLimiter') && serverSrc.includes('Too many account deletion requests'));
+assert('23. checkout creation rate-limited', serverSrc.includes('checkoutRateLimiter') && serverSrc.includes('Too many checkout requests'));
+assert('24. portal creation rate-limited', serverSrc.includes('portalRateLimiter') && serverSrc.includes('Too many billing portal requests'));
+assert('25. reconcile rate-limited', serverSrc.includes('reconcileRateLimiter') && serverSrc.includes('Too many reconciliation requests'));
+assert('26. Gemini existing limit preserved', serverSrc.includes('const ANALYSIS_RATE_LIMIT_MAX = 30') && serverSrc.includes('analysisRateLimiter'));
 const webhookBlock = serverSrc.slice(webhookRawPos, jsonParserPos);
-assert('21. Stripe webhook not IP-rate-limited like user endpoints', !webhookBlock.includes('enforceRateLimit('));
+assert('27. Stripe webhook not IP-rate-limited like user endpoints', !webhookBlock.includes('enforceRateLimit('));
 
 console.log('Limiter key behavior checks');
-assert('22. authenticated limiter prefers verified user identity', getRateLimitActorKey('user-123', '10.0.0.1') === 'user:user-123');
-assert('23. untrusted client cannot spoof limiter key via arbitrary user-id header', getRateLimitActorKey(null, '10.0.0.1') === 'ip:10.0.0.1' && !serverSrc.includes('x-user-id'));
+assert('28. authenticated limiter prefers verified user identity', getRateLimitActorKey('user-123', '10.0.0.1') === 'user:user-123');
+assert('29. untrusted client cannot spoof limiter key via arbitrary user-id header', getRateLimitActorKey(null, '10.0.0.1') === 'ip:10.0.0.1' && !serverSrc.includes('x-user-id'));
 
 console.log('Security posture checks');
-assert('24. raw server errors sanitized', serverSrc.includes('Unhandled server error:') && serverSrc.includes('Internal server error.') && !serverSrc.includes('stack'));
-assert('25. CORS not opened broadly', !serverSrc.includes('Access-Control-Allow-Origin') && !serverSrc.includes('cors('));
-assert('26. DEV_PREMIUM fail-closed behavior preserved', serverSrc.includes('isDevelopmentPremiumEnabled(') && serverEnvSrc.includes('devPremium === "true"'));
-assert('27. RLS/schema unchanged', !serverSrc.includes('alter table public.subscriptions') && !serverSrc.includes('create table public.subscriptions'));
-assert('28. Stripe entitlement logic unchanged', serverSrc.includes('isPremiumEntitled(subscription)'));
-assert('29. Google Play unchanged', !serverSrc.includes('/api/billing/google-play') && !serverSrc.includes('billingclient'));
-assert('30. no Playwright', !serverSrc.toLowerCase().includes('playwright'));
+assert('30. raw server errors sanitized', serverSrc.includes('Unhandled server error:') && serverSrc.includes('Internal server error.') && !serverSrc.includes('stack'));
+assert('31. CORS not opened broadly', !serverSrc.includes('Access-Control-Allow-Origin') && !serverSrc.includes('cors('));
+assert('32. DEV_PREMIUM fail-closed behavior preserved', serverSrc.includes('isDevelopmentPremiumEnabled(') && serverEnvSrc.includes('devPremium === "true"'));
+assert('33. RLS/schema unchanged', !serverSrc.includes('alter table public.subscriptions') && !serverSrc.includes('create table public.subscriptions'));
+assert('34. Stripe entitlement logic unchanged', serverSrc.includes('isPremiumEntitled(subscription)'));
+assert('35. Google Play unchanged', !serverSrc.includes('/api/billing/google-play') && !serverSrc.includes('billingclient'));
+assert('36. no Playwright', !serverSrc.toLowerCase().includes('playwright'));
 
 console.log('In-memory limiter behavior checks');
 {
