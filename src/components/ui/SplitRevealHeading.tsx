@@ -85,30 +85,70 @@ export const SplitRevealHeading: React.FC<SplitRevealHeadingProps> = ({
           onClick={handleClick}
           onKeyDown={handleKeyDown}
         >
+          {/* Base copy — always present, provides the clean rest-state word */}
           <span className={`block ${titleClassName ?? ''}`} aria-hidden="true">
             {title}
           </span>
 
+          {/* Top half: reveals upward */}
           <motion.span
             className={`absolute inset-0 ${titleClassName ?? ''}`}
             style={{ clipPath: 'polygon(0 0, 100% 0, 100% 50%, 0 50%)' }}
-            animate={{ y: isRevealed ? -20 : 0 }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            animate={{ y: isRevealed ? -10 : 0 }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
             aria-hidden="true"
           >
             {title}
           </motion.span>
 
+          {/* Bottom half: reveals downward */}
           <motion.span
             className={`absolute inset-0 ${titleClassName ?? ''}`}
             style={{ clipPath: 'polygon(0 50%, 100% 50%, 100% 100%, 0 100%)' }}
-            animate={{ y: isRevealed ? 20 : 0 }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            animate={{ y: isRevealed ? 10 : 0 }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
             aria-hidden="true"
           >
             {title}
           </motion.span>
 
+          {/* Subtle chromatic shadow — reveal-only, restrained */}
+          <motion.span
+            className={`absolute inset-0 blur-[0.5px] ${titleClassName ?? ''}`}
+            style={{clipPath: 'polygon(0 0, 100% 0, 100% 50%, 0 50%)'}}
+            animate={{
+              y: isRevealed ? -10 : 0,
+              filter: isRevealed
+                ? 'blur(1px) drop-shadow(0 0 3px rgba(99,102,241,0.35)) drop-shadow(0 0 3px rgba(6,182,212,0.35))'
+                : 'blur(0px) drop-shadow(0 0 0px rgba(255,255,255,0))',
+            }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            aria-hidden="true"
+          >
+            {title}
+          </motion.span>
+
+          {/* Center cut accent: thin gradient edge that appears in the seam on reveal */}
+          <motion.span
+            className="absolute left-0 right-0"
+            style={{
+              top: '50%',
+              height: '2px',
+              transform: 'translateY(-50%)',
+              clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+            }}
+            initial={{ opacity: 0, scaleX: 0 }}
+            animate={{
+              opacity: isRevealed ? 0.85 : 0,
+              scaleX: isRevealed ? 1 : 0.6,
+            }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            aria-hidden="true"
+          >
+            <span className="block h-full w-full bg-gradient-to-r from-indigo-400 via-cyan-300 to-violet-400 rounded-full" />
+          </motion.span>
+
+          {/* Reveal subtitle — centered in the cut */}
           <motion.div
             className={`absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden ${revealClassName ?? ''}`}
             initial={{ opacity: 0, scale: 0.9 }}
@@ -116,7 +156,9 @@ export const SplitRevealHeading: React.FC<SplitRevealHeadingProps> = ({
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             aria-hidden="true"
           >
-            {reveal}
+            <span className="whitespace-nowrap px-3 py-0.5 rounded-md bg-black/50 backdrop-blur-xs border border-white/10">
+              {reveal}
+            </span>
           </motion.div>
         </div>
 

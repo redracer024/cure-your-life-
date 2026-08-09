@@ -178,7 +178,7 @@ test.describe('Mobile Shell', () => {
     await expect(headingControl.locator('.sr-only')).toHaveCount(0);
 
     const visualCopies = headingControl.locator('span[aria-hidden="true"]');
-    await expect(visualCopies).toHaveCount(3);
+    await expect(visualCopies).toHaveCount(5); // base + top + bottom + chromatic shadow + cut accent
 
     const labelledBy = await headingControl.getAttribute('aria-labelledby');
     expect(labelledBy).toBeTruthy();

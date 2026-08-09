@@ -23,8 +23,8 @@ export const AppHeader: React.FC = () => {
                 title={PRODUCT_NAME}
                 reveal={PRODUCT_TAGLINE}
                 accessibleReveal="Explore the whole pattern."
-                titleClassName="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter font-display leading-[1.1] text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-300"
-                revealClassName="text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-indigo-300"
+                titleClassName="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight font-display-condensed leading-[0.95] text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-200"
+                revealClassName="text-[10px] font-display-condensed font-black uppercase tracking-[0.22em] text-slate-100"
             />
             </div>
         </>
