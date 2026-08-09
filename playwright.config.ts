@@ -5,7 +5,7 @@ import { defineConfig, devices } from '@playwright/test';
 const TEST_PORT = 3002;
 
 export default defineConfig({
-  testDir: './tests/assessment',
+  testDir: './tests',
   // Each spec clones its own isolated browser context, so specs are safe to
   // run in parallel. CI pins to a single worker for stability.
   fullyParallel: true,
