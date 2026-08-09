@@ -85,42 +85,35 @@ export const SplitRevealHeading: React.FC<SplitRevealHeadingProps> = ({
           onClick={handleClick}
           onKeyDown={handleKeyDown}
         >
-          <span className={`invisible block ${titleClassName ?? ''}`} aria-hidden="true">
+          <span className={`block ${titleClassName ?? ''}`} aria-hidden="true">
             {title}
           </span>
 
-          <span
-            className={`absolute inset-x-0 top-0 ${titleClassName ?? ''}`}
-            style={{ clipPath: 'inset(0 0 50% 0)' }}
+          <motion.span
+            className={`absolute inset-0 ${titleClassName ?? ''}`}
+            style={{ clipPath: 'polygon(0 0, 100% 0, 100% 50%, 0 50%)' }}
+            animate={{ y: isRevealed ? -20 : 0 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             aria-hidden="true"
           >
-            <motion.span
-              animate={{ y: isRevealed ? -6 : 0 }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="block"
-            >
-              {title}
-            </motion.span>
-          </span>
+            {title}
+          </motion.span>
 
-          <span
-            className={`absolute inset-x-0 ${titleClassName ?? ''}`}
-            style={{ clipPath: 'inset(50% 0 0 0)' }}
+          <motion.span
+            className={`absolute inset-0 ${titleClassName ?? ''}`}
+            style={{ clipPath: 'polygon(0 50%, 100% 50%, 100% 100%, 0 100%)' }}
+            animate={{ y: isRevealed ? 20 : 0 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             aria-hidden="true"
           >
-            <motion.span
-              animate={{ y: isRevealed ? 6 : 0 }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="block"
-            >
-              {title}
-            </motion.span>
-          </span>
+            {title}
+          </motion.span>
 
           <motion.div
-            className={`absolute inset-0 flex items-center justify-center pointer-events-none ${revealClassName ?? ''}`}
-            animate={{ opacity: isRevealed ? 1 : 0 }}
-            transition={{ duration: 0.3 }}
+            className={`absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden ${revealClassName ?? ''}`}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: isRevealed ? 1 : 0, scale: isRevealed ? 1 : 0.9 }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             aria-hidden="true"
           >
             {reveal}
