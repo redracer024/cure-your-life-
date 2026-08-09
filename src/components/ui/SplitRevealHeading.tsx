@@ -62,7 +62,7 @@ export const SplitRevealHeading: React.FC<SplitRevealHeadingProps> = ({
     <MotionConfig reducedMotion="user">
       <div
         data-testid="split-reveal"
-        className={`relative inline-block cursor-pointer ${className ?? ''}`}
+        className={`relative block w-fit cursor-pointer ${className ?? ''}`}
       >
         <HeadingTag id={headingId} className="sr-only">{title}</HeadingTag>
 
@@ -85,13 +85,13 @@ export const SplitRevealHeading: React.FC<SplitRevealHeadingProps> = ({
           onClick={handleClick}
           onKeyDown={handleKeyDown}
         >
-          <span className="invisible block" aria-hidden="true">
+          <span className={`invisible block ${titleClassName ?? ''}`} aria-hidden="true">
             {title}
           </span>
 
           <span
             className={`absolute inset-x-0 top-0 ${titleClassName ?? ''}`}
-            style={{ clipPath: 'inset(0 0 50% 0)', lineHeight: '1.1' }}
+            style={{ clipPath: 'inset(0 0 50% 0)' }}
             aria-hidden="true"
           >
             <motion.span
@@ -105,7 +105,7 @@ export const SplitRevealHeading: React.FC<SplitRevealHeadingProps> = ({
 
           <span
             className={`absolute inset-x-0 ${titleClassName ?? ''}`}
-            style={{ clipPath: 'inset(50% 0 0 0)', lineHeight: '1.1' }}
+            style={{ clipPath: 'inset(50% 0 0 0)' }}
             aria-hidden="true"
           >
             <motion.span
