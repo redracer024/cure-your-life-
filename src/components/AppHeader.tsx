@@ -17,14 +17,12 @@ export const AppHeader: React.FC = () => {
                 </div>
             </div>
 
-            {/* Header */}
-            <div className="space-y-2">
+            {/* Header — diagnostic pass: literal CodePen reproduction centered on page */}
+            <div className="relative w-full h-screen">
             <SplitRevealHeading
-                title={PRODUCT_NAME}
-                reveal={PRODUCT_TAGLINE}
-                accessibleReveal="Explore the whole pattern."
-                titleClassName="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight font-display-condensed leading-[0.95] text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-200"
-                revealClassName="text-[10px] font-display-condensed font-black uppercase tracking-[0.22em] text-slate-100"
+                title="BodySignal"
+                reveal="EXPLORE THE WHOLE PATTERN"
+                as="h1"
             />
             </div>
         </>
