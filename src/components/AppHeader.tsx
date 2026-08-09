@@ -1,6 +1,7 @@
 import React from 'react';
 import { AlertOctagon, ChevronRight } from 'lucide-react';
 import { PRODUCT_NAME, PRODUCT_TAGLINE } from '../lib/brand';
+import { SplitRevealHeading } from './ui/SplitRevealHeading';
 
 export const AppHeader: React.FC = () => {
     return (
@@ -18,14 +19,13 @@ export const AppHeader: React.FC = () => {
 
             {/* Header */}
             <div className="space-y-2">
-                <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter font-display leading-none">
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-300">
-                        {PRODUCT_NAME}
-                    </span>
-                </h1>
-                <p className="text-sm text-slate-500 max-w-lg font-light leading-7">
-                    {PRODUCT_TAGLINE}
-                </p>
+            <SplitRevealHeading
+                title={PRODUCT_NAME}
+                reveal={PRODUCT_TAGLINE}
+                accessibleReveal="Explore the whole pattern."
+                titleClassName="text-4xl md:text-6xl font-black uppercase tracking-tighter font-display leading-none text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-300"
+                revealClassName="text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-indigo-300"
+            />
             </div>
         </>
     );

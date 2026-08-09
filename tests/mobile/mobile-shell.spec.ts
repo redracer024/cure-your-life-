@@ -153,4 +153,109 @@ test.describe('Mobile Shell', () => {
       await expect(mobileToggle).not.toBeVisible();
     }
   });
+
+  test('SplitRevealHeading has correct semantics and keyboard behavior', async ({ page }) => {
+    await page.goto('/');
+    await page.waitForLoadState('networkidle');
+
+    const headingControl = page.locator('[role="button"][aria-expanded]').first();
+    await expect(headingControl).toBeVisible();
+
+    const semanticHeadings = headingControl.locator('h1, h2, h3, h4, h5, h6');
+    await expect(semanticHeadings).toHaveCount(0);
+
+    const component = page.locator('[data-testid="split-reveal"]').first();
+    const componentHeadings = component.locator('h1, h2, h3, h4, h5, h6');
+    await expect(componentHeadings).toHaveCount(1);
+
+    const accessibleHeading = page.getByRole('heading', { name: 'BodySignal' });
+    await expect(accessibleHeading).toHaveCount(1);
+    await expect(accessibleHeading).toHaveJSProperty('tagName', 'H1');
+
+    const srOnlyHeading = page.locator('h1.sr-only');
+    await expect(srOnlyHeading).toHaveCount(1);
+    await expect(srOnlyHeading).toHaveText('BodySignal');
+    await expect(headingControl.locator('.sr-only')).toHaveCount(0);
+
+    const visualCopies = headingControl.locator('span[aria-hidden="true"]');
+    await expect(visualCopies).toHaveCount(3);
+
+    const labelledBy = await headingControl.getAttribute('aria-labelledby');
+    expect(labelledBy).toBeTruthy();
+    const labelledHeading = page.locator(`[id="${labelledBy}"]`);
+    await expect(labelledHeading).toHaveCount(1);
+    await expect(labelledHeading).toHaveText('BodySignal');
+    await expect(headingControl).toHaveAttribute('aria-labelledby', labelledBy!);
+
+    const describedBy = await headingControl.getAttribute('aria-describedby');
+    expect(describedBy).toBeTruthy();
+    const description = page.locator(`[id="${describedBy}"]`);
+    await expect(description).toHaveCount(1);
+    await expect(description).toHaveText('Explore the whole pattern.');
+    await expect(headingControl).toHaveAttribute('aria-describedby', describedBy!);
+
+    // aria-labelledby points to the component's single semantic heading
+    await expect(labelledHeading).toHaveJSProperty('tagName', 'H1');
+
+    // aria-expanded reflects persistent pinned state, not temporary hover/focus
+    await headingControl.focus();
+    await expect(headingControl).toHaveAttribute('aria-expanded', 'false');
+
+    // Enter toggles pinned/open state
+    await headingControl.press('Enter');
+    await expect(headingControl).toHaveAttribute('aria-expanded', 'true');
+    await expect(headingControl).toHaveAttribute('data-pinned', 'true');
+
+    // Space toggles pinned/open state and prevents scroll
+    const scrollYBeforeSpace = await page.evaluate(() => window.scrollY);
+    await headingControl.press('Space');
+    await expect(headingControl).toHaveAttribute('aria-expanded', 'false');
+    await expect(headingControl).toHaveAttribute('data-pinned', 'false');
+    const scrollYAfterSpace = await page.evaluate(() => window.scrollY);
+    expect(scrollYAfterSpace).toBe(scrollYBeforeSpace);
+
+    const allControls = page.locator('[data-testid="split-reveal"] [role="button"][aria-expanded]');
+    const describedByIds = await allControls.evaluateAll(nodes => nodes.map(n => n.getAttribute('aria-describedby')).filter(Boolean) as string[]);
+    expect(new Set(describedByIds).size).toBe(describedByIds.length);
+  });
+
+  test('SplitRevealHeading toggles via touch on mobile', async ({ page }) => {
+    test.info().annotations.push({ type: 'touch-only', description: 'Requires hasTouch context' });
+    const hasTouch = test.info().project.use.hasTouch;
+    if (!hasTouch) {
+      test.skip(true, 'Touch assertions require a mobile/touch-enabled project');
+      return;
+    }
+
+    await page.goto('/');
+    await page.waitForLoadState('networkidle');
+
+    const headingControl = page.locator('[role="button"][aria-expanded]').first();
+    await expect(headingControl).toBeVisible();
+
+    await headingControl.tap();
+    await expect(headingControl).toHaveAttribute('aria-expanded', 'true');
+    await expect(headingControl).toHaveAttribute('data-pinned', 'true');
+    await expect(headingControl).toHaveAttribute('data-revealed', 'true');
+
+    // Second tap closes the reveal
+    await headingControl.tap();
+    await expect(headingControl).toHaveAttribute('data-pinned', 'false');
+    await expect(headingControl).toHaveAttribute('aria-expanded', 'false');
+    await headingControl.evaluate((el: HTMLElement) => el.blur());
+    await expect(headingControl).toHaveAttribute('data-revealed', 'false');
+
+    // Verify toggle behavior at the existing 375x812 mobile viewport
+    await page.setViewportSize({ width: 375, height: 812 });
+    await headingControl.tap();
+    await expect(headingControl).toHaveAttribute('data-pinned', 'true');
+    await expect(headingControl).toHaveAttribute('aria-expanded', 'true');
+    await expect(headingControl).toHaveAttribute('data-revealed', 'true');
+
+    await headingControl.tap();
+    await expect(headingControl).toHaveAttribute('data-pinned', 'false');
+    await expect(headingControl).toHaveAttribute('aria-expanded', 'false');
+    await headingControl.evaluate((el: HTMLElement) => el.blur());
+    await expect(headingControl).toHaveAttribute('data-revealed', 'false');
+  });
 });
