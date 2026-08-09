@@ -188,11 +188,11 @@ const server = app.listen(0, "127.0.0.1", () => {
     assert("12. prod CSP excludes unsafe-eval", !prodCspDirect.includes("'unsafe-eval'"));
     assert("13. prod CSP excludes ws/wss", !prodCspDirect.includes("ws:") && !prodCspDirect.includes("wss:"));
 
-    console.log("HSTS production-only");
-    const insecureRes = await fetch(`${base}/api/me/premium`, {
+    console.log("HSTS absent outside production HTTPS serving mode");
+    const nonHttpsRes = await fetch(`${base}/api/me/premium`, {
       headers: { Authorization: "Bearer valid-token" },
     });
-    assert("14. HSTS absent on insecure request", insecureRes.headers.get("strict-transport-security") == null);
+    assert("14. HSTS absent outside production HTTPS serving mode", nonHttpsRes.headers.get("strict-transport-security") == null);
 
     console.log("Body/parser results");
     const oversized = JSON.stringify({ data: "x".repeat(200 * 1024) });
@@ -383,8 +383,19 @@ const server = app.listen(0, "127.0.0.1", () => {
       headers: { "Content-Type": "application/json", Authorization: "Bearer valid-token" },
       body: JSON.stringify({ symptom: "headache" }),
     });
-    const errorText = await errorRes.text();
-    assert("27. service errors sanitized", errorRes.status === 500 && !errorText.includes("at ") && !errorText.includes("file://") && !errorText.endsWith(".ts"));
+    const errorJson = await errorRes.json();
+    assert("27. service errors return generic static text", errorRes.status === 500 && errorJson.error === "An error occurred during symptom analysis.");
+    assert("27b. no upstream details leaked in error response", !errorJson.error?.includes("Upstream") && !errorJson.error?.includes("Gemini") && !errorJson.error?.includes("API") && !errorJson.error?.includes("quota") && !errorJson.error?.includes("model"));
+
+    console.log("Successful analyzer behavior");
+    geminiShouldThrow = false;
+    const successRes = await fetch(`${base}/api/analyze-symptom`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: "Bearer valid-token" },
+      body: JSON.stringify({ symptom: "headache" }),
+    });
+    const successJson = await successRes.json();
+    assert("27c. successful analyzer returns expected schema", successRes.status === 200 && successJson.emotionalRoot && successJson.physiologicalDescription && successJson.sarcasticReview && Array.isArray(successJson.mindfulnessPrompts) && Array.isArray(successJson.practicalTips));
 
     console.log("CORS results");
     assert("28. no wildcard CORS", !errorRes.headers.get("access-control-allow-origin")?.includes("*"));

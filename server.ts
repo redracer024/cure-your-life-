@@ -111,7 +111,7 @@ app.use((req: express.Request, res: express.Response, next: express.NextFunction
   res.setHeader("Permissions-Policy", "camera=(), microphone=(), geolocation=(), payment=(), usb=(), accelerometer=(), gyroscope=()");
   res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
 
-  if (!isDevelopment && req.secure) {
+  if (_isProd && APP_URL.startsWith("https://")) {
     res.setHeader("Strict-Transport-Security", "max-age=15552000; includeSubDomains");
   }
 
@@ -1267,8 +1267,8 @@ User's self-reported lifestyle habits/context: "${habits || 'Not provided'}"`;
 
   } catch (error: any) {
     console.error("Error analyzing symptom:", error);
-    return res.status(500).json({ 
-      error: error.message || "An error occurred during symptom analysis."
+    return res.status(500).json({
+      error: "An error occurred during symptom analysis."
     });
   }
 });

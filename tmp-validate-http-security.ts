@@ -40,8 +40,10 @@ assert('9. frame protection exists', prodCsp.includes("frame-ancestors 'none'") 
 assert('10. nosniff exists', serverSrc.includes('X-Content-Type-Options", "nosniff"'));
 assert('11. referrer policy exists', serverSrc.includes('Referrer-Policy", "strict-origin-when-cross-origin"'));
 assert('12. permissions policy exists', serverSrc.includes('Permissions-Policy'));
-assert('13. HSTS production-only', serverSrc.includes('if (!isDevelopment && req.secure)') && serverSrc.includes('Strict-Transport-Security'));
-assert('14. localhost development not forced into HSTS', !devCsp.includes('Strict-Transport-Security') && serverSrc.includes('if (!isDevelopment && req.secure)'));
+assert('13. HSTS requires production serving mode and HTTPS app URL', serverSrc.includes('_isProd') && serverSrc.includes('APP_URL.startsWith("https://")') && serverSrc.includes('Strict-Transport-Security'));
+assert('14. localhost development not forced into HSTS', !devCsp.includes('Strict-Transport-Security') && serverSrc.includes('_isProd && APP_URL.startsWith("https://")'));
+assert('14b. old req.secure HSTS condition removed', !serverSrc.includes('if (!isDevelopment && req.secure)'));
+assert('14c. trust proxy remains false to prevent X-Forwarded-For spoofing', serverSrc.includes('app.set("trust proxy", false)'));
 
 assert('15. style-src allows Google Fonts stylesheet origin', prodCsp.includes("https://fonts.googleapis.com"));
 assert('16. font-src allows Google Fonts font file origin', prodCsp.includes("https://fonts.gstatic.com"));
@@ -72,6 +74,8 @@ assert('33. RLS/schema unchanged', !serverSrc.includes('alter table public.subsc
 assert('34. Stripe entitlement logic unchanged', serverSrc.includes('isPremiumEntitled(subscription)'));
 assert('35. Google Play unchanged', !serverSrc.includes('/api/billing/google-play') && !serverSrc.includes('billingclient'));
 assert('36. no Playwright', !serverSrc.toLowerCase().includes('playwright'));
+assert('37. analyzer catch returns static generic message', serverSrc.includes('error: "An error occurred during symptom analysis."') && !serverSrc.includes('error: error.message'));
+assert('38. analyzer catch preserves server-side logging', serverSrc.includes('console.error("Error analyzing symptom:", error)'));
 
 console.log('In-memory limiter behavior checks');
 {
