@@ -13,6 +13,7 @@ import { useDecoderState } from './hooks/useDecoderState';
 import { useDictionaryNavigation } from './hooks/useDictionaryNavigation';
 import type { JournalPromptData } from './hooks/useDictionaryNavigation';
 import { authFetch } from './lib/supabaseClient';
+import { MedicalDisclosureModal, hasDisclosureAcknowledged, MEDICAL_DISCLOSURE_VERSION } from './components/legal/MedicalDisclosureModal';
 
 function AppInner() {
   const auth = useAuth();
@@ -20,6 +21,34 @@ function AppInner() {
   const decoder = useDecoderState(premium.isPremium, premium.setShowPaywall);
   const dict = useDictionaryNavigation();
   const [showQuiz, setShowQuiz] = useState(false);
+  const [disclosureOpen, setDisclosureOpen] = useState(false);
+  const [pendingAction, setPendingAction] = useState<(() => void) | null>(null);
+  const [disclosureAcknowledged, setDisclosureAcknowledged] = useState(() => hasDisclosureAcknowledged());
+
+  useState(() => {
+    if (!hasDisclosureAcknowledged()) {
+      setDisclosureOpen(true);
+    }
+  });
+
+  const requireDisclosure = useCallback((action: () => void) => {
+    if (disclosureAcknowledged || hasDisclosureAcknowledged()) {
+      action();
+    } else {
+      setPendingAction(() => action);
+      setDisclosureOpen(true);
+    }
+  }, [disclosureAcknowledged]);
+
+  const handleDisclosureAcknowledge = useCallback(() => {
+    setDisclosureAcknowledged(true);
+    setDisclosureOpen(false);
+    if (pendingAction) {
+      const action = pendingAction;
+      setPendingAction(null);
+      action();
+    }
+  }, [pendingAction]);
 
   const openDecoder = useCallback(() => {
     if (!premium.isPremium) {
@@ -27,8 +56,8 @@ function AppInner() {
       premium.setBillingMessage('AI Somatic Decoder is Premium. The free version keeps the dictionary, symptom cards, safety info, reflections, and basic journal open.');
       return;
     }
-    dict.setActiveTab('decoder');
-  }, [premium.isPremium, premium.setShowPaywall, premium.setBillingMessage, dict.setActiveTab]);
+    requireDisclosure(() => dict.setActiveTab('decoder'));
+  }, [premium.isPremium, premium.setShowPaywall, premium.setBillingMessage, dict.setActiveTab, requireDisclosure]);
 
   const handleOpenJournal = useCallback((data: { sourcePatternId: string; sourcePatternName: string; prompt: string }) => {
     const journalData: JournalPromptData = {
@@ -38,14 +67,28 @@ function AppInner() {
       prompt: data.prompt,
     };
     dict.setJournalPromptData(journalData);
-    dict.setActiveTab('journal');
-  }, [dict]);
+    requireDisclosure(() => dict.setActiveTab('journal'));
+  }, [dict, requireDisclosure]);
+
+  const handleOpenQuiz = useCallback(() => {
+    requireDisclosure(() => setShowQuiz(true));
+  }, [requireDisclosure]);
+
+  const handleSetActiveTab = useCallback((tab: 'dictionary' | 'decoder' | 'daily' | 'journal' | 'patterns') => {
+    if (tab === 'decoder') {
+      openDecoder();
+    } else if (tab === 'journal') {
+      requireDisclosure(() => dict.setActiveTab('journal'));
+    } else {
+      dict.setActiveTab(tab);
+    }
+  }, [openDecoder, requireDisclosure, dict]);
 
   return (
     <AppLayout>
       <Navigation
         activeTab={dict.activeTab}
-        setActiveTab={dict.setActiveTab}
+        setActiveTab={handleSetActiveTab}
         openDecoder={openDecoder}
       />
       <AuthSection />
@@ -72,7 +115,7 @@ function AppInner() {
           setDecodedResult={decoder.setDecodedResult}
           onJournalRedirect={() => dict.setActiveTab('journal')}
           openDecoder={openDecoder}
-          onOpenQuiz={() => setShowQuiz(true)}
+          onOpenQuiz={handleOpenQuiz}
           highlightPatternId={dict.highlightPatternId}
           onClearHighlightPattern={() => dict.setHighlightPatternId(null)}
           onOpenJournal={handleOpenJournal}
@@ -90,6 +133,10 @@ function AppInner() {
       />
       <PremiumPaywall authFetch={authFetch} />
       <AppFooter />
+      <MedicalDisclosureModal
+        open={disclosureOpen}
+        onAcknowledge={handleDisclosureAcknowledge}
+      />
     </AppLayout>
   );
 }

@@ -44,10 +44,11 @@ export const CategoryDetailHeader: React.FC<CategoryDetailHeaderProps> = ({
                         </span>
                     </div>
                     <h2
-                        className="text-4xl md:text-6xl font-black uppercase tracking-tighter font-display bg-clip-text text-transparent drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]"
+                        className="text-4xl md:text-6xl font-black uppercase tracking-tighter font-display bg-clip-text text-transparent leading-[1.1]"
                         style={{
                             backgroundImage: `linear-gradient(to top, transparent -20%, #ffffff 80%)`,
-                            WebkitTextStroke: `1.5px ${activeColor}80`
+                            WebkitTextStroke: `1.5px ${activeColor}80`,
+                            textShadow: `0 0 40px ${activeColor}40`
                         }}
                     >
                         {selectedCategory}

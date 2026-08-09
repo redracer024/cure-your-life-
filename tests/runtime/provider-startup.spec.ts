@@ -19,7 +19,7 @@ test.describe('provider startup', () => {
     const header = page.locator('span', { hasText: /BodySignal/ }).first();
     await expect(header, `Header not found. Page errors: ${JSON.stringify(errors)}`).toBeVisible({ timeout: 10_000 });
 
-    await expect(page.locator('text=/Not signed in|Signed in as|Supabase Account Link/i').first()).toBeVisible({ timeout: 5_000 });
+    await expect(page.locator('text=/Sign in|Create account|Account/i').first()).toBeVisible({ timeout: 5_000 });
   });
 
   test('no fatal errors during initial mount', async ({ page }) => {

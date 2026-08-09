@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { AlertCircle } from 'lucide-react';
 import type { VideoResource } from '../../lib/media/types';
+import { sanitizeMediaUrl } from '../../lib/media/urlSafety';
 
 interface VideoPlayerProps {
   resource: VideoResource;
@@ -10,10 +11,29 @@ interface VideoPlayerProps {
 export const VideoPlayer: React.FC<VideoPlayerProps> = ({ resource, title }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [hasError, setHasError] = useState(false);
+  const safeUrl = sanitizeMediaUrl(resource.url);
 
   const handleError = () => {
     setHasError(true);
   };
+
+  if (!safeUrl) {
+    return (
+      <div className="w-full max-w-full">
+        {title && (
+          <p className="text-xs font-mono text-slate-400 uppercase tracking-widest mb-2">
+            {title}
+          </p>
+        )}
+        <div className="flex flex-col items-center justify-center gap-2 p-8 text-center">
+          <AlertCircle className="w-6 h-6 text-slate-500" />
+          <p className="text-xs text-slate-400 font-sans">
+            This video could not be loaded. The media source is unavailable or invalid.
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="w-full max-w-full">
@@ -41,7 +61,7 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({ resource, title }) => 
             aria-label={resource.title}
             title={resource.title}
           >
-            <source src={resource.url} type="video/mp4" />
+            <source key={safeUrl} src={safeUrl} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         )}

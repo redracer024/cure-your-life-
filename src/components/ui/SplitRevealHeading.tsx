@@ -91,7 +91,7 @@ export const SplitRevealHeading: React.FC<SplitRevealHeadingProps> = ({
 
           <span
             className={`absolute inset-x-0 top-0 ${titleClassName ?? ''}`}
-            style={{ clipPath: 'inset(0 0 50% 0)' }}
+            style={{ clipPath: 'inset(0 0 50% 0)', lineHeight: '1.1' }}
             aria-hidden="true"
           >
             <motion.span
@@ -105,7 +105,7 @@ export const SplitRevealHeading: React.FC<SplitRevealHeadingProps> = ({
 
           <span
             className={`absolute inset-x-0 ${titleClassName ?? ''}`}
-            style={{ clipPath: 'inset(50% 0 0 0)' }}
+            style={{ clipPath: 'inset(50% 0 0 0)', lineHeight: '1.1' }}
             aria-hidden="true"
           >
             <motion.span

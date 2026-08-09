@@ -1,5 +1,5 @@
-import React from 'react';
-import { User, Key, ArrowLeft } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { User, Key, ArrowLeft, LogIn, UserPlus } from 'lucide-react';
 import { authFetch, isSupabaseConfigured } from '../lib/supabaseClient';
 import { useAuth } from '../context/AuthContext';
 import { usePremium } from '../context/PremiumContext';
@@ -8,22 +8,28 @@ import { deleteCurrentAccount } from '../lib/account/deleteAccount';
 export const AuthSection: React.FC = () => {
   const auth = useAuth();
   const premium = usePremium();
-  const [deleteConfirmOpen, setDeleteConfirmOpen] = React.useState(false);
-  const [deleteConfirmText, setDeleteConfirmText] = React.useState('');
-  const [deleteInFlight, setDeleteInFlight] = React.useState(false);
-  const [deleteMessage, setDeleteMessage] = React.useState<string | null>(null);
-  const [authExpanded, setAuthExpanded] = React.useState(false);
+  const [deleteConfirmOpen, setDeleteConfirmOpen] = useState(false);
+  const [deleteConfirmText, setDeleteConfirmText] = useState('');
+  const [deleteInFlight, setDeleteInFlight] = useState(false);
+  const [deleteMessage, setDeleteMessage] = useState<string | null>(null);
+  const [authExpanded, setAuthExpanded] = useState(false);
   const currentUserIdRef = React.useRef<string | null>(auth.authUser?.id ?? null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     currentUserIdRef.current = auth.authUser?.id ?? null;
   }, [auth.authUser?.id]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (auth.authUser) return;
     setDeleteConfirmOpen(false);
     setDeleteConfirmText('');
   }, [auth.authUser]);
+
+  useEffect(() => {
+    if (auth.authMode === 'recovery' || auth.authMode === 'confirm') {
+      setAuthExpanded(true);
+    }
+  }, [auth.authMode]);
 
   const handleDeleteAccount = async () => {
     if (deleteInFlight) return;
@@ -102,41 +108,19 @@ export const AuthSection: React.FC = () => {
   const isRecoveryMode = auth.authMode === 'recovery' && Boolean(auth.authUser);
 
   return (
-    <div className="border-b border-white/10 bg-black/45 backdrop-blur-xl px-6 md:px-10 py-2 md:py-3 relative z-40">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-3 lg:items-center justify-between">
-        <div className="flex flex-col gap-1">
-          <span className="text-[10px] font-mono uppercase tracking-[0.22em] text-cyan-400 font-black">
-            Supabase Account Link
-          </span>
-          <span className="text-[11px] text-slate-400 font-mono">
-            {isSupabaseConfigured
-              ? auth.authStatus === 'authenticated' && auth.authUser
-                ? `Signed in as ${auth.authUser.email || 'Supabase user'}`
-                : auth.authStatus === 'session-expired'
-                  ? 'Your session has expired. Sign in again to continue account features.'
-                  : auth.authStatus === 'temporary-error'
-                    ? 'Unable to verify your session right now. Premium features may be unavailable.'
-                    : 'Not signed in. Premium can still run in DEV_PREMIUM mode.'
-              : 'Frontend Supabase env missing.'}
-          </span>
-          {premium.premiumStatus?.message && (
-            <span className="text-[11px] text-slate-500 font-mono">
-              Premium: {premium.premiumStatus.source || 'unknown'} • {premium.premiumStatus.isPremium ? 'active' : 'locked'}
-            </span>
-          )}
-        </div>
-
+    <div className="border-b border-white/10 bg-black/45 backdrop-blur-xl px-4 md:px-10 py-2 relative z-40">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
         {auth.authUser ? (
-          <div className="flex flex-col sm:flex-row gap-2 sm:items-center">
-            <div className="px-3 py-2 rounded-xl border border-cyan-500/20 bg-cyan-500/10 text-cyan-200 text-[11px] font-mono">
-              <User className="inline w-3.5 h-3.5 mr-1" />
-              {auth.authUser.email}
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl border border-white/10 bg-white/5 text-slate-200 text-[11px] font-mono">
+              <User className="w-3.5 h-3.5 text-slate-400" />
+              <span className="truncate max-w-[200px]">{auth.authUser.email}</span>
             </div>
             <button
               type="button"
               onClick={auth.handleLogout}
               disabled={auth.authLoading || deleteInFlight}
-              className="px-4 py-2 rounded-xl border border-white/10 text-slate-300 hover:text-white hover:bg-white/10 text-[11px] uppercase tracking-widest font-black font-mono disabled:opacity-50"
+              className="px-3 py-1.5 rounded-xl border border-white/10 text-slate-300 hover:text-white hover:bg-white/10 text-[11px] uppercase tracking-widest font-black font-mono disabled:opacity-50 transition-colors"
             >
               Logout
             </button>
@@ -148,53 +132,69 @@ export const AuthSection: React.FC = () => {
                 setDeleteConfirmText('');
               }}
               disabled={auth.authLoading || deleteInFlight}
-              className="px-4 py-2 rounded-xl border border-red-500/40 text-red-200 hover:text-red-100 hover:bg-red-500/10 text-[11px] uppercase tracking-widest font-black font-mono disabled:opacity-50"
+              className="px-3 py-1.5 rounded-xl border border-red-500/30 text-red-300 hover:text-red-100 hover:bg-red-500/10 text-[11px] uppercase tracking-widest font-black font-mono disabled:opacity-50 transition-colors"
             >
-              Delete account
+              Delete
             </button>
           </div>
         ) : (
-          <>
-            <div className="sm:hidden">
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setAuthExpanded((prev) => !prev)}
+              aria-expanded={authExpanded}
+              aria-controls="compact-auth-form"
+              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-200 text-[11px] uppercase tracking-widest font-black font-mono transition-colors"
+            >
+              <LogIn className="w-3.5 h-3.5" />
+              {authExpanded ? 'Close' : 'Sign in'}
+            </button>
+            {!authExpanded && (
               <button
                 type="button"
-                onClick={() => setAuthExpanded((prev) => !prev)}
-                aria-expanded={authExpanded}
-                aria-controls="mobile-auth-form"
-                className="w-full px-4 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black text-[11px] uppercase tracking-widest font-black font-mono"
+                onClick={() => setAuthExpanded(true)}
+                className="flex items-center gap-2 px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black text-[11px] uppercase tracking-widest font-black font-mono transition-colors"
               >
-                {authExpanded ? 'HIDE LOGIN' : 'SIGN IN / CREATE'}
+                <UserPlus className="w-3.5 h-3.5" />
+                Create account
               </button>
-            </div>
-            <form
-              id="mobile-auth-form"
-              onSubmit={auth.handleAuthSubmit}
-              className={`flex flex-col sm:flex-row gap-2 w-full lg:w-auto ${!authExpanded ? 'hidden sm:flex' : ''}`}
-            >
-              <input
-                type="email"
-                value={auth.authEmail}
-                onChange={(e) => auth.setAuthEmail(e.target.value)}
-                placeholder="email"
-                className="bg-black/50 border border-white/10 rounded-xl px-3 py-2 text-xs text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500/50 w-full sm:min-w-[190px]"
-              />
-              <input
-                type="password"
-                value={auth.authPassword}
-                onChange={(e) => auth.setAuthPassword(e.target.value)}
-                placeholder="password"
-                className="bg-black/50 border border-white/10 rounded-xl px-3 py-2 text-xs text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500/50 w-full sm:min-w-[160px]"
-              />
-              <button
-                type="submit"
-                disabled={auth.authLoading || !isSupabaseConfigured}
-                className="px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black text-[11px] uppercase tracking-widest font-black font-mono disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {auth.authLoading ? 'Working...' : 'Login / Create'}
-              </button>
-            </form>
-          </>
+            )}
+          </div>
         )}
+      </div>
+
+      <div
+        id="compact-auth-form"
+        className={`max-w-7xl mx-auto mt-3 transition-all duration-300 ${authExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}
+      >
+        <form
+          onSubmit={auth.handleAuthSubmit}
+          className="flex flex-col sm:flex-row gap-2 w-full lg:w-auto"
+        >
+          <input
+            type="email"
+            value={auth.authEmail}
+            onChange={(e) => auth.setAuthEmail(e.target.value)}
+            placeholder="email"
+            autoComplete="email"
+            className="bg-black/50 border border-white/10 rounded-xl px-3 py-2 text-xs text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500/50 w-full sm:min-w-[190px]"
+          />
+          <input
+            type="password"
+            value={auth.authPassword}
+            onChange={(e) => auth.setAuthPassword(e.target.value)}
+            placeholder="password"
+            autoComplete="current-password"
+            className="bg-black/50 border border-white/10 rounded-xl px-3 py-2 text-xs text-white placeholder:text-slate-600 focus:outline-none focus:border-cyan-500/50 w-full sm:min-w-[160px]"
+          />
+          <button
+            type="submit"
+            disabled={auth.authLoading || !isSupabaseConfigured}
+            className="px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black text-[11px] uppercase tracking-widest font-black font-mono disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          >
+            {auth.authLoading ? 'Working...' : 'Login / Create'}
+          </button>
+        </form>
       </div>
 
       {showRecoveryRequest && (
@@ -217,7 +217,7 @@ export const AuthSection: React.FC = () => {
             <button
               type="submit"
               disabled={auth.resetPasswordLoading || !isSupabaseConfigured}
-              className="px-4 py-2 rounded-xl bg-slate-700 hover:bg-slate-600 text-white text-[11px] uppercase tracking-widest font-black font-mono disabled:opacity-50"
+              className="px-4 py-2 rounded-xl bg-slate-700 hover:bg-slate-600 text-white text-[11px] uppercase tracking-widest font-black font-mono disabled:opacity-50 transition-colors"
             >
               {auth.resetPasswordLoading ? 'Sending...' : 'Send reset link'}
             </button>
@@ -260,7 +260,7 @@ export const AuthSection: React.FC = () => {
             <button
               type="submit"
               disabled={auth.authLoading || !isSupabaseConfigured}
-              className="px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black text-[11px] uppercase tracking-widest font-black font-mono disabled:opacity-50"
+              className="px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black text-[11px] uppercase tracking-widest font-black font-mono disabled:opacity-50 transition-colors"
             >
               {auth.authLoading ? 'Saving...' : 'Save new password'}
             </button>
@@ -287,7 +287,7 @@ export const AuthSection: React.FC = () => {
               type="button"
               onClick={handleDeleteAccount}
               disabled={deleteInFlight || deleteConfirmText !== 'DELETE'}
-              className="px-4 py-2 rounded-xl bg-red-500 hover:bg-red-400 text-black text-[11px] uppercase tracking-widest font-black disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-4 py-2 rounded-xl bg-red-500 hover:bg-red-400 text-black text-[11px] uppercase tracking-widest font-black disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               {deleteInFlight ? 'Deleting...' : 'Permanently delete account'}
             </button>
@@ -299,7 +299,7 @@ export const AuthSection: React.FC = () => {
                 setDeleteConfirmText('');
               }}
               disabled={deleteInFlight}
-              className="px-4 py-2 rounded-xl border border-white/10 text-slate-300 hover:text-white hover:bg-white/10 text-[11px] uppercase tracking-widest font-black disabled:opacity-50"
+              className="px-4 py-2 rounded-xl border border-white/10 text-slate-300 hover:text-white hover:bg-white/10 text-[11px] uppercase tracking-widest font-black disabled:opacity-50 transition-colors"
             >
               Cancel
             </button>

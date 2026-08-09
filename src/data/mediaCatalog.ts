@@ -6,7 +6,7 @@ export const mediaCatalog: MediaResource[] = [
     type: 'video',
     title: 'Pain Reflects Emotions',
     description: 'A brief overview of how emotional states can manifest as physical tension patterns.',
-    url: 'https://pub-61a6f2a3fc254836a9d34227d4473a6c.r2.dev/video/invisible%20one/Pain_Reflects_Emotions.mp4',
+    url: 'https://pub-61a6f2a3fc254836a9d34227d4473a6c.r2.dev/video/invisible-one/Pain_Reflects_Emotions.mp4',
     sourceLabel: 'R2 Development',
     isPremium: false,
   },

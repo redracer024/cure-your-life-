@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { AlertCircle } from 'lucide-react';
 import type { AudioResource } from '../../lib/media/types';
+import { sanitizeMediaUrl } from '../../lib/media/urlSafety';
 
 interface AudioPlayerProps {
   resource: AudioResource;
@@ -10,10 +11,29 @@ interface AudioPlayerProps {
 export const AudioPlayer: React.FC<AudioPlayerProps> = ({ resource, title }) => {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [hasError, setHasError] = useState(false);
+  const safeUrl = sanitizeMediaUrl(resource.url);
 
   const handleError = () => {
     setHasError(true);
   };
+
+  if (!safeUrl) {
+    return (
+      <div className="w-full max-w-full">
+        {title && (
+          <p className="text-xs font-mono text-slate-400 uppercase tracking-widest mb-2">
+            {title}
+          </p>
+        )}
+        <div className="flex flex-col items-center justify-center gap-2 p-4 text-center">
+          <AlertCircle className="w-5 h-5 text-slate-500" />
+          <p className="text-xs text-slate-400 font-sans">
+            This audio could not be loaded. The media source is unavailable or invalid.
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="w-full max-w-full">
@@ -40,7 +60,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({ resource, title }) => 
             aria-label={resource.title}
             title={resource.title}
           >
-            <source src={resource.url} />
+            <source key={safeUrl} src={safeUrl} type="audio/mpeg" />
             Your browser does not support the audio element.
           </audio>
         )}
