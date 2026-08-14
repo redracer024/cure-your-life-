@@ -374,8 +374,16 @@ body {
   width: max-content;
   min-width: 100%;
   transform: translate(-50%, -50%) scaleY(0);
-  color: #000;
-  background: #ff0;
+  color: #f8fafc;
+  background: linear-gradient(
+    90deg,
+    rgba(79, 70, 229, 0.96),
+    rgba(6, 182, 212, 0.96),
+    rgba(124, 58, 237, 0.96)
+  );
+  box-shadow:
+    0 0 12px rgba(99, 102, 241, 0.20),
+    0 0 18px rgba(6, 182, 212, 0.12);
   font-size: 0.25em;
   font-weight: 500;
   letter-spacing: 0.7em;
