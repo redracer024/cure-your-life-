@@ -48,25 +48,48 @@
     "physicalTherapyTip": "Track onset, severity, frequency, triggers, neck/jaw tension, posture, sleep, hydration, caffeine, medications, eye strain, fever, stiff neck, neurologic symptoms, trauma, pregnancy/postpartum, and medication use."
   },
   {
-    "id": "chronic-fatigue",
-    "name": "Somatic Chronic Fatigue",
+    "id": "balance-loss",
+    "name": "Balance, Loss of",
     "category": "General & Energy",
+    "emotionalRoot": "Feeling scattered, ungrounded, or trying to move in too many directions at once. Refusing to stand still or center yourself because you are caught up in external chaos.",
+    "metaphor": "A spinning top trying to navigate a windy bridge, refusing to slow down and find its center until it literally wobbles off the edge.",
+    "physiologicalDescription": "Sustained stress-induced autonomic dysregulation disrupts vestibular processing and compromises cervical proprioception, leading to transient sensations of instability or dizziness.",
+    "sarcasticAdvice": "Superb. Continue running at 110 mph in five different directions while drinking double-espressos instead of water. I'm sure your inner ear will eventually figure out where gravity is on its own.",
+    "mindfulnessPrompts": [
+      "Where am I trying to run or escape to in my mind instead of standing firmly in this exact moment?",
+      "If I slowed down to an absolute crawl, what parts of my life would suddenly feel stable?"
+    ],
+    "physicalTherapyTip": "Stand on one foot near a wall for safety, focusing your gaze on a single unmoving spot. Hold for 30 seconds to retrain the brain's proprioceptive and vestibular pathways."
+  },
+  {
+    "id": "bedwetting-nocturnal-enuresis",
+    "name": "Bedwetting / Nocturnal Enuresis",
+    "category": "Pelvic, Urinary & Reproductive",
     "tags": [
-      "HPA axis",
-      "cortisol depletion",
-      "mitochondria",
-      "boundary exhaustion"
+      "bedwetting",
+      "nocturnal enuresis",
+      "childhood bedwetting",
+      "adult bedwetting",
+      "bladder",
+      "sleep",
+      "urinary",
+      "nighttime urination",
+      "shame",
+      "constipation",
+      "sleep apnea"
     ],
     "riskLevel": "Medical monitoring recommended",
-    "emotionalRoot": "Deep subconscious resistance to your current life path. Exhaustion from constant internal mental battles and suppressing your true desires.",
-    "metaphor": "Your body pulling the main circuit breaker because it is tired of powering a life that you secretly despise.",
-    "physiologicalDescription": "Prolonged high-stress states lead to chronic HPA axis dysregulation, characterized by blunted diurnal cortisol curves (hypocortisolemia). Cellular energy pathways suffer from mitochondrial exhaustion due to persistent, low-grade systemic inflammatory cytokine release.",
-    "sarcasticAdvice": "By all means, keep taking 30-minute naps while leaving 40 tabs open in your brain. Let's pretend you are physically exhausted because of 'weather changes' and not because you spend 8 hours a day doing work you hate for people you don't even respect.",
+    "emotionalRoot": "Possible themes to explore include shame, nighttime vulnerability, fear of losing control, family stress, changes in safety or routine, and the need for calm support rather than blame. In children, developmental timing and the emotional climate around accidents may matter greatly to the experience even when they are not the medical cause. In adults, embarrassment can make people delay seeking help. These are reflective themes only; bedwetting can have developmental, urinary, sleep-related, neurologic, metabolic, medication-related, and other physical contributors.",
+    "metaphor": "Nighttime bladder control is a relay race between the kidneys, bladder, sleeping brain, hormones, nerves, and the ability to wake when the tank is full. Sometimes somebody drops the baton. That is considerably less dramatic than declaring the mattress a subconscious confession booth.",
+    "physiologicalDescription": "Bedwetting, or nocturnal enuresis, means involuntary urination during sleep. In children, nighttime bladder control develops at different rates, and contributors can include family history, nighttime urine production, bladder capacity or function, difficulty waking from sleep, constipation, sleep disorders, urinary conditions, diabetes, and other factors. A child who begins wetting again after being dry for a substantial period may need evaluation for medical, sleep, developmental, or major life changes. In adults, recurrent or new bedwetting is less typical and can be associated with sleep apnea, diabetes, urinary tract infection, medications, alcohol, neurologic conditions, seizures, prostate or bladder problems, and other medical causes. Persistent childhood concerns or recurring adult bedwetting should be discussed with an appropriate healthcare professional.",
+    "sarcasticAdvice": "Nobody is wetting the bed because they enjoy surprise laundry at 2 a.m. Shaming a kid teaches shame, not bladder control, and pretending new adult bedwetting is just 'stress' is an equally creative way to avoid getting an actual medical answer.",
     "mindfulnessPrompts": [
-      "What truth am I hiding from myself that is draining all of my life force?",
-      "If I had absolute permission to fail or quit, what would I stop doing immediately?"
+      "Is this childhood bedwetting, adult bedwetting, or a new return after a long dry period?",
+      "Are there daytime accidents, pain, constipation, excessive thirst, snoring, urinary symptoms, medication changes, alcohol use, or other clues that deserve medical attention?",
+      "Where is shame making this problem harder to discuss or manage?",
+      "What would calm, practical, blame-free nighttime support look like?"
     ],
-    "physicalTherapyTip": "Practice 'non-sleep deep rest' (NSDR) or Yoga Nidra for 15 minutes. Engage in low-intensity movement like walking in nature without headphones."
+    "physicalTherapyTip": "Use practical, shame-free management while the cause is being understood. In children, a consistent bedtime routine, using the bathroom before sleep, addressing constipation when present, and calm cleanup can help reduce distress. In adults, track fluids, alcohol, medications, sleep quality, snoring, urinary symptoms, timing, and other changes. Seek medical evaluation for persistent concerns, new adult onset, pain or burning, fever, blood in the urine, excessive thirst or urination, significant daytime urinary symptoms, neurologic changes, or other concerning features."
   },
   {
     "id": "irritable-bowel",
@@ -130,7 +153,7 @@
     "riskLevel": "Medical monitoring recommended",
     "emotionalRoot": "Boundary overload, sensitivity, chronic stress, irritation, overwhelm, and the feeling that too much is getting through the skin of your life.",
     "metaphor": "Your skin is an understaffed embassy with thin walls, a glitchy gate, and border patrol firing at everything because the security budget got wrecked.",
-    "physiologicalDescription": "Chronic psychological stress disrupts the skin barrier by elevating cortisol and suppressing the production of ceramides and filaggrin\u2014proteins essential for skin integrity. Stress also activates mast cells, releasing histamine and inflammatory cytokines (IL-4, IL-13, IL-31) that drive the itch-scratch cycle. The American Academy of Dermatology confirms that stress is a primary trigger for eczema flares, with 80% of patients reporting symptom onset during high-stress periods.",
+    "physiologicalDescription": "Chronic psychological stress disrupts the skin barrier by elevating cortisol and suppressing the production of ceramides and filaggrin—proteins essential for skin integrity. Stress also activates mast cells, releasing histamine and inflammatory cytokines (IL-4, IL-13, IL-31) that drive the itch-scratch cycle. The American Academy of Dermatology confirms that stress is a primary trigger for eczema flares, with 80% of patients reporting symptom onset during high-stress periods.",
     "sarcasticAdvice": "Your skin is not being dramatic. It is running border security with a cracked wall and three unpaid interns named Itch, Scratch, and Regret.",
     "mindfulnessPrompts": [
       "What am I letting in that I need to keep out?",
@@ -238,7 +261,7 @@
       "What am I afraid will happen if I completely surrender control for 8 hours?",
       "What unresolved safety or trust issue did I fail to address during the light of day?"
     ],
-    "physicalTherapyTip": "Implement a strict 'no-screen' rule 60 minutes before bed. Keep your bedroom cold (around 65\u00b0F / 18\u00b0C) and practice progressive muscle relaxation starting from your toes up to your forehead."
+    "physicalTherapyTip": "Implement a strict 'no-screen' rule 60 minutes before bed. Keep your bedroom cold (around 65°F / 18°C) and practice progressive muscle relaxation starting from your toes up to your forehead."
   },
   {
     "id": "tmj-jaw-clenching",
@@ -298,7 +321,7 @@
     "category": "Stomach & Gut",
     "emotionalRoot": "Swallowed anger, unspoken boundaries, rumination, and a body that may tighten around truths it never got to express.",
     "metaphor": "Your digestive system is an understaffed airport security line where every bag is suspicious, the conveyor belt keeps jamming, and emotional luggage has been circling since 2004.",
-    "physiologicalDescription": "Chronic stress and emotional suppression dysregulate the autonomic nervous system, particularly the balance between sympathetic (fight or flight) and parasympathetic (rest and digest) tone. The vagus nerve, which normally modulates gut function, becomes blunted. Without adequate parasympathetic input, the enteric nervous system becomes hyperreactive. Smooth muscle contractions become uncoordinated and excessive. The result may be abdominal cramping\u2014often accompanied by bloating, gas, diarrhea, or constipation. The Mayo Clinic confirms that stress and suppressed emotion are primary triggers for irritable bowel syndrome and functional abdominal pain. The GI tract is not a meat pipe. It may be a neural organ. And it has been taking emotional damage for years.",
+    "physiologicalDescription": "Chronic stress and emotional suppression dysregulate the autonomic nervous system, particularly the balance between sympathetic (fight or flight) and parasympathetic (rest and digest) tone. The vagus nerve, which normally modulates gut function, becomes blunted. Without adequate parasympathetic input, the enteric nervous system becomes hyperreactive. Smooth muscle contractions become uncoordinated and excessive. The result may be abdominal cramping—often accompanied by bloating, gas, diarrhea, or constipation. The Mayo Clinic confirms that stress and suppressed emotion are primary triggers for irritable bowel syndrome and functional abdominal pain. The GI tract is not a meat pipe. It may be a neural organ. And it has been taking emotional damage for years.",
     "sarcasticAdvice": "Your gut may not be dramatic. It may be the only department still willing to report the truth you keep swallowing.",
     "mindfulnessPrompts": [
       "What am I swallowing that I should have said out loud?",
@@ -322,7 +345,7 @@
     "category": "Skin & Sleep",
     "emotionalRoot": "Visibility, shame, suppressed frustration, boundary stress, and the feeling that what is hidden keeps surfacing.",
     "metaphor": "Your face is a wastewater treatment plant where clogged pipes, extra oil, bacteria, hormones, and stress interns keep causing inflammatory explosions.",
-    "physiologicalDescription": "Chronic psychological stress elevates corticotropin-releasing hormone (CRH) in both the brain and the sebaceous glands themselves. CRH stimulates sebocyte androgen production, increasing sebum viscosity and follicular occlusion. Simultaneously, stress upregulates substance P and IL-1\u03b1, activating mast cells and amplifying the inflammatory response to Cutibacterium acnes. The NIDDK notes that stress-induced cortisol also disrupts gut-skin axis permeability, while the American Academy of Dermatology confirms that 85% of acne patients report stress as a primary exacerbating factor.",
+    "physiologicalDescription": "Chronic psychological stress elevates corticotropin-releasing hormone (CRH) in both the brain and the sebaceous glands themselves. CRH stimulates sebocyte androgen production, increasing sebum viscosity and follicular occlusion. Simultaneously, stress upregulates substance P and IL-1α, activating mast cells and amplifying the inflammatory response to Cutibacterium acnes. The NIDDK notes that stress-induced cortisol also disrupts gut-skin axis permeability, while the American Academy of Dermatology confirms that 85% of acne patients report stress as a primary exacerbating factor.",
     "sarcasticAdvice": "Acne is not proof you are dirty. Scrubbing your face like it owes you money usually makes things worse, because skin enjoys irony.",
     "mindfulnessPrompts": [
       "What part of me is trying to surface?",
@@ -371,7 +394,7 @@
     "category": "Head & Neck",
     "emotionalRoot": "Memory grief, identity fear, fading connection, caregiver stress, and the human terror of losing the thread of self.",
     "metaphor": "The mind is a library where ink is fading, shelves are misfiled, and the lights in the memory wing are flickering.",
-    "physiologicalDescription": "Alzheimer\u2019s disease is a progressive neurodegenerative disease and common cause of dementia. It can cause worsening memory loss, disorientation, language difficulty, behavior/personality changes, functional decline, and caregiver burden. Diagnosis requires medical evaluation and ruling out other causes of cognitive decline.",
+    "physiologicalDescription": "Alzheimer's disease is a progressive neurodegenerative disease and common cause of dementia. It can cause worsening memory loss, disorientation, language difficulty, behavior/personality changes, functional decline, and caregiver burden. Diagnosis requires medical evaluation and ruling out other causes of cognitive decline.",
     "sarcasticAdvice": "Do not write off progressive memory loss as just aging. Brains do misplace keys; they should not slowly lose the map of the house.",
     "mindfulnessPrompts": [
       "What thread needs support?",
@@ -566,18 +589,28 @@
     "physicalTherapyTip": "Lie on your back and bring your knees to your chest (double knee-to-chest stretch) for 30 seconds to decompress the lumbar spine. Gently activate your transverse abdominis."
   },
   {
-    "id": "balance-loss",
-    "name": "Balance, Loss of",
+    "id": "cancer-general",
+    "name": "Cancer — General Diagnosis",
     "category": "General & Energy",
-    "emotionalRoot": "Feeling scattered, ungrounded, or trying to move in too many directions at once. Refusing to stand still or center yourself because you are caught up in external chaos.",
-    "metaphor": "A spinning top trying to navigate a windy bridge, refusing to slow down and find its center until it literally wobbles off the edge.",
-    "physiologicalDescription": "Sustained stress-induced autonomic dysregulation disrupts vestibular processing and compromises cervical proprioception, leading to transient sensations of instability or dizziness.",
-    "sarcasticAdvice": "Superb. Continue running at 110 mph in five different directions while drinking double-espressos instead of water. I'm sure your inner ear will eventually figure out where gravity is on its own.",
+    "emotionalRoot": "Shock, fear, grief, uncertainty, mortality, medical overwhelm, and the need for real treatment plus human support. Symbolically: shock, mortality, attention, support, and the demand to stop pretending the body can be ignored.",
+    "metaphor": "Your body is a garden where one patch has started growing outside the normal rules and now needs specialists with maps, tools, and actual treatment.",
+    "physiologicalDescription": "Cancer is not one disease. It is a group of diseases involving abnormal cell growth with potential invasion or spread. Diagnosis and treatment depend on cancer type, location, stage, biology, and the person's health.",
+    "sarcasticAdvice": "Do not replace oncology, imaging, biopsy, surgery, radiation, chemotherapy, immunotherapy, targeted therapy, hormone therapy, or screening with vibes. Vibes may sit in the waiting room and behave.",
     "mindfulnessPrompts": [
-      "Where am I trying to run or escape to in my mind instead of standing firmly in this exact moment?",
-      "If I slowed down to an absolute crawl, what parts of my life would suddenly feel stable?"
+      "What medical step is next?",
+      "What symptom needs evaluation now?",
+      "Who is on my support team?",
+      "What meaning helps me cope without replacing treatment?"
     ],
-    "physicalTherapyTip": "Stand on one foot near a wall for safety, focusing your gaze on a single unmoving spot. Hold for 30 seconds to retrain the brain's proprioceptive and vestibular pathways."
+    "physicalTherapyTip": "Track symptoms, screening history, family history, diagnosis stage if known, treatment plan, side effects, weight loss, pain, bleeding, fatigue, fever, infection signs, and urgent changes. Follow oncology guidance.",
+    "tags": [
+      "cancer",
+      "oncology",
+      "diagnosis",
+      "screening",
+      "treatment"
+    ],
+    "riskLevel": "Medical monitoring recommended"
   },
   {
     "id": "baldness",
@@ -602,20 +635,6 @@
       "stress"
     ],
     "riskLevel": "Medical monitoring recommended"
-  },
-  {
-    "id": "bed-wetting",
-    "name": "Bed-Wetting",
-    "category": "Stomach & Gut",
-    "emotionalRoot": "Fear of authority figures, high subconscious anxiety, carrying suppressed fears of punishment, or holding back tears and emotional release until the conscious mind falls asleep.",
-    "metaphor": "Your urinary system relaxing in your sleep, which may be influenced by spending all day holding in emotional tension and in absolute control.",
-    "physiologicalDescription": "Sustained daytime anxiety raises baseline muscle tension. At night, as the central nervous system transitions into deep sleep, a rebound relaxation triggers involuntary detrusor muscle contraction of the bladder.",
-    "sarcasticAdvice": "Let's continue to pretend that everything is absolutely perfect during the day while your bladder stages a midnight protest. I'm sure that ignoring your deepest anxieties will eventually make the mattress dry.",
-    "mindfulnessPrompts": [
-      "What terrifying feelings or tears am I holding back during the day that require my bladder to cry for me at night?",
-      "How can I create a sense of true safety for my inner child before I go to sleep?"
-    ],
-    "physicalTherapyTip": "Practice pelvic floor relaxation techniques (reverse Kegels) before bed, and establish a calming, screens-free wind-down routine 1 hour before sleep to soothe the nervous system."
   },
   {
     "id": "blisters",
@@ -666,26 +685,50 @@
     "riskLevel": "Medical monitoring recommended"
   },
   {
-    "id": "hypotension",
-    "name": "Low Blood Pressure",
+    "id": "cysts",
+    "name": "Cysts",
     "category": "General & Energy",
-    "emotionalRoot": "Depletion, collapse, drained force, lack of push, giving out, and the need to identify whether low pressure is harmless baseline or dangerous under-circulation.",
-    "metaphor": "Your circulatory system is a tired pump trying to move water uphill after the battery has started writing its resignation letter.",
-    "physiologicalDescription": "Low blood pressure is blood pressure lower than expected for a person. It may be normal without symptoms, but symptomatic hypotension can involve dizziness, fainting, fatigue, blurred vision, nausea, cold/clammy skin, dehydration, bleeding, infection, heart problems, endocrine issues, autonomic dysfunction, orthostatic hypotension, postprandial hypotension, POTS-like symptoms, or medication effects.",
-    "sarcasticAdvice": "Do not stand up like a triumphant hero if your blood pressure drops when you rise. Sit down before the floor introduces itself.",
+    "emotionalRoot": "Containment, accumulation, pressure, guarded emotion, held fluid, delayed release, and the need to know whether a pocket is harmless, infected, ruptured, hormonal, or suspicious.",
+    "metaphor": "Your body has made a sealed pocket, like a water balloon with paperwork, and the first job is figuring out what kind of pocket it is before poking anything like a backyard surgeon.",
+    "physiologicalDescription": "A cyst is a closed sac-like structure that may contain fluid, air, or semi-solid material. Cysts can occur in skin, ovaries, breasts, kidneys, joints, brain, liver, or other tissues. Many are benign, but some can become painful, infected, ruptured, torsed, hormonally linked, recurrent, or rarely malignant depending on type and location.",
+    "sarcasticAdvice": "Do not squeeze, stab, dig, or drain random lumps at home like biology is a garage sale. Infection loves confidence without training.",
     "mindfulnessPrompts": [
-      "Is low blood pressure normal for me or symptomatic?",
-      "Do I faint, fall, or feel shock symptoms?",
-      "What is draining volume, tone, or cardiac output?",
-      "Where am I running on empty symbolically?"
+      "What kind of cyst is this and where is it located?",
+      "What red flag means urgent care?",
+      "What am I holding symbolically without making the cyst my fault?",
+      "What needs evaluation instead of squeezing?"
     ],
-    "physicalTherapyTip": "Track readings, symptoms, standing triggers, fainting, fluid intake, bleeding, vomiting/diarrhea, fever/infection, medications, heart symptoms, pregnancy, diabetes, adrenal/thyroid issues, POTS symptoms, and injuries from falls.",
+    "physicalTherapyTip": "Track location, size, growth, pain, redness, warmth, drainage, fever, sudden severe pain, pelvic symptoms, breast changes, kidney/urinary symptoms, neurologic symptoms, recurrence, and whether imaging or exam has been done.",
     "tags": [
-      "hypotension",
-      "low blood pressure",
-      "orthostatic hypotension",
-      "dizziness",
-      "fainting"
+      "cysts",
+      "epidermoid cyst",
+      "ovarian cyst",
+      "breast cyst",
+      "ganglion cyst"
+    ],
+    "riskLevel": "Medical monitoring recommended"
+  },
+  {
+    "id": "depression",
+    "name": "Depression",
+    "category": "General & Energy",
+    "emotionalRoot": "Depletion, disconnection, heaviness, emptiness, hopelessness, nervous-system shutdown, grief, and the need for care without shame.",
+    "metaphor": "Your life is a room with the dimmer switch stuck low, and the wiring needs real support, not someone yelling be brighter from the hallway.",
+    "physiologicalDescription": "Depression is a medical mood disorder that can involve persistent low mood, loss of interest or pleasure, sleep/appetite changes, fatigue, guilt or worthlessness, difficulty concentrating, psychomotor changes, physical symptoms, and thoughts of death or suicide. Causes are multifactorial and can include genetics, brain chemistry, inflammation, trauma, stress, grief, substance use, medications, chronic illness, sleep problems, and social factors.",
+    "sarcasticAdvice": "Do not tell a depressed person to just choose happiness. That advice belongs in the museum of useless human noises.",
+    "mindfulnessPrompts": [
+      "Am I safe right now?",
+      "What support can I reach today?",
+      "What tiny action lowers the load by one percent?",
+      "What treatment step am I avoiding because shame is loud?"
+    ],
+    "physicalTherapyTip": "Track mood, anhedonia, sleep, appetite/weight, energy, concentration, guilt, agitation/slowing, substance use, medication changes, medical conditions, trauma/grief, social support, self-harm thoughts, suicide thoughts, and ability to function.",
+    "tags": [
+      "depression",
+      "major depressive disorder",
+      "mood",
+      "anhedonia",
+      "mental health"
     ],
     "riskLevel": "Medical monitoring recommended"
   },
@@ -695,7 +738,7 @@
     "category": "Skin & Sleep",
     "emotionalRoot": "Festering resentment, unaddressed conflict, boundary wounds, shame, and the feeling that something toxic has been left under the surface too long.",
     "metaphor": "Your skin is a landfill that was closed in 1995 but never capped, and the boil is the underground trash finally blowing out.",
-    "physiologicalDescription": "Chronic stress suppresses Th1-mediated immunity, reducing the skin's ability to contain bacterial colonization. Stress also elevates cortisol, which increases sebum viscosity and follicular occlusion. The resulting bacterial overgrowth triggers a massive neutrophilic response\u2014the \"boil\" is a pocket of dead neutrophils, bacteria, and liquefied tissue. The CDC notes that recurrent furunculosis is strongly associated with psychological stress, with 65% of patients reporting significant stress in the 2 weeks prior to outbreak.",
+    "physiologicalDescription": "Chronic stress suppresses Th1-mediated immunity, reducing the skin's ability to contain bacterial colonization. Stress also elevates cortisol, which increases sebum viscosity and follicular occlusion. The resulting bacterial overgrowth triggers a massive neutrophilic response—the \"boil\" is a pocket of dead neutrophils, bacteria, and liquefied tissue. The CDC notes that recurrent furunculosis is strongly associated with psychological stress, with 65% of patients reporting significant stress in the 2 weeks prior to outbreak.",
     "sarcasticAdvice": "Do not perform bathroom surgery on a boil with a sewing needle and confidence. That is not courage. That is how bacteria get a promotion.",
     "mindfulnessPrompts": [
       "What have I been letting fester?",
@@ -762,26 +805,26 @@
     "riskLevel": "Medical monitoring recommended"
   },
   {
-    "id": "cancer-general",
-    "name": "Cancer \u2014 General Diagnosis",
+    "id": "left-side-body-problems",
+    "name": "Left Side of Body Problems",
     "category": "General & Energy",
-    "emotionalRoot": "Shock, fear, grief, uncertainty, mortality, medical overwhelm, and the need for real treatment plus human support. Symbolically: shock, mortality, attention, support, and the demand to stop pretending the body can be ignored.",
-    "metaphor": "Your body is a garden where one patch has started growing outside the normal rules and now needs specialists with maps, tools, and actual treatment.",
-    "physiologicalDescription": "Cancer is not one disease. It is a group of diseases involving abnormal cell growth with potential invasion or spread. Diagnosis and treatment depend on cancer type, location, stage, biology, and the person\u2019s health.",
-    "sarcasticAdvice": "Do not replace oncology, imaging, biopsy, surgery, radiation, chemotherapy, immunotherapy, targeted therapy, hormone therapy, or screening with vibes. Vibes may sit in the waiting room and behave.",
+    "emotionalRoot": "Receiving, grief, one-sided burden, imbalance, blocked support, and the need to treat one-sided symptoms medically before assigning meaning.",
+    "metaphor": "Your body is a car wobbling on one flat left tire, and the first question is whether this is posture, nerve, organ pain, heart pain, stroke signs, or the suspension finally filing a complaint.",
+    "physiologicalDescription": "Left-sided body symptoms can come from muscle strain, posture, nerve compression, sciatica, neck/back problems, joint issues, circulation problems, heart attack symptoms, stroke/TIA symptoms, lung/spleen/kidney/colon issues, injury, shingles, inflammatory disease, or referred pain from internal organs.",
+    "sarcasticAdvice": "Do not call sudden left-sided weakness, numbness, chest pain, or face droop an energy blockage. That is how people end up arguing with emergency medicine from the wrong side of time.",
     "mindfulnessPrompts": [
-      "What medical step is next?",
-      "What symptom needs evaluation now?",
-      "Who is on my support team?",
-      "What meaning helps me cope without replacing treatment?"
+      "Is this sudden or severe?",
+      "Are there stroke or heart symptoms?",
+      "What physical system could refer pain here?",
+      "Where do I need support instead of one-sided carrying?"
     ],
-    "physicalTherapyTip": "Track symptoms, screening history, family history, diagnosis stage if known, treatment plan, side effects, weight loss, pain, bleeding, fatigue, fever, infection signs, and urgent changes. Follow oncology guidance.",
+    "physicalTherapyTip": "Track exact location, onset, sudden vs gradual, weakness, numbness, face droop, speech/vision/balance changes, chest pressure, shortness of breath, jaw/arm/back pain, abdominal pain, fever, rash, injury, and neurologic symptoms.",
     "tags": [
-      "cancer",
-      "oncology",
-      "diagnosis",
-      "screening",
-      "treatment"
+      "left side",
+      "one-sided pain",
+      "left-sided symptoms",
+      "stroke symptoms",
+      "referred pain"
     ],
     "riskLevel": "Medical monitoring recommended"
   },
@@ -906,98 +949,86 @@
     "riskLevel": "Medical monitoring recommended"
   },
   {
-    "id": "bedwetting-childhood",
-    "name": "Bedwetting / Nocturnal Enuresis \u2014 Childhood",
+    "id": "hypotension",
+    "name": "Low Blood Pressure",
     "category": "General & Energy",
-    "tags": [
-      "bedwetting",
-      "childhood",
-      "sleep",
-      "bladder",
-      "safety"
-    ],
-    "riskLevel": "Medical monitoring recommended",
-    "emotionalRoot": "Nighttime fear, shame, developmental timing, sleep depth, family stress, and a child's need for calm consistency instead of blame.",
-    "metaphor": "The child's bladder is a night-shift security guard who keeps hitting the alarm because nobody told him the parking lot is safe now.",
-    "physiologicalDescription": "Chronic stress and hypervigilance suppress antidiuretic hormone (ADH) release from the posterior pituitary, increasing nighttime urine production (per NIDDK). Additionally, sympathetic dominance during sleep prevents the brainstem from registering bladder fullness signals. The American Urological Association confirms that children with adverse childhood experiences (ACEs) have 3x higher rates of nocturnal enuresis independent of organic pathology.",
-    "sarcasticAdvice": "Do not shame a child for a sleeping nervous system doing automatic body nonsense. The child did not schedule a 2 a.m. laundry ceremony for fun.",
-    "physicalTherapyTip": "Use calm cleanup, bedtime routine, bathroom before bed, constipation support if present, and medical evaluation for pain, daytime accidents, excessive thirst, fever, UTI symptoms, new onset, or persistent concerns.",
+    "emotionalRoot": "Depletion, collapse, drained force, lack of push, giving out, and the need to identify whether low pressure is harmless baseline or dangerous under-circulation.",
+    "metaphor": "Your circulatory system is a tired pump trying to move water uphill after the battery has started writing its resignation letter.",
+    "physiologicalDescription": "Low blood pressure is blood pressure lower than expected for a person. It may be normal without symptoms, but symptomatic hypotension can involve dizziness, fainting, fatigue, blurred vision, nausea, cold/clammy skin, dehydration, bleeding, infection, heart problems, endocrine issues, autonomic dysfunction, orthostatic hypotension, postprandial hypotension, POTS-like symptoms, or medication effects.",
+    "sarcasticAdvice": "Do not stand up like a triumphant hero if your blood pressure drops when you rise. Sit down before the floor introduces itself.",
     "mindfulnessPrompts": [
-      "What helps this child feel safe before sleep?",
-      "Where can the adult reduce shame and increase consistency?",
-      "Is this new, worsening, painful, or paired with daytime symptoms?",
-      "What would nighttime look like if cleanup was calm and blame-free?"
-    ]
-  },
-  {
-    "id": "bedwetting-adulthood",
-    "name": "Bedwetting / Nocturnal Enuresis \u2014 Adulthood",
-    "category": "General & Energy",
-    "tags": [
-      "adult bedwetting",
-      "nocturnal enuresis",
-      "sleep",
-      "bladder",
-      "shame"
+      "Is low blood pressure normal for me or symptomatic?",
+      "Do I faint, fall, or feel shock symptoms?",
+      "What is draining volume, tone, or cardiac output?",
+      "Where am I running on empty symbolically?"
     ],
-    "riskLevel": "Medical monitoring recommended",
-    "emotionalRoot": "Shame, exhaustion, sleep disruption, fear of loss of control, trauma history in some people, and a body that may no longer trust nighttime safety.",
-    "metaphor": "Your bladder is a glitchy home security system installed after an old break-in, still blaring long after the burglars left.",
-    "physiologicalDescription": "Adult bedwetting can involve sleep apnea, diabetes, urinary tract infection, medications, alcohol, neurologic conditions, prostate or bladder issues, seizures, severe stress, trauma-related sleep disruption, or other medical causes.",
-    "sarcasticAdvice": "This is not a character flaw. It is a medical signal with a shame soundtrack, because apparently the body enjoys drama at 3 a.m.",
-    "physicalTherapyTip": "Recurring adult bedwetting deserves medical evaluation. Track fluids, alcohol, medications, sleep, snoring, urinary symptoms, stress, and timing.",
-    "mindfulnessPrompts": [
-      "What does my body fear will happen if it fully rests?",
-      "Is this new, worsening, or paired with urinary or sleep symptoms?",
-      "Where does shame make me hide instead of getting help?",
-      "What would nighttime safety feel like without self-punishment?"
-    ]
-  },
-  {
-    "id": "cysts",
-    "name": "Cysts",
-    "category": "General & Energy",
-    "emotionalRoot": "Containment, accumulation, pressure, guarded emotion, held fluid, delayed release, and the need to know whether a pocket is harmless, infected, ruptured, hormonal, or suspicious.",
-    "metaphor": "Your body has made a sealed pocket, like a water balloon with paperwork, and the first job is figuring out what kind of pocket it is before poking anything like a backyard surgeon.",
-    "physiologicalDescription": "A cyst is a closed sac-like structure that may contain fluid, air, or semi-solid material. Cysts can occur in skin, ovaries, breasts, kidneys, joints, brain, liver, or other tissues. Many are benign, but some can become painful, infected, ruptured, torsed, hormonally linked, recurrent, or rarely malignant depending on type and location.",
-    "sarcasticAdvice": "Do not squeeze, stab, dig, or drain random lumps at home like biology is a garage sale. Infection loves confidence without training.",
-    "mindfulnessPrompts": [
-      "What kind of cyst is this and where is it located?",
-      "What red flag means urgent care?",
-      "What am I holding symbolically without making the cyst my fault?",
-      "What needs evaluation instead of squeezing?"
-    ],
-    "physicalTherapyTip": "Track location, size, growth, pain, redness, warmth, drainage, fever, sudden severe pain, pelvic symptoms, breast changes, kidney/urinary symptoms, neurologic symptoms, recurrence, and whether imaging or exam has been done.",
+    "physicalTherapyTip": "Track readings, symptoms, standing triggers, fainting, fluid intake, bleeding, vomiting/diarrhea, fever/infection, medications, heart symptoms, pregnancy, diabetes, adrenal/thyroid issues, POTS symptoms, and injuries from falls.",
     "tags": [
-      "cysts",
-      "epidermoid cyst",
-      "ovarian cyst",
-      "breast cyst",
-      "ganglion cyst"
+      "hypotension",
+      "low blood pressure",
+      "orthostatic hypotension",
+      "dizziness",
+      "fainting"
     ],
     "riskLevel": "Medical monitoring recommended"
   },
   {
-    "id": "depression",
-    "name": "Depression",
-    "category": "General & Energy",
-    "emotionalRoot": "Depletion, disconnection, heaviness, emptiness, hopelessness, nervous-system shutdown, grief, and the need for care without shame.",
-    "metaphor": "Your life is a room with the dimmer switch stuck low, and the wiring needs real support, not someone yelling be brighter from the hallway.",
-    "physiologicalDescription": "Depression is a medical mood disorder that can involve persistent low mood, loss of interest or pleasure, sleep/appetite changes, fatigue, guilt or worthlessness, difficulty concentrating, psychomotor changes, physical symptoms, and thoughts of death or suicide. Causes are multifactorial and can include genetics, brain chemistry, inflammation, trauma, stress, grief, substance use, medications, chronic illness, sleep problems, and social factors.",
-    "sarcasticAdvice": "Do not tell a depressed person to just choose happiness. That advice belongs in the museum of useless human noises.",
+    "id": "low-libido",
+    "name": "Low Libido / Loss of Sexual Desire",
+    "category": "Pelvic, Urinary & Reproductive",
+    "emotionalRoot": "Possible themes to explore include exhaustion, loss of vitality, shame, pressure, difficulty receiving pleasure, resentment, disconnection, vulnerability, autonomy, attraction, safety, and the difference between genuinely wanting something and feeling obligated to want it. Low desire may be generalized across situations or specific to a partner or context. These are reflective themes only. Sexual desire is influenced by a complex mix of physical health, medications, hormones, sleep, mood, pain, substances, life stage, sexual function, relationship context, and individual variation.",
+    "metaphor": "Libido is apparently run by a committee made up of your hormones, sleep schedule, medications, nervous system, mood, pain level, relationship, self-image, and whatever idiot scheduled three hours of sleep last night. When desire disappears, blaming one committee member before checking the meeting notes is how humans end up buying testosterone boosters from a shirtless man on the internet.",
+    "physiologicalDescription": "Sexual desire is not the same thing as physical arousal, erection or lubrication, orgasm, or sexual pain. Some people experience spontaneous desire, while others more often experience responsive desire that develops after affectionate or erotic engagement begins. Low desire can be lifelong or acquired, generalized across situations or specific to a partner or context, and it is not automatically a disorder when the person is comfortable with their level of sexual interest. Contributors to a meaningful decline in desire can include depression or anxiety, sleep deprivation or sleep apnea, chronic illness, pain, medications, hormonal or endocrine conditions, pregnancy or postpartum changes, perimenopause or menopause, sexual pain, erectile or arousal difficulties, substance use, and relationship or situational factors. Symptoms alone cannot determine a hormone level or identify one cause.",
+    "sarcasticAdvice": "If you genuinely want nobody, anywhere, ever, investigate sleep, medications, hormones, mood, pain, health, substances, and exhaustion before declaring yourself sexually deceased. If your libido works in fantasies, alone, or around other people but repeatedly clocks out around one particular partner, the relationship context belongs in the investigation too. Neither pattern is a verdict. Both are information.",
     "mindfulnessPrompts": [
-      "Am I safe right now?",
-      "What support can I reach today?",
-      "What tiny action lowers the load by one percent?",
-      "What treatment step am I avoiding because shame is loud?"
+      "Is my desire low everywhere, or mainly with a particular partner or situation?",
+      "Do I still experience fantasies, attraction, masturbation interest, or desire in other contexts?",
+      "Did this change gradually, suddenly, or after a medication, health, sleep, relationship, or life change?",
+      "Am I personally distressed by my low desire, or mostly distressed by someone else's reaction to it?",
+      "Does affection with no expectation of sex help me relax, or does my body still brace or withdraw?",
+      "Are pain, erectile or arousal difficulties, exhaustion, depression, sleep problems, substance use, or other physical clues part of the picture?"
     ],
-    "physicalTherapyTip": "Track mood, anhedonia, sleep, appetite/weight, energy, concentration, guilt, agitation/slowing, substance use, medication changes, medical conditions, trauma/grief, social support, self-harm thoughts, suicide thoughts, and ability to function.",
+    "physicalTherapyTip": "Track the pattern rather than reducing it to a single hormone or relationship explanation. Note whether desire is generalized or partner-specific, spontaneous or responsive, lifelong or acquired, and whether fantasies or solo desire remain present. Track sleep, fatigue, medications, substances, mood, pain, erectile or arousal changes, menstrual or menopausal changes when relevant, major health changes, and relationship context. A significant or distressing change deserves medical evaluation, especially when accompanied by endocrine, neurologic, genital, sexual-pain, or major mood symptoms.",
     "tags": [
-      "depression",
-      "major depressive disorder",
-      "mood",
-      "anhedonia",
-      "mental health"
+      "libido",
+      "low libido",
+      "sexual desire",
+      "loss of desire",
+      "sex drive",
+      "responsive desire",
+      "spontaneous desire",
+      "partner-specific desire",
+      "attraction",
+      "sexual health",
+      "hormones",
+      "testosterone",
+      "menopause",
+      "medications",
+      "relationship",
+      "resentment",
+      "pressure",
+      "fatigue",
+      "sleep",
+      "shame"
+    ],
+    "riskLevel": "Medical monitoring recommended"
+  },
+  {
+    "id": "pelvic-pain",
+    "name": "Pelvic Pain",
+    "category": "Pelvic, Urinary & Reproductive",
+    "emotionalRoot": "The pelvis as bodily foundation, container, and private guarded territory; supplied reflection covers support, containment, vulnerability, relationship and sexual impact, and the difference between the first pain and added suffering.",
+    "metaphor": "The pelvis is a crowded, multi-department region where reproductive, urinary, bowel, muscular, pelvic-floor, and nerve systems share overlapping territory.",
+    "physiologicalDescription": "Pelvic pain is pain, pressure, aching, burning, cramping, heaviness, or other discomfort felt in the lower abdomen, pelvis, groin, perineum, or genital region. It is a symptom, not one diagnosis. Reproductive organs, bladder and urinary tract, bowel, pelvic-floor muscles, hips, abdominal wall, nerves, spine, and nearby structures can all contribute, sometimes simultaneously.\n\nThe pattern matters. Sudden severe pain is a different problem from chronic recurring pain. Cyclic pain differs from pain tied to bladder filling, bowel movements, sitting, movement, penetration, orgasm, urination, or no obvious trigger at all. Pelvic pain deserves neither automatic panic nor automatic dismissal.",
+    "sarcasticAdvice": "Pelvic pain is not one diagnosis, and a normal scan does not turn it into fiction; get the pattern, screen red flags, and pursue appropriate evaluation instead of a single guess.",
+    "mindfulnessPrompts": [],
+    "physicalTherapyTip": "Track location, quality, timing, menstrual or hormonal context, bladder and bowel activity, triggers, and what helps or worsens; seek evaluation for persistent, recurrent, or red-flag pelvic pain.",
+    "tags": [
+      "pelvic pain",
+      "pelvis",
+      "lower abdomen",
+      "pelvic floor",
+      "chronic pelvic pain"
     ],
     "riskLevel": "Medical monitoring recommended"
   },
@@ -1131,7 +1162,7 @@
     "category": "Skin & Sleep",
     "emotionalRoot": "Depletion, over-giving, visibility fear, aging anxiety, chronic stress, and the feeling that color has been drained from life.",
     "metaphor": "Your follicles are an art studio where the paint budget got cut and the students keep turning in blank canvases.",
-    "physiologicalDescription": "Chronic psychological stress elevates cortisol and depletes antioxidant reserves, increasing oxidative stress. Oxidative stress damages the melanocytes\u2014the cells that produce pigment in hair follicles. The National Institutes of Health confirms that chronic stress is a significant risk factor for premature greying, with elevated cortisol and oxidative stress accelerating melanocyte depletion by up to 30-40%. The colour drains. The essence leaves.",
+    "physiologicalDescription": "Chronic psychological stress elevates cortisol and depletes antioxidant reserves, increasing oxidative stress. Oxidative stress damages the melanocytes—the cells that produce pigment in hair follicles. The National Institutes of Health confirms that chronic stress is a significant risk factor for premature greying, with elevated cortisol and oxidative stress accelerating melanocyte depletion by up to 30-40%. The colour drains. The essence leaves.",
     "sarcasticAdvice": "Gray hair is not proof your soul expired. It is pigment biology, family history, aging, stress, and maybe labs, because even hair color apparently needs paperwork.",
     "mindfulnessPrompts": [
       "Where do I feel drained of color?",
@@ -1299,9 +1330,9 @@
     "riskLevel": "Medical monitoring recommended"
   },
   {
-    "id": "impotence",
-    "name": "Impotence",
-    "category": "Metabolic & Endocrine",
+    "id": "erectile-dysfunction",
+    "name": "Erectile Dysfunction",
+    "category": "Pelvic, Urinary & Reproductive",
     "emotionalRoot": "Performance pressure, fear of inadequacy, withdrawal, stress, shame, relationship tension, and difficulty feeling safe enough to be present.",
     "metaphor": "Your erection system is a party balloon where the helium valve is controlled by blood flow, nerves, hormones, mood, meds, and one panicked supervisor yelling DO NOT MESS THIS UP.",
     "physiologicalDescription": "Erectile dysfunction is difficulty getting or maintaining an erection sufficient for sex. It can involve cardiovascular disease, diabetes, high blood pressure, vascular disease, nerve injury, low testosterone, thyroid or prolactin problems, depression, anxiety, relationship stress, medications, alcohol/substance use, sleep apnea, pelvic surgery, or Peyronie's disease.",
@@ -1349,10 +1380,10 @@
   {
     "id": "kidney-stones",
     "name": "Kidney Stones",
-    "category": "Stomach & Gut",
+    "category": "Pelvic, Urinary & Reproductive",
     "emotionalRoot": "Fear, control, rigidity, chronic bracing, and worry that has hardened into a pattern of holding instead of flowing.",
     "metaphor": "Your kidneys are a water-treatment plant running on emergency drought protocol until the pipes start scaling into little rocks of pain.",
-    "physiologicalDescription": "Chronic stress and fear-driven hypervigilance often lead to inadequate hydration\u2014both physical and emotional. When the body is in a state of chronic sympathetic activation, the kidneys concentrate urine to preserve fluid. Over time, minerals precipitate and form stones. The National Kidney Foundation confirms that chronic stress and dehydration are primary risk factors for kidney stones, with stress-related fluid imbalance accounting for a significant portion of cases.",
+    "physiologicalDescription": "Chronic stress and fear-driven hypervigilance often lead to inadequate hydration—both physical and emotional. When the body is in a state of chronic sympathetic activation, the kidneys concentrate urine to preserve fluid. Over time, minerals precipitate and form stones. The National Kidney Foundation confirms that chronic stress and dehydration are primary risk factors for kidney stones, with stress-related fluid imbalance accounting for a significant portion of cases.",
     "sarcasticAdvice": "Your kidneys are not a gravel factory for fun. Maybe drink water before your urinary tract starts doing masonry.",
     "mindfulnessPrompts": [
       "What fear has hardened because I keep rehearsing it?",
@@ -1391,30 +1422,6 @@
       "voice loss",
       "throat",
       "vocal cords"
-    ],
-    "riskLevel": "Medical monitoring recommended"
-  },
-  {
-    "id": "left-side-body-problems",
-    "name": "Left Side of Body Problems",
-    "category": "General & Energy",
-    "emotionalRoot": "Receiving, grief, one-sided burden, imbalance, blocked support, and the need to treat one-sided symptoms medically before assigning meaning.",
-    "metaphor": "Your body is a car wobbling on one flat left tire, and the first question is whether this is posture, nerve, organ pain, heart pain, stroke signs, or the suspension finally filing a complaint.",
-    "physiologicalDescription": "Left-sided body symptoms can come from muscle strain, posture, nerve compression, sciatica, neck/back problems, joint issues, circulation problems, heart attack symptoms, stroke/TIA symptoms, lung/spleen/kidney/colon issues, injury, shingles, inflammatory disease, or referred pain from internal organs.",
-    "sarcasticAdvice": "Do not call sudden left-sided weakness, numbness, chest pain, or face droop an energy blockage. That is how people end up arguing with emergency medicine from the wrong side of time.",
-    "mindfulnessPrompts": [
-      "Is this sudden or severe?",
-      "Are there stroke or heart symptoms?",
-      "What physical system could refer pain here?",
-      "Where do I need support instead of one-sided carrying?"
-    ],
-    "physicalTherapyTip": "Track exact location, onset, sudden vs gradual, weakness, numbness, face droop, speech/vision/balance changes, chest pressure, shortness of breath, jaw/arm/back pain, abdominal pain, fever, rash, injury, and neurologic symptoms.",
-    "tags": [
-      "left side",
-      "one-sided pain",
-      "left-sided symptoms",
-      "stroke symptoms",
-      "referred pain"
     ],
     "riskLevel": "Medical monitoring recommended"
   },
@@ -1543,100 +1550,87 @@
     "riskLevel": "Medical monitoring recommended"
   },
   {
-    "id": "weight-arms",
-    "name": "Weight Issues (Arms)",
-    "category": "General & Energy",
-    "emotionalRoot": "Accumulation, protection, responsibility, unmet needs, shame, and unreached reaching.",
-    "metaphor": "Your arms are overstuffed storage shelves for reaching, carrying, aging, muscle loss, overall body fat, and the occasional emotional box nobody labeled.",
-    "physiologicalDescription": "Weight distribution around the arms can reflect genetics, sex hormones, age, muscle mass, total body fat, visceral/subcutaneous fat, insulin resistance, medications, sleep, stress, menopause/pregnancy history, activity, pain, disability, and medical conditions. Spot reduction is not how fat loss works, because biology enjoys disappointing marketing departments.",
-    "sarcasticAdvice": "Do not shame one body area like it personally betrayed civilization. Also do not pretend labs, sleep, medications, hormones, and food structure are imaginary.",
-    "mindfulnessPrompts": [
-      "What am I carrying in my arms?",
-      "What medical factor needs checking?",
-      "Where do I need support instead of shame?",
-      "What one box can leave the house today?"
-    ],
-    "physicalTherapyTip": "Track sudden changes, swelling, pain, shortness of breath, diabetes symptoms, thyroid symptoms, medications, sleep apnea, PCOS/menopause/pregnancy context, eating disorder symptoms, and overall metabolic markers.",
+    "id": "prostate-cancer",
+    "name": "Prostate Cancer",
+    "category": "Pelvic, Urinary & Reproductive",
     "tags": [
-      "weight",
-      "arms",
-      "fat distribution",
-      "metabolism",
-      "body composition"
+      "prostate cancer",
+      "PSA",
+      "urinary symptoms",
+      "blood in urine",
+      "men's health"
+    ],
+    "riskLevel": "Medical monitoring recommended",
+    "emotionalRoot": "Shock, fear, grief, uncertainty, mortality, medical overwhelm, and the need for real treatment plus human support. Symbolically: potency, identity, aging, vulnerability, and bodily control without shame.",
+    "metaphor": "The prostate is a pressure valve in the lower system, and urinary changes or abnormal PSA deserve actual evaluation, not masculine denial theater.",
+    "physiologicalDescription": "Prostate cancer is cancer of the prostate gland. It may cause no symptoms early. Possible signs can include urinary difficulty, weak stream, frequent urination, blood in urine/semen, pelvic/back/bone pain, or erectile/ejaculatory symptoms. Screening decisions often involve PSA testing and shared decision-making based on age, risk, and preferences.",
+    "sarcasticAdvice": "Do not replace oncology, imaging, biopsy, surgery, radiation, chemotherapy, immunotherapy, targeted therapy, hormone therapy, or screening with vibes. Vibes may sit in the waiting room and behave.",
+    "physicalTherapyTip": "Track symptoms, screening history, family history, diagnosis stage if known, treatment plan, side effects, weight loss, pain, bleeding, fatigue, fever, infection signs, and urgent changes. Follow oncology guidance.",
+    "mindfulnessPrompts": [
+      "What medical step is next?",
+      "What symptom needs evaluation now?",
+      "Who is on my support team?",
+      "What meaning helps me cope without replacing treatment?"
+    ]
+  },
+  {
+    "id": "right-side-body-problems",
+    "name": "Right Side of Body Problems",
+    "category": "General & Energy",
+    "emotionalRoot": "Action, forward movement, expression, frustration, blocked initiative, one-sided strain, and the need to triage before assigning meaning.",
+    "metaphor": "Your body is a car with the right gas pedal jammed, except sometimes the problem is the pedal, sometimes the engine, and sometimes the appendix is trying to resign violently.",
+    "physiologicalDescription": "Right-sided body symptoms can come from muscle strain, posture, nerve compression, sciatica, neck/back problems, joint issues, circulation problems, stroke/TIA symptoms, gallbladder disease, liver problems, appendicitis, right kidney issues, right lung problems, shingles, injury, inflammation, or referred pain from internal organs.",
+    "sarcasticAdvice": "Do not label sudden right-sided weakness, numbness, speech trouble, severe abdominal pain, or chest symptoms as blocked masculine energy. That is how vibes lose to emergency medicine.",
+    "mindfulnessPrompts": [
+      "Is this sudden, severe, or neurologic?",
+      "Could this be appendix, gallbladder, kidney, lung, heart, stroke, nerve, or muscle?",
+      "What action is blocked symbolically after the body is safe?",
+      "What needs evaluation instead of interpretation?"
+    ],
+    "physicalTherapyTip": "Track exact location, onset, sudden vs gradual, weakness, numbness, face droop, speech/vision/balance changes, chest pain, shortness of breath, right upper abdominal pain, right lower abdominal pain, fever, vomiting, injury, rash, and neurologic symptoms.",
+    "tags": [
+      "right side",
+      "one-sided pain",
+      "right-sided symptoms",
+      "appendix",
+      "gallbladder"
     ],
     "riskLevel": "Medical monitoring recommended"
   },
   {
-    "id": "weight-belly",
-    "name": "Weight Issues (Belly)",
+    "id": "chronic-fatigue",
+    "name": "Somatic Chronic Fatigue",
     "category": "General & Energy",
-    "emotionalRoot": "Accumulation, protection, responsibility, unmet needs, shame, and central protection and metabolic risk.",
-    "metaphor": "Your belly is a central storage room where visceral fat, insulin resistance, cortisol, inflammation, hormones, sleep debt, food pattern, and protection can all pile boxes.",
-    "physiologicalDescription": "Chronic stress and emotional suppression elevate cortisol, which promotes visceral fat accumulation\u2014the deep abdominal fat that wraps around organs. Cortisol increases insulin resistance, making it harder for cells to take up glucose. The body stores the excess as fat. The CDC confirms that chronic stress may be a primary risk factor for central obesity, with cortisol-mediated fat storage accounting for 40-60% of cases.",
-    "sarcasticAdvice": "Do not shame one body area like it personally betrayed civilization. Also do not pretend labs, sleep, medications, hormones, and food structure are imaginary.",
-    "mindfulnessPrompts": [
-      "What am I carrying in my belly?",
-      "What medical factor needs checking?",
-      "Where do I need support instead of shame?",
-      "What one box can leave the house today?"
-    ],
-    "physicalTherapyTip": "Track sudden changes, swelling, pain, shortness of breath, diabetes symptoms, thyroid symptoms, medications, sleep apnea, PCOS/menopause/pregnancy context, eating disorder symptoms, and overall metabolic markers.",
     "tags": [
-      "weight",
-      "belly",
-      "fat distribution",
-      "metabolism",
-      "body composition"
+      "HPA axis",
+      "cortisol depletion",
+      "mitochondria",
+      "boundary exhaustion"
     ],
-    "riskLevel": "Medical monitoring recommended"
+    "riskLevel": "Medical monitoring recommended",
+    "emotionalRoot": "Deep subconscious resistance to your current life path. Exhaustion from constant internal mental battles and suppressing your true desires.",
+    "metaphor": "Your body pulling the main circuit breaker because it is tired of powering a life that you secretly despise.",
+    "physiologicalDescription": "Prolonged high-stress states lead to chronic HPA axis dysregulation, characterized by blunted diurnal cortisol curves (hypocortisolemia). Cellular energy pathways suffer from mitochondrial exhaustion due to persistent, low-grade systemic inflammatory cytokine release.",
+    "sarcasticAdvice": "By all means, keep taking 30-minute naps while leaving 40 tabs open in your brain. Let's pretend you are physically exhausted because of 'weather changes' and not because you spend 8 hours a day doing work you hate for people you don't even respect.",
+    "mindfulnessPrompts": [
+      "What truth am I hiding from myself that is draining all of my life force?",
+      "If I had absolute permission to fail or quit, what would I stop doing immediately?"
+    ],
+    "physicalTherapyTip": "Practice 'non-sleep deep rest' (NSDR) or Yoga Nidra for 15 minutes. Engage in low-intensity movement like walking in nature without headphones."
   },
   {
-    "id": "weight-hips",
-    "name": "Weight Issues (Hips)",
+    "id": "stroke",
+    "name": "Stroke",
     "category": "General & Energy",
-    "emotionalRoot": "Accumulation, protection, responsibility, unmet needs, shame, and foundation and responsibility.",
-    "metaphor": "Your hips are the foundation beams of the house, carrying biology, hormones, movement, responsibility, pregnancy history, menopause shifts, and old load.",
-    "physiologicalDescription": "Weight distribution around the hips can reflect genetics, sex hormones, age, muscle mass, total body fat, visceral/subcutaneous fat, insulin resistance, medications, sleep, stress, menopause/pregnancy history, activity, pain, disability, and medical conditions. Spot reduction is not how fat loss works, because biology enjoys disappointing marketing departments.",
-    "sarcasticAdvice": "Do not shame one body area like it personally betrayed civilization. Also do not pretend labs, sleep, medications, hormones, and food structure are imaginary.",
+    "emotionalRoot": "Giving up. Resisting change, rejecting life, and carrying a deep, hidden belief that 'I cannot go on.' Preferring a total physical shutdown to facing a reality that feels completely overwhelming or restrictive.",
+    "metaphor": "Your cerebral power grid blowing its main transformer to force a complete, catastrophic shutdown which may somatically reflect an unconscious pattern of seeking escape from an unbearable life situation.",
+    "physiologicalDescription": "Severe, chronic neurovascular stress and hyper-sympathetic activation may interact with cerebral circulation and risk factors for vasospasm, thromboembolism, or hemorrhage.",
+    "sarcasticAdvice": "CRITICAL: Seek immediate emergency medical care. But once you recover, do ask yourself if your absolute rejection of change and feeling of total defeat played a role. Keep running yourself into a brick wall of stubborn resistance; I'm sure your cerebral arteries will love it.",
     "mindfulnessPrompts": [
-      "What am I carrying in my hips?",
-      "What medical factor needs checking?",
-      "Where do I need support instead of shame?",
-      "What one box can leave the house today?"
+      "Where in my life am I feeling so completely defeated, trapped, or resistant to change that my spirit wants to pull the emergency brake?",
+      "Am I ready to accept help, embrace change, and find a soft, new way of moving forward without needing to fight?"
     ],
-    "physicalTherapyTip": "Track sudden changes, swelling, pain, shortness of breath, diabetes symptoms, thyroid symptoms, medications, sleep apnea, PCOS/menopause/pregnancy context, eating disorder symptoms, and overall metabolic markers.",
-    "tags": [
-      "weight",
-      "hips",
-      "fat distribution",
-      "metabolism",
-      "body composition"
-    ],
-    "riskLevel": "Medical monitoring recommended"
-  },
-  {
-    "id": "weight-thighs",
-    "name": "Weight Issues (Thighs)",
-    "category": "General & Energy",
-    "emotionalRoot": "Accumulation, protection, responsibility, unmet needs, shame, and carrying forward.",
-    "metaphor": "Your thighs are the freight elevators of forward movement, carrying genetics, hormones, training history, fluid, fat distribution, and responsibilities that got weirdly heavy.",
-    "physiologicalDescription": "Weight distribution around the thighs can reflect genetics, sex hormones, age, muscle mass, total body fat, visceral/subcutaneous fat, insulin resistance, medications, sleep, stress, menopause/pregnancy history, activity, pain, disability, and medical conditions. Spot reduction is not how fat loss works, because biology enjoys disappointing marketing departments.",
-    "sarcasticAdvice": "Do not shame one body area like it personally betrayed civilization. Also do not pretend labs, sleep, medications, hormones, and food structure are imaginary.",
-    "mindfulnessPrompts": [
-      "What am I carrying in my thighs?",
-      "What medical factor needs checking?",
-      "Where do I need support instead of shame?",
-      "What one box can leave the house today?"
-    ],
-    "physicalTherapyTip": "Track sudden changes, swelling, pain, shortness of breath, diabetes symptoms, thyroid symptoms, medications, sleep apnea, PCOS/menopause/pregnancy context, eating disorder symptoms, and overall metabolic markers.",
-    "tags": [
-      "weight",
-      "thighs",
-      "fat distribution",
-      "metabolism",
-      "body composition"
-    ],
-    "riskLevel": "Medical monitoring recommended"
+    "physicalTherapyTip": "Always follow expert medical rehabilitation. For prevention and recovery: engage in gentle sensory stimulation, bilateral integration exercises, and daily, quiet meditation to calm cerebral vascular tone."
   },
   {
     "id": "pink-eye",
@@ -1773,26 +1767,26 @@
     "riskLevel": "Medical monitoring recommended"
   },
   {
-    "id": "right-side-body-problems",
-    "name": "Right Side of Body Problems",
+    "id": "tetanus",
+    "name": "Tetanus",
     "category": "General & Energy",
-    "emotionalRoot": "Action, forward movement, expression, frustration, blocked initiative, one-sided strain, and the need to triage before assigning meaning.",
-    "metaphor": "Your body is a car with the right gas pedal jammed, except sometimes the problem is the pedal, sometimes the engine, and sometimes the appendix is trying to resign violently.",
-    "physiologicalDescription": "Right-sided body symptoms can come from muscle strain, posture, nerve compression, sciatica, neck/back problems, joint issues, circulation problems, stroke/TIA symptoms, gallbladder disease, liver problems, appendicitis, right kidney issues, right lung problems, shingles, injury, inflammation, or referred pain from internal organs.",
-    "sarcasticAdvice": "Do not label sudden right-sided weakness, numbness, speech trouble, severe abdominal pain, or chest symptoms as blocked masculine energy. That is how vibes lose to emergency medicine.",
+    "emotionalRoot": "Not a symbolic diagnosis. Tetanus is a bacterial toxin emergency. Pattern work does not belong ahead of emergency care.",
+    "metaphor": "Your nervous system is a car with the brake lines cut: the gas pedal is stuck, the muscles seize, and the road is ending.",
+    "physiologicalDescription": "Tetanus is a potentially life-threatening infection caused by Clostridium tetani toxin. It can cause jaw stiffness, painful muscle spasms, trouble swallowing, neck/back/abdominal rigidity, autonomic instability, breathing problems, and death. Prevention is vaccination and proper wound care.",
+    "sarcasticAdvice": "There is no home remedy, no detox, no breathing protocol, and no heroic dirt-wound optimism. Tetanus is hospital territory.",
     "mindfulnessPrompts": [
-      "Is this sudden, severe, or neurologic?",
-      "Could this be appendix, gallbladder, kidney, lung, heart, stroke, nerve, or muscle?",
-      "What action is blocked symbolically after the body is safe?",
-      "What needs evaluation instead of interpretation?"
+      "Emergency care first.",
+      "When was my last tetanus booster?",
+      "Does this wound need medical cleaning or a booster/TIG review?",
+      "Am I treating an emergency like an inconvenience?"
     ],
-    "physicalTherapyTip": "Track exact location, onset, sudden vs gradual, weakness, numbness, face droop, speech/vision/balance changes, chest pain, shortness of breath, right upper abdominal pain, right lower abdominal pain, fever, vomiting, injury, rash, and neurologic symptoms.",
+    "physicalTherapyTip": "If tetanus is suspected, seek emergency medical care immediately. Prevention includes vaccination boosters and prompt wound care for dirty, deep, puncture, crush, burn, or animal-bite wounds.",
     "tags": [
-      "right side",
-      "one-sided pain",
-      "right-sided symptoms",
-      "appendix",
-      "gallbladder"
+      "tetanus",
+      "lockjaw",
+      "medical emergency",
+      "vaccination",
+      "wound"
     ],
     "riskLevel": "Medical monitoring recommended"
   },
@@ -1802,7 +1796,7 @@
     "category": "Skin & Sleep",
     "emotionalRoot": "Boundary takeover, colonization, giving up space, stress vulnerability, and needing to reclaim territory.",
     "metaphor": "Your skin is a border checkpoint where fungus planted a tiny flag and started expanding the colony like it pays taxes.",
-    "physiologicalDescription": "Chronic stress suppresses cell-mediated immunity, reducing the skin's ability to resist fungal colonization. The fungus, which exists on the skin of most people without causing infection, takes hold when the immune system is compromised. The Centers for Disease Control and Prevention confirms that stress and immune suppression are primary risk factors for tinea infections, with 40-60% of cases occurring during periods of high stress. scabies 7/21/26, 14:38 Gmail - (no subject) INFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Kidney-Bladder Depths Invasion In Traditional Chinese Medicine, the Kidney (Shen) stores Jing\u2014the deepest reserves of the body. The Kidney governs the bones, marrow, and the deepest layers of the skin. The emotion of the Kidney is fear\u2014specifically, the fear of being invaded, the fear of not being safe in one's own body, the fear of being consumed from within. When you have been living in chronic fear\u2014the fear of being violated, the fear of being taken advantage of, the fear of not being able to protect yourself\u2014Kidney Qi becomes deficient. The deepest protective layers weaken. The body becomes vulnerable to invasion from the depths. Symbolically, scabies can represent a body that has been so invaded\u2014so often, so deeply\u2014that it no longer knows how to protect its deepest layers. The Jungian Shadow: The Buried Betrayal Archetype You have suppressed the archetype of the Protector\u2014the part that knows how to say \"you cannot have me,\" \"you cannot live in me,\" \"you cannot feed on me.\" Somewhere early, you learned that your body was not yours. That your boundaries were not respected. That people could take from you without asking. Your shadow self\u2014the one who wants to protect its depths\u2014has been locked in the basement. But the body does not forget. The scabies mite burrows into the deepest layers of the skin. It lays eggs. It multiplies. It lives in you. It is the physical manifestation of the pattern of being used, taken, and colonized. It is the body's way of saying \"someone has been living in you. Someone has been feeding on you. Someone has been taking without asking. And you didn't stop them.\" shingles INFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Liver-Gallbladder Heat Eruption In Traditional Chinese Medicine, the Liver (Gan) and Gallbladder (Dan) govern the smooth flow of Qi and the storage and release of bile. The emotion of the Liver is anger\u2014specifically, frustrated, stuck, unexpressed rage. The emotion of the Gallbladder is indecision and resentment. The Liver and Gallbladder channels run along the sides of the body, where shingles commonly appears. When you have been suppressing anger and frustration for years\u2014when you have been unable to express what is burning inside\u2014Liver Qi stagnates. Stagnant Qi creates heat. This heat rises and erupts along the Liver and Gallbladder channels. The shingles rash, appearing along a specific dermatomal pathway, is the physical manifestation of that heat eruption. The blisters are the fire you couldn't speak. The Jungian Shadow: The Buried Fury Archetype You have suppressed the archetype of the One Who Burns\u2014the part that knows how to express anger, how to let fire out safely. Somewhere early, you learned that your anger was dangerous. That expressing it meant losing love. That being fiery meant being abandoned. So you buried it. You buried it deep in your nervous system. You buried it in your nerve ganglia. And the virus, an old companion, reactivated to help you release what you refused to express. warts INFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Spleen-Liver Stagnation In Traditional Chinese Medicine, the Spleen (Pi) governs the transformation and transportation of nutrients and fluids. The Liver (Gan) governs the smooth flow of Qi. The emotion of the Spleen is worry\u2014the endless loop of \"what if,\" \"should have,\" \"if only.\" The emotion of the Liver is anger\u2014specifically, frustrated, stuck, unexpressed rage. When you worry constantly and suppress anger, Spleen Qi becomes deficient. Dampness accumulates. Dampness combines with Liver heat to create stagnation. The stagnation creates growths. The wart is the physical manifestation of stuck energy\u2014something that has been held for too long, something that has taken root in a weak spot. It's the body's way of saying \"there's a pattern here that isn't moving.\" The Jungian Shadow: The Stubborn Self You have suppressed the archetype of the Fluid One\u2014the part that knows how to adapt, how to release, how to change. Somewhere early, you learned that stubbornness was strength. That letting go was weakness. That persistence was survival. Your shadow self\u2014the one who wants to be fluid, to let go, to trust\u2014has been locked in the basement. But the body does not forget. The wart is the physical manifestation of stubbornness. It's the body's way of saying \"you've been refusing to let go. Now your skin is refusing to let go too.\" 7/21/26, 14:38 Gmail - (no subject) -rls INFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Kidney-Bladder Overdrive In Traditional Chinese Medicine, the Kidneys (Shen) govern the bones, marrow, and the lower body. The Bladder (Pangguang) governs the lower extremities. The emotion of the Kidney is fear\u2014specifically, the fear of not being supported, the fear of falling, the fear of not being held. When you live in chronic fear, the Kidney Qi becomes deficient. The lower body becomes restless, constantly seeking grounding that isn't there. The Jungian Shadow: The Fleeing Self You have suppressed the archetype of the Grounded One\u2014the part that knows how to be still, to trust the earth, to rest. Somewhere early, you learned that staying still meant being caught. That resting meant being vulnerable. That safety meant motion. Your shadow self\u2014the one who wants to land, to settle, to trust\u2014has been locked in the basement. The restless legs are the physical manifestation of that exile. -Excessive Appetite (Hyperphagia) INFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Spleen-Stomach Heat In Traditional Chinese Medicine, the Spleen (Pi) and Stomach (Wei) govern the transformation and transportation of nutrients and fluids. The emotion of the Spleen is worry\u2014the endless loop of \"what if,\" \"should have,\" \"if only.\" The emotion of the Stomach is rumination\u2014the inability to stop processing what's already gone. When you worry constantly, Spleen Qi becomes deficient. Dampness accumulates. The Stomach, instead of being satisfied, becomes overheated. Heat creates a false hunger\u2014a gnawing sensation that isn't about food, but about unprocessed worry. The excessive appetite is the physical manifestation of a mind that can't stop processing what's already done. The Jungian Shadow: The Insatiable Self You have suppressed the archetype of the Satisfied One\u2014the part that knows how to feel full, how to be enough, how to stop reaching. Somewhere early, you learned that being satisfied meant being vulnerable. That needing nothing meant being alone. That reaching was safety. Your shadow self\u2014the one who wants to be full, to be satisfied, to be enough\u2014has been locked in the basement. The excessive appetite is the physical manifestation of that exile. -Loss of Appetite (Anorexia) INFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Spleen-Stomach Qi Sinking In Traditional Chinese Medicine, the Spleen (Pi) and Stomach (Wei) govern the transformation and transportation of nutrients and fluids. The emotion of the Spleen is worry\u2014the endless loop of \"what if,\" \"should have,\" \"if only.\" The emotion of the Stomach is rumination\u2014the inability to stop processing what's already gone. When you worry constantly and ruminate on what's past, the Spleen Qi sinks. The Stomach loses its ability to receive. The body cannot lift its energy. The result is a lack of appetite\u2014a turning away from the very thing that would sustain you. The loss of appetite is the physical manifestation of a mind that cannot stop processing what's already done. The Jungian Shadow: The Turned-Away Self You have suppressed the archetype of the Receptive One\u2014the part that knows how to receive, how to be open, how to take in nourishment. Somewhere early, you learned that receiving was dangerous. That being open meant being hurt. That needing meant being weak. Your shadow self\u2014the one who wants to be filled, to be nourished, to be satisfied\u2014has been locked in the basement. The loss of appetite is the physical manifestation of that exile. -High Cholesterol (Hyperlipidemia) INFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Spleen-Liver Dampness In Traditional Chinese Medicine, the Spleen (Pi) governs the transformation and transportation of nutrients and fluids. The Liver (Gan) governs the smooth flow of Qi. The emotion of the Spleen is worry\u2014the endless loop of \"what if,\" \"should have,\" \"if only.\" The emotion of the Liver is anger\u2014specifically, frustrated, stuck, unexpressed rage. When you worry constantly and suppress anger, Spleen Qi becomes deficient. Dampness accumulates. Dampness combines with Liver stagnation to create \"turbid phlegm\"\u2014a thick, viscous substance that clogs the vessels. The high cholesterol is the physical manifestation of that turbid phlegm. It's the body's way of saying \"there's been a lot of worry and anger here, and it hasn't gone anywhere.\" The Jungian Shadow: The Accumulator You have suppressed the archetype of the Release\u2014the part that knows how to let go, how to flow, how to cleanse. Somewhere early, you learned that holding on was survival. That release meant losing. That letting go meant death. Your shadow self\u2014the one who wants to trust the flow, to release, to be light\u2014has been locked in the basement. The cholesterol is the physical manifestation of that exile. --\\ Diabetes (Type 2) & Metabolic Stress INFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Spleen-Pancreas Heat Depletion In Traditional Chinese Medicine, the Spleen (Pi) and Pancreas (the biological relative of the Spleen) govern the transformation and transportation of nutrients and fluids. The emotion of the Spleen is worry\u2014the endless loop of \"what if,\" \"should have,\" \"if only.\" The Pancreas's role in processing sweetness is an extension of the Spleen's function. When you worry constantly and over-function, Spleen Qi becomes deficient. The ability to transform sweetness into energy (Qi) is lost. Instead, the sweetness becomes dampness\u2014a thick, sticky substance that clogs the vessels. The diabetes is the physical manifestation of a system that's been pushed to process far more than it can handle, with far less genuine nourishment than it needs. The Jungian Shadow: The Consumed Self You have suppressed the archetype of the Receptive One\u2014the part that knows how to receive nourishment, how to say \"enough,\" how to set boundaries around 7/21/26, 14:38 Gmail - (no subject) intake. Somewhere early, you learned that receiving was dangerous. That saying \"no\" to what was offered meant losing love. That boundaries meant rejection. Your shadow self\u2014the one who wants to be nourished with sweetness, not force-fed with obligation\u2014has been locked in the basement. The diabetes is the physical manifestation of that exile. -Impotence (Erectile Dysfunction) INFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Kidney-Essence Depletion In Traditional Chinese Medicine, the Kidney (Shen) stores Jing\u2014the deep essence that governs growth, reproduction, and vitality. The Kidney governs the lower body, the bones, the marrow, and the sexual function. The emotion of the Kidney is fear\u2014specifically, the fear of inadequacy, the fear of not being enough, the fear of being seen. When you live in chronic fear\u2014the fear of failure, the fear of not measuring up\u2014Kidney Jing becomes depleted. The essence that powers sexual function is drained. The result is impotence\u2014a physical manifestation of a deep depletion of life force. The body cannot rise because the well is dry. The Jungian Shadow: The Hidden Self You have suppressed the archetype of the Expressive One\u2014the part that knows how to be present, how to be seen, how to take up space. Somewhere early, you learned that being seen was dangerous. That taking up space meant being attacked. That presence meant vulnerability. Your shadow self\u2014the one who wants to show up, to be seen, to be present\u2014has been locked in the basement. The impotence is the physical manifestation of that exile. Menopause Problems INFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Kidney Essence Depletion In Traditional Chinese Medicine, the Kidney (Shen) stores Jing\u2014the deep essence that governs growth, reproduction, and aging. The Kidney is the root of yin and yang in the body. The emotion of the Kidney is fear\u2014specifically, the fear of change, the fear of losing identity, the fear of the unknown. Menopause represents a natural transition in the balance of yin and yang. As Kidney Jing declines, yin (cooling, nourishing) and yang (warming, active) become imbalanced. The heat of the hot flashes is a yang uprising\u2014the fire that can't be cooled by depleted yin. The body is not broken. The body is recalibrating. The Jungian Shadow: The Crone Archetype You have suppressed the archetype of the Wise Woman\u2014the part that knows what comes after fertility, the one who holds wisdom, who sees clearly, who knows that the end of one chapter is the beginning of another. Somewhere early, you learned that aging was loss. That becoming older meant becoming irrelevant. That the wisdom of the Crone was not valued. Your shadow self\u2014the one who is becoming the Crone, the wise woman, the elder\u2014has been locked in the basement. The menopause is the physical manifestation of that exile. --Overweight (General) INFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Spleen Dampness & Liver Stagnation In Traditional Chinese Medicine, the Spleen (Pi) governs the transformation and transportation of nutrients and fluids. The Liver (Gan) governs the smooth flow of Qi. The emotion of the Spleen is worry\u2014the endless loop of \"what if,\" \"should have,\" \"if only.\" The emotion of the Liver is anger\u2014specifically, frustrated, stuck, unexpressed rage. When you worry constantly and suppress anger, Spleen Qi becomes deficient. The body fails to transform fluid and nutrients properly. Dampness accumulates. Dampness congeals into fat. The weight is the physical manifestation of that dampness\u2014the residue of unresolved emotion. It's the body's way of saying \"there's been a lot of worry and anger here, and it hasn't gone anywhere.\" The Jungian Shadow: The Accumulator You have suppressed the archetype of the Releaser\u2014the part that knows how to let go, how to be light, how to flow. Somewhere early, you learned that accumulation was safety. That letting go was danger. That holding on was survival. Your shadow self\u2014the one who wants to be light, to release, to flow\u2014has been locked in the basement. The weight is the physical manifestation of that exile. Sterility (Infertility) INFLUENCE \u2014 The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Kidney Essence & Uterus-Chong Meridian In Traditional Chinese Medicine, the Kidney (Shen) stores Jing\u2014the deep essence that governs growth, reproduction, and fertility. The Chong Mai (Penetrating Vessel) and Ren Mai (Conception Vessel) are the energy channels that nourish the uterus and support pregnancy. The emotion of the Kidney is fear\u2014specifically, the fear of not being able to create, the fear of failure, the fear of the future. When you live in chronic fear and depletion, Kidney Jing becomes deficient. The Chong and Ren vessels become blocked. The body cannot support conception. The infertility is the physical manifestation of that depletion and blockage. The Jungian Shadow: The Unborn Self You have suppressed the archetype of the Creator\u2014the part that knows how to birth new life, new ideas, new possibilities. Somewhere early, you learned that creation was dangerous. That bringing something new into the world meant being seen, being judged, being responsible. Your shadow self\u2014the one who wants to create, to give birth, to bring something new\u2014has been locked in the basement. The infertility is not a failure. The infertility is the physical manifestation of the exile of the creator within you. -- 7/21/26, 14:38 Gmail - (no subject) 7/21/26, 14:38",
+    "physiologicalDescription": "Chronic stress suppresses cell-mediated immunity, reducing the skin's ability to resist fungal colonization. The fungus, which exists on the skin of most people without causing infection, takes hold when the immune system is compromised. The Centers for Disease Control and Prevention confirms that stress and immune suppression are primary risk factors for tinea infections, with 40-60% of cases occurring during periods of high stress. scabies 7/21/26, 14:38 Gmail - (no subject) INFLUENCE — The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Kidney-Bladder Depths Invasion In Traditional Chinese Medicine, the Kidney (Shen) stores Jing—the deepest reserves of the body. The Kidney governs the bones, marrow, and the deepest layers of the skin. The emotion of the Kidney is fear—specifically, the fear of being invaded, the fear of not being safe in one's own body, the fear of being consumed from within. When you have been living in chronic fear—the fear of being violated, the fear of being taken advantage of, the fear of not being able to protect yourself—Kidney Qi becomes deficient. The deepest protective layers weaken. The body becomes vulnerable to invasion from the depths. Symbolically, scabies can represent a body that has been so invaded—so often, so deeply—that it no longer knows how to protect its deepest layers. The Jungian Shadow: The Buried Betrayal Archetype You have suppressed the archetype of the Protector—the part that knows how to say \"you cannot have me,\" \"you cannot live in me,\" \"you cannot feed on me.\" Somewhere early, you learned that your body was not yours. That your boundaries were not respected. That people could take from you without asking. Your shadow self—the one who wants to protect its depths—has been locked in the basement. But the body does not forget. The scabies mite burrows into the deepest layers of the skin. It lays eggs. It multiplies. It lives in you. It is the physical manifestation of the pattern of being used, taken, and colonized. It is the body's way of saying \"someone has been living in you. Someone has been feeding on you. Someone has been taking without asking. And you didn't stop them.\" shingles INFLUENCE — The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Liver-Gallbladder Heat Eruption In Traditional Chinese Medicine, the Liver (Gan) and Gallbladder (Dan) govern the smooth flow of Qi and the storage and release of bile. The emotion of the Liver is anger—specifically, frustrated, stuck, unexpressed rage. The emotion of the Gallbladder is indecision and resentment. The Liver and Gallbladder channels run along the sides of the body, where shingles commonly appears. When you have been suppressing anger and frustration for years—when you have been unable to express what is burning inside—Liver Qi stagnates. Stagnant Qi creates heat. This heat rises and erupts along the Liver and Gallbladder channels. The shingles rash, appearing along a specific dermatomal pathway, is the physical manifestation of that heat eruption. The blisters are the fire you couldn't speak. The Jungian Shadow: The Buried Fury Archetype You have suppressed the archetype of the One Who Burns—the part that knows how to express anger, how to let fire out safely. Somewhere early, you learned that your anger was dangerous. That expressing it meant losing love. That being fiery meant being abandoned. So you buried it. You buried it deep in your nervous system. You buried it in your nerve ganglia. And the virus, an old companion, reactivated to help you release what you refused to express. warts INFLUENCE — The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Spleen-Liver Stagnation In Traditional Chinese Medicine, the Spleen (Pi) governs the transformation and transportation of nutrients and fluids. The Liver (Gan) governs the smooth flow of Qi. The emotion of the Spleen is worry—the endless loop of \"what if,\" \"should have,\" \"if only.\" The emotion of the Liver is anger—specifically, frustrated, stuck, unexpressed rage. When you worry constantly and suppress anger, Spleen Qi becomes deficient. Dampness accumulates. Dampness combines with Liver heat to create stagnation. The stagnation creates growths. The wart is the physical manifestation of stuck energy—something that has been held for too long, something that has taken root in a weak spot. It's the body's way of saying \"there's a pattern here that isn't moving.\" The Jungian Shadow: The Stubborn Self You have suppressed the archetype of the Fluid One—the part that knows how to adapt, how to release, how to change. Somewhere early, you learned that stubbornness was strength. That letting go was weakness. That persistence was survival. Your shadow self—the one who wants to be fluid, to let go, to trust—has been locked in the basement. But the body does not forget. The wart is the physical manifestation of stubbornness. It's the body's way of saying \"you've been refusing to let go. Now your skin is refusing to let go too.\" 7/21/26, 14:38 Gmail - (no subject) -rls INFLUENCE — The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Kidney-Bladder Overdrive In Traditional Chinese Medicine, the Kidneys (Shen) govern the bones, marrow, and the lower body. The Bladder (Pangguang) governs the lower extremities. The emotion of the Kidney is fear—specifically, the fear of not being supported, the fear of falling, the fear of not being held. When you live in chronic fear, the Kidney Qi becomes deficient. The lower body becomes restless, constantly seeking grounding that isn't there. The Jungian Shadow: The Fleeing Self You have suppressed the archetype of the Grounded One—the part that knows how to be still, to trust the earth, to rest. Somewhere early, you learned that staying still meant being caught. That resting meant being vulnerable. That safety meant motion. Your shadow self—the one who wants to land, to settle, to trust—has been locked in the basement. The restless legs are the physical manifestation of that exile. -Excessive Appetite (Hyperphagia) INFLUENCE — The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Spleen-Stomach Heat In Traditional Chinese Medicine, the Spleen (Pi) and Stomach (Wei) govern the transformation and transportation of nutrients and fluids. The emotion of the Spleen is worry—the endless loop of \"what if,\" \"should have,\" \"if only.\" The emotion of the Stomach is rumination—the inability to stop processing what's already gone. When you worry constantly, Spleen Qi becomes deficient. Dampness accumulates. The Stomach, instead of being satisfied, becomes overheated. Heat creates a false hunger—a gnawing sensation that isn't about food, but about unprocessed worry. The excessive appetite is the physical manifestation of a mind that can't stop processing what's already done. The Jungian Shadow: The Insatiable Self You have suppressed the archetype of the Satisfied One—the part that knows how to feel full, how to be enough, how to stop reaching. Somewhere early, you learned that being satisfied meant being vulnerable. That needing nothing meant being alone. That reaching was safety. Your shadow self—the one who wants to be full, to be satisfied, to be enough—has been locked in the basement. The excessive appetite is the physical manifestation of that exile. -Loss of Appetite (Anorexia) INFLUENCE — The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Spleen-Stomach Qi Sinking In Traditional Chinese Medicine, the Spleen (Pi) and Stomach (Wei) govern the transformation and transportation of nutrients and fluids. The emotion of the Spleen is worry—the endless loop of \"what if,\" \"should have,\" \"if only.\" The emotion of the Stomach is rumination—the inability to stop processing what's already gone. When you worry constantly and ruminate on what's past, the Spleen Qi sinks. The Stomach loses its ability to receive. The body cannot lift its energy. The result is a lack of appetite—a turning away from the very thing that would sustain you. The loss of appetite is the physical manifestation of a mind that cannot stop processing what's already done. The Jungian Shadow: The Turned-Away Self You have suppressed the archetype of the Receptive One—the part that knows how to receive, how to be open, how to take in nourishment. Somewhere early, you learned that receiving was dangerous. That being open meant being hurt. That needing meant being weak. Your shadow self—the one who wants to be filled, to be nourished, to be satisfied—has been locked in the basement. The loss of appetite is the physical manifestation of that exile. -High Cholesterol (Hyperlipidemia) INFLUENCE — The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Spleen-Liver Dampness In Traditional Chinese Medicine, the Spleen (Pi) governs the transformation and transportation of nutrients and fluids. The Liver (Gan) governs the smooth flow of Qi. The emotion of the Spleen is worry—the endless loop of \"what if,\" \"should have,\" \"if only.\" The emotion of the Liver is anger—specifically, frustrated, stuck, unexpressed rage. When you worry constantly and suppress anger, Spleen Qi becomes deficient. Dampness accumulates. Dampness combines with Liver stagnation to create \"turbid phlegm\"—a thick, viscous substance that clogs the vessels. The high cholesterol is the physical manifestation of that turbid phlegm. It's the body's way of saying \"there's been a lot of worry and anger here, and it hasn't gone anywhere.\" The Jungian Shadow: The Accumulator You have suppressed the archetype of the Release—the part that knows how to let go, how to flow, how to cleanse. Somewhere early, you learned that holding on was survival. That release meant losing. That letting go meant death. Your shadow self—the one who wants to trust the flow, to release, to be light—has been locked in the basement. The cholesterol is the physical manifestation of that exile. --\\ Diabetes (Type 2) & Metabolic Stress INFLUENCE — The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Spleen-Pancreas Heat Depletion In Traditional Chinese Medicine, the Spleen (Pi) and Pancreas (the biological relative of the Spleen) govern the transformation and transportation of nutrients and fluids. The emotion of the Spleen is worry—the endless loop of \"what if,\" \"should have,\" \"if only.\" The Pancreas's role in processing sweetness is an extension of the Spleen's function. When you worry constantly and over-function, Spleen Qi becomes deficient. The ability to transform sweetness into energy (Qi) is lost. Instead, the sweetness becomes dampness—a thick, sticky substance that clogs the vessels. The diabetes is the physical manifestation of a system that's been pushed to process far more than it can handle, with far less genuine nourishment than it needs. The Jungian Shadow: The Consumed Self You have suppressed the archetype of the Receptive One—the part that knows how to receive nourishment, how to say \"enough,\" how to set boundaries around 7/21/26, 14:38 Gmail - (no subject) intake. Somewhere early, you learned that receiving was dangerous. That saying \"no\" to what was offered meant losing love. That boundaries meant rejection. Your shadow self—the one who wants to be nourished with sweetness, not force-fed with obligation—has been locked in the basement. The diabetes is the physical manifestation of that exile. -Impotence (Erectile Dysfunction) INFLUENCE — The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Kidney-Essence Depletion In Traditional Chinese Medicine, the Kidney (Shen) stores Jing—the deep essence that governs growth, reproduction, and vitality. The Kidney governs the lower body, the bones, the marrow, and the sexual function. The emotion of the Kidney is fear—specifically, the fear of inadequacy, the fear of not being enough, the fear of being seen. When you live in chronic fear—the fear of failure, the fear of not measuring up—Kidney Jing becomes depleted. The essence that powers sexual function is drained. The result is impotence—a physical manifestation of a deep depletion of life force. The body cannot rise because the well is dry. The Jungian Shadow: The Hidden Self You have suppressed the archetype of the Expressive One—the part that knows how to be present, how to be seen, how to take up space. Somewhere early, you learned that being seen was dangerous. That taking up space meant being attacked. That presence meant vulnerability. Your shadow self—the one who wants to show up, to be seen, to be present—has been locked in the basement. The impotence is the physical manifestation of that exile. Menopause Problems INFLUENCE — The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Kidney Essence Depletion In Traditional Chinese Medicine, the Kidney (Shen) stores Jing—the deep essence that governs growth, reproduction, and aging. The Kidney is the root of yin and yang in the body. The emotion of the Kidney is fear—specifically, the fear of change, the fear of losing identity, the fear of the unknown. Menopause represents a natural transition in the balance of yin and yang. As Kidney Jing declines, yin (cooling, nourishing) and yang (warming, active) become imbalanced. The heat of the hot flashes is a yang uprising—the fire that can't be cooled by depleted yin. The body is not broken. The body is recalibrating. The Jungian Shadow: The Crone Archetype You have suppressed the archetype of the Wise Woman—the part that knows what comes after fertility, the one who holds wisdom, who sees clearly, who knows that the end of one chapter is the beginning of another. Somewhere early, you learned that aging was loss. That becoming older meant becoming irrelevant. That the wisdom of the Crone was not valued. Your shadow self—the one who is becoming the Crone, the wise woman, the elder—has been locked in the basement. The menopause is the physical manifestation of that exile. --Overweight (General) INFLUENCE — The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Spleen Dampness & Liver Stagnation In Traditional Chinese Medicine, the Spleen (Pi) governs the transformation and transportation of nutrients and fluids. The Liver (Gan) governs the smooth flow of Qi. The emotion of the Spleen is worry—the endless loop of \"what if,\" \"should have,\" \"if only.\" The emotion of the Liver is anger—specifically, frustrated, stuck, unexpressed rage. When you worry constantly and suppress anger, Spleen Qi becomes deficient. The body fails to transform fluid and nutrients properly. Dampness accumulates. Dampness congeals into fat. The weight is the physical manifestation of that dampness—the residue of unresolved emotion. It's the body's way of saying \"there's been a lot of worry and anger here, and it hasn't gone anywhere.\" The Jungian Shadow: The Accumulator You have suppressed the archetype of the Releaser—the part that knows how to let go, how to be light, how to flow. Somewhere early, you learned that accumulation was safety. That letting go was danger. That holding on was survival. Your shadow self—the one who wants to be light, to release, to flow—has been locked in the basement. The weight is the physical manifestation of that exile. Sterility (Infertility) INFLUENCE — The Deeper Context (TCM, Jungian, Metaphysical) The TCM Framework: Kidney Essence & Uterus-Chong Meridian In Traditional Chinese Medicine, the Kidney (Shen) stores Jing—the deep essence that governs growth, reproduction, and fertility. The Chong Mai (Penetrating Vessel) and Ren Mai (Conception Vessel) are the energy channels that nourish the uterus and support pregnancy. The emotion of the Kidney is fear—specifically, the fear of not being able to create, the fear of failure, the fear of the future. When you live in chronic fear and depletion, Kidney Jing becomes deficient. The Chong and Ren vessels become blocked. The body cannot support conception. The infertility is the physical manifestation of that depletion and blockage. The Jungian Shadow: The Unborn Self You have suppressed the archetype of the Creator—the part that knows how to birth new life, new ideas, new possibilities. Somewhere early, you learned that creation was dangerous. That bringing something new into the world meant being seen, being judged, being responsible. Your shadow self—the one who wants to create, to give birth, to bring something new—has been locked in the basement. The infertility is not a failure. The infertility is the physical manifestation of the exile of the creator within you. -- 7/21/26, 14:38 Gmail - (no subject) 7/21/26, 14:38",
     "sarcasticAdvice": "Ringworm is not a worm. It is fungus with branding issues, which is somehow worse because it still needs antifungal treatment.",
     "mindfulnessPrompts": [
       "Where have I let something take over my space?",
@@ -1899,7 +1893,7 @@
     "emotionalRoot": "Overload, nervous-system instability, fear, loss of control, recovery vulnerability, and the need for medical care before symbolism.",
     "metaphor": "Your brain is a power plant hit by an electrical storm, and the first job is keeping the building safe, not interviewing the lightning about its feelings.",
     "physiologicalDescription": "A seizure is a sudden uncontrolled electrical disturbance in the brain that can change movement, awareness, behavior, sensation, emotion, or consciousness. Causes can include epilepsy, fever in children, low blood sugar, electrolyte disturbance, infection, head trauma, stroke, brain tumor, withdrawal, medications, toxins, sleep deprivation, or unknown causes. A first seizure needs medical evaluation.",
-    "sarcasticAdvice": "Do not put anything in someone\u2019s mouth during a seizure. Whoever invented that myth deserves to be haunted by safe first-aid posters.",
+    "sarcasticAdvice": "Do not put anything in someone's mouth during a seizure. Whoever invented that myth deserves to be haunted by safe first-aid posters.",
     "mindfulnessPrompts": [
       "Is this a first seizure or known epilepsy?",
       "Did it last over 5 minutes or repeat without recovery?",
@@ -1985,7 +1979,7 @@
     "emotionalRoot": "Swallowed fire, withheld speech, irritation, infection, reflux, dryness, and the pain of a throat being asked to carry too much.",
     "metaphor": "Your throat is a pipe scraped with sandpaper, and the job is figuring out whether the sandpaper is virus, strep, reflux, smoke, dry air, or voice strain.",
     "physiologicalDescription": "Sore throat/pharyngitis is pain, scratchiness, or irritation of the throat. Causes can include viral infections, strep throat, flu/COVID/mono, tonsillitis, allergies/post-nasal drip, dry air, smoke/irritants, vocal strain, reflux/GERD, and mouth breathing.",
-    "sarcasticAdvice": "Do not demand antibiotics for every sore throat like bacteria personally RSVP\u2019d. Viral throats exist. Strep gets tested.",
+    "sarcasticAdvice": "Do not demand antibiotics for every sore throat like bacteria personally RSVP'd. Viral throats exist. Strep gets tested.",
     "mindfulnessPrompts": [
       "What burns to swallow?",
       "What symptom needs testing?",
@@ -2051,9 +2045,9 @@
     "riskLevel": "Medical monitoring recommended"
   },
   {
-    "id": "sterility",
-    "name": "Sterility",
-    "category": "Metabolic & Endocrine",
+    "id": "infertility",
+    "name": "Infertility",
+    "category": "Pelvic, Urinary & Reproductive",
     "emotionalRoot": "Longing, grief, uncertainty, waiting, blocked creation, pressure, shame, and the ache of wanting life to arrive on a timeline it refuses to obey.",
     "metaphor": "Your reproductive system is a garden that needs soil testing, water, timing, pollen, sunlight, and sometimes a specialist instead of another year of blaming the moon.",
     "physiologicalDescription": "Infertility is difficulty conceiving after a period of regular unprotected sex, commonly 12 months or 6 months when age or medical history warrants earlier evaluation. Causes can involve ovulation, sperm, tubes, uterus, endometriosis, age, hormones, PCOS, thyroid/prolactin issues, genetics, medications, lifestyle, or unexplained factors.",
@@ -2089,18 +2083,28 @@
     "physicalTherapyTip": "Practice eating in a completely relaxed, screen-free environment. Spend 5 minutes performing slow, diaphragmatic breathing before meals to activate parasympathetic digestion ('rest and digest')."
   },
   {
-    "id": "stroke",
-    "name": "Stroke",
+    "id": "weight-arms",
+    "name": "Weight Issues (Arms)",
     "category": "General & Energy",
-    "emotionalRoot": "Giving up. Resisting change, rejecting life, and carrying a deep, hidden belief that 'I cannot go on.' Preferring a total physical shutdown to facing a reality that feels completely overwhelming or restrictive.",
-    "metaphor": "Your cerebral power grid blowing its main transformer to force a complete, catastrophic shutdown which may somatically reflect an unconscious pattern of seeking escape from an unbearable life situation.",
-    "physiologicalDescription": "Severe, chronic neurovascular stress and hyper-sympathetic activation may interact with cerebral circulation and risk factors for vasospasm, thromboembolism, or hemorrhage.",
-    "sarcasticAdvice": "CRITICAL: Seek immediate emergency medical care. But once you recover, do ask yourself if your absolute rejection of change and feeling of total defeat played a role. Keep running yourself into a brick wall of stubborn resistance; I'm sure your cerebral arteries will love it.",
+    "emotionalRoot": "Accumulation, protection, responsibility, unmet needs, shame, and unreached reaching.",
+    "metaphor": "Your arms are overstuffed storage shelves for reaching, carrying, aging, muscle loss, overall body fat, and the occasional emotional box nobody labeled.",
+    "physiologicalDescription": "Weight distribution around the arms can reflect genetics, sex hormones, age, muscle mass, total body fat, visceral/subcutaneous fat, insulin resistance, medications, sleep, stress, menopause/pregnancy history, activity, pain, disability, and medical conditions. Spot reduction is not how fat loss works, because biology enjoys disappointing marketing departments.",
+    "sarcasticAdvice": "Do not shame one body area like it personally betrayed civilization. Also do not pretend labs, sleep, medications, hormones, and food structure are imaginary.",
     "mindfulnessPrompts": [
-      "Where in my life am I feeling so completely defeated, trapped, or resistant to change that my spirit wants to pull the emergency brake?",
-      "Am I ready to accept help, embrace change, and find a soft, new way of moving forward without needing to fight?"
+      "What am I carrying in my arms?",
+      "What medical factor needs checking?",
+      "Where do I need support instead of shame?",
+      "What one box can leave the house today?"
     ],
-    "physicalTherapyTip": "Always follow expert medical rehabilitation. For prevention and recovery: engage in gentle sensory stimulation, bilateral integration exercises, and daily, quiet meditation to calm cerebral vascular tone."
+    "physicalTherapyTip": "Track sudden changes, swelling, pain, shortness of breath, diabetes symptoms, thyroid symptoms, medications, sleep apnea, PCOS/menopause/pregnancy context, eating disorder symptoms, and overall metabolic markers.",
+    "tags": [
+      "weight",
+      "arms",
+      "fat distribution",
+      "metabolism",
+      "body composition"
+    ],
+    "riskLevel": "Medical monitoring recommended"
   },
   {
     "id": "stuttering",
@@ -2151,26 +2155,26 @@
     "riskLevel": "Medical monitoring recommended"
   },
   {
-    "id": "tetanus",
-    "name": "Tetanus",
+    "id": "weight-belly",
+    "name": "Weight Issues (Belly)",
     "category": "General & Energy",
-    "emotionalRoot": "Not a symbolic diagnosis. Tetanus is a bacterial toxin emergency. Pattern work does not belong ahead of emergency care.",
-    "metaphor": "Your nervous system is a car with the brake lines cut: the gas pedal is stuck, the muscles seize, and the road is ending.",
-    "physiologicalDescription": "Tetanus is a potentially life-threatening infection caused by Clostridium tetani toxin. It can cause jaw stiffness, painful muscle spasms, trouble swallowing, neck/back/abdominal rigidity, autonomic instability, breathing problems, and death. Prevention is vaccination and proper wound care.",
-    "sarcasticAdvice": "There is no home remedy, no detox, no breathing protocol, and no heroic dirt-wound optimism. Tetanus is hospital territory.",
+    "emotionalRoot": "Accumulation, protection, responsibility, unmet needs, shame, and central protection and metabolic risk.",
+    "metaphor": "Your belly is a central storage room where visceral fat, insulin resistance, cortisol, inflammation, hormones, sleep debt, food pattern, and protection can all pile boxes.",
+    "physiologicalDescription": "Chronic stress and emotional suppression elevate cortisol, which promotes visceral fat accumulation—the deep abdominal fat that wraps around organs. Cortisol increases insulin resistance, making it harder for cells to take up glucose. The body stores the excess as fat. The CDC confirms that chronic stress may be a primary risk factor for central obesity, with cortisol-mediated fat storage accounting for 40-60% of cases.",
+    "sarcasticAdvice": "Do not shame one body area like it personally betrayed civilization. Also do not pretend labs, sleep, medications, hormones, and food structure are imaginary.",
     "mindfulnessPrompts": [
-      "Emergency care first.",
-      "When was my last tetanus booster?",
-      "Does this wound need medical cleaning or a booster/TIG review?",
-      "Am I treating an emergency like an inconvenience?"
+      "What am I carrying in my belly?",
+      "What medical factor needs checking?",
+      "Where do I need support instead of shame?",
+      "What one box can leave the house today?"
     ],
-    "physicalTherapyTip": "If tetanus is suspected, seek emergency medical care immediately. Prevention includes vaccination boosters and prompt wound care for dirty, deep, puncture, crush, burn, or animal-bite wounds.",
+    "physicalTherapyTip": "Track sudden changes, swelling, pain, shortness of breath, diabetes symptoms, thyroid symptoms, medications, sleep apnea, PCOS/menopause/pregnancy context, eating disorder symptoms, and overall metabolic markers.",
     "tags": [
-      "tetanus",
-      "lockjaw",
-      "medical emergency",
-      "vaccination",
-      "wound"
+      "weight",
+      "belly",
+      "fat distribution",
+      "metabolism",
+      "body composition"
     ],
     "riskLevel": "Medical monitoring recommended"
   },
@@ -2204,7 +2208,7 @@
     "category": "Head & Neck",
     "emotionalRoot": "Unwanted noise, hypervigilance, overstimulation, auditory threat scanning, and the desperate wish for quiet in a nervous system that keeps listening for danger.",
     "metaphor": "Your ears are a broken radio stuck between stations: static, buzzing, ringing, and the occasional panic DJ refusing to leave the booth.",
-    "physiologicalDescription": "Tinnitus is the perception of sound without an external sound source, such as ringing, buzzing, hissing, roaring, or clicking. Causes and contributors can include hearing loss, noise exposure, earwax, ear infection, M\u00e9ni\u00e8re\u2019s disease, TMJ disorders, head/neck injury, medications, vascular issues, and neurologic conditions.",
+    "physiologicalDescription": "Tinnitus is the perception of sound without an external sound source, such as ringing, buzzing, hissing, roaring, or clicking. Causes and contributors can include hearing loss, noise exposure, earwax, ear infection, Ménière's disease, TMJ disorders, head/neck injury, medications, vascular issues, and neurologic conditions.",
     "sarcasticAdvice": "Do not ignore sudden hearing loss or heartbeat-synced tinnitus. The ear is not supposed to become a tiny emergency broadcast system without supervision.",
     "mindfulnessPrompts": [
       "What noise needs medical evaluation?",
@@ -2247,9 +2251,138 @@
     "riskLevel": "Medical monitoring recommended"
   },
   {
-    "id": "thrush",
-    "name": "Thrush (Vaginal Infection)",
-    "category": "Metabolic & Endocrine",
+    "id": "urinary-tract-infection",
+    "name": "Urinary Tract Infection (UTI)",
+    "category": "Pelvic, Urinary & Reproductive",
+    "tags": [
+      "uti",
+      "urinary tract infection",
+      "cystitis",
+      "bladder infection",
+      "urinary burning",
+      "dysuria",
+      "urinary urgency",
+      "urinary frequency",
+      "bladder",
+      "urinary",
+      "recurrent uti",
+      "kidney infection",
+      "pyelonephritis",
+      "urethritis",
+      "asymptomatic bacteriuria",
+      "pelvic floor",
+      "sacral chakra",
+      "root chakra",
+      "boundaries",
+      "release",
+      "irritation",
+      "intimacy",
+      "symbolic"
+    ],
+    "riskLevel": "Medical monitoring recommended",
+    "emotionalRoot": "A bacterial urinary tract infection occurs when microorganisms — most often bacteria like E. coli — enter and multiply in the urinary tract. That is the medical reality and the first thing to address. Beyond the infection itself, reflective themes often arise around irritation and frustration, feeling invaded or intruded upon, intimate boundaries, resentment, pressure, privacy, difficulty releasing or letting go, sexual or relational tension, and the feeling of being 'burned' by a situation. Traditional metaphysical and philosophical systems also associate this region with safety, sexuality, emotional flow, release, and personal territory. These are symbolic and reflective themes, not medical causes of bacterial infection. Reflective exploration may happen alongside medical care, not instead of it.",
+    "metaphor": "The urinary tract is part plumbing system, part security checkpoint, and part waste-removal department. Medically, a UTI means unwanted microbes got through the gate and started multiplying — that is an infection, not a metaphor. Symbolically, the same territory lends itself to themes of boundaries, intrusion, holding versus releasing, irritation, and deciding what is allowed into your personal space. Reflection and medical care are parallel tracks, not competing explanations.",
+    "physiologicalDescription": "A urinary tract infection is an infection involving part of the urinary system, commonly the bladder and sometimes the urethra or kidneys. Bladder infections are usually caused by bacteria entering the urinary tract and multiplying. Common lower-tract symptoms include burning or pain with urination, urgency, frequency, passing small amounts of urine, and lower abdominal discomfort; urine may also appear cloudy or bloody. Fever, chills, nausea or vomiting, and pain in the back, side, or flank can suggest kidney involvement and warrant prompt medical attention. Urinary symptoms do not always mean bacterial UTI: vaginal or genital irritation, sexually transmitted infections, prostatitis, kidney stones, pelvic-floor dysfunction, bladder pain syndrome, menopause-related genitourinary changes, and other conditions can overlap.",
+    "sarcasticAdvice": "If it burns when you pee, start with the astonishing possibility that your urinary tract has an actual urinary problem. Bacteria do not need childhood trauma, a relationship argument, or permission from your sacral chakra before moving in. Get the medical question handled first. Then, if the themes of irritation, boundaries, intimacy, or release resonate with anything happening in your life — not because they caused bacteria, but because being sick and burned is worth reflecting on — explore those too.",
+    "mindfulnessPrompts": [
+      "Have these symptoms actually been confirmed as a UTI before, or am I assuming because they feel familiar?",
+      "Do I have fever, chills, flank or back pain, vomiting, significant blood in the urine, or severe illness that needs prompt medical evaluation?",
+      "Are there genital, vaginal, pelvic, prostate, sexual, or STI-related symptoms that suggest another explanation?",
+      "If symptoms recur, have urine cultures been positive, negative, or never performed?",
+      "Does sexual activity reliably precede symptoms, and have I begun associating intimacy with pain or fear?",
+      "Is the bladder guarding or bracing as I anticipate urination?",
+      "Am I hyper-alert to every bladder sensation because previous episodes hurt so badly?",
+      "Has fear of recurrence changed intimacy or daily routines?",
+      "Where do I feel irritated or 'burned' by a situation right now?",
+      "What am I holding that has become painful to retain?",
+      "What feels difficult to release?",
+      "Where do I feel invaded or intruded upon?",
+      "Are my intimate boundaries being respected?",
+      "Do I feel safe occupying my own space?",
+      "What would it mean to notice the burning without the story layered onto it?"
+    ],
+    "physicalTherapyTip": "Track burning, urgency, frequency, urine changes, lower abdominal discomfort, fever, chills, flank or back pain, nausea or vomiting, sexual or genital symptoms, possible triggers, previous test results, antibiotic history, and whether cultures were positive or negative. Recurrent UTI-like symptoms with negative cultures deserve investigation for noninfectious urinary, pelvic-floor, genital, menopausal, or pain conditions rather than endless assumption that every flare is another bacterial infection."
+  },
+  {
+    "id": "urinary-urgency-frequency",
+    "name": "Urinary Urgency & Frequency",
+    "category": "Pelvic, Urinary & Reproductive",
+    "tags": [
+      "urinary urgency",
+      "urinary frequency",
+      "nocturia",
+      "polyuria",
+      "overactive bladder",
+      "oab",
+      "urgency incontinence",
+      "bladder",
+      "urinary",
+      "pelvic floor",
+      "key-in-door urgency",
+      "conditioned urgency",
+      "just in case voiding",
+      "diabetes",
+      "prostate",
+      "bladder diary",
+      "symbolic",
+      "reflection"
+    ],
+    "riskLevel": "Medical monitoring recommended",
+    "emotionalRoot": "Urinary urgency and frequency are symptom patterns — sudden compelling need to urinate, and urinating more often than usual — not a single diagnosis. Reflective themes that often arise include intolerance of waiting, fear of being caught without a bathroom, needing to know where the exit is, pressure that must be resolved immediately, repeated checking, and the discomfort of a body that will not quietly hold. These are symbolic and reflective themes, not medical causes. The experience itself can be shaped by real medical factors (infection, irritation, bladder or prostate conditions, diabetes, neurologic disease, medications, pelvic-floor dysfunction) and by learned alarm responses; the two can coexist.",
+    "metaphor": "The bladder is a storage facility with an alarm panel wired to the nervous system. Sometimes the panel is reporting a genuine incident — infection, retention, a delivery of far too much fluid, a structural problem. Sometimes the panel has been trained to scream at the smallest shipment because past deliveries came with pain. The trick is telling the real fire from the over-tuned sensor, and the sensor cannot be recalibrated by pretending the building is fine.",
+    "physiologicalDescription": "Urgency is a sudden, compelling need to urinate that is difficult to defer. Frequency is urinating more often than usual. Nocturia is waking from sleep specifically to urinate. Polyuria is a genuinely increased total urine volume. Urgency incontinence is leakage associated with sudden urgency. Frequent small voids are not the same as producing large amounts of urine. Many possible contributors exist: UTI, bladder irritation, overactive bladder (OAB), caffeine, alcohol, diuretics, excessive fluid intake, diabetes mellitus, diabetes insipidus, pregnancy, prostate enlargement / BPH, urinary retention / incomplete emptying, pelvic-floor dysfunction, interstitial cystitis / bladder pain syndrome, stones, STI / urethritis, vaginitis / genital irritation, genitourinary syndrome of menopause, pelvic organ prolapse, neurologic conditions (MS, Parkinson disease, stroke, spinal-cord disorders), constipation, pelvic masses, medication effects, and sleep apnea / sleep fragmentation in nocturia. These are not equally likely, and symptoms alone do not diagnose.",
+    "sarcasticAdvice": "Before turning urgency into a personal identity, notice whether you drank three coffees, a soda, and a gallon of water before blaming your sacral chakra. Caffeine and alcohol are enthusiastic contributors. So is 'just in case' voiding every twenty minutes, which trains the alarm to fire on a hair trigger. If you are insanely thirsty and producing huge volumes of urine, that is a medical question, not a meditation topic. Get the pattern checked before assigning it a cosmic meaning.",
+    "mindfulnessPrompts": [
+      "Are the voids frequent and small, or is the total urine volume genuinely large?",
+      "Do I feel a sudden compelling urge I cannot easily defer, or a gradual fullness?",
+      "Does this happen mainly during the day, mainly at night, or both?",
+      "Am I unusually thirsty alongside large urine output?",
+      "How much caffeine, alcohol, and total fluid am I taking, and when?",
+      "What medications do I take that could affect urination or fluid balance?",
+      "Is there burning, pain, blood, a weak stream, or a sense I cannot fully empty?",
+      "Did symptoms begin or change around pregnancy, postpartum recovery, or menopause?",
+      "In men, are there prostate-related symptoms such as weak stream or straining?",
+      "Do I do 'just in case' voiding, and does that seem to make urgency worse?",
+      "Does urgency spike when I reach home, see a bathroom, or hear running water?",
+      "Am I mapping bathrooms everywhere I go and feeling anxious without one nearby?",
+      "Has fear of leakage changed intimacy, travel, sleep, or daily plans?",
+      "Do I notice my pelvic floor bracing or clenching when I feel the urge?",
+      "What does it mean to me that relief cannot wait even a few minutes?",
+      "Where else in my life do I need to know the exit is available?",
+      "Is this symptom pattern new, persistent, or recurrent enough to evaluate?"
+    ],
+    "physicalTherapyTip": "Track the pattern before assuming a cause: a simple bladder diary noting time, fluid intake, void volume (small vs large), urgency, leakage, and night awakenings for a few days is far more useful than guessing. Note caffeine/alcohol, medications, constipation, sleep quality, and pain. Avoid 'just in case' voiding when no acute medical issue is present, and avoid aggressive pelvic-floor squeezing. Seek evaluation for inability to urinate, severe pain, blood, fever with urinary symptoms, new neurologic symptoms, excessive thirst with large urine output, or symptoms that are new, persistent, or recurring."
+  },
+  {
+    "id": "urinary-incontinence",
+    "name": "Urinary Incontinence",
+    "category": "Pelvic, Urinary & Reproductive",
+    "tags": [
+      "urinary incontinence",
+      "stress incontinence",
+      "urge incontinence",
+      "mixed incontinence",
+      "overflow incontinence",
+      "functional incontinence",
+      "leakage",
+      "bladder",
+      "pelvic floor",
+      "protective underwear",
+      "symbolic",
+      "reflection"
+    ],
+    "riskLevel": "Medical monitoring recommended",
+    "emotionalRoot": "Urinary incontinence means involuntary leakage of urine. It is a symptom pattern, not one disease. Related patterns must stay distinct: urgency is the sensation of needing to urinate; frequency is how often someone urinates; incontinence is urine leaking on its own; retention is failing to empty; polyuria is producing more total urine; bedwetting is involuntary leakage during sleep and is handled separately. Reflective themes that often arise include loss of control, exposure, shame about the body, fear of being seen, dependence, and the grief of a body that no longer follows instructions. For functional incontinence especially, the failure may be environmental rather than internal: the system works, but the path to the toilet does not. These are reflective themes, not medical causes.",
+    "metaphor": "Urinary incontinence is a gate that opens before permission. Sometimes the gate is overwhelmed by pressure from above (stress). Sometimes the alarm fires and the gate flies open before thought arrives (urge). Sometimes the vessel never empties and spills over the rim (overflow). Sometimes the gate is fine but the road to it is blocked (functional). The leak is one word; the mechanics behind it are several different stories.",
+    "physiologicalDescription": "Urinary incontinence is the involuntary leakage of urine. It is a symptom pattern with several distinct mechanisms, not a single disease. Stress incontinence is leakage with increases in abdominal pressure (coughing, sneezing, laughing, lifting, exercise) when urethral closure or support is overwhelmed; 'stress' here means physical pressure, not anxiety. Urgency (urge) incontinence is leakage following a sudden, compelling urge that is hard to defer, often with overactive bladder, irritation, or neurologic factors. Mixed incontinence combines both. Overflow incontinence involves incomplete emptying, a continuously overfull bladder, weak stream, hesitancy, straining, or dribbling; it is not the same as weak pelvic floor and is not fixed by more Kegels or drinking less. Functional incontinence occurs when the urinary system is relatively intact but the person cannot reach or use a toilet in time because of mobility, dexterity, cognition, environment, or caregiver barriers. Continuous or structural leakage suggests fistula, ectopic ureter, or significant injury and needs real structural evaluation. These differ from urgency (sensation), frequency (how often), retention (failing to empty), polyuria (increased total volume), and bedwetting (during sleep). Many contributors exist: pregnancy, childbirth, postpartum changes, menopause/genitourinary syndrome of menopause, pelvic organ prolapse, BPH/prostate enlargement, prostate or pelvic surgery, pelvic radiation, neurologic disease (MS, Parkinson disease, stroke, spinal-cord disorders), diabetes, chronic cough, constipation, obesity where evidence supports it, medications, mobility/cognition limits, pelvic-floor dysfunction, structural injury, and polyuria; they are not equally likely.",
+    "sarcasticAdvice": "Before you declare incontinence a character flaw or a chakra emergency, notice which kind it is. The leaking-when-you-cough kind is a pressure-and-support problem, not evidence you are secretly anxious. The violent-urge-and-lose-the-race kind is a different mechanism entirely. Overflow, a bladder that cannot empty and spills over, is not cured by drinking less water and squeezing harder; that is troubleshooting a flooded basement by standing on the sump pump. Functional incontinence is often the environment failing the person, not the bladder failing them, so do not psychologize a wheelchair user who cannot reach the toilet. A pad is equipment, not a surrender flag, and pelvic-floor strength is not a universal cure. Doing Kegels to an already clenched floor is like fixing a stuck brake by pressing it harder. New, worsening, or structurally suspicious leakage deserves evaluation, not a shame monologue.",
+    "mindfulnessPrompts": [],
+    "physicalTherapyTip": "Identify the leakage pattern before assuming a cause: a bladder diary noting time, fluid intake, triggers (cough/laugh/urgency), amount, day versus night, and any sense of incomplete emptying is far more useful than guessing. Seek pelvic-floor physiotherapy assessment; weakness, poor coordination, hypertonic/overactive guarding, and mixed patterns need different approaches, and universal Kegels are not appropriate. Address constipation, reasonable hydration, caffeine/alcohol awareness, and mobility/accessibility. Seek evaluation for constant leakage, weak stream/retention, new neurologic symptoms, blood, pain, fever, or new leakage after surgery/childbirth/injury."
+  },
+  {
+    "id": "vaginal-thrush",
+    "name": "Vaginal Thrush",
+    "category": "Pelvic, Urinary & Reproductive",
     "emotionalRoot": "Overgrowth, depletion, imbalance, sweetness overload, immune strain, and letting something small take over the whole garden.",
     "metaphor": "Your body is a garden where Candida stopped being a background plant and started opening franchises.",
     "physiologicalDescription": "Thrush/candidiasis is Candida yeast overgrowth that can affect the mouth, vagina, skin folds, nipples, or other areas. Risk factors include antibiotics, diabetes/high blood sugar, immune suppression, steroid inhalers, dentures, dry mouth, pregnancy/hormonal changes, irritation, and some medications.",
@@ -2345,7 +2478,7 @@
   {
     "id": "vaginitis",
     "name": "Vaginitis",
-    "category": "Metabolic & Endocrine",
+    "category": "Pelvic, Urinary & Reproductive",
     "emotionalRoot": "Irritation, imbalance, ignored signals, boundary stress, shame, and the body asking for attention before the tiny downstairs ecosystem starts filing complaints.",
     "metaphor": "Your vaginal ecosystem is a walled garden where lactobacilli, yeast, bacteria, pH, hormones, sex, products, antibiotics, and stress are all arguing over landscaping rights.",
     "physiologicalDescription": "Vaginitis is inflammation or irritation of the vagina/vulva. Causes can include bacterial vaginosis, yeast infection, trichomoniasis, STIs, irritants/allergies, low estrogen, antibiotics, diabetes, pregnancy, hormonal changes, immune suppression, or other gynecologic conditions.",
@@ -2524,7 +2657,7 @@
     "riskLevel": "Medical monitoring recommended",
     "emotionalRoot": "Instability, fear of falling, shaken ground, uncertainty, disorientation, and the need to find support before moving.",
     "metaphor": "Your body is a leaning tower whose foundation keeps shifting while the architect insists the floor is probably fine.",
-    "physiologicalDescription": "Loss of balance, dizziness, or vertigo is a symptom, not a diagnosis. Causes can include BPPV, M\u00e9ni\u00e8re\u2019s disease, vestibular neuritis, labyrinthitis, migraine, stroke/TIA, multiple sclerosis, Parkinson\u2019s disease, neuropathy, orthostatic hypotension, arrhythmia, dehydration, anemia, hypoglycemia, medications, anxiety/hyperventilation, neck injury, or cervicogenic dizziness.",
+    "physiologicalDescription": "Loss of balance, dizziness, or vertigo is a symptom, not a diagnosis. Causes can include BPPV, Ménière's disease, vestibular neuritis, labyrinthitis, migraine, stroke/TIA, multiple sclerosis, Parkinson's disease, neuropathy, orthostatic hypotension, arrhythmia, dehydration, anemia, hypoglycemia, medications, anxiety/hyperventilation, neck injury, or cervicogenic dizziness.",
     "sarcasticAdvice": "Do not walk around proving you're tough while the room is spinning. Sit down before gravity writes the medical report.",
     "physicalTherapyTip": "Track spinning vs faintness vs unsteadiness, onset, duration, triggers, falls, hearing changes, headache, double vision, weakness, numbness, speech trouble, chest pain, palpitations, medications, hydration, blood sugar, and neck injury.",
     "mindfulnessPrompts": [
@@ -2631,28 +2764,28 @@
     ]
   },
   {
-    "id": "prostate-cancer",
-    "name": "Prostate Cancer",
+    "id": "weight-hips",
+    "name": "Weight Issues (Hips)",
     "category": "General & Energy",
-    "tags": [
-      "prostate cancer",
-      "PSA",
-      "urinary symptoms",
-      "blood in urine",
-      "men's health"
-    ],
-    "riskLevel": "Medical monitoring recommended",
-    "emotionalRoot": "Shock, fear, grief, uncertainty, mortality, medical overwhelm, and the need for real treatment plus human support. Symbolically: potency, identity, aging, vulnerability, and bodily control without shame.",
-    "metaphor": "The prostate is a pressure valve in the lower system, and urinary changes or abnormal PSA deserve actual evaluation, not masculine denial theater.",
-    "physiologicalDescription": "Prostate cancer is cancer of the prostate gland. It may cause no symptoms early. Possible signs can include urinary difficulty, weak stream, frequent urination, blood in urine/semen, pelvic/back/bone pain, or erectile/ejaculatory symptoms. Screening decisions often involve PSA testing and shared decision-making based on age, risk, and preferences.",
-    "sarcasticAdvice": "Do not replace oncology, imaging, biopsy, surgery, radiation, chemotherapy, immunotherapy, targeted therapy, hormone therapy, or screening with vibes. Vibes may sit in the waiting room and behave.",
-    "physicalTherapyTip": "Track symptoms, screening history, family history, diagnosis stage if known, treatment plan, side effects, weight loss, pain, bleeding, fatigue, fever, infection signs, and urgent changes. Follow oncology guidance.",
+    "emotionalRoot": "Accumulation, protection, responsibility, unmet needs, shame, and foundation and responsibility.",
+    "metaphor": "Your hips are the foundation beams of the house, carrying biology, hormones, movement, responsibility, pregnancy history, menopause shifts, and old load.",
+    "physiologicalDescription": "Weight distribution around the hips can reflect genetics, sex hormones, age, muscle mass, total body fat, visceral/subcutaneous fat, insulin resistance, medications, sleep, stress, menopause/pregnancy history, activity, pain, disability, and medical conditions. Spot reduction is not how fat loss works, because biology enjoys disappointing marketing departments.",
+    "sarcasticAdvice": "Do not shame one body area like it personally betrayed civilization. Also do not pretend labs, sleep, medications, hormones, and food structure are imaginary.",
     "mindfulnessPrompts": [
-      "What medical step is next?",
-      "What symptom needs evaluation now?",
-      "Who is on my support team?",
-      "What meaning helps me cope without replacing treatment?"
-    ]
+      "What am I carrying in my hips?",
+      "What medical factor needs checking?",
+      "Where do I need support instead of shame?",
+      "What one box can leave the house today?"
+    ],
+    "physicalTherapyTip": "Track sudden changes, swelling, pain, shortness of breath, diabetes symptoms, thyroid symptoms, medications, sleep apnea, PCOS/menopause/pregnancy context, eating disorder symptoms, and overall metabolic markers.",
+    "tags": [
+      "weight",
+      "hips",
+      "fat distribution",
+      "metabolism",
+      "body composition"
+    ],
+    "riskLevel": "Medical monitoring recommended"
   },
   {
     "id": "allergies-hay-fever",
@@ -2680,7 +2813,7 @@
   },
   {
     "id": "lower-back-pain-left-side",
-    "name": "Lower Back Pain \u2014 Left Side",
+    "name": "Lower Back Pain — Left Side",
     "category": "Back & Shoulders",
     "tags": [
       "lower back",
@@ -2690,7 +2823,7 @@
       "body map"
     ],
     "riskLevel": "Medical monitoring recommended",
-    "emotionalRoot": "Carried grief, emotional burden, unsupported receiving, and the weight of other people\u2019s needs.",
+    "emotionalRoot": "Carried grief, emotional burden, unsupported receiving, and the weight of other people's needs.",
     "metaphor": "Your lower back is a wheelbarrow overloaded on the left side, grinding because everything got dumped onto one wheel.",
     "physiologicalDescription": "Left lower back pain may come from muscle strain, ligament sprain, disc problems, sciatica, sacroiliac dysfunction, pelvic floor tension, or referred pain from the left kidney, colon, pancreas, ovary/fallopian tube, or other structures.",
     "sarcasticAdvice": "Decode the pattern after checking the red flags. The spine is not a poetry slam with nerves attached for decoration.",
@@ -2704,7 +2837,7 @@
   },
   {
     "id": "lower-back-pain-right-side",
-    "name": "Lower Back Pain \u2014 Right Side",
+    "name": "Lower Back Pain — Right Side",
     "category": "Back & Shoulders",
     "tags": [
       "lower back",
@@ -2728,7 +2861,7 @@
   },
   {
     "id": "middle-back-pain-left-side",
-    "name": "Middle Back Pain \u2014 Left Side",
+    "name": "Middle Back Pain — Left Side",
     "category": "Back & Shoulders",
     "tags": [
       "middle back",
@@ -2752,7 +2885,7 @@
   },
   {
     "id": "middle-back-pain-right-side",
-    "name": "Middle Back Pain \u2014 Right Side",
+    "name": "Middle Back Pain — Right Side",
     "category": "Back & Shoulders",
     "tags": [
       "middle back",
@@ -2763,7 +2896,7 @@
     ],
     "riskLevel": "Medical monitoring recommended",
     "emotionalRoot": "Duty, responsibility, expectation, over-carrying, and roles that may not belong to you.",
-    "metaphor": "Your middle back is a suitcase packed with everyone else\u2019s obligations until the zipper starts negotiating with God.",
+    "metaphor": "Your middle back is a suitcase packed with everyone else's obligations until the zipper starts negotiating with God.",
     "physiologicalDescription": "Right middle back pain may come from muscle strain, posture, rib dysfunction, disc issues, osteoarthritis, spinal stenosis, or referred pain from the gallbladder, liver, right kidney, right lung, or other structures.",
     "sarcasticAdvice": "Decode the pattern after checking the red flags. The spine is not a poetry slam with nerves attached for decoration.",
     "physicalTherapyTip": "Track location, onset, trauma, lifting/twisting, posture, radiating pain, numbness/weakness, bowel/bladder changes, fever, weight loss, urinary symptoms, abdominal pain, chest symptoms, and what worsens or relieves it.",
@@ -2776,7 +2909,7 @@
   },
   {
     "id": "upper-back-pain-left-side",
-    "name": "Upper Back Pain \u2014 Left Side",
+    "name": "Upper Back Pain — Left Side",
     "category": "Back & Shoulders",
     "tags": [
       "upper back",
@@ -2786,7 +2919,7 @@
       "body map"
     ],
     "riskLevel": "Medical monitoring recommended",
-    "emotionalRoot": "Emotional burden, sorrow, caretaking, grief, and the weight of everyone else\u2019s feelings.",
+    "emotionalRoot": "Emotional burden, sorrow, caretaking, grief, and the weight of everyone else's feelings.",
     "metaphor": "Your upper back is a backpack overloaded on the left strap, digging into the shoulder because apparently you volunteered to carry the world.",
     "physiologicalDescription": "Left upper back pain may come from muscle strain, forward head posture, tech neck, cervical radiculopathy, disc issues, osteoarthritis, stress tension, or referred cardiac pain such as angina, especially when paired with chest symptoms.",
     "sarcasticAdvice": "Decode the pattern after checking the red flags. The spine is not a poetry slam with nerves attached for decoration.",
@@ -2800,7 +2933,7 @@
   },
   {
     "id": "upper-back-pain-right-side",
-    "name": "Upper Back Pain \u2014 Right Side",
+    "name": "Upper Back Pain — Right Side",
     "category": "Back & Shoulders",
     "tags": [
       "upper back",
@@ -2866,7 +2999,7 @@
     "category": "Skin & Sleep",
     "emotionalRoot": "Fixed identity, old markers, permanence, fear of change, and places where life feels stamped into the skin.",
     "metaphor": "Your skin is a museum exhibit with permanent markers, but some exhibits need a dermatologist before the curator starts writing poetry about them.",
-    "physiologicalDescription": "While the precise biological mechanism linking stress to mole formation is not fully established, the broader relationship between chronic Qi and Blood stagnation and cellular accumulation is recognized in TCM. The skin reflects the internal environment. Stagnation\u2014emotional, energetic, circulatory\u2014manifests as fixed marks. The mole may be the physical proof of that stagnation.",
+    "physiologicalDescription": "While the precise biological mechanism linking stress to mole formation is not fully established, the broader relationship between chronic Qi and Blood stagnation and cellular accumulation is recognized in TCM. The skin reflects the internal environment. Stagnation—emotional, energetic, circulatory—manifests as fixed marks. The mole may be the physical proof of that stagnation.",
     "sarcasticAdvice": "Do not psychoanalyze a changing mole while ignoring the ABCDE checklist. Melanoma is not impressed by your archetypes.",
     "mindfulnessPrompts": [
       "What feels fixed in me?",
@@ -2885,27 +3018,186 @@
     "riskLevel": "Medical monitoring recommended"
   },
   {
-    "id": "martyr-complex",
-    "name": "Martyr Complex",
+    "id": "weight-thighs",
+    "name": "Weight Issues (Thighs)",
     "category": "General & Energy",
-    "emotionalRoot": "Over-giving, guilt, depletion, resentment, transactional worth, fear of being useless, and the need to receive without earning it.",
-    "metaphor": "You are an overworked donkey carrying everyone else\u2019s luggage while the crowd keeps calling it loyalty because nobody wants to pay baggage fees.",
-    "physiologicalDescription": "A martyr complex is not a clinical diagnosis. It is a behavioral and psychological pattern involving chronic self-sacrifice, over-giving, guilt around self-care, poor boundaries, resentment, burnout risk, anxiety, depression, and physical stress symptoms. Chronic caregiving or over-functioning without support can worsen exhaustion and health strain.",
-    "sarcasticAdvice": "Stop confusing exhaustion with virtue. A dead battery is not morally superior to a charged one. It is just less useful and more annoying to jump-start.",
+    "emotionalRoot": "Accumulation, protection, responsibility, unmet needs, shame, and carrying forward.",
+    "metaphor": "Your thighs are the freight elevators of forward movement, carrying genetics, hormones, training history, fluid, fat distribution, and responsibilities that got weirdly heavy.",
+    "physiologicalDescription": "Weight distribution around the thighs can reflect genetics, sex hormones, age, muscle mass, total body fat, visceral/subcutaneous fat, insulin resistance, medications, sleep, stress, menopause/pregnancy history, activity, pain, disability, and medical conditions. Spot reduction is not how fat loss works, because biology enjoys disappointing marketing departments.",
+    "sarcasticAdvice": "Do not shame one body area like it personally betrayed civilization. Also do not pretend labs, sleep, medications, hormones, and food structure are imaginary.",
     "mindfulnessPrompts": [
-      "Where am I saying yes because I am afraid of being useless?",
-      "What one bag is not mine?",
-      "What would receiving look like without earning it?",
-      "Am I safe, or am I running on nothing?"
+      "What am I carrying in my thighs?",
+      "What medical factor needs checking?",
+      "Where do I need support instead of shame?",
+      "What one box can leave the house today?"
     ],
-    "physicalTherapyTip": "Track burnout, resentment, guilt when saying no, sleep, mood, anxiety, health symptoms, caregiving load, lack of reciprocity, self-harm thoughts, suicidal thoughts, and whether therapy/support is available.",
+    "physicalTherapyTip": "Track sudden changes, swelling, pain, shortness of breath, diabetes symptoms, thyroid symptoms, medications, sleep apnea, PCOS/menopause/pregnancy context, eating disorder symptoms, and overall metabolic markers.",
     "tags": [
-      "martyr complex",
-      "overgiving",
-      "boundaries",
-      "burnout",
-      "self-sacrifice"
+      "weight",
+      "thighs",
+      "fat distribution",
+      "metabolism",
+      "body composition"
     ],
     "riskLevel": "Medical monitoring recommended"
+  },
+  {
+    "id": "painful-sex-dyspareunia",
+    "name": "Painful Sex / Dyspareunia",
+    "category": "Pelvic, Urinary & Reproductive",
+    "emotionalRoot": "Painful sex as a symptom spanning tissue, hormonal, pelvic-floor, relational, and protective layers; supplied reflection covers pattern, arousal and tissue health, pelvic-floor coordination, consent and relationship impact, and the difference between the first pain and the suffering built around it.",
+    "metaphor": "Sexual pain as a guarded threshold where pleasure, protection, and unpredictability share the same doorway, and the body may brace before the door opens.",
+    "physiologicalDescription": "Painful sex is pain, burning, stinging, rawness, tearing, pressure, cramping, aching, or other discomfort connected with sexual activity. The medical term dyspareunia is commonly used for pain with intercourse, but sexual pain can involve much more than vaginal penetration. It may occur with external genital touch, fingers, toys, vaginal or anal penetration, erection, ejaculation, orgasm, particular positions, pelvic examination, or afterward.\n\nPainful sex is a symptom pattern, not one diagnosis. Skin and genital tissues, lubrication, hormonal changes, pelvic-floor muscles, reproductive organs, urinary and bowel conditions, nerves, previous injury or surgery, and pain-processing changes can all contribute. More than one factor may be present at the same time.\n\nPain does not prove lack of attraction, relationship dysfunction, past trauma, or unwillingness to have sex. It also does not need to be endured to preserve a relationship or prove anything about sexuality.",
+    "sarcasticAdvice": "Painful sex is not a personality flaw, not proof you are bad at sex, and not something you are required to endure to keep a relationship; get the pattern, screen red flags, and seek appropriate evaluation.",
+    "mindfulnessPrompts": [],
+    "physicalTherapyTip": "Track pain location, timing, activity type, superficial versus deep quality, lubrication, hormonal context, and associated urinary or bowel symptoms; seek evaluation for persistent, recurrent, severe, or unexplained sexual pain.",
+    "tags": [
+      "painful sex",
+      "dyspareunia",
+      "sexual pain",
+      "pelvic floor",
+      "penetration pain"
+    ],
+    "riskLevel": "Medical monitoring recommended"
+  },
+  {
+    "id": "menstrual-pain-dysmenorrhea",
+    "name": "Menstrual Pain / Dysmenorrhea",
+    "category": "Pelvic, Urinary & Reproductive",
+    "emotionalRoot": "Menstrual pain is a recurring symptom pattern that may involve prostaglandin-driven uterine contractions, possible secondary causes such as endometriosis or fibroids, pelvic-floor and musculoskeletal responses, and the guarding and meaning-making that can build around predictable pain.",
+    "metaphor": "Menstrual pain as a recurring symptom pattern with primary and secondary contributors.",
+    "physiologicalDescription": "Menstrual pain, or dysmenorrhea, is cramping, aching, pressure, or other pain associated with menstruation. It often involves the lower abdomen and may spread into the back or thighs. Nausea, diarrhea, headache, fatigue, or dizziness can occur alongside the pain.\n\nPrimary dysmenorrhea refers to menstrual pain without an identified pelvic disease and commonly involves prostaglandin-driven uterine contractions. Secondary dysmenorrhea means the pain is associated with another condition, such as endometriosis, adenomyosis, fibroids, pelvic inflammatory disease, ovarian conditions, or an anatomic problem.\n\nThe pattern matters more than simply asking whether periods hurt. Severe, progressive, newly changed, prolonged, or repeatedly disabling pain deserves evaluation rather than automatic normalization.",
+    "sarcasticAdvice": "Menstrual pain is not a personality flaw or a test of endurance; describe the pattern, screen red flags, and seek evaluation for severe, progressive, or disabling symptoms.",
+    "mindfulnessPrompts": [],
+    "physicalTherapyTip": "Track cycle day, pain timing relative to bleeding, location, quality, associated nausea or bowel/bladder symptoms, bleeding heaviness, and functional impact; seek evaluation for severe, progressive, or disabling menstrual pain.",
+    "tags": [
+      "menstrual pain",
+      "dysmenorrhea",
+      "period pain",
+      "cramps",
+      "endometriosis",
+      "pelvic pain"
+    ],
+    "riskLevel": "Medical monitoring recommended"
+  },
+  {
+    "id": "irregular-menstrual-cycles",
+    "name": "Irregular Menstrual Cycles",
+    "category": "Pelvic, Urinary & Reproductive",
+    "emotionalRoot": "Irregular menstrual cycles are a pattern rather than one diagnosis; meaning-making around unpredictability, fertility anxiety, and bodily self-trust can build around the calendar uncertainty, but that reflection does not cause the underlying cycle variability.",
+    "metaphor": "Irregular menstrual cycles as a changing pattern involving ovulation, bleeding, endocrine, medication, illness, and life-stage factors rather than a single internal clock.",
+    "physiologicalDescription": "Irregular menstrual cycles include periods that arrive unpredictably, are repeatedly missed, occur unusually often or infrequently, change substantially from a person's established pattern, or involve irregular bleeding. Irregularity is a pattern, not one diagnosis.\n\nPregnancy, normal life-stage transitions, ovulatory changes, PCOS, thyroid disease, elevated prolactin, low energy availability, medications, systemic illness, perimenopause, and uterine or other gynecologic conditions can all affect menstrual timing or bleeding.\n\nThe useful question is not whether a cycle matches a perfect 28-day calendar. It is what has changed, how often it happens, what other symptoms occur, and whether the pattern is expected for the person's age and life stage or deserves medical evaluation.",
+    "sarcasticAdvice": "An irregular cycle is not automatic pregnancy, automatic PCOS, or proof your hormones are simply 'off'; describe the actual pattern, consider pregnancy when relevant, and seek evaluation for new, persistent, or concerning changes.",
+    "mindfulnessPrompts": [],
+    "physicalTherapyTip": "Track cycle start dates, bleeding duration and amount, spotting, missed periods, associated symptoms such as acne or nipple discharge, medication or life-stage changes, and functional impact; seek evaluation for new, persistent, or concerning menstrual changes.",
+    "tags": [
+      "irregular periods",
+      "irregular menstrual cycles",
+      "cycle irregularity",
+      "missed periods",
+      "oligomenorrhea",
+      "amenorrhea",
+      "anovulation",
+      "PCOS",
+      "cycle unpredictability"
+    ],
+    "riskLevel": "Medical monitoring recommended"
+  },
+  {
+    "id": "endometriosis",
+    "name": "Endometriosis",
+    "category": "Pelvic, Urinary & Reproductive",
+    "emotionalRoot": "Possible reflective themes include medical dismissal and invalidation, endurance mistaken for strength, desire coexisting with pain, invisible burden, fertility pressure, and body distrust; these are reflective themes only. Endometriosis is a physical inflammatory disease involving endometrium-like tissue outside the uterus, not something caused by emotion, meaning-making, or life stress.",
+    "metaphor": "Endometriosis is unapproved construction in a crowded pelvic city, where several departments argue over who owns the pain while standard inspections cannot see every development.",
+    "physiologicalDescription": "Endometriosis is a chronic inflammatory condition involving endometrium-like tissue outside the uterus. It most often affects structures within the pelvis but can also involve organs such as the bowel, bladder, ureters, diaphragm, or chest in some people.\n\nSymptoms vary widely. They may include severe menstrual pain, chronic pelvic pain, pain during or after sex, painful bowel movements, urinary symptoms, fatigue, gastrointestinal symptoms, or difficulty conceiving. Some people have extensive disease with relatively little pain, while others have severe pain with limited visible disease.\n\nEndometriosis cannot be confirmed or excluded from pain severity alone. Normal routine imaging also does not necessarily exclude it. Evaluation increasingly uses clinical history and appropriate imaging, with surgery reserved for situations in which it is useful for diagnosis, treatment, or both.",
+    "sarcasticAdvice": "Do not replace ultrasound, MRI, clinical evaluation, hormones, or surgery with either the belief that a normal scan means nothing is wrong or the claim that every cramp is endometriosis. Both shortcuts are landfill.",
+    "mindfulnessPrompts": [],
+    "physicalTherapyTip": "Track where and when pain occurs (menstrual, between periods, with sex, bowel movements, urination), what imaging could and could not identify, and functional impact; pelvic-floor physical therapy can help when assessment identifies muscular contributors, and persistent pain after treatment deserves evaluation for recurrence, pelvic-floor dysfunction, or other overlapping causes.",
+    "tags": [
+      "endometriosis",
+      "endometrioma",
+      "chronic pelvic pain",
+      "painful periods",
+      "dysmenorrhea",
+      "pelvic pain",
+      "fertility",
+      "pelvic floor"
+    ],
+    "riskLevel": "Medical monitoring recommended"
+  },
+  {
+    "id": "pcos-pmos",
+    "name": "PMOS / PCOS",
+    "category": "Pelvic, Urinary & Reproductive",
+    "emotionalRoot": "A cycle change, hair change, acne flare, fertility concern, or laboratory result is one event. The judgment that it means someone is unattractive, undisciplined, unfeminine, broken, or destined to be infertile is another. Compassion does not ignore medical reality. It removes unnecessary moral punishment from it.",
+    "metaphor": "PMOS / PCOS can be imagined as a system sending several kinds of signals at once.",
+    "physiologicalDescription": "Polyendocrine Metabolic Ovarian Syndrome (PMOS) is the newer name for the condition long known as Polycystic Ovary Syndrome (PCOS). The name was changed because the syndrome involves reproductive, hormonal, metabolic, dermatologic, and psychological features and is not defined by ovarian cysts.\n\nCommon patterns include irregular or absent ovulation, irregular menstrual cycles, increased androgen activity such as excess facial or body hair, acne or scalp hair thinning, and metabolic risks such as impaired glucose regulation in some people. Presentation varies widely and occurs across body sizes.\n\nDiagnosis is based on a combination of findings after other explanations are considered. Irregular periods alone do not diagnose PMOS/PCOS, ovarian morphology alone does not diagnose it, and actual ovarian cysts are not required.",
+    "sarcasticAdvice": "PMOS is a syndrome you manage.\n\nIt does not deserve promotion to Chief Executive Officer of your identity.",
+    "mindfulnessPrompts": [],
+    "physicalTherapyTip": "Track what changes decisions.\n\nMonitor what matters medically.\n\nAddress the risks that actually apply to you.\n\nTreat the symptoms that actually bother you.\n\nProtect the endometrium when needed.\n\nCheck metabolic health.\n\nTake sleep and mental health seriously.\n\nPlan fertility if fertility matters.",
+    "tags": [
+      "PMOS",
+      "PCOS",
+      "polycystic ovary syndrome",
+      "polyendocrine metabolic ovarian syndrome",
+      "irregular ovulation",
+      "hyperandrogenism",
+      "hirsutism",
+      "insulin resistance",
+      "anovulatory infertility",
+      "endometrial protection"
+    ],
+    "riskLevel": "Medical monitoring recommended"
+  },
+  {
+    "id": "prostate-problems-enlarged-prostate",
+    "name": "Prostate Problems / Enlarged Prostate",
+    "category": "Pelvic, Urinary & Reproductive",
+    "physiologicalDescription": "Prostate-related urinary symptoms can arise from several different conditions, including benign prostate enlargement, bladder outlet obstruction, prostatitis, chronic pelvic pain, bladder dysfunction, medication effects, infection, neurologic conditions, and prostate cancer.\n\nBenign prostatic hyperplasia, benign prostate enlargement, lower urinary tract symptoms, and bladder outlet obstruction describe related but different things. An enlarged prostate may cause few symptoms, while substantial urinary symptoms can occur without major enlargement.\n\nSymptoms such as weak stream, hesitancy, urgency, frequency, nocturia, incomplete emptying, pelvic pain, or sexual changes deserve evaluation according to their pattern rather than being automatically labeled \"BPH.\" Acute inability to urinate, serious infection symptoms, significant bleeding, or neurologic changes can require urgent medical care.",
+    "riskLevel": "Medical monitoring recommended",
+    "tags": [
+      "prostate problems",
+      "enlarged prostate",
+      "BPH",
+      "LUTS",
+      "urinary symptoms",
+      "weak stream",
+      "nocturia",
+      "prostatitis"
+    ]
+  },
+  {
+    "id": "testicular-pain-problems",
+    "name": "Testicular Pain & Problems",
+    "category": "Pelvic, Urinary & Reproductive",
+    "physiologicalDescription": "Testicular or scrotal pain can arise from the testicle, epididymis, spermatic cord, groin, pelvic floor, urinary tract, nerves, abdomen, or other nearby structures. Causes range from benign fluid collections and chronic referred pain to infection, trauma, hernia, cancer, and the time-sensitive emergency of testicular torsion.\n\nPattern matters. Sudden severe one-sided pain requires urgent evaluation for torsion, even when every textbook sign is not present. Gradual pain with urinary or infectious symptoms may suggest epididymitis or orchitis. A new lump or persistent change deserves prompt assessment even when painless.\n\nChronic scrotal pain is a different problem from acute torsion. It may involve prior surgery, vasectomy, nerves, pelvic-floor muscles, referred pain, or no single identifiable cause. Chronic pain should not automatically be treated as ongoing infection.",
+    "riskLevel": "Medical monitoring recommended",
+    "tags": [
+      "testicular pain",
+      "scrotal pain",
+      "testicular torsion",
+      "epididymitis",
+      "testicular lump",
+      "varicocele",
+      "orchitis",
+      "chronic scrotal pain"
+    ]
+  },
+  {
+    "id": "blood-in-urine-hematuria",
+    "name": "Blood in Urine / Hematuria",
+    "category": "Pelvic, Urinary & Reproductive",
+    "physiologicalDescription": "Hematuria means blood is present in urine. It may be visible as pink, red, brown, or otherwise discolored urine, or it may be found only during laboratory testing. Red-looking urine is not always blood, and a positive urine dipstick does not always mean intact red blood cells are present.\n\nPossible causes include urinary infection, kidney or ureteral stones, prostate or bladder conditions, kidney disease, trauma, medications, vigorous exercise, structural abnormalities, and cancers of the urinary tract. Menstrual or vaginal blood and non-blood pigments can also complicate interpretation.\n\nVisible blood, persistent confirmed microscopic hematuria, blood that continues after an apparent temporary cause resolves, or hematuria accompanied by concerning symptoms deserves medical evaluation. Blood clots that prevent urination, severe flank pain with fever or systemic illness, major trauma with urinary bleeding, or significant ongoing bleeding can require emergency care.",
+    "riskLevel": "Medical monitoring recommended",
+    "tags": [
+      "blood in urine",
+      "hematuria",
+      "gross hematuria",
+      "microscopic hematuria",
+      "urinary bleeding",
+      "urine color",
+      "urinary tract",
+      "clot retention"
+    ]
   }
 ]
