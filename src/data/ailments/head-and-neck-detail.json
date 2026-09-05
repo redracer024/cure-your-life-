@@ -5037,5 +5037,261 @@
       "do_not_ignore": "Cancer symptoms, screening abnormalities, new lumps, unexplained weight loss, bleeding, persistent cough, neurologic symptoms, or treatment side effects need medical guidance.",
       "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure cancer."
     }
+  },
+  {
+    "id": "allergies-hay-fever",
+    "structuredContent": {
+      "version": 1,
+      "hero": {
+        "primaryPattern": "Mast cell sensitization and histamine release drive many allergic symptoms; triggers, immune pathways, and anaphylaxis risk decide care.",
+      "cascade": [
+        "Environmental Contact",
+        "IgE/Mast Cell Alarm",
+        "Mast Cell Priming",
+        "Histamine Storm",
+        "Mucus & Itch Response",
+        "Symptom Tracking"
+      ],
+        "tags": [
+          "#wei qi shield",
+          "#mast cell calm",
+          "#ghost alarm"
+        ],
+        "safetyPreview": "Severe swelling, throat tightness, wheezing, trouble breathing, fainting, blue lips, or signs of anaphylaxis require emergency care."
+      },
+      "biologyPathway": [
+        {
+          "title": "Environmental Contact",
+          "short": "Pollen, dust, mold, or dander contacts a sensitized system.",
+          "detail": "Allergy symptoms often begin when pollen, dust mites, mold spores, animal dander, or other triggers contact the nose, eyes, throat, airway, or skin. The trigger may be harmless by itself, but the immune system has learned to treat it as a threat."
+        },
+        {
+          "title": "IgE Recognition",
+          "short": "The immune system flags the trigger.",
+          "detail": "In allergic patterns, IgE antibodies can bind to allergens and cross-link receptors on mast cells and basophils. That immune recognition tells the body to launch a defensive response even when the substance is not truly dangerous."
+        },
+        {
+          "title": "Mast Cell Degranulation",
+          "short": "Mast cells dump inflammatory chemicals.",
+          "detail": "Mast cells release histamine, leukotrienes, prostaglandins, cytokines, and other inflammatory mediators. This is the chemical alarm bell behind itching, sneezing, watery eyes, swelling, mucus, and airway irritation."
+        },
+        {
+          "title": "Histamine Storm",
+          "short": "Vessels leak, tissues swell, mucus rises.",
+          "detail": "Histamine increases blood-vessel permeability and irritates nerve endings. The result can be runny nose, congestion, watery eyes, itching, flushing, sneezing, throat irritation, and a body that acts like spring is an invading army."
+        },
+        {
+          "title": "Nervous-System Sensitivity",
+          "short": "Stress can change how symptoms feel.",
+          "detail": "Stress, poor sleep, and arousal can make allergic symptoms feel louder or more distressing, but they do not create the underlying immune sensitization. Medical evaluation and treatment still come first."
+        },
+        {
+          "title": "Safety Escalation Check",
+          "short": "Know when allergy becomes emergency.",
+          "detail": "Mild hay fever is one thing. Trouble breathing, throat tightness, tongue or lip swelling, fainting, confusion, blue lips, or a rapidly spreading whole-body reaction is not a journaling prompt. That is emergency territory."
+        }
+      ],
+      "interpretations": {
+        "clinical": {
+          "label": "Strictly Medical",
+          "title": "Mast Cell & Histamine Cascade",
+          "sections": [
+            {
+              "heading": "Stage 1 — Sensitized Immune Recognition",
+              "body": [
+                "Allergies and hay fever involve an immune system that has learned to identify a normally harmless substance as a threat.",
+                "Common triggers include pollen, dust mites, mold, pet dander, grasses, weeds, trees, smoke, perfumes, and environmental irritants. The trigger is not necessarily dangerous. The immune interpretation is the problem."
+              ]
+            },
+            {
+              "heading": "Stage 2 — IgE and Mast Cell Activation",
+              "body": [
+                "IgE antibodies can bind to allergens and cross-link receptors on mast cells. Once the mast cell receives enough signal, it degranulates.",
+                "Degranulation releases histamine and other inflammatory mediators. This is the biochemical alarm behind sneezing, itching, watery eyes, swelling, congestion, and mucus."
+              ]
+            },
+            {
+              "heading": "Stage 3 — Histamine Storm",
+              "body": [
+                "Histamine increases blood-vessel permeability, irritates sensory nerves, and increases mucus production.",
+                "The nose runs, the eyes water, the throat scratches, the skin itches, and the airway may feel irritated or tight. The body is trying to flush out an invader, even when the invader is just pollen existing like a botanical idiot."
+              ]
+            },
+            {
+              "heading": "Stage 4 — Symptom Context",
+              "body": [
+                "Stress does not mean allergies are imaginary, and it does not cause immune sensitization.",
+                "Fatigue, poor sleep, and high arousal can make symptoms feel worse or more distressing. The allergy pathway is still treated medically, with trigger control and appropriate medication."
+              ]
+            }
+          ]
+        },
+        "witty": {
+          "label": "Comedic & Witty",
+          "title": "The Retired Mall Cop at the Garden Center",
+          "paragraphs": [
+            "Your immune system is now a retired, paranoid mall cop who was fired from the mall and now works as a greeter at a garden center. He has a whistle around his neck, a flashlight with dead batteries, and a binder full of suspicious persons that includes every living plant, animal, and dust mote in a three-mile radius.",
+            "Your mast cells are his trigger finger. Every time a pollen grain floats past, not attacking, just existing, just doing its botanical job of making baby plants, the mall cop screams CONTACT and hits the alarm.",
+            "Histamine floods the scene. Your nose becomes a faucet. Your eyes swell. Your throat tightens like someone filed paperwork to temporarily close the airway.",
+            "But here is the absurd part: there is no intruder. It is pollen. It has no agenda. It does not know you exist. It just wants to find another flower.",
+            "Your mast cells are not fighting an enemy. They are fighting the memory of an enemy. Somewhere in your life, your nervous system installed a security system that never got the memo that the war ended.",
+            "Now you sneeze at sunshine. You itch at air. The mall cop is standing in the gardening aisle macing a rose bush, and you are paying for the cleanup.",
+            "The garden center has a break room with a coffee mug that says WORLD'S OKAYEST DEFENDER. The microwave has been beeping for three years. No one has turned it off.",
+            "The mall cop has a schedule he wrote himself: ALERT, ALL SHIFT, EVERY SHIFT. His binder has tabs labeled POLLEN, DUST, MOLD, and UNTITLED, PROBABLY ALSO DANGEROUS. The untitled tab has four hundred pages.",
+            "The worst part? The mall cop reports directly to you. You sign his paychecks. You wrote the schedule. You gave him the binder. Every time you brace for the worst, every time you assume the other shoe will drop, every time you scan the room for threats, you train the mall cop. And the mall cop is just following orders."
+          ]
+        },
+        "brutal": {
+          "label": "Brutally Honest",
+          "title": "The Overreactive Alarm Reality Check",
+          "paragraphs": [
+            "You may have allergies. You may also have a hypervigilance-and-boundary pattern in life.",
+            "Medical first: allergies are an immune reaction, and severe ones need epinephrine and emergency care. Antihistamines, nasal steroids, inhalers, and allergen testing are real treatment, not optional.",
+            "Symbolically, it can be an interesting picture to ask where your system reacts before it assesses, or where you treat neutral contact as threat.",
+            "But do not make allergies your fault or a proof of past trauma. Immune systems can be ridiculous little bureaucrats for reasons that have nothing to do with your nervous system.",
+            "Use the medication, map the trigger, and get care when symptoms cross into airway or whole-body territory."
+          ]
+        }
+      },
+      "influenceLayers": [
+        {
+          "layer": 1,
+          "title": "Wei Qi Boundary (Traditional View)",
+          "tag": "Defensive Qi",
+          "paragraphs": [
+            "In Traditional Chinese Medicine, the Lung governs Wei Qi, described as a protective boundary between the body and the outside world.",
+            "This is a traditional symbolic framework, not established immunology. Medically, allergy is an immune reaction with identified triggers and pathways."
+          ]
+        },
+        {
+          "layer": 2,
+          "title": "Lung-Kidney Rooting",
+          "tag": "Rooted Breath",
+          "paragraphs": [
+            "The Lung disperses and descends Qi. The Kidney helps root and anchor the breath.",
+            "When the system feels depleted, unrooted, or unsafe, defensive energy may float at the surface. The body becomes twitchy at the boundary, reacting quickly to anything that crosses it."
+          ]
+        },
+        {
+          "layer": 3,
+          "title": "Hypervigilant Sentinel",
+          "tag": "Shadow Guard",
+          "paragraphs": [
+            "The immune system becomes the sentinel that never sleeps. It watches, scans, suspects, and fires before checking whether the target is real.",
+            "This can mirror a life pattern where resting felt dangerous and being caught off guard once meant disaster. The Safe One, the part that trusts the world enough to relax, gets exiled."
+          ]
+        },
+        {
+          "layer": 4,
+          "title": "Old Threat Memory (Symbolic)",
+          "tag": "Old Threat Memory",
+          "paragraphs": [
+            "As a reflective metaphor, a pattern of reacting before assessing can echo older experiences of feeling unsafe.",
+            "This is symbolic reflection only, not a claim that past experiences cause immune sensitization or allergy."
+          ]
+        },
+        {
+          "layer": 5,
+          "title": "Discrimination Practice (Reflective)",
+          "tag": "Reset Practice",
+          "paragraphs": [
+            "As a reflective exercise, the goal is to teach discrimination: this is pollen, not danger; this is air, not attack.",
+            "Slow breathing may ease anxiety around mild symptoms, but it does not treat the allergic immune reaction itself. Use medication and medical care for the allergy."
+          ]
+        }
+      ],
+      "reset": {
+        "title": "Allergy Safety & Trigger Check Reset",
+        "modality": "Autonomic Downregulation",
+        "steps": [
+          "First check for emergency signs: breathing trouble, throat/tongue/lip swelling, dizziness/faintness, widespread hives, or rapid worsening.",
+          "If any are present, use prescribed epinephrine if available and seek emergency care.",
+          "If symptoms are mild and safe, sit upright and breathe slowly to calm anxiety around the reaction.",
+          "Inhale gently for 4 seconds, exhale for 8 seconds, while noting the likely trigger.",
+          "Continue with your established allergy treatment plan and trigger avoidance. Breathing supports anxiety, not the immune reaction itself."
+        ]
+      },
+      "brutalActions": [
+        "Identify the likely trigger and track it.",
+        "Check for airway or anaphylaxis signs before anything else.",
+        "Use the right medication plan, including epinephrine when prescribed.",
+        "Get allergist testing or care rather than treating every irritation as a personal invasion."
+      ],
+      "hardware": {
+        "hapticProfile": "Rapid, scattered, unpredictable bursts like a sensor array misfiring or mast cells degranulating.",
+        "hapticPattern": [
+          18,
+          35,
+          18,
+          35,
+          18,
+          180,
+          18,
+          120,
+          18,
+          35,
+          18,
+          35,
+          18,
+          35,
+          18
+        ],
+        "uiBackgroundAccent": "#6B8C5C"
+      }
+    },
+    "tones": {
+      "clinical": {
+        "mechanism": "Allergies and hay fever involve IgE-mediated immune recognition, mast cell degranulation, histamine release, mucus production, itching, swelling, sneezing, and watery eyes.",
+        "protocol": [
+          "Follow prescribed allergy medication, inhaler, nasal spray, eye drop, or immunotherapy guidance from a licensed clinician.",
+          "Reduce known triggers when possible: pollen exposure, dust mites, mold, smoke, pet dander, and strong fragrances.",
+          "For anxiety around mild familiar symptoms, slow longer exhales may help you feel calmer, but they do not treat the allergic reaction itself.",
+          "Seek urgent care for throat tightness, wheezing, facial/tongue swelling, faintness, confusion, or signs of anaphylaxis."
+        ],
+        "citations": [
+          "Educational reflection only; not a substitute for allergy diagnosis, medication, or emergency care.",
+          "Severe allergic reactions can be life-threatening and require immediate medical attention."
+        ]
+      },
+      "witty": {
+        "metaphorTitle": "The Retired Mall Cop at the Garden Center",
+        "metaphorText": "Your immune system is now a retired, paranoid mall cop who was fired from the mall and now works as a greeter at a garden center. He has a whistle around his neck, a flashlight with dead batteries, and a binder full of suspicious persons that includes every living plant, animal, and dust mote in a three-mile radius.\n\nYour mast cells are his trigger finger. Every time a pollen grain floats past, not attacking, just existing, just doing its botanical job of making baby plants, the mall cop screams CONTACT and hits the alarm.\n\nHistamine floods the scene. Your nose becomes a faucet. Your eyes swell. Your throat tightens like someone filed paperwork to temporarily close the airway.\n\nBut here is the absurd part: there is no intruder. It is pollen. It has no agenda. It does not know you exist. It just wants to find another flower.\n\nYour mast cells are not fighting an enemy. They are fighting the memory of an enemy. Somewhere in your life, your nervous system installed a security system that never got the memo that the war ended.\n\nNow you sneeze at sunshine. You itch at air. The mall cop is standing in the gardening aisle macing a rose bush, and you are paying for the cleanup.\n\nThe garden center has a break room with a coffee mug that says WORLD'S OKAYEST DEFENDER. The microwave has been beeping for three years. No one has turned it off.\n\nThe mall cop has a schedule he wrote himself: ALERT, ALL SHIFT, EVERY SHIFT. His binder has tabs labeled POLLEN, DUST, MOLD, and UNTITLED, PROBABLY ALSO DANGEROUS. The untitled tab has four hundred pages.\n\nThe worst part? The mall cop reports directly to you. You sign his paychecks. You wrote the schedule. You gave him the binder. Every time you brace for the worst, every time you assume the other shoe will drop, every time you scan the room for threats, you train the mall cop. And the mall cop is just following orders.",
+        "wittyAdvice": "The mall cop is not evil. He is just badly trained, sleep deprived, and somehow in charge of histamine. Revoke a little of his authority."
+      },
+      "brutal": {
+        "realityCheck": "You may have allergies. You may also have a hypervigilance-and-boundary pattern in life. Medical first: allergies are an immune reaction, and severe ones need epinephrine and emergency care. Symbolically, it can be interesting to ask where your system reacts before it assesses, but do not make the allergy your fault or proof of past trauma.",
+        "protocolTitle": "USE THE MEDS, CHECK THE TRIGGER",
+        "protocolSteps": [
+          "Check for anaphylaxis signs: breathing trouble, throat/tongue/lip swelling, faintness, widespread hives.",
+          "Use prescribed emergency plan and epinephrine when indicated.",
+          "Track triggers and follow your allergy treatment plan.",
+          "Consider allergist testing rather than treating every irritation as a personal invasion."
+        ]
+      }
+    },
+    "medical_safety": {
+      "critical_alerts": [
+        "Trouble breathing, wheezing, or throat tightness",
+        "Swelling of lips, tongue, face, throat, or around the eyes",
+        "Fainting, confusion, severe weakness, or feeling like you may pass out",
+        "Blue lips or fingernails",
+        "Rapidly spreading hives or whole-body reaction",
+        "Known severe allergy exposure or possible anaphylaxis"
+      ],
+      "seek_immediate_care_if": [
+        "You have signs of anaphylaxis, breathing trouble, throat tightness, facial/tongue swelling, fainting, confusion, or blue lips",
+        "Symptoms rapidly worsen or involve more than one body system, such as skin plus breathing, stomach symptoms plus dizziness, or swelling plus wheezing",
+        "You used epinephrine or were told to use it for severe allergic reactions"
+      ],
+      "schedule_care_if": [
+        "Allergy symptoms are frequent, worsening, seasonal, or interfering with sleep or daily function",
+        "Over-the-counter medication is not controlling symptoms",
+        "You have asthma, wheezing, recurrent sinus infections, or chronic nasal congestion",
+        "You want evaluation for allergy testing, prescription treatment, or immunotherapy"
+      ],
+      "self_care_allowed_if": "Trigger reduction, nasal rinsing with sterile/distilled or previously boiled water, showering after pollen exposure, changing pillowcases, using air filtration, and gentle calming practices may support mild, familiar allergy symptoms.",
+      "do_not_ignore": "Severe allergic reactions can become life-threatening. Mind-body reflection must never delay epinephrine, emergency care, prescribed medication, or professional allergy/asthma treatment.",
+      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease. Seek professional medical care for diagnosis, treatment, medication decisions, or urgent symptoms."
+    }
   }
 ]

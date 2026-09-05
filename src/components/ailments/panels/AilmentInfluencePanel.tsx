@@ -113,6 +113,7 @@ export function AilmentInfluencePanel({ enriched, onOpenLenses }: AilmentInfluen
 
     const mindLayers = layers.slice(0, 2);
     const somaticLayers = layers.slice(2, 4);
+    const additionalLayers = layers.slice(4);
 
     const renderCard = (title: string, cardLayers: LayerData[], gradientFrom: string, accentColor: string) => (
         <div className={`bg-gradient-to-br ${gradientFrom} via-black/80 to-[#05070B] border border-white/10 hover:border-white/30 p-6 md:p-8 rounded-[2.2rem] flex flex-col justify-between space-y-6 shadow-[0_0_45px_rgba(0,0,0,0.3)] transition-all duration-500 premium-3d-card hover:scale-[1.018] group relative overflow-hidden backdrop-blur-xl`}>
@@ -163,6 +164,7 @@ export function AilmentInfluencePanel({ enriched, onOpenLenses }: AilmentInfluen
             <div className="grid grid-cols-1 gap-6 items-stretch">
                 {renderCard('Mind & Symbolism', mindLayers, 'from-purple-950/35', '#a855f7')}
                 {somaticLayers.length > 0 && renderCard('Somatic Mechanics', somaticLayers, 'from-amber-950/35', '#FF8A00')}
+                {additionalLayers.length > 0 && renderCard('Additional Influence Layers', additionalLayers, 'from-slate-950/35', '#8A94A6')}
             </div>
         </motion.div>
     );
