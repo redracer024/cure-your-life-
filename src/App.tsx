@@ -74,7 +74,7 @@ function AppInner() {
     requireDisclosure(() => setShowQuiz(true));
   }, [requireDisclosure]);
 
-  const handleSetActiveTab = useCallback((tab: 'dictionary' | 'decoder' | 'daily' | 'journal' | 'patterns') => {
+  const handleSetActiveTab = useCallback((tab: 'dictionary' | 'decoder' | 'daily' | 'journal' | 'patterns' | 'lenses') => {
     if (tab === 'decoder') {
       openDecoder();
     } else if (tab === 'journal') {
@@ -83,6 +83,10 @@ function AppInner() {
       dict.setActiveTab(tab);
     }
   }, [openDecoder, requireDisclosure, dict]);
+
+  const handleOpenLenses = useCallback(() => {
+    dict.setActiveTab('lenses');
+  }, [dict]);
 
   return (
     <AppLayout>
@@ -120,6 +124,7 @@ function AppInner() {
           onClearHighlightPattern={() => dict.setHighlightPatternId(null)}
           onOpenJournal={handleOpenJournal}
           journalPromptData={dict.journalPromptData}
+          onOpenLenses={handleOpenLenses}
         />
       </div>
       <AssessmentQuizHost

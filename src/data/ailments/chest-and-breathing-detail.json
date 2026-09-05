@@ -301,19 +301,19 @@
     }
   },
   {
-    "id": "allergy-hayfever",
+    "id": "allergies-hay-fever",
     "structuredContent": {
       "version": 1,
       "hero": {
-        "primaryPattern": "Mast cell sensitization, histamine release, Wei Qi boundary weakness, and nervous-system hypervigilance may amplify allergic reactivity.",
-        "cascade": [
-          "Environmental Contact",
-          "Wei Qi Boundary Alarm",
-          "Mast Cell Priming",
-          "Histamine Storm",
-          "Mucus & Itch Response",
-          "Hypervigilance Feedback Loop"
-        ],
+        "primaryPattern": "Mast cell sensitization and histamine release drive many allergic symptoms; triggers, immune pathways, and anaphylaxis risk decide care.",
+      "cascade": [
+        "Environmental Contact",
+        "IgE/Mast Cell Alarm",
+        "Mast Cell Priming",
+        "Histamine Storm",
+        "Mucus & Itch Response",
+        "Symptom Tracking"
+      ],
         "tags": [
           "#wei qi shield",
           "#mast cell calm",
@@ -343,9 +343,9 @@
           "detail": "Histamine increases blood-vessel permeability and irritates nerve endings. The result can be runny nose, congestion, watery eyes, itching, flushing, sneezing, throat irritation, and a body that acts like spring is an invading army."
         },
         {
-          "title": "Nervous-System Amplification",
-          "short": "Stress lowers the reaction threshold.",
-          "detail": "Stress chemistry, sympathetic activation, and low vagal tone can make immune reactions feel louder and harder to settle. The body may become quicker to flare, slower to calm, and more likely to treat neutral contact as danger."
+          "title": "Nervous-System Sensitivity",
+          "short": "Stress can change how symptoms feel.",
+          "detail": "Stress, poor sleep, and arousal can make allergic symptoms feel louder or more distressing, but they do not create the underlying immune sensitization. Medical evaluation and treatment still come first."
         },
         {
           "title": "Safety Escalation Check",
@@ -380,10 +380,10 @@
               ]
             },
             {
-              "heading": "Stage 4 — Stress and Vagal Tone",
+              "heading": "Stage 4 — Symptom Context",
               "body": [
-                "Stress does not mean allergies are imaginary. It means the nervous system and immune system talk to each other.",
-                "Low vagal tone, chronic sympathetic arousal, poor sleep, and ongoing hypervigilance can lower the threshold for immune reactivity. The allergy pathway becomes easier to trigger and harder to calm."
+                "Stress does not mean allergies are imaginary, and it does not cause immune sensitization.",
+                "Fatigue, poor sleep, and high arousal can make symptoms feel worse or more distressing. The allergy pathway is still treated medically, with trigger control and appropriate medication."
               ]
             }
           ]
@@ -405,32 +405,24 @@
         },
         "brutal": {
           "label": "Brutally Honest",
-          "title": "The Ghost Alarm Reality Check",
+          "title": "The Overreactive Alarm Reality Check",
           "paragraphs": [
-            "You do not have only a pollen problem. You may also have an I never felt safe problem. A something bad happened and I never processed it problem. A my nervous system is still waiting for the other shoe to drop problem.",
-            "Now your immune system is attacking air. Congratulations. You have weaponized your own survival instinct.",
-            "Every time you were startled awake as a kid, your body logged it. Every time you held your breath waiting for a door to slam, logged. Every time you walked on eggshells around someone who should have protected you, logged, encrypted, and burned into the body’s threat map.",
-            "Your allergies may not be just a random nuisance. They can become a body-level habit of treating neutral contact like danger. Grass did not hurt you. Pollen did not betray you. Dust mites did not emotionally neglect you. People did. Circumstances did. Environments did.",
-            "Because no one helped your body sound the all-clear, your immune system became the overprotective parent you never had. It attacks pollen. It attacks cat dander. It attacks dust. It attacks scented candles like lavender committed a felony.",
-            "Antihistamines can stop the sneeze. They do not necessarily stop the terror underneath the pattern. Medication matters. Use it when needed. But the deeper work is teaching the body that every contact with the world is not an invasion.",
-            "You have been training your immune system to be afraid every time you brace, catastrophize, scan, assume the worst, or say I knew it when something goes wrong. You are the drill sergeant. You are the one who keeps the soldiers on high alert.",
-            "Sound the all-clear. Tell your body: we made it out. We are not there anymore. The threat is gone.",
-            "The person who hurt you is not in the room. The situation that terrified you is over. The unsafe house is a memory. Your body may not know that yet. You have to bring it back into the present.",
-            "The present is a Tuesday in spring. The present has pollen. The pollen is not your mother. The pollen is not your father. The pollen is just pollen. It is not out to get you.",
-            "Teach your body that the war is over. Teach it with breath. Teach it with rest. Teach it with slow exhales that say I am safe. Teach it by not bracing. Teach it by not scanning. Teach it by letting yourself believe, for one second, that the world is actually okay.",
-            "The world is not perfect. Not predictable. Not always kind. But okay enough. The threat level is green. Your mast cells are still on red. Write the memo. Deliver it. Breathe it into your body until it believes you.",
-            "Armor down or stay reactive. Charming little choice, that one."
+            "You may have allergies. You may also have a hypervigilance-and-boundary pattern in life.",
+            "Medical first: allergies are an immune reaction, and severe ones need epinephrine and emergency care. Antihistamines, nasal steroids, inhalers, and allergen testing are real treatment, not optional.",
+            "Symbolically, it can be an interesting picture to ask where your system reacts before it assesses, or where you treat neutral contact as threat.",
+            "But do not make allergies your fault or a proof of past trauma. Immune systems can be ridiculous little bureaucrats for reasons that have nothing to do with your nervous system.",
+            "Use the medication, map the trigger, and get care when symptoms cross into airway or whole-body territory."
           ]
         }
       },
       "influenceLayers": [
         {
           "layer": 1,
-          "title": "Wei Qi Boundary Weakness",
+          "title": "Wei Qi Boundary (Traditional View)",
           "tag": "Defensive Qi",
           "paragraphs": [
-            "In Chinese medicine, the Lung governs Wei Qi, the protective boundary between the body and the outside world.",
-            "In an allergy pattern, this boundary may act confused or underpowered. The body cannot clearly tell neutral contact from threat. Pollen becomes an invader. Dust becomes a demon. Cat dander becomes a tiny biological war crime."
+            "In Traditional Chinese Medicine, the Lung governs Wei Qi, described as a protective boundary between the body and the outside world.",
+            "This is a traditional symbolic framework, not established immunology. Medically, allergy is an immune reaction with identified triggers and pathways."
           ]
         },
         {
@@ -453,39 +445,39 @@
         },
         {
           "layer": 4,
-          "title": "Ghost Alarm Pattern",
+          "title": "Old Threat Memory (Symbolic)",
           "tag": "Old Threat Memory",
           "paragraphs": [
-            "The body may not only be reacting to pollen. It may be reacting to the memory of threat: old unpredictability, emotional neglect, walking on eggshells, or never feeling protected.",
-            "The ghost is not the pollen. The ghost is the old feeling of being unsafe in your own skin."
+            "As a reflective metaphor, a pattern of reacting before assessing can echo older experiences of feeling unsafe.",
+            "This is symbolic reflection only, not a claim that past experiences cause immune sensitization or allergy."
           ]
         },
         {
           "layer": 5,
-          "title": "Wei Qi Strengthening",
+          "title": "Discrimination Practice (Reflective)",
           "tag": "Reset Practice",
           "paragraphs": [
-            "The goal is not to shame the immune system. It is trying to protect you. The goal is to teach it discrimination: this is pollen, not danger; this is air, not attack.",
-            "Use warmth, longer exhales, steady posture, and a repeated safety cue to help the body feel protected without launching a full immune military operation."
+            "As a reflective exercise, the goal is to teach discrimination: this is pollen, not danger; this is air, not attack.",
+            "Slow breathing may ease anxiety around mild symptoms, but it does not treat the allergic immune reaction itself. Use medication and medical care for the allergy."
           ]
         }
       ],
       "reset": {
-        "title": "Wei Qi Strengthening & Vagal Restoration",
+        "title": "Allergy Safety & Trigger Check Reset",
         "modality": "Autonomic Downregulation",
         "steps": [
-          "Sit upright. Rub your palms together until warm, then place them over your upper chest.",
-          "Inhale through the nose for 4 seconds, imagining warm gold light expanding under your palms.",
-          "Exhale through the nose for 8 seconds, imagining that protective field extending a few inches beyond your skin.",
-          "On each exhale, whisper: The world is not my enemy. I am safe.",
-          "Continue for 2 minutes. Use this as support, not as a substitute for allergy medication or medical care."
+          "First check for emergency signs: breathing trouble, throat/tongue/lip swelling, dizziness/faintness, widespread hives, or rapid worsening.",
+          "If any are present, use prescribed epinephrine if available and seek emergency care.",
+          "If symptoms are mild and safe, sit upright and breathe slowly to calm anxiety around the reaction.",
+          "Inhale gently for 4 seconds, exhale for 8 seconds, while noting the likely trigger.",
+          "Continue with your established allergy treatment plan and trigger avoidance. Breathing supports anxiety, not the immune reaction itself."
         ]
       },
       "brutalActions": [
-        "Name the threat your body keeps expecting. Be honest. Pollen is probably not the original villain.",
-        "When symptoms flare, say out loud: I am not under attack. This is a body alarm, not proof of danger.",
-        "Stop training the mall cop. Notice bracing, scanning, and catastrophizing before the immune system turns them into marching orders.",
-        "Use medication and trigger control when needed. Then do the deeper work of teaching your body the war is over."
+        "Identify the likely trigger and track it.",
+        "Check for airway or anaphylaxis signs before anything else.",
+        "Use the right medication plan, including epinephrine when prescribed.",
+        "Get allergist testing or care rather than treating every irritation as a personal invasion."
       ],
       "hardware": {
         "hapticProfile": "Rapid, scattered, unpredictable bursts like a sensor array misfiring or mast cells degranulating.",
@@ -511,11 +503,11 @@
     },
     "tones": {
       "clinical": {
-        "mechanism": "Allergies and hay fever involve IgE-mediated immune recognition, mast cell degranulation, histamine release, mucus production, itching, swelling, sneezing, watery eyes, and nervous-system amplification.",
+        "mechanism": "Allergies and hay fever involve IgE-mediated immune recognition, mast cell degranulation, histamine release, mucus production, itching, swelling, sneezing, and watery eyes.",
         "protocol": [
           "Follow prescribed allergy medication, inhaler, nasal spray, eye drop, or immunotherapy guidance from a licensed clinician.",
           "Reduce known triggers when possible: pollen exposure, dust mites, mold, smoke, pet dander, and strong fragrances.",
-          "For mild symptoms only, use slow longer exhales and warm hands over the upper chest to support parasympathetic downshifting.",
+          "For anxiety around mild familiar symptoms, slow longer exhales may help you feel calmer, but they do not treat the allergic reaction itself.",
           "Seek urgent care for throat tightness, wheezing, facial/tongue swelling, faintness, confusion, or signs of anaphylaxis."
         ],
         "citations": [
@@ -529,13 +521,13 @@
         "wittyAdvice": "The mall cop is not evil. He is just badly trained, sleep deprived, and somehow in charge of histamine. Revoke a little of his authority."
       },
       "brutal": {
-        "realityCheck": "You do not have only a pollen problem. You may also have an I never felt safe problem. A something bad happened and I never processed it problem. A my nervous system is still waiting for the other shoe to drop problem.\n\nNow your immune system is attacking air. Congratulations. You have weaponized your own survival instinct.\n\nEvery time you were startled awake as a kid, your body logged it. Every time you held your breath waiting for a door to slam, logged. Every time you walked on eggshells around someone who should have protected you, logged, encrypted, and burned into the body’s threat map.\n\nYour allergies may not be just a random nuisance. They can become a body-level habit of treating neutral contact like danger. Grass did not hurt you. Pollen did not betray you. Dust mites did not emotionally neglect you. People did. Circumstances did. Environments did.\n\nBecause no one helped your body sound the all-clear, your immune system became the overprotective parent you never had. It attacks pollen. It attacks cat dander. It attacks dust. It attacks scented candles like lavender committed a felony.\n\nAntihistamines can stop the sneeze. They do not necessarily stop the terror underneath the pattern. Medication matters. Use it when needed. But the deeper work is teaching the body that every contact with the world is not an invasion.\n\nYou have been training your immune system to be afraid every time you brace, catastrophize, scan, assume the worst, or say I knew it when something goes wrong. You are the drill sergeant. You are the one who keeps the soldiers on high alert.\n\nSound the all-clear. Tell your body: we made it out. We are not there anymore. The threat is gone.\n\nThe person who hurt you is not in the room. The situation that terrified you is over. The unsafe house is a memory. Your body may not know that yet. You have to bring it back into the present.\n\nThe present is a Tuesday in spring. The present has pollen. The pollen is not your mother. The pollen is not your father. The pollen is just pollen. It is not out to get you.\n\nTeach your body that the war is over. Teach it with breath. Teach it with rest. Teach it with slow exhales that say I am safe. Teach it by not bracing. Teach it by not scanning. Teach it by letting yourself believe, for one second, that the world is actually okay.\n\nThe world is not perfect. Not predictable. Not always kind. But okay enough. The threat level is green. Your mast cells are still on red. Write the memo. Deliver it. Breathe it into your body until it believes you.\n\nArmor down or stay reactive. Charming little choice, that one.",
-        "protocolTitle": "SOUND THE ALL-CLEAR",
+        "realityCheck": "You may have allergies. You may also have a hypervigilance-and-boundary pattern in life. Medical first: allergies are an immune reaction, and severe ones need epinephrine and emergency care. Symbolically, it can be interesting to ask where your system reacts before it assesses, but do not make the allergy your fault or proof of past trauma.",
+        "protocolTitle": "USE THE MEDS, CHECK THE TRIGGER",
         "protocolSteps": [
-          "Name the threat your body keeps expecting. Be honest. Pollen is probably not the original villain.",
-          "When symptoms flare, say out loud: I am not under attack. This is a body alarm, not proof of danger.",
-          "Stop training the mall cop. Notice bracing, scanning, and catastrophizing before the immune system turns them into marching orders.",
-          "Use medication and trigger control when needed. Then do the deeper work of teaching your body the war is over."
+          "Check for anaphylaxis signs: breathing trouble, throat/tongue/lip swelling, faintness, widespread hives.",
+          "Use prescribed emergency plan and epinephrine when indicated.",
+          "Track triggers and follow your allergy treatment plan.",
+          "Consider allergist testing rather than treating every irritation as a personal invasion."
         ]
       }
     },

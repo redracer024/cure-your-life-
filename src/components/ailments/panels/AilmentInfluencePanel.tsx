@@ -2,10 +2,12 @@ import React from 'react';
 import { Layers } from 'lucide-react';
 import { motion } from 'motion/react';
 import { TruncatedText } from '../TruncatedText';
-import { softenMedicalClaims, getStructuredInfluenceText } from '../../../lib/ailmentHelpers';
+import { LensGlossaryText } from '../../lenses/LensGlossaryText';
+import { softenMedicalClaims } from '../../../lib/ailmentHelpers';
 
 interface AilmentInfluencePanelProps {
     enriched: any;
+    onOpenLenses?: () => void;
 }
 
 interface LayerData {
@@ -24,7 +26,7 @@ function getLayerText(layer: LayerData | undefined): string {
     return typeof content === 'string' ? content : '';
 }
 
-export function AilmentInfluencePanel({ enriched }: AilmentInfluencePanelProps) {
+export function AilmentInfluencePanel({ enriched, onOpenLenses }: AilmentInfluencePanelProps) {
     const layers: LayerData[] = enriched.structuredContent?.influenceLayers || [];
     const layerCount = layers.length;
 
@@ -83,7 +85,11 @@ export function AilmentInfluencePanel({ enriched }: AilmentInfluencePanelProps) 
                             <div>
                                 <h4 className="text-[10px] font-mono uppercase tracking-widest text-[#00D2FF] mb-2">{layer1.title || 'TCM Framework'}</h4>
                                 <div className="text-sm text-[#E6ECF3] bg-black/40 border border-white/5 p-4 rounded-[1.5rem] font-sans font-light leading-7 shadow-[inset_0_0_22px_rgba(255,255,255,0.02)] backdrop-blur-sm">
-                                    <TruncatedText text={text1} maxLen={1200} />
+                                    <TruncatedText
+                                    text={text1}
+                                    maxLen={1200}
+                                    textRenderer={(t) => <LensGlossaryText text={t} onOpenLenses={onOpenLenses} />}
+                                />
                                 </div>
                             </div>
                         )}
@@ -91,7 +97,11 @@ export function AilmentInfluencePanel({ enriched }: AilmentInfluencePanelProps) 
                             <div>
                                 <h4 className="text-[10px] font-mono uppercase tracking-widest text-[#a855f7] mb-2">{layer2.title || 'Jungian Shadow'}</h4>
                                 <div className="text-sm text-[#E6ECF3] bg-black/40 border border-white/5 p-4 rounded-[1.5rem] font-sans font-light leading-7 shadow-[inset_0_0_22px_rgba(255,255,255,0.02)] backdrop-blur-sm">
-                                    <TruncatedText text={text2} maxLen={1200} />
+                                    <TruncatedText
+                                    text={text2}
+                                    maxLen={1200}
+                                    textRenderer={(t) => <LensGlossaryText text={t} onOpenLenses={onOpenLenses} />}
+                                />
                                 </div>
                             </div>
                         )}
@@ -121,7 +131,11 @@ export function AilmentInfluencePanel({ enriched }: AilmentInfluencePanelProps) 
                         <div key={idx}>
                             <h4 className="text-[10px] font-mono uppercase tracking-widest mb-2" style={{ color: layerColor }}>{layer.title || `Section ${idx + 1}`}</h4>
                             <div className="text-sm text-[#E6ECF3] bg-black/40 border border-white/5 p-4 rounded-[1.5rem] font-sans font-light leading-7 shadow-[inset_0_0_22px_rgba(255,255,255,0.02)] backdrop-blur-sm">
-                                <TruncatedText text={text} maxLen={1200} />
+                                <TruncatedText
+                                    text={text}
+                                    maxLen={1200}
+                                    textRenderer={(t) => <LensGlossaryText text={t} onOpenLenses={onOpenLenses} />}
+                                />
                             </div>
                         </div>
                     );

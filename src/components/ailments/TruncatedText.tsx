@@ -4,9 +4,10 @@ import { formatParagraphText } from '../../lib/ailmentHelpers';
 interface TruncatedTextProps {
     text: string;
     maxLen?: number;
+    textRenderer?: (text: string, index: number) => React.ReactNode;
 }
 
-export function TruncatedText({ text, maxLen = 520 }: TruncatedTextProps) {
+export function TruncatedText({ text, maxLen = 520, textRenderer }: TruncatedTextProps) {
     const [isExpanded, setIsExpanded] = useState(false);
 
     const normalizedText = formatParagraphText(text);
@@ -24,7 +25,7 @@ export function TruncatedText({ text, maxLen = 520 }: TruncatedTextProps) {
     return (
         <div className="space-y-4 leading-7 whitespace-pre-line">
             {paragraphs.map((part, index) => (
-                <p key={index}>{part}</p>
+                <p key={index}>{textRenderer ? textRenderer(part, index) : part}</p>
             ))}
 
             {shouldTruncate && (

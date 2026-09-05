@@ -3,8 +3,8 @@ import { usePremium } from '../context/PremiumContext';
 import { PRODUCT_NAME } from '../lib/brand';
 
 interface NavigationProps {
-    activeTab: 'dictionary' | 'decoder' | 'daily' | 'journal' | 'patterns';
-    setActiveTab: (tab: 'dictionary' | 'decoder' | 'daily' | 'journal' | 'patterns') => void;
+    activeTab: 'dictionary' | 'decoder' | 'daily' | 'journal' | 'patterns' | 'lenses';
+    setActiveTab: (tab: 'dictionary' | 'decoder' | 'daily' | 'journal' | 'patterns' | 'lenses') => void;
     openDecoder: () => void;
 }
 
@@ -40,6 +40,12 @@ export const Navigation: React.FC<NavigationProps> = ({
                         className={`cursor-pointer hover:text-white transition-all pb-1 ${activeTab === 'patterns' ? 'text-indigo-400 border-b-2 border-indigo-500' : ''}`}
                     >
                         Pattern Dictionary
+                    </button>
+                    <button
+                        onClick={() => setActiveTab('lenses')}
+                        className={`cursor-pointer hover:text-white transition-all pb-1 ${activeTab === 'lenses' ? 'text-indigo-400 border-b-2 border-indigo-500' : ''}`}
+                    >
+                        Understanding the Lenses
                     </button>
                     <button
                         onClick={openDecoder}
@@ -93,6 +99,12 @@ export const Navigation: React.FC<NavigationProps> = ({
                     className={`${activeTab === 'patterns' ? 'text-indigo-400 font-extrabold' : ''}`}
                 >
                     Patterns
+                </button>
+                <button
+                    onClick={() => setActiveTab('lenses')}
+                    className={`${activeTab === 'lenses' ? 'text-indigo-400 font-extrabold' : ''}`}
+                >
+                    Lenses
                 </button>
                 <button
                     onClick={openDecoder}

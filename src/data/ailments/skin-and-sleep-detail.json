@@ -274,32 +274,6 @@
     }
   },
   {
-    "id": "chronic-insomnia",
-    "medical_safety": {
-      "critical_alerts": [
-        "Falling asleep or severe sleepiness while driving or operating machinery",
-        "Sleep issues accompanied by chest pain, shortness of breath, or heart racing",
-        "Waking up gasping, choking, or with a sudden sensation of suffocation",
-        "Persistent fatigue accompanied by unexplained weight loss, fever, or night sweats",
-        "Severe, overwhelming fatigue that may contribute to rapid functional decline",
-        "Sleep disturbances accompanied by suicidal thoughts or severe mood disruption"
-      ],
-      "seek_immediate_care_if": [
-        "You experience chest pain, severe shortness of breath, or fainting in connection with fatigue or waking up",
-        "You experience suicidal thoughts, severe confusion, or sudden neurological deficits",
-        "You are at risk of falling asleep while driving or doing other safety-critical activities"
-      ],
-      "schedule_care_if": [
-        "You experience chronic, unrefreshing sleep or severe daytime sleepiness for more than a few weeks",
-        "You have persistent, loud snoring with witnessed pauses in breathing (possible sleep apnea)",
-        "You have unexplained weight loss, night sweats, or progressive fatigue that worsens despite rest"
-      ],
-      "self_care_allowed_if": "Maintaining consistent sleep hygiene, winding down without screens, and light exercise can support healthy natural sleep cycles.",
-      "do_not_ignore": "Chronic fatigue and severe sleep disturbances can be indicators of cardiovascular strain, clinical depression, or sleep apnea, and need formal evaluation.",
-      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease. Seek professional medical care for diagnosis, treatment, medication decisions, or urgent symptoms."
-    }
-  },
-  {
     "id": "acne",
     "structuredContent": {
       "version": 1,
@@ -2065,7 +2039,7 @@
         {
           "title": "Medical Rule-Outs",
           "short": "Sleep symptoms can have causes.",
-          "detail": "Sleep apnea, restless legs, pain, GERD, thyroid disease, meds, substances, depression, anxiety, and circadian rhythm issues can all drive insomnia.\n\nChronic fear and hypervigilance create sustained sympathetic activation. The adrenal glands pump out cortisol and adrenaline. The brain stays in a state of high alert.\nSleep architecture fragments. The deeper stages of sleep\u2014the ones that restore and repair\u2014are replaced by light, restless sleep. The more you try to sleep, the more\nyou can't. The more you can't, the more anxious you become. The more anxious, the more cortisol. The more cortisol, the more hyperarousal.\nYou are now in a loop: fear "
+          "detail": "Sleep apnea, restless legs, pain, GERD, thyroid disease, meds, substances, depression, anxiety, and circadian rhythm issues can all drive insomnia. Hyperarousal, rumination, and conditioned wakefulness can also make sleep harder, though they are not the only possible cause."
         }
       ],
       "interpretations": {
@@ -2151,15 +2125,15 @@
           "title": "The Hyperarousal-Vigilance Loop",
           "tag": "Somatic Mechanics",
           "paragraphs": [
-            "Chronic fear and hypervigilance create sustained sympathetic activation. The adrenal glands pump out cortisol and adrenaline. The brain stays in a state of high alert.\nSleep architecture fragments. The deeper stages of sleep\u2014the ones that restore and repair\u2014are replaced by light, restless sleep. The more you try to sleep, the more\nyou can't. The more you can't, the more anxious you become. The more anxious, the more cortisol. The more cortisol, the more hyperarousal.\nYou are now in a loop: fear of not sleeping creates the inability to sleep."
+            "Chronic fear, hypervigilance, and rumination can keep the nervous system alert at night, which makes settling into sleep harder. The more you try to force sleep, the more performance pressure can build, and the more elusive sleep can feel. This is a common reflective and behavioral loop, not a proven claim that emotions directly cause insomnia. Medical and sleep-disorder causes deserve evaluation alongside any stress pattern."
           ]
         },
         {
           "layer": 4,
-          "title": "Clinical Cascade (Sympathetic Overdrive \u2192 HPA Dysregulation \u2192 Sleep Fragmentation)",
-          "tag": "Somatic Mechanics",
+          "title": "Stress, Arousal, and Sleep (Reflective View)",
+          "tag": "Mind & Symbolism",
           "paragraphs": [
-            "Chronic stress and hypervigilance dysregulate the hypothalamic-pituitary-adrenal (HPA) axis. Cortisol levels remain elevated at night, suppressing melatonin and\ndisrupting the sleep-wake cycle. The National Sleep Foundation confirms that 70% of chronic insomnia cases are driven by stress and hyperarousal, with the brain\nunable to transition from wakefulness to sleep."
+            "Stress, hyperarousal, anxiety, and rumination can contribute to or worsen insomnia for some people, and can make the night feel unsafe or overactive. These are factors that may play a role, not a universal root cause. Persistent or impairing insomnia deserves medical evaluation, including possible sleep apnea, restless legs, mood, medication, pain, thyroid, and circadian contributors."
           ]
         }
       ],
@@ -2242,7 +2216,9 @@
         "Mania symptoms, racing risky behavior, no need for sleep, or psychosis symptoms",
         "Dangerous daytime sleepiness, falling asleep while driving, or accidents",
         "Loud snoring, witnessed breathing pauses, gasping, morning headaches, or suspected sleep apnea",
+        "Waking up gasping, choking, or with a sudden sensation of suffocation",
         "Chest pain, shortness of breath, neurologic symptoms, or severe illness",
+        "Severe, overwhelming fatigue that may contribute to rapid functional decline",
         "Insomnia with substance withdrawal, medication reactions, severe pain, or major functional impairment"
       ],
       "seek_immediate_care_if": [
@@ -2253,6 +2229,8 @@
       "schedule_care_if": [
         "Insomnia lasts weeks, recurs often, or impairs daily life",
         "You suspect sleep apnea, restless legs, medication/substance effects, mood disorder, trauma, thyroid issues, pain, or GERD",
+        "You have persistent, unrefreshing sleep or severe daytime sleepiness for more than a few weeks",
+        "You have unexplained weight loss, night sweats, fever, or progressive fatigue that worsens despite rest",
         "Self-care is not improving sleep"
       ],
       "self_care_allowed_if": "Consistent wake time, morning light, caffeine/alcohol timing, wind-down routine, and reducing clock-watching may support mild insomnia without red flags.",

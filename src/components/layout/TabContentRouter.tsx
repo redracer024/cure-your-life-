@@ -5,10 +5,13 @@ import { CategoryGrid } from '../ailments/CategoryGrid';
 import { CategoryDetailHeader } from '../ailments/CategoryDetailHeader';
 import { DictionarySearchHeader } from '../ailments/DictionarySearchHeader';
 import AilmentAccordionItem from '../ailments/AilmentAccordionItem';
+import { FloatingBackToTop, scrollToTop } from '../ailments/BackToTop';
+import { ArrowUp } from 'lucide-react';
 import { SymptomDecoder } from '../SymptomDecoder';
 import DailyPromptsPanel from '../DailyPromptsPanel';
 import SomaticJournalPanel from '../SomaticJournalPanel';
 import { PatternDictionary } from '../patterns/PatternDictionary';
+import { UnderstandingLenses } from '../UnderstandingLenses';
 import type { Ailment } from '../../types';
 import type { AilmentCore } from '../../types/dictionary';
 import { getCoreAilments } from '../../data';
@@ -41,6 +44,7 @@ interface TabContentRouterProps {
   onClearHighlightPattern: () => void;
   onOpenJournal: (data: { sourcePatternId: string; sourcePatternName: string; prompt: string }) => void;
   journalPromptData: JournalPromptData | null;
+  onOpenLenses: () => void;
 }
 
 export const TabContentRouter: React.FC<TabContentRouterProps> = ({
@@ -57,6 +61,7 @@ export const TabContentRouter: React.FC<TabContentRouterProps> = ({
   onJournalRedirect, openDecoder, onOpenQuiz,
   highlightPatternId, onClearHighlightPattern,
   onOpenJournal, journalPromptData,
+  onOpenLenses,
 }) => {
   if (activeTab === 'dictionary') {
     return (
@@ -118,13 +123,42 @@ export const TabContentRouter: React.FC<TabContentRouterProps> = ({
                       globalTone={globalTone}
                       onJournalRedirect={onJournalRedirect}
                       index={idx}
+                      onOpenLenses={onOpenLenses}
                     />
                   ))
                 )}
               </div>
+
+              <nav
+                aria-label="Symptom list navigation"
+                className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between pt-4 mt-4 border-t border-white/5"
+              >
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSelectedCategory(null);
+                    scrollToTop();
+                  }}
+                  className="flex items-center justify-center gap-2 px-4 py-3 rounded-2xl border border-white/10 bg-black/40 backdrop-blur-xl text-slate-300 hover:border-indigo-400/40 hover:text-indigo-300 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400/60"
+                >
+                  <span aria-hidden="true">←</span>
+                  <span className="text-xs font-mono uppercase tracking-widest font-bold">Back to symptom groups</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={scrollToTop}
+                  aria-label="Back to top"
+                  className="flex items-center justify-center gap-2 px-4 py-3 rounded-2xl border border-white/10 bg-black/40 backdrop-blur-xl text-slate-300 hover:border-cyan-400/40 hover:text-cyan-300 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60"
+                >
+                  <ArrowUp className="w-4 h-4" />
+                  <span className="text-xs font-mono uppercase tracking-widest font-bold">Back to top</span>
+                </button>
+              </nav>
             </div>
           )}
         </div>
+
+        {selectedCategory !== null && <FloatingBackToTop />}
       </main>
     );
   }
@@ -167,6 +201,10 @@ export const TabContentRouter: React.FC<TabContentRouterProps> = ({
         <div className="pt-4"><DailyPromptsPanel /></div>
       </main>
     );
+  }
+
+  if (activeTab === 'lenses') {
+    return <UnderstandingLenses />;
   }
 
   return (

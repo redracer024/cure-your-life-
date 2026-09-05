@@ -39,7 +39,7 @@ export const SymptomDecoder: React.FC<SymptomDecoderProps> = ({
                     <span className="text-indigo-500">Decoder</span>
                 </h1>
                 <p className="text-base text-slate-400 max-w-2xl leading-7 font-light">
-                    Can't find your specific aches in our dictionary? Enter your customized physical misery and let Dr. Sarcasticus explore possible subconscious fears and poor ergonomic life choices in real-time.
+                    Can't find your specific aches in our dictionary? Enter your customized physical misery and let Dr. Sarcasticus separate medical safety, plausible mind-body context, reflection prompts, and optional traditional interpretations in real-time.
                 </p>
             </div>
 
@@ -105,7 +105,7 @@ export const SymptomDecoder: React.FC<SymptomDecoderProps> = ({
                     <div className="p-4 bg-amber-500/5 rounded-xl border border-amber-500/20 flex gap-3 items-start">
                         <HelpCircle className="w-4 h-4 text-amber-500 shrink-0 mt-0.5 animate-pulse" />
                         <p className="text-[11px] text-amber-400/90 leading-7 font-mono">
-                            DISCLAIMER: Dr. Sarcasticus is an AI assistant model. His insights are for exploratory reflection only and are not medically accurate. Do not replace your actual real-life doctor if your body is actively complaining of emergency malfunctions.
+                            DISCLAIMER: Dr. Sarcasticus is an AI assistant model. His insights are exploratory, can be wrong, and are not medical advice. Urgent, severe, new, or worsening symptoms belong with a licensed clinician or emergency care.
                         </p>
                     </div>
                 </div>
@@ -203,10 +203,10 @@ export const SymptomDecoder: React.FC<SymptomDecoderProps> = ({
                                         {renderHolographicFace()}
                                         <div className="space-y-1.5 flex-1">
                                             <span className="text-[11px] font-mono text-indigo-400 uppercase tracking-wider block font-black">
-                                                CORE SUBCONSCIOUS EMOTIONAL MATRIX
+                                                LAYERED BODYSIGNAL SUMMARY
                                             </span>
                                             <h2 className="text-xl md:text-2xl font-black uppercase tracking-tight text-white leading-none">
-                                                The Metaphorical Root Cause
+                                                Medical First, Meaning Second
                                             </h2>
                                             <p className="text-xs text-slate-200 leading-7 not-italic font-light">
                                                 "{decodedResult.emotionalRoot}"
@@ -215,18 +215,42 @@ export const SymptomDecoder: React.FC<SymptomDecoderProps> = ({
                                     </div>
                                 </div>
 
+                                {decodedResult.medical && (
+                                    <div className="bg-red-950/20 p-5 border border-red-500/25 rounded-2xl space-y-3">
+                                        <div className="flex items-center gap-2 border-b border-red-500/10 pb-2">
+                                            <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
+                                            <span className="text-[11px] font-mono uppercase tracking-widest text-red-300 font-black">MEDICAL SAFETY LAYER</span>
+                                        </div>
+                                        <p className="text-xs text-slate-300 leading-7 font-sans font-light">
+                                            {decodedResult.medical.possibleMedicalContext}
+                                        </p>
+                                        {decodedResult.medical.redFlags.length > 0 && (
+                                            <ul className="space-y-1">
+                                                {decodedResult.medical.redFlags.map((flag, idx) => (
+                                                    <li key={idx} className="text-xs text-red-200 leading-6 font-sans">
+                                                        {flag}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        )}
+                                        <p className="text-[11px] text-red-200/90 leading-6 font-mono">
+                                            {decodedResult.medical.whenToSeekCare}
+                                        </p>
+                                    </div>
+                                )}
+
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="bg-[#07090E] p-5 border border-indigo-500/20 rounded-2xl relative overflow-hidden flex flex-col justify-between min-h-[180px] space-y-3">
                                         <div className="absolute top-0 right-0 w-16 h-16 bg-indigo-500/5 rounded-full blur-xl pointer-events-none" />
                                         <div className="flex items-center gap-2 border-b border-white/5 pb-2">
                                             <div className="w-1.5 h-1.5 rounded-full bg-indigo-400" />
-                                            <span className="text-[11px] font-mono uppercase tracking-widest text-indigo-400 font-black">PHYSIOLOGICAL MECHANISM</span>
+                                            <span className="text-[11px] font-mono uppercase tracking-widest text-indigo-400 font-black">MEDICAL / MIND-BODY CONTEXT</span>
                                         </div>
                                         <p className="text-xs text-slate-300 leading-7 font-sans font-light flex-1">
                                             {decodedResult.physiologicalDescription}
                                         </p>
                                         <div className="text-[8px] font-mono text-slate-500 uppercase">
-                                            DIAGNOSTICS: PROFESSIONAL / MEDICAL TRUTH
+                                            DIAGNOSTICS: NOT A DIAGNOSIS
                                         </div>
                                     </div>
 
@@ -248,6 +272,20 @@ export const SymptomDecoder: React.FC<SymptomDecoderProps> = ({
                                         </div>
                                     </div>
                                 </div>
+
+                                {decodedResult.traditional && decodedResult.traditional.evidenceStatus !== 'not included' && (
+                                    <div className="bg-[#07090E] p-5 border border-cyan-500/20 rounded-2xl space-y-2">
+                                        <span className="text-[11px] font-mono uppercase tracking-widest text-cyan-300 font-black">
+                                            OPTIONAL TRADITIONAL / SYMBOLIC LAYER
+                                        </span>
+                                        <p className="text-xs text-slate-300 leading-7 font-sans font-light">
+                                            {decodedResult.traditional.attribution}: {decodedResult.traditional.proposedMeaningOrCause}
+                                        </p>
+                                        <p className="text-[10px] text-slate-500 font-mono uppercase">
+                                            Evidence status: {decodedResult.traditional.evidenceStatus}
+                                        </p>
+                                    </div>
+                                )}
 
                                 <div className="p-6 bg-[#07090E] border border-white/5 rounded-2xl grid grid-cols-1 md:grid-cols-2 gap-6 shadow-xl">
                                     <div className="space-y-3">

@@ -9,7 +9,13 @@ import {
 } from '../data';
 import { isSearchOnlyAilment } from '../lib/ailments/constants';
 
-export type TabType = 'dictionary' | 'decoder' | 'daily' | 'journal' | 'patterns';
+export type TabType =
+  | 'dictionary'
+  | 'decoder'
+  | 'daily'
+  | 'journal'
+  | 'patterns'
+  | 'lenses';
 
 export interface JournalPromptData {
   sourceType: 'pattern-journal-prompt';

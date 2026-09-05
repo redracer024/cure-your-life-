@@ -30,12 +30,12 @@ export const LEGAL_DOCS: Record<LegalDocId, LegalDocument> = {
       {
         heading: 'Data stored only on your device',
         body:
-          'Your assessment answers, assessment results, somatic journal entries, daily reflections, and most in-app progress are stored only in this browser on this device using browser local storage. They are not sent to our servers, not shared with third parties, and not used to train any model. Another person using the same browser profile on the same device may be able to see this locally stored data.',
+          'Your assessment answers, assessment results, locally saved somatic journal entries, daily reflections, and most in-app progress are stored in this browser on this device using browser local storage. They are not sent to our servers unless you choose an AI decoding feature that clearly says it will send specific text for processing. Another person using the same browser profile on the same device may be able to see this locally stored data.',
       },
       {
         heading: 'Data you submit for AI decoding',
         body:
-          'When you use the AI Somatic Decoder, the symptom description and habits text you type is sent to our server and processed by a third-party generative AI provider to produce the analysis shown to you. Do not submit information you consider sensitive or personally identifying in the decoder. This data is used only to generate your response and is not used for any other purpose.',
+          'When you use the AI Somatic Decoder, or when you explicitly choose to send a somatic journal entry for AI decoding, the disclosed fields are sent to our server and processed by a third-party generative AI provider to produce the analysis shown to you. For journal AI decoding, those fields are the physical symptom, emotional state, and day/context text; saved reflection responses are not included. Do not submit information you consider sensitive or personally identifying. This data is used only to generate your response and is not used for any other purpose.',
       },
       {
         heading: 'Account and premium data',
@@ -231,12 +231,12 @@ export const LEGAL_DOCS: Record<LegalDocId, LegalDocument> = {
       {
         heading: 'Data stored in your browser',
         body:
-          'Assessment answers and results, journal entries, and daily reflections are saved in your browser on this device. Decoder analyses are shown to you and then kept in memory for the current session; any that you save as journal entries are stored locally. This data is not transmitted to our servers. Clearing browser data or using in-app clear controls removes it.',
+          'Assessment answers and results, journal entries, and daily reflections are saved in your browser on this device. Decoder analyses are shown to you and then kept in memory for the current session; any that you save as journal entries are stored locally. Locally saved data is not transmitted to our servers unless you choose an AI decoding feature that discloses which fields will be sent. Clearing browser data or using in-app clear controls removes local data.',
       },
       {
         heading: 'Data sent to servers',
         body:
-          'The only content you actively submit that reaches a server is the symptom and habit text you type into the AI Somatic Decoder, which is processed by a generative AI provider to produce your response. Account sign-in, where available, sends credentials to our authentication provider.',
+          'Content reaches a server when you actively use the standalone AI Somatic Decoder or explicitly choose AI decoding for a journal entry. The standalone decoder sends the symptom and habit text you type. Journal AI decoding sends the physical symptom, emotional state, and day/context text shown in the disclosure. That content is processed by a generative AI provider to produce your response. Account sign-in, where available, sends credentials to our authentication provider.',
       },
       {
         heading: 'Why we store this data',

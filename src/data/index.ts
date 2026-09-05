@@ -12,7 +12,9 @@ const coreByIdMap = new Map<string, AilmentCore>(
 
 const searchIndex = new Map<string, Set<AilmentCore>>();
 
-function tokenize(text: string): string[] {
+function tokenize(text?: string): string[] {
+  if (typeof text !== 'string') return [];
+
   return text
     .toLowerCase()
     .replace(/[^a-z0-9\s]/g, ' ')
@@ -22,6 +24,18 @@ function tokenize(text: string): string[] {
 
 function buildSearchIndex() {
   for (const item of AILMENTS_CORE) {
+    if (
+      typeof item.id !== 'string' || item.id.trim() === '' ||
+      typeof item.name !== 'string' || item.name.trim() === '' ||
+      typeof item.category !== 'string' || item.category.trim() === ''
+    ) {
+      throw new Error(`Invalid ailment core identity: ${JSON.stringify({
+        id: item.id,
+        name: item.name,
+        category: item.category,
+      })}`);
+    }
+
     const tokens = new Set([
       ...tokenize(item.name),
       ...tokenize(item.emotionalRoot),

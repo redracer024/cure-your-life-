@@ -1,5 +1,5 @@
 import React from 'react';
-import { Activity, Apple, Brain, Dna, Dumbbell, Flame, Heart, Layers, Moon, Shield } from 'lucide-react';
+import { Activity, Apple, Brain, Dna, Droplet, Dumbbell, Flame, Heart, Layers, Moon, Shield } from 'lucide-react';
 
 export interface CategoryMeta {
     iconName: string;
@@ -113,6 +113,17 @@ export const CATEGORY_META: Record<string, CategoryMeta> = {
         motif: "joint mechanics, hinges, tension lines",
         badge: "Kinetic Guard"
     },
+    "Pelvic, Urinary & Reproductive": {
+        iconName: "Droplet",
+        desc: "Bladder, kidney, sexual, and reproductive signals, intimacy, and pelvic holding.",
+        color: "#00B8D4",
+        glowColor: "rgba(0, 184, 212, 0.15)",
+        textClass: "text-[#00B8D4]",
+        bgClass: "from-cyan-950/20 to-transparent",
+        borderClass: "border-cyan-500/25",
+        motif: "pelvic basin, flow channels, intimate tension",
+        badge: "Pelvic Flow"
+    },
     "Skin & General": {
         iconName: "Moon",
         desc: "Skin flares, sleep disruption, itch stress, boundaries, and recovery.",
@@ -138,6 +149,7 @@ export const renderCategoryIcon = (iconName: string, className: string, customCo
         case 'Moon': return <Moon className={ className } style = { inlineStyle } />;
         case 'Flame': return <Flame className={ className } style = { inlineStyle } />;
         case 'Shield': return <Shield className={ className } style = { inlineStyle } />;
+        case 'Droplet': return <Droplet className={ className } style = { inlineStyle } />;
         default: return <Activity className={ className } style = { inlineStyle } />;
     }
 };

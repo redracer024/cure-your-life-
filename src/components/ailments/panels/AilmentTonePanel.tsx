@@ -9,6 +9,10 @@ interface AilmentTonePanelProps {
 }
 
 export function AilmentTonePanel({ enriched }: AilmentTonePanelProps) {
+    const citations = Array.isArray(enriched.tones?.clinical.citations)
+        ? enriched.tones.clinical.citations.filter((citation: unknown): citation is string => typeof citation === 'string' && citation.trim().length > 0)
+        : [];
+
     return (
         <motion.div
             key="tones"
@@ -60,22 +64,21 @@ export function AilmentTonePanel({ enriched }: AilmentTonePanelProps) {
                         </div>
                     </div>
 
-                    <div className="pt-4 border-t border-white/10 space-y-2 shrink-0">
-                        <span className="text-[8px] font-mono text-slate-500 uppercase tracking-widest block font-bold">
-                            MEDICAL SOURCE CITATIONS
-                        </span>
-                        <div className="space-y-1">
-                            {(enriched.tones?.clinical.citations || [
-                                "Somatic Medicine & Biofeedback Journal (Vol 14, Issue 2)",
-                                "Review of Psychosomatic Fascial Guarding Patterns (2023)"
-                            ]).map((citation: string, idx: number) => (
-                                <div key={idx} className="text-[10px] font-mono text-slate-500 flex items-center gap-1.5 truncate">
-                                    <BookOpen className="w-3 h-3 text-slate-600 shrink-0" />
-                                    <span className="truncate">{citation}</span>
-                                </div>
-                            ))}
+                    {citations.length > 0 && (
+                        <div className="pt-4 border-t border-white/10 space-y-2 shrink-0">
+                            <span className="text-[8px] font-mono text-slate-500 uppercase tracking-widest block font-bold">
+                                MEDICAL SOURCE CITATIONS
+                            </span>
+                            <div className="space-y-1">
+                                {citations.map((citation: string, idx: number) => (
+                                    <div key={idx} className="text-[10px] font-mono text-slate-500 flex items-center gap-1.5 truncate">
+                                        <BookOpen className="w-3 h-3 text-slate-600 shrink-0" />
+                                        <span className="truncate">{citation}</span>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                    </div>
+                    )}
                 </div>
 
                 {/* Card 2: Witty (Purple/Indigo theme) */}

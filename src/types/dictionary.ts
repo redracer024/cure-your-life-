@@ -4,20 +4,64 @@ export interface AilmentCore {
   id: string;
   name: string;
   category: string;
-  emotionalRoot: string;
-  metaphor: string;
-  physiologicalDescription: string;
-  sarcasticAdvice: string;
-  mindfulnessPrompts: string[];
-  physicalTherapyTip: string;
+  emotionalRoot?: string;
+  metaphor?: string;
+  physiologicalDescription?: string;
+  sarcasticAdvice?: string;
+  mindfulnessPrompts?: string[];
+  physicalTherapyTip?: string;
   riskLevel?: 'Low' | 'Moderate' | 'Medical monitoring recommended';
   tags?: string[];
+}
+
+export interface LateralSide {
+  heading?: string;
+  medical?: string[];
+  symbolicThemes?: string[];
+  prompts?: string[];
+}
+
+export interface LateralitySection {
+  sharedOverview?: string;
+  sharedSafetyNote?: string;
+  left?: LateralSide;
+  right?: LateralSide;
+}
+
+export interface LocationSection {
+  key: string;
+  label: string;
+  medicalConsiderations?: string[];
+  symbolicThemes?: string[];
+  reflectionPrompts?: string[];
+}
+
+export interface LocationSections {
+  overview?: string;
+  sections: LocationSection[];
+}
+
+export interface Subsection {
+  key: string;
+  label: string;
+  medicalConsiderations?: string[];
+  symbolicThemes?: string[];
+  reflectionPrompts?: string[];
+}
+
+export interface Subsections {
+  overview?: string;
+  label?: string;
+  sections: Subsection[];
 }
 
 export interface AilmentDetail {
   id: string;
   structuredContent?: {
     version?: number;
+    laterality?: LateralitySection;
+    locationSections?: LocationSections;
+    subsections?: Subsections;
     hardware?: {
       hapticProfile?: string;
       hapticPattern?: number[];
@@ -61,6 +105,7 @@ export interface AilmentDetail {
       title?: string;
       modality?: string;
       steps?: string[];
+      safetyNote?: string;
     };
     naturalSupport?: {
       title?: string;

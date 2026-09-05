@@ -1787,32 +1787,6 @@
     }
   },
   {
-    "id": "migraine-headache",
-    "medical_safety": {
-      "critical_alerts": [
-        "Sudden numbness or weakness of the face, arm, or leg (especially on one side)",
-        "Sudden confusion, trouble speaking, or understanding speech",
-        "Sudden trouble seeing in one or both eyes",
-        "Sudden trouble walking, dizziness, loss of balance, or coordination",
-        "Sudden, severe headache with no known cause ('thunderclap' headache)",
-        "New onset of facial droop or facial muscle weakness"
-      ],
-      "seek_immediate_care_if": [
-        "You experience sudden facial drooping, arm weakness, or slurred speech (the FAST stroke indicators)",
-        "You have a sudden, blindingly severe headache or sudden loss of vision",
-        "You experience a seizure, sudden confusion, or loss of consciousness"
-      ],
-      "schedule_care_if": [
-        "You have frequent or progressively worsening headaches that interfere with sleep or work",
-        "You experience occasional mild dizziness or subtle changes in coordination or memory",
-        "You have persistent jaw pain or clicking that does not improve with stress reduction"
-      ],
-      "self_care_allowed_if": "Mild, familiar headaches or muscle tension may respond well to rest, hydration, and gentle massage.",
-      "do_not_ignore": "Sudden neurological deficits or severe headaches must be immediately evaluated to rule out stroke, aneurysm, or other brain emergencies.",
-      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease. Seek professional medical care for diagnosis, treatment, medication decisions, or urgent symptoms."
-    }
-  },
-  {
     "id": "pink-eye",
     "structuredContent": {
       "version": 1,
@@ -4061,7 +4035,7 @@
     }
   },
   {
-    "id": "migraines",
+    "id": "migraine",
     "structuredContent": {
       "version": 1,
       "hardware": {
@@ -4292,13 +4266,22 @@
     "medical_safety": {
       "critical_alerts": [
         "Thunderclap or sudden worst headache",
+        "Sudden numbness or weakness of the face, arm, or leg (especially on one side)",
+        "Sudden confusion, trouble speaking, or understanding speech",
+        "Sudden trouble seeing in one or both eyes",
+        "Sudden trouble walking, dizziness, loss of balance, or coordination",
+        "Sudden, severe headache with no known cause ('thunderclap' headache)",
+        "New onset of facial droop or facial muscle weakness",
         "Fever, stiff neck, rash, confusion, seizure, or fainting",
         "Weakness, numbness, speech trouble, vision change, or neurologic symptoms",
         "Head injury, cancer/infection risk, immune suppression, pregnancy/postpartum",
         "New headache after age 50 or headache pattern change"
       ],
       "seek_immediate_care_if": [
-        "Thunderclap headache, neurologic symptoms, fever/stiff neck, trauma, seizure, confusion, or new worst headache occurs"
+        "Thunderclap headache, neurologic symptoms, fever/stiff neck, trauma, seizure, confusion, or new worst headache occurs",
+        "You experience sudden facial drooping, arm weakness, or slurred speech (the FAST stroke indicators)",
+        "You have a sudden, blindingly severe headache or sudden loss of vision",
+        "You experience a seizure, sudden confusion, or loss of consciousness"
       ],
       "schedule_care_if": [
         "Headaches are frequent, worsening, disabling, new, medication-related, or pattern-changing"
@@ -5053,289 +5036,6 @@
       "self_care_allowed_if": "Supportive routines, sleep, nutrition, movement as tolerated, counseling, and support groups may help alongside medical care.",
       "do_not_ignore": "Cancer symptoms, screening abnormalities, new lumps, unexplained weight loss, bleeding, persistent cough, neurologic symptoms, or treatment side effects need medical guidance.",
       "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure cancer."
-    }
-  },
-  {
-    "id": "allergies-hay-fever",
-    "structuredContent": {
-      "version": 1,
-      "hardware": {
-        "hapticProfile": "Rapid scattered staccato pulses, pause, then reactive bursts.",
-        "hapticPattern": [
-          120,
-          80,
-          120,
-          80,
-          120,
-          500,
-          120,
-          500,
-          120,
-          80,
-          120,
-          80,
-          120
-        ],
-        "uiBackgroundAccent": "#6B8C5C"
-      },
-      "hero": {
-        "primaryPattern": "Allergies involve immune overreaction to triggers; breathing trouble, throat/lip/tongue swelling, dizziness, fainting, or multi-system reaction can be anaphylaxis and needs emergency care.",
-        "cascade": [
-          "Trigger Appears",
-          "IgE/Mast Cells React",
-          "Histamine Flood",
-          "Symptoms or Emergency"
-        ],
-        "tags": [
-          "#allergies",
-          "#histamine",
-          "#anaphylaxis"
-        ],
-        "safetyPreview": "Trouble breathing, throat/lip/tongue swelling, dizziness/fainting, wheezing, widespread hives, vomiting, or rapid worsening after exposure needs emergency care."
-      },
-      "biologyPathway": [
-        {
-          "title": "Immune Overreaction",
-          "short": "The body flags a trigger as danger.",
-          "detail": "Allergic reactions can involve IgE antibodies binding mast cells and basophils, then triggering mediator release on re-exposure."
-        },
-        {
-          "title": "Histamine Cascade",
-          "short": "Inflammatory chemicals drive symptoms.",
-          "detail": "Histamine and related mediators can cause itching, sneezing, congestion, watery eyes, hives, swelling, wheeze, and low blood pressure in severe reactions."
-        },
-        {
-          "title": "Airway Risk",
-          "short": "Anaphylaxis is urgent.",
-          "detail": "Breathing trouble, throat/tongue/lip swelling, dizziness, fainting, or rapid multi-system reaction after exposure can be life-threatening."
-        },
-        {
-          "title": "Management",
-          "short": "Trigger control plus treatment.",
-          "detail": "Care may include avoidance, antihistamines, nasal corticosteroids, inhalers when asthma is involved, epinephrine for anaphylaxis risk, and immunotherapy for some allergies."
-        }
-      ],
-      "interpretations": {
-        "clinical": {
-          "label": "Strictly Medical",
-          "title": "Allergic Reaction, Histamine Cascade & Anaphylaxis Screen",
-          "sections": [
-            {
-              "heading": "Stage 1 — Trigger Recognition",
-              "body": [
-                "Allergies happen when the immune system reacts to a trigger that may be harmless for others.",
-                "Pollen, dust mites, mold, dander, foods, insect stings, and medications are common examples."
-              ]
-            },
-            {
-              "heading": "Stage 2 — Histamine and Inflammation",
-              "body": [
-                "IgE-mediated allergies can activate mast cells and basophils, releasing histamine and other mediators.",
-                "That can cause sneezing, itching, congestion, watery eyes, hives, wheezing, swelling, or worse. Very dramatic for pollen."
-              ]
-            },
-            {
-              "heading": "Stage 3 — Treatment Direction",
-              "body": [
-                "Management may include trigger avoidance, antihistamines, nasal corticosteroids, decongestants when appropriate, eye drops, inhalers, allergist testing, immunotherapy, and epinephrine plans for severe allergies.",
-                "Treatment depends on allergy type and severity."
-              ]
-            },
-            {
-              "heading": "Stage 4 — Safety Check",
-              "body": [
-                "Seek emergency care for breathing trouble, throat/tongue/lip swelling, dizziness, fainting, widespread hives with systemic symptoms, vomiting, or rapid worsening after exposure.",
-                "Anaphylaxis is not a wait-and-see arts project."
-              ]
-            }
-          ]
-        },
-        "witty": {
-          "label": "Comedic & Witty",
-          "title": "The Overzealous Security Guard",
-          "paragraphs": [
-            "Your immune system is a security guard who cannot tell pollen from a bank robber.",
-            "The guard sees dust, screams threat detected, dumps histamine everywhere, and now your nose is conducting a sprinkler test.",
-            "Sometimes it is annoying. Sometimes it is dangerous.",
-            "The goal is training, avoidance, proper meds, and an emergency plan when the airway joins the drama.",
-            "Retrain the security guard safely or keep letting pollen get treated like an armed intruder. Your choice."
-          ]
-        },
-        "brutal": {
-          "label": "Brutally Honest",
-          "title": "The Hypervigilant Immune System Reality Check",
-          "paragraphs": [
-            "You may have allergies. You may also have a hypervigilance-and-boundary pattern.",
-            "Medical first: anaphylaxis symptoms need emergency care and, if prescribed, epinephrine.",
-            "Symbolically, ask where your system reacts before it assesses.",
-            "But do not make allergies your fault. Immune systems can be ridiculous little bureaucrats.",
-            "Retrain the security guard safely or keep letting pollen get treated like an armed intruder. Your choice."
-          ]
-        }
-      },
-      "influenceLayers": [
-        {
-          "layer": 1,
-          "title": "Defensive Wei Qi Image",
-          "tag": "Boundary",
-          "paragraphs": [
-            "In TCM imagery, allergies can be framed as defensive boundary reactivity.",
-            "Medically, triggers, immune pathways, and anaphylaxis risk decide care."
-          ]
-        },
-        {
-          "layer": 2,
-          "title": "Hypervigilant Guard",
-          "tag": "Threat Filter",
-          "paragraphs": [
-            "The guard reacts before checking the threat.",
-            "The reset teaches discrimination: not everything at the door is a wolf."
-          ]
-        },
-        {
-          "layer": 3,
-          "title": "Leaky Border",
-          "tag": "Invasion",
-          "paragraphs": [
-            "Congestion and sneezing can symbolize trying to expel what feels invasive.",
-            "Actual allergens still need actual management."
-          ]
-        },
-        {
-          "layer": 4,
-          "title": "Watery Eyes",
-          "tag": "Release",
-          "paragraphs": [
-            "The body waters and flushes.",
-            "Reflection can coexist with antihistamines. Civilization is wild."
-          ]
-        },
-        {
-          "layer": 5,
-          "title": "Calm the Guard",
-          "tag": "Reset",
-          "paragraphs": [
-            "The reset is trigger mapping, medication plan, allergist support, and nervous-system calming.",
-            "No throat-swelling bravery."
-          ]
-        }
-      ],
-      "reset": {
-        "title": "Security Guard Retraining & Allergy Safety Reset",
-        "modality": "Autonomic Downregulation",
-        "steps": [
-          "Check for emergency signs: breathing trouble, throat/lip/tongue swelling, dizziness/fainting, severe wheeze, or rapid multi-system reaction.",
-          "If present, use prescribed epinephrine if available and seek emergency care.",
-          "If mild and safe, sit upright and breathe slowly.",
-          "Inhale gently for 4 seconds if nasal breathing is comfortable, exhale for 8 seconds.",
-          "Think: I identify the trigger. I treat the reaction. I do not have to react to everything."
-        ]
-      },
-      "naturalSupport": {
-        "title": "Supportive Care",
-        "disclaimer": "Supportive care is not a cure. Allergies & Hay Fever may require medical evaluation, diagnosis, monitoring, and condition-specific treatment.",
-        "items": [
-          {
-            "label": "Trigger mapping",
-            "detail": "Track pollen, dust, mold, dander, foods, medications, insect stings, timing, and environment."
-          },
-          {
-            "label": "Allergy treatment",
-            "detail": "Antihistamines, nasal corticosteroids, eye drops, inhalers, and immunotherapy may be appropriate depending on type."
-          },
-          {
-            "label": "Anaphylaxis plan",
-            "detail": "People at risk may need prescribed epinephrine and emergency instructions."
-          },
-          {
-            "label": "Environmental control",
-            "detail": "HEPA filtration, washing bedding, reducing dust/mold, and pollen precautions may help."
-          }
-        ],
-        "avoid": [
-          "Do not ignore breathing trouble, throat/lip/tongue swelling, dizziness, fainting, rapid worsening, or multi-system allergic reaction.",
-          "Do not rely on breathing exercises for anaphylaxis."
-        ]
-      },
-      "brutalActions": [
-        "Identify likely trigger.",
-        "Check airway/anaphylaxis signs.",
-        "Use the right medication plan.",
-        "Stop treating every irritation like a full-scale invasion."
-      ]
-    },
-    "tones": {
-      "clinical": {
-        "mechanism": "Allergies are immune reactions to triggers such as pollen, dust mites, pet dander, mold, foods, insect stings, or medications. Many involve IgE antibodies, mast cells, basophils, histamine, leukotrienes, and inflammatory mediators causing sneezing, itching, watery eyes, congestion, hives, wheezing, or anaphylaxis.",
-        "protocol": [
-          "Track trigger, timing, sneezing, itching, congestion, eye symptoms, hives, wheeze, throat/lip/tongue swelling, dizziness/faintness, GI symptoms, asthma history, epinephrine use, and allergist testing.",
-          "Use medical evaluation when symptoms are new, severe, persistent, progressive, recurrent, or paired with red flags.",
-          "Symbolic interpretation never replaces diagnosis, emergency care, prescribed medication, or treatment."
-        ],
-        "citations": [
-          "Educational reflection only; not a substitute for medical care."
-        ]
-      },
-      "witty": {
-        "metaphorTitle": "The Overzealous Security Guard",
-        "metaphorText": "Your immune system is a security guard who cannot tell pollen from a bank robber.",
-        "wittyAdvice": "Retrain the security guard safely or keep letting pollen get treated like an armed intruder. Your choice."
-      },
-      "brutal": {
-        "realityCheck": "You may have allergies. You may also have a hypervigilance-and-boundary pattern.",
-        "protocolTitle": "CALM THE SECURITY GUARD",
-        "protocolSteps": [
-          "Check anaphylaxis signs.",
-          "Use prescribed emergency plan.",
-          "Track triggers.",
-          "Treat inflammation.",
-          "Consider allergist testing."
-        ]
-      }
-    },
-    "medical_safety": {
-      "critical_alerts": [
-        "Trouble breathing, wheezing, throat/tongue/lip swelling, or tight throat",
-        "Dizziness, fainting, confusion, low blood pressure symptoms, or collapse",
-        "Widespread hives plus vomiting, breathing symptoms, swelling, or rapid worsening",
-        "Known severe allergy exposure, insect sting allergy, food allergy reaction, or need for epinephrine",
-        "Asthma symptoms during allergic reaction"
-      ],
-      "seek_immediate_care_if": [
-        "Anaphylaxis is suspected, breathing/swelling symptoms occur, dizziness/fainting occurs, or reaction rapidly worsens"
-      ],
-      "schedule_care_if": [
-        "Allergy symptoms are recurrent, severe, unclear, trigger-limited life, asthma-related, or require testing/immunotherapy planning"
-      ],
-      "self_care_allowed_if": "Trigger avoidance, saline rinse, allergen reduction, and appropriate OTC allergy meds may help mild known allergies without red flags.",
-      "do_not_ignore": "Allergies can become life-threatening when airway, circulation, or multiple body systems are involved.",
-      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure allergies."
-    }
-  },
-  {
-    "id": "wisdom-tooth-impacted",
-    "medical_safety": {
-      "critical_alerts": [
-        "Sudden, severe, or excruciating pain with no obvious cause",
-        "Pain that begins after a major physical injury or trauma",
-        "Pain accompanied by fever, chills, night sweats, or unexplained weight loss",
-        "Pain with new neurological deficits like weakness, numbness, or loss of coordination",
-        "Pain that steadily worsens despite rest, splinting, or gentle care",
-        "New pain in a patient with a personal history of cancer"
-      ],
-      "seek_immediate_care_if": [
-        "You experience sudden, unbearable pain or pain following a major injury",
-        "Your pain is accompanied by high fever, confusion, or a cold, pale limb",
-        "You experience sudden weakness, numbness, or loss of bowel or bladder control"
-      ],
-      "schedule_care_if": [
-        "Your pain is persistent, gradually worsening, or lasts longer than 2-3 weeks",
-        "You have pain with unexplained weight loss, night sweats, or a history of cancer",
-        "Your joint or muscle pain is accompanied by persistent morning stiffness or visible swelling"
-      ],
-      "self_care_allowed_if": "Gentle movement, thermal therapy (ice/heat), and rest are reasonable for managing mild, transient muscular strains or familiar joint stiffness.",
-      "do_not_ignore": "Chronic or severe pain should not be masked with analgesics without a professional diagnosis of the underlying physical cause.",
-      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease. Seek professional medical care for diagnosis, treatment, medication decisions, or urgent symptoms."
     }
   }
 ]

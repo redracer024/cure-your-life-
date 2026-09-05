@@ -823,294 +823,6 @@
     }
   },
   {
-    "id": "impotence",
-    "structuredContent": {
-      "version": 1,
-      "hardware": {
-        "hapticProfile": "Weak thready tap that fades into silence with long gaps.",
-        "hapticPattern": [
-          120,
-          2000,
-          4500,
-          120,
-          2000
-        ],
-        "uiBackgroundAccent": "#6B5B6B"
-      },
-      "hero": {
-        "primaryPattern": "ED may involve blood flow, cardiovascular health, diabetes, nerves, hormones, medications, sleep, alcohol/substances, mood, stress, relationship factors, or performance anxiety.",
-        "cascade": [
-          "Signal Starts",
-          "Blood Flow Needed",
-          "Pressure Interferes",
-          "Cause Check"
-        ],
-        "tags": [
-          "#ED",
-          "#blood flow",
-          "#presence"
-        ],
-        "safetyPreview": "Chest pain, shortness of breath, sudden ED, severe testicular pain, urinary changes, numbness, or cardiovascular symptoms need medical care."
-      },
-      "biologyPathway": [
-        {
-          "title": "Erection Signal",
-          "short": "Nerves and blood vessels coordinate.",
-          "detail": "An erection depends on nerve signaling, nitric-oxide blood-vessel relaxation, healthy blood flow, smooth muscle function, hormones, and arousal."
-        },
-        {
-          "title": "Vascular Check",
-          "short": "Blood flow matters.",
-          "detail": "ED can be an early clue to cardiovascular disease, diabetes, hypertension, vascular disease, or other circulation problems."
-        },
-        {
-          "title": "Hormone and Medication Check",
-          "short": "Testosterone, thyroid, prolactin, and meds can matter.",
-          "detail": "Low testosterone, thyroid problems, elevated prolactin, SSRIs, blood pressure meds, alcohol, substances, and other medications can contribute."
-        },
-        {
-          "title": "Performance Loop",
-          "short": "Anxiety blocks parasympathetic arousal.",
-          "detail": "Stress and performance pressure can activate the sympathetic nervous system, which is exactly the wrong committee for relaxed blood flow."
-        }
-      ],
-      "interpretations": {
-        "clinical": {
-          "label": "Strictly Medical",
-          "title": "ED Blood Flow, Nerve, Hormone & Stress Cascade",
-          "sections": [
-            {
-              "heading": "Stage 1 — ED Is a Symptom",
-              "body": [
-                "Erectile dysfunction is persistent difficulty getting or maintaining an erection sufficient for sex.",
-                "It can be vascular, neurologic, endocrine, medication-related, psychological, relationship-related, or mixed."
-              ]
-            },
-            {
-              "heading": "Stage 2 — Blood Flow and Cardiovascular Risk",
-              "body": [
-                "An erection is largely a vascular event requiring blood-vessel relaxation and adequate blood flow.",
-                "ED can sometimes be an early sign of diabetes, high blood pressure, atherosclerosis, or cardiovascular disease."
-              ]
-            },
-            {
-              "heading": "Stage 3 — Performance Pressure",
-              "body": [
-                "Anxiety and stress can push the body toward sympathetic activation, which is bad timing for erection physiology.",
-                "Trying harder often makes the system more threatened, because apparently the penis did not request a motivational speech."
-              ]
-            },
-            {
-              "heading": "Stage 4 — Care Check",
-              "body": [
-                "Seek medical review for new or persistent ED, sudden onset, low libido, urinary symptoms, pelvic pain, penile curvature, numbness, diabetes symptoms, or medication changes.",
-                "Get urgent care for chest pain, shortness of breath, severe testicular pain, or neurologic symptoms."
-              ]
-            }
-          ]
-        },
-        "witty": {
-          "label": "Comedic & Witty",
-          "title": "The Helium Tank and the Panicked Party Balloon",
-          "paragraphs": [
-            "Your erection system is a party balloon with a helium tank controlled by blood flow, nerves, hormones, mood, sleep, meds, and stress.",
-            "Cortisol and Adrenaline are panicked supervisors guarding the tank while yelling THIS BETTER GO WELL.",
-            "That is, naturally, the exact attitude that makes the party balloon reconsider its career.",
-            "Sometimes the tank is low from vascular disease, diabetes, testosterone issues, medication effects, alcohol, sleep apnea, or depression.",
-            "Sometimes the tank is fine but the room feels like a performance review with naked consequences.",
-            "The goal is not yelling at the balloon. It is checking the tank, lowering the pressure, and returning to presence."
-          ]
-        },
-        "brutal": {
-          "label": "Brutally Honest",
-          "title": "The Performance Pressure Reality Check",
-          "paragraphs": [
-            "You may have an erectile dysfunction problem. You may also have a performance-pressure pattern.",
-            "Medical first: ED can point to cardiovascular disease, diabetes, meds, hormones, nerves, depression, anxiety, sleep apnea, alcohol, or relationship stress.",
-            "Do not reduce it to confidence. Also do not ignore your arteries because your ego feels awkward.",
-            "Symbolically, ask where intimacy became a stage instead of a connection.",
-            "What makes you feel watched instead of wanted? Where are you trying to prove instead of feel?",
-            "Get the medical workup. Talk honestly. Take pressure off the performance.",
-            "Take pressure off the stage or keep asking a vascular system to perform under threat lighting. Your choice."
-          ]
-        }
-      },
-      "influenceLayers": [
-        {
-          "layer": 1,
-          "title": "Kidney Essence",
-          "tag": "Water Element",
-          "paragraphs": [
-            "In Chinese medicine, Kidney imagery is linked with sexual vitality, fear, and deep reserve.",
-            "Symbolically, ED can mirror depletion or fear around adequacy."
-          ]
-        },
-        {
-          "layer": 2,
-          "title": "Heart-Pelvis Connection",
-          "tag": "Presence",
-          "paragraphs": [
-            "Arousal needs safety, connection, and body presence.",
-            "Performance pressure splits attention away from sensation."
-          ]
-        },
-        {
-          "layer": 3,
-          "title": "Hidden Self",
-          "tag": "Vulnerability",
-          "paragraphs": [
-            "The hidden self avoids being seen when intimacy feels risky.",
-            "Healing is not proving. It is safe showing up."
-          ]
-        },
-        {
-          "layer": 4,
-          "title": "Threat Lighting",
-          "tag": "Sympathetic Block",
-          "paragraphs": [
-            "When the body thinks it is being evaluated, blood flow may not cooperate.",
-            "The body is many things. A stage prop is not one of them."
-          ]
-        },
-        {
-          "layer": 5,
-          "title": "Presence Over Performance",
-          "tag": "Reset Practice",
-          "paragraphs": [
-            "The reset is medical care, pressure reduction, communication, and nervous-system downshift.",
-            "Presence is not pass/fail."
-          ]
-        }
-      ],
-      "reset": {
-        "title": "Performance Ease & Presence Reset",
-        "modality": "Autonomic Downregulation",
-        "steps": [
-          "Sit upright with one hand on the lower belly and one on the chest.",
-          "Inhale through the nose for 4 seconds.",
-          "Exhale through the mouth for 8 seconds.",
-          "Whisper: I am safe. I am present. I do not have to perform.",
-          "Then choose one practical step: review meds, schedule care, talk to your partner, reduce alcohol, or check sleep."
-        ]
-      },
-      "naturalSupport": {
-        "title": "Supportive Care, Lifestyle, and Supplement Caution",
-        "disclaimer": "Supportive care is not a cure. ED can be an early cardiovascular, diabetes, medication, hormonal, neurologic, sleep, mental-health, or relationship signal. Supplements can interact with medications and are not automatically safe.",
-        "items": [
-          {
-            "label": "Medical review first",
-            "detail": "Ask about blood pressure, diabetes/A1c, cholesterol, cardiovascular risk, testosterone if indicated, thyroid/prolactin if indicated, sleep apnea, medications, alcohol/substances, and mood."
-          },
-          {
-            "label": "Exercise",
-            "detail": "Regular moderate activity supports blood flow, cardiovascular health, glucose control, mood, and erectile function."
-          },
-          {
-            "label": "Mediterranean-style diet",
-            "detail": "Fruits, vegetables, legumes, whole grains, fish, olive oil, nuts, and less ultra-processed food support vascular health."
-          },
-          {
-            "label": "Sleep",
-            "detail": "Poor sleep can worsen testosterone, stress hormones, mood, and sexual function."
-          },
-          {
-            "label": "Smoking and alcohol",
-            "detail": "Smoking damages blood vessels. Alcohol can impair erectile response and worsen sleep."
-          },
-          {
-            "label": "Panax ginseng",
-            "detail": "Some studies suggest possible benefit, but dosing, product quality, side effects, and interactions matter.",
-            "caution": "May cause insomnia, headaches, dizziness, or interact with medications. Ask a clinician first."
-          },
-          {
-            "label": "Saffron",
-            "detail": "Some small studies suggest possible sexual-function benefit, but evidence is limited and product quality varies.",
-            "caution": "Avoid high-dose experimentation without medical guidance."
-          },
-          {
-            "label": "L-arginine",
-            "detail": "May support nitric-oxide pathways in some people.",
-            "caution": "Can cause GI side effects and may interact with blood-pressure meds, nitrates, PDE5 inhibitors, or heart conditions. Do not stack casually with Viagra/Cialis."
-          },
-          {
-            "label": "Avoid yohimbe",
-            "detail": "Yohimbe can raise blood pressure, trigger fast or irregular heartbeat, anxiety, seizures, or serious cardiovascular problems.",
-            "caution": "Do not use without medical supervision."
-          },
-          {
-            "label": "Avoid mystery enhancement pills",
-            "detail": "Many so-called natural sexual-performance products have hidden drug-like ingredients or unsafe dosing.",
-            "caution": "Especially dangerous with heart disease, nitrates, blood-pressure medication, diabetes, or multiple meds."
-          }
-        ],
-        "avoid": [
-          "Do not ignore ED as purely psychological, especially with diabetes, high blood pressure, cholesterol, smoking, chest symptoms, or cardiovascular risk.",
-          "Do not use nitrates with PDE5 inhibitors like sildenafil/tadalafil.",
-          "Do not buy gas-station or online mystery ED pills.",
-          "Do not treat supplements as safer than prescriptions just because the bottle has a leaf on it. Leaves have committed crimes."
-        ]
-      },
-      "brutalActions": [
-        "Check cardiovascular and diabetes risk.",
-        "Review meds, alcohol, sleep, and testosterone if indicated.",
-        "Use lifestyle support before supplement roulette.",
-        "Avoid yohimbe and mystery boner pills like they owe you money."
-      ]
-    },
-    "tones": {
-      "clinical": {
-        "mechanism": "Erectile dysfunction is difficulty getting or maintaining an erection sufficient for sex. It can involve cardiovascular disease, diabetes, high blood pressure, vascular disease, nerve injury, low testosterone, thyroid or prolactin problems, depression, anxiety, relationship stress, medications, alcohol/substance use, sleep apnea, pelvic surgery, or Peyronie's disease.",
-        "protocol": [
-          "Seek medical review for new, persistent, sudden, or distressing ED.",
-          "Check cardiovascular/metabolic risk, diabetes, blood pressure, medications, hormones if indicated, sleep, mood, and relationship factors.",
-          "Seek urgent care for chest pain, shortness of breath, severe testicular pain, neurologic symptoms, or concerning urinary changes."
-        ],
-        "citations": [
-          "Educational reflection only; not a substitute for medical evaluation."
-        ]
-      },
-      "witty": {
-        "metaphorTitle": "The Helium Tank and the Panicked Party Balloon",
-        "metaphorText": "The balloon is not lazy. The helium system needs blood flow, nerves, hormones, safety, and fewer supervisors screaming.",
-        "wittyAdvice": "Check the tank and stop turning intimacy into a performance audit."
-      },
-      "brutal": {
-        "realityCheck": "You may have an erectile dysfunction problem. You may also have a performance-pressure pattern.",
-        "protocolTitle": "PRESENCE OVER PERFORMANCE",
-        "protocolSteps": [
-          "Check medical causes.",
-          "Review meds.",
-          "Reduce pressure.",
-          "Communicate.",
-          "Stop buying gas-station mystery tablets."
-        ]
-      }
-    },
-    "medical_safety": {
-      "critical_alerts": [
-        "Chest pain, shortness of breath, jaw/arm pain, sweating, or heart symptoms",
-        "Sudden ED with neurologic symptoms, numbness, weakness, or back/pelvic injury",
-        "Severe testicular pain, penile pain, trauma, curvature, or urinary changes",
-        "Diabetes symptoms, high blood pressure, vascular disease, or cardiovascular risk",
-        "Low libido, fatigue, infertility concerns, or hormone symptoms",
-        "Depression, severe anxiety, relationship coercion, or self-harm thoughts"
-      ],
-      "seek_immediate_care_if": [
-        "ED occurs with chest pain, shortness of breath, neurologic symptoms, severe testicular pain, trauma, or feeling medically unsafe",
-        "A prolonged painful erection occurs after medication or substance use",
-        "Mental-health distress includes self-harm thoughts"
-      ],
-      "schedule_care_if": [
-        "ED is new, persistent, sudden, or distressing",
-        "You have diabetes, blood pressure, cholesterol, medication, hormone, sleep, mood, or relationship concerns",
-        "You want safe treatment options"
-      ],
-      "self_care_allowed_if": "Stress reduction, communication, alcohol reduction, sleep support, exercise, and medical risk tracking may support ED without red flags.",
-      "do_not_ignore": "ED can be an early cardiovascular or metabolic warning sign. It is not always psychological.",
-      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
-    }
-  },
-  {
     "id": "menopause-problems",
     "structuredContent": {
       "version": 1,
@@ -1362,772 +1074,6 @@
       ],
       "self_care_allowed_if": "Cooling strategies, symptom tracking, sleep support, movement, and stress regulation may support mild symptoms while medical options are considered.",
       "do_not_ignore": "Menopause is natural, but severe symptoms and bleeding changes still need medical care.",
-      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
-    }
-  },
-  {
-    "id": "overweight",
-    "structuredContent": {
-      "version": 1,
-      "hardware": {
-        "hapticProfile": "Slow heavy thud followed by long hollow silence.",
-        "hapticPattern": [
-          2000,
-          4000,
-          2000,
-          4000
-        ],
-        "uiBackgroundAccent": "#6B5B4B"
-      },
-      "hero": {
-        "primaryPattern": "Weight concerns may involve genetics, environment, sleep, stress, meds, hormones, thyroid, PCOS, insulin resistance, pain, disability, mood, trauma, access, and energy balance.",
-        "cascade": [
-          "Load Builds",
-          "Metabolism Adapts",
-          "Risk Shifts",
-          "Support Plan"
-        ],
-        "tags": [
-          "#weight",
-          "#metabolic",
-          "#support"
-        ],
-        "safetyPreview": "Sudden weight gain, swelling, shortness of breath, chest pain, severe fatigue, pregnancy possibility, thyroid symptoms, or rapid unexplained change needs care."
-      },
-      "biologyPathway": [
-        {
-          "title": "Body Weight Regulation",
-          "short": "Weight is regulated by many systems.",
-          "detail": "Appetite, hormones, sleep, stress, medications, activity, pain, genetics, environment, and energy balance all interact."
-        },
-        {
-          "title": "Metabolic Health",
-          "short": "Risk markers matter.",
-          "detail": "Blood pressure, A1c/glucose, cholesterol, waist circumference, liver health, sleep apnea, and mobility can matter more than a single scale number."
-        },
-        {
-          "title": "Medication and Hormone Factors",
-          "short": "Some causes are medical.",
-          "detail": "Steroids, antidepressants, antipsychotics, insulin, hormonal changes, PCOS, thyroid disease, menopause, sleep apnea, and pain can contribute."
-        },
-        {
-          "title": "Shame Backfires",
-          "short": "Weight stigma worsens care.",
-          "detail": "Shame can increase avoidance, stress eating, isolation, and healthcare delay. Very bold strategy for making things worse."
-        }
-      ],
-      "interpretations": {
-        "clinical": {
-          "label": "Strictly Medical",
-          "title": "Weight Regulation & Metabolic Risk Context",
-          "sections": [
-            {
-              "heading": "Stage 1 — More Than BMI",
-              "body": [
-                "Overweight and obesity are health categories, but BMI is only a screening tool.",
-                "Body composition, waist circumference, metabolic labs, function, symptoms, and individual history matter."
-              ]
-            },
-            {
-              "heading": "Stage 2 — Causes and Contributors",
-              "body": [
-                "Weight can be influenced by genetics, environment, food access, sleep, stress, medications, hormones, thyroid disease, PCOS, insulin resistance, pain, disability, trauma, mood, and energy balance.",
-                "So yes, it is complex. No, that does not mean hopeless."
-              ]
-            },
-            {
-              "heading": "Stage 3 — Health-Focused Plan",
-              "body": [
-                "Care can include nutrition, movement, sleep, mental health, medication review, labs, treatment for conditions, anti-obesity medications, or surgery when appropriate.",
-                "The goal is health, function, and sustainable change, not punishment cosplay."
-              ]
-            },
-            {
-              "heading": "Stage 4 — Safety Check",
-              "body": [
-                "Sudden weight gain, swelling, shortness of breath, chest pain, severe fatigue, rapid unexplained change, pregnancy possibility, or thyroid symptoms needs medical evaluation.",
-                "A scale can be boring. Sudden fluid gain can be serious."
-              ]
-            }
-          ]
-        },
-        "witty": {
-          "label": "Comedic & Witty",
-          "title": "The Overstuffed House",
-          "paragraphs": [
-            "Your body is a house that has accumulated boxes for years.",
-            "Some boxes are genetics. Some are meds. Some are stress. Some are sleep debt. Some are pain. Some are food patterns. Some are emotional junk mail from 2009.",
-            "The closets are full and the attic is rude.",
-            "The answer is not burning the house down. The answer is sorting boxes with medical help, realistic routines, and less shame from people who think metabolism is a motivational quote.",
-            "One box at a time leaves the house.",
-            "The house deserves maintenance, not contempt."
-          ]
-        },
-        "brutal": {
-          "label": "Brutally Honest",
-          "title": "The Load Reality Check",
-          "paragraphs": [
-            "You may have a weight concern. You may also have an accumulation-and-load pattern.",
-            "Medical first: weight is affected by biology, environment, meds, sleep, stress, hormones, access, pain, mental health, and energy balance.",
-            "Symbolically, ask what you are carrying.",
-            "What obligation, grief, fear, habit, injury, medication, or survival pattern added boxes to the house?",
-            "Shame is useless. Avoidance is expensive. A plan beats self-hatred every time.",
-            "Check the medical causes. Build sustainable routines. Remove one box.",
-            "Clean one room of the house or keep renting storage units for things you never wanted. Your choice."
-          ]
-        }
-      },
-      "influenceLayers": [
-        {
-          "layer": 1,
-          "title": "Spleen Dampness",
-          "tag": "Earth Element",
-          "paragraphs": [
-            "In Chinese medicine imagery, dampness can symbolize heaviness, accumulation, and difficulty transforming input.",
-            "Medically, weight is still biology, environment, and energy regulation."
-          ]
-        },
-        {
-          "layer": 2,
-          "title": "Liver Stagnation",
-          "tag": "Blocked Flow",
-          "paragraphs": [
-            "The Liver image relates to movement and frustration.",
-            "When life feels stuck, the body may feel stuck too."
-          ]
-        },
-        {
-          "layer": 3,
-          "title": "The Accumulator",
-          "tag": "Shadow Storage",
-          "paragraphs": [
-            "The Accumulator keeps boxes because letting go once felt dangerous.",
-            "The Releaser learns what can leave safely."
-          ]
-        },
-        {
-          "layer": 4,
-          "title": "Protective Buffer",
-          "tag": "Armor/Insulation",
-          "paragraphs": [
-            "Weight can symbolically feel like protection or insulation.",
-            "That meaning may be useful, but it is not the only cause."
-          ]
-        },
-        {
-          "layer": 5,
-          "title": "One Box Leaves",
-          "tag": "Reset Practice",
-          "paragraphs": [
-            "The reset is realistic support, medical review, and one sustainable change.",
-            "No crash diets. No shame rituals. Humanity has suffered enough."
-          ]
-        }
-      ],
-      "reset": {
-        "title": "One Box Out & Metabolic Support Reset",
-        "modality": "Autonomic Downregulation",
-        "steps": [
-          "Sit upright with one hand on the belly and one on the heart.",
-          "Inhale through the nose for 4 seconds.",
-          "Exhale through the mouth for 8 seconds.",
-          "Whisper: I can release one thing at a time. I support my body without punishment.",
-          "Then choose one practical step: walk, hydrate, plan protein/fiber, schedule labs, review meds, or sleep earlier."
-        ]
-      },
-      "naturalSupport": {
-        "title": "Supportive Care",
-        "disclaimer": "Supportive care is not a cure. Weight concerns may need medical evaluation, nutrition support, medication review, mental-health care, or obesity medicine support.",
-        "items": [
-          {
-            "label": "Medical review",
-            "detail": "Review A1c/glucose, lipids, blood pressure, thyroid if indicated, medications, sleep apnea, PCOS/hormones, pain, and mood."
-          },
-          {
-            "label": "Food structure",
-            "detail": "Protein, fiber, whole foods, hydration, and regular meals may support appetite and metabolic health."
-          },
-          {
-            "label": "Movement",
-            "detail": "Start with realistic movement that respects pain, disability, and fitness level."
-          },
-          {
-            "label": "Support options",
-            "detail": "Ask about anti-obesity medications, bariatric surgery, or specialist care when appropriate."
-          }
-        ],
-        "avoid": [
-          "Do not ignore sudden weight gain, swelling, shortness of breath, chest pain, rapid unexplained change, or severe fatigue.",
-          "Do not use starvation, purging, laxatives, dangerous supplements, or shame as a weight plan."
-        ]
-      },
-      "brutalActions": [
-        "Check labs and meds.",
-        "Pick one sustainable routine.",
-        "Stop letting shame be the project manager.",
-        "Remove one box from the house today."
-      ]
-    },
-    "tones": {
-      "clinical": {
-        "mechanism": "Overweight and obesity involve excess body fat or weight that may affect health, but BMI is only a screening tool. Causes and contributors can include genetics, environment, food access, sleep, stress, medications, hormones, thyroid disease, PCOS, insulin resistance, pain, disability, mental health, trauma, socioeconomic factors, and energy balance.",
-        "protocol": [
-          "Review BMI limitations, waist circumference, labs, blood pressure, sleep, meds, pain, hormones, mood, and function.",
-          "Build a health-focused plan with nutrition, movement, sleep, stress support, medication review, and treatment options when appropriate.",
-          "Seek care for sudden weight gain, swelling, shortness of breath, chest pain, rapid unexplained change, or severe fatigue."
-        ],
-        "citations": [
-          "Educational reflection only; not a substitute for medical evaluation or obesity medicine care."
-        ]
-      },
-      "witty": {
-        "metaphorTitle": "The Overstuffed House",
-        "metaphorText": "The house is full of boxes: biology, meds, stress, sleep debt, pain, food patterns, and emotional junk mail.",
-        "wittyAdvice": "Sort one box at a time. Do not burn the house down."
-      },
-      "brutal": {
-        "realityCheck": "You may have a weight concern. You may also have an accumulation-and-load pattern.",
-        "protocolTitle": "ONE BOX OUT",
-        "protocolSteps": [
-          "Check labs.",
-          "Review meds.",
-          "Structure food.",
-          "Move realistically.",
-          "Release one load."
-        ]
-      }
-    },
-    "medical_safety": {
-      "critical_alerts": [
-        "Sudden rapid weight gain, swelling in legs/abdomen, shortness of breath, or chest pain",
-        "Severe fatigue, unexplained weight change, weakness, or thyroid symptoms",
-        "Pregnancy possibility, fluid retention, kidney/liver/heart symptoms, or medication-related gain",
-        "Excessive thirst, frequent urination, blurry vision, or diabetes symptoms",
-        "Eating disorder symptoms: bingeing, purging, restriction, laxative misuse, or severe distress",
-        "Severe depression, self-harm thoughts, or body-image crisis"
-      ],
-      "seek_immediate_care_if": [
-        "Weight gain occurs with shortness of breath, chest pain, severe swelling, fainting, confusion, or feeling medically unsafe",
-        "Eating behaviors or body distress involve self-harm, purging, or medical instability",
-        "Rapid unexplained gain suggests fluid retention or serious illness"
-      ],
-      "schedule_care_if": [
-        "Weight is affecting health, mobility, sleep, blood pressure, glucose, lipids, pain, or mood",
-        "You need medication review, lab screening, sleep apnea evaluation, PCOS/hormone review, or obesity treatment options",
-        "Weight change is rapid, unexplained, or distressing"
-      ],
-      "self_care_allowed_if": "Sustainable food structure, movement, sleep support, stress reduction, and tracking can support weight health without red flags.",
-      "do_not_ignore": "Weight is complex and not a moral failure. Sudden changes and metabolic symptoms need medical evaluation.",
-      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
-    }
-  },
-  {
-    "id": "sterility",
-    "structuredContent": {
-      "version": 1,
-      "hardware": {
-        "hapticProfile": "Hollow aching pulse followed by long silence and waiting.",
-        "hapticPattern": [
-          3000,
-          2000,
-          3000,
-          2000
-        ],
-        "uiBackgroundAccent": "#6B5B7B"
-      },
-      "hero": {
-        "primaryPattern": "Infertility may involve ovulation, sperm, tubes, uterus, endometriosis, PCOS, age, hormones, thyroid/prolactin, genetics, medications, lifestyle, or unexplained factors.",
-        "cascade": [
-          "Trying Continues",
-          "Cause Search",
-          "Grief Rises",
-          "Options Open"
-        ],
-        "tags": [
-          "#infertility",
-          "#fertility",
-          "#creation"
-        ],
-        "safetyPreview": "Pelvic pain, abnormal bleeding, irregular/absent periods, recurrent miscarriage, testicular pain/swelling, severe distress, or age-related timing needs care."
-      },
-      "biologyPathway": [
-        {
-          "title": "Timed Conception",
-          "short": "Conception depends on multiple systems.",
-          "detail": "Ovulation, sperm production and movement, fallopian tubes, uterus, hormones, timing, and embryo development all have to cooperate. A rude number of departments, frankly."
-        },
-        {
-          "title": "Female Factors",
-          "short": "Ovulation, tubes, uterus, and endometriosis can matter.",
-          "detail": "PCOS, diminished ovarian reserve, thyroid/prolactin issues, tubal damage, endometriosis, fibroids, polyps, uterine abnormalities, and age can contribute."
-        },
-        {
-          "title": "Male Factors",
-          "short": "Semen analysis matters.",
-          "detail": "Low sperm count, motility issues, morphology issues, varicocele, hormones, infections, medications, heat, and lifestyle factors can contribute."
-        },
-        {
-          "title": "Unexplained and Treatable Paths",
-          "short": "No clear cause does not mean no options.",
-          "detail": "Unexplained infertility exists, and options can include timing, medications, IUI, IVF, donor options, surgery, or adoption/surrogacy depending on goals and resources."
-        }
-      ],
-      "interpretations": {
-        "clinical": {
-          "label": "Strictly Medical",
-          "title": "Fertility Evaluation & Reproductive Pathways",
-          "sections": [
-            {
-              "heading": "Stage 1 — Infertility Is Medical, Not Moral",
-              "body": [
-                "Infertility is difficulty conceiving after regular unprotected sex over a defined period, often 12 months or sooner with age/history factors.",
-                "It can involve either partner, both partners, or no clearly identifiable cause."
-              ]
-            },
-            {
-              "heading": "Stage 2 — Causes to Check",
-              "body": [
-                "Ovulation, sperm, tubes, uterus, endometriosis, PCOS, age, hormones, thyroid/prolactin, medications, infections, and lifestyle can all matter.",
-                "Testing both partners is basic sanity, not blame distribution."
-              ]
-            },
-            {
-              "heading": "Stage 3 — Grief and Pressure",
-              "body": [
-                "Infertility can bring grief, shame, anger, jealousy, exhaustion, and relationship strain.",
-                "Emotional support is not optional decoration. This process can chew people up if they try to white-knuckle it."
-              ]
-            },
-            {
-              "heading": "Stage 4 — Options",
-              "body": [
-                "Options can include ovulation tracking, medications, surgery, IUI, IVF, donor gametes, gestational carrier, adoption, or choosing a child-free path.",
-                "The right path depends on diagnosis, values, money, health, age, and emotional capacity."
-              ]
-            }
-          ]
-        },
-        "witty": {
-          "label": "Comedic & Witty",
-          "title": "The Garden That Needs Soil Testing",
-          "paragraphs": [
-            "Your reproductive system is a garden, and the garden is not blooming on command.",
-            "Maybe the timing is off. Maybe the soil needs testing. Maybe the pollen is weak. Maybe the irrigation system is blocked. Maybe the weather is a clown show.",
-            "The worst gardener in the world says JUST RELAX. That gardener should be escorted off the property.",
-            "The garden needs evaluation: ovulation, sperm, tubes, uterus, hormones, history, and sometimes a specialist with expensive acronyms.",
-            "Longing is real. Grief is real. So is medical testing.",
-            "Do not let the empty garden become proof you are empty."
-          ]
-        },
-        "brutal": {
-          "label": "Brutally Honest",
-          "title": "The Waiting Room Reality Check",
-          "paragraphs": [
-            "You may have an infertility concern. You may also have a blocked-creation pattern.",
-            "Medical first: infertility can be female factor, male factor, combined, or unexplained. It needs evaluation, not self-blame.",
-            "Symbolically, ask what creation means to you beyond one outcome.",
-            "What are you grieving? What future are you terrified to lose? What identity did you tie to becoming a parent?",
-            "This is not your punishment. This is not proof you are defective. This is a hard road that deserves answers, support, and options.",
-            "Restore the garden carefully or keep blaming the soil without testing it. Your choice."
-          ]
-        }
-      },
-      "influenceLayers": [
-        {
-          "layer": 1,
-          "title": "Kidney Jing and Creation",
-          "tag": "Water Element",
-          "paragraphs": [
-            "In Chinese medicine, Kidney Jing symbolizes reproductive reserve and deep life potential.",
-            "Infertility can symbolically mirror depletion, timing, blocked flow, or longing."
-          ]
-        },
-        {
-          "layer": 2,
-          "title": "Chong and Ren Vessels",
-          "tag": "Conception Pathways",
-          "paragraphs": [
-            "The Chong and Ren images describe reproductive nourishment and flow.",
-            "Medically, actual anatomy and hormones still get the final vote. Annoying but fair."
-          ]
-        },
-        {
-          "layer": 3,
-          "title": "Unborn Self",
-          "tag": "Creator Archetype",
-          "paragraphs": [
-            "The Unborn Self represents what wants to come into life.",
-            "That may be a child, a project, a new identity, or a grief that needs naming."
-          ]
-        },
-        {
-          "layer": 4,
-          "title": "Empty Garden",
-          "tag": "Longing",
-          "paragraphs": [
-            "The garden image holds longing without turning it into blame.",
-            "A quiet garden is not a worthless garden."
-          ]
-        },
-        {
-          "layer": 5,
-          "title": "Creation Support",
-          "tag": "Reset Practice",
-          "paragraphs": [
-            "The reset is medical evaluation, grief support, and widening the definition of creation.",
-            "Testing first. Shame never."
-          ]
-        }
-      ],
-      "reset": {
-        "title": "Garden Grounding & Creation Support",
-        "modality": "Autonomic Downregulation",
-        "steps": [
-          "Sit upright with one hand on the lower belly and one on the heart.",
-          "Inhale through the nose for 4 seconds.",
-          "Exhale through the mouth for 8 seconds.",
-          "Whisper: I am not a failure. I can seek answers. I can still create meaning.",
-          "Then choose one practical step: track cycles, schedule evaluation, ask for semen analysis, seek counseling, or write down options."
-        ]
-      },
-      "naturalSupport": {
-        "title": "Supportive Care",
-        "disclaimer": "Supportive care is not a cure. Infertility requires medical evaluation and can involve either partner or both.",
-        "items": [
-          {
-            "label": "Evaluate both partners",
-            "detail": "Semen analysis, ovulation/cycle review, ovarian reserve, hormones, tubes, uterus, and history may all matter."
-          },
-          {
-            "label": "Timing matters",
-            "detail": "Seek evaluation after the appropriate trying window, sooner with age over 35 or concerning history."
-          },
-          {
-            "label": "Mental health support",
-            "detail": "Fertility grief is real and deserves support from someone who understands it."
-          },
-          {
-            "label": "Options map",
-            "detail": "Discuss medications, IUI, IVF, donor options, surgery, adoption, surrogacy, or child-free paths depending on goals."
-          }
-        ],
-        "avoid": [
-          "Do not blame only one partner without testing.",
-          "Do not ignore pelvic pain, abnormal bleeding, irregular/absent periods, recurrent miscarriage, testicular symptoms, or severe distress."
-        ]
-      },
-      "brutalActions": [
-        "Get both partners evaluated.",
-        "Stop letting shame replace semen analysis and labs.",
-        "Name the grief without making it identity.",
-        "List every path to creation, not just the one that hurts most today."
-      ]
-    },
-    "tones": {
-      "clinical": {
-        "mechanism": "Infertility is difficulty conceiving after a period of regular unprotected sex, commonly 12 months or 6 months when age or medical history warrants earlier evaluation. Causes can involve ovulation, sperm, tubes, uterus, endometriosis, age, hormones, PCOS, thyroid/prolactin issues, genetics, medications, lifestyle, or unexplained factors.",
-        "protocol": [
-          "Evaluate both partners and review ovulation, semen, tubes, uterus, hormones, age, medications, and history.",
-          "Seek care sooner with age over 35, irregular periods, pelvic pain, endometriosis, recurrent miscarriage, known male factor, or prior reproductive issues.",
-          "Use mental-health support for grief, stress, relationship strain, or distress."
-        ],
-        "citations": [
-          "Educational reflection only; not a substitute for fertility care."
-        ]
-      },
-      "witty": {
-        "metaphorTitle": "The Garden That Needs Soil Testing",
-        "metaphorText": "The garden is not blooming on command, so test the soil, pollen, timing, and plumbing before blaming the moon.",
-        "wittyAdvice": "No shame. More testing. Fewer people saying just relax."
-      },
-      "brutal": {
-        "realityCheck": "You may have an infertility concern. You may also have a blocked-creation pattern.",
-        "protocolTitle": "TEST THE GARDEN",
-        "protocolSteps": [
-          "Evaluate both partners.",
-          "Check cycles.",
-          "Check semen.",
-          "Seek support.",
-          "Map real options."
-        ]
-      }
-    },
-    "medical_safety": {
-      "critical_alerts": [
-        "Severe pelvic pain, abnormal bleeding, or sudden menstrual cycle changes",
-        "Irregular or absent periods, very painful periods, or suspected endometriosis/PCOS",
-        "Recurrent miscarriage or pregnancy loss",
-        "Testicular pain, swelling, lumps, erectile/ejaculation issues, or known male factor concerns",
-        "Age over 35 with 6 months trying, age over 40, or known reproductive history risks",
-        "Severe depression, anxiety, relationship crisis, or self-harm thoughts"
-      ],
-      "seek_immediate_care_if": [
-        "There is severe pelvic/testicular pain, heavy bleeding, pregnancy emergency concern, or feeling unsafe",
-        "Mental-health distress includes self-harm thoughts",
-        "A serious infection or acute reproductive emergency is suspected"
-      ],
-      "schedule_care_if": [
-        "Trying has continued for 12 months, or 6 months if age/history warrants earlier evaluation",
-        "Cycles are irregular/absent, pelvic pain is present, miscarriages occurred, or male factor symptoms exist",
-        "You need fertility options, testing, or emotional support"
-      ],
-      "self_care_allowed_if": "Cycle tracking, healthy routines, avoiding smoking/excess alcohol, medication review, and stress support may help while evaluation is pursued.",
-      "do_not_ignore": "Infertility can involve either partner or both. It is not a personal failure or purely emotional blockage.",
-      "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
-    }
-  },
-  {
-    "id": "thrush",
-    "structuredContent": {
-      "version": 1,
-      "hardware": {
-        "hapticProfile": "Thick pasty scraping vibration followed by sharp itch and pause.",
-        "hapticPattern": [
-          2000,
-          120,
-          300,
-          3000
-        ],
-        "uiBackgroundAccent": "#E8D5C4"
-      },
-      "hero": {
-        "primaryPattern": "Thrush/candidiasis may involve Candida overgrowth, antibiotics, diabetes, immune suppression, steroid inhalers, dentures, dry mouth, hormones, pregnancy, or local irritation.",
-        "cascade": [
-          "Terrain Shifts",
-          "Candida Overgrows",
-          "Coating/Itch Starts",
-          "Cause Review"
-        ],
-        "tags": [
-          "#thrush",
-          "#candida",
-          "#overgrowth"
-        ],
-        "safetyPreview": "Fever, severe pain, trouble swallowing, immune suppression, diabetes symptoms, recurrent thrush, pregnancy, or worsening after treatment needs medical care."
-      },
-      "biologyPathway": [
-        {
-          "title": "Candida Balance",
-          "short": "Candida can live normally in small amounts.",
-          "detail": "Candida may exist in the mouth, gut, skin, or vagina without causing disease until conditions allow overgrowth."
-        },
-        {
-          "title": "Overgrowth Triggers",
-          "short": "Antibiotics, diabetes, immune suppression, and steroids matter.",
-          "detail": "Broad-spectrum antibiotics, high blood sugar, immune suppression, steroid inhalers, dry mouth, dentures, pregnancy, hormones, and irritation can increase risk."
-        },
-        {
-          "title": "Symptoms by Location",
-          "short": "Mouth and vaginal symptoms differ.",
-          "detail": "Oral thrush can cause white patches, soreness, cracking, or swallowing pain. Vaginal yeast can cause itching, burning, redness, soreness, and thick white discharge."
-        },
-        {
-          "title": "Recurrent Screen",
-          "short": "Repeated thrush needs cause review.",
-          "detail": "Recurrent or severe candidiasis can point to diabetes, immune suppression, medication effects, or resistant/recurrent infection."
-        }
-      ],
-      "interpretations": {
-        "clinical": {
-          "label": "Strictly Medical",
-          "title": "Candida Overgrowth & Terrain Shift",
-          "sections": [
-            {
-              "heading": "Stage 1 — Candida Overgrowth",
-              "body": [
-                "Thrush/candidiasis is Candida yeast overgrowth.",
-                "It can affect the mouth, vagina, skin folds, nipples, or other body areas."
-              ]
-            },
-            {
-              "heading": "Stage 2 — Why It Happens",
-              "body": [
-                "Risk factors can include antibiotics, diabetes/high blood sugar, immune suppression, steroid inhalers, dentures, dry mouth, pregnancy/hormonal changes, irritation, and some medications.",
-                "Candida is opportunistic, because apparently even yeast understands timing."
-              ]
-            },
-            {
-              "heading": "Stage 3 — Treatment Depends on Location",
-              "body": [
-                "Treatment may involve antifungal medication and correcting contributing factors.",
-                "Rinse after steroid inhalers, manage blood sugar, address denture fit/hygiene, and finish prescribed treatment when directed."
-              ]
-            },
-            {
-              "heading": "Stage 4 — Safety Check",
-              "body": [
-                "Seek care for fever, severe pain, trouble swallowing, immune suppression, diabetes symptoms, recurrent thrush, pregnancy, spreading rash, or worsening after treatment.",
-                "Repeated yeast problems deserve investigation, not another round of shrugging."
-              ]
-            }
-          ]
-        },
-        "witty": {
-          "label": "Comedic & Witty",
-          "title": "The Overgrown Candida Garden",
-          "paragraphs": [
-            "Your body is a garden where Candida was supposed to be a minor background plant.",
-            "Then antibiotics, blood sugar, dry mouth, hormones, steroids, dentures, immune stress, or irritation opened the gate.",
-            "Now the weeds have a newsletter and a parking permit.",
-            "The flowers are still there. The terrain just needs help.",
-            "That help may be antifungal treatment, blood sugar review, inhaler rinsing, denture care, trigger tracking, or medical evaluation.",
-            "Do not hand the garden to miracle detox people. They will sell you compost and fear."
-          ]
-        },
-        "brutal": {
-          "label": "Brutally Honest",
-          "title": "The Overgrowth Reality Check",
-          "paragraphs": [
-            "You may have a thrush problem. You may also have an overgrowth-and-depletion pattern.",
-            "Medical first: Candida overgrowth can point to antibiotics, diabetes, immune suppression, steroid inhalers, dry mouth, dentures, hormones, pregnancy, or irritation.",
-            "Symbolically, ask what small thing has been allowed to take over.",
-            "What obligation, habit, sweetness, resentment, or exhaustion has spread past its proper place?",
-            "Treat the yeast. Check the terrain. Restore balance without declaring war on your body.",
-            "Restore the terrain or keep letting the yeast open a garden center. Your choice."
-          ]
-        }
-      },
-      "influenceLayers": [
-        {
-          "layer": 1,
-          "title": "Spleen Damp-Heat",
-          "tag": "Overgrowth Terrain",
-          "paragraphs": [
-            "In Chinese medicine language, damp-heat can symbolize sticky overgrowth and irritation.",
-            "Medically, Candida still requires appropriate diagnosis and treatment."
-          ]
-        },
-        {
-          "layer": 2,
-          "title": "Balanced Self",
-          "tag": "Equilibrium",
-          "paragraphs": [
-            "The Balanced Self knows when enough is enough.",
-            "Overgrowth asks where proportion has been lost."
-          ]
-        },
-        {
-          "layer": 3,
-          "title": "Garden Terrain",
-          "tag": "Microbiome",
-          "paragraphs": [
-            "The garden image focuses on terrain, not blame.",
-            "You are not dirty. The ecosystem needs adjustment."
-          ]
-        },
-        {
-          "layer": 4,
-          "title": "Sweetness and Yeast",
-          "tag": "Fuel",
-          "paragraphs": [
-            "High blood sugar can support yeast growth.",
-            "Symbolically, sweetness without balance can feed what should stay small."
-          ]
-        },
-        {
-          "layer": 5,
-          "title": "Restore Balance",
-          "tag": "Reset Practice",
-          "paragraphs": [
-            "The reset is antifungal care, risk-factor review, and reducing what feeds recurrence.",
-            "Weeds get pulled. Soil gets repaired."
-          ]
-        }
-      ],
-      "reset": {
-        "title": "Candida Terrain & Balance Reset",
-        "modality": "Autonomic Downregulation",
-        "steps": [
-          "Sit upright with one hand on the lower belly and one on the upper chest.",
-          "Inhale through the nose for 4 seconds.",
-          "Exhale through the mouth for 8 seconds.",
-          "Whisper: I restore balance. I release what has grown beyond what is needed.",
-          "Then choose one practical action: take prescribed antifungal, rinse after inhaler use, review blood sugar, clean dentures, or schedule care for recurrence."
-        ]
-      },
-      "naturalSupport": {
-        "title": "Supportive Care",
-        "disclaimer": "Supportive care is not a cure. Thrush/candidiasis may need antifungal treatment and evaluation for underlying causes.",
-        "items": [
-          {
-            "label": "Treat appropriately",
-            "detail": "Use antifungal treatment as directed for the location and severity."
-          },
-          {
-            "label": "Review risk factors",
-            "detail": "Antibiotics, diabetes, steroid inhalers, dentures, dry mouth, pregnancy, hormones, and immune status may matter."
-          },
-          {
-            "label": "Rinse after inhalers",
-            "detail": "Rinsing the mouth after inhaled steroids can reduce oral thrush risk."
-          },
-          {
-            "label": "Check recurrence",
-            "detail": "Recurrent thrush deserves evaluation for diabetes, immune suppression, medication effects, or resistant infection."
-          }
-        ],
-        "avoid": [
-          "Do not ignore trouble swallowing, fever, severe pain, immune suppression, diabetes symptoms, pregnancy, spreading rash, or recurrent symptoms.",
-          "Do not treat every genital symptom as yeast without testing."
-        ]
-      },
-      "brutalActions": [
-        "Treat the yeast correctly.",
-        "Check blood sugar if symptoms recur.",
-        "Rinse after steroid inhalers.",
-        "Pull one overgrown obligation out by the roots."
-      ]
-    },
-    "tones": {
-      "clinical": {
-        "mechanism": "Thrush/candidiasis is Candida yeast overgrowth that can affect the mouth, vagina, skin folds, nipples, or other areas. Risk factors include antibiotics, diabetes/high blood sugar, immune suppression, steroid inhalers, dentures, dry mouth, pregnancy/hormonal changes, irritation, and some medications.",
-        "protocol": [
-          "Treat with appropriate antifungal medication when diagnosed.",
-          "Review diabetes, immune status, antibiotics, steroid inhalers, dentures, dry mouth, hormones, pregnancy, and recurrence.",
-          "Seek care for severe pain, trouble swallowing, fever, immune suppression, recurrent thrush, or worsening after treatment."
-        ],
-        "citations": [
-          "Educational reflection only; not a substitute for medical care."
-        ]
-      },
-      "witty": {
-        "metaphorTitle": "The Overgrown Candida Garden",
-        "metaphorText": "Candida stopped being a background plant and started opening franchises.",
-        "wittyAdvice": "Treat the yeast, fix the terrain, and do not buy fear-compost from detox goblins."
-      },
-      "brutal": {
-        "realityCheck": "You may have a thrush problem. You may also have an overgrowth-and-depletion pattern.",
-        "protocolTitle": "RESTORE THE TERRAIN",
-        "protocolSteps": [
-          "Treat correctly.",
-          "Check recurrence.",
-          "Review diabetes risk.",
-          "Reduce triggers.",
-          "Restore balance."
-        ]
-      }
-    },
-    "medical_safety": {
-      "critical_alerts": [
-        "Trouble swallowing, chest pain with swallowing, dehydration, or inability to eat/drink",
-        "Fever, severe pain, spreading rash, or feeling very ill",
-        "Immune suppression, chemotherapy, transplant meds, HIV concern, or uncontrolled diabetes",
-        "Recurrent thrush, frequent yeast infections, or symptoms not improving after treatment",
-        "Pregnancy with symptoms or uncertainty about treatment safety",
-        "Genital sores, pelvic pain, foul odor, green/yellow discharge, or STI concern"
-      ],
-      "seek_immediate_care_if": [
-        "There is trouble swallowing, severe illness, dehydration, fever, or immune suppression with worsening symptoms",
-        "Symptoms are severe, spreading, or paired with serious infection signs",
-        "You feel medically unsafe"
-      ],
-      "schedule_care_if": [
-        "Thrush is recurrent, persistent, severe, or diagnosis is uncertain",
-        "Diabetes, immune suppression, steroid inhaler use, dentures, dry mouth, pregnancy, or antibiotics may be involved",
-        "Genital symptoms could be BV, STI, irritation, or something other than yeast"
-      ],
-      "self_care_allowed_if": "Risk-factor tracking and following prescribed antifungal treatment may support known uncomplicated thrush.",
-      "do_not_ignore": "Recurrent thrush can signal diabetes, immune suppression, medication effects, or another underlying issue.",
       "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
     }
   },
@@ -2393,260 +1339,343 @@
     }
   },
   {
-    "id": "vaginitis",
+    "id": "weight-body-fat-distribution",
     "structuredContent": {
       "version": 1,
+      "locationSections": {
+        "overview": "Body-fat distribution is shaped by genetics, sex hormones, age, muscle mass, total body fat, visceral versus subcutaneous fat, insulin resistance, medications, sleep, stress, menopause or pregnancy history, activity, pain, disability, and underlying medical conditions. Where fat is stored is not a moral scorecard and is not something a person chooses deliberately. Central (abdominal) distribution is more strongly tied to cardiovascular and diabetes risk than lower-body patterns, but all patterns reflect biology and context. Spot reduction does not work; fat loss follows biology, not intention or willpower.",
+        "sections": [
+          {
+            "key": "belly",
+            "label": "Belly",
+            "medicalConsiderations": [
+              "Abdominal fat includes subcutaneous fat (under the skin) and visceral fat (deeper, around the organs); the two behave differently metabolically.",
+              "Higher visceral fat is the pattern most strongly linked to cardiovascular disease, type 2 diabetes, insulin resistance, and metabolic syndrome risk.",
+              "Central distribution rises with age, male-pattern hormone profiles, menopause, excess total body fat, insulin resistance, some medications, and certain medical conditions.",
+              "Waist circumference and waist-to-hip ratio add risk information beyond BMI; a clinician can review these alongside glucose, lipids, and blood pressure.",
+              "Sudden central weight gain with swelling, shortness of breath, or rapid change needs medical evaluation for fluid retention or illness."
+            ],
+            "symbolicThemes": [
+              "The belly as a central protective zone: core, buffering, and containment.",
+              "Carrying metabolic and emotional load close to the center of the body.",
+              "Protection and armor around the most vulnerable middle."
+            ],
+            "reflectionPrompts": [
+              "What feels like it needs a protective buffer near my center?",
+              "Where in my life is load accumulating rather than moving through?",
+              "What would it mean to feel safely held without bracing?"
+            ]
+          },
+          {
+            "key": "hips",
+            "label": "Hips",
+            "medicalConsiderations": [
+              "Lower-body fat on the hips and thighs is strongly influenced by genetics and sex hormones (notably estrogen), often more pronounced before menopause.",
+              "Pregnancy and menopause are key hormonal transitions that shift where fat is stored.",
+              "Lower-body distribution is generally less metabolically harmful than central distribution, but still reflects hormonal and structural factors.",
+              "Hip and glute development supports posture, gait, and load transfer; muscle and fat here are part of the body's foundation.",
+              "Sudden shape change, swelling, or pain should still be reviewed medically."
+            ],
+            "symbolicThemes": [
+              "The hips as foundation and support: grounding, stability, and responsibility.",
+              "Carrying the structural weight of life and others.",
+              "Holding the base that everything else rests upon."
+            ],
+            "reflectionPrompts": [
+              "What am I holding up as a foundation for others?",
+              "Where does responsibility feel heavier than it should?",
+              "What would steady support beneath me feel like?"
+            ]
+          },
+          {
+            "key": "thighs",
+            "label": "Thighs",
+            "medicalConsiderations": [
+              "Thigh fat distribution is influenced by genetics, sex hormones, activity level, and total body fat.",
+              "Thigh and gluteal muscle support walking, climbing, and forward movement; strength here matters for function.",
+              "Like hips, lower-body thigh fat is generally less metabolically risky than central fat but still reflects hormonal and activity context.",
+              "Activity and strength training build function locally even though fat loss is not site-specific.",
+              "Swelling, pain, or sudden change in one or both thighs needs medical review."
+            ],
+            "symbolicThemes": [
+              "The thighs as forward movement and momentum: carrying the body ahead.",
+              "Carrying-forward of responsibilities, history, and momentum.",
+              "The part of the body that literally moves life forward."
+            ],
+            "reflectionPrompts": [
+              "What am I carrying forward that I could set down?",
+              "Where has momentum stalled or become a heavy haul?",
+              "What would it feel like to move without the extra freight?"
+            ]
+          },
+          {
+            "key": "arms",
+            "label": "Arms",
+            "medicalConsiderations": [
+              "Arm shape reflects total body fat, muscle mass, and muscle loss (sarcopenia) as much as fat alone.",
+              "Low muscle mass can matter for metabolism and function even when weight looks stable; arms are a visible window into overall body composition.",
+              "Genetics, hormones, age, activity, medications, and insulin resistance all influence upper-body composition.",
+              "Strength training builds muscle and function locally; fat loss still follows whole-body biology, not spot reduction.",
+              "Sudden asymmetry, swelling, weakness, or pain should be reviewed medically."
+            ],
+            "symbolicThemes": [
+              "The arms as reaching, carrying, and support: doing and holding.",
+              "Capacity to reach out, hold others, and carry load.",
+              "Muscle as evidence of strength rather than only fat as evidence of failure."
+            ],
+            "reflectionPrompts": [
+              "What am I reaching for, and what am I carrying?",
+              "Where has support become a one-armed effort?",
+              "What strength of mine is worth noticing beyond the scale?"
+            ]
+          }
+        ]
+      },
       "hardware": {
-        "hapticProfile": "Sharp irritated stings followed by a long aching throb and pause.",
+        "hapticProfile": "Slow heavy thud followed by long hollow silence.",
         "hapticPattern": [
-          300,
-          100,
-          300,
-          120,
           2000,
-          3000
+          4000,
+          2000,
+          4000
         ],
-        "uiBackgroundAccent": "#E8A0A0"
+        "uiBackgroundAccent": "#6B5B4B"
       },
       "hero": {
-        "primaryPattern": "Vaginitis may involve BV, yeast, trichomoniasis, STIs, irritants, low estrogen, antibiotics, diabetes, hormones, pregnancy, immune changes, or microbiome disruption.",
+        "primaryPattern": "Weight distribution patterns (belly/hips/thighs/arms) reflect genetics, sex hormones, age, muscle mass, total body fat, visceral/subcutaneous fat, insulin resistance, medications, sleep, stress, menopause/pregnancy history, activity, pain, disability, and medical conditions.",
         "cascade": [
-          "Balance Shifts",
-          "Tissue Irritates",
-          "Discharge/Itch Starts",
-          "Cause Must Be Identified"
+          "Load Builds",
+          "Body Stores",
+          "Risk Context Matters",
+          "Support Plan"
         ],
         "tags": [
-          "#vaginitis",
-          "#BV",
-          "#yeast",
-          "#testing"
+          "#weight",
+          "#bodyfat",
+          "#metabolic"
         ],
-        "safetyPreview": "Fever, pelvic pain, pregnancy, foul odor, green/yellow discharge, bleeding, sores, STI concern, severe pain, or recurrent symptoms needs medical care."
+        "safetyPreview": "Sudden gain, swelling, shortness of breath, chest pain, rapid unexplained change, eating disorder symptoms, diabetes/thyroid symptoms, or severe distress needs care."
       },
       "biologyPathway": [
         {
-          "title": "Vaginal Ecosystem",
-          "short": "pH and microbes matter.",
-          "detail": "The vaginal ecosystem relies on pH, lactobacilli, hormones, immune function, and tissue integrity. Yes, it is basically a tiny biochemical city council."
+          "title": "Distribution Is Not Random",
+          "short": "Where fat lands follows biology.",
+          "detail": "Genetics, sex hormones, age, muscle mass, total body fat, and metabolic context shape whether fat collects centrally or in the lower body."
         },
         {
-          "title": "Common Causes",
-          "short": "BV, yeast, trichomoniasis, irritants, and low estrogen can all mimic each other.",
-          "detail": "BV often causes thin discharge and odor; yeast often causes itching and thick white discharge; trichomoniasis can cause frothy yellow-green discharge and requires partner treatment."
+          "title": "Risk Context Differs by Region",
+          "short": "Central fat carries higher metabolic risk.",
+          "detail": "Visceral abdominal fat is more strongly tied to cardiovascular and diabetes risk than many other fat patterns; lower-body fat is generally less metabolically harmful."
         },
         {
-          "title": "Wrong Treatment Problem",
-          "short": "Guessing can worsen symptoms.",
-          "detail": "Antifungal cream will not treat BV or trichomoniasis, and antibiotics can worsen yeast. Civilization invented testing for a reason."
+          "title": "No Spot Reduction",
+          "short": "You cannot choose exactly where fat leaves first.",
+          "detail": "Training builds muscle and function locally, but fat loss patterns follow biology, not intention or influencer promises."
         },
         {
-          "title": "Recurrence Screen",
-          "short": "Repeated symptoms need cause review.",
-          "detail": "Recurrent vaginitis may involve diabetes, immune suppression, hormones, sexual exposure, products, antibiotics, douching, or resistant/recurrent infection."
+          "title": "Many Medical Contributors",
+          "short": "Sudden change matters.",
+          "detail": "Fluid retention, heart/kidney/liver disease, thyroid issues, meds, pregnancy, menopause, and hormonal changes can all change body shape."
         }
       ],
       "interpretations": {
         "clinical": {
           "label": "Strictly Medical",
-          "title": "Vaginal Microbiome & Inflammation Cascade",
+          "title": "Weight & Body-Fat Distribution",
           "sections": [
             {
-              "heading": "Stage 1 — Vaginitis Is a Category, Not One Disease",
+              "heading": "Stage 1 — Distribution Is a Clue, Not a Verdict",
               "body": [
-                "Vaginitis means inflammation or irritation of vaginal/vulvar tissue.",
-                "The cause can be BV, yeast, trichomoniasis, STI-related, allergic/irritant, low estrogen, pregnancy/hormonal, diabetes-related, or another condition."
+                "Where weight collects can reflect body composition, hormones, age, genetics, activity, and overall metabolic health.",
+                "It is not a moral scorecard. Weight is biology plus context, not character."
               ]
             },
             {
-              "heading": "Stage 2 — Symptoms Overlap",
+              "heading": "Stage 2 — Medical Contributors",
               "body": [
-                "Itching, burning, discharge, odor, sex pain, and urinary discomfort can overlap between causes.",
-                "This is why guessing is a spectacularly annoying medical strategy."
+                "Genetics, environment, food access, sleep, stress, medications, hormones, thyroid disease, PCOS, insulin resistance, pain, disability, mental health, trauma, socioeconomic factors, and energy balance can all matter.",
+                "BMI is only a screening tool and does not tell the whole story; waist circumference and labs add context."
               ]
             },
             {
-              "heading": "Stage 3 — Testing and Treatment",
+              "heading": "Stage 3 — Health-Focused Plan",
               "body": [
-                "Treatment depends on the cause: antibiotics, antifungals, STI treatment, estrogen therapy, irritant removal, diabetes management, or other care.",
-                "Trichomoniasis requires partner treatment. BV and yeast do not follow the same rules."
+                "A useful plan may include labs, blood pressure, glucose/A1c, lipids, sleep, movement, food structure, medication review, mental health support, and obesity medicine options when appropriate.",
+                "The goal is sustainable health and function, not punishment cosplay."
               ]
             },
             {
               "heading": "Stage 4 — Safety Check",
               "body": [
-                "Seek care for fever, pelvic pain, pregnancy, foul odor, green/yellow discharge, sores, bleeding, severe pain, STI concern, or recurrent symptoms.",
-                "Do not turn pelvic infection signs into a breathing exercise."
+                "Sudden weight gain, swelling, shortness of breath, chest pain, severe fatigue, rapid unexplained change, pregnancy possibility, or eating disorder behaviors need medical care.",
+                "Do not turn fluid retention into a motivational quote."
               ]
             }
           ]
         },
         "witty": {
           "label": "Comedic & Witty",
-          "title": "The Walled Garden With Bad Landscaping",
+          "title": "The Overstuffed House",
           "paragraphs": [
-            "Your vaginal ecosystem is a walled garden with flowers, weeds, pH rules, and a gardener who is one bad antibiotic away from quitting.",
-            "The lactobacilli are the flowers. BV bacteria are the weeds. Candida is the thistle. Trichomoniasis is not a weed; it is an STI goblin with paperwork.",
-            "Stress, douching, scented products, antibiotics, hormones, sex, diabetes, and immune changes can all mess with the garden.",
-            "The answer is not throwing random cream over the fence.",
-            "The answer is figuring out what is actually growing there, then treating it correctly.",
-            "The garden deserves testing, not vibes in a tube."
+            "Your body is a house where each wing stores different boxes: genetics, hormones, meds, sleep debt, pain, food patterns, and emotional junk mail nobody asked for.",
+            "The central room stores metabolic protection and stress. The foundation beams hold responsibility. The forward elevators carry momentum. The storage shelves hold reaching and caring.",
+            "The fix is sorting the house with labs, routines, support, movement, and nutrition, not yelling at one room.",
+            "Clear one box or keep renting storage units for things you never wanted. Your choice."
           ]
         },
         "brutal": {
           "label": "Brutally Honest",
-          "title": "The Listen Before It Burns Reality Check",
+          "title": "The Load Reality Check",
           "paragraphs": [
-            "You may have a vaginitis problem. You may also have a neglected-signal pattern.",
-            "Medical first: vaginitis needs cause-based diagnosis. BV, yeast, trich, irritation, low estrogen, and STIs do not all use the same treatment.",
-            "Symbolically, ask what signal you kept dismissing until the body got louder.",
-            "What changed: product, partner, antibiotic, blood sugar, hormone shift, stress, soap, douching, or sex pattern?",
-            "Pay attention early. Get tested when needed. Stop guessing with drugstore roulette.",
-            "Restore the garden properly or keep letting irritation run the neighborhood council. Your choice."
+            "You may notice where your body stores weight. You may also notice an accumulation-and-load pattern.",
+            "Medical first: distribution involves hormones, genetics, medications, sleep, insulin resistance, pain, disability, activity, and food environment.",
+            "Symbolically, ask what you are carrying in each location.",
+            "Shame is useless. Avoidance is expensive. A plan beats self-hatred every time.",
+            "Check the medical causes. Build sustainable routines. Remove one box."
           ]
         }
       },
       "influenceLayers": [
         {
           "layer": 1,
-          "title": "Liver-Spleen Damp-Heat",
-          "tag": "Lower Burner",
+          "title": "Spleen Dampness",
+          "tag": "Accumulation",
           "paragraphs": [
-            "In Chinese medicine language, damp-heat can symbolize irritation, discharge, heat, and imbalance in the lower body.",
-            "Medically, the cause still needs diagnosis. The microscope outranks the metaphor."
+            "In TCM imagery, dampness can symbolize heaviness and accumulation.",
+            "Medically, weight distribution still involves biology and health context."
           ]
         },
         {
           "layer": 2,
-          "title": "Self-Caring One",
-          "tag": "Attention",
+          "title": "Liver Stagnation",
+          "tag": "Blocked Flow",
           "paragraphs": [
-            "The Self-Caring One intervenes early.",
-            "She does not wait until the garden is screaming."
+            "Stagnation imagery asks where movement or expression has stopped.",
+            "Real movement plans still need pain, ability, and safety accounted for."
           ]
         },
         {
           "layer": 3,
-          "title": "Boundary and Products",
-          "tag": "Irritant Filter",
+          "title": "The Accumulator",
+          "tag": "Storage",
           "paragraphs": [
-            "This layer asks what is being allowed into a sensitive ecosystem.",
-            "Some things simply do not belong there, and apparently scented soap needed to be told."
+            "The Accumulator keeps boxes because letting go once felt unsafe.",
+            "The Releaser removes one box at a time."
           ]
         },
         {
           "layer": 4,
-          "title": "Microbiome Balance",
-          "tag": "Inner Ecology",
+          "title": "Protective Buffer",
+          "tag": "Armor",
           "paragraphs": [
-            "Balance is not sterility.",
-            "The goal is a healthy ecosystem, not nuking everything from orbit."
+            "Weight can feel symbolically protective.",
+            "That meaning can be explored without pretending it is the only cause."
           ]
         },
         {
           "layer": 5,
-          "title": "Attention Before Escalation",
+          "title": "One Box Out",
           "tag": "Reset Practice",
           "paragraphs": [
-            "The reset is noticing, testing, treating correctly, and removing triggers.",
-            "The garden improves when the gardener stops winging it."
+            "The reset is one sustainable action, not a shame ritual.",
+            "The house gets sorted room by room."
           ]
         }
       ],
       "reset": {
-        "title": "Pelvic Ecosystem Grounding",
+        "title": "One Box Out & Metabolic Support Reset",
         "modality": "Autonomic Downregulation",
         "steps": [
-          "Sit upright with one hand on the lower belly and one on the heart.",
+          "Sit upright with one hand on the area you notice most and one hand on the heart.",
           "Inhale through the nose for 4 seconds.",
           "Exhale through the mouth for 8 seconds.",
-          "Whisper: I listen early. I restore balance with care, not shame.",
-          "Then choose one practical action: stop irritants, avoid douching, track symptoms, schedule testing, or follow prescribed treatment."
+          "Whisper: I can release one thing at a time. I support my body without punishment.",
+          "Then choose one practical step: walk, hydrate, plan protein/fiber, schedule labs, review meds, or sleep earlier."
         ]
       },
       "naturalSupport": {
         "title": "Supportive Care",
-        "disclaimer": "Supportive care is not a cure. Vaginitis treatment depends on the cause and may require testing, prescriptions, STI treatment, or pregnancy-safe care.",
+        "disclaimer": "Supportive care is not a cure. Weight and distribution concerns may need medical evaluation, nutrition support, medication review, mental-health care, or obesity medicine support.",
         "items": [
           {
-            "label": "Get the cause identified",
-            "detail": "BV, yeast, trichomoniasis, irritants, low estrogen, and STIs can overlap."
+            "label": "Medical review",
+            "detail": "Review A1c/glucose, lipids, blood pressure, thyroid if indicated, medications, sleep apnea, PCOS/hormones, pain, and mood."
           },
           {
-            "label": "Avoid douching",
-            "detail": "Douching and scented products can disrupt the vaginal ecosystem."
+            "label": "Food structure",
+            "detail": "Protein, fiber, whole foods, hydration, and regular meals may support appetite and metabolic health."
           },
           {
-            "label": "Track triggers",
-            "detail": "Track antibiotics, sex, products, hormones, blood sugar, pregnancy, stress, and recurrence."
+            "label": "Movement",
+            "detail": "Start with realistic movement that respects pain, disability, and fitness level."
           },
           {
-            "label": "Partner treatment when needed",
-            "detail": "Trichomoniasis and some STI-related causes require partner treatment."
+            "label": "Strength training",
+            "detail": "Build muscle and function even though spot fat loss is a lying little sales goblin."
           }
         ],
         "avoid": [
-          "Do not ignore fever, pelvic pain, pregnancy, sores, bleeding, severe pain, STI concern, foul odor, green/yellow discharge, or recurrent symptoms.",
-          "Do not repeatedly self-treat without diagnosis."
+          "Do not ignore sudden weight gain, swelling, shortness of breath, chest pain, rapid unexplained change, or severe fatigue.",
+          "Do not use starvation, purging, laxatives, dangerous supplements, or shame as a weight plan."
         ]
       },
       "brutalActions": [
-        "Stop guessing the cause.",
-        "Avoid douching and scented products.",
-        "Get testing for recurrent or unclear symptoms.",
-        "Listen before the downstairs garden starts filing formal complaints."
+        "Check labs and meds.",
+        "Pick one sustainable routine.",
+        "Stop letting shame manage the project.",
+        "Remove one box from the house today."
       ]
     },
     "tones": {
       "clinical": {
-        "mechanism": "Vaginitis is inflammation or irritation of the vagina/vulva. Causes can include bacterial vaginosis, yeast infection, trichomoniasis, STIs, irritants/allergies, low estrogen, antibiotics, diabetes, pregnancy, hormonal changes, immune suppression, or other gynecologic conditions.",
+        "mechanism": "Weight and body-fat distribution reflect genetics, sex hormones, age, muscle mass, total body fat, visceral versus subcutaneous fat, insulin resistance, medications, sleep, stress, menopause/pregnancy history, activity, pain, disability, and medical conditions. Central distribution increases cardiovascular and diabetes risk; lower-body distribution is generally less metabolically harmful. Spot reduction is not how fat loss works.",
         "protocol": [
-          "Track discharge, odor, itching, burning, pelvic pain, urinary symptoms, bleeding, products, sex, STI risk, pregnancy, diabetes symptoms, antibiotics, and recurrence.",
-          "Seek diagnosis before repeating treatment.",
-          "Seek care promptly for pelvic pain, fever, pregnancy, severe pain, bleeding, sores, STI concern, or recurrent symptoms."
+          "Review BMI limitations, waist circumference, labs, blood pressure, sleep, meds, pain, hormones, mood, and function.",
+          "Build a health-focused plan with nutrition, movement, sleep, stress support, medication review, and treatment options when appropriate.",
+          "Seek care for sudden weight gain, swelling, shortness of breath, chest pain, rapid unexplained change, or severe fatigue."
         ],
         "citations": [
-          "Educational reflection only; not a substitute for gynecologic care."
+          "Educational reflection only; not a substitute for medical evaluation or obesity medicine care."
         ]
       },
       "witty": {
-        "metaphorTitle": "The Walled Garden With Bad Landscaping",
-        "metaphorText": "The flowers, weeds, thistles, pH, hormones, and products are fighting over landscaping rights.",
-        "wittyAdvice": "Test the garden before dumping random cream on the roses."
+        "metaphorTitle": "The Overstuffed House",
+        "metaphorText": "The house is full of boxes: biology, meds, stress, sleep debt, pain, food patterns, and emotional junk mail.",
+        "wittyAdvice": "Sort one box at a time. Do not burn the house down."
       },
       "brutal": {
-        "realityCheck": "You may have a vaginitis problem. You may also have a neglected-signal pattern.",
-        "protocolTitle": "TEST THE GARDEN",
+        "realityCheck": "You may notice where your body stores weight. You may also have an accumulation-and-load pattern.",
+        "protocolTitle": "ONE BOX OUT",
         "protocolSteps": [
-          "Identify the cause.",
-          "Stop irritants.",
-          "Avoid douching.",
-          "Treat correctly.",
-          "Track recurrence."
+          "Check labs.",
+          "Review meds.",
+          "Structure food.",
+          "Move realistically.",
+          "Release one load."
         ]
       }
     },
     "medical_safety": {
       "critical_alerts": [
-        "Fever, pelvic pain, lower abdominal pain, or feeling very ill",
-        "Pregnancy with vaginitis symptoms, odor, bleeding, pain, or fluid concerns",
-        "Green/yellow discharge, foul odor, sores, blisters, bleeding, or STI exposure concern",
-        "Severe pain, pain during sex, painful urination, or worsening after treatment",
-        "Recurrent vaginitis, diabetes symptoms, immune suppression, or recent antibiotics",
-        "Symptoms after assault or non-consensual exposure"
+        "Sudden rapid weight gain, swelling in legs/abdomen, shortness of breath, or chest pain",
+        "Severe fatigue, unexplained weight change, weakness, or thyroid symptoms",
+        "Pregnancy possibility, fluid retention, kidney/liver/heart symptoms, or medication-related gain",
+        "Excessive thirst, frequent urination, blurry vision, or diabetes symptoms",
+        "Eating disorder symptoms: bingeing, purging, restriction, laxative misuse, or severe distress",
+        "Severe depression, self-harm thoughts, or body-image crisis"
       ],
       "seek_immediate_care_if": [
-        "There is fever, pelvic pain, pregnancy concern, severe pain, heavy bleeding, or feeling unsafe",
-        "Symptoms suggest pelvic infection or severe STI-related illness",
-        "You feel medically unsafe or symptoms rapidly worsen"
+        "Weight gain occurs with shortness of breath, chest pain, severe swelling, fainting, confusion, or feeling medically unsafe",
+        "Eating behaviors or body distress involve self-harm, purging, or medical instability",
+        "Rapid unexplained gain suggests fluid retention or serious illness"
       ],
       "schedule_care_if": [
-        "Symptoms are new, recurrent, unclear, or not improving",
-        "Discharge/odor/itching/burning needs diagnosis",
-        "Pregnancy, STI concern, diabetes symptoms, or recurrent infections are present"
+        "Weight is affecting health, mobility, sleep, blood pressure, glucose, lipids, pain, or mood",
+        "You need medication review, lab screening, sleep apnea evaluation, PCOS/hormone review, or obesity treatment options",
+        "Weight change is rapid, unexplained, or distressing"
       ],
-      "self_care_allowed_if": "Avoiding irritants and tracking symptoms may help while seeking diagnosis, but cause-based treatment is often needed.",
-      "do_not_ignore": "Vaginitis has multiple causes. The wrong treatment can worsen symptoms or miss an STI/pelvic infection.",
+      "self_care_allowed_if": "Sustainable food structure, movement, sleep support, stress reduction, and tracking can support weight health without red flags.",
+      "do_not_ignore": "Weight is complex and not a moral failure. Distribution patterns and sudden changes need medical evaluation.",
       "disclaimer": "This app is for education and self-reflection only. It does not diagnose, treat, prevent, or cure disease."
     }
   }

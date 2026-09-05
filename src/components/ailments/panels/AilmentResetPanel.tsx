@@ -30,6 +30,12 @@ export function AilmentResetPanel({ enriched, onJournalRedirect }: AilmentResetP
                 <div className="text-sm text-[#E6ECF3] bg-black/40 border border-white/5 p-6 rounded-[1.5rem] font-sans font-light leading-7 shadow-[inset_0_0_22px_rgba(255,255,255,0.02)] backdrop-blur-sm relative z-10">
                     <TruncatedText text={softenMedicalClaims(getStructuredResetText(enriched))} maxLen={1200} />
                 </div>
+
+                {enriched.structuredContent?.reset?.safetyNote ? (
+                    <p className="text-[11px] font-sans leading-6 text-slate-400 border-t border-white/5 pt-4">
+                        {enriched.structuredContent.reset.safetyNote}
+                    </p>
+                ) : null}
             </div>
 
             {/* Expanded Card Footer Action Bar */}

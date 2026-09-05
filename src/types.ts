@@ -50,6 +50,33 @@ export interface Ailment {
 }
 
 export interface SymptomAnalysisResponse {
+  analysisContractVersion?: string;
+  medical?: {
+    possibleMedicalContext: string;
+    redFlags: string[];
+    whenToSeekCare: string;
+    uncertainty: string;
+  };
+  mindBody?: {
+    evidenceLevel: string;
+    possibleContributors: string[];
+    symptomAmplifiers: string[];
+    behavioralFactors: string[];
+    noKnownEmotionalCause: boolean;
+  };
+  reflection?: {
+    somaticQuestions: string[];
+    relationshipQuestions: string[];
+    behavioralQuestions: string[];
+    optionalPractices: string[];
+  };
+  traditional?: {
+    framework: string;
+    proposedMeaningOrCause: string;
+    attribution: string;
+    evidenceStatus: string;
+  };
+  claimBoundaries?: string[];
   emotionalRoot: string;
   physiologicalDescription: string;
   sarcasticReview: string;
@@ -88,4 +115,3 @@ export interface SomaticJournalEntry {
   sourcePatternId?: string;
   sourcePatternName?: string;
 }
-

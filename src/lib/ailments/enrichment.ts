@@ -1,5 +1,5 @@
 import type { Ailment } from '../../types';
-import { getStructuredBiologyPath, getStructuredMedicalMechanismText, getStructuredBrutalText, getStructuredWittyText } from './contentSelectors';
+import { getStructuredBiologyPath, resolveAilmentTones } from './contentSelectors';
 
 export const getEnrichedAilment = (ailment: Ailment): Required<Ailment> => {
     let defaultPath = [
@@ -97,43 +97,6 @@ export const getEnrichedAilment = (ailment: Ailment): Required<Ailment> => {
         ];
     }
 
-    const defaultTones = {
-        clinical: {
-            mechanism: getStructuredMedicalMechanismText(ailment),
-            protocol: [
-                ailment.physicalTherapyTip,
-                "Implement progressive muscle relaxation (PMR) starting from head to toe twice daily.",
-                "Assess sitting and screen arrangements, ensuring ergonomic elbow-rest levels."
-            ],
-            citations: [
-                "Somatic Medicine & Biofeedback Journal (Vol 14, Issue 2)",
-                "Review of Psychosomatic Fascial Guarding Patterns (2023)"
-            ]
-        },
-        witty: {
-            metaphorTitle: "The Internal Defense Guard",
-            metaphorText: getStructuredWittyText(ailment) || ailment.metaphor,
-            wittyAdvice: ailment.tones?.witty?.wittyAdvice || ailment.sarcasticAdvice
-        },
-        brutal: {
-            realityCheck: getStructuredBrutalText(ailment) || "You are attempting to solve every external problem while your physical engine is literally grinding its gears to dust. Your body didn't break down; it staged an intervention.",
-            protocolTitle: "STOP FEEDING THE FIRE DRILL",
-            protocolSteps: ailment.id === 'asthma'
-                ? [
-                    "Name the sentence you are swallowing. Write it in one line. Do not send it. Just stop making your lungs carry it.",
-                    "Check your rescue inhaler and asthma action plan. Reflection is cute, breathing is mandatory.",
-                    "If symptoms are mild and stable, exhale longer than you inhale for two minutes. If symptoms are serious, stop playing philosopher and follow the medical plan.",
-                    "Tell one safe person what you have been minimizing instead of letting your chest carry the whole performance."
-                ]
-                : [
-                    ailment.physicalTherapyTip,
-                    "Name the sentence you are swallowing. Write it in one line. Do not send it. Just stop making your lungs carry it.",
-                    "Check your rescue inhaler and asthma action plan. Reflection is cute, breathing is mandatory.",
-                    "Exhale longer than you inhale for two minutes, only if symptoms are mild and stable."
-                ]
-        }
-    };
-
     const defaultMedicalSafety = {
         critical_alerts: [
             "Sudden, severe, or excruciating pain with no obvious cause",
@@ -164,7 +127,7 @@ export const getEnrichedAilment = (ailment: Ailment): Required<Ailment> => {
         tags: ailment.tags || ["somatic tension", "posture check", "unspoken stress"],
         riskLevel: ailment.riskLevel || "Moderate",
         biologyPath: getStructuredBiologyPath(ailment) || (ailment.id === 'back-problems-lower' || ailment.id === 'lower-back' || ailment.id === 'back-problems-middle' ? defaultPath : (ailment.biologyPath || defaultPath)),
-        tones: ailment.structuredContent ? defaultTones : (ailment.tones || defaultTones),
+        tones: resolveAilmentTones(ailment),
         medical_safety: ailment.medical_safety || defaultMedicalSafety
     };
 };

@@ -23,6 +23,10 @@ import {
 import { InMemoryRateLimiter } from "./src/lib/server/inMemoryRateLimit";
 import { getRateLimitActorKey } from "./src/lib/server/rateLimitKey";
 import { buildContentSecurityPolicy } from "./src/lib/server/securityHeaders";
+import {
+  ANALYSIS_CONTRACT_VERSION,
+  BODYSIGNAL_ANALYSIS_SYSTEM_INSTRUCTION,
+} from "./src/lib/analysis/symptomAnalysisContract";
 
 dotenv.config();
 
@@ -1194,29 +1198,6 @@ app.post("/api/analyze-symptom", requireJsonContentType, async (req: express.Req
       });
     }
 
-    const systemInstruction = `You are a world-class psychosomatic medicine specialist with a hilarious, highly sarcastic, and dryly mocking persona (similar to House M.D. or a witty cynical doctor). 
-Your task is to analyze the user's physical symptom or physical ailment, optionally taking into consideration their bad habits (like poor posture, dehydration, stress, endless doomscrolling, caffeine dependency, or lack of sleep).
-
-You must return a strictly formatted JSON object that maps:
-1. The emotional/metaphorical root of the physical ailment.
-2. The actual scientific, technical, and physiological mechanism happening in the body (the nervous system, muscle contractions, chemical releases, blood flow restriction, etc.). This should be completely medically accurate and real.
-3. A biting, sarcastic review that mocks the user's bad habits, lifestyle choices, or refusal to take care of themselves, while retaining medical accuracy in the joke.
-4. 2-3 deep mindfulness reflection/journal prompts for self-exploration.
-5. 2-3 practical somatic or physical therapy exercises to help release the somatic charge.
-
-Your tone should be dry, sharp, and satirical, but the underlying insights MUST be incredibly accurate, educational, and helpful. Do not be overly mean, but do mock their typical modern habits (e.g., sitting like a boiled shrimp, excessive screen time, ignoring thirst, emotional suppression).
-
-You must respond with raw JSON matching the following schema structure:
-{
-  "emotionalRoot": "string explaining the emotional/metaphorical root causes",
-  "physiologicalDescription": "highly accurate, scientific description of the body's actual physiological/somatic reaction, nerve pathways, muscle contractions, etc.",
-  "sarcasticReview": "the sarcastic, mocking review of their lifestyle/habits and coping mechanisms",
-  "mindfulnessPrompts": ["prompt 1", "prompt 2"],
-  "practicalTips": ["practical physical exercise or habit tip 1", "practical physical exercise or habit tip 2"]
-}
-
-Make sure to not include markdown code blocks inside the JSON fields. Just clean string values. Return only the JSON object.`;
-
     const promptText = `Analyze this physical symptom: "${symptom}". 
 User's self-reported lifestyle habits/context: "${habits || 'Not provided'}"`;
 
@@ -1224,35 +1205,156 @@ User's self-reported lifestyle habits/context: "${habits || 'Not provided'}"`;
       model: "gemini-3.5-flash",
       contents: promptText,
       config: {
-        systemInstruction: systemInstruction,
+        systemInstruction: BODYSIGNAL_ANALYSIS_SYSTEM_INSTRUCTION,
         responseMimeType: "application/json",
         responseSchema: {
           type: Type.OBJECT,
           properties: {
+            analysisContractVersion: {
+              type: Type.STRING,
+              description: `Must be ${ANALYSIS_CONTRACT_VERSION}.`
+            },
+            medical: {
+              type: Type.OBJECT,
+              properties: {
+                possibleMedicalContext: {
+                  type: Type.STRING,
+                  description: "Cautious medical context without diagnosis."
+                },
+                redFlags: {
+                  type: Type.ARRAY,
+                  items: { type: Type.STRING },
+                  description: "Urgent red flags to consider before reflection."
+                },
+                whenToSeekCare: {
+                  type: Type.STRING,
+                  description: "When medical evaluation should be sought."
+                },
+                uncertainty: {
+                  type: Type.STRING,
+                  description: "What is unknown or cannot be inferred."
+                }
+              },
+              required: ["possibleMedicalContext", "redFlags", "whenToSeekCare", "uncertainty"]
+            },
+            mindBody: {
+              type: Type.OBJECT,
+              properties: {
+                evidenceLevel: {
+                  type: Type.STRING,
+                  description: "One of: established/well-supported, plausible/indirect, uncertain/emerging, not supported."
+                },
+                possibleContributors: {
+                  type: Type.ARRAY,
+                  items: { type: Type.STRING },
+                  description: "Evidence-supported or plausible mind-body contributors, if any."
+                },
+                symptomAmplifiers: {
+                  type: Type.ARRAY,
+                  items: { type: Type.STRING },
+                  description: "Factors that may amplify symptoms or affect course without causing disease."
+                },
+                behavioralFactors: {
+                  type: Type.ARRAY,
+                  items: { type: Type.STRING },
+                  description: "Habits or behaviors that may matter."
+                },
+                noKnownEmotionalCause: {
+                  type: Type.BOOLEAN,
+                  description: "True when no known emotional cause is supported."
+                }
+              },
+              required: ["evidenceLevel", "possibleContributors", "symptomAmplifiers", "behavioralFactors", "noKnownEmotionalCause"]
+            },
+            reflection: {
+              type: Type.OBJECT,
+              properties: {
+                somaticQuestions: {
+                  type: Type.ARRAY,
+                  items: { type: Type.STRING },
+                  description: "Somatic self-observation questions."
+                },
+                relationshipQuestions: {
+                  type: Type.ARRAY,
+                  items: { type: Type.STRING },
+                  description: "Relationship/context reflection questions."
+                },
+                behavioralQuestions: {
+                  type: Type.ARRAY,
+                  items: { type: Type.STRING },
+                  description: "Behavioral reflection questions."
+                },
+                optionalPractices: {
+                  type: Type.ARRAY,
+                  items: { type: Type.STRING },
+                  description: "Gentle optional practices, not universal treatment."
+                }
+              },
+              required: ["somaticQuestions", "relationshipQuestions", "behavioralQuestions", "optionalPractices"]
+            },
+            traditional: {
+              type: Type.OBJECT,
+              properties: {
+                framework: {
+                  type: Type.STRING,
+                  description: "Named traditional, symbolic, metaphysical, or energetic framework, or not included."
+                },
+                proposedMeaningOrCause: {
+                  type: Type.STRING,
+                  description: "What that framework proposes in its own terms."
+                },
+                attribution: {
+                  type: Type.STRING,
+                  description: "Clear attribution to the framework/source."
+                },
+                evidenceStatus: {
+                  type: Type.STRING,
+                  description: "One of: symbolic/traditional only, not included, uncertain/emerging."
+                }
+              },
+              required: ["framework", "proposedMeaningOrCause", "attribution", "evidenceStatus"]
+            },
+            claimBoundaries: {
+              type: Type.ARRAY,
+              items: { type: Type.STRING },
+              description: "Explicit boundaries separating biomedical evidence, plausible modifiers, reflection, and traditional claims."
+            },
             emotionalRoot: {
               type: Type.STRING,
-              description: "Emotional and metaphysical root causes of this ailment."
+              description: "Legacy summary. Must not claim emotions caused disease unless clearly attributed to a non-biomedical framework."
             },
             physiologicalDescription: {
               type: Type.STRING,
-              description: "Scientifically accurate, professional medical details of what is physically happening in the nervous system, muscles, or organs."
+              description: "Legacy medical/somatic summary distinguishing medical mechanisms from plausible modifiers."
             },
             sarcasticReview: {
               type: Type.STRING,
-              description: "Hilarious, mocking, sarcastic commentary on their bad habits and denial of physical needs."
+              description: "Safe witty summary, non-diagnostic and not mocking serious conditions."
             },
             mindfulnessPrompts: {
               type: Type.ARRAY,
               items: { type: Type.STRING },
-              description: "Deep, probing journal prompts for mental reflection."
+              description: "Legacy reflection prompts."
             },
             practicalTips: {
               type: Type.ARRAY,
               items: { type: Type.STRING },
-              description: "Practical physical exercises, somatic releases, or posture corrections."
+              description: "Legacy optional practices or care-seeking tips."
             }
           },
-          required: ["emotionalRoot", "physiologicalDescription", "sarcasticReview", "mindfulnessPrompts", "practicalTips"]
+          required: [
+            "analysisContractVersion",
+            "medical",
+            "mindBody",
+            "reflection",
+            "traditional",
+            "claimBoundaries",
+            "emotionalRoot",
+            "physiologicalDescription",
+            "sarcasticReview",
+            "mindfulnessPrompts",
+            "practicalTips"
+          ]
         }
       }
     });

@@ -19,6 +19,12 @@ import { AilmentTonePanel } from './panels/AilmentTonePanel';
 import { AilmentInfluencePanel } from './panels/AilmentInfluencePanel';
 import { AilmentSafetyPanel } from './panels/AilmentSafetyPanel';
 import { AilmentResetPanel } from './panels/AilmentResetPanel';
+import { AilmentLateralityPanel } from './panels/AilmentLateralityPanel';
+import { AilmentLocationSectionsPanel } from './panels/AilmentLocationSectionsPanel';
+import { AilmentSubsectionsPanel } from './panels/AilmentSubsectionsPanel';
+import AilmentReflectionSheet from './panels/AilmentReflectionSheet';
+import { groupAilmentReflectionPrompts } from '../../lib/ailments/reflectionPrompts';
+import { BookOpen } from 'lucide-react';
 
 interface AilmentAccordionItemProps {
   key?: React.Key;
@@ -28,16 +34,19 @@ interface AilmentAccordionItemProps {
   globalTone: 'clinical' | 'witty' | 'brutal';
   onJournalRedirect: () => void;
   index?: number;
+  onOpenLenses: () => void;
 }
 
-function AilmentAccordionItem({ ailment, isSelected, onSelect, globalTone, onJournalRedirect, index = 0 }: AilmentAccordionItemProps) {
+function AilmentAccordionItem({ ailment, isSelected, onSelect, globalTone, onJournalRedirect, index = 0, onOpenLenses }: AilmentAccordionItemProps) {
   const [detail, setDetail] = useState<Ailment | null>(null);
   const [isLoadingDetail, setIsLoadingDetail] = useState(false);
 
   const enriched = getEnrichedAilment(mergeCoreAndDetail(ailment, detail) as Ailment);
+  const reflectionGroups = groupAilmentReflectionPrompts(enriched);
   const [innerTab, setInnerTab] = useState<'tones' | 'influence' | 'reset' | 'safety'>('safety');
   const [localTone, setLocalTone] = useState<'clinical' | 'witty' | 'brutal'>(globalTone);
   const [isDisclaimerExpanded, setIsDisclaimerExpanded] = useState(false);
+  const [showReflectionSheet, setShowReflectionSheet] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const categoryMeta = CATEGORY_META[enriched.category] || { color: '#6366f1' };
   const optionsRef = useRef<HTMLDivElement>(null);
@@ -172,8 +181,24 @@ function AilmentAccordionItem({ ailment, isSelected, onSelect, globalTone, onJou
             {/* Ambient dynamic anatomical silhouette based on category */}
             <AnatomicalSilhouette category={enriched.category} color={categoryMeta.color} />
 
-            <div className="p-6 md:p-8 space-y-6 relative z-10">
-              {/* 3D Rotating Data Cube Options */}
+             <div className="p-6 md:p-8 space-y-6 relative z-10">
+               {/* Optional laterality comparison (e.g. Left vs. Right Side of the Body) */}
+                {enriched.structuredContent?.laterality && (
+                  <AilmentLateralityPanel laterality={enriched.structuredContent.laterality} />
+                )}
+
+                {/* Optional location-specific distribution (e.g. Overview + Belly/Hips/Thighs/Arms) */}
+                {enriched.structuredContent?.locationSections && (
+                  <AilmentLocationSectionsPanel locationSections={enriched.structuredContent.locationSections} />
+                )}
+
+                {/* Optional generic subsections (e.g. Overview + CHILDHOOD / ADULTHOOD) */}
+                {enriched.structuredContent?.subsections && (
+                  <AilmentSubsectionsPanel subsections={enriched.structuredContent.subsections} onOpenLenses={onOpenLenses} />
+                )}
+
+
+               {/* 3D Rotating Data Cube Options */}
               <div ref={optionsRef}>
                 <AilmentTabNav
                   innerTab={innerTab}
@@ -203,7 +228,7 @@ function AilmentAccordionItem({ ailment, isSelected, onSelect, globalTone, onJou
                     )}
 
                     {innerTab === 'influence' && (
-                      <AilmentInfluencePanel enriched={enriched} />
+                      <AilmentInfluencePanel enriched={enriched} onOpenLenses={onOpenLenses} />
                     )}
 
                     {innerTab === 'reset' && (
@@ -224,13 +249,31 @@ function AilmentAccordionItem({ ailment, isSelected, onSelect, globalTone, onJou
                 )}
 
                 <div className="flex flex-col sm:flex-row gap-3 justify-between items-stretch sm:items-center pt-5 border-t border-white/5">
-                  <button
-                    type="button"
-                    onClick={() => optionsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
-                    className="px-4 py-3 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] text-slate-300 text-[10px] font-mono font-black uppercase tracking-widest transition-all cursor-pointer"
-                  >
-                    ↑ Back to options
-                  </button>
+                  <div className="flex flex-wrap gap-3">
+                    <button
+                      type="button"
+                      onClick={() => optionsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                      className="px-4 py-3 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] text-slate-300 text-[10px] font-mono font-black uppercase tracking-widest transition-all cursor-pointer"
+                    >
+                      ↑ Back to options
+                    </button>
+
+                    {reflectionGroups.length > 0 && (
+                      <button
+                        type="button"
+                        onClick={() => setShowReflectionSheet((v) => !v)}
+                        aria-expanded={showReflectionSheet}
+                        className={`flex items-center gap-2 px-4 py-3 rounded-xl border text-[10px] font-mono font-black uppercase tracking-widest transition-all cursor-pointer ${
+                          showReflectionSheet
+                            ? 'border-indigo-400/40 bg-indigo-950/40 text-indigo-200'
+                            : 'border-white/10 bg-white/[0.03] hover:bg-white/[0.06] text-slate-300'
+                        }`}
+                      >
+                        <BookOpen className="w-3.5 h-3.5" />
+                        {showReflectionSheet ? 'Hide Worksheet' : 'Reflection Worksheet'}
+                      </button>
+                    )}
+                  </div>
 
                   <div className="flex gap-3">
                     <button
@@ -252,6 +295,15 @@ function AilmentAccordionItem({ ailment, isSelected, onSelect, globalTone, onJou
                 </div>
               </div>
 
+              {showReflectionSheet && reflectionGroups.length > 0 && (
+                <div className="pt-2">
+                  <AilmentReflectionSheet
+                    ailmentId={enriched.id}
+                    ailmentTitle={enriched.name}
+                    groups={reflectionGroups}
+                  />
+                </div>
+              )}
             </div>
           </motion.div>
         )}

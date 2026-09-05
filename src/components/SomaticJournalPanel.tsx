@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { SomaticJournalEntry } from '../types';
-import { searchCoreAilments } from '../data';
 import { authFetch } from '../lib/supabaseClient';
 import { 
   Plus, 
@@ -37,8 +36,23 @@ import {
   saveJournalEntries,
   getJournalOwnerKey,
 } from '../lib/storage/journalStorage';
+import {
+  loadAilmentReflections,
+  getAilmentReflectionOwnerKey,
+} from '../lib/storage/ailmentReflectionStorage';
+import type {
+  AilmentReflectionRecord,
+} from '../lib/ailments/reflectionPrompts';
 import { resolveListOwner } from '../lib/storage/ownerScopedStorage';
 import type { StorageOwner } from '../lib/storage/ownerScopedStorage';
+import {
+  buildJournalAnalysisRequest,
+  JOURNAL_AI_TRANSMISSION_DISCLOSURE,
+  JOURNAL_LOCAL_SAVE_DISCLOSURE,
+  SAFE_JOURNAL_AI_UNAVAILABLE_CONNECTION,
+  SAFE_JOURNAL_FALLBACK_CONNECTION,
+  SAFE_JOURNAL_FALLBACK_REVIEW,
+} from '../lib/analysis/symptomAnalysisContract';
 
 interface SomaticJournalPanelProps {
   initialPromptData?: JournalPromptData | null;
@@ -56,6 +70,9 @@ export default function SomaticJournalPanel({ initialPromptData }: SomaticJourna
   const [filterEmotion, setFilterEmotion] = useState('All');
   const [activePrompt, setActivePrompt] = useState<JournalPromptData | null>(null);
   const [reflectionResponse, setReflectionResponse] = useState('');
+  const [sendJournalToAI, setSendJournalToAI] = useState(false);
+  const [ailmentReflections, setAilmentReflections] = useState<AilmentReflectionRecord[]>([]);
+  const [openReflectionSets, setOpenReflectionSets] = useState<Set<string>>(new Set());
 
   const auth = useAuth();
   const ownerRef = useRef<StorageOwner | null>(null);
@@ -101,6 +118,30 @@ export default function SomaticJournalPanel({ initialPromptData }: SomaticJourna
       const seeded = [...DEMO_SEED];
       setEntries(seeded);
       saveJournalEntries(seeded, owner);
+    }
+  }, [auth.authResolved, owner]);
+
+  // Load the generic ailment reflection worksheet sets for the current owner.
+  // Kept fully separate from the somatic log list so reflection Q/A never
+  // pollutes the radar analytics or somatic filters.
+  useEffect(() => {
+    if (!auth.authResolved) {
+      setAilmentReflections([]);
+      return;
+    }
+    if (!owner) {
+      setAilmentReflections([]);
+      return;
+    }
+    const loaded = loadAilmentReflections(owner);
+    if (loaded.status === 'loaded') {
+      const records = (loaded.items as AilmentReflectionRecord[]).filter(
+        (r) => r.type === 'ailment-reflection',
+      );
+      setAilmentReflections(records);
+      setOpenReflectionSets(new Set(records.length > 0 ? [records[0].id] : []));
+    } else {
+      setAilmentReflections([]);
     }
   }, [auth.authResolved, owner]);
 
@@ -232,55 +273,34 @@ export default function SomaticJournalPanel({ initialPromptData }: SomaticJourna
     const startEpoch = ownerEpochRef.current;
     const startOwner = ownerRef.current;
 
-    let connectionText = "No clear correlation found in immediate records.";
-    let roastText = "You didn't specify enough bad habits, but I'm sure you have plenty. Drink water.";
+    let connectionText = SAFE_JOURNAL_FALLBACK_CONNECTION;
+    let roastText = SAFE_JOURNAL_FALLBACK_REVIEW;
 
-    // Step 1: Look for local dictionary keyword match
-    const symptomLower = physicalSymptom.toLowerCase();
-    const matchedAilment = searchCoreAilments(symptomLower).find(a =>
-      symptomLower.includes(a.name.toLowerCase().split(' ')[0]) ||
-      symptomLower.includes(a.id.split('-')[0]) ||
-      (a.category && symptomLower.includes(a.category.toLowerCase().split(' ')[0]))
-    );
+    if (sendJournalToAI) {
+      try {
+        const response = await authFetch('/api/analyze-symptom', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(buildJournalAnalysisRequest({
+            physicalSymptom,
+            emotionalState,
+            descriptionOfDay,
+          })),
+        });
 
-    if (matchedAilment) {
-      connectionText = `Correlation match with [${matchedAilment.name}]: ${matchedAilment.emotionalRoot}`;
-      roastText = matchedAilment.sarcasticAdvice;
-    } else {
-      // General fallbacks based on emotional state
-      const emo = emotionalState.toLowerCase();
-      if (emo.includes('anxious') || emo.includes('worry') || emo.includes('overwhelm')) {
-        connectionText = "High adrenaline/cortisol response. Your body is preparing for a survival threat (likely an email or a normal social interaction) by tightening your muscles and slowing digestion.";
-        roastText = "Ah, anxiety. The classic 'I think therefore I panic' syndrome. Keep thinking 10 steps ahead, I'm sure your shoulders will love carrying that heavy, non-existent future.";
-      } else if (emo.includes('anger') || emo.includes('mad') || emo.includes('frustrat')) {
-        connectionText = "Suppressed frustration triggers constant jaw-clenching and elevated blood pressure, leading to localized inflammation and somatic muscle guarding.";
-        roastText = "Fascinating how you choose to bite down on your jaw until your molars turn to dust instead of speaking up. Truly a masterclass in silent martyrdom.";
-      } else {
-        connectionText = "Unresolved stress pattern. The mind registers cognitive conflict and somaticizes it into regional muscular tension to divert your attention from emotional processing.";
-        roastText = "Well, something is clearly bothering you, but sure, let's keep scrolling social media and hope the pain disappears like magic.";
+        if (response.ok) {
+          const data = await response.json();
+          if (data.emotionalRoot) connectionText = data.emotionalRoot;
+          if (data.sarcasticReview) roastText = data.sarcasticReview;
+        } else {
+          connectionText = SAFE_JOURNAL_AI_UNAVAILABLE_CONNECTION;
+        }
+      } catch (err) {
+        console.warn("AI analysis endpoint failed; saving journal entry without personalized analysis.", err);
+        connectionText = SAFE_JOURNAL_AI_UNAVAILABLE_CONNECTION;
       }
-    }
-
-    // Step 2: Try to get real-time customized AI analysis from our endpoint
-    try {
-      const response = await authFetch('/api/analyze-symptom', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          symptom: `Physical sensation: ${physicalSymptom}. Emotional state: ${emotionalState}`,
-          habits: `Daily context: ${descriptionOfDay}`
-        })
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        if (data.emotionalRoot) connectionText = data.emotionalRoot;
-        if (data.sarcasticReview) roastText = data.sarcasticReview;
-      }
-    } catch (err) {
-      console.warn("AI analysis endpoint failed, falling back to local heuristic matches.", err);
     }
 
     const newEntry: SomaticJournalEntry = {
@@ -746,6 +766,23 @@ export default function SomaticJournalPanel({ initialPromptData }: SomaticJourna
               />
             </div>
 
+            <label className="flex gap-3 rounded-xl border border-amber-500/20 bg-amber-500/5 p-3 text-left cursor-pointer">
+              <input
+                type="checkbox"
+                checked={sendJournalToAI}
+                onChange={(e) => setSendJournalToAI(e.target.checked)}
+                className="mt-1 h-4 w-4 rounded border-white/20 bg-black accent-indigo-500 shrink-0"
+              />
+              <span className="space-y-1">
+                <span className="block text-[10px] font-mono text-amber-300 uppercase tracking-wider">
+                  Send this entry for AI decode
+                </span>
+                <span className="block text-[11px] text-slate-400 leading-relaxed font-sans">
+                  {JOURNAL_AI_TRANSMISSION_DISCLOSURE} {JOURNAL_LOCAL_SAVE_DISCLOSURE}
+                </span>
+              </span>
+            </label>
+
             <button
               type="submit"
               disabled={isAnalyzing || !physicalSymptom.trim() || !emotionalState.trim()}
@@ -754,12 +791,12 @@ export default function SomaticJournalPanel({ initialPromptData }: SomaticJourna
               {isAnalyzing ? (
                 <>
                   <div className="animate-spin rounded-full h-3 w-3 border-2 border-white border-t-transparent" />
-                  <span>Decoding Somatic Link...</span>
+                  <span>{sendJournalToAI ? 'Decoding Somatic Link...' : 'Saving Journal Entry...'}</span>
                 </>
               ) : (
                 <>
                   <Sparkles className="w-4 h-4 text-amber-400" />
-                  <span>Log & Decode Connection</span>
+                  <span>{sendJournalToAI ? 'Log & Send to AI' : 'Save Journal Entry'}</span>
                 </>
               )}
             </button>
@@ -771,7 +808,7 @@ export default function SomaticJournalPanel({ initialPromptData }: SomaticJourna
               <span>HOW IT WORKS</span>
             </div>
             <p className="text-[11px] text-slate-400 leading-relaxed font-sans">
-              Logging a symptom links your emotional state to biological reflexes. The decoder automatically maps your inputs to somatic patterns, giving you a customized reflection.
+              Journal entries are saved in this browser. AI decoding is optional and sends only the disclosed fields when selected; local saving does not require AI analysis.
             </p>
           </div>
         </div>
@@ -1054,6 +1091,96 @@ export default function SomaticJournalPanel({ initialPromptData }: SomaticJourna
           </div>
         </div>
       </div>
+
+      {/* Generic Ailment Reflection Worksheet history (one card per ailment set) */}
+      {ailmentReflections.length > 0 && (
+        <div className="bg-zinc-950 p-5 md:p-6 rounded-2xl border border-white/10 space-y-4">
+          <div className="flex items-center gap-2 pb-2 border-b border-white/10">
+            <BookOpen className="w-4 h-4 text-indigo-400" />
+            <h4 className="text-xs font-mono text-slate-400 uppercase tracking-widest flex items-center gap-2">
+              <span>Ailment Reflections</span>
+              <span className="rounded-full border border-white/10 px-2 py-0.5 text-[9px] text-slate-400">
+                {ailmentReflections.length}
+              </span>
+            </h4>
+          </div>
+
+          <div className="space-y-4">
+            {ailmentReflections.map((rec) => {
+              const open = openReflectionSets.has(rec.id);
+              return (
+                <div
+                  key={rec.id}
+                  className="rounded-xl border border-white/10 bg-black/40 overflow-hidden"
+                >
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setOpenReflectionSets((prev) => {
+                        const next = new Set(prev);
+                        if (next.has(rec.id)) next.delete(rec.id);
+                        else next.add(rec.id);
+                        return next;
+                      })
+                    }
+                    aria-expanded={open}
+                    className="flex w-full items-center justify-between gap-3 px-4 py-3 text-left hover:bg-white/[0.04] transition-colors cursor-pointer"
+                  >
+                    <span className="flex items-center gap-3 min-w-0">
+                      <ChevronRight
+                        className={`w-4 h-4 shrink-0 text-slate-400 transition-transform duration-300 ${open ? 'rotate-90' : ''}`}
+                      />
+                      <span className="text-sm font-mono font-black uppercase tracking-widest text-white truncate">
+                        {rec.ailmentTitle} — Reflections
+                      </span>
+                    </span>
+                    <span className="shrink-0 flex items-center gap-2 text-[9px] font-mono text-slate-400">
+                      <Calendar className="w-3 h-3 text-slate-600" />
+                      <span>{rec.date}</span>
+                      <span className="rounded-full border border-white/10 px-2 py-0.5">
+                        {rec.answeredCount}/{rec.totalPrompts}
+                      </span>
+                    </span>
+                  </button>
+
+                  {open && (
+                    <div className="space-y-5 border-t border-white/5 p-4">
+                      {rec.sections.map((section) => {
+                        const answered = section.promptIds.filter(
+                          (id) => (rec.answers[id] ?? '').trim().length > 0,
+                        );
+                        if (answered.length === 0) return null;
+                        return (
+                          <div key={section.key} className="space-y-3">
+                            <h5 className="text-[10px] font-mono uppercase tracking-widest text-indigo-300">
+                              {section.label}
+                            </h5>
+                            <div className="space-y-3">
+                              {answered.map((id) => (
+                                <div
+                                  key={id}
+                                  className="rounded-lg border border-white/5 bg-white/[0.02] p-3"
+                                >
+                                  <p className="text-[11px] font-sans font-light leading-6 text-slate-300">
+                                    {rec.prompts[id]}
+                                  </p>
+                                  <p className="mt-2 text-xs font-sans leading-7 text-slate-100 whitespace-pre-wrap">
+                                    {rec.answers[id]}
+                                  </p>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
