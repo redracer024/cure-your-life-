@@ -3,8 +3,8 @@ import { usePremium } from '../context/PremiumContext';
 import { PRODUCT_NAME } from '../lib/brand';
 
 interface NavigationProps {
-    activeTab: 'dictionary' | 'decoder' | 'daily' | 'journal' | 'patterns' | 'lenses';
-    setActiveTab: (tab: 'dictionary' | 'decoder' | 'daily' | 'journal' | 'patterns' | 'lenses') => void;
+    activeTab: 'home' | 'dictionary' | 'decoder' | 'daily' | 'journal' | 'patterns' | 'lenses';
+    setActiveTab: (tab: 'home' | 'dictionary' | 'decoder' | 'daily' | 'journal' | 'patterns' | 'lenses') => void;
     openDecoder: () => void;
 }
 
@@ -29,6 +29,12 @@ export const Navigation: React.FC<NavigationProps> = ({
                 </div>
 
                 <div className="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-[0.2em] text-slate-400 font-display">
+                    <button
+                        onClick={() => setActiveTab('home')}
+                        className={`cursor-pointer hover:text-white transition-all pb-1 ${activeTab === 'home' ? 'text-indigo-400 border-b-2 border-indigo-500' : ''}`}
+                    >
+                        Home
+                    </button>
                     <button
                         onClick={() => setActiveTab('dictionary')}
                         className={`cursor-pointer hover:text-white transition-all pb-1 ${activeTab === 'dictionary' ? 'text-indigo-400 border-b-2 border-indigo-500' : ''}`}
@@ -88,6 +94,12 @@ export const Navigation: React.FC<NavigationProps> = ({
             </nav>
 
             <div className="md:hidden flex border-b border-white/10 bg-[#07080d]/80 backdrop-blur-xl overflow-x-auto scrollbar-hide gap-4 px-4 py-3.5 text-[11px] font-bold uppercase tracking-wider text-slate-400 relative z-40 font-display whitespace-nowrap">
+                <button
+                    onClick={() => setActiveTab('home')}
+                    className={`${activeTab === 'home' ? 'text-indigo-400 font-extrabold' : ''}`}
+                >
+                    Home
+                </button>
                 <button
                     onClick={() => setActiveTab('dictionary')}
                     className={`${activeTab === 'dictionary' ? 'text-indigo-400 font-extrabold' : ''}`}

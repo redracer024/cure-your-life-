@@ -10,6 +10,7 @@ import {
 import { isSearchOnlyAilment } from '../lib/ailments/constants';
 
 export type TabType =
+  | 'home'
   | 'dictionary'
   | 'decoder'
   | 'daily'
@@ -42,7 +43,7 @@ export interface DictionaryNavigation {
 }
 
 export function useDictionaryNavigation(): DictionaryNavigation {
-  const [activeTab, setActiveTab] = useState<TabType>('dictionary');
+  const [activeTab, setActiveTab] = useState<TabType>('home');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedAilment, setSelectedAilment] = useState<Ailment | null>(null);

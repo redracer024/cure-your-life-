@@ -12,6 +12,7 @@ import DailyPromptsPanel from '../DailyPromptsPanel';
 import SomaticJournalPanel from '../SomaticJournalPanel';
 import { PatternDictionary } from '../patterns/PatternDictionary';
 import { UnderstandingLenses } from '../UnderstandingLenses';
+import { BodySignalDashboard } from '../dashboard/BodySignalDashboard';
 import type { Ailment } from '../../types';
 import type { AilmentCore } from '../../types/dictionary';
 import { getCoreAilments } from '../../data';
@@ -19,6 +20,7 @@ import type { TabType, JournalPromptData } from '../../hooks/useDictionaryNaviga
 
 interface TabContentRouterProps {
   activeTab: TabType;
+  setActiveTab: (tab: TabType) => void;
   searchQuery: string;
   setSearchQuery: (query: string) => void;
   selectedCategory: string | null;
@@ -49,6 +51,7 @@ interface TabContentRouterProps {
 
 export const TabContentRouter: React.FC<TabContentRouterProps> = ({
   activeTab,
+  setActiveTab,
   searchQuery, setSearchQuery,
   selectedCategory, setSelectedCategory,
   selectedAilment, setSelectedAilment,
@@ -63,6 +66,12 @@ export const TabContentRouter: React.FC<TabContentRouterProps> = ({
   onOpenJournal, journalPromptData,
   onOpenLenses,
 }) => {
+  if (activeTab === 'home') {
+    return (
+      <BodySignalDashboard onNavigateToTab={setActiveTab} />
+    );
+  }
+
   if (activeTab === 'dictionary') {
     return (
       <main className="flex-1 min-h-0 flex flex-col p-6 md:p-10 overflow-y-auto w-full space-y-8">

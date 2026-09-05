@@ -100,6 +100,7 @@ function AppInner() {
       <div className="flex-1 min-h-0 flex flex-col md:flex-row overflow-hidden relative z-10">
         <TabContentRouter
           activeTab={dict.activeTab}
+          setActiveTab={handleSetActiveTab}
           searchQuery={dict.searchQuery}
           setSearchQuery={dict.setSearchQuery}
           selectedCategory={dict.selectedCategory}
