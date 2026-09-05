@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Sparkles, Activity, HelpCircle, RotateCcw, Compass, Dumbbell } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { SymptomAnalysisResponse } from '../types';
+import { useCurrentSignal } from '../context/CurrentSignalContext';
 import { renderHolographicFace, renderSarcasticusAvatar } from './visuals/HolographicAvatars';
 
 interface SymptomDecoderProps {
@@ -27,6 +28,18 @@ export const SymptomDecoder: React.FC<SymptomDecoderProps> = ({
     handleDecodeSymptom,
     setDecodedResult
 }) => {
+    const { patchSignal, startSignal, currentSignal } = useCurrentSignal();
+
+    const handleSymptomChange = useCallback((value: string) => {
+        setCustomSymptom(value);
+        const trimmed = value.trim();
+        if (!currentSignal && trimmed.length > 0) {
+            startSignal({ symptomText: trimmed });
+        } else if (currentSignal) {
+            patchSignal({ symptomText: trimmed });
+        }
+    }, [setCustomSymptom, currentSignal, startSignal, patchSignal]);
+
     return (
         <main className="flex-1 flex flex-col p-6 md:p-12 overflow-y-auto max-w-5xl mx-auto w-full space-y-8">
             <div className="space-y-4">
@@ -63,7 +76,7 @@ export const SymptomDecoder: React.FC<SymptomDecoderProps> = ({
                                 required
                                 rows={3}
                                 value={customSymptom}
-                                onChange={(e) => setCustomSymptom(e.target.value)}
+                                onChange={(e) => handleSymptomChange(e.target.value)}
                                 placeholder="e.g. Sharp throbbing pain behind my right eyeball, or unexplained clicking in my left pinky finger..."
                                 className="w-full bg-[#040609] border border-white/10 rounded-xl p-3 text-xs text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500 focus:shadow-[0_0_12px_rgba(99,102,241,0.25)] transition-all font-sans resize-none"
                             />

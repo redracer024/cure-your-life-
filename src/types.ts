@@ -115,3 +115,5 @@ export interface SomaticJournalEntry {
   sourcePatternId?: string;
   sourcePatternName?: string;
 }
+
+export type { CurrentSignal, CurrentSignalPatch, SignalStatus, CreateCurrentSignalInput } from './types/currentSignal';

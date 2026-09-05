@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { PremiumProvider, usePremium } from './context/PremiumContext';
+import { CurrentSignalProvider, useCurrentSignal } from './context/CurrentSignalContext';
 import { AppLayout } from './components/layout/AppLayout';
 import { Navigation } from './components/Navigation';
 import { AuthSection } from './components/AuthSection';
@@ -150,9 +151,11 @@ export default function App() {
   return (
     <AuthProvider>
       <PremiumProvider>
-        <AppErrorBoundary>
-          <AppInner />
-        </AppErrorBoundary>
+        <CurrentSignalProvider>
+          <AppErrorBoundary>
+            <AppInner />
+          </AppErrorBoundary>
+        </CurrentSignalProvider>
       </PremiumProvider>
     </AuthProvider>
   );
