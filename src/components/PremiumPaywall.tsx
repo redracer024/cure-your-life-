@@ -11,6 +11,7 @@ interface PremiumPaywallProps {
 export const PremiumPaywall: React.FC<PremiumPaywallProps> = ({ authFetch }) => {
   const premium = usePremium();
   const [isCheckoutLoading, setIsCheckoutLoading] = useState(false);
+  const [isPortalLoading, setIsPortalLoading] = useState(false);
 
   return (
     <AnimatePresence>
@@ -93,7 +94,7 @@ export const PremiumPaywall: React.FC<PremiumPaywallProps> = ({ authFetch }) => 
                 <div className="flex flex-col sm:flex-row gap-3">
                   <button
                     onClick={async () => {
-                      if (isCheckoutLoading) return;
+                      if (isCheckoutLoading || isPortalLoading) return;
                       premium.setBillingMessage(null);
                       setIsCheckoutLoading(true);
                       try {
@@ -109,7 +110,7 @@ export const PremiumPaywall: React.FC<PremiumPaywallProps> = ({ authFetch }) => 
                         setIsCheckoutLoading(false);
                       }
                     }}
-                    disabled={isCheckoutLoading}
+                    disabled={isCheckoutLoading || isPortalLoading}
                     className="flex-1 py-3 bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-600 hover:to-yellow-500 disabled:cursor-not-allowed disabled:opacity-75 text-black font-black uppercase text-[11px] tracking-widest rounded-xl transition-all shadow-lg shadow-amber-500/10 flex items-center justify-center gap-2 cursor-pointer"
                   >
                     {isCheckoutLoading ? (
@@ -127,20 +128,40 @@ export const PremiumPaywall: React.FC<PremiumPaywallProps> = ({ authFetch }) => 
 
                   <button
                     onClick={async () => {
+                      if (isPortalLoading || isCheckoutLoading) return;
                       premium.setShowBillingInfo(!premium.showBillingInfo);
                       premium.setBillingMessage(null);
+                      setIsPortalLoading(true);
                       try {
                         const response = await authFetch('/api/billing/create-portal-session', { method: 'POST' });
                         const data = await response.json();
-                        premium.setBillingMessage(data.message || data.error || 'Billing portal endpoint responded.');
+                        if (!response.ok) {
+                          throw new Error(data.message || data.error || 'Billing portal request failed.');
+                        }
+                        if (!data.portalUrl) {
+                          throw new Error(data.message || 'Billing portal endpoint did not return a URL.');
+                        }
+                        window.location.href = data.portalUrl;
                       } catch (error: any) {
                         premium.setBillingMessage(error.message || 'Billing portal request failed.');
+                      } finally {
+                        setIsPortalLoading(false);
                       }
                     }}
-                    className="px-5 py-3 border border-amber-500/30 hover:border-amber-500/60 bg-white/5 hover:bg-white/10 text-amber-400 font-mono uppercase text-[11px] tracking-widest rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer"
+                    disabled={isPortalLoading || isCheckoutLoading}
+                    className="px-5 py-3 border border-amber-500/30 hover:border-amber-500/60 disabled:cursor-not-allowed disabled:opacity-75 bg-white/5 hover:bg-white/10 text-amber-400 font-mono uppercase text-[11px] tracking-widest rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer"
                   >
-                    <CreditCard className="w-4 h-4" />
-                    <span>{premium.showBillingInfo ? 'Hide Billing Info' : 'Billing Info'}</span>
+                    {isPortalLoading ? (
+                      <>
+                        <div className="w-4 h-4 border-2 border-amber-400 border-t-transparent rounded-full animate-spin" aria-hidden="true" />
+                        <span>Opening Billing Portal…</span>
+                      </>
+                    ) : (
+                      <>
+                        <CreditCard className="w-4 h-4" />
+                        <span>{premium.showBillingInfo ? 'Hide Billing Info' : 'Billing Info'}</span>
+                      </>
+                    )}
                   </button>
                 </div>
 
