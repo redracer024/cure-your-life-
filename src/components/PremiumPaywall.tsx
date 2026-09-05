@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { X, Sparkles, Check, Shield, CreditCard } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { usePremium } from '../context/PremiumContext';
@@ -10,6 +10,7 @@ interface PremiumPaywallProps {
 
 export const PremiumPaywall: React.FC<PremiumPaywallProps> = ({ authFetch }) => {
   const premium = usePremium();
+  const [isCheckoutLoading, setIsCheckoutLoading] = useState(false);
 
   return (
     <AnimatePresence>
@@ -81,26 +82,20 @@ export const PremiumPaywall: React.FC<PremiumPaywallProps> = ({ authFetch }) => 
               <div className="p-4 bg-[#110B03] border border-amber-500/20 rounded-2xl space-y-2 text-[11px]">
                 <div className="flex items-center gap-1.5 text-amber-500 font-mono font-bold uppercase">
                   <Shield className="w-3.5 h-3.5" />
-                  <span>Monetization & billing Integration</span>
+                  <span>Secure Payment</span>
                 </div>
                 <p className="text-slate-300 leading-7 font-sans font-light">
-                  For production apps, monetization is handled based on deployment targets:
+                  Card payments are processed securely through Stripe Checkout. Your card details are handled by Stripe and never stored on our servers.
                 </p>
-                <ul className="list-disc pl-4 space-y-1 text-slate-400 font-sans font-light">
-                  <li>
-                    <strong>Google Play Store Apps (Android)</strong>: Purchases use the <code>com.android.billingclient</code> Play Billing Library API. Users pay securely via credit cards or Google Play balance synced with the OS layer.
-                  </li>
-                  <li>
-                    <strong>Web Applications (SaaS)</strong>: Stripe API integration with secure server-side webhook listener proxies (using <code>stripe.webhooks.constructEvent</code>) safely manages subscriber lifetimes.
-                  </li>
-                </ul>
               </div>
 
               <div className="space-y-3">
                 <div className="flex flex-col sm:flex-row gap-3">
                   <button
                     onClick={async () => {
+                      if (isCheckoutLoading) return;
                       premium.setBillingMessage(null);
+                      setIsCheckoutLoading(true);
                       try {
                         const response = await authFetch('/api/billing/create-checkout-session', { method: 'POST' });
                         const data = await response.json();
@@ -110,12 +105,24 @@ export const PremiumPaywall: React.FC<PremiumPaywallProps> = ({ authFetch }) => 
                         }
                       } catch (error: any) {
                         premium.setBillingMessage(error.message || 'Checkout request failed.');
+                      } finally {
+                        setIsCheckoutLoading(false);
                       }
                     }}
-                    className="flex-1 py-3 bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-600 hover:to-yellow-500 text-black font-black uppercase text-[11px] tracking-widest rounded-xl transition-all shadow-lg shadow-amber-500/10 flex items-center justify-center gap-2 cursor-pointer"
+                    disabled={isCheckoutLoading}
+                    className="flex-1 py-3 bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-600 hover:to-yellow-500 disabled:cursor-not-allowed disabled:opacity-75 text-black font-black uppercase text-[11px] tracking-widest rounded-xl transition-all shadow-lg shadow-amber-500/10 flex items-center justify-center gap-2 cursor-pointer"
                   >
-                    <Sparkles className="w-4 h-4 text-black" />
-                    <span>{premium.isPremium ? 'Open Checkout / Manage Premium' : 'Start Checkout'}</span>
+                    {isCheckoutLoading ? (
+                      <>
+                        <div className="w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin" aria-hidden="true" />
+                        <span>Opening Secure Checkout…</span>
+                      </>
+                    ) : (
+                      <>
+                        <Sparkles className="w-4 h-4 text-black" />
+                        <span>{premium.isPremium ? 'Open Checkout / Manage Premium' : 'Start Checkout'}</span>
+                      </>
+                    )}
                   </button>
 
                   <button
@@ -133,7 +140,7 @@ export const PremiumPaywall: React.FC<PremiumPaywallProps> = ({ authFetch }) => 
                     className="px-5 py-3 border border-amber-500/30 hover:border-amber-500/60 bg-white/5 hover:bg-white/10 text-amber-400 font-mono uppercase text-[11px] tracking-widest rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <CreditCard className="w-4 h-4" />
-                    <span>{premium.showBillingInfo ? 'Hide Pay Info' : 'Live Pay Info'}</span>
+                    <span>{premium.showBillingInfo ? 'Hide Billing Info' : 'Billing Info'}</span>
                   </button>
                 </div>
 
@@ -149,15 +156,15 @@ export const PremiumPaywall: React.FC<PremiumPaywallProps> = ({ authFetch }) => 
                     animate={{ opacity: 1, height: "auto" }}
                     className="p-3.5 bg-amber-500/10 border border-amber-500/30 rounded-xl space-y-1.5 text-[11px] text-amber-200/90 leading-7 font-mono"
                   >
-                    <p className="font-bold">🔒 LIVE BILLING INTEGRATION SPECIFICATIONS:</p>
+                    <p className="font-bold">🔒 Manage your subscription</p>
                     <p>
-                      For production SaaS deployments, this component integrates with server-side endpoints processing Stripe checkout tokens. For Android packaging, it maps to the Google Play Billing Library (<code>billingclient</code>) triggering local operating-system payment dialogs securely.
+                      Update your payment method, view receipts, and cancel your subscription anytime from your account.
                     </p>
                   </motion.div>
                 )}
 
                 <p className="text-left text-[10px] text-slate-500 font-mono">
-                  Secured by AES-256 and SHA-256 protocols. Cancel anytime instantly.
+                  Payments are handled securely by Stripe Checkout. Cancel anytime from your account.
                 </p>
               </div>
             </div>
