@@ -6,9 +6,10 @@ import { LogSignalFlow } from '../signals/LogSignalFlow';
 
 interface BodySignalDashboardProps {
   onNavigateToTab: (tab: TabType) => void;
+  onExploreSignal: () => void;
 }
 
-export function BodySignalDashboard({ onNavigateToTab }: BodySignalDashboardProps) {
+export function BodySignalDashboard({ onNavigateToTab, onExploreSignal }: BodySignalDashboardProps) {
   const { currentSignal, clearSignal } = useCurrentSignal();
   const [inFlow, setInFlow] = useState(false);
   const [confirmingNew, setConfirmingNew] = useState(false);
@@ -35,13 +36,9 @@ export function BodySignalDashboard({ onNavigateToTab }: BodySignalDashboardProp
     setInFlow(true);
   };
 
-  const handleExploreSignal = () => {
-    onNavigateToTab('dictionary');
-  };
-
   const handleFlowExplore = () => {
     setInFlow(false);
-    onNavigateToTab('dictionary');
+    onExploreSignal();
   };
 
   const handleFlowSaveForLater = () => {
@@ -101,7 +98,7 @@ export function BodySignalDashboard({ onNavigateToTab }: BodySignalDashboardProp
               {readyToExplore ? (
                 <button
                   type="button"
-                  onClick={handleExploreSignal}
+                  onClick={onExploreSignal}
                   className="flex-1 px-5 py-3 rounded-xl border border-indigo-500/30 bg-indigo-950/30 hover:bg-indigo-900/40 text-indigo-200 text-xs font-mono font-black uppercase tracking-widest transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400/60"
                 >
                   Explore This Signal

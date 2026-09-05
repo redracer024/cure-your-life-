@@ -47,6 +47,7 @@ interface TabContentRouterProps {
   onOpenJournal: (data: { sourcePatternId: string; sourcePatternName: string; prompt: string }) => void;
   journalPromptData: JournalPromptData | null;
   onOpenLenses: () => void;
+  onExploreSignal: () => void;
 }
 
 export const TabContentRouter: React.FC<TabContentRouterProps> = ({
@@ -65,10 +66,14 @@ export const TabContentRouter: React.FC<TabContentRouterProps> = ({
   highlightPatternId, onClearHighlightPattern,
   onOpenJournal, journalPromptData,
   onOpenLenses,
+  onExploreSignal,
 }) => {
   if (activeTab === 'home') {
     return (
-      <BodySignalDashboard onNavigateToTab={setActiveTab} />
+      <BodySignalDashboard
+        onNavigateToTab={setActiveTab}
+        onExploreSignal={onExploreSignal}
+      />
     );
   }
 

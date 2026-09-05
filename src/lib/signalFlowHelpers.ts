@@ -1,5 +1,33 @@
 import type { CurrentSignal } from '../types/currentSignal';
 
+export const KNOWN_BODY_REGIONS = [
+  'Head & Neck',
+  'Chest & Breathing',
+  'Stomach & Gut',
+  'Back & Shoulders',
+  'Limbs & Joints',
+  'Pelvic, Urinary & Reproductive',
+  'Skin & Sleep',
+  'Metabolic & Endocrine',
+  'General & Energy',
+] as const;
+
+export type KnownBodyRegion = typeof KNOWN_BODY_REGIONS[number];
+
+const KNOWN_BODY_REGION_SET: ReadonlySet<string> = new Set(KNOWN_BODY_REGIONS);
+
+export function getDictionaryCategoryForSignal(
+  signal: CurrentSignal | null | undefined
+): string | null {
+  if (!signal) return null;
+  const region = signal.bodyRegion;
+  if (typeof region !== 'string') return null;
+  const trimmed = region.trim();
+  if (trimmed.length === 0) return null;
+  if (!KNOWN_BODY_REGION_SET.has(trimmed)) return null;
+  return trimmed;
+}
+
 export function isMeaningfulSignal(signal: CurrentSignal | null): boolean {
   if (!signal) return false;
   return signal.symptomText.trim().length > 0;

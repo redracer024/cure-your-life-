@@ -13,6 +13,7 @@ import { AppErrorBoundary } from './components/AppErrorBoundary';
 import { useDecoderState } from './hooks/useDecoderState';
 import { useDictionaryNavigation } from './hooks/useDictionaryNavigation';
 import type { JournalPromptData } from './hooks/useDictionaryNavigation';
+import { navigateToDictionaryForSignal } from './lib/dictionaryHandoff';
 import { authFetch } from './lib/supabaseClient';
 import { MedicalDisclosureModal, hasDisclosureAcknowledged, MEDICAL_DISCLOSURE_VERSION } from './components/legal/MedicalDisclosureModal';
 
@@ -89,6 +90,12 @@ function AppInner() {
     dict.setActiveTab('lenses');
   }, [dict]);
 
+  const { currentSignal } = useCurrentSignal();
+
+  const handleExploreSignal = useCallback(() => {
+    navigateToDictionaryForSignal(currentSignal, dict);
+  }, [currentSignal, dict]);
+
   return (
     <AppLayout>
       <Navigation
@@ -127,6 +134,7 @@ function AppInner() {
           onOpenJournal={handleOpenJournal}
           journalPromptData={dict.journalPromptData}
           onOpenLenses={handleOpenLenses}
+          onExploreSignal={handleExploreSignal}
         />
       </div>
       <AssessmentQuizHost
